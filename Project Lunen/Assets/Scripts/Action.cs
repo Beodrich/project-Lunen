@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Action : MonoBehaviour
 {
-    public bool Exectute(Monster attacker, Monster target)
-    {
-        return true;
-    }
+    public GameObject User;
+    public GameObject Target;
+    public Types.Element Type;
+    public float Cooldown;
 }
