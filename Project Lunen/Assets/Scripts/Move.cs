@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    private float horMov;
+    private float verMov;
+    public float speed = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,34 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        horMov = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        verMov = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.W)) {
+
+            transform.Translate(new Vector3(horMov,0 ,0));
         
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(new Vector3(-horMov,0, 0));
+
+
+
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(new Vector3(0,verMov,0));
+
+
+
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+
+            transform.Translate(new Vector3(0,verMov,0));
+
+
+        }
     }
 }
