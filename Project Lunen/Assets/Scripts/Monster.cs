@@ -4,17 +4,24 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    struct Stat
+    [System.Serializable]
+    public struct Stat
     {
-        int Base;
-        int Mod;
-        int Current;
+        public int Base;
+        public int Mod;
+        public int Current;
     }
 
-    private Stat Health;
-    private Stat Attack;
-    private Stat Defense;
-    private Stat Speed;
+    public Stat Health;
+    public Stat Attack;
+    public Stat Defense;
+    public Stat Speed;
+
+    public Move[] MoveSet;
 
     public int Level;
+    
+    public bool DEBUG;
+
+    public UnityEngine.UI.Text DEBUG_TEXT_OUTPUT;
 }
