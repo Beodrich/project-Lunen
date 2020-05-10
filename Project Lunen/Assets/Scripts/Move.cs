@@ -21,19 +21,19 @@ public class Move : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W)) {
 
-            transform.Translate(new Vector3(horMov,0 ,0));
+            transform.Translate(new Vector3(0f, speed * Time.deltaTime, 0f));
         
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(new Vector3(-horMov,0, 0));
+            transform.Translate(new Vector3(0f, -speed * Time.deltaTime, 0f));
 
 
 
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(new Vector3(0,verMov,0));
+            transform.Translate(new Vector3(-speed * Time.deltaTime, 0f, 0f));
 
 
 
@@ -41,7 +41,7 @@ public class Move : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
 
-            transform.Translate(new Vector3(0,verMov,0));
+            transform.Translate(new Vector3(speed * Time.deltaTime, 0f, 0f));
 
 
         }
