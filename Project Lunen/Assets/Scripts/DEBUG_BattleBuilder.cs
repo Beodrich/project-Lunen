@@ -53,9 +53,22 @@ public class DEBUG_BattleBuilder : MonoBehaviour
 
         NewMonster1.DEBUG_TEXT_OUTPUT = TextPlayer1;
         NewMonster2.DEBUG_TEXT_OUTPUT = TextPlayer2;
-       
+
+        RefreshDisplayTest();
+
+    }
+
+    public void DEBUG_TEST_ATTACK()
+    {
+        NewMonster1.ActionSet[0].GetComponent<Action>().MonsterUser = NewMonster1;
+        NewMonster1.ActionSet[0].GetComponent<Action>().MonsterTarget = NewMonster2;
+        NewMonster1.ActionSet[0].GetComponent<Action>().Execute();
+        RefreshDisplayTest();
+    }
+
+    public void RefreshDisplayTest()
+    {
         NewMonster1.DEBUG_DISPLAY_TEXT();
         NewMonster2.DEBUG_DISPLAY_TEXT();
-
     }
 }

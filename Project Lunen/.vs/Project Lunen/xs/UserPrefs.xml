@@ -1,20 +1,20 @@
 ﻿<Properties StartupConfiguration="{EB300534-600C-0AFF-6D9E-D4D0756B6CEB}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DEBUG_BattleBuilder.cs">
     <Files>
-      <File FileName="Assets/Scripts/Monster.cs" Line="20" Column="23" />
+      <File FileName="Assets/Scripts/Monster.cs" Line="4" Column="22" />
       <File FileName="Assets/Scripts/Move.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Action.cs" Line="10" Column="27" />
-      <File FileName="Assets/Scripts/Types.cs" Line="41" Column="35" />
-      <File FileName="Assets/Scripts/Lunen.cs" Line="11" Column="8" />
+      <File FileName="Assets/Scripts/Action.cs" Line="56" Column="1" />
+      <File FileName="Assets/Scripts/Types.cs" Line="6" Column="2" />
+      <File FileName="Assets/Scripts/Lunen.cs" Line="8" Column="12" />
       <File FileName="Assets/Scripts/LunaDex.cs" Line="7" Column="35" />
       <File FileName="Assets/Scripts/Battle.cs" Line="7" Column="29" />
-      <File FileName="Assets/Scripts/Player.cs" Line="9" Column="28" />
-      <File FileName="Assets/Scripts/DEBUG_BattleBuilder.cs" Line="7" Column="22" />
+      <File FileName="Assets/Scripts/Player.cs" Line="8" Column="25" />
+      <File FileName="Assets/Scripts/DEBUG_BattleBuilder.cs" Line="66" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="853547e1-7e3f-41c2-b3e5-d35d59ace4b7" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7e3d3f89-2bb1-4cbf-8082-6da5469aef43" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -4,16 +4,57 @@ using UnityEngine;
 
 public class Action : MonoBehaviour
 {
+    [System.Serializable]
+    public enum MonsterAim
+    {
+        SingleOpponent,
+        AllOpponents,
+        SingleAlly,
+        AllAllies,
+        AllMonstersExceptSelf,
+        AllMonsters,
+        Self
+    }
+
+    [System.Serializable]
+    public enum IntendedEffect
+    {
+        DealDamage,
+        Heal,
+        StatusEffect,
+        DealDamageWithStatusEffect
+    }
     public string Name;
-    public Monster User;
-    public Monster Target;
+    public MonsterAim Target;
+    public IntendedEffect Effect;
     public Types.Element Type;
     public float Cooldown;
     public GameObject Animation;
     public int Power;
 
+    public Monster MonsterUser;
+    public Monster MonsterTarget;
+
+    public void Execute()
+    {
+        switch (Effect)
+        {
+            case IntendedEffect.DealDamage:
+                Attack();
+                break;
+            case IntendedEffect.Heal:
+                break;
+            case IntendedEffect.StatusEffect:
+                break;
+            case IntendedEffect.DealDamageWithStatusEffect:
+                break;
+        }
+    }
+
     public void Attack()
     {
-        Target.Health.Current -= 1;
+        float modifier = Types.TypeMatch(Type, MonsterTarget.Elements);
+        float damage = ((((2 * MonsterUser.Level / 5) + 2) * Power * (MonsterUser.Attack.Current / MonsterTarget.Defense.Current) / 50) + 2) * modifier;
+        MonsterTarget.Health.Current -= Mathf.RoundToInt(damage);
     }
 }

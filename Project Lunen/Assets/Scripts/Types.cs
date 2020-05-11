@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Types : MonoBehaviour
+public static class Types
 {
     [System.Serializable]
     public enum Element
@@ -24,7 +24,7 @@ public class Types : MonoBehaviour
     const float NE = 1.0f; //Normal Effect
     const float LE = 0.5f; //Low Effect
 
-    public float TypeMatch(Element sender, Element[] reciever)
+    public static float TypeMatch(Element sender, Element[] reciever)
     {
         float multiplier = 1f;
         for (int i = 0; i < reciever.Length; i++)
@@ -34,7 +34,7 @@ public class Types : MonoBehaviour
         return multiplier;
     }
 
-    public float TypeMatch(Element sender, Element reciever)
+    public static float TypeMatch(Element sender, Element reciever)
     {
         switch (sender)
         {

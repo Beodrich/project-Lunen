@@ -24,6 +24,8 @@ public class Monster : MonoBehaviour
     public Stat Defense;
     public Stat Speed;
 
+    public Types.Element[] Elements;
+
     public List<GameObject> ActionSet;
 
     public GameObject DEBUG_TEXT_OUTPUT;
