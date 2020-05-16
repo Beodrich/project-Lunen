@@ -66,8 +66,12 @@
     <Compile Include="Assets\Scripts\Action.cs" />
     <Compile Include="Assets\Scripts\Battle.cs" />
     <Compile Include="Assets\Scripts\DEBUG_BattleBuilder.cs" />
+    <Compile Include="Assets\Scripts\Director.cs" />
     <Compile Include="Assets\Scripts\LunaDex.cs" />
     <Compile Include="Assets\Scripts\Lunen.cs" />
+    <Compile Include="Assets\Scripts\LunenActionButton.cs" />
+    <Compile Include="Assets\Scripts\LunenActionPanel.cs" />
+    <Compile Include="Assets\Scripts\LunenButton.cs" />
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />

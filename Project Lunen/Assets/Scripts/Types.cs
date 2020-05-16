@@ -24,6 +24,38 @@ public static class Types
     const float NE = 1.0f; //Normal Effect
     const float LE = 0.5f; //Low Effect
 
+    public static string GetTypeString(Element index)
+    {
+        switch (index)
+        {
+            case Element.Balanced:
+                return "Balanced";
+            case Element.Earth:
+                return "Earth";
+            case Element.Water:
+                return "Water";
+            case Element.Floral:
+                return "Floral";
+            case Element.Fire:
+                return "Fire";
+            case Element.Plasma:
+                return "Plasma";
+            case Element.Sky:
+                return "Sky";
+            case Element.Ice:
+                return "Ice";
+            case Element.Psychic:
+                return "Psychic";
+            case Element.Cosmic:
+                return "Cosmic";
+            case Element.Corrupted:
+                return "Corrupted";
+            default:
+                return "Undefined";
+
+        }
+    }
+
     public static float TypeMatch(Element sender, Element[] reciever)
     {
         float multiplier = 1f;

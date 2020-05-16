@@ -36,6 +36,9 @@ public class DEBUG_BattleBuilder : MonoBehaviour
         New1 = Instantiate(Template);
         New2 = Instantiate(Template);
 
+        New1.transform.SetParent(Player1.transform);
+        New2.transform.SetParent(Player2.transform);
+
         NewMonster1 = New1.GetComponent<Monster>();
         NewMonster2 = New2.GetComponent<Monster>();
 
@@ -47,9 +50,6 @@ public class DEBUG_BattleBuilder : MonoBehaviour
 
         NewMonster1.TemplateToMonster(Player1Lunen.GetComponent<Lunen>());
         NewMonster2.TemplateToMonster(Player2Lunen.GetComponent<Lunen>());
-
-        Player1.GetComponent<Player>().Team.Add(NewMonster1);
-        Player1.GetComponent<Player>().Team.Add(NewMonster2);
 
         NewMonster1.DEBUG_TEXT_OUTPUT = TextPlayer1;
         NewMonster2.DEBUG_TEXT_OUTPUT = TextPlayer2;

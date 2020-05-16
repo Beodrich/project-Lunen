@@ -30,6 +30,14 @@ public class Monster : MonoBehaviour
 
     public GameObject DEBUG_TEXT_OUTPUT;
 
+    private void Start()
+    {
+        if (DEBUG_TEXT_OUTPUT != null)
+        {
+            DEBUG_DISPLAY_TEXT();
+        }
+    }
+
     public void TemplateToMonster(Lunen template)
     {
         Health.Base = template.BaseHealth;
@@ -40,6 +48,8 @@ public class Monster : MonoBehaviour
         AssortPointsAI(Level * template.PointsPerLevel);
         Health.Current = Health.Base + Health.Mod;
         CalculateStats();
+        Nickname = Species;
+        SetObjectName();
     }
 
     public void AssortPointsAI(int points)
@@ -64,6 +74,11 @@ public class Monster : MonoBehaviour
         Attack.Current = Attack.Base + Attack.Mod;
         Defense.Current = Defense.Base + Defense.Mod;
         Speed.Current = Speed.Base + Speed.Mod;
+    }
+
+    public void SetObjectName()
+    {
+        transform.name = Species + "_" + Nickname + "_Monster";
     }
 
     public void DEBUG_DISPLAY_TEXT()
