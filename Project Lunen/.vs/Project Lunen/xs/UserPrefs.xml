@@ -1,13 +1,19 @@
 ﻿<Properties StartupConfiguration="{EB300534-600C-0AFF-6D9E-D4D0756B6CEB}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BattleSetup.cs">
     <Files>
-      <File FileName="Assets/Scripts/Monster.cs" Line="61" Column="28" />
-      <File FileName="Assets/Scripts/DEBUG_BattleBuilder.cs" Line="30" Column="33" />
-      <File FileName="Assets/Scripts/GenerateMonster.cs" Line="26" Column="10" />
-      <File FileName="Assets/Scripts/Action.cs" Line="37" Column="22" />
-      <File FileName="Assets/Scripts/DrawHealthbar.cs" Line="66" Column="1" />
-      <File FileName="Assets/Scripts/Director.cs" Line="43" Column="99" />
-      <File FileName="Assets/Scripts/Player.cs" Line="13" Column="39" />
+      <File FileName="Assets/Scripts/Monster.cs" Line="7" Column="2" />
+      <File FileName="Assets/Scripts/DEBUG_BattleBuilder.cs" />
+      <File FileName="Assets/Scripts/GenerateMonster.cs" Line="21" Column="13" />
+      <File FileName="Assets/Scripts/Action.cs" Line="55" Column="78" />
+      <File FileName="Assets/Scripts/DrawHealthbar.cs" Line="47" Column="19" />
+      <File FileName="Assets/Scripts/Director.cs" Line="32" Column="10" />
+      <File FileName="Assets/Scripts/Player.cs" Line="29" Column="35" />
+      <File FileName="Assets/Scripts/Move.cs" Line="74" Column="1" />
+      <File FileName="Assets/Scripts/CameraFollow.cs" Line="26" Column="2" />
+      <File FileName="Assets/Scripts/GrassEncounter.cs" Line="10" Column="33" />
+      <File FileName="Assets/Editor/LunenEditor.cs" Line="11" Column="2" />
+      <File FileName="Assets/Scripts/BattleSetup.cs" Line="29" Column="9" />
+      <File FileName="Assets/Scripts/Types.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 860739219170754468}
   m_Layer: 0
   m_Name: PunchingBag_PunchingBag_Monster
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,8 @@ MonoBehaviour:
   Level: 5
   NextXP: 0
   CurrXP: 0
+  CurrCooldown: 0
+  LastCooldown: 1
   Health:
     Base: 10
     Mod: 9
@@ -67,3 +69,4 @@ MonoBehaviour:
   Elements: 
   ActionSet: []
   DEBUG_TEXT_OUTPUT: {fileID: 0}
+  loopback: {fileID: 0}

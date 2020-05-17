@@ -21,6 +21,8 @@ public class Monster : MonoBehaviour
     public float CurrCooldown;
     public float LastCooldown = 1f;
 
+    public bool Enemy;
+
     public Stat Health;
     public Stat Attack;
     public Stat Defense;
@@ -56,6 +58,11 @@ public class Monster : MonoBehaviour
             {
                 CurrCooldown = 0f;
             }
+        }
+        if (Health.Current <= 0)
+        {
+            loopback.ScanBothParties();
+            Destroy(gameObject);
         }
     }
 

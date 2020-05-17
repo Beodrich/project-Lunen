@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7897425203138894341}
   m_Layer: 0
   m_Name: Dungeoness_Dungeoness_Monster
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,8 @@ MonoBehaviour:
   Level: 100
   NextXP: 0
   CurrXP: 0
+  CurrCooldown: 0
+  LastCooldown: 1
   Health:
     Base: 10
     Mod: 135
@@ -68,3 +70,4 @@ MonoBehaviour:
   ActionSet:
   - {fileID: 2279408898384957547, guid: 65b32de2137d34149b5ec84fa76e31cd, type: 3}
   DEBUG_TEXT_OUTPUT: {fileID: 0}
+  loopback: {fileID: 0}

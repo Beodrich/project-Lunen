@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Player : MonoBehaviour
 {
@@ -8,35 +9,52 @@ public class Player : MonoBehaviour
     public int AffinityCap;
     public int LevelCap;
 
-    public List<GameObject> LunenInParty;
-    public List<GameObject> LunenSidelined;
-    public List<GameObject> LunenDead;
+    public List<GameObject> LunenTeam;
+    public int LunenAlive;
+    public int LunenDead;
 
     [HideInInspector]
-    public List<Monster> MonstersInParty;
+    public List<Monster> LunenOut;
     [HideInInspector]
-    public List<Monster> MonstersSidelined;
-    [HideInInspector]
-    public List<Monster> MonstersDead;
+    public int LunenMax = 3;
 
-    public void ReReferenceMonsters()
+    public void TEST_AddTeam()
     {
-        MonstersInParty.Clear();
-        for (int i = 0; i < LunenInParty.Count; i++)
+        LunenTeam.Clear();
+        LunenTeam.AddRange(gameObject.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Monster").Select(c => c.gameObject).ToArray());
+    }
+
+    public void ReloadTeam()
+    {
+        if (LunenTeam.Count == 0) TEST_AddTeam();
+        LunenOut.Clear();
+        LunenAlive = 0;
+        LunenDead = 0;
+
+        List<GameObject> LunenGood = new List<GameObject>();
+        List<GameObject> LunenBad = new List<GameObject>();
+
+        for (int i = 0; i < LunenTeam.Count; i++)
         {
-            MonstersInParty.Add(LunenInParty[i].GetComponent<Monster>());
+            Monster tempLunen = LunenTeam[i].GetComponent<Monster>();
+            if (tempLunen.Health.Current <= 0)
+            {
+                LunenBad.Add(LunenTeam[i]);
+                LunenDead++;
+            }
+            else
+            {
+                if (LunenOut.Count < LunenMax)
+                {
+                    LunenOut.Add(tempLunen);
+                }
+                LunenGood.Add(LunenTeam[i]);
+                LunenAlive++;
+            }
         }
 
-        MonstersSidelined.Clear();
-        for (int i = 0; i < LunenSidelined.Count; i++)
-        {
-            MonstersSidelined.Add(LunenSidelined[i].GetComponent<Monster>());
-        }
-
-        MonstersDead.Clear();
-        for (int i = 0; i < LunenDead.Count; i++)
-        {
-            MonstersDead.Add(LunenDead[i].GetComponent<Monster>());
-        }
+        LunenTeam.Clear();
+        LunenTeam.AddRange(LunenGood);
+        LunenTeam.AddRange(LunenBad);
     }
 }
