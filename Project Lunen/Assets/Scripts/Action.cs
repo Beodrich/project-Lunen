@@ -32,7 +32,9 @@ public class Action : MonoBehaviour
     public GameObject Animation;
     public int Power;
 
+    [HideInInspector]
     public Monster MonsterUser;
+    [HideInInspector]
     public Monster MonsterTarget;
 
     public void Execute()
@@ -49,6 +51,8 @@ public class Action : MonoBehaviour
             case IntendedEffect.DealDamageWithStatusEffect:
                 break;
         }
+        MonsterUser.CurrCooldown = MonsterUser.LastCooldown = Cooldown;
+        MonsterUser.loopback.Player1MenuClick(MonsterUser.loopback.MenuOpen);
     }
 
     public void Attack()

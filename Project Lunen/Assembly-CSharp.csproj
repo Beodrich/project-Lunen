@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\Battle.cs" />
     <Compile Include="Assets\Scripts\DEBUG_BattleBuilder.cs" />
     <Compile Include="Assets\Scripts\Director.cs" />
+    <Compile Include="Assets\Scripts\DrawHealthbar.cs" />
+    <Compile Include="Assets\Scripts\GenerateMonster.cs" />
     <Compile Include="Assets\Scripts\LunaDex.cs" />
     <Compile Include="Assets\Scripts\Lunen.cs" />
     <Compile Include="Assets\Scripts\LunenActionButton.cs" />

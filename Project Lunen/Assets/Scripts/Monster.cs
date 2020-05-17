@@ -18,6 +18,8 @@ public class Monster : MonoBehaviour
     public int Level;
     public int NextXP;
     public int CurrXP;
+    public float CurrCooldown;
+    public float LastCooldown = 1f;
 
     public Stat Health;
     public Stat Attack;
@@ -30,11 +32,30 @@ public class Monster : MonoBehaviour
 
     public GameObject DEBUG_TEXT_OUTPUT;
 
+    [HideInInspector]
+    public Director loopback;
+
     private void Start()
     {
+        CurrCooldown = LastCooldown = 1f;
         if (DEBUG_TEXT_OUTPUT != null)
         {
             DEBUG_DISPLAY_TEXT();
+        }
+    }
+
+    private void Update()
+    {
+        if (Time.unscaledDeltaTime < 0.25f)
+        {
+            if (CurrCooldown > 0f)
+            {
+                CurrCooldown -= Time.unscaledDeltaTime;
+            }
+            else
+            {
+                CurrCooldown = 0f;
+            }
         }
     }
 
@@ -46,7 +67,7 @@ public class Monster : MonoBehaviour
         Speed.Base = template.BaseSpeed;
         Species = template.Name;
         AssortPointsAI(Level * template.PointsPerLevel);
-        Health.Current = Health.Base + Health.Mod;
+        Health.Current = GetMaxHealth();
         CalculateStats();
         Nickname = Species;
         SetObjectName();
@@ -79,6 +100,11 @@ public class Monster : MonoBehaviour
     public void SetObjectName()
     {
         transform.name = Species + "_" + Nickname + "_Monster";
+    }
+
+    public int GetMaxHealth()
+    {
+        return Health.Base + Health.Mod;
     }
 
     public void DEBUG_DISPLAY_TEXT()
