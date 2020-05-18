@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Director.cs" />
     <Compile Include="Assets\Scripts\DrawHealthbar.cs" />
+    <Compile Include="Assets\Scripts\GameAssets.cs" />
     <Compile Include="Assets\Scripts\GenerateMonster.cs" />
     <Compile Include="Assets\Scripts\GrassEncounter.cs" />
     <Compile Include="Assets\Scripts\LunaDex.cs" />
@@ -81,7 +82,9 @@
     <Compile Include="Assets\Scripts\Monster.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\ShopTrigger.cs" />
     <Compile Include="Assets\Scripts\Types.cs" />
+    <Compile Include="Assets\Scripts\UI_Shop.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2019.3.13f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
