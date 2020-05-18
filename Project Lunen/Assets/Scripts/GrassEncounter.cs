@@ -8,8 +8,10 @@ public class GrassEncounter : MonoBehaviour
     public struct Encounter
     {
         public GameObject lunen;
-        [VectorLabels("Min", "Max")]
-        public Vector2Int LevelRange;
+        [Range(1,50)]
+        public int minLevel;
+        [Range(1, 50)]
+        public int maxLevel;
         [Range(0f, 100f)]
         public float chanceWeight;
     }

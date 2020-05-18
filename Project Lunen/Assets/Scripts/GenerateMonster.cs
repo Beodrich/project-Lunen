@@ -4,28 +4,25 @@ using UnityEngine;
 
 public class GenerateMonster : MonoBehaviour
 {
+    public bool Generate;
     public GameObject Template;
     public GameObject LunenBase;
-    public List<GameObject> LunenMoves;
-    [Range(1, 50)]
-    public int LunenLevel = 1;
+    public GameObject[] LunenMoves;
+    public int LunenLevel;
 
     private GameObject New1;
     private Monster NewMonster1;
 
-    public bool Generate()
+    void Start()
     {
-        New1 = Instantiate(Template);
-        //New1.transform.SetParent(this.transform);
-        NewMonster1 = New1.GetComponent<Monster>();
-        NewMonster1.Level = LunenLevel;
-        for (int i = 0; i < LunenMoves.Count; i++)
+        if (Generate)
         {
-            NewMonster1.ActionSet.Add(Instantiate(LunenMoves[i]));
-            NewMonster1.ActionSet[i].transform.SetParent(NewMonster1.transform);
+            New1 = Instantiate(Template);
+            New1.transform.SetParent(this.transform);
+            NewMonster1 = New1.GetComponent<Monster>();
+            NewMonster1.Level = LunenLevel;
+            NewMonster1.ActionSet.AddRange(LunenMoves);
+            NewMonster1.TemplateToMonster(LunenBase.GetComponent<Lunen>());
         }
-        
-        NewMonster1.TemplateToMonster(LunenBase.GetComponent<Lunen>());
-        return true;
     }
 }

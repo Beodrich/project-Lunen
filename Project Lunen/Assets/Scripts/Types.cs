@@ -56,10 +56,10 @@ public static class Types
         }
     }
 
-    public static float TypeMatch(Element sender, List<Element> reciever)
+    public static float TypeMatch(Element sender, Element[] reciever)
     {
         float multiplier = 1f;
-        for (int i = 0; i < reciever.Count; i++)
+        for (int i = 0; i < reciever.Length; i++)
         {
             multiplier *= TypeMatch(sender, reciever[i]);
         }

@@ -2020,7 +2020,7 @@ PrefabInstance:
     - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
         type: 3}
       propertyPath: LunenLevel
-      value: 25
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
         type: 3}
@@ -3226,7 +3226,7 @@ MonoBehaviour:
   AffinityCap: 0
   LevelCap: 0
   LunenTeam: []
-  LunenAlive: 0
+  LunenInParty: 0
   LunenDead: 0
   LunenOut: []
   LunenMax: 3
@@ -5249,7 +5249,7 @@ MonoBehaviour:
   AffinityCap: 0
   LevelCap: 0
   LunenTeam: []
-  LunenAlive: 0
+  LunenInParty: 0
   LunenDead: 0
   LunenOut: []
   LunenMax: 3

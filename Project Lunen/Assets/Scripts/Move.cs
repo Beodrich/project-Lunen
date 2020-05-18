@@ -69,7 +69,7 @@ public class Move : MonoBehaviour
 
         BattleSetup battle = GameObject.Find("BattleSetup").GetComponent<BattleSetup>();
 
-        battle.GenerateWildEncounter(encounter.possibleEncounters[index].lunen, Random.Range(encounter.possibleEncounters[index].LevelRange.x, encounter.possibleEncounters[index].LevelRange.y + 1));
+        battle.GenerateWildEncounter(encounter.possibleEncounters[index].lunen, Random.Range(encounter.possibleEncounters[index].minLevel, encounter.possibleEncounters[index].maxLevel + 1));
 
         battle.MoveToBattle(0,0);
     }

@@ -7,7 +7,6 @@ TagManager:
   - Wall
   - Grass
   - Monster
-  - BattleSetup
   layers:
   - Default
   - TransparentFX
