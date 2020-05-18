@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
-    
-
     [Header("Individual Stuff")]
 
     public string Nickname;
@@ -16,8 +14,6 @@ public class Monster : MonoBehaviour
     public Vector2Int Exp;
 
     public List<GameObject> ActionSet;
-
-    
 
     [Header("Stats")]
 
@@ -29,8 +25,6 @@ public class Monster : MonoBehaviour
     public Vector3Int Defense;
     [VectorLabels("Base", " Mod", " Current")]
     public Vector3Int Speed;
-
-    
 
     [Header("Wild Monster Stuff")]
 
@@ -61,11 +55,7 @@ public class Monster : MonoBehaviour
                 CurrCooldown = 0f;
             }
         }
-        if (Health.z <= 0)
-        {
-            if (loopback != null) loopback.ScanBothParties();
-            if (Enemy) Destroy(gameObject);
-        }
+        
     }
 
     public void TemplateToMonster(Lunen template)
@@ -101,6 +91,21 @@ public class Monster : MonoBehaviour
                 case 3: Speed.y += 1; break;
             }
 
+        }
+    }
+
+    public void GiveExp(int value)
+    {
+
+    }
+
+    public void TakeDamage(int value)
+    {
+        Health.z -= value;
+        if (Health.z <= 0)
+        {
+            if (loopback != null) loopback.ScanBothParties();
+            if (Enemy) Destroy(gameObject);
         }
     }
 

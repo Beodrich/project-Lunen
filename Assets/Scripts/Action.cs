@@ -57,8 +57,12 @@ public class Action : MonoBehaviour
 
     public void Attack()
     {
-        float modifier = Types.TypeMatch(Type, MonsterTarget.SourceLunen.Elements);
-        float damage = ((((2 * MonsterUser.Level / 5) + 2) * Power * (MonsterUser.Attack.z / MonsterTarget.Defense.z) / 50) + 2) * modifier;
-        MonsterTarget.Health.z -= Mathf.RoundToInt(damage);
+        float Attack = MonsterUser.Attack.z;
+        float Defense = MonsterTarget.Defense.z;
+        float STAB = Types.SameTypeAttackBonus(MonsterUser.SourceLunen.Elements, Type);
+        float Modifier = Types.TypeMatch(Type, MonsterTarget.SourceLunen.Elements);
+        float Damage = (3 + ((float)MonsterUser.Level / 100) * ((float)Power / 2) * (1 + (float)Attack / 100) * (1 - (0.004f * (float)Defense))) * STAB * Modifier;
+        MonsterTarget.TakeDamage(Mathf.RoundToInt(Damage));
+        Debug.Log(Damage);
     }
 }

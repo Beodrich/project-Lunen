@@ -888,11 +888,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleEncounters:
   - lunen: {fileID: 8084804094902623218, guid: 2316018688f1a441e9e7cb411d28c4d6, type: 3}
-    LevelRange: {x: 23, y: 23}
-    chanceWeight: 50
+    LevelRange: {x: 19, y: 20}
+    chanceWeight: 40
   - lunen: {fileID: 813028601925389350, guid: f2e48d93f5e3e4909befe0db212ac5bd, type: 3}
-    LevelRange: {x: 20, y: 27}
-    chanceWeight: 50
+    LevelRange: {x: 21, y: 23}
+    chanceWeight: 60
   chanceModifier: 10
 --- !u!1001 &8082643487943107109
 PrefabInstance:

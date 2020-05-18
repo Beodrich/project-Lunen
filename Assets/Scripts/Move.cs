@@ -5,7 +5,6 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     //public Animator animator;
-    //Random comment!
     public float speed = 5f;
 
     public bool inGrass = false;

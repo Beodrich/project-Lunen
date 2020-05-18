@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private GameObject Sel;
-    [SerializeField] private Vector2 Min;
-    [SerializeField] private Vector2 Max;
+    public GameObject Sel;
+    public Vector2 Min;
+    public Vector2 Max;
     // Start is called before the first frame update
     void Start()
     {

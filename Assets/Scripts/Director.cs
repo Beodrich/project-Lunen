@@ -59,6 +59,7 @@ public class Director : MonoBehaviour
             {
                 Player1LunenButtonScripts[i] = Player1LunenButtons[i].GetComponent<LunenButton>();
                 Player1LunenButtonScripts[i].Text.GetComponent<Text>().text = Player1Script.LunenOut[i].Nickname;
+                Player1LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + Player1Script.LunenOut[i].Level;
                 Player1LunenButtons[i].SetActive(true);
                 Player1Script.LunenOut[i].loopback = this;
                 AssignPlayer1Bars(i);
@@ -95,6 +96,7 @@ public class Director : MonoBehaviour
             {
                 Player2LunenButtonScripts[i] = Player2LunenButtons[i].GetComponent<LunenButton>();
                 Player2LunenButtonScripts[i].Text.GetComponent<Text>().text = Player2Script.LunenOut[i].Nickname;
+                Player2LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + Player2Script.LunenOut[i].Level;
                 Player2LunenButtons[i].SetActive(true);
                 Player2Script.LunenOut[i].loopback = this;
                 AssignPlayer2Bars(i);

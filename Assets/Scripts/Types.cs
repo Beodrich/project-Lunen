@@ -56,6 +56,16 @@ public static class Types
         }
     }
 
+    public static float SameTypeAttackBonus(List<Element> lunenTypes, Element attackType)
+    {
+        bool foundSTAB = false;
+        for (int i = 0; i < lunenTypes.Count; i++)
+        {
+            if (lunenTypes[i] == attackType) foundSTAB = true;
+        }
+        if (foundSTAB) return 1.5f; else return 1f;
+    }
+
     public static float TypeMatch(Element sender, List<Element> reciever)
     {
         float multiplier = 1f;
