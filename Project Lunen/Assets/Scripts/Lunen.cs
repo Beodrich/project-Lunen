@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Lunen : MonoBehaviour
 {
-    
-
     [System.Serializable]
     public struct LearnedAction
     {
@@ -25,5 +23,4 @@ public class Lunen : MonoBehaviour
     public Vector2Int Defense;
     [VectorLabels("Start", " PerLevel")]
     public Vector2Int Speed;
-    
 }

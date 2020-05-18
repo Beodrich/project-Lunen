@@ -52,7 +52,6 @@ public class Player : MonoBehaviour
                 LunenAlive++;
             }
         }
-
         LunenTeam.Clear();
         LunenTeam.AddRange(LunenGood);
         LunenTeam.AddRange(LunenBad);

@@ -45,7 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Wynern
   Elements: 0000000009000000
-  ActionsToLearn: []
+  ActionsToLearn:
+  - Action: {fileID: 0}
+    Level: 0
   CooldownTime: 12
   Health: {x: 26, y: 3}
   Attack: {x: 10, y: 3}
