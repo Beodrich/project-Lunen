@@ -5,17 +5,21 @@ using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
-    [HideInInspector]
-    public Lunen SourceLunen;
+    
+
+    [Header("Individual Stuff")]
 
     public string Nickname;
     public int Level;
-    public int NextXP;
-    public int CurrXP;
-    public float CurrCooldown;
-    public float LastCooldown = 1f;
 
-    public bool Enemy;
+    [VectorLabels("Current", "Required")]
+    public Vector2Int Exp;
+
+    public List<GameObject> ActionSet;
+
+    
+
+    [Header("Stats")]
 
     [VectorLabels("Base", " Mod", " Current")]
     public Vector3Int Health;
@@ -26,16 +30,22 @@ public class Monster : MonoBehaviour
     [VectorLabels("Base", " Mod", " Current")]
     public Vector3Int Speed;
 
-    public Types.Element[] Elements;
+    
 
-    public List<GameObject> ActionSet;
+    [Header("Wild Monster Stuff")]
+
+    public bool Enemy;
 
     [HideInInspector]
+    public Lunen SourceLunen;
+    [HideInInspector]
     public Director loopback;
+    [HideInInspector]
+    public float CurrCooldown;
 
     private void Start()
     {
-        CurrCooldown = LastCooldown = 1f;
+        CurrCooldown = 1f;
     }
 
     private void Update()
