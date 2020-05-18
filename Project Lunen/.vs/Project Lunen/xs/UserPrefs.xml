@@ -1,19 +1,22 @@
 ﻿<Properties StartupConfiguration="{EB300534-600C-0AFF-6D9E-D4D0756B6CEB}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BattleSetup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
     <Files>
-      <File FileName="Assets/Scripts/Monster.cs" Line="7" Column="2" />
-      <File FileName="Assets/Scripts/DEBUG_BattleBuilder.cs" />
-      <File FileName="Assets/Scripts/GenerateMonster.cs" Line="21" Column="13" />
-      <File FileName="Assets/Scripts/Action.cs" Line="55" Column="78" />
-      <File FileName="Assets/Scripts/DrawHealthbar.cs" Line="47" Column="19" />
-      <File FileName="Assets/Scripts/Director.cs" Line="32" Column="10" />
-      <File FileName="Assets/Scripts/Player.cs" Line="29" Column="35" />
-      <File FileName="Assets/Scripts/Move.cs" Line="74" Column="1" />
-      <File FileName="Assets/Scripts/CameraFollow.cs" Line="26" Column="2" />
-      <File FileName="Assets/Scripts/GrassEncounter.cs" Line="10" Column="33" />
-      <File FileName="Assets/Editor/LunenEditor.cs" Line="11" Column="2" />
-      <File FileName="Assets/Scripts/BattleSetup.cs" Line="29" Column="9" />
+      <File FileName="Assets/Editor/LunenEditor.cs" Line="2" Column="1" />
+      <File FileName="Assets/Scripts/Lunen.cs" Line="20" Column="5" />
+      <File FileName="Assets/Scripts/BattleSetup.cs" Line="23" Column="10" />
       <File FileName="Assets/Scripts/Types.cs" Line="1" Column="1" />
+      <File FileName="Assets/Editor/LunenToMonsterGeneratorEditor.cs" Line="15" Column="35" />
+      <File FileName="Assets/Scripts/GenerateMonster.cs" Line="19" Column="52" />
+      <File FileName="Assets/Scripts/GrassEncounter.cs" Line="11" Column="34" />
+      <File FileName="Assets/Scripts/Move.cs" Line="72" Column="193" />
+      <File FileName="Assets/Editor/MinMaxDrawer.cs" Line="127" Column="54" />
+      <File FileName="Assets/Scripts/CameraFollow.cs" Line="9" Column="1" />
+      <File FileName="Assets/Scripts/Monster.cs" Line="29" Column="39" />
+      <File FileName="Assets/Editor/VectorLabelsAttributeDrawer.cs" Line="95" Column="2" />
+      <File FileName="Assets/EditorAttibutes/VectorLabelsAttribute.cs" Line="10" Column="2" />
+      <File FileName="Assets/Scripts/Action.cs" Line="63" Column="6" />
+      <File FileName="Assets/Scripts/DrawHealthbar.cs" Line="60" Column="67" />
+      <File FileName="Assets/Scripts/Player.cs" Line="26" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

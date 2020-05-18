@@ -64,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\LunenEditor.cs" />
+    <Compile Include="Assets\Editor\LunenToMonsterGeneratorEditor.cs" />
+    <Compile Include="Assets\Editor\MinMaxDrawer.cs" />
+    <Compile Include="Assets\Editor\VectorLabelsAttributeDrawer.cs" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2019.3.13f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

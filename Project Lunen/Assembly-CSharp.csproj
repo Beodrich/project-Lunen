@@ -63,11 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EditorAttibutes\MinMaxAttribute.cs" />
+    <Compile Include="Assets\EditorAttibutes\VectorLabelsAttribute.cs" />
     <Compile Include="Assets\Scripts\Action.cs" />
     <Compile Include="Assets\Scripts\Battle.cs" />
     <Compile Include="Assets\Scripts\BattleSetup.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-    <Compile Include="Assets\Scripts\DEBUG_BattleBuilder.cs" />
     <Compile Include="Assets\Scripts\Director.cs" />
     <Compile Include="Assets\Scripts\DrawHealthbar.cs" />
     <Compile Include="Assets\Scripts\GenerateMonster.cs" />

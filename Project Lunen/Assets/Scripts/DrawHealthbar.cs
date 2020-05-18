@@ -57,7 +57,7 @@ public class DrawHealthbar : MonoBehaviour
             {
                 if (isShowingHealth)
                 {
-                    PlayerHealth = (((float)targetMonster.Health.Current) / ((float)targetMonster.GetMaxHealth())) * 100f;
+                    PlayerHealth = (((float)targetMonster.Health.z) / ((float)targetMonster.GetMaxHealth())) * 100f;
                     LastPlayerHealth += (PlayerHealth - LastPlayerHealth) * ChangeSpeed * Time.unscaledDeltaTime;
                     HealthToShow = LastPlayerHealth;
                 }

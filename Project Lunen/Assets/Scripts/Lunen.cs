@@ -4,11 +4,26 @@ using UnityEngine;
 
 public class Lunen : MonoBehaviour
 {
+    
+
+    [System.Serializable]
+    public struct LearnedAction
+    {
+        public GameObject Action;
+        public int Level;
+    }
+
     public string Name;
-    public Types.Element[] Elements;
-    public int PointsPerLevel;
-    public int BaseHealth;
-    public int BaseAttack;
-    public int BaseDefense;
-    public int BaseSpeed;
+    public List<Types.Element> Elements;
+    public List<LearnedAction> ActionsToLearn;
+    public float CooldownTime;
+    [VectorLabels("Start"," PerLevel")]
+    public Vector2Int Health;
+    [VectorLabels("Start", " PerLevel")]
+    public Vector2Int Attack;
+    [VectorLabels("Start", " PerLevel")]
+    public Vector2Int Defense;
+    [VectorLabels("Start", " PerLevel")]
+    public Vector2Int Speed;
+    
 }

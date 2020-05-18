@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8082643488644169676}
   m_Layer: 0
   m_Name: BattleSetup
-  m_TagString: Untagged
+  m_TagString: BattleSetup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,5 +47,6 @@ MonoBehaviour:
   EnemyLunenTeam: []
   CanCapture: 0
   CanRun: 0
+  Backdrop: 0
   MonsterTemplate: {fileID: 2324287439143063678, guid: ce7650befca7144ae9e5cc4263c99950,
     type: 3}

@@ -17,6 +17,10 @@ public class BattleSetup : MonoBehaviour
 
     void Awake()
     {
+        if (GameObject.FindGameObjectsWithTag("BattleSetup").Length >= 2)
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(this.gameObject);
     }
 
