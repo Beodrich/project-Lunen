@@ -385,7 +385,7 @@ MonoBehaviour:
   lowHealthFlash: 25
   flashAdjustment: 0.25
   flashTimer: 0
-  timeBetweenFlashes: 5
+  timeBetweenFlashes: 1
   timeBetweenFlashesCurrent: 0
   flashChanged: 0
   isShowingHealth: 1

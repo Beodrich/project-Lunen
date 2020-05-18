@@ -11,10 +11,17 @@ public class Lunen : MonoBehaviour
         public int Level;
     }
 
+    [Header("Species Info")]
+
     public string Name;
     public List<Types.Element> Elements;
     public List<LearnedAction> ActionsToLearn;
-    public float CooldownTime;
+
+    public GameObject EvolutionLunen;
+    public int EvolutionLevel;
+
+    [Header("Stats")]
+
     [VectorLabels("Start"," PerLevel")]
     public Vector2Int Health;
     [VectorLabels("Start", " PerLevel")]
@@ -23,4 +30,6 @@ public class Lunen : MonoBehaviour
     public Vector2Int Defense;
     [VectorLabels("Start", " PerLevel")]
     public Vector2Int Speed;
+
+    public float CooldownTime;
 }

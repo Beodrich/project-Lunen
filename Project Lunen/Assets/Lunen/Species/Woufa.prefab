@@ -46,8 +46,11 @@ MonoBehaviour:
   Name: Woufa
   Elements: 00000000
   ActionsToLearn: []
-  CooldownTime: 10
+  EvolutionLunen: {fileID: 813028601925389350, guid: f2e48d93f5e3e4909befe0db212ac5bd,
+    type: 3}
+  EvolutionLevel: 21
   Health: {x: 21, y: 2}
   Attack: {x: 8, y: 2}
   Defense: {x: 5, y: 1}
   Speed: {x: 7, y: 1}
+  CooldownTime: 10
