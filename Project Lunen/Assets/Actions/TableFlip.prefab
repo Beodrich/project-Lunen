@@ -47,8 +47,8 @@ MonoBehaviour:
   Target: 0
   Effect: 0
   Type: 8
-  Cooldown: 30
   Animation: {fileID: 0}
   Power: 50
+  TurnsRequired: 2
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}

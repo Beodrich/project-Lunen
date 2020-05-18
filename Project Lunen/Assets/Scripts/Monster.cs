@@ -5,45 +5,47 @@ using UnityEngine.UI;
 
 public class Monster : MonoBehaviour
 {
-    [System.Serializable]
-    public struct Stat
-    {
-        public int Base;
-        public int Mod;
-        public int Current;
-    }
+    
+
+    [Header("Individual Stuff")]
 
     public string Nickname;
-    public string Species;
     public int Level;
-    public int NextXP;
-    public int CurrXP;
-    public float CurrCooldown;
-    public float LastCooldown = 1f;
 
-    public bool Enemy;
-
-    public Stat Health;
-    public Stat Attack;
-    public Stat Defense;
-    public Stat Speed;
-
-    public Types.Element[] Elements;
+    [VectorLabels("Current", "Required")]
+    public Vector2Int Exp;
 
     public List<GameObject> ActionSet;
 
-    public GameObject DEBUG_TEXT_OUTPUT;
+    
+
+    [Header("Stats")]
+
+    [VectorLabels("Base", " Mod", " Current")]
+    public Vector3Int Health;
+    [VectorLabels("Base", " Mod", " Current")]
+    public Vector3Int Attack;
+    [VectorLabels("Base", " Mod", " Current")]
+    public Vector3Int Defense;
+    [VectorLabels("Base", " Mod", " Current")]
+    public Vector3Int Speed;
+
+    
+
+    [Header("Wild Monster Stuff")]
+
+    public bool Enemy;
 
     [HideInInspector]
+    public Lunen SourceLunen;
+    [HideInInspector]
     public Director loopback;
+    [HideInInspector]
+    public float CurrCooldown;
 
     private void Start()
     {
-        CurrCooldown = LastCooldown = 1f;
-        if (DEBUG_TEXT_OUTPUT != null)
-        {
-            DEBUG_DISPLAY_TEXT();
-        }
+        CurrCooldown = 1f;
     }
 
     private void Update()
@@ -59,24 +61,29 @@ public class Monster : MonoBehaviour
                 CurrCooldown = 0f;
             }
         }
-        if (Health.Current <= 0)
+        if (Health.z <= 0)
         {
-            loopback.ScanBothParties();
-            Destroy(gameObject);
+            if (loopback != null) loopback.ScanBothParties();
+            if (Enemy) Destroy(gameObject);
         }
     }
 
     public void TemplateToMonster(Lunen template)
     {
-        Health.Base = template.BaseHealth;
-        Attack.Base = template.BaseAttack;
-        Defense.Base = template.BaseDefense;
-        Speed.Base = template.BaseSpeed;
-        Species = template.Name;
-        AssortPointsAI(Level * template.PointsPerLevel);
-        Health.Current = GetMaxHealth();
+        SourceLunen = template;
+
+        Health.x = template.Health.x;
+        Attack.x = template.Attack.x;
+        Defense.x = template.Defense.x;
+        Speed.x = template.Speed.x;
+
+        Health.y = template.Health.y * Level;
+        Attack.y = template.Attack.y * Level;
+        Defense.y = template.Defense.y * Level;
+        Speed.y = template.Speed.y * Level;
+        Health.z = GetMaxHealth();
         CalculateStats();
-        Nickname = Species;
+        Nickname = template.Name;
         SetObjectName();
     }
 
@@ -88,10 +95,10 @@ public class Monster : MonoBehaviour
             int random = Random.Range(0, dividend);
             switch (random)
             {
-                case 0: Health.Mod += 1; break;
-                case 1: Attack.Mod += 1; break;
-                case 2: Defense.Mod += 1; break;
-                case 3: Speed.Mod += 1; break;
+                case 0: Health.y += 1; break;
+                case 1: Attack.y += 1; break;
+                case 2: Defense.y += 1; break;
+                case 3: Speed.y += 1; break;
             }
 
         }
@@ -99,44 +106,18 @@ public class Monster : MonoBehaviour
 
     public void CalculateStats()
     {
-        Attack.Current = Attack.Base + Attack.Mod;
-        Defense.Current = Defense.Base + Defense.Mod;
-        Speed.Current = Speed.Base + Speed.Mod;
+        Attack.z = Attack.x + Attack.y;
+        Defense.z = Defense.x + Defense.y;
+        Speed.z = Speed.x + Speed.y;
     }
 
     public void SetObjectName()
     {
-        transform.name = Species + "_" + Nickname + "_Monster";
+        transform.name = SourceLunen.Name + "_" + Nickname + "_Monster";
     }
 
     public int GetMaxHealth()
     {
-        return Health.Base + Health.Mod;
-    }
-
-    public void DEBUG_DISPLAY_TEXT()
-    {
-        if (DEBUG_TEXT_OUTPUT != null)
-        {
-            string output = "Species: " + Species
-                + "\n" + "Nickname: " + Nickname + "\n"
-                + "Level: " + Level + "\n"
-                + StatInfo("Health", Health) + StatInfo("Attack", Attack) + StatInfo("Defense", Defense) + StatInfo("Speed", Speed);
-            for (int i = 0; i < ActionSet.Count; i++)
-            {
-                output += ActionSet[i].name + "\n";
-            }
-            DEBUG_TEXT_OUTPUT.GetComponent<Text>().text = output;
-        }
-    }
-
-    public string StatInfo(string name, Stat input)
-    {
-        string output =
-            name + ": " + "\n" +
-            "   BAS: " + input.Base + "\n" +
-            "   MOD: " + input.Mod + "\n" +
-            "   CUR: " + input.Current + "\n";
-        return output;
+        return Health.x + Health.y;
     }
 }

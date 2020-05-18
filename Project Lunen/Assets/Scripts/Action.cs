@@ -28,9 +28,9 @@ public class Action : MonoBehaviour
     public MonsterAim Target;
     public IntendedEffect Effect;
     public Types.Element Type;
-    public float Cooldown;
     public GameObject Animation;
     public int Power;
+    public float TurnsRequired;
 
     [HideInInspector]
     public Monster MonsterUser;
@@ -51,14 +51,14 @@ public class Action : MonoBehaviour
             case IntendedEffect.DealDamageWithStatusEffect:
                 break;
         }
-        MonsterUser.CurrCooldown = MonsterUser.LastCooldown = Cooldown;
+        MonsterUser.CurrCooldown = MonsterUser.SourceLunen.CooldownTime;
         MonsterUser.loopback.Player1MenuClick(MonsterUser.loopback.MenuOpen);
     }
 
     public void Attack()
     {
-        float modifier = Types.TypeMatch(Type, MonsterTarget.Elements);
-        float damage = ((((2 * MonsterUser.Level / 5) + 2) * Power * (MonsterUser.Attack.Current / MonsterTarget.Defense.Current) / 50) + 2) * modifier;
-        MonsterTarget.Health.Current -= Mathf.RoundToInt(damage);
+        float modifier = Types.TypeMatch(Type, MonsterTarget.SourceLunen.Elements);
+        float damage = ((((2 * MonsterUser.Level / 5) + 2) * Power * (MonsterUser.Attack.z / MonsterTarget.Defense.z) / 50) + 2) * modifier;
+        MonsterTarget.Health.z -= Mathf.RoundToInt(damage);
     }
 }
