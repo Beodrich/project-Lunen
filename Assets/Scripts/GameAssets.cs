@@ -14,6 +14,6 @@ public class GameAssets : MonoBehaviour
         }
     }
 
-    public Sprite potion;
-    public Sprite ball;
+    public Sprite Potion;
+    public Sprite Pokeball;
 }

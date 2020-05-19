@@ -18,7 +18,9 @@ public class UI_Shop : MonoBehaviour
     }
     private void Start()
     {
-        CreateItemButton()
+        CreateItemButton(Item.GetSprite(Item.ItemType.Potion), "Potion", Item.GetCost(Item.ItemType.Potion), 0);
+
+        CreateItemButton(Item.GetSprite(Item.ItemType.Pokeball), "PokeBall", Item.GetCost(Item.ItemType.Pokeball), 0);
     }
     private void CreateItemButton(Sprite itemSprint, string itemName, int itemCost, int positionIndex) {
         Transform shopeItemTranform = Instantiate(shopItemTemp, container);
