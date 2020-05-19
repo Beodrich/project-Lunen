@@ -36,7 +36,7 @@ public class Item
             default:
             case ItemType.Potion: return GameAssets.Instance.Potion;
             case ItemType.Pokeball: return GameAssets.Instance.Pokeball;
-;
+
                 //TO DO: ADD MORE LATTER 
 
         }

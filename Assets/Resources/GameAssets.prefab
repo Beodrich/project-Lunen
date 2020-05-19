@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5303720686376669082}
-  - component: {fileID: 6932076028420661353}
+  - component: {fileID: 4871534459586588654}
   m_Layer: 0
   m_Name: GameAssets
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6932076028420661353
+--- !u!114 &4871534459586588654
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,8 +40,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2191897617521206399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8534a1a9445331848a107673074ca1df, type: 3}
+  m_Script: {fileID: 11500000, guid: c2413b9cfb1a54a21b1cb320f62be65c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potion: {fileID: 21300000, guid: 3226b0270a77adc4481cb7da3c6e4a67, type: 3}
-  ball: {fileID: 21300000, guid: f5925301e218f4f45a285b9e47c43164, type: 3}
+  Potion: {fileID: 21300000, guid: 179edc4d9ca64f548a7470af6acdf269, type: 3}
+  Pokeball: {fileID: 21300000, guid: 75b572e01442152408da0491d37cde3c, type: 3}
