@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MyBox;
 
 public class Action : MonoBehaviour
 {
@@ -20,17 +21,23 @@ public class Action : MonoBehaviour
     public enum IntendedEffect
     {
         DealDamage,
-        Heal,
-        StatusEffect,
-        DealDamageWithStatusEffect
+        ApplyBuff,
+        Heal
     }
+
+    [Separator("Basic Action Info")]
+
     public string Name;
-    public MonsterAim Target;
-    public IntendedEffect Effect;
     public Types.Element Type;
+    public int Turns;
     public GameObject Animation;
-    public int Power;
-    public float TurnsRequired;
+
+    [Separator("Effects")]
+
+    public IntendedEffect Effect;
+    public MonsterAim Target;
+    [ConditionalField(nameof(Effect), false, IntendedEffect.DealDamage)] public int Power;
+    
 
     [HideInInspector]
     public Monster MonsterUser;
@@ -46,9 +53,7 @@ public class Action : MonoBehaviour
                 break;
             case IntendedEffect.Heal:
                 break;
-            case IntendedEffect.StatusEffect:
-                break;
-            case IntendedEffect.DealDamageWithStatusEffect:
+            case IntendedEffect.ApplyBuff:
                 break;
         }
         MonsterUser.CurrCooldown = MonsterUser.SourceLunen.CooldownTime;
@@ -57,11 +62,11 @@ public class Action : MonoBehaviour
 
     public void Attack()
     {
-        float Attack = MonsterUser.Attack.z;
-        float Defense = MonsterTarget.Defense.z;
+        float Attack = MonsterUser.AfterEffectStats.x;
+        float Defense = MonsterTarget.AfterEffectStats.y;
         float STAB = Types.SameTypeAttackBonus(MonsterUser.SourceLunen.Elements, Type);
         float Modifier = Types.TypeMatch(Type, MonsterTarget.SourceLunen.Elements);
-        float Damage = (3 + ((float)MonsterUser.Level / 100) * ((float)Power / 2) * (1 + (float)Attack / 100) * (1 - (0.004f * (float)Defense))) * STAB * Modifier;
+        float Damage = (3 + ((float)MonsterUser.Level / 100) * ((float)Power / 2) * (1 + Attack / 100) * (1 - (0.004f * Defense))) * STAB * Modifier;
         MonsterTarget.TakeDamage(Mathf.RoundToInt(Damage));
         Debug.Log(Damage);
     }

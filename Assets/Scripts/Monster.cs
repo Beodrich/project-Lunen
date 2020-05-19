@@ -14,6 +14,8 @@ public class Monster : MonoBehaviour
     public Vector2Int Exp;
 
     public List<GameObject> ActionSet;
+    public List<GameObject> StatusEffectObjects;
+    private List<Effects> StatusEffects = new List<Effects>();
 
     [Header("Stats")]
 
@@ -26,6 +28,11 @@ public class Monster : MonoBehaviour
     [VectorLabels("Base", " Mod", " Current")]
     public Vector3Int Speed;
 
+    [VectorLabels("Attack", " Defense", " Speed")]
+    public Vector3 AfterEffectStats;
+
+    
+
     [Header("Wild Monster Stuff")]
 
     public bool Enemy;
@@ -37,9 +44,14 @@ public class Monster : MonoBehaviour
     [HideInInspector]
     public float CurrCooldown;
 
+    private bool CooldownDone;
+    private int EndOfTurnDamage;
+    public List<float> DamageTakenScalar;
+
     private void Start()
     {
         CurrCooldown = 1f;
+        CooldownDone = true;
     }
 
     private void Update()
@@ -49,10 +61,21 @@ public class Monster : MonoBehaviour
             if (CurrCooldown > 0f)
             {
                 CurrCooldown -= Time.unscaledDeltaTime;
+                CooldownDone = false;
             }
             else
             {
-                CurrCooldown = 0f;
+                if (!CooldownDone)
+                {
+                    //This is the point where the cooldown finishes. There's a lot to program here.
+                    CalculateStats();
+                    if (EndOfTurnDamage > 0)
+                    {
+                        TakeDamage(EndOfTurnDamage);
+                    }
+                    CooldownDone = true;
+                }
+                else CurrCooldown = 0f;
             }
         }
         
@@ -111,9 +134,139 @@ public class Monster : MonoBehaviour
 
     public void CalculateStats()
     {
+        bool switchATKandDEF = false;
+
         Attack.z = Attack.x + Attack.y;
         Defense.z = Defense.x + Defense.y;
         Speed.z = Speed.x + Speed.y;
+
+        AfterEffectStats.x = Attack.z;
+        AfterEffectStats.y = Defense.z;
+        AfterEffectStats.z = Speed.z;
+
+        EndOfTurnDamage = 0;
+
+        DamageTakenScalar.Clear();
+
+        StatusEffects.Clear();
+
+        for (int i = 0; i < StatusEffectObjects.Count; i++)
+        {
+            StatusEffects.Add(StatusEffectObjects[i].GetComponent<Effects>());
+        }
+
+        List<int> removeTheseEffects = new List<int>();
+        for (int i = 0; i < 11; i++) DamageTakenScalar.Add(1f);
+
+        for (int i = 0; i < StatusEffects.Count; i++)
+        {
+            StatusEffects[i].ExpiresIn--;
+            if (StatusEffects[i].ExpiresIn <= 0)
+            {
+                removeTheseEffects.Add(i);
+            }
+            else
+            {
+                switch (StatusEffects[i].AttackEffect)
+                {
+                    case Effects.RangeOfEffect.Global:
+                        switch (StatusEffects[i].GlobalAttack.StatChangeType)
+                        {
+                            case Effects.StatChange.NumberType.Percentage:
+                                AfterEffectStats.x += (AfterEffectStats.x * (StatusEffects[i].GlobalAttack.PercentageChange / 100));
+                                break;
+                            case Effects.StatChange.NumberType.HardNumber:
+                                AfterEffectStats.x += StatusEffects[i].GlobalAttack.HardNumberChange;
+                                break;
+                        }
+                        break;
+
+                }
+                switch (StatusEffects[i].DefenseEffect)
+                {
+                    case Effects.RangeOfEffect.Global:
+                        switch (StatusEffects[i].GlobalDefense.StatChangeType)
+                        {
+                            case Effects.StatChange.NumberType.Percentage:
+                                AfterEffectStats.y += (AfterEffectStats.y * (StatusEffects[i].GlobalDefense.PercentageChange / 100));
+                                break;
+                            case Effects.StatChange.NumberType.HardNumber:
+                                AfterEffectStats.y += StatusEffects[i].GlobalDefense.HardNumberChange;
+                                break;
+                        }
+                        break;
+
+                }
+                switch (StatusEffects[i].SpeedEffect)
+                {
+                    case Effects.RangeOfEffect.Global:
+                        switch (StatusEffects[i].GlobalSpeed.StatChangeType)
+                        {
+                            case Effects.StatChange.NumberType.Percentage:
+                                AfterEffectStats.z += (AfterEffectStats.z * (StatusEffects[i].GlobalSpeed.PercentageChange / 100));
+                                break;
+                            case Effects.StatChange.NumberType.HardNumber:
+                                AfterEffectStats.z += StatusEffects[i].GlobalSpeed.HardNumberChange;
+                                break;
+                        }
+                        break;
+
+                }
+                switch (StatusEffects[i].DamageTakenEffect)
+                {
+                    case Effects.RangeOfEffect.Global:
+                        for (int j = 0; j < 11; j++)
+                        {
+                            DamageTakenScalar[j] += (DamageTakenScalar[j] * (StatusEffects[i].GlobalDamageTaken.PercentageChange / 100));
+                        }
+                        break;
+                    case Effects.RangeOfEffect.TypeBased: //StatusEffects[i].DamageTakenByType
+                        for (int j = 0; j < StatusEffects[i].TypesAfflicted.VulnerableTypes.Count; j++)
+                        {
+                            DamageTakenScalar[(int)StatusEffects[i].TypesAfflicted.VulnerableTypes[j]] += DamageTakenScalar[(int)StatusEffects[i].TypesAfflicted.VulnerableTypes[j]] * (StatusEffects[i].GlobalDamageTaken.PercentageChange / 100);
+                        }
+                        break;
+                }
+
+                switch (StatusEffects[i].EndOfTurnDamage)
+                {
+                    case Effects.HealthRelativity.OfMaxHP:
+                        switch (StatusEffects[i].EndOfTurnDamageType.StatChangeType)
+                        {
+                            case Effects.StatChange.NumberType.Percentage:
+                                EndOfTurnDamage += Mathf.FloorToInt((Health.x + Health.y) * (StatusEffects[i].EndOfTurnDamageType.PercentageChange / 100));
+                                Debug.Log(EndOfTurnDamage);
+                                break;
+                        }
+
+                        break;
+                    case Effects.HealthRelativity.OfRemainingHP:
+                        switch (StatusEffects[i].EndOfTurnDamageType.StatChangeType)
+                        {
+                            case Effects.StatChange.NumberType.Percentage:
+                                
+                                EndOfTurnDamage += Mathf.FloorToInt((Health.z) * (StatusEffects[i].EndOfTurnDamageType.PercentageChange / 100));
+                                Debug.Log(EndOfTurnDamage);
+                                break;
+                        }
+                        break;
+                }
+                if (StatusEffects[i].SwapsAttackAndDefense) switchATKandDEF = true;
+            }
+        }
+
+        for (int i = removeTheseEffects.Count - 1; i > -1; i--)
+        {
+            StatusEffects.RemoveAt(removeTheseEffects[i]);
+            removeTheseEffects.RemoveAt(i);
+        }
+
+        if (switchATKandDEF)
+        {
+            float temp = AfterEffectStats.x;
+            AfterEffectStats.x = AfterEffectStats.y;
+            AfterEffectStats.y = temp;
+        }
     }
 
     public void SetObjectName()

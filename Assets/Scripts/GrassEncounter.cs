@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MyBox;
 
 public class GrassEncounter : MonoBehaviour
 {
@@ -8,8 +9,8 @@ public class GrassEncounter : MonoBehaviour
     public struct Encounter
     {
         public GameObject lunen;
-        [VectorLabels("Min", "Max")]
-        public Vector2Int LevelRange;
+        [MinMaxRange(1,50)]
+        public RangedInt LevelRange;
         [Range(0f, 100f)]
         public float chanceWeight;
     }

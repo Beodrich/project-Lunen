@@ -44,11 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Table Flip
-  Target: 0
-  Effect: 0
   Type: 8
+  Turns: 1
   Animation: {fileID: 0}
+  Effect: 0
+  Target: 0
   Power: 50
-  TurnsRequired: 2
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}

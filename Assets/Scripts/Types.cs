@@ -7,17 +7,17 @@ public static class Types
     [System.Serializable]
     public enum Element
     {
-        Balanced,
-        Earth,
-        Water,
-        Floral,
-        Fire,
-        Plasma,
-        Sky,
-        Ice,
-        Psychic,
-        Cosmic,
-        Corrupted
+        Balanced = 0,
+        Earth = 1,
+        Water = 2,
+        Floral = 3,
+        Fire = 4,
+        Plasma = 5,
+        Sky = 6,
+        Ice = 7,
+        Psychic = 8,
+        Cosmic = 9,
+        Corrupted = 10
     }
 
     const float HE = 2.0f; //High Effect
