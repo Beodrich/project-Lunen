@@ -14,14 +14,14 @@ public class UI_Shop : MonoBehaviour
         container = transform.Find("container");
 
         shopItemTemp = container.Find("ShopItemTemp");
-        shopItemTemp.gameObject.SetActive(false);
+       // shopItemTemp.gameObject.SetActive(false);
     }
     private void Start()
     {
         CreateItemButton(Item.ItemType.Potion,Item.GetSprite(Item.ItemType.Potion), "Potion", Item.GetCost(Item.ItemType.Potion), 0);
 
         CreateItemButton(Item.ItemType.Pokeball, Item.GetSprite(Item.ItemType.Pokeball), "PokeBall", Item.GetCost(Item.ItemType.Pokeball), 1);
-        Hide();
+        //Hide();
     }
     private void CreateItemButton(Item.ItemType itemType,Sprite itemSprint, string itemName, int itemCost, int positionIndex) {
         Transform shopeItemTranform = Instantiate(shopItemTemp, container);
