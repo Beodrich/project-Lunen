@@ -10,8 +10,8 @@ public class Monster : MonoBehaviour
     public string Nickname;
     public int Level;
 
-    [VectorLabels("Current", "Required")]
-    public Vector2Int Exp;
+    [VectorLabels("Curr", " Last", " Next")]
+    public Vector3Int Exp;
 
     public List<GameObject> ActionSet;
     public List<GameObject> StatusEffectObjects;
@@ -31,11 +31,11 @@ public class Monster : MonoBehaviour
     [VectorLabels("Attack", " Defense", " Speed")]
     public Vector3 AfterEffectStats;
 
-    
+
 
     [Header("Wild Monster Stuff")]
 
-    public bool Enemy;
+    public Director.Team MonsterTeam;
 
     [HideInInspector]
     public Lunen SourceLunen;
@@ -44,8 +44,17 @@ public class Monster : MonoBehaviour
     [HideInInspector]
     public float CurrCooldown;
 
+    private float ExpAddEvery = 0.1f;
+    private float ExpAddCurrent = 0.1f;
+    private int FractionOfExp = 30;
+    private int FractionOfHealth = 10;
+    public int ExpToAdd;
+    public int HealthToSubtract;
+
     private bool CooldownDone;
     private int EndOfTurnDamage;
+    [HideInInspector]
+    public int MoveAffinityCost;
     public List<float> DamageTakenScalar;
 
     private void Start()
@@ -77,8 +86,74 @@ public class Monster : MonoBehaviour
                 }
                 else CurrCooldown = 0f;
             }
+            ExpAddCurrent -= Time.unscaledDeltaTime;
+            if (ExpAddCurrent < 0)
+            {
+                ExpAddCurrent += ExpAddEvery;
+                if (ExpToAdd > 0)
+                {
+                    int maxExpPerTick = (Exp.z - Exp.y) / FractionOfExp;
+                    if (maxExpPerTick == 0) maxExpPerTick = 1;
+                    if (maxExpPerTick >= (Exp.z - Exp.x)) //If next exp tick goes over or equals next
+                    {
+                        if (ExpToAdd >= (Exp.z - Exp.x)) //If exp recieved is greater than or equal to next level
+                        {
+                            ExpToAdd -= (Exp.z - Exp.x); //Subtract exp from pool
+                            Exp.x += (Exp.z - Exp.x); //Add from pool to exp total
+                            LevelUp();
+                        }
+                        else
+                        {
+                            Exp.x += ExpToAdd; //Finish off exp pool
+                            ExpToAdd = 0; //Set exp pool to zero.
+                        }
+                    }
+                    else
+                    {
+                        if (ExpToAdd >= maxExpPerTick) //If exp recieved is greater than or equal to max pool per tick
+                        {
+                            ExpToAdd -= maxExpPerTick; //Subtract exp from pool
+                            Exp.x += maxExpPerTick; //Add from pool to exp total
+                        }
+                        else
+                        {
+                            Exp.x += ExpToAdd; //Finish off exp pool
+                            ExpToAdd = 0; //Set exp pool to zero.
+                        }
+                    }
+                }
+                if (HealthToSubtract > 0)
+                {
+                    int maxHPPerTick = (Health.x + Health.y) / FractionOfHealth;
+                    if (maxHPPerTick == 0) maxHPPerTick = 1;
+                    if (HealthToSubtract >= maxHPPerTick) //If exp recieved is greater than or equal to max pool per tick
+                    {
+                        HealthToSubtract -= maxHPPerTick; //Subtract exp from pool
+                        Health.z -= maxHPPerTick; //Add from pool to exp total
+                    }
+                    else
+                    {
+                        Health.z -= HealthToSubtract; //Finish off exp pool
+                        HealthToSubtract = 0; //Set exp pool to zero.
+                    }
+                    if (Health.z <= 0)
+                    {
+                        if (loopback != null) loopback.LunenHasDied(this);
+                        HealthToSubtract = 0;
+                        //if (MonsterTeam == Director.Team.EnemyTeam) Destroy(gameObject);
+                    }
+                }
+            }
         }
         
+    }
+
+    public void LevelUp()
+    {
+        Level++;
+        CalculateStats();
+        CalculateExpTargets();
+        loopback.ScanBothParties();
     }
 
     public void TemplateToMonster(Lunen template)
@@ -96,6 +171,9 @@ public class Monster : MonoBehaviour
         Speed.y = template.Speed.y * Level;
         Health.z = GetMaxHealth();
         CalculateStats();
+        CalculateExpTargets();
+        UpdateMoveCost();
+        Exp.x = Exp.y;
         Nickname = template.Name;
         SetObjectName();
     }
@@ -117,19 +195,29 @@ public class Monster : MonoBehaviour
         }
     }
 
-    public void GiveExp(int value)
+    public void UpdateMoveCost()
     {
+        MoveAffinityCost = 0;
+        for (int i = 0; i < ActionSet.Count; i++)
+        {
+            MoveAffinityCost += ActionSet[i].GetComponent<Action>().AdditionalAffinityCost;
+        }
+    }
 
+    public void GetExp(int value)
+    {
+        ExpToAdd += value;
+    }
+
+    public void CalculateExpTargets()
+    {
+        Exp.y = (Level) * (Level) * (Level);
+        Exp.z = (Level + 1) * (Level + 1) * (Level + 1);
     }
 
     public void TakeDamage(int value)
     {
-        Health.z -= value;
-        if (Health.z <= 0)
-        {
-            if (loopback != null) loopback.ScanBothParties();
-            if (Enemy) Destroy(gameObject);
-        }
+        HealthToSubtract += value;
     }
 
     public void CalculateStats()
@@ -148,26 +236,13 @@ public class Monster : MonoBehaviour
 
         DamageTakenScalar.Clear();
 
-        StatusEffects.Clear();
+        
 
-        for (int i = 0; i < StatusEffectObjects.Count; i++)
-        {
-            StatusEffects.Add(StatusEffectObjects[i].GetComponent<Effects>());
-        }
-
-        List<int> removeTheseEffects = new List<int>();
         for (int i = 0; i < 11; i++) DamageTakenScalar.Add(1f);
 
         for (int i = 0; i < StatusEffects.Count; i++)
         {
-            StatusEffects[i].ExpiresIn--;
-            if (StatusEffects[i].ExpiresIn <= 0)
-            {
-                removeTheseEffects.Add(i);
-            }
-            else
-            {
-                switch (StatusEffects[i].AttackEffect)
+             switch (StatusEffects[i].AttackEffect)
                 {
                     case Effects.RangeOfEffect.Global:
                         switch (StatusEffects[i].GlobalAttack.StatChangeType)
@@ -253,13 +328,6 @@ public class Monster : MonoBehaviour
                 }
                 if (StatusEffects[i].SwapsAttackAndDefense) switchATKandDEF = true;
             }
-        }
-
-        for (int i = removeTheseEffects.Count - 1; i > -1; i--)
-        {
-            StatusEffects.RemoveAt(removeTheseEffects[i]);
-            removeTheseEffects.RemoveAt(i);
-        }
 
         if (switchATKandDEF)
         {
@@ -267,6 +335,42 @@ public class Monster : MonoBehaviour
             AfterEffectStats.x = AfterEffectStats.y;
             AfterEffectStats.y = temp;
         }
+    }
+
+    public void GetStatusEffects()
+    {
+        StatusEffects.Clear();
+
+        for (int i = 0; i < StatusEffectObjects.Count; i++)
+        {
+            StatusEffects.Add(StatusEffectObjects[i].GetComponent<Effects>());
+        }
+    }
+
+    public void EndTurn()
+    {
+        CurrCooldown = SourceLunen.CooldownTime;
+        loopback.Player1MenuClick(loopback.MenuOpen);
+        GetStatusEffects();
+        for (int i = 0; i < StatusEffects.Count; i++)
+        {
+            StatusEffects[i].ExpiresIn--;
+            if (StatusEffects[i].ExpiresIn < 0)
+            {
+                GameObject temp = StatusEffectObjects[i];
+                if (StatusEffects[i].InflictsAnotherEffect)
+                {
+                    GameObject newBuff = Instantiate(StatusEffects[i].NextEffect);
+                    newBuff.transform.SetParent(this.transform);
+                    StatusEffectObjects.Add(newBuff);
+                }
+                StatusEffects.RemoveAt(i);
+                StatusEffectObjects.RemoveAt(i);
+                Destroy(temp);
+                i--;
+            }
+        }
+        CalculateStats();
     }
 
     public void SetObjectName()

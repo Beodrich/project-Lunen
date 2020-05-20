@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7693035154390523440}
   m_Layer: 0
   m_Name: _MonsterTemplate
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,27 +43,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Species: 0
   Nickname: 
   Level: 0
-  NextXP: 0
-  CurrXP: 0
-  Health:
-    Base: 0
-    Mod: 0
-    Current: 0
-  Attack:
-    Base: 0
-    Mod: 0
-    Current: 0
-  Defense:
-    Base: 0
-    Mod: 0
-    Current: 0
-  Speed:
-    Base: 0
-    Mod: 0
-    Current: 0
+  Exp: {x: 0, y: 0, z: 0}
   ActionSet: []
-  DEBUG: 0
-  DEBUG_TEXT_OUTPUT: {fileID: 0}
+  StatusEffectObjects: []
+  Health: {x: 0, y: 0, z: 0}
+  Attack: {x: 0, y: 0, z: 0}
+  Defense: {x: 0, y: 0, z: 0}
+  Speed: {x: 0, y: 0, z: 0}
+  AfterEffectStats: {x: 0, y: 0, z: 0}
+  Enemy: 0
+  SourceLunen: {fileID: 0}
+  loopback: {fileID: 0}
+  CurrCooldown: 0
+  DamageTakenScalar: []

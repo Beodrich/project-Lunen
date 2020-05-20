@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class Director : MonoBehaviour
 {
+    public enum Team
+    {
+        PlayerTeam,
+        EnemyTeam
+    }
+
     public GameObject Player1;
     public GameObject Player2;
     public List<GameObject> DescriptionPanels;
@@ -14,14 +20,15 @@ public class Director : MonoBehaviour
     public List<LunenButton> Player2LunenButtonScripts;
     public List<LunenActionPanel> LunenPanels;
 
-    Player Player1Script;
-    Player Player2Script;
+    [HideInInspector] public Player Player1Script;
+    [HideInInspector] public Player Player2Script;
 
     [HideInInspector]
     public GameObject battleSetupObject;
     [HideInInspector]
     public BattleSetup battleSetup;
 
+    public int MaxLunenOut = 3;
     public int MenuOpen = 0;
     public int EnemyTarget = 0;
 
@@ -53,7 +60,7 @@ public class Director : MonoBehaviour
         
         Player1Script.ReloadTeam();
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < MaxLunenOut; i++)
         {
             if (Player1Script.LunenOut.Count > i)
             {
@@ -90,7 +97,7 @@ public class Director : MonoBehaviour
         
         Player2Script.ReloadTeam();
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < MaxLunenOut; i++)
         {
             if (Player2Script.LunenOut.Count > i)
             {
@@ -116,7 +123,8 @@ public class Director : MonoBehaviour
         Player2Script.ReloadTeam();
         Action action = Player1Script.LunenOut[MenuOpen - 1].ActionSet[index].GetComponent<Action>();
         action.MonsterUser = Player1Script.LunenOut[MenuOpen - 1];
-        action.MonsterTarget = Player2Script.LunenOut[EnemyTarget];
+        while (Player2Script.LunenOut.Count <= EnemyTarget) EnemyTarget--;
+        //action.MonsterTarget = Player2Script.LunenOut[EnemyTarget];
         action.Execute();
     }
 
@@ -132,14 +140,56 @@ public class Director : MonoBehaviour
         Player2LunenButtonScripts[index].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = Player2Script.LunenOut[index];
     }
 
-    private void Update()
+    public void LunenHasDied(Monster lunen)
     {
-        
+        switch (lunen.MonsterTeam)
+        {
+            case Team.PlayerTeam:
+                break;
+            case Team.EnemyTeam:
+                for (int i = 0; i < MaxLunenOut; i++)
+                {
+                    if (Player1Script.LunenOut.Count > i)
+                    {
+                        Player1Script.LunenOut[i].GetExp(CalculateExpPayout(lunen, Player1Script.LunenOut[i]));
+                    }
+                }
+                break;
+        }
+        ScanBothParties();
     }
 
-    public void ScanLunen(Monster scan, int index)
+    public int CalculateExpPayout(Monster deadLunen, Monster lunenGettingEXP)
     {
+        double exactPayout = 1;
 
+        //P = Place of battle; Wild battle = 1, Trainer = 1.5
+        double P = 1;
+        if (battleSetup.typeOfBattle == BattleSetup.BattleType.TrainerBattle) P = 1.5;
+
+        //C = Defeated Lunen’s Affinity Cost
+        double C = deadLunen.SourceLunen.AffinityCost + deadLunen.MoveAffinityCost;
+
+        //[TODO] G = EXP boosting item; no boost = 1, EXP Amplifier = 1.5
+        double G = 1;
+
+        //L = Level of the defeated Lunen
+        double L = deadLunen.Level;
+
+        //N = Number of non-fainted Lunen that participated in battle
+        //double N = Player1Script.LunenOut.Count;
+        double N = 1;
+
+        //Tentative EXP calculation = ( P * C * G * L) / (7 * N)
+        exactPayout = (P * C * G * L) / (2 * N);
+
+        Debug.Log(exactPayout);
+
+        int exactPayoutInt = Mathf.RoundToInt((float)exactPayout);
+
+        if (exactPayoutInt == 0) exactPayoutInt = 1;
+
+        return exactPayoutInt;
     }
 
     public void Player1MenuClick(int index)
@@ -162,6 +212,10 @@ public class Director : MonoBehaviour
                     DescriptionPanels[index - 1].SetActive(true);
                     MenuOpen = index;
                 }
+            }
+            else if (index == 6)
+            {
+                battleSetup.MoveToOverworld(1);
             }
             else
             {

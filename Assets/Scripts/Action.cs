@@ -30,6 +30,7 @@ public class Action : MonoBehaviour
     public string Name;
     public Types.Element Type;
     public int Turns;
+    public int AdditionalAffinityCost;
     public GameObject Animation;
 
     [Separator("Effects")]
@@ -37,7 +38,8 @@ public class Action : MonoBehaviour
     public IntendedEffect Effect;
     public MonsterAim Target;
     [ConditionalField(nameof(Effect), false, IntendedEffect.DealDamage)] public int Power;
-    
+    [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyBuff)] public GameObject EffectToInflict;
+
 
     [HideInInspector]
     public Monster MonsterUser;
@@ -46,6 +48,22 @@ public class Action : MonoBehaviour
 
     public void Execute()
     {
+        switch (Target)
+        {
+            case MonsterAim.SingleOpponent:
+                ExecutePerMonster(MonsterUser.loopback.Player2Script.LunenOut[MonsterUser.loopback.EnemyTarget]);
+                break;
+            case MonsterAim.Self:
+                ExecutePerMonster(MonsterUser);
+                break;
+        }
+        MonsterUser.EndTurn();
+        
+    }
+
+    public void ExecutePerMonster(Monster target)
+    {
+        MonsterTarget = target;
         switch (Effect)
         {
             case IntendedEffect.DealDamage:
@@ -54,10 +72,9 @@ public class Action : MonoBehaviour
             case IntendedEffect.Heal:
                 break;
             case IntendedEffect.ApplyBuff:
+                ApplyBuff(EffectToInflict);
                 break;
         }
-        MonsterUser.CurrCooldown = MonsterUser.SourceLunen.CooldownTime;
-        MonsterUser.loopback.Player1MenuClick(MonsterUser.loopback.MenuOpen);
     }
 
     public void Attack()
@@ -69,5 +86,13 @@ public class Action : MonoBehaviour
         float Damage = (3 + ((float)MonsterUser.Level / 100) * ((float)Power / 2) * (1 + Attack / 100) * (1 - (0.004f * Defense))) * STAB * Modifier;
         MonsterTarget.TakeDamage(Mathf.RoundToInt(Damage));
         Debug.Log(Damage);
+    }
+
+    public void ApplyBuff(GameObject buff)
+    {
+        GameObject newBuff = Instantiate(buff);
+        newBuff.transform.SetParent(MonsterTarget.transform);
+        MonsterTarget.StatusEffectObjects.Add(newBuff);
+        MonsterTarget.CalculateStats();
     }
 }

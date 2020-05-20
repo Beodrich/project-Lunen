@@ -16,6 +16,9 @@ public class Move : MonoBehaviour
 
     private Rigidbody2D rb2D;
 
+    [HideInInspector]
+    public BattleSetup battle;
+
     public void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -37,6 +40,11 @@ public class Move : MonoBehaviour
                     grassEncounterCheckCurrent += grassEncounterCheckEvery;
                 }
             }
+        }
+
+        if (battle == null)
+        {
+            battle = GameObject.Find("BattleSetup").GetComponent<BattleSetup>();
         }
 
         //animator.SetFloat("Horizontal", movement.x);
@@ -67,8 +75,6 @@ public class Move : MonoBehaviour
             searcher += encounter.possibleEncounters[index].chanceWeight;
         }
 
-        BattleSetup battle = GameObject.Find("BattleSetup").GetComponent<BattleSetup>();
-
         battle.GenerateWildEncounter(encounter.possibleEncounters[index].lunen, Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
 
         battle.MoveToBattle(0,0);
@@ -81,19 +87,31 @@ public class Move : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Grass"))
+        switch (other.gameObject.tag)
         {
-            inGrass = true;
-            grassObject = other.gameObject;
+            case "Grass":
+                inGrass = true;
+                grassObject = other.gameObject;
+                break;
+            case "TrainerSight":
+                TrainerEncounter encounter = other.gameObject.GetComponent<TrainerEncounter>();
+                if (encounter != null)
+                {
+                    battle.GenerateTrainerBattle(encounter);
+                    battle.MoveToBattle(0, 0);
+                }
+                break;
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Grass"))
+        switch (other.gameObject.tag)
         {
-            inGrass = false;
-            grassObject = null;
+            case "Grass":
+                inGrass = false;
+                grassObject = null;
+                break;
         }
     }
 }

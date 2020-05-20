@@ -67,4 +67,6 @@ public class Effects : MonoBehaviour
     [ConditionalField(nameof(ShowMiscChanges))] public bool SwapsAttackAndDefense;
     [ConditionalField(nameof(ShowMiscChanges))] public bool UsesRandomMoves;
     [ConditionalField(nameof(ShowMiscChanges))] public bool IsAStatusEffect;
+    [ConditionalField(nameof(ShowMiscChanges))] public bool InflictsAnotherEffect;
+    [ConditionalField(nameof(InflictsAnotherEffect))] public GameObject NextEffect;
 }

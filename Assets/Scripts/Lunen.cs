@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MyBox;
 using UnityEngine;
 
 public class Lunen : MonoBehaviour
@@ -17,8 +18,9 @@ public class Lunen : MonoBehaviour
     public List<Types.Element> Elements;
     public List<LearnedAction> ActionsToLearn;
 
-    public GameObject EvolutionLunen;
-    public int EvolutionLevel;
+    public bool Evolves;
+    [ConditionalField(nameof(Evolves))] public GameObject EvolutionLunen;
+    [ConditionalField(nameof(Evolves))] public int EvolutionLevel;
 
     [Header("Stats")]
 
@@ -30,6 +32,8 @@ public class Lunen : MonoBehaviour
     public Vector2Int Defense;
     [VectorLabels("Start", " PerLevel")]
     public Vector2Int Speed;
+
+    public int AffinityCost;
 
     public float CooldownTime;
 }

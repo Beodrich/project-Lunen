@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
         for (int i = 0; i < LunenTeam.Count; i++)
         {
             Monster tempLunen = LunenTeam[i].GetComponent<Monster>();
+            tempLunen.CalculateStats();
             if (tempLunen.Health.z <= 0)
             {
                 LunenBad.Add(LunenTeam[i]);

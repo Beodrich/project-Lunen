@@ -8,6 +8,7 @@ TagManager:
   - Grass
   - Monster
   - BattleSetup
+  - TrainerSight
   layers:
   - Default
   - TransparentFX

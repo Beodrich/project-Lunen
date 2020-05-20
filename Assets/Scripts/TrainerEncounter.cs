@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TrainerEncounter : MonoBehaviour
 {
-    [System.Serializable]
-    public struct PartyLunen
-    {
-        public GameObject species;
-        [Range(1, 50)]
-        public int level;
-        public List<GameObject> moves;
-    }
+    [HideInInspector]
+    public List<GameObject> TeamObjects;
+    [HideInInspector]
+    public List<Monster> Team;
 
-    public List<PartyLunen> team;
+    private void Awake()
+    {
+        TeamObjects.AddRange(gameObject.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Monster").Select(c => c.gameObject).ToArray());
+        for (int i = 0; i < TeamObjects.Count; i++)
+        {
+            Team.Add(TeamObjects[i].GetComponent<Monster>());
+        }
+    }
 }

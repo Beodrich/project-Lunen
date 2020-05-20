@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1805303417605866885
+--- !u!1 &3184910562827600681
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3039363377638013804}
-  - component: {fileID: 4604638688463619500}
+  - component: {fileID: 7667837170172115016}
+  - component: {fileID: 8626884951320411186}
   m_Layer: 0
-  m_Name: _TemplateEffect
+  m_Name: ExecutePart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3039363377638013804
+--- !u!4 &7667837170172115016
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805303417605866885}
+  m_GameObject: {fileID: 3184910562827600681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.7518473, y: 0.62760967, z: -1.6551194}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,29 +31,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4604638688463619500
+--- !u!114 &8626884951320411186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805303417605866885}
+  m_GameObject: {fileID: 3184910562827600681}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b8ac25374cc248dab6f771eebacd965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExpiresIn: 0
-  AttackEffect: 0
+  ExpiresIn: 99999
+  AttackEffect: 1
   GlobalAttack:
-    StatChangeType: 0
+    StatChangeType: 2
     HardNumberChange: 0
-    PercentageChange: 0
-  DefenseEffect: 0
+    PercentageChange: -20
+  DefenseEffect: 1
   GlobalDefense:
-    StatChangeType: 0
+    StatChangeType: 2
     HardNumberChange: 0
-    PercentageChange: 0
+    PercentageChange: -20
   SpeedEffect: 0
   GlobalSpeed:
     StatChangeType: 0
@@ -87,3 +87,5 @@ MonoBehaviour:
   SwapsAttackAndDefense: 0
   UsesRandomMoves: 0
   IsAStatusEffect: 0
+  InflictsAnotherEffect: 0
+  NextEffect: {fileID: 0}
