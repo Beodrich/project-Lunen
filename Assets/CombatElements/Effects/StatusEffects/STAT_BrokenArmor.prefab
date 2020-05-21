@@ -87,3 +87,5 @@ MonoBehaviour:
   SwapsAttackAndDefense: 0
   UsesRandomMoves: 0
   IsAStatusEffect: 0
+  InflictsAnotherEffect: 0
+  NextEffect: {fileID: 0}

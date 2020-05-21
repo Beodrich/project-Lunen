@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class ShopTrigger : MonoBehaviour
 {
+    [SerializeField] private UI_Shop shop;
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Entered the shop");
+        IShopCustomer shopCustomer = collision.GetComponent<IShopCustomer>();
+        if (shopCustomer != null) {
+            shop.Show(shopCustomer);
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("left the shop");
+        IShopCustomer shopCustomer = collision.GetComponent<IShopCustomer>();
+        if (shopCustomer != null) {
+            shop.Hide();
+        
+        }
     }
 }
