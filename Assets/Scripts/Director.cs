@@ -32,6 +32,12 @@ public class Director : MonoBehaviour
     public int MenuOpen = 0;
     public int EnemyTarget = 0;
 
+    [HideInInspector]
+    public float DirectorDeltaTime;
+    public bool DirectorTimeFlowing;
+    public float DirectorTimeToWait;
+    public bool DirectorGamePaused;
+
     private void Start()
     {
         Player1Script = Player1.GetComponent<Player>();
@@ -47,6 +53,27 @@ public class Director : MonoBehaviour
 
         ScanPlayer1Party();
         ScanPlayer2Party();
+    }
+
+    private void Update()
+    {
+        if (DirectorTimeFlowing)
+        {
+            DirectorDeltaTime = Time.unscaledDeltaTime;
+        }
+        else
+        {
+            DirectorDeltaTime = 0;
+            if (!DirectorGamePaused)
+            {
+                DirectorTimeToWait -= Time.unscaledDeltaTime;
+                if (DirectorTimeToWait <= 0)
+                {
+                    DirectorTimeFlowing = true;
+                }
+            }
+            
+        }
     }
 
     public void ScanBothParties()

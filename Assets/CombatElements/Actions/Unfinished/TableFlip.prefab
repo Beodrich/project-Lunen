@@ -46,9 +46,12 @@ MonoBehaviour:
   Name: Table Flip
   Type: 8
   Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 3
   Animation: {fileID: 0}
   Effect: 0
   Target: 0
   Power: 50
+  EffectToInflict: {fileID: 0}
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}

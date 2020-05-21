@@ -65,86 +65,90 @@ public class Monster : MonoBehaviour
 
     private void Update()
     {
-        if (Time.unscaledDeltaTime < 0.25f)
+        if (loopback != null)
         {
-            if (CurrCooldown > 0f)
+            if (loopback.DirectorDeltaTime != 0)
             {
-                CurrCooldown -= Time.unscaledDeltaTime;
-                CooldownDone = false;
-            }
-            else
-            {
-                if (!CooldownDone)
+                if (CurrCooldown > 0f)
                 {
-                    //This is the point where the cooldown finishes. There's a lot to program here.
-                    CalculateStats();
-                    if (EndOfTurnDamage > 0)
-                    {
-                        TakeDamage(EndOfTurnDamage);
-                    }
-                    CooldownDone = true;
+                    CurrCooldown -= loopback.DirectorDeltaTime;
+                    CooldownDone = false;
                 }
-                else CurrCooldown = 0f;
-            }
-            ExpAddCurrent -= Time.unscaledDeltaTime;
-            if (ExpAddCurrent < 0)
-            {
-                ExpAddCurrent += ExpAddEvery;
-                if (ExpToAdd > 0)
+                else
                 {
-                    int maxExpPerTick = (Exp.z - Exp.y) / FractionOfExp;
-                    if (maxExpPerTick == 0) maxExpPerTick = 1;
-                    if (maxExpPerTick >= (Exp.z - Exp.x)) //If next exp tick goes over or equals next
+                    if (!CooldownDone)
                     {
-                        if (ExpToAdd >= (Exp.z - Exp.x)) //If exp recieved is greater than or equal to next level
+                        //This is the point where the cooldown finishes. There's a lot to program here.
+                        CalculateStats();
+                        if (EndOfTurnDamage > 0)
                         {
-                            ExpToAdd -= (Exp.z - Exp.x); //Subtract exp from pool
-                            Exp.x += (Exp.z - Exp.x); //Add from pool to exp total
-                            LevelUp();
+                            TakeDamage(EndOfTurnDamage);
+                        }
+                        CooldownDone = true;
+                    }
+                    else CurrCooldown = 0f;
+                }
+                ExpAddCurrent -= loopback.DirectorDeltaTime;
+                if (ExpAddCurrent < 0)
+                {
+                    ExpAddCurrent += ExpAddEvery;
+                    if (ExpToAdd > 0)
+                    {
+                        int maxExpPerTick = (Exp.z - Exp.y) / FractionOfExp;
+                        if (maxExpPerTick == 0) maxExpPerTick = 1;
+                        if (maxExpPerTick >= (Exp.z - Exp.x)) //If next exp tick goes over or equals next
+                        {
+                            if (ExpToAdd >= (Exp.z - Exp.x)) //If exp recieved is greater than or equal to next level
+                            {
+                                ExpToAdd -= (Exp.z - Exp.x); //Subtract exp from pool
+                                Exp.x += (Exp.z - Exp.x); //Add from pool to exp total
+                                LevelUp();
+                            }
+                            else
+                            {
+                                Exp.x += ExpToAdd; //Finish off exp pool
+                                ExpToAdd = 0; //Set exp pool to zero.
+                            }
                         }
                         else
                         {
-                            Exp.x += ExpToAdd; //Finish off exp pool
-                            ExpToAdd = 0; //Set exp pool to zero.
+                            if (ExpToAdd >= maxExpPerTick) //If exp recieved is greater than or equal to max pool per tick
+                            {
+                                ExpToAdd -= maxExpPerTick; //Subtract exp from pool
+                                Exp.x += maxExpPerTick; //Add from pool to exp total
+                            }
+                            else
+                            {
+                                Exp.x += ExpToAdd; //Finish off exp pool
+                                ExpToAdd = 0; //Set exp pool to zero.
+                            }
                         }
                     }
-                    else
+                    if (HealthToSubtract > 0)
                     {
-                        if (ExpToAdd >= maxExpPerTick) //If exp recieved is greater than or equal to max pool per tick
+                        int maxHPPerTick = (Health.x + Health.y) / FractionOfHealth;
+                        if (maxHPPerTick == 0) maxHPPerTick = 1;
+                        if (HealthToSubtract >= maxHPPerTick) //If exp recieved is greater than or equal to max pool per tick
                         {
-                            ExpToAdd -= maxExpPerTick; //Subtract exp from pool
-                            Exp.x += maxExpPerTick; //Add from pool to exp total
+                            HealthToSubtract -= maxHPPerTick; //Subtract exp from pool
+                            Health.z -= maxHPPerTick; //Add from pool to exp total
                         }
                         else
                         {
-                            Exp.x += ExpToAdd; //Finish off exp pool
-                            ExpToAdd = 0; //Set exp pool to zero.
+                            Health.z -= HealthToSubtract; //Finish off exp pool
+                            HealthToSubtract = 0; //Set exp pool to zero.
                         }
-                    }
-                }
-                if (HealthToSubtract > 0)
-                {
-                    int maxHPPerTick = (Health.x + Health.y) / FractionOfHealth;
-                    if (maxHPPerTick == 0) maxHPPerTick = 1;
-                    if (HealthToSubtract >= maxHPPerTick) //If exp recieved is greater than or equal to max pool per tick
-                    {
-                        HealthToSubtract -= maxHPPerTick; //Subtract exp from pool
-                        Health.z -= maxHPPerTick; //Add from pool to exp total
-                    }
-                    else
-                    {
-                        Health.z -= HealthToSubtract; //Finish off exp pool
-                        HealthToSubtract = 0; //Set exp pool to zero.
-                    }
-                    if (Health.z <= 0)
-                    {
-                        if (loopback != null) loopback.LunenHasDied(this);
-                        HealthToSubtract = 0;
-                        //if (MonsterTeam == Director.Team.EnemyTeam) Destroy(gameObject);
+                        if (Health.z <= 0)
+                        {
+                            if (loopback != null) loopback.LunenHasDied(this);
+                            HealthToSubtract = 0;
+                            //if (MonsterTeam == Director.Team.EnemyTeam) Destroy(gameObject);
+                        }
                     }
                 }
             }
         }
+        
         
     }
 
@@ -235,8 +239,6 @@ public class Monster : MonoBehaviour
         EndOfTurnDamage = 0;
 
         DamageTakenScalar.Clear();
-
-        
 
         for (int i = 0; i < 11; i++) DamageTakenScalar.Add(1f);
 

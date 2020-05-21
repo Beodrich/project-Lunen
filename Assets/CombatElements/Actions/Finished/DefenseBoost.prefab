@@ -47,6 +47,7 @@ MonoBehaviour:
   Type: 0
   Turns: 1
   AdditionalAffinityCost: 0
+  TimePausePeriod: 3
   Animation: {fileID: 0}
   Effect: 1
   Target: 6

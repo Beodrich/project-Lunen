@@ -31,6 +31,7 @@ public class Action : MonoBehaviour
     public Types.Element Type;
     public int Turns;
     public int AdditionalAffinityCost;
+    public float TimePausePeriod;
     public GameObject Animation;
 
     [Separator("Effects")]
@@ -57,6 +58,8 @@ public class Action : MonoBehaviour
                 ExecutePerMonster(MonsterUser);
                 break;
         }
+        MonsterUser.loopback.DirectorTimeToWait = TimePausePeriod;
+        MonsterUser.loopback.DirectorTimeFlowing = false;
         MonsterUser.EndTurn();
         
     }
