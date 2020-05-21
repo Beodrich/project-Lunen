@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4465065785081176907
+--- !u!1 &2585002291379806925
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4465065785081176905}
-  - component: {fileID: 4465065785081176904}
+  - component: {fileID: 1887485494333018642}
+  - component: {fileID: 6179270885444201374}
   m_Layer: 0
-  m_Name: Execute
+  m_Name: Frenzy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4465065785081176905
+--- !u!4 &1887485494333018642
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4465065785081176907}
+  m_GameObject: {fileID: 2585002291379806925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.0709395, y: 3.2723796, z: -74.237495}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,28 +31,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4465065785081176904
+--- !u!114 &6179270885444201374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4465065785081176907}
+  m_GameObject: {fileID: 2585002291379806925}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Execute
+  Name: Frenzy
   Type: 0
   Turns: 1
   AdditionalAffinityCost: 0
-  TimePausePeriod: 3
+  TimePausePeriod: 0
   Animation: {fileID: 0}
-  Effect: 1
-  Target: 6
-  Power: 0
-  EffectToInflict: {fileID: 7858285855776056481, guid: 50087a6bee12f4e6b8d838590bce90e2,
-    type: 3}
+  PartsOfAction:
+  - Effect: 1
+    Target: 6
+    Power: 0
+    EffectToInflict: {fileID: 4103110986808523788, guid: 96003e4ba3f1346c7a00d884e1ea1dd2,
+      type: 3}
+    OverrideTurns: 0
+    NewTurns: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}

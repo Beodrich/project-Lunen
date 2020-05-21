@@ -45,10 +45,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: BasicAttack
   Type: 0
-  Turns: 0
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 0
   Animation: {fileID: 0}
   Effect: 0
   Target: 0
   Power: 0
+  EffectToInflict: {fileID: 0}
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}

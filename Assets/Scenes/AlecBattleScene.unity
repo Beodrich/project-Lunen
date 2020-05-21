@@ -121,87 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &50781827
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 50781829}
-  - component: {fileID: 50781828}
-  m_Layer: 0
-  m_Name: DebugGodLunen_DebugGodLunen_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &50781828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50781827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: DebugGodLunen
-  Level: 1
-  Exp: {x: 1, y: 1, z: 8}
-  ActionSet:
-  - {fileID: 1255895939}
-  - {fileID: 1175425859}
-  - {fileID: 150707780}
-  - {fileID: 1338299914}
-  StatusEffectObjects: []
-  Health: {x: 999, y: 9, z: 1008}
-  Attack: {x: 999, y: 9, z: 1008}
-  Defense: {x: 999, y: 9, z: 1008}
-  Speed: {x: 999, y: 9, z: 1008}
-  AfterEffectStats: {x: 1008, y: 1008, z: 1008}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 8569570539236419702, guid: 71cb7471971e441bdb4b218df3dd2363,
-    type: 3}
-  loopback: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &50781829
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50781827}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1891348, y: 1.1633098, z: 810.2993}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1255895941}
-  - {fileID: 1175425861}
-  - {fileID: 150707782}
-  - {fileID: 1338299916}
-  m_Father: {fileID: 1767480974}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &59871785
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +251,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59871785}
   m_CullTransparentMesh: 0
---- !u!1 &142078956
+--- !u!1 &76048388
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -340,109 +259,55 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 142078958}
-  - component: {fileID: 142078957}
+  - component: {fileID: 76048390}
+  - component: {fileID: 76048389}
   m_Layer: 0
-  m_Name: AttackBoost(Clone)
+  m_Name: Tackle(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &142078957
+--- !u!114 &76048389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142078956}
+  m_GameObject: {fileID: 76048388}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Attack Boost
+  Name: Tackle
   Type: 0
   Turns: 1
   AdditionalAffinityCost: 0
-  TimePausePeriod: 3
+  TimePausePeriod: 2
   Animation: {fileID: 0}
-  Effect: 1
-  Target: 6
-  Power: 0
-  EffectToInflict: {fileID: 7318141089512678369, guid: 3522b427a3bdd41468fea21b7a9cbcf0,
-    type: 3}
+  PartsOfAction:
+  - Effect: 0
+    Target: 0
+    Power: 40
+    EffectToInflict: {fileID: 0}
+    OverrideTurns: 0
+    NewTurns: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
---- !u!4 &142078958
+--- !u!4 &76048390
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142078956}
+  m_GameObject: {fileID: 76048388}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
+  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2009957641}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &150707780
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 150707782}
-  - component: {fileID: 150707781}
-  m_Layer: 0
-  m_Name: AttackBoost(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &150707781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150707780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Attack Boost
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 3
-  Animation: {fileID: 0}
-  Effect: 1
-  Target: 6
-  Power: 0
-  EffectToInflict: {fileID: 7318141089512678369, guid: 3522b427a3bdd41468fea21b7a9cbcf0,
-    type: 3}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &150707782
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150707780}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 50781829}
-  m_RootOrder: 2
+  m_Father: {fileID: 998858670}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235196285
 GameObject:
@@ -521,194 +386,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235196285}
   m_CullTransparentMesh: 0
---- !u!1 &268382162
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 268382164}
-  - component: {fileID: 268382163}
-  m_Layer: 0
-  m_Name: DefenseBoost(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &268382163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268382162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Defense Boost
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 3
-  Animation: {fileID: 0}
-  Effect: 1
-  Target: 6
-  Power: 0
-  EffectToInflict: {fileID: 375671104344427544, guid: 0a9e43f88f8744b75bc6d57d9b831026,
-    type: 3}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &268382164
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268382162}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 593440616}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &312713654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 312713656}
-  - component: {fileID: 312713655}
-  m_Layer: 0
-  m_Name: TableFlip(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &312713655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312713654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Table Flip
-  Type: 8
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 0
-  Animation: {fileID: 0}
-  Effect: 0
-  Target: 0
-  Power: 50
-  EffectToInflict: {fileID: 0}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &312713656
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312713654}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 318195869}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &318195867
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 318195869}
-  - component: {fileID: 318195868}
-  m_Layer: 0
-  m_Name: Woufa_Woufa_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &318195868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318195867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Woufa
-  Level: 20
-  Exp: {x: 8000, y: 8000, z: 9261}
-  ActionSet:
-  - {fileID: 312713654}
-  - {fileID: 2018945291}
-  StatusEffectObjects: []
-  Health: {x: 21, y: 40, z: 61}
-  Attack: {x: 8, y: 40, z: 48}
-  Defense: {x: 5, y: 20, z: 25}
-  Speed: {x: 7, y: 20, z: 27}
-  AfterEffectStats: {x: 48, y: 25, z: 27}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
-    type: 3}
-  loopback: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &318195869
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318195867}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1891348, y: 1.1633098, z: 810.2993}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 312713656}
-  - {fileID: 2018945293}
-  m_Father: {fileID: 1767480974}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &341869037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,83 +697,6 @@ Transform:
   m_Father: {fileID: 1349677884}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &593440614
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 593440616}
-  - component: {fileID: 593440615}
-  m_Layer: 0
-  m_Name: Woufa_Woufa_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &593440615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 593440614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Woufa
-  Level: 20
-  Exp: {x: 8000, y: 8000, z: 9261}
-  ActionSet:
-  - {fileID: 862438326}
-  - {fileID: 268382162}
-  StatusEffectObjects: []
-  Health: {x: 21, y: 40, z: 61}
-  Attack: {x: 8, y: 40, z: 48}
-  Defense: {x: 5, y: 20, z: 25}
-  Speed: {x: 7, y: 20, z: 27}
-  AfterEffectStats: {x: 48, y: 25, z: 27}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
-    type: 3}
-  loopback: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &593440616
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 593440614}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1891348, y: 1.1633098, z: 810.2993}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 862438328}
-  - {fileID: 268382164}
-  m_Father: {fileID: 1767480974}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &610755467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1112,13 +712,13 @@ PrefabInstance:
     - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
         type: 3}
       propertyPath: LunenMoves.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
         type: 3}
       propertyPath: LunenBase
       value: 
-      objectReference: {fileID: 8084804094902623218, guid: 2316018688f1a441e9e7cb411d28c4d6,
+      objectReference: {fileID: 7137557924080243783, guid: 71cb7471971e441bdb4b218df3dd2363,
         type: 3}
     - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
         type: 3}
@@ -1129,7 +729,7 @@ PrefabInstance:
     - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
         type: 3}
       propertyPath: LunenLevel
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
         type: 3}
@@ -1288,61 +888,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612593727}
   m_CullTransparentMesh: 0
---- !u!1 &656323272
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 656323274}
-  - component: {fileID: 656323273}
-  m_Layer: 0
-  m_Name: Tackle(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &656323273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656323272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Tackle
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 2
-  Animation: {fileID: 0}
-  Effect: 0
-  Target: 0
-  Power: 40
-  EffectToInflict: {fileID: 0}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &656323274
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656323272}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1132956512}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &680532409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1750,117 +1295,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769656002}
   m_CullTransparentMesh: 0
---- !u!1 &862438326
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 862438328}
-  - component: {fileID: 862438327}
-  m_Layer: 0
-  m_Name: Tackle(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &862438327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862438326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Tackle
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 2
-  Animation: {fileID: 0}
-  Effect: 0
-  Target: 0
-  Power: 40
-  EffectToInflict: {fileID: 0}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &862438328
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862438326}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 593440616}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &880197137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 880197139}
-  - component: {fileID: 880197138}
-  m_Layer: 0
-  m_Name: Execute(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &880197138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880197137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Execute
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 3
-  Animation: {fileID: 0}
-  Effect: 1
-  Target: 6
-  Power: 0
-  EffectToInflict: {fileID: 7858285855776056481, guid: 50087a6bee12f4e6b8d838590bce90e2,
-    type: 3}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &880197139
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 880197137}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1755565008}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &949294313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,6 +1345,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &998858668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 998858670}
+  - component: {fileID: 998858669}
+  m_Layer: 0
+  m_Name: Woufa_Woufa_Monster
+  m_TagString: Monster
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &998858669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998858668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nickname: Woufa
+  Level: 20
+  Exp: {x: 8000, y: 8000, z: 9261}
+  ActionSet:
+  - {fileID: 76048388}
+  StatusEffectObjects: []
+  Health: {x: 21, y: 40, z: 61}
+  Attack: {x: 8, y: 40, z: 48}
+  Defense: {x: 5, y: 20, z: 25}
+  Speed: {x: 7, y: 20, z: 27}
+  AfterEffectStats: {x: 48, y: 25, z: 27}
+  MonsterTeam: 0
+  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
+    type: 3}
+  loopback: {fileID: 0}
+  CurrCooldown: 0
+  ExpToAdd: 0
+  HealthToSubtract: 0
+  MoveAffinityCost: 0
+  DamageTakenScalar:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+--- !u!4 &998858670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998858668}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 76048390}
+  m_Father: {fileID: 1767480974}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &998910280
 GameObject:
@@ -2156,62 +1665,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1001347657}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1029343983
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1029343985}
-  - component: {fileID: 1029343984}
-  m_Layer: 0
-  m_Name: Execute(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1029343984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029343983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Execute
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 3
-  Animation: {fileID: 0}
-  Effect: 1
-  Target: 6
-  Power: 0
-  EffectToInflict: {fileID: 7858285855776056481, guid: 50087a6bee12f4e6b8d838590bce90e2,
-    type: 3}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &1029343985
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029343983}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2009957641}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1045134894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2327,12 +1780,12 @@ PrefabInstance:
     - target: {fileID: 6420312131065665525, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -94.600006
+      value: -94.6001
       objectReference: {fileID: 0}
     - target: {fileID: 6420312131065665525, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -103.73001
+      value: -103.72998
       objectReference: {fileID: 0}
     - target: {fileID: 6420312131065665525, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
         type: 3}
@@ -2468,193 +1921,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1349677884}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1123093914
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1123093916}
-  - component: {fileID: 1123093915}
-  m_Layer: 0
-  m_Name: Tackle(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1123093915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123093914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Tackle
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 2
-  Animation: {fileID: 0}
-  Effect: 0
-  Target: 0
-  Power: 40
-  EffectToInflict: {fileID: 0}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &1123093916
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123093914}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1755565008}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1132956510
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1132956512}
-  - component: {fileID: 1132956511}
-  m_Layer: 0
-  m_Name: Woufa_Woufa_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1132956511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132956510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Woufa
-  Level: 20
-  Exp: {x: 8000, y: 8000, z: 9261}
-  ActionSet:
-  - {fileID: 656323272}
-  - {fileID: 1759557024}
-  StatusEffectObjects: []
-  Health: {x: 21, y: 40, z: 61}
-  Attack: {x: 8, y: 40, z: 48}
-  Defense: {x: 5, y: 20, z: 25}
-  Speed: {x: 7, y: 20, z: 27}
-  AfterEffectStats: {x: 48, y: 25, z: 27}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
-    type: 3}
-  loopback: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &1132956512
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132956510}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1891348, y: 1.1633098, z: 810.2993}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 656323274}
-  - {fileID: 1759557026}
-  m_Father: {fileID: 1767480974}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1175425859
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1175425861}
-  - component: {fileID: 1175425860}
-  m_Layer: 0
-  m_Name: Tackle(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1175425860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175425859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Tackle
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 2
-  Animation: {fileID: 0}
-  Effect: 0
-  Target: 0
-  Power: 40
-  EffectToInflict: {fileID: 0}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &1175425861
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175425859}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 50781829}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1191910589
 GameObject:
@@ -2867,7 +2133,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228313627}
   m_CullTransparentMesh: 0
---- !u!1 &1255895939
+--- !u!1 &1234633928
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2875,53 +2141,72 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1255895941}
-  - component: {fileID: 1255895940}
+  - component: {fileID: 1234633930}
+  - component: {fileID: 1234633929}
   m_Layer: 0
-  m_Name: Execute(Clone)
-  m_TagString: Untagged
+  m_Name: DebugGodLunen_DebugGodLunen_Monster
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1255895940
+--- !u!114 &1234633929
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255895939}
+  m_GameObject: {fileID: 1234633928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Execute
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 3
-  Animation: {fileID: 0}
-  Effect: 1
-  Target: 6
-  Power: 0
-  EffectToInflict: {fileID: 7858285855776056481, guid: 50087a6bee12f4e6b8d838590bce90e2,
+  Nickname: DebugGodLunen
+  Level: 1
+  Exp: {x: 1, y: 1, z: 8}
+  ActionSet:
+  - {fileID: 1963039889}
+  StatusEffectObjects: []
+  Health: {x: 999, y: 9, z: 1008}
+  Attack: {x: 999, y: 9, z: 1008}
+  Defense: {x: 999, y: 9, z: 1008}
+  Speed: {x: 999, y: 9, z: 1008}
+  AfterEffectStats: {x: 1008, y: 1008, z: 1008}
+  MonsterTeam: 0
+  SourceLunen: {fileID: 8569570539236419702, guid: 71cb7471971e441bdb4b218df3dd2363,
     type: 3}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &1255895941
+  loopback: {fileID: 0}
+  CurrCooldown: 0
+  ExpToAdd: 0
+  HealthToSubtract: 0
+  MoveAffinityCost: 0
+  DamageTakenScalar:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+--- !u!4 &1234633930
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1255895939}
+  m_GameObject: {fileID: 1234633928}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
+  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 50781829}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 1963039891}
+  m_Father: {fileID: 1767480974}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1332053521
 PrefabInstance:
@@ -3084,61 +2369,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1332053521}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1338299914
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1338299916}
-  - component: {fileID: 1338299915}
-  m_Layer: 0
-  m_Name: DebugGodMove(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1338299915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338299914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: DebugGodMove
-  Type: 10
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 0
-  Animation: {fileID: 0}
-  Effect: 0
-  Target: 0
-  Power: 999
-  EffectToInflict: {fileID: 0}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &1338299916
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338299914}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 50781829}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1349677883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3358,61 +2588,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1411066853
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1411066855}
-  - component: {fileID: 1411066854}
-  m_Layer: 0
-  m_Name: Tackle(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1411066854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411066853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Tackle
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 5
-  Animation: {fileID: 0}
-  Effect: 0
-  Target: 0
-  Power: 40
-  EffectToInflict: {fileID: 0}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &1411066855
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411066853}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2009957641}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1453138018
 GameObject:
@@ -3799,12 +2974,12 @@ PrefabInstance:
     - target: {fileID: 6420312131065665525, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 55.799988
+      value: 55.80005
       objectReference: {fileID: 0}
     - target: {fileID: 6420312131065665525, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -103.73001
+      value: -103.72998
       objectReference: {fileID: 0}
     - target: {fileID: 6420312131065665525, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
         type: 3}
@@ -4346,139 +3521,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723259635}
   m_CullTransparentMesh: 0
---- !u!1 &1755565006
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1755565008}
-  - component: {fileID: 1755565007}
-  m_Layer: 0
-  m_Name: Woufa_Woufa_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1755565007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755565006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Woufa
-  Level: 20
-  Exp: {x: 8000, y: 8000, z: 9261}
-  ActionSet:
-  - {fileID: 1123093914}
-  - {fileID: 880197137}
-  StatusEffectObjects: []
-  Health: {x: 21, y: 40, z: 61}
-  Attack: {x: 8, y: 40, z: 48}
-  Defense: {x: 5, y: 20, z: 25}
-  Speed: {x: 7, y: 20, z: 27}
-  AfterEffectStats: {x: 48, y: 25, z: 27}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
-    type: 3}
-  loopback: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &1755565008
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755565006}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1891348, y: 1.1633098, z: 810.2993}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1123093916}
-  - {fileID: 880197139}
-  m_Father: {fileID: 1767480974}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1759557024
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1759557026}
-  - component: {fileID: 1759557025}
-  m_Layer: 0
-  m_Name: AttackBoost(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1759557025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759557024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Attack Boost
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 3
-  Animation: {fileID: 0}
-  Effect: 1
-  Target: 6
-  Power: 0
-  EffectToInflict: {fileID: 7318141089512678369, guid: 3522b427a3bdd41468fea21b7a9cbcf0,
-    type: 3}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &1759557026
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759557024}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1132956512}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1767480973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4494,57 +3536,67 @@ PrefabInstance:
     - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
       propertyPath: PlayerLunenTeam.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
       propertyPath: EnemyLunenTeam.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
       propertyPath: PlayerLunenTeam.Array.data[0]
       value: 
-      objectReference: {fileID: 318195867}
+      objectReference: {fileID: 1234633928}
     - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
       propertyPath: PlayerLunenTeam.Array.data[1]
       value: 
-      objectReference: {fileID: 50781827}
+      objectReference: {fileID: 0}
     - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
       propertyPath: PlayerLunenTeam.Array.data[2]
       value: 
-      objectReference: {fileID: 1132956510}
+      objectReference: {fileID: 0}
     - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
       propertyPath: EnemyLunenTeam.Array.data[0]
       value: 
-      objectReference: {fileID: 593440614}
+      objectReference: {fileID: 998858668}
     - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
       propertyPath: EnemyLunenTeam.Array.data[1]
       value: 
-      objectReference: {fileID: 2009957639}
+      objectReference: {fileID: 0}
     - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
       propertyPath: EnemyLunenTeam.Array.data[2]
       value: 
-      objectReference: {fileID: 1755565006}
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
+        type: 3}
+      propertyPath: EnemyLunenTeam.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
+        type: 3}
+      propertyPath: EnemyLunenTeam.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.139562
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.8899386
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -885.09125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
         type: 3}
@@ -4765,7 +3817,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879669269}
   m_CullTransparentMesh: 0
---- !u!1 &2007694636
+--- !u!1 &1963039889
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4773,189 +3825,55 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2007694638}
-  - component: {fileID: 2007694637}
+  - component: {fileID: 1963039891}
+  - component: {fileID: 1963039890}
   m_Layer: 0
-  m_Name: DebugGodMove(Clone)
+  m_Name: Tackle(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2007694637
+--- !u!114 &1963039890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007694636}
+  m_GameObject: {fileID: 1963039889}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: DebugGodMove
-  Type: 10
+  Name: Tackle
+  Type: 0
   Turns: 1
   AdditionalAffinityCost: 0
-  TimePausePeriod: 0
+  TimePausePeriod: 2
   Animation: {fileID: 0}
-  Effect: 0
-  Target: 0
-  Power: 999
-  EffectToInflict: {fileID: 0}
+  PartsOfAction:
+  - Effect: 0
+    Target: 0
+    Power: 40
+    EffectToInflict: {fileID: 0}
+    OverrideTurns: 0
+    NewTurns: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
---- !u!4 &2007694638
+--- !u!4 &1963039891
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2007694636}
+  m_GameObject: {fileID: 1963039889}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2009957641}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2009957639
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2009957641}
-  - component: {fileID: 2009957640}
-  m_Layer: 0
-  m_Name: Wynern_Wynern_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2009957640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009957639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Wynern
-  Level: 50
-  Exp: {x: 125000, y: 125000, z: 132651}
-  ActionSet:
-  - {fileID: 1029343983}
-  - {fileID: 1411066853}
-  - {fileID: 142078956}
-  - {fileID: 2007694636}
-  StatusEffectObjects: []
-  Health: {x: 26, y: 150, z: 176}
-  Attack: {x: 10, y: 150, z: 160}
-  Defense: {x: 7, y: 50, z: 57}
-  Speed: {x: 9, y: 100, z: 109}
-  AfterEffectStats: {x: 160, y: 57, z: 109}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 4275592756907206243, guid: f2e48d93f5e3e4909befe0db212ac5bd,
-    type: 3}
-  loopback: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &2009957641
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2009957639}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1891348, y: 1.1633098, z: 810.2993}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1029343985}
-  - {fileID: 1411066855}
-  - {fileID: 142078958}
-  - {fileID: 2007694638}
-  m_Father: {fileID: 1767480974}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2018945291
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2018945293}
-  - component: {fileID: 2018945292}
-  m_Layer: 0
-  m_Name: Execute(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2018945292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018945291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Execute
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 3
-  Animation: {fileID: 0}
-  Effect: 1
-  Target: 6
-  Power: 0
-  EffectToInflict: {fileID: 7858285855776056481, guid: 50087a6bee12f4e6b8d838590bce90e2,
-    type: 3}
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &2018945293
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018945291}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 318195869}
-  m_RootOrder: 1
+  m_Father: {fileID: 1234633930}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2043653009
 GameObject:

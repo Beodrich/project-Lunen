@@ -14,7 +14,8 @@ public class Action : MonoBehaviour
         AllAllies,
         AllMonstersExceptSelf,
         AllMonsters,
-        Self
+        Self,
+        SingleOpponentAndSelf
     }
 
     [System.Serializable]
@@ -23,6 +24,18 @@ public class Action : MonoBehaviour
         DealDamage,
         ApplyBuff,
         Heal
+
+    }
+
+    [System.Serializable]
+    public class ActionPart
+    {
+        public IntendedEffect Effect;
+        public MonsterAim Target;
+        [ConditionalField(nameof(Effect), false, IntendedEffect.DealDamage)] public int Power;
+        [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyBuff)] public GameObject EffectToInflict;
+        [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyBuff)] public bool OverrideTurns;
+        [ConditionalField(nameof(OverrideTurns))] public int NewTurns;
     }
 
     [Separator("Basic Action Info")]
@@ -35,11 +48,10 @@ public class Action : MonoBehaviour
     public GameObject Animation;
 
     [Separator("Effects")]
-
-    public IntendedEffect Effect;
-    public MonsterAim Target;
-    [ConditionalField(nameof(Effect), false, IntendedEffect.DealDamage)] public int Power;
-    [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyBuff)] public GameObject EffectToInflict;
+    public List<ActionPart> PartsOfAction;
+    
+    
+    
 
 
     [HideInInspector]
@@ -49,14 +61,23 @@ public class Action : MonoBehaviour
 
     public void Execute()
     {
-        switch (Target)
+        foreach (ActionPart part in PartsOfAction)
         {
-            case MonsterAim.SingleOpponent:
-                ExecutePerMonster(MonsterUser.loopback.Player2Script.LunenOut[MonsterUser.loopback.EnemyTarget]);
-                break;
-            case MonsterAim.Self:
-                ExecutePerMonster(MonsterUser);
-                break;
+            switch (part.Target)
+            {
+                case MonsterAim.SingleOpponent:
+                    ExecutePerMonster(part, MonsterUser.loopback.Player2Script.LunenOut[MonsterUser.loopback.EnemyTarget]);
+                    break;
+                case MonsterAim.AllOpponents:
+                    for (int i = 0; i < MonsterUser.loopback.Player2Script.LunenOut.Count; i++)
+                    {
+                        ExecutePerMonster(part, MonsterUser.loopback.Player2Script.LunenOut[i]);
+                    }
+                    break;
+                case MonsterAim.Self:
+                    ExecutePerMonster(part, MonsterUser);
+                    break;
+            }
         }
         MonsterUser.loopback.DirectorTimeToWait = TimePausePeriod;
         MonsterUser.loopback.DirectorTimeFlowing = false;
@@ -64,36 +85,37 @@ public class Action : MonoBehaviour
         
     }
 
-    public void ExecutePerMonster(Monster target)
+    public void ExecutePerMonster(ActionPart part, Monster target)
     {
         MonsterTarget = target;
-        switch (Effect)
+        switch (part.Effect)
         {
             case IntendedEffect.DealDamage:
-                Attack();
+                Attack(part);
                 break;
             case IntendedEffect.Heal:
                 break;
             case IntendedEffect.ApplyBuff:
-                ApplyBuff(EffectToInflict);
+                ApplyBuff(part, part.EffectToInflict);
                 break;
         }
     }
 
-    public void Attack()
+    public void Attack(ActionPart part)
     {
         float Attack = MonsterUser.AfterEffectStats.x;
         float Defense = MonsterTarget.AfterEffectStats.y;
         float STAB = Types.SameTypeAttackBonus(MonsterUser.SourceLunen.Elements, Type);
         float Modifier = Types.TypeMatch(Type, MonsterTarget.SourceLunen.Elements);
-        float Damage = (3 + ((float)MonsterUser.Level / 100) * ((float)Power / 2) * (1 + Attack / 100) * (1 - (0.004f * Defense))) * STAB * Modifier;
+        float Damage = (3 + ((float)MonsterUser.Level / 100) * ((float)part.Power / 2) * (1 + Attack / 100) * (1 - (0.004f * Defense))) * STAB * Modifier;
         MonsterTarget.TakeDamage(Mathf.RoundToInt(Damage));
         Debug.Log(Damage);
     }
 
-    public void ApplyBuff(GameObject buff)
+    public void ApplyBuff(ActionPart part, GameObject buff)
     {
         GameObject newBuff = Instantiate(buff);
+        if (part.OverrideTurns) newBuff.GetComponent<Effects>().ExpiresIn = part.NewTurns;
         newBuff.transform.SetParent(MonsterTarget.transform);
         MonsterTarget.StatusEffectObjects.Add(newBuff);
         MonsterTarget.CalculateStats();

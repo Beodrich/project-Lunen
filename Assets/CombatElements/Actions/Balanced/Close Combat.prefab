@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7962391129676785945
+--- !u!1 &1115708518639429859
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,67 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7962391129676785947}
-  - component: {fileID: 7962391129676785946}
+  - component: {fileID: 1232428452820783252}
+  - component: {fileID: 2054280594055205950}
   m_Layer: 0
-  m_Name: AttackBoost
+  m_Name: Close Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7962391129676785947
+--- !u!4 &1232428452820783252
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7962391129676785945}
+  m_GameObject: {fileID: 1115708518639429859}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.0709395, y: 3.2723796, z: -74.237495}
+  m_LocalPosition: {x: -4.269007, y: 3.8280423, z: -96.26232}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7962391129676785946
+--- !u!114 &2054280594055205950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7962391129676785945}
+  m_GameObject: {fileID: 1115708518639429859}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Attack Boost
+  Name: Close Combat
   Type: 0
   Turns: 1
   AdditionalAffinityCost: 0
-  TimePausePeriod: 3
+  TimePausePeriod: 2
   Animation: {fileID: 0}
-  Effect: 1
-  Target: 6
-  Power: 0
-  EffectToInflict: {fileID: 7318141089512678369, guid: 3522b427a3bdd41468fea21b7a9cbcf0,
-    type: 3}
+  PartsOfAction:
+  - Effect: 0
+    Target: 0
+    Power: 100
+    EffectToInflict: {fileID: 0}
+    OverrideTurns: 0
+    NewTurns: 0
+  - Effect: 1
+    Target: 0
+    Power: 100
+    EffectToInflict: {fileID: 2027749639238553561, guid: 1a9c58b7d920d42309ee5982f3200357,
+      type: 3}
+    OverrideTurns: 1
+    NewTurns: 2
+  - Effect: 1
+    Target: 6
+    Power: 100
+    EffectToInflict: {fileID: 2027749639238553561, guid: 1a9c58b7d920d42309ee5982f3200357,
+      type: 3}
+    OverrideTurns: 1
+    NewTurns: 2
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}

@@ -53,20 +53,21 @@ public class Director : MonoBehaviour
 
         ScanPlayer1Party();
         ScanPlayer2Party();
+        Player2LunenTarget(0);
     }
 
     private void Update()
     {
         if (DirectorTimeFlowing)
         {
-            DirectorDeltaTime = Time.unscaledDeltaTime;
+            DirectorDeltaTime = Time.deltaTime;
         }
         else
         {
             DirectorDeltaTime = 0;
             if (!DirectorGamePaused)
             {
-                DirectorTimeToWait -= Time.unscaledDeltaTime;
+                DirectorTimeToWait -= Time.deltaTime;
                 if (DirectorTimeToWait <= 0)
                 {
                     DirectorTimeFlowing = true;
@@ -96,6 +97,7 @@ public class Director : MonoBehaviour
                 Player1LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + Player1Script.LunenOut[i].Level;
                 Player1LunenButtons[i].SetActive(true);
                 Player1Script.LunenOut[i].loopback = this;
+                Player1Script.LunenOut[i].MonsterTeam = Team.PlayerTeam;
                 AssignPlayer1Bars(i);
                 LunenPanels[i] = DescriptionPanels[i].GetComponent<LunenActionPanel>();
                 LunenPanels[i].FindScripts();
@@ -133,6 +135,7 @@ public class Director : MonoBehaviour
                 Player2LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + Player2Script.LunenOut[i].Level;
                 Player2LunenButtons[i].SetActive(true);
                 Player2Script.LunenOut[i].loopback = this;
+                Player2Script.LunenOut[i].MonsterTeam = Team.EnemyTeam;
                 AssignPlayer2Bars(i);
             }
             else Player2LunenButtons[i].SetActive(false);
@@ -223,6 +226,10 @@ public class Director : MonoBehaviour
     {
         if (MenuOpen == index)
         {
+            if (MenuOpen < 4)
+            {
+                Player1LunenButtonScripts[MenuOpen - 1].isSelected = false;
+            }
             DescriptionPanels[index - 1].SetActive(false);
             MenuOpen = 0;
         }
@@ -235,8 +242,10 @@ public class Director : MonoBehaviour
                     if (MenuOpen != 0)
                     {
                         DescriptionPanels[MenuOpen - 1].SetActive(false);
+                        Player1LunenButtonScripts[MenuOpen - 1].isSelected = false;
                     }
                     DescriptionPanels[index - 1].SetActive(true);
+                    Player1LunenButtonScripts[index - 1].isSelected = true;
                     MenuOpen = index;
                 }
             }
@@ -249,6 +258,10 @@ public class Director : MonoBehaviour
                 if (MenuOpen != 0)
                 {
                     DescriptionPanels[MenuOpen - 1].SetActive(false);
+                    if (MenuOpen < 4)
+                    {
+                        Player1LunenButtonScripts[MenuOpen - 1].isSelected = false;
+                    }
                 }
                 DescriptionPanels[index - 1].SetActive(true);
                 MenuOpen = index;
@@ -259,6 +272,8 @@ public class Director : MonoBehaviour
 
     public void Player2LunenTarget(int index)
     {
+        Player2LunenButtonScripts[EnemyTarget].isSelected = false;
+        Player2LunenButtonScripts[index].isSelected = true;
         EnemyTarget = index;
     }
 }
