@@ -1931,16 +1931,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleEncounters:
-  - lunen: {fileID: 8084804094902623218, guid: 2316018688f1a441e9e7cb411d28c4d6, type: 3}
+  - lunen: 20
     LevelRange:
-      Min: 13
+      Min: 17
       Max: 20
-    chanceWeight: 40
-  - lunen: {fileID: 813028601925389350, guid: f2e48d93f5e3e4909befe0db212ac5bd, type: 3}
+    chanceWeight: 70
+  - lunen: 21
     LevelRange:
-      Min: 22
-      Max: 26
-    chanceWeight: 60
+      Min: 21
+      Max: 23
+    chanceWeight: 30
   chanceModifier: 10
 --- !u!1 &1918275984
 GameObject:

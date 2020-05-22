@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Monster : MonoBehaviour
 {
@@ -41,6 +42,8 @@ public class Monster : MonoBehaviour
     public Lunen SourceLunen;
     [HideInInspector]
     public Director loopback;
+    [HideInInspector]
+    public BattleSetup battleSetup;
     [HideInInspector]
     public float CurrCooldown;
 
@@ -149,8 +152,6 @@ public class Monster : MonoBehaviour
                 }
             }
         }
-        
-        
     }
 
     public void LevelUp()
@@ -158,7 +159,28 @@ public class Monster : MonoBehaviour
         Level++;
         CalculateStats();
         CalculateExpTargets();
+        GetLevelUpMove(Level);
         loopback.ScanBothParties();
+    }
+
+    public void GetLevelUpMove(int index)
+    {
+        
+        if (SourceLunen.LearnedActions.ContainsValue(index))
+        {
+            LunaDex.ActionEnum newMove = LunaDex.ActionEnum._NoMove;
+            foreach (KeyValuePair<LunaDex.ActionEnum, int> lua in SourceLunen.LearnedActions)
+            {
+                if (lua.Value == index)
+                {
+                    newMove = lua.Key;
+                    break;
+                }
+            }
+            GameObject newMoveObject = Instantiate(battleSetup.referenceDex.GetActionObject(newMove));
+            ActionSet.Add(newMoveObject);
+            newMoveObject.transform.SetParent(transform);
+        }
     }
 
     public void TemplateToMonster(Lunen template)

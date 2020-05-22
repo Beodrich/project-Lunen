@@ -39,11 +39,16 @@ public class BattleSetup : MonoBehaviour
         EnemyLunenTeam.Clear();
         GameObject wildMonster = Instantiate(MonsterTemplate);
         Monster wM = wildMonster.GetComponent<Monster>();
+        wM.battleSetup = this;
         wM.Level = level;
         wM.TemplateToMonster(species.GetComponent<Lunen>());
         wM.MonsterTeam = Director.Team.EnemyTeam;
         EnemyLunenTeam.Add(wildMonster);
         wildMonster.transform.SetParent(this.transform);
+        for (int i = 1; i <= level; i++)
+        {
+            wM.GetLevelUpMove(i);
+        }
         typeOfBattle = BattleType.WildEncounter;
     }
 

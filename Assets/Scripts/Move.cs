@@ -44,7 +44,8 @@ public class Move : MonoBehaviour
 
         if (battle == null)
         {
-            battle = GameObject.Find("BattleSetup").GetComponent<BattleSetup>();
+            GameObject battleObject = GameObject.Find("BattleSetup");
+            if (battleObject != null) battle = battleObject.GetComponent<BattleSetup>();
         }
 
         //animator.SetFloat("Horizontal", movement.x);
@@ -75,7 +76,7 @@ public class Move : MonoBehaviour
             searcher += encounter.possibleEncounters[index].chanceWeight;
         }
 
-        battle.GenerateWildEncounter(encounter.possibleEncounters[index].lunen, Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
+        battle.GenerateWildEncounter(battle.referenceDex.GetLunenObject(encounter.possibleEncounters[index].lunen), Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
 
         battle.MoveToBattle(0,0);
     }

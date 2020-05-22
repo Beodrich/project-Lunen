@@ -45,15 +45,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Wynern
   Elements: 0000000009000000
-  ActionsToLearn:
-  - Action: {fileID: 0}
-    Level: 0
+  LearnedActions:
+    _Buckets: ffffffffffffffffffffffff
+    _HashCodes: 000000000000000000000000
+    _Next: 000000000000000000000000
+    _Count: 0
+    _Version: 0
+    _FreeList: -1
+    _FreeCount: 0
+    _Keys: 000000000000000000000000
+    _Values: 000000000000000000000000
   Evolves: 0
-  EvolutionLunen: {fileID: 0}
+  EvolutionLunen: 0
   EvolutionLevel: 0
   Health: {x: 26, y: 3}
   Attack: {x: 10, y: 3}
   Defense: {x: 7, y: 1}
   Speed: {x: 9, y: 2}
   AffinityCost: 2
-  CooldownTime: 12
+  CooldownTime: 10

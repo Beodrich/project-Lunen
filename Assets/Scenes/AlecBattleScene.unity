@@ -1100,7 +1100,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 64c2351ae58d44565a78e54cc2e80220, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1231,7 +1231,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 64c2351ae58d44565a78e54cc2e80220, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -2216,6 +2216,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1399667973}
   m_CullTransparentMesh: 0
+--- !u!1 &1400542678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1400542680}
+  - component: {fileID: 1400542679}
+  m_Layer: 0
+  m_Name: _MonsterTemplate(Clone)
+  m_TagString: Monster
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1400542679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400542678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nickname: 
+  Level: 30
+  Exp: {x: 0, y: 0, z: 0}
+  ActionSet: []
+  StatusEffectObjects: []
+  Health: {x: 0, y: 0, z: 0}
+  Attack: {x: 0, y: 0, z: 0}
+  Defense: {x: 0, y: 0, z: 0}
+  Speed: {x: 0, y: 0, z: 0}
+  AfterEffectStats: {x: 0, y: 0, z: 0}
+  MonsterTeam: 0
+  SourceLunen: {fileID: 0}
+  loopback: {fileID: 0}
+  battleSetup: {fileID: 0}
+  CurrCooldown: 0
+  ExpToAdd: 0
+  HealthToSubtract: 0
+  MoveAffinityCost: 0
+  DamageTakenScalar: []
+--- !u!4 &1400542680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400542678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1401281004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,7 +2545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3de3b02bf374c52be51f4571d07b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceDex: {fileID: 0}
   Player1: {fileID: 949294313}
   Player2: {fileID: 1401281004}
   DescriptionPanels:
@@ -3350,7 +3411,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 64c2351ae58d44565a78e54cc2e80220, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0

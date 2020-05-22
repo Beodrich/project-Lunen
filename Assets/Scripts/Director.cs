@@ -90,35 +90,40 @@ public class Director : MonoBehaviour
 
         for (int i = 0; i < MaxLunenOut; i++)
         {
-            if (Player1Script.LunenOut.Count > i)
-            {
-                Player1LunenButtonScripts[i] = Player1LunenButtons[i].GetComponent<LunenButton>();
-                Player1LunenButtonScripts[i].Text.GetComponent<Text>().text = Player1Script.LunenOut[i].Nickname;
-                Player1LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + Player1Script.LunenOut[i].Level;
-                Player1LunenButtons[i].SetActive(true);
-                Player1Script.LunenOut[i].loopback = this;
-                Player1Script.LunenOut[i].MonsterTeam = Team.PlayerTeam;
-                AssignPlayer1Bars(i);
-                LunenPanels[i] = DescriptionPanels[i].GetComponent<LunenActionPanel>();
-                LunenPanels[i].FindScripts();
-                for (int j = 0; j < 4; j++)
-                {
-                    if (j >= Player1Script.LunenOut[i].ActionSet.Count)
-                    {
-                        LunenPanels[i].ActionButtons[j].SetActive(false);
-                    }
-                    else
-                    {
-                        LunenPanels[i].ActionButtonScripts[j].Name.GetComponent<Text>().text = Player1Script.LunenOut[i].ActionSet[j].GetComponent<Action>().Name;
-                        LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = Types.GetTypeString(Player1Script.LunenOut[i].ActionSet[j].GetComponent<Action>().Type);
-                        
-                        
-                    }
-                }
-                //LunenPanels[i].ActionButtonScripts
-            }
-            else Player1LunenButtons[i].SetActive(false);
+            ScanPlayer1Lunen(i);
         }
+    }
+
+    public void ScanPlayer1Lunen(int i)
+    {
+        if (Player1Script.LunenOut.Count > i)
+        {
+            Player1LunenButtonScripts[i] = Player1LunenButtons[i].GetComponent<LunenButton>();
+            Player1LunenButtonScripts[i].Text.GetComponent<Text>().text = Player1Script.LunenOut[i].Nickname;
+            Player1LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + Player1Script.LunenOut[i].Level;
+            Player1LunenButtons[i].SetActive(true);
+            Player1Script.LunenOut[i].loopback = this;
+            Player1Script.LunenOut[i].MonsterTeam = Team.PlayerTeam;
+            AssignPlayer1Bars(i);
+            LunenPanels[i] = DescriptionPanels[i].GetComponent<LunenActionPanel>();
+            LunenPanels[i].FindScripts();
+            for (int j = 0; j < 4; j++)
+            {
+                if (j >= Player1Script.LunenOut[i].ActionSet.Count)
+                {
+                    LunenPanels[i].ActionButtons[j].SetActive(false);
+                }
+                else
+                {
+                    LunenPanels[i].ActionButtons[j].SetActive(true);
+                    LunenPanels[i].ActionButtonScripts[j].Name.GetComponent<Text>().text = Player1Script.LunenOut[i].ActionSet[j].GetComponent<Action>().Name;
+                    LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = Types.GetTypeString(Player1Script.LunenOut[i].ActionSet[j].GetComponent<Action>().Type);
+                    
+                }
+            }
+            //LunenPanels[i].ActionButtonScripts
+        }
+        else Player1LunenButtons[i].SetActive(false);
     }
 
     public void ScanPlayer2Party()
@@ -189,9 +194,18 @@ public class Director : MonoBehaviour
         ScanBothParties();
     }
 
-    public void AttemptToCapture(GameObject lunenToCapture, GameObject captureDevice)
+    public void AttemptToCapture()
     {
-        //TODO: 
+        //TODO: Add chance to capture
+        if (true)
+        {
+            Monster monsterToCapture = Player2Script.LunenOut[EnemyTarget];
+            GameObject monsterToCaptureObject= monsterToCapture.gameObject;
+            monsterToCapture.MonsterTeam = Team.PlayerTeam;
+            battleSetup.PlayerLunenTeam.Add(monsterToCaptureObject);
+            Player2Script.LunenTeam.RemoveAt(EnemyTarget);
+            ScanBothParties();
+        }
     }
 
     public int CalculateExpPayout(Monster deadLunen, Monster lunenGettingEXP)
@@ -253,6 +267,11 @@ public class Director : MonoBehaviour
                     Player1LunenButtonScripts[index - 1].isSelected = true;
                     MenuOpen = index;
                 }
+            }
+            else if (index == 5)
+            {
+                //TEMPORARY: Until Inventory is added
+                AttemptToCapture();
             }
             else if (index == 6)
             {

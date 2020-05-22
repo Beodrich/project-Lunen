@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using MyBox;
 using UnityEngine;
@@ -16,10 +17,11 @@ public class Lunen : MonoBehaviour
 
     public string Name;
     public List<Types.Element> Elements;
-    public List<LearnedAction> ActionsToLearn;
+    //public List<LearnedAction> ActionsToLearn;
+    public LevelUpAction LearnedActions;
 
     public bool Evolves;
-    [ConditionalField(nameof(Evolves))] public GameObject EvolutionLunen;
+    [ConditionalField(nameof(Evolves))] public LunaDex.LunenEnum EvolutionLunen;
     [ConditionalField(nameof(Evolves))] public int EvolutionLevel;
 
     [Header("Stats")]
