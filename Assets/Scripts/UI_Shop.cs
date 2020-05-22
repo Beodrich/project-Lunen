@@ -8,24 +8,27 @@ public class UI_Shop : MonoBehaviour
     // Start is called before the first frame update
     private Transform container;
     private Transform shopItemTemp;
+    public GameObject button;
     private IShopCustomer customer;
     private void Awake()
     {
         container = transform.Find("container");
 
         shopItemTemp = container.Find("ShopItemTemp");
-       // shopItemTemp.gameObject.SetActive(false);
+     shopItemTemp.gameObject.SetActive(false);
     }
     private void Start()
     {
-        CreateItemButton(Item.ItemType.Potion,Item.GetSprite(Item.ItemType.Potion), "Potion", Item.GetCost(Item.ItemType.Potion), 1);
+        CreateItemButton(Item.ItemType.Potion,Item.GetSprite(Item.ItemType.Potion), "Potion", Item.GetCost(Item.ItemType.Potion), 0);
 
-        CreateItemButton(Item.ItemType.Pokeball, Item.GetSprite(Item.ItemType.Pokeball), "PokeBall", Item.GetCost(Item.ItemType.Pokeball), 0);
+       //CreateItemButton(Item.ItemType.Pokeball, Item.GetSprite(Item.ItemType.Pokeball), "PokeBall", Item.GetCost(Item.ItemType.Pokeball), 1);
         Hide();
     }
     private void CreateItemButton(Item.ItemType itemType,Sprite itemSprint, string itemName, int itemCost, int positionIndex) {
-        Transform shopeItemTranform = Instantiate(shopItemTemp, container);
-      RectTransform shopItemTranform=  shopItemTemp.GetComponent<RectTransform>();
+        Transform shopeItemTranform = Instantiate(shopItemTemp,container);
+        shopeItemTranform.gameObject.SetActive(true);
+
+        RectTransform shopItemTranform =  shopItemTemp.GetComponent<RectTransform>();
         float shopItemHeight = 100f;
         shopItemTranform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
         shopItemTranform.Find("nametext").GetComponent<TextMeshProUGUI>().SetText(itemName);
@@ -47,11 +50,13 @@ public class UI_Shop : MonoBehaviour
         customer.BoughtItem(itemType);
     }
     public void Show(IShopCustomer customer) {
+        Debug.Log("In the show function");
         this.customer = customer;
-        gameObject.SetActive(true);
+         gameObject.SetActive(true);
+      //  button.SetActive(true);
+
     }
     public void Hide() {
         gameObject.SetActive(false);
-    
     }
 }
