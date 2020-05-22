@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 296598155}
   m_Layer: 0
   m_Name: sqaure
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1312,7 +1312,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6932076028420661353, guid: 98760dceae9e2844e909e73b37d97ac8, type: 3}
-    - {fileID: 4871534459586588654, guid: 98760dceae9e2844e909e73b37d97ac8, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98760dceae9e2844e909e73b37d97ac8, type: 3}
