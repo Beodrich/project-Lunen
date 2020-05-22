@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7132259412053406643}
   - component: {fileID: 8026208729210107673}
   m_Layer: 0
-  m_Name: TableFlip
+  m_Name: Table Flip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,9 +49,6 @@ MonoBehaviour:
   AdditionalAffinityCost: 0
   TimePausePeriod: 3
   Animation: {fileID: 0}
-  Effect: 0
-  Target: 0
-  Power: 50
-  EffectToInflict: {fileID: 0}
+  PartsOfAction: []
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}

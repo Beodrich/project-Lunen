@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class BattleSetup : MonoBehaviour
 {
+    [HideInInspector]
+    public LunaDex referenceDex;
     public enum BattleType
     {
         WildEncounter,
@@ -18,11 +20,13 @@ public class BattleSetup : MonoBehaviour
 
     public int Backdrop;
     public BattleType typeOfBattle;
+    public LunaDex.Locations lastOverworld;
 
     public GameObject MonsterTemplate;
 
     void Awake()
     {
+        referenceDex = GetComponent<LunaDex>();
         if (GameObject.FindGameObjectsWithTag("BattleSetup").Length >= 2)
         {
             Destroy(gameObject);
@@ -57,12 +61,13 @@ public class BattleSetup : MonoBehaviour
 
     public void MoveToBattle(int backdrop, int musicTrack)
     {
-        SceneManager.LoadScene(0);
+
+        SceneManager.LoadScene((int)LunaDex.Locations.Battle);
     }
 
-    public void MoveToOverworld(int scene)
+    public void MoveToOverworld()
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene((int)lastOverworld);
         List<GameObject> checkToDelete = new List<GameObject>();
         checkToDelete.AddRange(gameObject.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Monster").Select(c => c.gameObject).ToArray());
         foreach (GameObject monster in checkToDelete)

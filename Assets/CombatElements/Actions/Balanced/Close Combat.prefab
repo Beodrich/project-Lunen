@@ -54,21 +54,21 @@ MonoBehaviour:
     Target: 0
     Power: 100
     EffectToInflict: {fileID: 0}
-    OverrideTurns: 0
-    NewTurns: 0
+    StatusEffect: 0
+    StatusEffectTurns: 0
   - Effect: 1
     Target: 0
     Power: 100
     EffectToInflict: {fileID: 2027749639238553561, guid: 1a9c58b7d920d42309ee5982f3200357,
       type: 3}
-    OverrideTurns: 1
-    NewTurns: 2
+    StatusEffect: 1
+    StatusEffectTurns: 2
   - Effect: 1
     Target: 6
     Power: 100
     EffectToInflict: {fileID: 2027749639238553561, guid: 1a9c58b7d920d42309ee5982f3200357,
       type: 3}
-    OverrideTurns: 1
-    NewTurns: 2
+    StatusEffect: 1
+    StatusEffectTurns: 2
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}

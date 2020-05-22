@@ -22,9 +22,9 @@ public class Action : MonoBehaviour
     public enum IntendedEffect
     {
         DealDamage,
+        ApplyStatusEffect,
         ApplyBuff,
         Heal
-
     }
 
     [System.Serializable]
@@ -34,8 +34,8 @@ public class Action : MonoBehaviour
         public MonsterAim Target;
         [ConditionalField(nameof(Effect), false, IntendedEffect.DealDamage)] public int Power;
         [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyBuff)] public GameObject EffectToInflict;
-        [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyBuff)] public bool OverrideTurns;
-        [ConditionalField(nameof(OverrideTurns))] public int NewTurns;
+        [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyStatusEffect)] public LunaDex.StatusEffectEnum StatusEffect;
+        [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyStatusEffect)] public int StatusEffectTurns;
     }
 
     [Separator("Basic Action Info")]
@@ -93,11 +93,15 @@ public class Action : MonoBehaviour
             case IntendedEffect.DealDamage:
                 Attack(part);
                 break;
+            case IntendedEffect.ApplyBuff:
+                ApplyBuff(part);
+                break;
+            case IntendedEffect.ApplyStatusEffect:
+                ApplyStatusEffect(part);
+                break;
             case IntendedEffect.Heal:
                 break;
-            case IntendedEffect.ApplyBuff:
-                ApplyBuff(part, part.EffectToInflict);
-                break;
+            
         }
     }
 
@@ -112,10 +116,18 @@ public class Action : MonoBehaviour
         Debug.Log(Damage);
     }
 
-    public void ApplyBuff(ActionPart part, GameObject buff)
+    public void ApplyBuff(ActionPart part)
     {
-        GameObject newBuff = Instantiate(buff);
-        if (part.OverrideTurns) newBuff.GetComponent<Effects>().ExpiresIn = part.NewTurns;
+        GameObject newBuff = Instantiate(part.EffectToInflict);
+        newBuff.transform.SetParent(MonsterTarget.transform);
+        MonsterTarget.StatusEffectObjects.Add(newBuff);
+        MonsterTarget.CalculateStats();
+    }
+
+    public void ApplyStatusEffect(ActionPart part)
+    {
+        GameObject newBuff = Instantiate(MonsterUser.loopback.battleSetup.referenceDex.GetStatusEffectObject(part.StatusEffect));
+        newBuff.GetComponent<Effects>().ExpiresIn = part.StatusEffectTurns;
         newBuff.transform.SetParent(MonsterTarget.transform);
         MonsterTarget.StatusEffectObjects.Add(newBuff);
         MonsterTarget.CalculateStats();

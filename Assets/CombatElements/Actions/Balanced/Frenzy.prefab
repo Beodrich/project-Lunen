@@ -50,12 +50,12 @@ MonoBehaviour:
   TimePausePeriod: 0
   Animation: {fileID: 0}
   PartsOfAction:
-  - Effect: 1
+  - Effect: 2
     Target: 6
     Power: 0
     EffectToInflict: {fileID: 4103110986808523788, guid: 96003e4ba3f1346c7a00d884e1ea1dd2,
       type: 3}
-    OverrideTurns: 0
-    NewTurns: 0
+    StatusEffect: 0
+    StatusEffectTurns: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}

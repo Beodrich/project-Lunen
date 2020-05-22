@@ -143,7 +143,7 @@ public class Director : MonoBehaviour
 
         if (Player2Script.LunenAlive == 0)
         {
-            battleSetup.MoveToOverworld(1);
+            battleSetup.MoveToOverworld();
         }
     }
 
@@ -187,6 +187,11 @@ public class Director : MonoBehaviour
                 break;
         }
         ScanBothParties();
+    }
+
+    public void AttemptToCapture(GameObject lunenToCapture, GameObject captureDevice)
+    {
+        //TODO: 
     }
 
     public int CalculateExpPayout(Monster deadLunen, Monster lunenGettingEXP)
@@ -251,7 +256,7 @@ public class Director : MonoBehaviour
             }
             else if (index == 6)
             {
-                battleSetup.MoveToOverworld(1);
+                battleSetup.MoveToOverworld();
             }
             else
             {

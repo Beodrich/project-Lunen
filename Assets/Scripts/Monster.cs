@@ -55,6 +55,7 @@ public class Monster : MonoBehaviour
     private int EndOfTurnDamage;
     [HideInInspector]
     public int MoveAffinityCost;
+    [EnumNamedArray(typeof(Types.Element))]
     public List<float> DamageTakenScalar;
 
     private void Start()

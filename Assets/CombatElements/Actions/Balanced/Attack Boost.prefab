@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7962391129676785947}
   - component: {fileID: 7962391129676785946}
   m_Layer: 0
-  m_Name: AttackBoost
+  m_Name: Attack Boost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,12 +50,12 @@ MonoBehaviour:
   TimePausePeriod: 3
   Animation: {fileID: 0}
   PartsOfAction:
-  - Effect: 1
+  - Effect: 2
     Target: 6
     Power: 0
     EffectToInflict: {fileID: 7318141089512678369, guid: 3522b427a3bdd41468fea21b7a9cbcf0,
       type: 3}
-    OverrideTurns: 0
-    NewTurns: 0
+    StatusEffect: 0
+    StatusEffectTurns: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}

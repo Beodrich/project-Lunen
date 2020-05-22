@@ -251,64 +251,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59871785}
   m_CullTransparentMesh: 0
---- !u!1 &76048388
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 76048390}
-  - component: {fileID: 76048389}
-  m_Layer: 0
-  m_Name: Tackle(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &76048389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76048388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Tackle
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 2
-  Animation: {fileID: 0}
-  PartsOfAction:
-  - Effect: 0
-    Target: 0
-    Power: 40
-    EffectToInflict: {fileID: 0}
-    OverrideTurns: 0
-    NewTurns: 0
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &76048390
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 76048388}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 998858670}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235196285
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +392,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442411751
 GameObject:
@@ -614,7 +556,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &589777149
 GameObject:
@@ -697,120 +639,6 @@ Transform:
   m_Father: {fileID: 1349677884}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &610755467
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1163967520034174124, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_Name
-      value: _LunenToMonsterGenerator
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: LunenMoves.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: LunenBase
-      value: 
-      objectReference: {fileID: 7137557924080243783, guid: 71cb7471971e441bdb4b218df3dd2363,
-        type: 3}
-    - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: LunenMoves.Array.data[0]
-      value: 
-      objectReference: {fileID: 2279408898384957547, guid: 65b32de2137d34149b5ec84fa76e31cd,
-        type: 3}
-    - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: LunenLevel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: Generate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: LunenMoves.Array.data[1]
-      value: 
-      objectReference: {fileID: 4465065785081176907, guid: ad81c2e05f4a343de9ab55880ed3e34b,
-        type: 3}
-    - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: LunenMoves.Array.data[2]
-      value: 
-      objectReference: {fileID: 7962391129676785945, guid: aeee713cbe1794af78b0c7d267291f3e,
-        type: 3}
-    - target: {fileID: 5736953557835711062, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: LunenMoves.Array.data[3]
-      value: 
-      objectReference: {fileID: 7877216169598943861, guid: 58062fb16c3b544d891abf4b668be199,
-        type: 3}
-    - target: {fileID: 7247750963616900901, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.25816494
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247750963616900901, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.99285305
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247750963616900901, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -883.26904
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247750963616900901, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247750963616900901, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247750963616900901, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247750963616900901, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247750963616900901, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247750963616900901, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247750963616900901, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7247750963616900901, guid: 383998bf498ea4330a09b1ed479c2158,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 383998bf498ea4330a09b1ed479c2158, type: 3}
 --- !u!1 &612593727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,82 +1172,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &998858668
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 998858670}
-  - component: {fileID: 998858669}
-  m_Layer: 0
-  m_Name: Woufa_Woufa_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &998858669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998858668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Woufa
-  Level: 20
-  Exp: {x: 8000, y: 8000, z: 9261}
-  ActionSet:
-  - {fileID: 76048388}
-  StatusEffectObjects: []
-  Health: {x: 21, y: 40, z: 61}
-  Attack: {x: 8, y: 40, z: 48}
-  Defense: {x: 5, y: 20, z: 25}
-  Speed: {x: 7, y: 20, z: 27}
-  AfterEffectStats: {x: 48, y: 25, z: 27}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
-    type: 3}
-  loopback: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &998858670
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998858668}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 76048390}
-  m_Father: {fileID: 1767480974}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &998910280
 GameObject:
@@ -2133,81 +1886,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228313627}
   m_CullTransparentMesh: 0
---- !u!1 &1234633928
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1234633930}
-  - component: {fileID: 1234633929}
-  m_Layer: 0
-  m_Name: DebugGodLunen_DebugGodLunen_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1234633929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234633928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: DebugGodLunen
-  Level: 1
-  Exp: {x: 1, y: 1, z: 8}
-  ActionSet:
-  - {fileID: 1963039889}
-  StatusEffectObjects: []
-  Health: {x: 999, y: 9, z: 1008}
-  Attack: {x: 999, y: 9, z: 1008}
-  Defense: {x: 999, y: 9, z: 1008}
-  Speed: {x: 999, y: 9, z: 1008}
-  AfterEffectStats: {x: 1008, y: 1008, z: 1008}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 8569570539236419702, guid: 71cb7471971e441bdb4b218df3dd2363,
-    type: 3}
-  loopback: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &1234633930
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234633928}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1963039891}
-  m_Father: {fileID: 1767480974}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1332053521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2406,7 +2084,7 @@ Transform:
   - {fileID: 1563389547}
   - {fileID: 1191910591}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1399667973
 GameObject:
@@ -2587,7 +2265,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1453138018
 GameObject:
@@ -2769,7 +2447,7 @@ RectTransform:
   - {fileID: 1556415425}
   - {fileID: 1719525923}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2805,6 +2483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3de3b02bf374c52be51f4571d07b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceDex: {fileID: 0}
   Player1: {fileID: 949294313}
   Player2: {fileID: 1401281004}
   DescriptionPanels:
@@ -2857,7 +2536,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1556415424
 PrefabInstance:
@@ -3521,131 +3200,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723259635}
   m_CullTransparentMesh: 0
---- !u!1001 &1767480973
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8082643488644169666, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_Name
-      value: BattleSetup
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: PlayerLunenTeam.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: EnemyLunenTeam.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: PlayerLunenTeam.Array.data[0]
-      value: 
-      objectReference: {fileID: 1234633928}
-    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: PlayerLunenTeam.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: PlayerLunenTeam.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: EnemyLunenTeam.Array.data[0]
-      value: 
-      objectReference: {fileID: 998858668}
-    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: EnemyLunenTeam.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: EnemyLunenTeam.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: EnemyLunenTeam.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169676, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: EnemyLunenTeam.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a1728c6cf299f474db611a026860f40d, type: 3}
---- !u!4 &1767480974 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8082643488644169677, guid: a1728c6cf299f474db611a026860f40d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1767480973}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1834249098 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 743702716897293590, guid: 70cb7206f57734adebd01904d38517c9,
@@ -3817,64 +3371,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879669269}
   m_CullTransparentMesh: 0
---- !u!1 &1963039889
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1963039891}
-  - component: {fileID: 1963039890}
-  m_Layer: 0
-  m_Name: Tackle(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1963039890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963039889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Tackle
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 2
-  Animation: {fileID: 0}
-  PartsOfAction:
-  - Effect: 0
-    Target: 0
-    Power: 40
-    EffectToInflict: {fileID: 0}
-    OverrideTurns: 0
-    NewTurns: 0
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &1963039891
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963039889}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1234633930}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2043653009
 GameObject:
   m_ObjectHideFlags: 0

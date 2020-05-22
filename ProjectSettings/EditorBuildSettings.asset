@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/_preload.unity
+    guid: 4fa6083ea40e14f139ceb3b3c892fac1
+  - enabled: 1
     path: Assets/Scenes/AlecBattleScene.unity
     guid: 0c7295eeadb4345398142e8a3d228537
   - enabled: 1

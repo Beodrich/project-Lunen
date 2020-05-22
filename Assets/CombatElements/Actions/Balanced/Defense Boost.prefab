@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8643868893917562986}
   - component: {fileID: 8643868893917562987}
   m_Layer: 0
-  m_Name: DefenseBoost
+  m_Name: Defense Boost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,12 +50,12 @@ MonoBehaviour:
   TimePausePeriod: 3
   Animation: {fileID: 0}
   PartsOfAction:
-  - Effect: 1
+  - Effect: 2
     Target: 6
     Power: 0
     EffectToInflict: {fileID: 375671104344427544, guid: 0a9e43f88f8744b75bc6d57d9b831026,
       type: 3}
-    OverrideTurns: 0
-    NewTurns: 0
+    StatusEffect: 0
+    StatusEffectTurns: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
