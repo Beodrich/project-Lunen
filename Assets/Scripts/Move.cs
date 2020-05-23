@@ -29,23 +29,23 @@ public class Move : MonoBehaviour
     {
         movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        if (movement.x != 0 || movement.y != 0)
-        {
-            if (inGrass)
-            {
-                grassEncounterCheckCurrent -= Time.deltaTime;
-                if (grassEncounterCheckCurrent <= 0)
-                {
-                    TryWildEncounter(grassObject.GetComponent<GrassEncounter>());
-                    grassEncounterCheckCurrent += grassEncounterCheckEvery;
-                }
-            }
-        }
+        /*  if (movement.x != 0 || movement.y != 0)
+          {
+              if (inGrass)
+              {
+                  grassEncounterCheckCurrent -= Time.deltaTime;
+                  if (grassEncounterCheckCurrent <= 0)
+                  {
+                      TryWildEncounter(grassObject.GetComponent<GrassEncounter>());
+                      grassEncounterCheckCurrent += grassEncounterCheckEvery;
+                  }
+              }
+          }
 
-        if (battle == null)
-        {
-            battle = GameObject.Find("BattleSetup").GetComponent<BattleSetup>();
-        }
+          if (battle == null)
+          {
+              battle = GameObject.Find("BattleSetup").GetComponent<BattleSetup>();
+          }*/
 
         //animator.SetFloat("Horizontal", movement.x);
         //animator.SetFloat("Vertical", movement.y);
