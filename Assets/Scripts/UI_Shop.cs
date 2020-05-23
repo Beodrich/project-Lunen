@@ -9,6 +9,7 @@ public class UI_Shop : MonoBehaviour
     private Transform container;
     private Transform shopItemTemp;
     private List<Item.ItemType> playerInventory = new List<Item.ItemType>();
+    private int gold = 40;
 
 
 
@@ -40,16 +41,34 @@ public class UI_Shop : MonoBehaviour
         shopItemTransform.GetComponent<Button>().onClick.AddListener(() => TryBuyItem(itemType));
     }
     void TryBuyItem(Item.ItemType itemType) {
-        BoughtItem(itemType);
+        if (HasEnoughGold(itemType))
+        {
+            Debug.Log("Has enough gold");
+            BoughtItem(itemType);
+
+        }
+        else {
+            Debug.Log("Not enough gold");
+        }
     }
    public void Show() {
         gameObject.SetActive(true);
     }
     public void Hide() { gameObject.SetActive(false); }
     void BoughtItem(Item.ItemType itemType) {
-      //  Debug.Log("Bought an item"+ itemType);
+         Debug.Log("Bought an item"+ itemType);
         playerInventory.Add(itemType);
-        Debug.Log(playerInventory);
+    }
+    private bool HasEnoughGold(Item.ItemType itemType) {
+
+        if (gold >= Item.GetCost(itemType))
+        {
+            gold -= Item.GetCost(itemType);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
 
