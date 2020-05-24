@@ -44,23 +44,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Flamela
-  Elements: 00000000
+  Elements: 04000000
   LearnedActions:
-    _Buckets: ffffffffffffffffffffffff
-    _HashCodes: 000000000000000000000000
-    _Next: 000000000000000000000000
-    _Count: 0
-    _Version: 0
+    _Buckets: 00000000ffffffffffffffff
+    _HashCodes: 3f0000000000000000000000
+    _Next: ffffffff0000000000000000
+    _Count: 1
+    _Version: 3
     _FreeList: -1
     _FreeCount: 0
-    _Keys: 000000000000000000000000
+    _Keys: 3f0000000000000000000000
     _Values: 000000000000000000000000
-  Evolves: 0
-  EvolutionLunen: 0
-  EvolutionLevel: 21
-  Health: {x: 21, y: 2}
-  Attack: {x: 8, y: 2}
-  Defense: {x: 5, y: 1}
-  Speed: {x: 7, y: 1}
+  Evolves: 1
+  EvolutionLunen: 6
+  EvolutionLevel: 10
+  Health: {x: 14, y: 2}
+  Attack: {x: 6, y: 2}
+  Defense: {x: 4, y: 1}
+  Speed: {x: 5, y: 1}
   AffinityCost: 1
   CooldownTime: 10

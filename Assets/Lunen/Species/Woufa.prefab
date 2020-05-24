@@ -46,17 +46,17 @@ MonoBehaviour:
   Name: Woufa
   Elements: 00000000
   LearnedActions:
-    _Buckets: 0500000000000000ffffffff0300000001000000ffffffffffffffff
-    _HashCodes: 0100000004000000070000000a0000000e00000015000000ffffffff
-    _Next: ffffffffffffffffffffffffffffffff0200000004000000ffffffff
+    _Buckets: 00000000ffffffffffffffff0300000004000000ffffffffffffffff
+    _HashCodes: 3f0000000300000004000000490000003c000000ffffffffffffffff
+    _Next: ffffffffffffffffffffffff010000000200000006000000ffffffff
     _Count: 7
-    _Version: 93
-    _FreeList: 6
-    _FreeCount: 1
-    _Keys: 0100000004000000070000000a0000000e0000001500000000000000
-    _Values: 00000000000000000000000000000000000000000000000000000000
+    _Version: 113
+    _FreeList: 5
+    _FreeCount: 2
+    _Keys: 3f0000000300000004000000490000003c0000000000000000000000
+    _Values: 0100000004000000070000000a0000000e0000000000000000000000
   Evolves: 1
-  EvolutionLunen: 21
+  EvolutionLunen: 22
   EvolutionLevel: 16
   Health: {x: 21, y: 2}
   Attack: {x: 8, y: 2}

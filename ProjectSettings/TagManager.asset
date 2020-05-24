@@ -9,6 +9,7 @@ TagManager:
   - Monster
   - BattleSetup
   - TrainerSight
+  - Door
   layers:
   - Default
   - TransparentFX

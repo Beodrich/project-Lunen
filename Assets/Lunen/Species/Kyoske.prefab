@@ -46,21 +46,21 @@ MonoBehaviour:
   Name: Kyoske
   Elements: 00000000
   LearnedActions:
-    _Buckets: ffffffffffffffffffffffff
-    _HashCodes: 000000000000000000000000
-    _Next: 000000000000000000000000
-    _Count: 0
-    _Version: 0
+    _Buckets: 03000000ffffffff0100000002000000ffffffffffffffffffffffff
+    _HashCodes: 3f000000100000003400000000000000000000000000000000000000
+    _Next: ffffffffffffffffffffffff00000000000000000000000000000000
+    _Count: 4
+    _Version: 10
     _FreeList: -1
     _FreeCount: 0
-    _Keys: 000000000000000000000000
-    _Values: 000000000000000000000000
+    _Keys: 3f000000100000003400000000000000000000000000000000000000
+    _Values: 00000000000000000000000000000000000000000000000000000000
   Evolves: 0
   EvolutionLunen: 0
   EvolutionLevel: 21
-  Health: {x: 21, y: 2}
-  Attack: {x: 8, y: 2}
-  Defense: {x: 5, y: 1}
-  Speed: {x: 7, y: 1}
-  AffinityCost: 1
+  Health: {x: 20, y: 2}
+  Attack: {x: 5, y: 1}
+  Defense: {x: 8, y: 3}
+  Speed: {x: 5, y: 1}
+  AffinityCost: 2
   CooldownTime: 10

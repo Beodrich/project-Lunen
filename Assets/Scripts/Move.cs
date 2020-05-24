@@ -46,6 +46,11 @@ public class Move : MonoBehaviour
         {
             GameObject battleObject = GameObject.Find("BattleSetup");
             if (battleObject != null) battle = battleObject.GetComponent<BattleSetup>();
+            if (battle != null)
+            {
+                transform.position = battle.lastSceneLocation;
+                
+            }
         }
 
         //animator.SetFloat("Horizontal", movement.x);
@@ -56,7 +61,7 @@ public class Move : MonoBehaviour
     public bool TryWildEncounter(GrassEncounter encounter)
     {
         float chance = Random.Range(0f, 100f);
-        if (chance < encounter.chanceModifier)
+        if (chance < encounter.chanceModifier && battle.SinceLastEncounter < 0f)
         {
             PrepareWildEncounter(encounter);
             return true;
@@ -77,7 +82,7 @@ public class Move : MonoBehaviour
         }
 
         battle.GenerateWildEncounter(battle.referenceDex.GetLunenObject(encounter.possibleEncounters[index].lunen), Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
-
+        battle.lastSceneLocation = transform.position;
         battle.MoveToBattle(0,0);
     }
 
@@ -101,6 +106,9 @@ public class Move : MonoBehaviour
                     battle.GenerateTrainerBattle(encounter);
                     battle.MoveToBattle(0, 0);
                 }
+                break;
+            case "Door":
+                battle.NewOverworld(other.gameObject.GetComponent<DoorToLocation>());
                 break;
         }
     }

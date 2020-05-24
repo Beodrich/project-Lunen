@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1610594431647896194
+--- !u!1 &6270454110695325483
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1610594431647896252}
-  - component: {fileID: 1610594431647896253}
+  - component: {fileID: 6270454110695325481}
+  - component: {fileID: 6270454110695325482}
   m_Layer: 0
   m_Name: Wavineer
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1610594431647896252
+--- !u!4 &6270454110695325481
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610594431647896194}
+  m_GameObject: {fileID: 6270454110695325483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.8529706, y: 3.4705997, z: -51.68458}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,36 +31,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1610594431647896253
+--- !u!114 &6270454110695325482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1610594431647896194}
+  m_GameObject: {fileID: 6270454110695325483}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Wavineer
-  Elements: 00000000
+  Elements: 02000000
   LearnedActions:
-    _Buckets: ffffffffffffffffffffffff
-    _HashCodes: 000000000000000000000000
-    _Next: 000000000000000000000000
-    _Count: 0
-    _Version: 0
+    _Buckets: 05000000ffffffffffffffff0200000003000000ffffffff04000000
+    _HashCodes: 3f00000003000000420000004a0000001b0000000700000000000000
+    _Next: ffffffffffffffff01000000ffffffffffffffff0000000000000000
+    _Count: 6
+    _Version: 27
     _FreeList: -1
     _FreeCount: 0
-    _Keys: 000000000000000000000000
-    _Values: 000000000000000000000000
-  Evolves: 0
-  EvolutionLunen: 0
-  EvolutionLevel: 21
-  Health: {x: 21, y: 2}
+    _Keys: 3f00000003000000420000004a0000001b0000000700000000000000
+    _Values: 0100000004000000080000000c0000000f0000001200000000000000
+  Evolves: 1
+  EvolutionLunen: 20
+  EvolutionLevel: 20
+  Health: {x: 20, y: 2}
   Attack: {x: 8, y: 2}
-  Defense: {x: 5, y: 1}
-  Speed: {x: 7, y: 1}
-  AffinityCost: 1
+  Defense: {x: 9, y: 2}
+  Speed: {x: 8, y: 2}
+  AffinityCost: 2
   CooldownTime: 10

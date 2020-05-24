@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Yibalis
-  Elements: 00000000
+  Elements: 0100000007000000
   LearnedActions:
     _Buckets: ffffffffffffffffffffffff
     _HashCodes: 000000000000000000000000
@@ -58,9 +58,9 @@ MonoBehaviour:
   Evolves: 0
   EvolutionLunen: 0
   EvolutionLevel: 21
-  Health: {x: 21, y: 2}
-  Attack: {x: 8, y: 2}
-  Defense: {x: 5, y: 1}
-  Speed: {x: 7, y: 1}
+  Health: {x: 20, y: 2}
+  Attack: {x: 9, y: 2}
+  Defense: {x: 6, y: 2}
+  Speed: {x: 7, y: 2}
   AffinityCost: 1
   CooldownTime: 10

@@ -8,6 +8,8 @@ public class BattleSetup : MonoBehaviour
 {
     [HideInInspector]
     public LunaDex referenceDex;
+    [HideInInspector]
+    public ListOfScenes sceneReference;
     public enum BattleType
     {
         WildEncounter,
@@ -17,21 +19,27 @@ public class BattleSetup : MonoBehaviour
     }
     public List<GameObject> PlayerLunenTeam;
     public List<GameObject> EnemyLunenTeam;
-
-    public int Backdrop;
+    [Space(10)]
     public BattleType typeOfBattle;
-    public LunaDex.Locations lastOverworld;
-
+    public ListOfScenes.LocationEnum lastOverworld;
+    public Vector3 lastSceneLocation;
+    [Space(10)]
     public GameObject MonsterTemplate;
+    public float SinceLastEncounter = 0f;
 
     void Awake()
     {
         referenceDex = GetComponent<LunaDex>();
+        sceneReference = GetComponent<ListOfScenes>();
         if (GameObject.FindGameObjectsWithTag("BattleSetup").Length >= 2)
         {
             Destroy(gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Update() {
+        SinceLastEncounter -= Time.deltaTime;
     }
 
     public void GenerateWildEncounter(GameObject species, int level)
@@ -40,6 +48,7 @@ public class BattleSetup : MonoBehaviour
         GameObject wildMonster = Instantiate(MonsterTemplate);
         Monster wM = wildMonster.GetComponent<Monster>();
         wM.battleSetup = this;
+        wM.lunaDex = GetComponent<LunaDex>();
         wM.Level = level;
         wM.TemplateToMonster(species.GetComponent<Lunen>());
         wM.MonsterTeam = Director.Team.EnemyTeam;
@@ -67,12 +76,12 @@ public class BattleSetup : MonoBehaviour
     public void MoveToBattle(int backdrop, int musicTrack)
     {
 
-        SceneManager.LoadScene((int)LunaDex.Locations.Battle);
+        sceneReference.LoadScene(ListOfScenes.LocationEnum.BattleScene);
     }
 
     public void MoveToOverworld()
     {
-        SceneManager.LoadScene((int)lastOverworld);
+        sceneReference.LoadScene(lastOverworld);
         List<GameObject> checkToDelete = new List<GameObject>();
         checkToDelete.AddRange(gameObject.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Monster").Select(c => c.gameObject).ToArray());
         foreach (GameObject monster in checkToDelete)
@@ -82,5 +91,12 @@ public class BattleSetup : MonoBehaviour
                 Destroy(monster);
             }
         }
+        SinceLastEncounter = 5f;
+    }
+
+    public void NewOverworld(DoorToLocation door)
+    {
+        lastSceneLocation = door.SpawnLocation;
+        sceneReference.LoadScene(door.TargetLocation);
     }
 }

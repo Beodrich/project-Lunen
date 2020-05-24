@@ -13,8 +13,6 @@ public class GenerateMonster : MonoBehaviour
     }
 
     public LunaDex.LunenEnum LunenBase;
-    [SearchableEnum]
-    public List<LunaDex.ActionEnum> LunenMoves;
     [Range(1, 50)]
     public int LunenLevel = 1;
     public TargetPlayer targetPlayer;
@@ -37,14 +35,16 @@ public class GenerateMonster : MonoBehaviour
         New1 = Instantiate(ld.MonsterTemplate);
         //New1.transform.SetParent(this.transform);
         NewMonster1 = New1.GetComponent<Monster>();
+        NewMonster1.battleSetup = bs;
+        NewMonster1.lunaDex = ld;
         NewMonster1.Level = LunenLevel;
-        for (int i = 0; i < LunenMoves.Count; i++)
+        NewMonster1.TemplateToMonster(ld.GetLunen(LunenBase));
+        for (int i = 1; i <= LunenLevel; i++)
         {
-            NewMonster1.ActionSet.Add(Instantiate(ld.GetActionObject(LunenMoves[i])));
-            NewMonster1.ActionSet[i].transform.SetParent(NewMonster1.transform);
+            NewMonster1.GetLevelUpMove(i);
         }
         
-        NewMonster1.TemplateToMonster(ld.GetLunen(LunenBase));
+        
         switch (targetPlayer)
         {
             case TargetPlayer.Player1:

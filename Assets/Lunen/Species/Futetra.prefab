@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2739663063188538564
+--- !u!1 &445822767244268956
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2739663063188538562}
-  - component: {fileID: 2739663063188538565}
+  - component: {fileID: 445822767244268958}
+  - component: {fileID: 445822767244268959}
   m_Layer: 0
-  m_Name: Futetra
+  m_Name: Furo 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2739663063188538562
+--- !u!4 &445822767244268958
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2739663063188538564}
+  m_GameObject: {fileID: 445822767244268956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.8529706, y: 3.4705997, z: -51.68458}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,36 +31,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2739663063188538565
+--- !u!114 &445822767244268959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2739663063188538564}
+  m_GameObject: {fileID: 445822767244268956}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Futetra
-  Elements: 00000000
+  Elements: 06000000
   LearnedActions:
-    _Buckets: ffffffffffffffffffffffff
-    _HashCodes: 000000000000000000000000
-    _Next: 000000000000000000000000
-    _Count: 0
-    _Version: 0
+    _Buckets: 07000000ffffffffffffffff01000000ffffffffffffffffffffffff050000000300000004000000ffffffffffffffff0000000006000000ffffffffffffffffffffffff
+    _HashCodes: 3f00000003000000110000003b0000001a0000004b0000004000000033000000000000000000000000000000000000000000000000000000000000000000000000000000
+    _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffff02000000000000000000000000000000000000000000000000000000000000000000000000000000
+    _Count: 8
+    _Version: 41
     _FreeList: -1
     _FreeCount: 0
-    _Keys: 000000000000000000000000
-    _Values: 000000000000000000000000
+    _Keys: 3f00000003000000110000003b0000001a0000004b0000004000000033000000000000000000000000000000000000000000000000000000000000000000000000000000
+    _Values: 0100000004000000080000000c0000001000000014000000190000001e000000000000000000000000000000000000000000000000000000000000000000000000000000
   Evolves: 0
-  EvolutionLunen: 0
-  EvolutionLevel: 21
-  Health: {x: 21, y: 2}
-  Attack: {x: 8, y: 2}
-  Defense: {x: 5, y: 1}
-  Speed: {x: 7, y: 1}
-  AffinityCost: 1
+  EvolutionLunen: 8
+  EvolutionLevel: 15
+  Health: {x: 22, y: 2}
+  Attack: {x: 11, y: 3}
+  Defense: {x: 6, y: 1}
+  Speed: {x: 15, y: 3}
+  AffinityCost: 2
   CooldownTime: 10

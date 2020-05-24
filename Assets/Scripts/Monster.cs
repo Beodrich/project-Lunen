@@ -45,6 +45,8 @@ public class Monster : MonoBehaviour
     [HideInInspector]
     public BattleSetup battleSetup;
     [HideInInspector]
+    public LunaDex lunaDex;
+    [HideInInspector]
     public float CurrCooldown;
 
     private float ExpAddEvery = 0.1f;
@@ -177,7 +179,7 @@ public class Monster : MonoBehaviour
                     break;
                 }
             }
-            GameObject newMoveObject = Instantiate(battleSetup.referenceDex.GetActionObject(newMove));
+            GameObject newMoveObject = Instantiate(lunaDex.GetActionObject(newMove));
             ActionSet.Add(newMoveObject);
             newMoveObject.transform.SetParent(transform);
         }

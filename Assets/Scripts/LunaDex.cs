@@ -26,6 +26,7 @@ public class LunaDex : MonoBehaviour
         Icifiz,
         Kyoske,
         NulvaIncarnate,
+        Rizo,
         Rootle,
         SirDungeness,
         Stuimp,
@@ -60,6 +61,7 @@ public class LunaDex : MonoBehaviour
         DrillPeck,
         Enkindle,
         Execute,
+        FinalChill,
         Fortify,
         Frenzy,
         FrontlineTank,
@@ -67,26 +69,24 @@ public class LunaDex : MonoBehaviour
         FrozenShell,
         Headwind,
         HealingAura,
-        HighVoltageSwitch,
+        HighVoltageSlash,
         Hysteria,
-        IceShard,
         IceStorm,
         Incinerate,
         Intimidate,
         LeafBlower,
-        LeafScratch,
         Leech,
         Melt,
+        MindWave,
         MorningWood,
         NullificationArmor,
         NulvaBeam,
         PlasmaArmor,
-        PlasmaBolt,
+        PsyBurst,
         Refreeze,
         Retribution,
         RockSlide,
         RockStream,
-        RockThrow,
         Root,
         RulerOfTheSea,
         Sacrifice,
@@ -96,7 +96,6 @@ public class LunaDex : MonoBehaviour
         ShiftTactics,
         ShockingGaze,
         SourceShift,
-        Spark,
         SpikeArmor,
         StarShower,
         StarStrike,
@@ -115,14 +114,13 @@ public class LunaDex : MonoBehaviour
         UnnervingWill,
         VineManipulation,
         VineSlash,
-        WarCry,
-        WaterGun,
+        Warcry,
         WaterVortex,
         WindKnives,
         WindVortex,
-        WingAttack,
         Wrap,
-        zz_DebugMove
+        zz_DebugMove,
+        Fuel
     }
     public enum StatusEffectEnum
     {
@@ -142,6 +140,7 @@ public class LunaDex : MonoBehaviour
         Staggered,
         WeakMinded
     }
+    
 
     public bool DEBUG;
     public bool ShowTemplates;

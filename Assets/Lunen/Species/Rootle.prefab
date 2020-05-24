@@ -44,23 +44,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Rootle
-  Elements: 00000000
+  Elements: 03000000
   LearnedActions:
-    _Buckets: ffffffffffffffffffffffff
-    _HashCodes: 000000000000000000000000
-    _Next: 000000000000000000000000
-    _Count: 0
-    _Version: 0
+    _Buckets: 000000000100000002000000
+    _HashCodes: 3f000000100000004d000000
+    _Next: ffffffffffffffffffffffff
+    _Count: 3
+    _Version: 12
     _FreeList: -1
     _FreeCount: 0
-    _Keys: 000000000000000000000000
-    _Values: 000000000000000000000000
-  Evolves: 0
-  EvolutionLunen: 0
-  EvolutionLevel: 21
-  Health: {x: 21, y: 2}
-  Attack: {x: 8, y: 2}
-  Defense: {x: 5, y: 1}
-  Speed: {x: 7, y: 1}
+    _Keys: 3f000000100000004d000000
+    _Values: 010000000400000008000000
+  Evolves: 1
+  EvolutionLunen: 16
+  EvolutionLevel: 10
+  Health: {x: 19, y: 2}
+  Attack: {x: 4, y: 1}
+  Defense: {x: 7, y: 2}
+  Speed: {x: 4, y: 1}
   AffinityCost: 1
   CooldownTime: 10
