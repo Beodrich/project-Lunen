@@ -8,23 +8,13 @@ public class ShopTrigger : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Player")) {
 
-        IShopCustomer shopCustomer = collision.GetComponent<IShopCustomer>();
-        if (shopCustomer != null)
-        {
-            Debug.Log(shopCustomer + "has entered");
-            shop.Show(shopCustomer);
-
+            shop.Show();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        IShopCustomer shopCustomer = collision.GetComponent<IShopCustomer>();
-        if (shopCustomer != null)
-        {
-            Debug.Log(shopCustomer + " has left");
-            shop.Hide();
-
-        }
+        shop.Hide();
     }
 }
