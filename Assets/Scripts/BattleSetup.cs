@@ -26,6 +26,7 @@ public class BattleSetup : MonoBehaviour
     [Space(10)]
     public GameObject MonsterTemplate;
     public float SinceLastEncounter = 0f;
+    public PlayerLogic logic;
 
     void Awake()
     {
@@ -40,6 +41,45 @@ public class BattleSetup : MonoBehaviour
 
     private void Update() {
         SinceLastEncounter -= Time.deltaTime;
+    }
+
+    public bool TryWildEncounter(GrassEncounter encounter)
+    {
+        float chance = Random.Range(0f, 100f);
+        if (SinceLastEncounter < 0f)
+        {
+            if (chance < encounter.chanceModifier)
+            {
+                PrepareWildEncounter(encounter);
+                return true;
+            }
+            else
+            {
+                SinceLastEncounter = 0.25f;
+                return false;
+            }
+        }
+        else
+        {
+            
+            return false;
+        }
+    }
+
+    public void PrepareWildEncounter(GrassEncounter encounter)
+    {
+        float randomChoice = Random.Range(0f, 100f);
+        float searcher = 0f;
+        int index = -1;
+
+        while (searcher < randomChoice && index < encounter.possibleEncounters.Count-1)
+        {
+            index++;
+            searcher += encounter.possibleEncounters[index].chanceWeight;
+        }
+
+        GenerateWildEncounter(referenceDex.GetLunenObject(encounter.possibleEncounters[index].lunen), Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
+        MoveToBattle(0,0);
     }
 
     public void GenerateWildEncounter(GameObject species, int level)

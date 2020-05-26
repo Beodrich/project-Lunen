@@ -10,6 +10,7 @@ TagManager:
   - BattleSetup
   - TrainerSight
   - Door
+  - Path
   layers:
   - Default
   - TransparentFX

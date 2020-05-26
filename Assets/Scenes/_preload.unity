@@ -248,7 +248,7 @@ Transform:
   m_Children:
   - {fileID: 441925199}
   m_Father: {fileID: 8082643487578673632}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &124750674
 MonoBehaviour:
@@ -262,9 +262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 569dc10d899f54b75af0b1accf65d6fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LunenBase: 23
-  LunenLevel: 27
-  targetPlayer: 0
+  LunenBase: 12
+  LunenLevel: 50
+  targetPlayer: 1
 --- !u!1 &149151892
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +316,141 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1790429855}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &224256472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224256474}
+  - component: {fileID: 224256473}
+  m_Layer: 0
+  m_Name: _NoMove(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &224256473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224256472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: NULL
+  Type: 10
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 0
+  Animation: {fileID: 0}
+  PartsOfAction: []
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
+--- !u!4 &224256474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224256472}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 396644809}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &396644807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396644809}
+  - component: {fileID: 396644808}
+  m_Layer: 0
+  m_Name: Nulva Incarnate_Nulva Incarnate_Monster
+  m_TagString: Monster
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &396644808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396644807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nickname: Nulva Incarnate
+  Level: 50
+  Exp: {x: 125000, y: 125000, z: 132651}
+  ActionSet:
+  - {fileID: 1113086451}
+  - {fileID: 224256472}
+  - {fileID: 2102799744}
+  - {fileID: 1017116421}
+  StatusEffectObjects: []
+  Health: {x: 35, y: 250, z: 285}
+  Attack: {x: 16, y: 200, z: 216}
+  Defense: {x: 10, y: 150, z: 160}
+  Speed: {x: 14, y: 200, z: 214}
+  AfterEffectStats: {x: 216, y: 160, z: 214}
+  MonsterTeam: 1
+  SourceLunen: {fileID: 1550119101485069792, guid: e40d3d410028a4307b967dcbf8f77717,
+    type: 3}
+  loopback: {fileID: 0}
+  battleSetup: {fileID: 8082643487578673633}
+  lunaDex: {fileID: 8105134383550229048}
+  CurrCooldown: 0
+  ExpToAdd: 0
+  HealthToSubtract: 0
+  MoveAffinityCost: 0
+  DamageTakenScalar:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+--- !u!4 &396644809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396644807}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1113086453}
+  - {fileID: 224256474}
+  - {fileID: 2102799746}
+  - {fileID: 1017116423}
+  m_Father: {fileID: 8082643487578673632}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &441925197
 GameObject:
@@ -434,7 +569,7 @@ Transform:
   m_Father: {fileID: 1790429855}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &960624335
+--- !u!1 &1017116421
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -442,55 +577,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 960624337}
-  - component: {fileID: 960624336}
+  - component: {fileID: 1017116423}
+  - component: {fileID: 1017116422}
   m_Layer: 0
-  m_Name: DebugGodMove(Clone)
+  m_Name: _NoMove(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &960624336
+--- !u!114 &1017116422
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960624335}
+  m_GameObject: {fileID: 1017116421}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: DebugGodMove
+  Name: NULL
   Type: 10
   Turns: 1
   AdditionalAffinityCost: 0
   TimePausePeriod: 0
   Animation: {fileID: 0}
-  PartsOfAction:
-  - Effect: 0
-    Target: 0
-    Power: 999
-    EffectToInflict: {fileID: 0}
-    StatusEffect: 0
-    StatusEffectTurns: 0
+  PartsOfAction: []
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
---- !u!4 &960624337
+--- !u!4 &1017116423
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960624335}
+  m_GameObject: {fileID: 1017116421}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1749855145}
-  m_RootOrder: 0
+  m_Father: {fileID: 396644809}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1038073270
 GameObject:
@@ -661,6 +790,58 @@ Transform:
   m_Father: {fileID: 1790429855}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1113086451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1113086453}
+  - component: {fileID: 1113086452}
+  m_Layer: 0
+  m_Name: _NoMove(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1113086452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113086451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: NULL
+  Type: 10
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 0
+  Animation: {fileID: 0}
+  PartsOfAction: []
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
+--- !u!4 &1113086453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113086451}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 396644809}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1154613761
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,83 +946,6 @@ Transform:
   m_Father: {fileID: 1790429855}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1749855143
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1749855145}
-  - component: {fileID: 1749855144}
-  m_Layer: 0
-  m_Name: Wynern_Wynern_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1749855144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749855143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Wynern
-  Level: 30
-  Exp: {x: 27000, y: 27000, z: 29791}
-  ActionSet:
-  - {fileID: 960624335}
-  StatusEffectObjects: []
-  Health: {x: 26, y: 90, z: 116}
-  Attack: {x: 10, y: 90, z: 100}
-  Defense: {x: 7, y: 30, z: 37}
-  Speed: {x: 9, y: 60, z: 69}
-  AfterEffectStats: {x: 100, y: 37, z: 69}
-  MonsterTeam: 1
-  SourceLunen: {fileID: 4275592756907206243, guid: f2e48d93f5e3e4909befe0db212ac5bd,
-    type: 3}
-  loopback: {fileID: 0}
-  battleSetup: {fileID: 0}
-  lunaDex: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &1749855145
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749855143}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 960624337}
-  m_Father: {fileID: 8082643487578673632}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1790429853
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,6 +1035,58 @@ Transform:
   - {fileID: 1048950888}
   - {fileID: 1154613763}
   m_Father: {fileID: 8082643487578673632}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2102799744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2102799746}
+  - component: {fileID: 2102799745}
+  m_Layer: 0
+  m_Name: _NoMove(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2102799745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102799744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: NULL
+  Type: 10
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 0
+  Animation: {fileID: 0}
+  PartsOfAction: []
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
+--- !u!4 &2102799746
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102799744}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 396644809}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8082643487578673632
@@ -944,9 +1100,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1749855145}
   - {fileID: 70976061}
   - {fileID: 1790429855}
+  - {fileID: 396644809}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -968,13 +1124,14 @@ MonoBehaviour:
   - {fileID: 70976059}
   - {fileID: 1790429853}
   EnemyLunenTeam:
-  - {fileID: 1749855143}
+  - {fileID: 396644807}
   typeOfBattle: 0
   lastOverworld: 1
   lastSceneLocation: {x: 0, y: 0, z: 0}
   MonsterTemplate: {fileID: 2324287439143063678, guid: ce7650befca7144ae9e5cc4263c99950,
     type: 3}
   SinceLastEncounter: 0
+  logic: {fileID: 0}
 --- !u!1 &8082643487578673647
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,6 +1145,7 @@ GameObject:
   - component: {fileID: 8082643487578673633}
   - component: {fileID: 124750674}
   - component: {fileID: 8082643487578673648}
+  - component: {fileID: 8082643487578673649}
   m_Layer: 0
   m_Name: BattleSetup
   m_TagString: BattleSetup
@@ -1017,8 +1175,8 @@ MonoBehaviour:
     sceneIndex: 3
     sceneEnabled: 1
   - Scene: {fileID: 102900000, guid: fd01006b61cdd47e9826b0704b424e04, type: 3}
-    SceneName: AlecOverworldScene
-    sceneIndex: -1
+    SceneName: Shop
+    sceneIndex: 4
     sceneEnabled: 1
   - Scene: {fileID: 0}
     SceneName: 
@@ -1208,6 +1366,20 @@ MonoBehaviour:
     SceneName: 
     sceneIndex: 0
     sceneEnabled: 0
+--- !u!114 &8082643487578673649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8082643487578673647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac7d54eae8e71482a8f67440ce2b79ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneReference: {fileID: 0}
+  bootScene: 1
 --- !u!114 &8105134383550229048
 MonoBehaviour:
   m_ObjectHideFlags: 0

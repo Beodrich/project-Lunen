@@ -1,126 +1,115 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MyBox;
 
 public class Move : MonoBehaviour
 {
-    //public Animator animator;
-    public float speed = 5f;
-
-    public bool inGrass = false;
-
-    public GameObject grassObject;
-
-    public float grassEncounterCheckCurrent;
-    public float grassEncounterCheckEvery;
-
-    private Rigidbody2D rb2D;
-
     [HideInInspector]
-    public BattleSetup battle;
+    public PlayerLogic logic;
 
-    public void Start()
+    
+    public enum checkDirection
     {
-        rb2D = GetComponent<Rigidbody2D>();
+        North,
+        South,
+        East,
+        West,
+        Null
     }
 
-    private Vector2 movement = Vector3.zero;
-    private void Update()
-    {
-        movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+    public float moveSpeed;
+    public float gridSize;
+    public float playerSize;
+    private enum Orientation {
+        Horizontal,
+        Vertical
+    };
+    private Orientation gridOrientation = Orientation.Vertical;
+    private Vector2 input;
+    public bool isMoving = false;
+    private Vector3 startPosition;
+    private Vector3 endPosition;
+    private float t;
+    private float factor;
 
-        if (movement.x != 0 || movement.y != 0)
+    public checkDirection goDirection;
+    public RaycastHit2D hit;
+    private Vector2 moveDirection;
+
+/*
+    public bool HasCooldown
+    {
+        get
         {
-            if (inGrass)
+            return cooldownCount > 0;
+        }
+    }
+    */
+
+    public void Awake()
+    {
+        logic = GetComponent<PlayerLogic>();
+    }
+    
+ 
+    public void Update() {
+        if (!isMoving) {
+            input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            if (input.x > 0) input.x = 1;
+            if (input.x < 0) input.x = -1;
+            if (input.y > 0) input.y = 1;
+            if (input.y < 0) input.y = -1;
+
+            if (input != Vector2.zero)
             {
-                grassEncounterCheckCurrent -= Time.deltaTime;
-                if (grassEncounterCheckCurrent <= 0)
+                factor = 1f;
+                if (Mathf.Abs(input.x) + Mathf.Abs(input.y) == 2) factor = 0.7071f;
+                hit = Physics2D.Raycast(transform.position, new Vector2(input.x, input.y), playerSize/factor);
+                if (logic.MoveBegin(hit.collider))
                 {
-                    TryWildEncounter(grassObject.GetComponent<GrassEncounter>());
-                    grassEncounterCheckCurrent += grassEncounterCheckEvery;
+                    StartCoroutine(move(transform));
+                }
+                else if (factor == 0.7071f)
+                {
+                    factor = 1f;
+                    hit = Physics2D.Raycast(transform.position, new Vector2(input.x, 0), playerSize/factor);
+                    if (logic.MoveBegin(hit.collider))
+                    {
+                        input.y = 0;
+                        StartCoroutine(move(transform));
+                    }
+                    else
+                    {
+                        hit = Physics2D.Raycast(transform.position, new Vector2(0, input.y), playerSize/factor);
+                        if (logic.MoveBegin(hit.collider))
+                        {
+                            input.x = 0;
+                            StartCoroutine(move(transform));
+                        }
+                    }
                 }
             }
-        }
-
-        if (battle == null)
-        {
-            GameObject battleObject = GameObject.Find("BattleSetup");
-            if (battleObject != null) battle = battleObject.GetComponent<BattleSetup>();
-            if (battle != null)
-            {
-                transform.position = battle.lastSceneLocation;
-                
-            }
-        }
-
-        //animator.SetFloat("Horizontal", movement.x);
-        //animator.SetFloat("Vertical", movement.y);
-        //animator.SetFloat("Magnitude", movement.magnitude);
-    }
-
-    public bool TryWildEncounter(GrassEncounter encounter)
-    {
-        float chance = Random.Range(0f, 100f);
-        if (chance < encounter.chanceModifier && battle.SinceLastEncounter < 0f)
-        {
-            PrepareWildEncounter(encounter);
-            return true;
-        }
-        else return false;
-    }
-
-    public void PrepareWildEncounter(GrassEncounter encounter)
-    {
-        float randomChoice = Random.Range(0f, 100f);
-        float searcher = 0f;
-        int index = -1;
-
-        while (searcher < randomChoice && index < encounter.possibleEncounters.Count-1)
-        {
-            index++;
-            searcher += encounter.possibleEncounters[index].chanceWeight;
-        }
-
-        battle.GenerateWildEncounter(battle.referenceDex.GetLunenObject(encounter.possibleEncounters[index].lunen), Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
-        battle.lastSceneLocation = transform.position;
-        battle.MoveToBattle(0,0);
-    }
-
-    private void FixedUpdate()
-    {
-        rb2D.MovePosition(rb2D.position + movement * speed * Time.fixedDeltaTime);
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        switch (other.gameObject.tag)
-        {
-            case "Grass":
-                inGrass = true;
-                grassObject = other.gameObject;
-                break;
-            case "TrainerSight":
-                TrainerEncounter encounter = other.gameObject.GetComponent<TrainerEncounter>();
-                if (encounter != null)
-                {
-                    battle.GenerateTrainerBattle(encounter);
-                    battle.MoveToBattle(0, 0);
-                }
-                break;
-            case "Door":
-                battle.NewOverworld(other.gameObject.GetComponent<DoorToLocation>());
-                break;
+            
         }
     }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        switch (other.gameObject.tag)
-        {
-            case "Grass":
-                inGrass = false;
-                grassObject = null;
-                break;
+ 
+    public IEnumerator move(Transform transform) {
+        isMoving = true;
+        startPosition = transform.position;
+        t = 0;
+ 
+        endPosition = new Vector3(startPosition.x + System.Math.Sign(input.x) * gridSize, startPosition.y + System.Math.Sign(input.y) * gridSize, startPosition.z);
+ 
+        while (t < 1f) {
+            t += Time.deltaTime * (moveSpeed/gridSize) * factor;
+            transform.position = Vector3.Lerp(startPosition, endPosition, t);
+            yield return null;
         }
+ 
+        isMoving = false;
+        logic.MoveEnd();
+        yield return 0;
     }
+    
 }
