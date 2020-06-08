@@ -6,10 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class BattleSetup : MonoBehaviour
 {
-    [HideInInspector]
-    public LunaDex referenceDex;
-    [HideInInspector]
-    public ListOfScenes sceneReference;
+    [HideInInspector] public SetupRouter sr;
+
     public enum BattleType
     {
         WildEncounter,
@@ -20,27 +18,34 @@ public class BattleSetup : MonoBehaviour
     public List<GameObject> PlayerLunenTeam;
     public List<GameObject> EnemyLunenTeam;
     [Space(10)]
+    public bool InBattle;
     public BattleType typeOfBattle;
     public ListOfScenes.LocationEnum lastOverworld;
     public Vector3 lastSceneLocation;
     [Space(10)]
     public GameObject MonsterTemplate;
     public float SinceLastEncounter = 0f;
-    public PlayerLogic logic;
 
     void Awake()
     {
-        referenceDex = GetComponent<LunaDex>();
-        sceneReference = GetComponent<ListOfScenes>();
-        if (GameObject.FindGameObjectsWithTag("BattleSetup").Length >= 2)
-        {
-            Destroy(gameObject);
-        }
-        DontDestroyOnLoad(this.gameObject);
+        sr = GetComponent<SetupRouter>();
     }
 
     private void Update() {
         SinceLastEncounter -= Time.deltaTime;
+    }
+
+    public void EnterBattle()
+    {
+        sr.director.PrepareBattle();
+        sr.canvasCollection.SetState(CanvasCollection.UIState.Battle);
+        InBattle = true;
+    }
+
+    public void ExitBattle()
+    {
+        sr.canvasCollection.SetState(CanvasCollection.UIState.Overworld);
+        InBattle = false;
     }
 
     public bool TryWildEncounter(GrassEncounter encounter)
@@ -78,7 +83,7 @@ public class BattleSetup : MonoBehaviour
             searcher += encounter.possibleEncounters[index].chanceWeight;
         }
 
-        GenerateWildEncounter(referenceDex.GetLunenObject(encounter.possibleEncounters[index].lunen), Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
+        GenerateWildEncounter(sr.lunaDex.GetLunenObject(encounter.possibleEncounters[index].lunen), Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
         MoveToBattle(0,0);
     }
 
@@ -87,8 +92,7 @@ public class BattleSetup : MonoBehaviour
         EnemyLunenTeam.Clear();
         GameObject wildMonster = Instantiate(MonsterTemplate);
         Monster wM = wildMonster.GetComponent<Monster>();
-        wM.battleSetup = this;
-        wM.lunaDex = GetComponent<LunaDex>();
+        wM.loopback = sr;
         wM.Level = level;
         wM.TemplateToMonster(species.GetComponent<Lunen>());
         wM.MonsterTeam = Director.Team.EnemyTeam;
@@ -111,17 +115,20 @@ public class BattleSetup : MonoBehaviour
             encounter.Team[i].MonsterTeam = Director.Team.EnemyTeam;
         }
         typeOfBattle = BattleType.TrainerBattle;
+        Destroy(encounter.gameObject);
     }
 
     public void MoveToBattle(int backdrop, int musicTrack)
     {
-
-        sceneReference.LoadScene(ListOfScenes.LocationEnum.BattleScene);
+        sr.director.PlayerScripts[0].LunenTeam = PlayerLunenTeam;
+        sr.director.PlayerScripts[1].LunenTeam = EnemyLunenTeam;
+        EnterBattle();
+        //sceneReference.LoadScene(ListOfScenes.LocationEnum.BattleScene);
     }
 
     public void MoveToOverworld()
     {
-        sceneReference.LoadScene(lastOverworld);
+        //sceneReference.LoadScene(lastOverworld);
         List<GameObject> checkToDelete = new List<GameObject>();
         checkToDelete.AddRange(gameObject.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Monster").Select(c => c.gameObject).ToArray());
         foreach (GameObject monster in checkToDelete)
@@ -132,11 +139,12 @@ public class BattleSetup : MonoBehaviour
             }
         }
         SinceLastEncounter = 5f;
+        ExitBattle();
     }
 
     public void NewOverworld(DoorToLocation door)
     {
         lastSceneLocation = door.SpawnLocation;
-        sceneReference.LoadScene(door.TargetLocation);
+        sr.listOfScenes.LoadScene(door.TargetLocation);
     }
 }

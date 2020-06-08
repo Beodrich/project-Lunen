@@ -5,6 +5,8 @@ using MyBox;
 
 public class GenerateMonster : MonoBehaviour
 {
+    [HideInInspector] public SetupRouter sr;
+
     public enum TargetPlayer
     {
         Player1,
@@ -22,23 +24,21 @@ public class GenerateMonster : MonoBehaviour
 
     public bool Generate()
     {
-        LunaDex ld = GetComponent<LunaDex>();
-        BattleSetup bs = GetComponent<BattleSetup>();
-        for (int i = 0; i < bs.PlayerLunenTeam.Count; i++)
+        sr = GetComponent<SetupRouter>();
+        for (int i = 0; i < sr.battleSetup.PlayerLunenTeam.Count; i++)
         {
-            if (bs.PlayerLunenTeam[i] == null)
+            if (sr.battleSetup.PlayerLunenTeam[i] == null)
             {
-                bs.PlayerLunenTeam.RemoveAt(i);
+                sr.battleSetup.PlayerLunenTeam.RemoveAt(i);
                 i--;
             }
         }
-        New1 = Instantiate(ld.MonsterTemplate);
+        New1 = Instantiate(sr.lunaDex.MonsterTemplate);
         //New1.transform.SetParent(this.transform);
         NewMonster1 = New1.GetComponent<Monster>();
-        NewMonster1.battleSetup = bs;
-        NewMonster1.lunaDex = ld;
+        NewMonster1.loopback = sr;
         NewMonster1.Level = LunenLevel;
-        NewMonster1.TemplateToMonster(ld.GetLunen(LunenBase));
+        NewMonster1.TemplateToMonster(sr.lunaDex.GetLunen(LunenBase));
         for (int i = 1; i <= LunenLevel; i++)
         {
             NewMonster1.GetLevelUpMove(i);
@@ -49,11 +49,11 @@ public class GenerateMonster : MonoBehaviour
         {
             case TargetPlayer.Player1:
                 NewMonster1.transform.SetParent(transform);
-                bs.PlayerLunenTeam.Add(New1);
+                sr.battleSetup.PlayerLunenTeam.Add(New1);
                 break;
             case TargetPlayer.Player2:
                 NewMonster1.transform.SetParent(transform);
-                bs.EnemyLunenTeam.Add(New1);
+                sr.battleSetup.EnemyLunenTeam.Add(New1);
                 NewMonster1.MonsterTeam = Director.Team.EnemyTeam;
                 break;
         }

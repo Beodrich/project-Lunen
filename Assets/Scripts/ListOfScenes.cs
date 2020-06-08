@@ -7,7 +7,6 @@ public class ListOfScenes : MonoBehaviour
 {
     public enum LocationEnum
     {
-        BattleScene,
         Debug000,
         Debug001,
         Debug002,

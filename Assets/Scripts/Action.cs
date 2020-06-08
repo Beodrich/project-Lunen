@@ -5,6 +5,8 @@ using MyBox;
 
 public class Action : MonoBehaviour
 {
+    [HideInInspector] public SetupRouter loopback;
+
     [System.Serializable]
     public enum MonsterAim
     {
@@ -50,10 +52,6 @@ public class Action : MonoBehaviour
     [Separator("Effects")]
     public List<ActionPart> PartsOfAction;
     
-    
-    
-
-
     [HideInInspector]
     public Monster MonsterUser;
     [HideInInspector]
@@ -61,17 +59,21 @@ public class Action : MonoBehaviour
 
     public void Execute()
     {
+        loopback = MonsterUser.loopback;
+        Director.Team actionTeam = MonsterUser.MonsterTeam;
+        Director.Team targetTeam = Director.Team.PlayerTeam;
+        if (actionTeam == Director.Team.PlayerTeam) targetTeam = Director.Team.EnemyTeam;
         foreach (ActionPart part in PartsOfAction)
         {
             switch (part.Target)
             {
                 case MonsterAim.SingleOpponent:
-                    ExecutePerMonster(part, MonsterUser.loopback.Player2Script.LunenOut[MonsterUser.loopback.EnemyTarget]);
+                    ExecutePerMonster(part, loopback.director.GetMonster(targetTeam, loopback.canvasCollection.GetLunenSelected(Director.Team.EnemyTeam)));
                     break;
                 case MonsterAim.AllOpponents:
-                    for (int i = 0; i < MonsterUser.loopback.Player2Script.LunenOut.Count; i++)
+                    for (int i = 0; i < loopback.director.PlayerScripts[(int)targetTeam].LunenOut.Count; i++)
                     {
-                        ExecutePerMonster(part, MonsterUser.loopback.Player2Script.LunenOut[i]);
+                        ExecutePerMonster(part, loopback.director.GetMonster(targetTeam, i));
                     }
                     break;
                 case MonsterAim.Self:
@@ -79,8 +81,8 @@ public class Action : MonoBehaviour
                     break;
             }
         }
-        MonsterUser.loopback.DirectorTimeToWait = TimePausePeriod;
-        MonsterUser.loopback.DirectorTimeFlowing = false;
+        loopback.director.DirectorTimeToWait = TimePausePeriod;
+        loopback.director.DirectorTimeFlowing = false;
         MonsterUser.EndTurn();
         
     }
@@ -126,7 +128,7 @@ public class Action : MonoBehaviour
 
     public void ApplyStatusEffect(ActionPart part)
     {
-        GameObject newBuff = Instantiate(MonsterUser.loopback.battleSetup.referenceDex.GetStatusEffectObject(part.StatusEffect));
+        GameObject newBuff = Instantiate(loopback.lunaDex.GetStatusEffectObject(part.StatusEffect));
         newBuff.GetComponent<Effects>().ExpiresIn = part.StatusEffectTurns;
         newBuff.transform.SetParent(MonsterTarget.transform);
         MonsterTarget.StatusEffectObjects.Add(newBuff);

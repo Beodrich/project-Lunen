@@ -28,6 +28,7 @@ public class Move : MonoBehaviour
     private Orientation gridOrientation = Orientation.Vertical;
     private Vector2 input;
     public bool isMoving = false;
+    public bool diagonalMovement;
     private Vector3 startPosition;
     private Vector3 endPosition;
     private float t;
@@ -56,10 +57,25 @@ public class Move : MonoBehaviour
     public void Update() {
         if (!isMoving) {
             input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            if (input.x > 0) input.x = 1;
-            if (input.x < 0) input.x = -1;
-            if (input.y > 0) input.y = 1;
-            if (input.y < 0) input.y = -1;
+            if (diagonalMovement)
+            {
+                if (input.x > 0) input.x = 1;
+                if (input.x < 0) input.x = -1;
+                if (input.y > 0) input.y = 1;
+                if (input.y < 0) input.y = -1;
+            }
+            else
+            {
+                if (Mathf.Abs(input.x) >= Mathf.Abs(input.y))
+                {
+                    input.y = 0;
+                }
+                else
+                {
+                    input.x = 0;
+                }
+            }
+            
 
             if (input != Vector2.zero)
             {

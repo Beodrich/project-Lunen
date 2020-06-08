@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: BasicAttack
   Type: 0
   Turns: 1
@@ -171,7 +172,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &21984617
 GameObject:
@@ -202,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: BasicAttack
   Type: 0
   Turns: 1
@@ -223,60 +225,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &63532190
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 63532191}
-  - component: {fileID: 63532192}
-  m_Layer: 0
-  m_Name: TableFlip(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &63532191
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63532190}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1613009721}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &63532192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63532190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Table Flip
-  Type: 8
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 0
-  Animation: {fileID: 0}
-  PartsOfAction: []
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
 --- !u!1 &74369156
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +308,7 @@ Transform:
   m_LocalScale: {x: 0.72341204, y: 3.2066162, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &74369159
 Rigidbody2D:
@@ -533,7 +483,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &116499820
 GameObject:
@@ -661,8 +611,68 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &148787634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 148787635}
+  - component: {fileID: 148787636}
+  m_Layer: 0
+  m_Name: Attack Boost(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &148787635
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148787634}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 666233913}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &148787636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148787634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: Attack Boost
+  Type: 0
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 3
+  Animation: {fileID: 0}
+  PartsOfAction:
+  - Effect: 2
+    Target: 6
+    Power: 0
+    EffectToInflict: {fileID: 7318141089512678369, guid: 3522b427a3bdd41468fea21b7a9cbcf0,
+      type: 3}
+    StatusEffect: 0
+    StatusEffectTurns: 0
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
 --- !u!1 &171325949
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: BasicAttack
   Type: 0
   Turns: 1
@@ -713,7 +724,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &185133408
 GameObject:
@@ -802,8 +813,154 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &247129737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 247129738}
+  - component: {fileID: 247129739}
+  m_Layer: 0
+  m_Name: _NoMove(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &247129738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247129737}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253283226}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &247129739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247129737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: NULL
+  Type: 10
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 0
+  Animation: {fileID: 0}
+  PartsOfAction: []
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
+--- !u!1 &253283225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 253283226}
+  - component: {fileID: 253283227}
+  m_Layer: 0
+  m_Name: Wynern_Wynern_Monster
+  m_TagString: Monster
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &253283226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253283225}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5313034, y: 7.043248, z: -74.79194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1862397246}
+  - {fileID: 1980791184}
+  - {fileID: 1244465408}
+  - {fileID: 247129738}
+  - {fileID: 1870414962}
+  - {fileID: 974135676}
+  - {fileID: 1936071338}
+  - {fileID: 1211332309}
+  - {fileID: 433384679}
+  - {fileID: 1619142290}
+  m_Father: {fileID: 1326353050}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &253283227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253283225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nickname: Wynern
+  Level: 40
+  Exp: {x: 64000, y: 64000, z: 68921}
+  ActionSet:
+  - {fileID: 1862397245}
+  - {fileID: 1980791183}
+  - {fileID: 1244465407}
+  - {fileID: 247129737}
+  - {fileID: 1870414961}
+  - {fileID: 974135675}
+  - {fileID: 1936071337}
+  - {fileID: 1211332308}
+  - {fileID: 433384678}
+  - {fileID: 1619142289}
+  StatusEffectObjects: []
+  Health: {x: 26, y: 120, z: 146}
+  Attack: {x: 10, y: 120, z: 130}
+  Defense: {x: 7, y: 40, z: 47}
+  Speed: {x: 9, y: 80, z: 89}
+  AfterEffectStats: {x: 130, y: 47, z: 89}
+  MonsterTeam: 1
+  SourceLunen: {fileID: 8289686672393660397, guid: f2e48d93f5e3e4909befe0db212ac5bd,
+    type: 3}
+  loopback: {fileID: 0}
+  CurrCooldown: 0
+  ExpToAdd: 0
+  HealthToSubtract: 0
+  MoveAffinityCost: 0
+  DamageTakenScalar:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!1 &274587449
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: BasicAttack
   Type: 0
   Turns: 1
@@ -854,7 +1012,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289862651
 GameObject:
@@ -977,7 +1135,7 @@ Transform:
   m_LocalScale: {x: 0.73586214, y: 0.50916547, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &303105606
 GameObject:
@@ -1105,7 +1263,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &349739694
 GameObject:
@@ -1136,6 +1294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: BasicAttack
   Type: 0
   Turns: 1
@@ -1157,9 +1316,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &389077238
+--- !u!1 &354150358
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1167,8 +1326,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 389077239}
-  - component: {fileID: 389077240}
+  - component: {fileID: 354150359}
+  - component: {fileID: 354150360}
+  m_Layer: 0
+  m_Name: _NoMove(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &354150359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354150358}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 666233913}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &354150360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354150358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: NULL
+  Type: 10
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 0
+  Animation: {fileID: 0}
+  PartsOfAction: []
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
+--- !u!1 &381488857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 381488858}
+  - component: {fileID: 381488859}
   m_Layer: 0
   m_Name: Tackle(Clone)
   m_TagString: Untagged
@@ -1176,39 +1388,46 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &389077239
+--- !u!4 &381488858
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389077238}
+  m_GameObject: {fileID: 381488857}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 908380593}
+  m_Father: {fileID: 666233913}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &389077240
+--- !u!114 &381488859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 389077238}
+  m_GameObject: {fileID: 381488857}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: Tackle
   Type: 0
   Turns: 1
   AdditionalAffinityCost: 0
-  TimePausePeriod: 0
+  TimePausePeriod: 2
   Animation: {fileID: 0}
-  PartsOfAction: []
+  PartsOfAction:
+  - Effect: 0
+    Target: 0
+    Power: 40
+    EffectToInflict: {fileID: 0}
+    StatusEffect: 0
+    StatusEffectTurns: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
 --- !u!1 &421035454
@@ -1240,6 +1459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: BasicAttack
   Type: 0
   Turns: 1
@@ -1261,7 +1481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &424396277
 GameObject:
@@ -1389,8 +1609,61 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &433384678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 433384679}
+  - component: {fileID: 433384680}
+  m_Layer: 0
+  m_Name: _NoMove(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &433384679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433384678}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253283226}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &433384680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433384678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: NULL
+  Type: 10
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 0
+  Animation: {fileID: 0}
+  PartsOfAction: []
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
 --- !u!1 &461851270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: BasicAttack
   Type: 0
   Turns: 1
@@ -1441,7 +1715,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &476797580
 GameObject:
@@ -1472,6 +1746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: BasicAttack
   Type: 0
   Turns: 1
@@ -1493,7 +1768,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &544303990
 GameObject:
@@ -1524,6 +1799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: BasicAttack
   Type: 0
   Turns: 1
@@ -1545,7 +1821,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &556715896
 GameObject:
@@ -1673,8 +1949,89 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &666233912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 666233913}
+  - component: {fileID: 666233914}
+  m_Layer: 0
+  m_Name: Yibalis_Yibalis_Monster
+  m_TagString: Monster
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &666233913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666233912}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5313034, y: 7.043248, z: -74.79194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 381488858}
+  - {fileID: 148787635}
+  - {fileID: 1137737892}
+  - {fileID: 354150359}
+  m_Father: {fileID: 1326353050}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &666233914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666233912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nickname: Yibalis
+  Level: 13
+  Exp: {x: 2197, y: 2197, z: 2744}
+  ActionSet:
+  - {fileID: 381488857}
+  - {fileID: 148787634}
+  - {fileID: 1137737891}
+  - {fileID: 354150358}
+  StatusEffectObjects: []
+  Health: {x: 20, y: 26, z: 46}
+  Attack: {x: 9, y: 26, z: 35}
+  Defense: {x: 6, y: 26, z: 32}
+  Speed: {x: 7, y: 26, z: 33}
+  AfterEffectStats: {x: 35, y: 32, z: 33}
+  MonsterTeam: 1
+  SourceLunen: {fileID: 6382836373050509970, guid: 628478ef3bffd4e4c9fd303e122e3524,
+    type: 3}
+  loopback: {fileID: 0}
+  CurrCooldown: 0
+  ExpToAdd: 0
+  HealthToSubtract: 0
+  MoveAffinityCost: 0
+  DamageTakenScalar:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
 --- !u!1 &668668608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,7 +2158,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &723890230
 GameObject:
@@ -1929,7 +2286,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &726031294
 GameObject:
@@ -1960,6 +2317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: BasicAttack
   Type: 0
   Turns: 1
@@ -1981,7 +2339,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &885170114
 GameObject:
@@ -2012,6 +2370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: BasicAttack
   Type: 0
   Turns: 1
@@ -2033,87 +2392,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &908380592
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 908380593}
-  - component: {fileID: 908380594}
-  m_Layer: 0
-  m_Name: Woufa_Woufa_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &908380593
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908380592}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11130333, y: 7.043248, z: -74.79193}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 389077239}
-  - {fileID: 1571452583}
-  m_Father: {fileID: 1326353050}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &908380594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908380592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Woufa
-  Level: 20
-  Exp: {x: 8000, y: 8000, z: 9261}
-  ActionSet:
-  - {fileID: 389077238}
-  - {fileID: 1571452582}
-  StatusEffectObjects: []
-  Health: {x: 21, y: 40, z: 61}
-  Attack: {x: 8, y: 40, z: 48}
-  Defense: {x: 5, y: 20, z: 25}
-  Speed: {x: 7, y: 20, z: 27}
-  AfterEffectStats: {x: 48, y: 25, z: 27}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
-    type: 3}
-  loopback: {fileID: 0}
-  battleSetup: {fileID: 0}
-  lunaDex: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
 --- !u!1 &917812522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,9 +2520,9 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1021185979
+--- !u!1 &974135675
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2250,168 +2530,69 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1021185982}
-  - component: {fileID: 1021185981}
-  - component: {fileID: 1021185984}
-  - component: {fileID: 1021185980}
-  - component: {fileID: 1021185983}
+  - component: {fileID: 974135676}
+  - component: {fileID: 974135677}
   m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &1021185980
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021185979}
-  m_Enabled: 1
---- !u!20 &1021185981
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021185979}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1021185982
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021185979}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1021185983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021185979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82c55c4f632af4da9acdb41c1590e451, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sel: {fileID: 1714339152}
-  Min: {x: -1000, y: -1000}
-  Max: {x: 1000, y: 1000}
---- !u!114 &1021185984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1021185979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AssetsPPU: 32
-  m_RefResolutionX: 640
-  m_RefResolutionY: 360
-  m_UpscaleRT: 1
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
---- !u!1 &1052960964
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1052960965}
-  - component: {fileID: 1052960966}
-  m_Layer: 0
-  m_Name: TableFlip(Clone)
+  m_Name: Close Combat(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1052960965
+--- !u!4 &974135676
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052960964}
+  m_GameObject: {fileID: 974135675}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2147381290}
-  m_RootOrder: 1
+  m_Father: {fileID: 253283226}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1052960966
+--- !u!114 &974135677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052960964}
+  m_GameObject: {fileID: 974135675}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Table Flip
-  Type: 8
+  loopback: {fileID: 0}
+  Name: Close Combat
+  Type: 0
   Turns: 1
   AdditionalAffinityCost: 0
-  TimePausePeriod: 0
+  TimePausePeriod: 2
   Animation: {fileID: 0}
-  PartsOfAction: []
+  PartsOfAction:
+  - Effect: 0
+    Target: 0
+    Power: 100
+    EffectToInflict: {fileID: 0}
+    StatusEffect: 0
+    StatusEffectTurns: 0
+  - Effect: 1
+    Target: 0
+    Power: 100
+    EffectToInflict: {fileID: 2027749639238553561, guid: 1a9c58b7d920d42309ee5982f3200357,
+      type: 3}
+    StatusEffect: 1
+    StatusEffectTurns: 2
+  - Effect: 1
+    Target: 6
+    Power: 100
+    EffectToInflict: {fileID: 2027749639238553561, guid: 1a9c58b7d920d42309ee5982f3200357,
+      type: 3}
+    StatusEffect: 1
+    StatusEffectTurns: 2
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
 --- !u!1 &1068596015
@@ -2540,8 +2721,121 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1137737891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1137737892}
+  - component: {fileID: 1137737893}
+  m_Layer: 0
+  m_Name: Streamline(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1137737892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137737891}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 666233913}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1137737893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137737891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: Streamline
+  Type: 0
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 1
+  Animation: {fileID: 0}
+  PartsOfAction:
+  - Effect: 2
+    Target: 6
+    Power: 0
+    EffectToInflict: {fileID: 5829333139977574955, guid: eed46f708fddf44fe83de43217b028b5,
+      type: 3}
+    StatusEffect: 0
+    StatusEffectTurns: 0
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
+--- !u!1 &1211332308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1211332309}
+  - component: {fileID: 1211332310}
+  m_Layer: 0
+  m_Name: _NoMove(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1211332309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211332308}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253283226}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1211332310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211332308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: NULL
+  Type: 10
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 0
+  Animation: {fileID: 0}
+  PartsOfAction: []
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
 --- !u!1 &1213304065
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,8 +2962,74 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1244465407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1244465408}
+  - component: {fileID: 1244465409}
+  m_Layer: 0
+  m_Name: Bite(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1244465408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244465407}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253283226}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1244465409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244465407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: Bite
+  Type: 0
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 1
+  Animation: {fileID: 0}
+  PartsOfAction:
+  - Effect: 0
+    Target: 0
+    Power: 45
+    EffectToInflict: {fileID: 0}
+    StatusEffect: 0
+    StatusEffectTurns: 0
+  - Effect: 1
+    Target: 0
+    Power: 0
+    EffectToInflict: {fileID: 5530384316006864264, guid: 07f1bed56707041289df2725475fbb6d,
+      type: 3}
+    StatusEffect: 0
+    StatusEffectTurns: 1
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
 --- !u!1 &1273783845
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,7 +3156,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1326353048
 GameObject:
@@ -2878,11 +3238,10 @@ Transform:
   m_LocalPosition: {x: 7.86, y: -2.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 908380593}
-  - {fileID: 2147381290}
-  - {fileID: 1613009721}
+  - {fileID: 253283226}
+  - {fileID: 666233913}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1326353051
 MonoBehaviour:
@@ -3050,7 +3409,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1495486991
 GameObject:
@@ -3178,7 +3537,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1525253568
 GameObject:
@@ -3306,7 +3665,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1539369134
 GameObject:
@@ -3434,7 +3793,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1568874485
 GameObject:
@@ -3479,60 +3838,8 @@ Transform:
   - {fileID: 1679450419}
   - {fileID: 1933178595}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1571452582
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1571452583}
-  - component: {fileID: 1571452584}
-  m_Layer: 0
-  m_Name: TableFlip(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1571452583
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571452582}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 908380593}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1571452584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571452582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Table Flip
-  Type: 8
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 0
-  Animation: {fileID: 0}
-  PartsOfAction: []
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
 --- !u!1 &1588506123
 GameObject:
   m_ObjectHideFlags: 0
@@ -3659,60 +3966,8 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1608928641
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1608928642}
-  - component: {fileID: 1608928643}
-  m_Layer: 0
-  m_Name: Tackle(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1608928642
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608928641}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2147381290}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1608928643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608928641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Tackle
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 0
-  Animation: {fileID: 0}
-  PartsOfAction: []
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
 --- !u!1 &1612562195
 GameObject:
   m_ObjectHideFlags: 0
@@ -3839,9 +4094,9 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1613009720
+--- !u!1 &1619142289
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3849,77 +4104,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1613009721}
-  - component: {fileID: 1613009722}
+  - component: {fileID: 1619142290}
+  - component: {fileID: 1619142291}
   m_Layer: 0
-  m_Name: Woufa_Woufa_Monster
-  m_TagString: Monster
+  m_Name: _NoMove(Clone)
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1613009721
+--- !u!4 &1619142290
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613009720}
+  m_GameObject: {fileID: 1619142289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11130333, y: 7.043248, z: -74.79194}
+  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1918275985}
-  - {fileID: 63532191}
-  m_Father: {fileID: 1326353050}
-  m_RootOrder: 2
+  m_Children: []
+  m_Father: {fileID: 253283226}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1613009722
+--- !u!114 &1619142291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613009720}
+  m_GameObject: {fileID: 1619142289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Nickname: Woufa
-  Level: 20
-  Exp: {x: 8000, y: 8000, z: 9261}
-  ActionSet:
-  - {fileID: 1918275984}
-  - {fileID: 63532190}
-  StatusEffectObjects: []
-  Health: {x: 21, y: 40, z: 61}
-  Attack: {x: 8, y: 40, z: 48}
-  Defense: {x: 5, y: 20, z: 25}
-  Speed: {x: 7, y: 20, z: 27}
-  AfterEffectStats: {x: 48, y: 25, z: 27}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
-    type: 3}
   loopback: {fileID: 0}
-  battleSetup: {fileID: 0}
-  lunaDex: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
+  Name: NULL
+  Type: 10
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 0
+  Animation: {fileID: 0}
+  PartsOfAction: []
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
 --- !u!1 &1679450418
 GameObject:
   m_ObjectHideFlags: 0
@@ -5636,7 +5865,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1714339152
 GameObject:
@@ -5721,7 +5950,7 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1714339155
 MonoBehaviour:
@@ -5736,10 +5965,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   logic: {fileID: 0}
-  moveSpeed: 10
-  gridSize: 0.1
+  moveSpeed: 5
+  gridSize: 1
   playerSize: 1
   isMoving: 0
+  diagonalMovement: 0
   goDirection: 0
 --- !u!50 &1714339156
 Rigidbody2D:
@@ -5800,6 +6030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8e605855fc541ac980d3b08c7a0c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 0}
   inGrass: 0
   grassObject: {fileID: 0}
   inTrainerView: 0
@@ -5807,7 +6038,6 @@ MonoBehaviour:
   inDoor: 0
   doorObject: {fileID: 0}
   move: {fileID: 0}
-  battle: {fileID: 0}
 --- !u!1 &1824489350
 GameObject:
   m_ObjectHideFlags: 0
@@ -5934,7 +6164,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1825950743
 GameObject:
@@ -6062,7 +6292,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1849426039
 GameObject:
@@ -6190,7 +6420,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1859664990
 GameObject:
@@ -6273,7 +6503,7 @@ Transform:
   m_LocalScale: {x: 2.139575, y: 2.2661934, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1859664993
 BoxCollider2D:
@@ -6325,7 +6555,7 @@ MonoBehaviour:
       Max: 23
     chanceWeight: 30
   chanceModifier: 10
---- !u!1 &1918275984
+--- !u!1 &1862397245
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6333,8 +6563,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1918275985}
-  - component: {fileID: 1918275986}
+  - component: {fileID: 1862397246}
+  - component: {fileID: 1862397247}
   m_Layer: 0
   m_Name: Tackle(Clone)
   m_TagString: Untagged
@@ -6342,34 +6572,94 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1918275985
+--- !u!4 &1862397246
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918275984}
+  m_GameObject: {fileID: 1862397245}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1613009721}
+  m_Father: {fileID: 253283226}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1918275986
+--- !u!114 &1862397247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918275984}
+  m_GameObject: {fileID: 1862397245}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
   Name: Tackle
   Type: 0
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 2
+  Animation: {fileID: 0}
+  PartsOfAction:
+  - Effect: 0
+    Target: 0
+    Power: 40
+    EffectToInflict: {fileID: 0}
+    StatusEffect: 0
+    StatusEffectTurns: 0
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
+--- !u!1 &1870414961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870414962}
+  - component: {fileID: 1870414963}
+  m_Layer: 0
+  m_Name: _NoMove(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1870414962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870414961}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253283226}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1870414963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870414961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: NULL
+  Type: 10
   Turns: 1
   AdditionalAffinityCost: 0
   TimePausePeriod: 0
@@ -6503,7 +6793,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1933178594
 GameObject:
@@ -6804,6 +7094,126 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1936071337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1936071338}
+  - component: {fileID: 1936071339}
+  m_Layer: 0
+  m_Name: Intimidate(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1936071338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936071337}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253283226}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1936071339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936071337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: Intimidate
+  Type: 0
+  Turns: 4
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 1
+  Animation: {fileID: 0}
+  PartsOfAction:
+  - Effect: 1
+    Target: 1
+    Power: 45
+    EffectToInflict: {fileID: 3168399886294488340, guid: a1c12ab6e718c471b96ff02fbd216a9b,
+      type: 3}
+    StatusEffect: 12
+    StatusEffectTurns: 2
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
+--- !u!1 &1980791183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980791184}
+  - component: {fileID: 1980791185}
+  m_Layer: 0
+  m_Name: Attack Boost(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1980791184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980791183}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253283226}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1980791185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980791183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: Attack Boost
+  Type: 0
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 3
+  Animation: {fileID: 0}
+  PartsOfAction:
+  - Effect: 2
+    Target: 6
+    Power: 0
+    EffectToInflict: {fileID: 7318141089512678369, guid: 3522b427a3bdd41468fea21b7a9cbcf0,
+      type: 3}
+    StatusEffect: 0
+    StatusEffectTurns: 0
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
 --- !u!1 &1982674331
 GameObject:
   m_ObjectHideFlags: 0
@@ -6930,7 +7340,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1996534205
 GameObject:
@@ -7058,7 +7468,7 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2104688530
 GameObject:
@@ -7186,84 +7596,5 @@ Transform:
   m_LocalScale: {x: 0.83435, y: -0.3194751, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2147381289
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2147381290}
-  - component: {fileID: 2147381291}
-  m_Layer: 0
-  m_Name: Woufa_Woufa_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2147381290
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147381289}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.11130333, y: 7.043248, z: -74.79194}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1608928642}
-  - {fileID: 1052960965}
-  m_Father: {fileID: 1326353050}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2147381291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147381289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Woufa
-  Level: 20
-  Exp: {x: 8000, y: 8000, z: 9261}
-  ActionSet:
-  - {fileID: 1608928641}
-  - {fileID: 1052960964}
-  StatusEffectObjects: []
-  Health: {x: 21, y: 40, z: 61}
-  Attack: {x: 8, y: 40, z: 48}
-  Defense: {x: 5, y: 20, z: 25}
-  Speed: {x: 7, y: 20, z: 27}
-  AfterEffectStats: {x: 48, y: 25, z: 27}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
-    type: 3}
-  loopback: {fileID: 0}
-  battleSetup: {fileID: 0}
-  lunaDex: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1

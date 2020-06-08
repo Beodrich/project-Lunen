@@ -41,11 +41,7 @@ public class Monster : MonoBehaviour
     [HideInInspector]
     public Lunen SourceLunen;
     [HideInInspector]
-    public Director loopback;
-    [HideInInspector]
-    public BattleSetup battleSetup;
-    [HideInInspector]
-    public LunaDex lunaDex;
+    public SetupRouter loopback;
     [HideInInspector]
     public float CurrCooldown;
 
@@ -73,11 +69,11 @@ public class Monster : MonoBehaviour
     {
         if (loopback != null)
         {
-            if (loopback.DirectorDeltaTime != 0)
+            if (loopback.director.DirectorDeltaTime != 0)
             {
                 if (CurrCooldown > 0f)
                 {
-                    CurrCooldown -= loopback.DirectorDeltaTime;
+                    CurrCooldown -= loopback.director.DirectorDeltaTime;
                     CooldownDone = false;
                 }
                 else
@@ -94,7 +90,7 @@ public class Monster : MonoBehaviour
                     }
                     else CurrCooldown = 0f;
                 }
-                ExpAddCurrent -= loopback.DirectorDeltaTime;
+                ExpAddCurrent -= loopback.director.DirectorDeltaTime;
                 if (ExpAddCurrent < 0)
                 {
                     ExpAddCurrent += ExpAddEvery;
@@ -146,7 +142,7 @@ public class Monster : MonoBehaviour
                         }
                         if (Health.z <= 0)
                         {
-                            if (loopback != null) loopback.LunenHasDied(this);
+                            if (loopback != null) loopback.director.LunenHasDied(this);
                             HealthToSubtract = 0;
                             //if (MonsterTeam == Director.Team.EnemyTeam) Destroy(gameObject);
                         }
@@ -162,7 +158,7 @@ public class Monster : MonoBehaviour
         CalculateStats();
         CalculateExpTargets();
         GetLevelUpMove(Level);
-        loopback.ScanBothParties();
+        loopback.canvasCollection.ScanBothParties();
     }
 
     public void GetLevelUpMove(int index)
@@ -179,7 +175,7 @@ public class Monster : MonoBehaviour
                     break;
                 }
             }
-            GameObject newMoveObject = Instantiate(lunaDex.GetActionObject(newMove));
+            GameObject newMoveObject = Instantiate(loopback.lunaDex.GetActionObject(newMove));
             ActionSet.Add(newMoveObject);
             newMoveObject.transform.SetParent(transform);
         }
@@ -377,7 +373,7 @@ public class Monster : MonoBehaviour
     public void EndTurn()
     {
         CurrCooldown = SourceLunen.CooldownTime;
-        loopback.Player1MenuClick(loopback.MenuOpen);
+        loopback.canvasCollection.Player1MenuClick(loopback.canvasCollection.MenuOpen);
         GetStatusEffects();
         for (int i = 0; i < StatusEffects.Count; i++)
         {

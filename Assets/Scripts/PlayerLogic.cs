@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerLogic : MonoBehaviour
 {
+    [HideInInspector] public SetupRouter sr;
+
     public bool inGrass = false;
     public GameObject grassObject;
     [Space(10)]
@@ -15,8 +17,7 @@ public class PlayerLogic : MonoBehaviour
 
     [HideInInspector]
     public Move move;
-    [HideInInspector]
-    public BattleSetup battle;
+    
     private Rigidbody2D rb2D;
     // Start is called before the first frame update
     void Awake()
@@ -24,19 +25,16 @@ public class PlayerLogic : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         move = GetComponent<Move>();
 
-        GameObject battleObject = GameObject.Find("BattleSetup");
-        if (battleObject != null) battle = battleObject.GetComponent<BattleSetup>();
-        if (battle != null)
-        {
-            transform.position = battle.lastSceneLocation;
-            battle.logic = this;
-        }
+        sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
+        transform.position = sr.battleSetup.lastSceneLocation;
+        sr.playerLogic = this;
+        sr.cameraFollow.Sel = this.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        move.enabled = !sr.battleSetup.InBattle;
     }
 
     public bool MoveBegin(Collider2D hit)
@@ -75,18 +73,18 @@ public class PlayerLogic : MonoBehaviour
         //This function is called when the move function finished its movement.
         if (inGrass)
         {
-            battle.lastSceneLocation = transform.position;
-            battle.TryWildEncounter(grassObject.GetComponent<GrassEncounter>());
+            sr.battleSetup.lastSceneLocation = transform.position;
+            sr.battleSetup.TryWildEncounter(grassObject.GetComponent<GrassEncounter>());
         }
         if (inTrainerView)
         {
-            battle.lastSceneLocation = transform.position;
-            battle.GenerateTrainerBattle(trainerObject.GetComponent<TrainerEncounter>());
-            battle.MoveToBattle(0, 0);
+            sr.battleSetup.lastSceneLocation = transform.position;
+            sr.battleSetup.GenerateTrainerBattle(trainerObject.GetComponent<TrainerEncounter>());
+            sr.battleSetup.MoveToBattle(0, 0);
         }
         if (inDoor)
         {
-            battle.NewOverworld(doorObject.GetComponent<DoorToLocation>());
+            sr.battleSetup.NewOverworld(doorObject.GetComponent<DoorToLocation>());
         }
     }
 }
