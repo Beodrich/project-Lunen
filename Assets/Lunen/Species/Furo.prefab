@@ -46,15 +46,14 @@ MonoBehaviour:
   Name: Furo
   Elements: 06000000
   LearnedActions:
-    _Buckets: 00000000ffffffffffffffff
-    _HashCodes: 3f0000000000000000000000
-    _Next: ffffffff0000000000000000
-    _Count: 1
-    _Version: 4
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 3f0000000000000000000000
-    _Values: 010000000000000000000000
+  - Action: 63
+    Level: 1
+  - Action: 3
+    Level: 4
+  - Action: 17
+    Level: 8
+  - Action: 59
+    Level: 12
   Evolves: 1
   EvolutionLunen: 8
   EvolutionLevel: 15

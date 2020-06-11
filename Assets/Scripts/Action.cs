@@ -63,12 +63,14 @@ public class Action : MonoBehaviour
         Director.Team actionTeam = MonsterUser.MonsterTeam;
         Director.Team targetTeam = Director.Team.PlayerTeam;
         if (actionTeam == Director.Team.PlayerTeam) targetTeam = Director.Team.EnemyTeam;
+        loopback.eventLog.AddEvent("Attack: " + MonsterUser.Nickname + " attacks with " + Name + " targetting one enemy");
         foreach (ActionPart part in PartsOfAction)
         {
             switch (part.Target)
             {
                 case MonsterAim.SingleOpponent:
-                    ExecutePerMonster(part, loopback.director.GetMonster(targetTeam, loopback.canvasCollection.GetLunenSelected(Director.Team.EnemyTeam)));
+                    if (actionTeam == Director.Team.PlayerTeam) ExecutePerMonster(part, loopback.director.GetMonster(targetTeam, loopback.canvasCollection.GetLunenSelected(Director.Team.EnemyTeam)));
+                    if (actionTeam == Director.Team.EnemyTeam) ExecutePerMonster(part, loopback.director.GetMonster(targetTeam, loopback.director.EnemyLunenSelect));
                     break;
                 case MonsterAim.AllOpponents:
                     for (int i = 0; i < loopback.director.PlayerScripts[(int)targetTeam].LunenOut.Count; i++)

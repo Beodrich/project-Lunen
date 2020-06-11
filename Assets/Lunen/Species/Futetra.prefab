@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 445822767244268958}
   - component: {fileID: 445822767244268959}
   m_Layer: 0
-  m_Name: Furo 1
+  m_Name: Futetra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,15 +46,22 @@ MonoBehaviour:
   Name: Futetra
   Elements: 06000000
   LearnedActions:
-    _Buckets: 07000000ffffffffffffffff01000000ffffffffffffffffffffffff050000000300000004000000ffffffffffffffff0000000006000000ffffffffffffffffffffffff
-    _HashCodes: 3f00000003000000110000003b0000001a0000004b0000004000000033000000000000000000000000000000000000000000000000000000000000000000000000000000
-    _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffff02000000000000000000000000000000000000000000000000000000000000000000000000000000
-    _Count: 8
-    _Version: 41
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 3f00000003000000110000003b0000001a0000004b0000004000000033000000000000000000000000000000000000000000000000000000000000000000000000000000
-    _Values: 0100000004000000080000000c0000001000000014000000190000001e000000000000000000000000000000000000000000000000000000000000000000000000000000
+  - Action: 63
+    Level: 1
+  - Action: 3
+    Level: 4
+  - Action: 17
+    Level: 8
+  - Action: 59
+    Level: 12
+  - Action: 26
+    Level: 16
+  - Action: 75
+    Level: 20
+  - Action: 64
+    Level: 25
+  - Action: 51
+    Level: 30
   Evolves: 0
   EvolutionLunen: 8
   EvolutionLevel: 15

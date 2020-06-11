@@ -46,15 +46,12 @@ MonoBehaviour:
   Name: Rootle
   Elements: 03000000
   LearnedActions:
-    _Buckets: 000000000100000002000000
-    _HashCodes: 3f000000100000004d000000
-    _Next: ffffffffffffffffffffffff
-    _Count: 3
-    _Version: 12
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 3f000000100000004d000000
-    _Values: 010000000400000008000000
+  - Action: 63
+    Level: 1
+  - Action: 16
+    Level: 4
+  - Action: 77
+    Level: 8
   Evolves: 1
   EvolutionLunen: 16
   EvolutionLevel: 10

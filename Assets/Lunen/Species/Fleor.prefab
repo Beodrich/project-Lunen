@@ -46,15 +46,20 @@ MonoBehaviour:
   Name: Fleor
   Elements: 04000000
   LearnedActions:
-    _Buckets: 06000000ffffffff040000000300000002000000ffffffffffffffff
-    _HashCodes: 3f0000001200000043000000030000004f0000002300000031000000
-    _Next: ffffffffffffffff01000000ffffffffffffffff0000000005000000
-    _Count: 7
-    _Version: 33
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 3f0000001200000043000000030000004f0000002300000031000000
-    _Values: 010000000300000006000000090000000d0000001000000013000000
+  - Action: 63
+    Level: 1
+  - Action: 18
+    Level: 3
+  - Action: 67
+    Level: 6
+  - Action: 3
+    Level: 9
+  - Action: 79
+    Level: 13
+  - Action: 35
+    Level: 16
+  - Action: 49
+    Level: 19
   Evolves: 1
   EvolutionLunen: 5
   EvolutionLevel: 20

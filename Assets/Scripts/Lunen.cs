@@ -9,7 +9,7 @@ public class Lunen : MonoBehaviour
     [System.Serializable]
     public struct LearnedAction
     {
-        public GameObject Action;
+        public LunaDex.ActionEnum Action;
         public int Level;
     }
 
@@ -18,7 +18,7 @@ public class Lunen : MonoBehaviour
     public string Name;
     public List<Types.Element> Elements;
     //public List<LearnedAction> ActionsToLearn;
-    public LevelUpAction LearnedActions;
+    public List<LearnedAction> LearnedActions;
 
     public bool Evolves;
     [ConditionalField(nameof(Evolves))] public LunaDex.LunenEnum EvolutionLunen;

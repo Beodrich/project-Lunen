@@ -15,6 +15,16 @@ public class Director : MonoBehaviour
         EnemyTeam3,
     }
 
+    [System.Serializable]
+    public enum AISkill
+    {
+        Wild,
+        Minimum,
+        Medium,
+        High,
+        Top
+    }
+
     public int MaxPlayers;
     public List<GameObject> Players;
     
@@ -28,6 +38,7 @@ public class Director : MonoBehaviour
     public bool DirectorTimeFlowing;
     public float DirectorTimeToWait;
     public bool DirectorGamePaused;
+    public int EnemyLunenSelect;
 
     private void Awake()
     {
@@ -62,6 +73,7 @@ public class Director : MonoBehaviour
         for (int i = 0; i < Players.Count; i++)
         {
             PlayerScripts[i].ReloadTeam();
+            PlayerScripts[i].PrepareLunenForBattle();
         }
         sr.canvasCollection.ScanBothParties();
     }

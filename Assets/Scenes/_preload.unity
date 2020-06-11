@@ -136,7 +136,7 @@ MonoBehaviour:
   sr: {fileID: 8082643487578673651}
   LunenBase: 24
   LunenLevel: 1
-  targetPlayer: 0
+  targetPlayer: 2
 --- !u!1001 &192204358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -423,6 +423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7a2ff8e76d44602ac2bbba1d72d97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  isAI: 0
+  skillLevel: 0
   Name: Player1
   AffinityCap: 0
   LevelCap: 0
@@ -809,6 +812,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7a2ff8e76d44602ac2bbba1d72d97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  isAI: 0
+  skillLevel: 0
   Name: Player4
   AffinityCap: 0
   LevelCap: 0
@@ -938,6 +944,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7a2ff8e76d44602ac2bbba1d72d97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  isAI: 1
+  skillLevel: 0
   Name: Player2
   AffinityCap: 0
   LevelCap: 0
@@ -1213,6 +1222,7 @@ GameObject:
   - component: {fileID: 652271911}
   - component: {fileID: 652271910}
   - component: {fileID: 652271914}
+  - component: {fileID: 652271915}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1354,6 +1364,19 @@ MonoBehaviour:
   EnemyTarget: 0
   Player1Script: {fileID: 0}
   Player2Script: {fileID: 0}
+--- !u!114 &652271915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652271909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e4880976a7b4b2cadaa6855dac3c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLines: 10
 --- !u!1 &719132444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,65 +1741,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1101997895}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1168420928
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1168420930}
-  - component: {fileID: 1168420929}
-  m_Layer: 0
-  m_Name: DebugGodMove(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1168420929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168420928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
-  Name: DebugGodMove
-  Type: 10
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 0
-  Animation: {fileID: 0}
-  PartsOfAction:
-  - Effect: 0
-    Target: 0
-    Power: 999
-    EffectToInflict: {fileID: 0}
-    StatusEffect: 0
-    StatusEffectTurns: 0
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &1168420930
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168420928}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1466604564}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1234823324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,81 +2556,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1466604562
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1466604564}
-  - component: {fileID: 1466604563}
-  m_Layer: 0
-  m_Name: DebugGodLunen_DebugGodLunen_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1466604563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466604562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: DebugGodLunen
-  Level: 1
-  Exp: {x: 1, y: 1, z: 8}
-  ActionSet:
-  - {fileID: 1168420928}
-  StatusEffectObjects: []
-  Health: {x: 999, y: 9, z: 1008}
-  Attack: {x: 999, y: 9, z: 1008}
-  Defense: {x: 999, y: 9, z: 1008}
-  Speed: {x: 999, y: 9, z: 1008}
-  AfterEffectStats: {x: 1008, y: 1008, z: 1008}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 8569570539236419702, guid: 71cb7471971e441bdb4b218df3dd2363,
-    type: 3}
-  loopback: {fileID: 8082643487578673651}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &1466604564
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466604562}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1168420930}
-  m_Father: {fileID: 8082643487578673632}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1593533790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2862,6 +2751,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7a2ff8e76d44602ac2bbba1d72d97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  isAI: 0
+  skillLevel: 0
   Name: Player3
   AffinityCap: 0
   LevelCap: 0
@@ -3526,8 +3418,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1466604564}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3544,11 +3435,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
-  PlayerLunenTeam:
-  - {fileID: 1466604562}
-  EnemyLunenTeam:
-  - {fileID: 0}
-  - {fileID: 0}
+  PlayerLunenTeam: []
+  EnemyLunenTeam: []
+  RecycleBinTeam: []
   InBattle: 0
   typeOfBattle: 0
   lastOverworld: 0
@@ -3837,6 +3726,7 @@ MonoBehaviour:
   DirectorTimeFlowing: 1
   DirectorTimeToWait: 0
   DirectorGamePaused: 0
+  EnemyLunenSelect: 0
 --- !u!114 &8082643487578673651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3858,6 +3748,7 @@ MonoBehaviour:
   cameraFollow: {fileID: 1021185983}
   canvasCollection: {fileID: 652271914}
   playerLogic: {fileID: 0}
+  eventLog: {fileID: 652271915}
 --- !u!114 &8105134383550229048
 MonoBehaviour:
   m_ObjectHideFlags: 0

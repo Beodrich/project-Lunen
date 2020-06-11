@@ -46,15 +46,24 @@ MonoBehaviour:
   Name: Drole
   Elements: 0800000001000000
   LearnedActions:
-    _Buckets: ffffffffffffffffffffffff
-    _HashCodes: 000000000000000000000000
-    _Next: 000000000000000000000000
-    _Count: 0
-    _Version: 0
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 000000000000000000000000
-    _Values: 000000000000000000000000
+  - Action: 63
+    Level: 1
+  - Action: 16
+    Level: 3
+  - Action: 44
+    Level: 7
+  - Action: 41
+    Level: 10
+  - Action: 59
+    Level: 14
+  - Action: 11
+    Level: 18
+  - Action: 21
+    Level: 22
+  - Action: 2
+    Level: 26
+  - Action: 36
+    Level: 30
   Evolves: 0
   EvolutionLunen: 0
   EvolutionLevel: 21

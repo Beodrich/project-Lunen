@@ -46,15 +46,12 @@ MonoBehaviour:
   Name: Wavi
   Elements: 02000000
   LearnedActions:
-    _Buckets: 02000000ffffffffffffffff
-    _HashCodes: 3f0000000300000042000000
-    _Next: ffffffff0000000001000000
-    _Count: 3
-    _Version: 12
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 3f0000000300000042000000
-    _Values: 010000000400000008000000
+  - Action: 63
+    Level: 1
+  - Action: 3
+    Level: 4
+  - Action: 66
+    Level: 8
   Evolves: 1
   EvolutionLunen: 19
   EvolutionLevel: 10

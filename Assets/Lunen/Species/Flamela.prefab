@@ -46,15 +46,14 @@ MonoBehaviour:
   Name: Flamela
   Elements: 04000000
   LearnedActions:
-    _Buckets: 00000000ffffffffffffffff
-    _HashCodes: 3f0000000000000000000000
-    _Next: ffffffff0000000000000000
-    _Count: 1
-    _Version: 3
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 3f0000000000000000000000
-    _Values: 000000000000000000000000
+  - Action: 63
+    Level: 1
+  - Action: 18
+    Level: 3
+  - Action: 67
+    Level: 6
+  - Action: 3
+    Level: 9
   Evolves: 1
   EvolutionLunen: 6
   EvolutionLevel: 10

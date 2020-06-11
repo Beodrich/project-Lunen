@@ -46,15 +46,24 @@ MonoBehaviour:
   Name: Yibalis
   Elements: 0100000007000000
   LearnedActions:
-    _Buckets: ffffffffffffffffffffffff
-    _HashCodes: 000000000000000000000000
-    _Next: 000000000000000000000000
-    _Count: 0
-    _Version: 0
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 000000000000000000000000
-    _Values: 000000000000000000000000
+  - Action: 63
+    Level: 1
+  - Action: 3
+    Level: 4
+  - Action: 59
+    Level: 9
+  - Action: 44
+    Level: 13
+  - Action: 7
+    Level: 17
+  - Action: 55
+    Level: 20
+  - Action: 42
+    Level: 23
+  - Action: 25
+    Level: 26
+  - Action: 2
+    Level: 30
   Evolves: 0
   EvolutionLunen: 0
   EvolutionLevel: 21

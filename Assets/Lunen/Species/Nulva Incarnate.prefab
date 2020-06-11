@@ -46,15 +46,14 @@ MonoBehaviour:
   Name: Nulva Incarnate
   Elements: 0a000000
   LearnedActions:
-    _Buckets: 01000000ffffffffffffffffffffffff030000000200000000000000
-    _HashCodes: 0d0000000e0000000c00000027000000000000000000000000000000
-    _Next: ffffffffffffffffffffffffffffffff000000000000000000000000
-    _Count: 4
-    _Version: 16
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 0d0000000e0000000c00000027000000000000000000000000000000
-    _Values: 01000000020000000300000004000000000000000000000000000000
+  - Action: 13
+    Level: 1
+  - Action: 14
+    Level: 1
+  - Action: 12
+    Level: 1
+  - Action: 39
+    Level: 1
   Evolves: 0
   EvolutionLunen: 0
   EvolutionLevel: 21

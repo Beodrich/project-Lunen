@@ -46,15 +46,18 @@ MonoBehaviour:
   Name: Wavineer
   Elements: 02000000
   LearnedActions:
-    _Buckets: 05000000ffffffffffffffff0200000003000000ffffffff04000000
-    _HashCodes: 3f00000003000000420000004a0000001b0000000700000000000000
-    _Next: ffffffffffffffff01000000ffffffffffffffff0000000000000000
-    _Count: 6
-    _Version: 27
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 3f00000003000000420000004a0000001b0000000700000000000000
-    _Values: 0100000004000000080000000c0000000f0000001200000000000000
+  - Action: 63
+    Level: 1
+  - Action: 3
+    Level: 4
+  - Action: 66
+    Level: 8
+  - Action: 74
+    Level: 12
+  - Action: 27
+    Level: 15
+  - Action: 7
+    Level: 18
   Evolves: 1
   EvolutionLunen: 20
   EvolutionLevel: 20

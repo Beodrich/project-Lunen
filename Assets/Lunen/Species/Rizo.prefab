@@ -46,15 +46,24 @@ MonoBehaviour:
   Name: Rizo
   Elements: 0600000007000000
   LearnedActions:
-    _Buckets: 00000000ffffffffffffffff
-    _HashCodes: 3f0000000000000000000000
-    _Next: ffffffff0000000000000000
-    _Count: 1
-    _Version: 3
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 3f0000000000000000000000
-    _Values: 000000000000000000000000
+  - Action: 63
+    Level: 1
+  - Action: 3
+    Level: 3
+  - Action: 17
+    Level: 7
+  - Action: 42
+    Level: 11
+  - Action: 7
+    Level: 15
+  - Action: 75
+    Level: 19
+  - Action: 28
+    Level: 22
+  - Action: 25
+    Level: 26
+  - Action: 20
+    Level: 30
   Evolves: 0
   EvolutionLunen: 0
   EvolutionLevel: 21

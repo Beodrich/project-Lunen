@@ -46,15 +46,14 @@ MonoBehaviour:
   Name: Tabela
   Elements: 08000000
   LearnedActions:
-    _Buckets: ffffffffffffffff0200000001000000ffffffff0300000000000000
-    _HashCodes: 3e000000030000001000000013000000000000000000000000000000
-    _Next: ffffffffffffffffffffffffffffffff000000000000000000000000
-    _Count: 4
-    _Version: 19
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 3e000000030000001000000013000000000000000000000000000000
-    _Values: 01000000050000000a0000000f000000000000000000000000000000
+  - Action: 62
+    Level: 1
+  - Action: 3
+    Level: 5
+  - Action: 16
+    Level: 10
+  - Action: 19
+    Level: 15
   Evolves: 0
   EvolutionLunen: 0
   EvolutionLevel: 21

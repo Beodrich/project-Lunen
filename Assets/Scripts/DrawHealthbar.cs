@@ -63,7 +63,7 @@ public class DrawHealthbar : MonoBehaviour
                 }
                 else if (isShowingEnergy)
                 {
-                    PlayerHealth = (((float)targetMonster.CurrCooldown - (float)targetMonster.SourceLunen.CooldownTime) / (float)targetMonster.SourceLunen.CooldownTime) * -100f;
+                    PlayerHealth = (((float)targetMonster.CurrCooldown - (float)targetMonster.GetMaxCooldown()) / (float)targetMonster.GetMaxCooldown()) * -100f;
                     LastPlayerHealth += (PlayerHealth - LastPlayerHealth) * ChangeSpeed * Time.unscaledDeltaTime;
                     HealthToShow = LastPlayerHealth;
                 }

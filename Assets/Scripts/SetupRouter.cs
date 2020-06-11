@@ -13,6 +13,7 @@ public class SetupRouter : MonoBehaviour
     public CameraFollow cameraFollow;
     public CanvasCollection canvasCollection;
     public PlayerLogic playerLogic;
+    public EventLog eventLog;
 
     public void Awake()
     {

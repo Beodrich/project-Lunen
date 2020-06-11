@@ -45,14 +45,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: DebugGodLunen
   Elements: 0a00000005000000
-  ActionsToLearn: []
-  Evolves: 0
-  EvolutionLunen: {fileID: 813028601925389350, guid: f2e48d93f5e3e4909befe0db212ac5bd,
-    type: 3}
-  EvolutionLevel: 21
-  Health: {x: 999, y: 9}
-  Attack: {x: 999, y: 9}
-  Defense: {x: 999, y: 9}
-  Speed: {x: 999, y: 9}
+  LearnedActions:
+  - Action: 78
+    Level: 1
+  - Action: 63
+    Level: 2
+  - Action: 4
+    Level: 3
+  Evolves: 1
+  EvolutionLunen: 0
+  EvolutionLevel: 2
+  Health: {x: 1, y: 1}
+  Attack: {x: 1, y: 1}
+  Defense: {x: 1, y: 1}
+  Speed: {x: 1, y: 1}
   AffinityCost: 1
   CooldownTime: 3

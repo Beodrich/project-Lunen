@@ -17,6 +17,7 @@ public class BattleSetup : MonoBehaviour
     }
     public List<GameObject> PlayerLunenTeam;
     public List<GameObject> EnemyLunenTeam;
+    public List<GameObject> RecycleBinTeam;
     [Space(10)]
     public bool InBattle;
     public BattleType typeOfBattle;
@@ -25,11 +26,6 @@ public class BattleSetup : MonoBehaviour
     [Space(10)]
     public GameObject MonsterTemplate;
     public float SinceLastEncounter = 0f;
-
-    void Awake()
-    {
-        sr = GetComponent<SetupRouter>();
-    }
 
     private void Update() {
         SinceLastEncounter -= Time.deltaTime;
@@ -98,10 +94,7 @@ public class BattleSetup : MonoBehaviour
         wM.MonsterTeam = Director.Team.EnemyTeam;
         EnemyLunenTeam.Add(wildMonster);
         wildMonster.transform.SetParent(this.transform);
-        for (int i = 1; i <= level; i++)
-        {
-            wM.GetLevelUpMove(i);
-        }
+        wM.GetPreviousMoves();
         typeOfBattle = BattleType.WildEncounter;
     }
 
@@ -122,6 +115,10 @@ public class BattleSetup : MonoBehaviour
     {
         sr.director.PlayerScripts[0].LunenTeam = PlayerLunenTeam;
         sr.director.PlayerScripts[1].LunenTeam = EnemyLunenTeam;
+        foreach (GameObject monster in RecycleBinTeam)
+        {
+            Destroy(monster);
+        }
         EnterBattle();
         //sceneReference.LoadScene(ListOfScenes.LocationEnum.BattleScene);
     }
@@ -135,7 +132,8 @@ public class BattleSetup : MonoBehaviour
         {
             if (monster.GetComponent<Monster>().MonsterTeam == Director.Team.EnemyTeam)
             {
-                Destroy(monster);
+                RecycleBinTeam.Add(monster);
+                //Destroy(monster);
             }
         }
         SinceLastEncounter = 5f;

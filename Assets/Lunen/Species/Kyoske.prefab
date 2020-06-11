@@ -46,15 +46,24 @@ MonoBehaviour:
   Name: Kyoske
   Elements: 00000000
   LearnedActions:
-    _Buckets: 03000000ffffffff0100000002000000ffffffffffffffffffffffff
-    _HashCodes: 3f000000100000003400000000000000000000000000000000000000
-    _Next: ffffffffffffffffffffffff00000000000000000000000000000000
-    _Count: 4
-    _Version: 10
-    _FreeList: -1
-    _FreeCount: 0
-    _Keys: 3f000000100000003400000000000000000000000000000000000000
-    _Values: 00000000000000000000000000000000000000000000000000000000
+  - Action: 63
+    Level: 1
+  - Action: 16
+    Level: 3
+  - Action: 52
+    Level: 6
+  - Action: 73
+    Level: 10
+  - Action: 60
+    Level: 14
+  - Action: 21
+    Level: 18
+  - Action: 68
+    Level: 22
+  - Action: 10
+    Level: 26
+  - Action: 29
+    Level: 30
   Evolves: 0
   EvolutionLunen: 0
   EvolutionLevel: 21

@@ -42,7 +42,7 @@ public class CanvasCollection : MonoBehaviour
         Player1Script = Player1.GetComponent<Player>();
         Player2Script = Player2.GetComponent<Player>();
 
-        if (sr.battleSetup.InBattle) sr.battleSetup.EnterBattle(); else sr.battleSetup.ExitBattle();
+        SetState(UIState.Overworld);
     }
 
     public void BattleStart()

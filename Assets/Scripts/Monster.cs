@@ -6,6 +6,7 @@ using System.Linq;
 
 public class Monster : MonoBehaviour
 {
+    
     [Header("Individual Stuff")]
 
     public string Nickname;
@@ -52,7 +53,7 @@ public class Monster : MonoBehaviour
     public int ExpToAdd;
     public int HealthToSubtract;
 
-    private bool CooldownDone;
+    public bool CooldownDone;
     private int EndOfTurnDamage;
     [HideInInspector]
     public int MoveAffinityCost;
@@ -61,8 +62,8 @@ public class Monster : MonoBehaviour
 
     private void Start()
     {
-        CurrCooldown = 1f;
-        CooldownDone = true;
+        CurrCooldown = 1000f;
+        CooldownDone = false;
     }
 
     private void Update()
@@ -73,6 +74,7 @@ public class Monster : MonoBehaviour
             {
                 if (CurrCooldown > 0f)
                 {
+                    if (CurrCooldown > GetMaxCooldown()) CurrCooldown = GetMaxCooldown();
                     CurrCooldown -= loopback.director.DirectorDeltaTime;
                     CooldownDone = false;
                 }
@@ -155,30 +157,52 @@ public class Monster : MonoBehaviour
     public void LevelUp()
     {
         Level++;
+        if (SourceLunen.Evolves)
+        {
+            if (SourceLunen.EvolutionLevel <= Level)
+            {
+                Evolve();
+            }
+        }
         CalculateStats();
         CalculateExpTargets();
         GetLevelUpMove(Level);
         loopback.canvasCollection.ScanBothParties();
+        
+    }
+
+    public void Evolve()
+    {
+        SourceLunen = loopback.lunaDex.GetLunen(SourceLunen.EvolutionLunen);
+        loopback.eventLog.AddEvent(Nickname + " evolves into " + SourceLunen.Name);
+        TemplateToMonster(SourceLunen);
     }
 
     public void GetLevelUpMove(int index)
     {
-        
-        if (SourceLunen.LearnedActions.ContainsValue(index))
+        foreach (Lunen.LearnedAction action in SourceLunen.LearnedActions)
         {
-            LunaDex.ActionEnum newMove = LunaDex.ActionEnum._NoMove;
-            foreach (KeyValuePair<LunaDex.ActionEnum, int> lua in SourceLunen.LearnedActions)
+            if (Level == action.Level)
             {
-                if (lua.Value == index)
-                {
-                    newMove = lua.Key;
-                    break;
-                }
+                GameObject newAction = Instantiate(loopback.lunaDex.GetActionObject(action.Action));
+                newAction.transform.parent = this.transform;
+                ActionSet.Add(newAction);
             }
-            GameObject newMoveObject = Instantiate(loopback.lunaDex.GetActionObject(newMove));
-            ActionSet.Add(newMoveObject);
-            newMoveObject.transform.SetParent(transform);
         }
+    }
+
+    public void GetPreviousMoves()
+    {
+        foreach (Lunen.LearnedAction action in SourceLunen.LearnedActions)
+        {
+            if (Level >= action.Level)
+            {
+                GameObject newAction = Instantiate(loopback.lunaDex.GetActionObject(action.Action));
+                newAction.transform.parent = this.transform;
+                ActionSet.Add(newAction);
+            }
+        }
+
     }
 
     public void TemplateToMonster(Lunen template)
@@ -372,8 +396,8 @@ public class Monster : MonoBehaviour
 
     public void EndTurn()
     {
-        CurrCooldown = SourceLunen.CooldownTime;
-        loopback.canvasCollection.Player1MenuClick(loopback.canvasCollection.MenuOpen);
+        ResetCooldown();
+        if (MonsterTeam == Director.Team.PlayerTeam) loopback.canvasCollection.Player1MenuClick(loopback.canvasCollection.MenuOpen);
         GetStatusEffects();
         for (int i = 0; i < StatusEffects.Count; i++)
         {
@@ -394,6 +418,22 @@ public class Monster : MonoBehaviour
             }
         }
         CalculateStats();
+    }
+
+    public float GetMaxCooldown()
+    {
+        float cooldown = SourceLunen.CooldownTime;
+        if (MonsterTeam == Director.Team.EnemyTeam)
+        {
+            cooldown *= 1.5f;
+        }
+        return cooldown;
+    }
+
+    public void ResetCooldown()
+    {
+        CurrCooldown = GetMaxCooldown();
+        CooldownDone = false;
     }
 
     public void SetObjectName()
