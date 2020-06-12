@@ -134,9 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 8082643487578673651}
-  LunenBase: 24
+  LunenBase: 21
   LunenLevel: 1
-  targetPlayer: 2
+  targetPlayer: 0
 --- !u!1001 &192204358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -603,6 +603,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284300756}
   m_CullTransparentMesh: 0
+--- !u!1 &393540578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 393540580}
+  - component: {fileID: 393540579}
+  m_Layer: 0
+  m_Name: Tackle(Clone)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &393540579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393540578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: Tackle
+  Type: 0
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 2
+  Animation: {fileID: 0}
+  PartsOfAction:
+  - Effect: 0
+    Target: 0
+    Power: 40
+    EffectToInflict: {fileID: 0}
+    StatusEffect: 0
+    StatusEffectTurns: 0
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
+--- !u!4 &393540580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393540578}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 987212791}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &407882015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1453,6 +1512,82 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &987212789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 987212791}
+  - component: {fileID: 987212790}
+  m_Layer: 0
+  m_Name: Woufa_Woufa_Monster
+  m_TagString: Monster
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &987212790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987212789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nickname: Woufa
+  Level: 1
+  Exp: {x: 1, y: 1, z: 8}
+  ActionSet:
+  - {fileID: 393540578}
+  StatusEffectObjects: []
+  Health: {x: 21, y: 2, z: 23}
+  Attack: {x: 8, y: 2, z: 10}
+  Defense: {x: 5, y: 1, z: 6}
+  Speed: {x: 7, y: 2, z: 9}
+  AfterEffectStats: {x: 10, y: 6, z: 9}
+  MonsterTeam: 0
+  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
+    type: 3}
+  loopback: {fileID: 8082643487578673651}
+  CurrCooldown: 0
+  ExpToAdd: 0
+  HealthToSubtract: 0
+  CooldownDone: 0
+  MoveAffinityCost: 0
+  DamageTakenScalar:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+--- !u!4 &987212791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987212789}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 393540580}
+  m_Father: {fileID: 8082643487578673632}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1004454185 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6420312131065665514, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
@@ -3418,7 +3553,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 987212791}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3435,7 +3571,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
-  PlayerLunenTeam: []
+  PlayerLunenTeam:
+  - {fileID: 987212789}
   EnemyLunenTeam: []
   RecycleBinTeam: []
   InBattle: 0

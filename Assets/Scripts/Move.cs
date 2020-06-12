@@ -51,6 +51,7 @@ public class Move : MonoBehaviour
     public void Awake()
     {
         logic = GetComponent<PlayerLogic>();
+        startPosition = transform.position;
     }
     
  

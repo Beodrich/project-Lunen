@@ -26,7 +26,7 @@ public class PlayerLogic : MonoBehaviour
         move = GetComponent<Move>();
 
         sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
-        transform.position = sr.battleSetup.lastSceneLocation;
+        //transform.position = sr.battleSetup.lastSceneLocation;
         sr.playerLogic = this;
         sr.cameraFollow.Sel = this.gameObject;
     }
