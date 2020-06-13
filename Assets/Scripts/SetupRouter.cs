@@ -14,6 +14,7 @@ public class SetupRouter : MonoBehaviour
     public CanvasCollection canvasCollection;
     public PlayerLogic playerLogic;
     public EventLog eventLog;
+    public SceneAttributes sceneAttributes;
 
     public void Awake()
     {

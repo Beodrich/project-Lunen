@@ -140,6 +140,14 @@ public class LunaDex : MonoBehaviour
         Staggered,
         WeakMinded
     }
+
+    public enum Direction
+    {
+        North,
+        East,
+        South,
+        West
+    }
     
 
     public bool DEBUG;
@@ -154,6 +162,7 @@ public class LunaDex : MonoBehaviour
     public List<GameObject> ActionList = new List<GameObject>();
     [EnumNamedArray(typeof(StatusEffectEnum))]
     public List<GameObject> StatusEffectList = new List<GameObject>();
+    public int LevelCap;
 
     public GameObject GetLunenObject(LunenEnum lunen)
     {
@@ -183,5 +192,17 @@ public class LunaDex : MonoBehaviour
     public Effects GetStatusEffect(StatusEffectEnum effect)
     {
         return StatusEffectList[(int)effect].GetComponent<Effects>();
+    }
+
+    public Vector2 GetDirectionVector2(Direction direction)
+    {
+        switch(direction)
+        {
+            default: return new Vector2(1,0);
+            case Direction.North: return new Vector2(0,1);
+            case Direction.South: return new Vector2(0,-1);
+            case Direction.East: return new Vector2(1,0);
+            case Direction.West: return new Vector2(-1,0);
+        }
     }
 }

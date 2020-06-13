@@ -34,7 +34,7 @@ public class PlayerLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move.enabled = !sr.battleSetup.InBattle;
+        move.ableToMove = !sr.battleSetup.InBattle;
     }
 
     public bool MoveBegin(Collider2D hit)

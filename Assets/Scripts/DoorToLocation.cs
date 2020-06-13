@@ -5,5 +5,5 @@ using UnityEngine;
 public class DoorToLocation : MonoBehaviour
 {
     public ListOfScenes.LocationEnum TargetLocation;
-    public Vector3 SpawnLocation;
+    public int entranceIndex;
 }

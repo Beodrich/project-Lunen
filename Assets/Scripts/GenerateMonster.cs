@@ -39,10 +39,7 @@ public class GenerateMonster : MonoBehaviour
         NewMonster1.loopback = sr;
         NewMonster1.Level = LunenLevel;
         NewMonster1.TemplateToMonster(sr.lunaDex.GetLunen(LunenBase));
-        for (int i = 1; i <= LunenLevel; i++)
-        {
-            NewMonster1.GetLevelUpMove(i);
-        }
+        NewMonster1.GetPreviousMoves();
         
         
         switch (targetPlayer)

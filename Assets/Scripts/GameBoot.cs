@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MyBox;
 
 public class GameBoot : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
 
-    public ListOfScenes.LocationEnum bootScene;
+    public bool changeBoot;
+    [ConditionalField(nameof(changeBoot))] public ListOfScenes.LocationEnum bootScene;
+    [ConditionalField(nameof(changeBoot))] public int bootEntrance;
     public List<GameObject> keepLoaded;
     // Start is called before the first frame update
     private void Awake() {
@@ -23,6 +26,11 @@ public class GameBoot : MonoBehaviour
     }
     void Start()
     {
-        sr.listOfScenes.LoadScene(bootScene);
+
+        if (changeBoot)
+        {
+            sr.battleSetup.nextEntrance = bootEntrance;
+            sr.listOfScenes.LoadScene(bootScene);
+        }
     }
 }

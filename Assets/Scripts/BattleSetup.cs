@@ -23,6 +23,9 @@ public class BattleSetup : MonoBehaviour
     public BattleType typeOfBattle;
     public ListOfScenes.LocationEnum lastOverworld;
     public Vector3 lastSceneLocation;
+    public TrainerEncounter lastTrainerEncounter;
+    [Space(10)]
+    public int nextEntrance;
     [Space(10)]
     public GameObject MonsterTemplate;
     public float SinceLastEncounter = 0f;
@@ -40,6 +43,7 @@ public class BattleSetup : MonoBehaviour
 
     public void ExitBattle()
     {
+        if (typeOfBattle == BattleType.TrainerBattle) lastTrainerEncounter.defeated = true;
         sr.canvasCollection.SetState(CanvasCollection.UIState.Overworld);
         InBattle = false;
     }
@@ -108,7 +112,8 @@ public class BattleSetup : MonoBehaviour
             encounter.Team[i].MonsterTeam = Director.Team.EnemyTeam;
         }
         typeOfBattle = BattleType.TrainerBattle;
-        Destroy(encounter.gameObject);
+        lastTrainerEncounter = encounter;
+        sr.eventLog.AddEvent("Trainer Battle Generated!");
     }
 
     public void MoveToBattle(int backdrop, int musicTrack)
@@ -142,7 +147,7 @@ public class BattleSetup : MonoBehaviour
 
     public void NewOverworld(DoorToLocation door)
     {
-        lastSceneLocation = door.SpawnLocation;
+        nextEntrance = door.entranceIndex;
         sr.listOfScenes.LoadScene(door.TargetLocation);
     }
 }

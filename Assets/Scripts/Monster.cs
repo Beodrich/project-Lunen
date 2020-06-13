@@ -92,7 +92,9 @@ public class Monster : MonoBehaviour
                     }
                     else CurrCooldown = 0f;
                 }
-                ExpAddCurrent -= loopback.director.DirectorDeltaTime;
+                if (Level < loopback.lunaDex.LevelCap)
+                {
+                    ExpAddCurrent -= loopback.director.DirectorDeltaTime;
                 if (ExpAddCurrent < 0)
                 {
                     ExpAddCurrent += ExpAddEvery;
@@ -128,7 +130,10 @@ public class Monster : MonoBehaviour
                             }
                         }
                     }
-                    if (HealthToSubtract > 0)
+                }
+                }
+                
+                if (HealthToSubtract > 0)
                     {
                         int maxHPPerTick = (Health.x + Health.y) / FractionOfHealth;
                         if (maxHPPerTick == 0) maxHPPerTick = 1;
@@ -149,7 +154,6 @@ public class Monster : MonoBehaviour
                             //if (MonsterTeam == Director.Team.EnemyTeam) Destroy(gameObject);
                         }
                     }
-                }
             }
         }
     }

@@ -11,13 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/_preload.unity
     guid: 4fa6083ea40e14f139ceb3b3c892fac1
-  - enabled: 1
-    path: Assets/Scenes/AlecBattleScene.unity
-    guid: 0c7295eeadb4345398142e8a3d228537
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/AlecOverworldScene.unity
     guid: 2b691c676b0ff499c9513449852f4d03
   - enabled: 1
     path: Assets/Scenes/Shop.unity
     guid: fd01006b61cdd47e9826b0704b424e04
+  - enabled: 1
+    path: Assets/Scenes/HouseArray.unity
+    guid: 61a5f30f8d1ee411783403779f55dbc9
   m_configObjects: {}

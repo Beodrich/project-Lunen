@@ -113,6 +113,8 @@ public class Director : MonoBehaviour
                         PlayerScripts[0].LunenOut[i].GetExp(CalculateExpPayout(lunen, PlayerScripts[0].LunenOut[i]));
                     }
                 }
+                PlayerScripts[1].ReloadTeam();
+                if (PlayerScripts[1].LunenTeam.Count == 0) sr.battleSetup.MoveToOverworld();
                 break;
         }
         sr.canvasCollection.ScanBothParties();

@@ -20,14 +20,21 @@ public class Move : MonoBehaviour
     private Orientation gridOrientation = Orientation.Vertical;
     private Vector2 input;
     private Vector2 last;
+    public bool ableToMove = true;
     public bool isMoving = false;
+    public bool animMoving = false;
     public bool diagonalMovement;
-    private Vector3 startPosition;
-    private Vector3 endPosition;
+    [HideInInspector] public Vector3 startPosition;
+    [HideInInspector] public Vector3 endPosition;
+    [HideInInspector] public Vector3 centerPosition;
     private float t;
     private float factor;
 
-    public RaycastHit2D hit;
+    private Vector2 checkPoint1;
+    private Vector2 checkPoint2;
+
+
+    public Collider2D hit;
     public Animator animator;
 
 /*
@@ -44,30 +51,37 @@ public class Move : MonoBehaviour
     {
         logic = GetComponent<PlayerLogic>();
         animator = GetComponent<Animator>();
-        startPosition = transform.position;
     }
     
  
     public void Update() {
+        centerPosition = new Vector3(transform.position.x + 0.5f, transform.position.y - 0.5f, transform.position.z);
         if (!isMoving) {
             input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
             if (Mathf.Abs(input.x) >= Mathf.Abs(input.y))
                 {
                     input.y = 0;
+                    if (input.x > 0) input.x = 1; else if (input.x < 0) input.x = -1;
                 }
                 else
                 {
                     input.x = 0;
+                    if (input.y > 0) input.y = 1; else if (input.y < 0) input.y = -1;
                 }
-            
 
-            if (input != Vector2.zero)
+            animMoving = false;
+            if (input != Vector2.zero && ableToMove)
             {
                 factor = 1f;
-                hit = Physics2D.Raycast(transform.position, new Vector2(input.x, input.y), playerSize/factor);
-                if (logic.MoveBegin(hit.collider))
+                last = input;
+                checkPoint1 = new Vector2(centerPosition.x+input.x, centerPosition.y+input.y);
+                checkPoint2 = new Vector2(centerPosition.x+input.x, centerPosition.y+input.y);
+                
+                hit = Physics2D.OverlapArea(checkPoint1,checkPoint2);
+                
+                if (logic.MoveBegin(hit))
                 {
-                    last = input;
+                    SetFacingDirection(input);
                     StartCoroutine(move(transform));
                 }
             }
@@ -79,16 +93,24 @@ public class Move : MonoBehaviour
     {
         animator.SetFloat("Horizontal", last.x);
         animator.SetFloat("Vertical", last.y);
-        animator.SetBool("Moving", (input != Vector2.zero));
+        animator.SetBool("Moving", animMoving);
+    }
+
+    public void SetFacingDirection(Vector2 next)
+    {
+        last = next;
+        input = next;
+        animMoving = true;
     }
  
     public IEnumerator move(Transform transform) {
         isMoving = true;
         startPosition = transform.position;
         t = 0;
+        factor = 1;
  
         endPosition = new Vector3(startPosition.x + System.Math.Sign(input.x) * gridSize, startPosition.y + System.Math.Sign(input.y) * gridSize, startPosition.z);
- 
+        
         while (t < 1f) {
             t += Time.deltaTime * (moveSpeed/gridSize) * factor;
             transform.position = Vector3.Lerp(startPosition, endPosition, t);
@@ -99,5 +121,4 @@ public class Move : MonoBehaviour
         logic.MoveEnd();
         yield return 0;
     }
-    
 }
