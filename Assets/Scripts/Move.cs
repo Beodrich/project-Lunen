@@ -8,15 +8,7 @@ public class Move : MonoBehaviour
     [HideInInspector]
     public PlayerLogic logic;
 
-    
-    public enum checkDirection
-    {
-        North,
-        South,
-        East,
-        West,
-        Null
-    }
+
 
     public float moveSpeed;
     public float gridSize;
@@ -27,6 +19,7 @@ public class Move : MonoBehaviour
     };
     private Orientation gridOrientation = Orientation.Vertical;
     private Vector2 input;
+    private Vector2 last;
     public bool isMoving = false;
     public bool diagonalMovement;
     private Vector3 startPosition;
@@ -34,9 +27,8 @@ public class Move : MonoBehaviour
     private float t;
     private float factor;
 
-    public checkDirection goDirection;
     public RaycastHit2D hit;
-    private Vector2 moveDirection;
+    public Animator animator;
 
 /*
     public bool HasCooldown
@@ -51,6 +43,7 @@ public class Move : MonoBehaviour
     public void Awake()
     {
         logic = GetComponent<PlayerLogic>();
+        animator = GetComponent<Animator>();
         startPosition = transform.position;
     }
     
@@ -58,16 +51,7 @@ public class Move : MonoBehaviour
     public void Update() {
         if (!isMoving) {
             input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            if (diagonalMovement)
-            {
-                if (input.x > 0) input.x = 1;
-                if (input.x < 0) input.x = -1;
-                if (input.y > 0) input.y = 1;
-                if (input.y < 0) input.y = -1;
-            }
-            else
-            {
-                if (Mathf.Abs(input.x) >= Mathf.Abs(input.y))
+            if (Mathf.Abs(input.x) >= Mathf.Abs(input.y))
                 {
                     input.y = 0;
                 }
@@ -75,40 +59,27 @@ public class Move : MonoBehaviour
                 {
                     input.x = 0;
                 }
-            }
             
 
             if (input != Vector2.zero)
             {
                 factor = 1f;
-                if (Mathf.Abs(input.x) + Mathf.Abs(input.y) == 2) factor = 0.7071f;
                 hit = Physics2D.Raycast(transform.position, new Vector2(input.x, input.y), playerSize/factor);
                 if (logic.MoveBegin(hit.collider))
                 {
+                    last = input;
                     StartCoroutine(move(transform));
                 }
-                else if (factor == 0.7071f)
-                {
-                    factor = 1f;
-                    hit = Physics2D.Raycast(transform.position, new Vector2(input.x, 0), playerSize/factor);
-                    if (logic.MoveBegin(hit.collider))
-                    {
-                        input.y = 0;
-                        StartCoroutine(move(transform));
-                    }
-                    else
-                    {
-                        hit = Physics2D.Raycast(transform.position, new Vector2(0, input.y), playerSize/factor);
-                        if (logic.MoveBegin(hit.collider))
-                        {
-                            input.x = 0;
-                            StartCoroutine(move(transform));
-                        }
-                    }
-                }
             }
-            
+            SetWalkAnimation();
         }
+    }
+
+    public void SetWalkAnimation()
+    {
+        animator.SetFloat("Horizontal", last.x);
+        animator.SetFloat("Vertical", last.y);
+        animator.SetBool("Moving", (input != Vector2.zero));
     }
  
     public IEnumerator move(Transform transform) {
