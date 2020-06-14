@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEditor;
 using MyBox;
@@ -7,32 +8,54 @@ using MyBox;
 public class TrainerLogic : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
-    [HideInInspector] public TrainerEncounter te;
+    [HideInInspector] public Move move;
 
-    public LunaDex.Direction trainerDirection;
+    public MoveScripts.Direction startLookDirection;
     public bool limitRange;
 
     [ConditionalField(nameof(limitRange))] public int rangeLimit;
-
-    [HideInInspector] public SpriteRenderer sprite;
-
-    [NamedArray(typeof(LunaDex.Direction))] public List<Sprite> facingDirections;
 
     Vector3 Size;
     Vector3 StartPosition;
 
     private int maxSeeDistance = 30;
+
+    public List<GameObject> TeamObjects;
+    public List<Monster> Team;
+
+    [Header("Trainer Lunen Info")]
+
+    public bool engaged;
+    public bool defeated;
     // Start is called before the first frame update
     void Start()
     {
         GetImportantVariables();
+        SetMoveLook(startLookDirection);
+    }
+
+    void SetMoveLook(MoveScripts.Direction direction)
+    {
+        move.SetFacingDirectionLogic(direction);
     }
     
     void GetImportantVariables()
     {
         if (sr == null) sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
-        if (sprite == null) sprite = GetComponent<SpriteRenderer>();
-        te = GetComponent<TrainerEncounter>();
+        if (move == null) move = GetComponent<Move>();
+
+        UpdateTeam();
+    }
+
+    void UpdateTeam()
+    {
+        TeamObjects.Clear();
+        Team.Clear();
+        TeamObjects.AddRange(gameObject.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Monster").Select(c => c.gameObject).ToArray());
+        for (int i = 0; i < TeamObjects.Count; i++)
+        {
+            Team.Add(TeamObjects[i].GetComponent<Monster>());
+        }
     }
 
     void Update()
@@ -43,67 +66,82 @@ public class TrainerLogic : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         GetImportantVariables();
+        SetMoveLook(startLookDirection);
         TrainerScan();
         
-        Gizmos.DrawCube(StartPosition, Size);
+        Gizmos.color = new Color(0, 0, 1, 0.5f);
+        Gizmos.DrawCube(StartPosition, Size); 
     }
 
     private void TrainerScan()
     {
-        sprite.sprite = facingDirections[(int)trainerDirection];
-
-        float vertCorrect = 0;
-        float horiCorrect = 0;
-
-        if (trainerDirection == LunaDex.Direction.South) vertCorrect = 1;
-        if (trainerDirection == LunaDex.Direction.West) horiCorrect = 1;
-        
-        Vector3 centerPosition = new Vector3(transform.position.x +horiCorrect*2+ 0.5f, transform.position.y+vertCorrect*2 - 0.5f, transform.position.z);
-        Vector2 input = sr.lunaDex.GetDirectionVector2(trainerDirection);
-        Vector2 checkPoint1 = new Vector2(centerPosition.x+input.x, centerPosition.y+input.y);
-        Vector2 checkPoint2 = new Vector2(centerPosition.x+input.x, centerPosition.y+input.y);
-        
-        Gizmos.color = new Color(0, 0, 1, 0.5f);
-        bool foundWall = false;
-        int maxRange = maxSeeDistance;
-        if (limitRange) maxRange = rangeLimit+(int)vertCorrect*2+(int)horiCorrect*2;
-        int foundRange = -1;
-        while (!foundWall && foundRange < maxRange)
+        if (!defeated)
         {
-            foundRange++;
-            Collider2D hit = Physics2D.OverlapArea(checkPoint1+input*foundRange,checkPoint2+input*foundRange);
-            foundWall = CheckForWall(hit);
-            
+            Vector2 checkVector;
+            Vector2 size2;
+            Vector2 directionVector;
+            bool foundWall = false;
+            bool foundPlayer = false;
+            int maxRange = maxSeeDistance;
+            if (limitRange) maxRange = rangeLimit+1;
+            int foundRange = -1;
+            while (!foundWall && foundRange < maxRange)
+            {
+                foundRange++;
+                checkVector = MoveScripts.GetFrontVector2(move, (float)foundRange, true);
+                Collider2D hit = Physics2D.OverlapArea(checkVector, checkVector);
+                foundWall = MoveScripts.CheckForTag(this.gameObject,hit,"Wall");
+                foundPlayer = MoveScripts.CheckForTag(this.gameObject,hit,"Player");
+                if (foundPlayer) sr.battleSetup.StartCutscene(GetComponent<Cutscene>());
+            }
+            foundRange--;
+            checkVector = MoveScripts.GetFrontVector2(move, (float)foundRange/2, true);
+            size2 = MoveScripts.GetVector2FromDirection(move.lookDirection) * foundRange;
+            directionVector = MoveScripts.GetVector2FromDirection(move.lookDirection) * 0.5f;
+            if (size2.x == 0) size2.x = 1;
+            if (size2.y == 0) size2.y = 1;
+            Size = new Vector3(size2.x, size2.y, 1);
+            StartPosition = new Vector3(checkVector.x + directionVector.x, checkVector.y + directionVector.y, -1);
         }
-        foundRange--;
-        Size = new Vector3(input.x*foundRange+1, input.y*foundRange+1, 0);
-        StartPosition = new Vector3(transform.position.x+horiCorrect+input.x+Size.x/2, transform.position.y+(-1)+vertCorrect+input.y+Size.y/2, transform.position.z);
+        
     }
 
-    private bool CheckForWall(Collider2D hit)
+    public void StartTrainerBattle()
     {
-        if (hit != null && hit.gameObject != this.gameObject)
+        if (EditorApplication.isPlaying && !sr.battleSetup.InBattle)
         {
-            switch(hit.gameObject.tag)
+            ClearTeamOfNull();
+            if (!defeated && !engaged)
             {
-                default: return false;
-                case "Wall": return true;
-                case "Player": 
-                if (EditorApplication.isPlaying && !sr.battleSetup.InBattle)
-                {
-                    te.ClearTeamOfNull();
-                    if (!te.defeated)
-                    {
-                        sr.battleSetup.GenerateTrainerBattle(te);
-                        sr.battleSetup.MoveToBattle(0,0);
-                    }
-                }
-                return false;
+                engaged = true;
+                sr.battleSetup.GenerateTrainerBattle(this);
+                sr.battleSetup.MoveToBattle(0,0);
+                
             }
         }
-        else return false;
-        
     }
 
+    public void ExitBattle(bool defeat)
+    {
+        sr.eventLog.AddEvent("Setting defeated to: " + defeat);
+        defeated = defeat;
+        engaged = false;
+    }
+
+    public void MoveEnd()
+    {
+
+    }
+    public void ClearTeamOfNull()
+    {
+        for (int i = 0; i < TeamObjects.Count; i++)
+        {
+            if (TeamObjects[i] == null)
+            {
+                TeamObjects.RemoveAt(i);
+                i--;
+            }
+        }
+    }
     
 }

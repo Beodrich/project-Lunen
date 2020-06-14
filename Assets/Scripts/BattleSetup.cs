@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class BattleSetup : MonoBehaviour
 {
@@ -23,15 +24,53 @@ public class BattleSetup : MonoBehaviour
     public BattleType typeOfBattle;
     public ListOfScenes.LocationEnum lastOverworld;
     public Vector3 lastSceneLocation;
-    public TrainerEncounter lastTrainerEncounter;
+    public TrainerLogic lastTrainerEncounter;
+    public bool lastBattleVictory;
+    [Space(10)]
+    public Cutscene lastCutscene;
+    public bool InCutscene;
+    public int cutscenePart;
+    public bool cutsceneAdvance;
+    public bool dialogueBoxOpen;
+    public bool dialogueBoxNext;
     [Space(10)]
     public int nextEntrance;
     [Space(10)]
     public GameObject MonsterTemplate;
     public float SinceLastEncounter = 0f;
+    public CanvasCollection.UIState lastUIState;
 
     private void Update() {
         SinceLastEncounter -= Time.deltaTime;
+
+        if (dialogueBoxOpen)
+        {
+            if (Input.GetButtonDown("Submit"))
+            {
+                if (!dialogueBoxNext)
+                {
+                    dialogueBoxOpen = false;
+                    sr.canvasCollection.OpenDialogueBox();
+                }
+                cutsceneAdvance = true;
+            }
+        }
+        else
+        {
+            if (Input.GetButtonDown("Cancel"))
+            {
+                if (sr.canvasCollection.currentState == CanvasCollection.UIState.MainMenu)
+                {
+                    sr.canvasCollection.SetState(lastUIState);
+                }
+                else
+                {
+                    lastUIState = sr.canvasCollection.currentState;
+                    sr.canvasCollection.SetState(CanvasCollection.UIState.MainMenu);
+                }
+            }
+        }
+
     }
 
     public void EnterBattle()
@@ -43,7 +82,12 @@ public class BattleSetup : MonoBehaviour
 
     public void ExitBattle()
     {
-        if (typeOfBattle == BattleType.TrainerBattle) lastTrainerEncounter.defeated = true;
+        if (typeOfBattle == BattleType.TrainerBattle)
+        {
+            lastTrainerEncounter.ExitBattle(lastBattleVictory);
+            //sr.eventLog.AddEvent("GOT HERE");
+            if (InCutscene) cutsceneAdvance = true;
+        }
         sr.canvasCollection.SetState(CanvasCollection.UIState.Overworld);
         InBattle = false;
     }
@@ -102,7 +146,7 @@ public class BattleSetup : MonoBehaviour
         typeOfBattle = BattleType.WildEncounter;
     }
 
-    public void GenerateTrainerBattle(TrainerEncounter encounter)
+    public void GenerateTrainerBattle(TrainerLogic encounter)
     {
         EnemyLunenTeam.Clear();
         EnemyLunenTeam.AddRange(encounter.TeamObjects);
@@ -128,9 +172,10 @@ public class BattleSetup : MonoBehaviour
         //sceneReference.LoadScene(ListOfScenes.LocationEnum.BattleScene);
     }
 
-    public void MoveToOverworld()
+    public void MoveToOverworld(bool playerVictory)
     {
         //sceneReference.LoadScene(lastOverworld);
+        lastBattleVictory = playerVictory;
         List<GameObject> checkToDelete = new List<GameObject>();
         checkToDelete.AddRange(gameObject.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Monster").Select(c => c.gameObject).ToArray());
         foreach (GameObject monster in checkToDelete)
@@ -149,5 +194,87 @@ public class BattleSetup : MonoBehaviour
     {
         nextEntrance = door.entranceIndex;
         sr.listOfScenes.LoadScene(door.TargetLocation);
+    }
+
+    public void StartCutscene(Cutscene cutscene)
+    {
+        
+        if (EditorApplication.isPlaying && !InCutscene)
+        {
+            sr.eventLog.AddEvent("Started Cutscene!");
+            lastCutscene = cutscene;
+            InCutscene = true;
+            cutscenePart = -1;
+            cutsceneAdvance = true;
+            StartCoroutine(playCutscene(transform));
+        }
+    }
+
+    public bool PlayerCanMove()
+    {
+        return (!(InBattle || InCutscene));
+    }
+
+    public void DialogueBoxPrepare(Cutscene.Part part, bool next)
+    {
+        if (!dialogueBoxNext)
+        {
+            sr.canvasCollection.OpenDialogueBox();
+        }
+        dialogueBoxOpen = true;
+        dialogueBoxNext = next;
+        sr.canvasCollection.DialogueText.text = part.text;
+    }
+
+    public IEnumerator playCutscene(Transform transform)
+    {
+        while (cutscenePart < lastCutscene.parts.Length)
+        {
+            while (cutsceneAdvance)
+            {
+                cutscenePart++;
+                cutsceneAdvance = false;
+                
+                if (cutscenePart < lastCutscene.parts.Length)
+                {
+                    Cutscene.Part part = lastCutscene.parts[cutscenePart];
+                    switch (part.type)
+                    {
+                        case Cutscene.PartType.Movement:
+                            part.moveScript.StartCutsceneMove(part);
+                        break;
+
+                        case Cutscene.PartType.Dialogue:
+                            bool next = true;
+                            if (cutscenePart+1 == lastCutscene.parts.Length)
+                            {
+                                next = false;
+                            }
+                            else if (lastCutscene.parts[cutscenePart+1].type != Cutscene.PartType.Dialogue)
+                            {
+                                next = false;
+                            }
+                            DialogueBoxPrepare(part, next);
+                        break;
+
+                        case Cutscene.PartType.Trigger:
+                            if (part.triggerType == Cutscene.TriggerType.Battle)
+                            {
+                                if (!part.trainerLogic.defeated) part.trainerLogic.StartTrainerBattle(); else cutsceneAdvance = true;
+                            }
+                        break;
+                    }
+                    if (part.startNextSimultaneous)
+                    {
+                        cutsceneAdvance = true;
+                    }
+                }
+                
+            }
+            yield return null;
+        }
+ 
+        InCutscene = false;
+        yield return 0;
     }
 }

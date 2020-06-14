@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3052760053721696780
+--- !u!1 &1168932318292691352
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3052760053721696776}
-  - component: {fileID: 3052760053721696777}
-  - component: {fileID: 6437434055315994143}
-  - component: {fileID: 3052760053721696778}
-  - component: {fileID: 3052760053721696779}
+  - component: {fileID: 1168932318292691357}
+  - component: {fileID: 1168932318292691358}
+  - component: {fileID: 1168932318292691354}
+  - component: {fileID: 1168932318292691359}
+  - component: {fileID: 1168932318292691355}
   m_Layer: 0
-  m_Name: TestDoor
-  m_TagString: Door
+  m_Name: Interactive
+  m_TagString: Thing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3052760053721696776
+--- !u!4 &1168932318292691357
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3052760053721696780}
+  m_GameObject: {fileID: 1168932318292691352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,41 +34,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3052760053721696777
+--- !u!114 &1168932318292691358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3052760053721696780}
+  m_GameObject: {fileID: 1168932318292691352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59d9e60be90e6433c8bca27efdf7bced, type: 3}
+  m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetLocation: 0
-  entranceIndex: 0
---- !u!114 &6437434055315994143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3052760053721696780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5622cb05b5ae645b5a6c00eb853ee437, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisRenderer: {fileID: 0}
-  KeepVisible: 0
---- !u!212 &3052760053721696778
+  parts:
+    Collection:
+    - name: Text
+      startNextSimultaneous: 0
+      type: 1
+      moveScript: {fileID: 0}
+      moveInFacingDirection: 1
+      movementDirection: 0
+      moveType: 0
+      colliderTag: Player
+      spacesToMove: 0
+      triggerType: 0
+      trainerLogic: {fileID: 0}
+      text: Hi! I'm a thing!
+      trainerEncounter: {fileID: 0}
+--- !u!212 &1168932318292691354
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3052760053721696780}
+  m_GameObject: {fileID: 1168932318292691352}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -100,9 +99,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 15
   m_Sprite: {fileID: 21300000, guid: c0952531222484abfa8a21e1a5d6df71, type: 3}
-  m_Color: {r: 1, g: 0.93648744, b: 0.023584902, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4117647}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -112,17 +111,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3052760053721696779
+--- !u!61 &1168932318292691359
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3052760053721696780}
+  m_GameObject: {fileID: 1168932318292691352}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.5, y: -0.5}
@@ -138,3 +137,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1168932318292691355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168932318292691352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5622cb05b5ae645b5a6c00eb853ee437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisRenderer: {fileID: 0}
+  KeepVisible: 0

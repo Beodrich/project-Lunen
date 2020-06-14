@@ -11,6 +11,11 @@ TagManager:
   - TrainerSight
   - Door
   - Path
+  - Creature
+  - Other
+  - Trainer
+  - Thing
+  - NPC
   layers:
   - Default
   - TransparentFX

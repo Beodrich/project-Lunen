@@ -10,7 +10,7 @@ public class SceneAttributes : MonoBehaviour
     {
         public string entranceName = "Fallback";
         public Vector2 spawn = new Vector2(0.5f,0.5f);
-        public LunaDex.Direction spawnFacing = LunaDex.Direction.North;
+        public MoveScripts.Direction spawnFacing = MoveScripts.Direction.North;
         public bool moveAtStart = false;
     }
     public GameObject player;
@@ -24,7 +24,7 @@ public class SceneAttributes : MonoBehaviour
         if (entrance >= sceneEntrances.Count) entrance = 0;
         GameObject newPlayer = Instantiate(player);
         newPlayer.transform.position = new Vector3(sceneEntrances[entrance].spawn.x, sceneEntrances[entrance].spawn.y, 0);
-        Vector2 input = sr.lunaDex.GetDirectionVector2(sceneEntrances[entrance].spawnFacing);
+        Vector2 input = MoveScripts.GetVector2FromDirection(sceneEntrances[entrance].spawnFacing);
         Move playerMove = newPlayer.GetComponent<Move>();
         playerMove.SetFacingDirection(input);
         if (sceneEntrances[entrance].moveAtStart)

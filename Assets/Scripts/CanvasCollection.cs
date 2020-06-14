@@ -17,6 +17,9 @@ public class CanvasCollection : MonoBehaviour
     }
     [NamedArray(typeof(UIState))]
     public List<GameObject> UIObjects;
+    public GameObject DialogueWindow;
+    public Text DialogueText;
+    public UIState currentState;
 
     [Header("Battle Elements")]
     public List<GameObject> DescriptionPanels;
@@ -35,6 +38,18 @@ public class CanvasCollection : MonoBehaviour
     [HideInInspector] public Player Player1Script;
     [HideInInspector] public Player Player2Script;
 
+    [Header("Dialogue Shift")]
+
+    public Vector3 dialogueStartPosition;
+    public Vector3 dialogueEndPosition;
+    public Vector3 dialogueCurrentPosition;
+    public float ShiftSpeed;
+    public float ShiftY;
+    [HideInInspector] public float ShiftYStart;
+    [HideInInspector] public float ShiftMove = -1f;
+    [HideInInspector] public float YToMove;
+    [HideInInspector] public float NextFrameY;
+
     void Awake()
     {
         sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
@@ -42,7 +57,52 @@ public class CanvasCollection : MonoBehaviour
         Player1Script = Player1.GetComponent<Player>();
         Player2Script = Player2.GetComponent<Player>();
 
+        ShiftYStart = ShiftY;
+        ShiftY = ShiftYStart * (Screen.height / 360);
+
+        dialogueStartPosition = dialogueCurrentPosition = DialogueWindow.transform.position;
+        dialogueEndPosition = dialogueStartPosition + new Vector3(0, ShiftY, 0);
+
         SetState(UIState.Overworld);
+    }
+
+    void Update()
+    {
+        UpdateDialogueBox();
+            
+    }
+    public void UpdateDialogueBox()
+    {
+        ShiftY = ShiftYStart * (Screen.height / 360);
+        dialogueEndPosition = dialogueStartPosition + new Vector3(0, ShiftY, 0);
+
+        if (YToMove > 0.0001)
+        {
+            NextFrameY = YToMove * ShiftSpeed * Time.deltaTime;
+            YToMove -= NextFrameY;
+        }
+        else
+        {
+            NextFrameY = YToMove;
+            YToMove -= NextFrameY;
+        }
+        dialogueCurrentPosition = DialogueWindow.transform.position;
+        dialogueCurrentPosition.y -= NextFrameY*ShiftMove;
+        DialogueWindow.transform.position = dialogueCurrentPosition;
+    }
+
+    public void OpenDialogueBox()
+    {
+        YToMove = ShiftY;
+        ShiftMove *= -1;
+        if (ShiftMove == 1)
+        {
+            DialogueWindow.transform.position = dialogueEndPosition;
+        }
+        else
+        {
+            DialogueWindow.transform.position = dialogueStartPosition;
+        }
     }
 
     public void BattleStart()
@@ -58,6 +118,7 @@ public class CanvasCollection : MonoBehaviour
         {
             UIObjects[i].SetActive(i==(int)state);
         }
+        currentState = state;
     }
 
     public void ScanBothParties()
@@ -131,7 +192,7 @@ public class CanvasCollection : MonoBehaviour
 
         if (Player2Script.LunenAlive == 0)
         {
-            sr.battleSetup.MoveToOverworld();
+            sr.battleSetup.MoveToOverworld(true);
         }
     }
     
@@ -182,7 +243,9 @@ public class CanvasCollection : MonoBehaviour
             }
             else if (index == 6)
             {
-                sr.battleSetup.MoveToOverworld();
+                if (sr.battleSetup.InCutscene) sr.battleSetup.cutsceneAdvance = true;
+                sr.battleSetup.MoveToOverworld(true);
+
             }
             else
             {

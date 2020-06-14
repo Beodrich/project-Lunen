@@ -141,13 +141,7 @@ public class LunaDex : MonoBehaviour
         WeakMinded
     }
 
-    public enum Direction
-    {
-        North,
-        East,
-        South,
-        West
-    }
+    
     
 
     public bool DEBUG;
@@ -194,15 +188,5 @@ public class LunaDex : MonoBehaviour
         return StatusEffectList[(int)effect].GetComponent<Effects>();
     }
 
-    public Vector2 GetDirectionVector2(Direction direction)
-    {
-        switch(direction)
-        {
-            default: return new Vector2(1,0);
-            case Direction.North: return new Vector2(0,1);
-            case Direction.South: return new Vector2(0,-1);
-            case Direction.East: return new Vector2(1,0);
-            case Direction.West: return new Vector2(-1,0);
-        }
-    }
+    
 }

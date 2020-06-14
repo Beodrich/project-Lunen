@@ -114,7 +114,10 @@ public class Director : MonoBehaviour
                     }
                 }
                 PlayerScripts[1].ReloadTeam();
-                if (PlayerScripts[1].LunenTeam.Count == 0) sr.battleSetup.MoveToOverworld();
+                if (PlayerScripts[1].LunenTeam.Count == 0)
+                {
+                    sr.battleSetup.MoveToOverworld(true);
+                }
                 break;
         }
         sr.canvasCollection.ScanBothParties();

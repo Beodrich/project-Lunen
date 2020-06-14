@@ -10,10 +10,16 @@ public class EventLog : MonoBehaviour
  
      // Public VARS
      public int maxLines = 10;
+     public Font myFont;
      
      void OnGUI()
      {
-         GUI.Label(new Rect(0, 0, Screen.width/4, Screen.height / 3), guiText, GUI.skin.textArea);
+         GUIStyle myStyle = new GUIStyle();
+         myStyle.font = myFont;
+         myStyle.normal.textColor = Color.black;
+         GUI.Label(new Rect(1, 1, Screen.width/4, Screen.height / 3), guiText, myStyle);
+         myStyle.normal.textColor = Color.white;
+         GUI.Label(new Rect(0, 0, Screen.width/4, Screen.height / 3), guiText, myStyle);
      }
  
      public void AddEvent(string eventString)

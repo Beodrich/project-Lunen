@@ -19,6 +19,7 @@ public class PlayerLogic : MonoBehaviour
     public Move move;
     
     private Rigidbody2D rb2D;
+    public Vector3 frontOfCharacter;
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,7 +35,37 @@ public class PlayerLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move.ableToMove = !sr.battleSetup.InBattle;
+        if (sr.battleSetup.PlayerCanMove() && !move.isMoving)
+        {
+            if (Input.GetButtonDown("Submit"))
+            {
+                Vector2 faceDirection = MoveScripts.GetVector2FromDirection(MoveScripts.GetOppositeDirection(move.lookDirection));
+                Vector2 checkPoint = MoveScripts.GetFrontVector2(move, 1, true);
+                Collider2D[] hit = Physics2D.OverlapAreaAll(checkPoint,checkPoint);
+                Debug.Log(hit);
+                InteractBegin(hit);
+            }
+        }
+    }
+
+    public void InteractBegin(Collider2D[] hit)
+    {
+        for (int i = 0; i < hit.Length; i++)
+        {
+            switch(hit[i].gameObject.tag)
+            {
+                default: break;
+                case "Trainer":
+                    StartNPCConversation(hit[i].gameObject);
+                break;
+                case "Thing":
+                    StartNPCConversation(hit[i].gameObject);
+                break;
+                case "NPC":
+                    StartNPCConversation(hit[i].gameObject);
+                break;
+            }
+        }
     }
 
     public bool MoveBegin(Collider2D hit)
@@ -52,6 +83,10 @@ public class PlayerLogic : MonoBehaviour
             {
                 default: return true;
                 case "Wall": return false;
+                case "Creature": return false;
+                case "Trainer": return false;
+                case "Thing": return false;
+                case "NPC": return false;
                 case "Grass":
                     inGrass = true;
                     grassObject = hit.gameObject;
@@ -76,15 +111,29 @@ public class PlayerLogic : MonoBehaviour
             sr.battleSetup.lastSceneLocation = transform.position;
             sr.battleSetup.TryWildEncounter(grassObject.GetComponent<GrassEncounter>());
         }
-        if (inTrainerView)
-        {
-            sr.battleSetup.lastSceneLocation = transform.position;
-            sr.battleSetup.GenerateTrainerBattle(trainerObject.GetComponent<TrainerEncounter>());
-            sr.battleSetup.MoveToBattle(0, 0);
-        }
         if (inDoor)
         {
             sr.battleSetup.NewOverworld(doorObject.GetComponent<DoorToLocation>());
         }
+    }
+
+    public bool StartNPCConversation(GameObject npc)
+    {
+        //Make the npc turn to face you
+        Move moveScript = npc.GetComponent<Move>();
+        if (moveScript != null) moveScript.SetFacingDirectionLogic(MoveScripts.GetOppositeDirection(move.lookDirection));
+
+        //Check if the npc has a cutscene attached and run it.
+        Cutscene c = npc.GetComponent<Cutscene>();
+        if (c != null) sr.battleSetup.StartCutscene(c); else return false;
+
+        return true;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color(0, 1, 1, 0.5f);
+        frontOfCharacter = MoveScripts.GetFrontVector2(move, 1, true);
+        Gizmos.DrawCube(frontOfCharacter, new Vector3(1,1,1)); 
     }
 }
