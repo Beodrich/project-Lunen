@@ -27,6 +27,7 @@ public class SceneAttributes : MonoBehaviour
         Vector2 input = MoveScripts.GetVector2FromDirection(sceneEntrances[entrance].spawnFacing);
         Move playerMove = newPlayer.GetComponent<Move>();
         playerMove.SetFacingDirection(input);
+        playerMove.lookDirection = sceneEntrances[entrance].spawnFacing;
         if (sceneEntrances[entrance].moveAtStart)
         {
             StartCoroutine(playerMove.move(playerMove.transform)); 

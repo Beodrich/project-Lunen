@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteAlways]
 public class Shadow : MonoBehaviour
 {
 
@@ -9,7 +10,7 @@ public class Shadow : MonoBehaviour
     [HideInInspector] public SpriteRenderer parentRenderer;
     [HideInInspector] public SpriteRenderer thisRenderer;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         parent = transform.parent.gameObject;
         thisRenderer = GetComponent<SpriteRenderer>();

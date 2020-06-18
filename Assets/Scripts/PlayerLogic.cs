@@ -42,7 +42,6 @@ public class PlayerLogic : MonoBehaviour
                 Vector2 faceDirection = MoveScripts.GetVector2FromDirection(MoveScripts.GetOppositeDirection(move.lookDirection));
                 Vector2 checkPoint = MoveScripts.GetFrontVector2(move, 1, true);
                 Collider2D[] hit = Physics2D.OverlapAreaAll(checkPoint,checkPoint);
-                Debug.Log(hit);
                 InteractBegin(hit);
             }
         }
@@ -101,6 +100,33 @@ public class PlayerLogic : MonoBehaviour
                     return true;
             }
         }
+    }
+
+    public bool MoveBegin(Collider2D[] hit)
+    {
+        inGrass = false;
+        inTrainerView = false;
+        inDoor = false;
+        bool inGrass2 = false;
+        bool inTrainerView2 = false;
+        bool inDoor2 = false;
+        if (hit.Length > 0)
+        {
+            int found = 0;
+            for (int i = 0; i < hit.Length; i++)
+            {
+                found += MoveBegin(hit[i]) ? 1 : 0;
+                if (inGrass) inGrass2 = true;
+                if (inTrainerView) inTrainerView2 = true;
+                if (inDoor) inDoor2 = true;
+            }
+            inGrass = inGrass2;
+            inTrainerView = inTrainerView2;
+            inDoor = inDoor2;
+            return (found > 0);
+        }
+        
+        else return true;
     }
 
     public void MoveEnd()

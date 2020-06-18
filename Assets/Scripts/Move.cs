@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
 
+[ExecuteAlways]
 public class Move : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
@@ -21,8 +22,12 @@ public class Move : MonoBehaviour
     [HideInInspector] public PlayerLogic pLogic;
     [HideInInspector] public TrainerLogic tLogic;
 
+    [HideInInspector] public SpriteRenderer spriteRenderer;
+
     public delegate void MoveEnd();
     [HideInInspector] public MoveEnd endMove;
+
+    public AnimationDex.CharacterSpriteEnum characterType;
 
     public float moveSpeed;
     public float gridSize;
@@ -50,7 +55,14 @@ public class Move : MonoBehaviour
     private Vector2 checkPoint;
 
     public Collider2D hit;
-    public Animator animator;
+    public Collider2D[] hits;
+
+    private float lastAnimX;
+    private float lastAnimY;
+    private bool lastAnimMoving;
+
+    public float animTime;
+    public int animIndex;
 
     public bool ableToMove
     {
@@ -86,6 +98,8 @@ public class Move : MonoBehaviour
         pLogic = GetComponent<PlayerLogic>();
         tLogic = GetComponent<TrainerLogic>();
 
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         if (pLogic != null)
         {
             logicType = LogicType.Player;
@@ -98,10 +112,6 @@ public class Move : MonoBehaviour
         }
 
         if (logicType == LogicType.Null) logicType = LogicType.NPC;
-
-        animator = GetComponent<Animator>();
-
-        SetFacingDirectionLogic(lookDirection);
     }
     
     public void StartCutsceneMove(Cutscene.Part part)
@@ -140,9 +150,9 @@ public class Move : MonoBehaviour
                         last = input;
                         checkPoint = new Vector2(centerPosition.x+input.x, centerPosition.y+input.y);
                         lookDirection = MoveScripts.GetDirectionFromVector2(input);
-                        hit = Physics2D.OverlapArea(checkPoint,checkPoint);
+                        hits = Physics2D.OverlapAreaAll(checkPoint,checkPoint);
                         
-                        if (pLogic.MoveBegin(hit))
+                        if (pLogic.MoveBegin(hits))
                         {
                             SetFacingDirection(input);
                             
@@ -218,9 +228,32 @@ public class Move : MonoBehaviour
 
     public void SetWalkAnimation()
     {
-        animator.SetFloat("Horizontal", last.x);
-        animator.SetFloat("Vertical", last.y);
-        animator.SetBool("Moving", animMoving);
+        bool animChanged = false;
+        if (lastAnimX != last.x) animChanged = true;
+        if (lastAnimY != last.y) animChanged = true;
+
+        lastAnimX = last.x;
+        lastAnimY = last.y;
+        lastAnimMoving = isMoving;
+
+        if (animChanged)
+        {
+            animTime = 0;
+        }
+        else
+        {
+            animTime += Time.deltaTime;
+        }
+        animIndex = sr.animationDex.GetAnimationIndex(lookDirection, animMoving, animTime);
+        SetSprite();
+        //animator.SetFloat("Horizontal", last.x);
+        //animator.SetFloat("Vertical", last.y);
+        //animator.SetBool("Moving", animMoving);
+    }
+
+    public void SetSprite()
+    {
+        spriteRenderer.sprite = sr.animationDex.GetAnimationSprite(characterType, animIndex);
     }
 
     public void SetFacingDirectionLogic(MoveScripts.Direction newDirection)
@@ -247,6 +280,7 @@ public class Move : MonoBehaviour
         while (t < 1f) {
             t += Time.deltaTime * (moveSpeed/gridSize) * factor;
             transform.position = Vector3.Lerp(startPosition, endPosition, t);
+            SetWalkAnimation();
             yield return null;
         }
  
@@ -259,5 +293,10 @@ public class Move : MonoBehaviour
         }
         endMove();
         yield return 0;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        SetSprite();
     }
 }

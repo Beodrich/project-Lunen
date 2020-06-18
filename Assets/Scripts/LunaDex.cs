@@ -140,8 +140,6 @@ public class LunaDex : MonoBehaviour
         Staggered,
         WeakMinded
     }
-
-    
     
 
     public bool DEBUG;
@@ -156,7 +154,10 @@ public class LunaDex : MonoBehaviour
     public List<GameObject> ActionList = new List<GameObject>();
     [EnumNamedArray(typeof(StatusEffectEnum))]
     public List<GameObject> StatusEffectList = new List<GameObject>();
+    
+
     public int LevelCap;
+
 
     public GameObject GetLunenObject(LunenEnum lunen)
     {

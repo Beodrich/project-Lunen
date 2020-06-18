@@ -6,6 +6,7 @@ public class SetupRouter : MonoBehaviour
 {
     public GameBoot gameBoot;
     public LunaDex lunaDex;
+    public AnimationDex animationDex;
     public BattleSetup battleSetup;
     public Director director;
     public GenerateMonster generateMonster;

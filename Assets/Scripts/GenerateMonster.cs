@@ -15,7 +15,7 @@ public class GenerateMonster : MonoBehaviour
     }
 
     public LunaDex.LunenEnum LunenBase;
-    [Range(1, 50)]
+    [Range(1, 30)]
     public int LunenLevel = 1;
     public TargetPlayer targetPlayer;
 
