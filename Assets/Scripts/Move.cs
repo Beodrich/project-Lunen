@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
 
-[ExecuteAlways]
 public class Move : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;

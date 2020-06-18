@@ -56,6 +56,8 @@ public class Action : MonoBehaviour
     public Monster MonsterUser;
     [HideInInspector]
     public Monster MonsterTarget;
+    [HideInInspector]
+    public int SourceActionIndex;
 
     public void Execute()
     {

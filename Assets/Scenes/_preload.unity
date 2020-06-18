@@ -121,59 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &32125422
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 32125424}
-  - component: {fileID: 32125423}
-  m_Layer: 0
-  m_Name: _NoMove(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &32125423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 32125422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
-  Name: NULL
-  Type: 10
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 0
-  Animation: {fileID: 0}
-  PartsOfAction: []
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &32125424
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 32125422}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1753132254}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &98729761
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,8 +212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 8082643487578673651}
-  LunenBase: 15
-  LunenLevel: 30
+  LunenBase: 21
+  LunenLevel: 3
   targetPlayer: 2
 --- !u!1001 &192204358
 PrefabInstance:
@@ -448,86 +395,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 192204358}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &236778765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 236778767}
-  - component: {fileID: 236778766}
-  m_Layer: 0
-  m_Name: DebugGodLunen_DebugGodLunen_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &236778766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236778765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: DebugGodLunen
-  Level: 29
-  Exp: {x: 24389, y: 24389, z: 27000}
-  ActionSet:
-  - {fileID: 627641222}
-  - {fileID: 2104160581}
-  - {fileID: 396060618}
-  StatusEffectObjects: []
-  Health: {x: 1, y: 29, z: 30}
-  Attack: {x: 1, y: 29, z: 30}
-  Defense: {x: 1, y: 29, z: 30}
-  Speed: {x: 1, y: 29, z: 30}
-  AfterEffectStats: {x: 30, y: 30, z: 30}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 8569570539236419702, guid: 71cb7471971e441bdb4b218df3dd2363,
-    type: 3}
-  loopback: {fileID: 8082643487578673651}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  CooldownDone: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &236778767
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236778765}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 627641224}
-  - {fileID: 2104160583}
-  - {fileID: 396060620}
-  m_Father: {fileID: 8082643487578673632}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &251137013
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +507,8 @@ MonoBehaviour:
   Name: Player1
   AffinityCap: 0
   LevelCap: 0
-  LunenTeam: []
+  LunenTeam:
+  - {fileID: 1313209004}
   LunenAlive: 0
   LunenDead: 0
   LunenOut: []
@@ -814,184 +682,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284300756}
   m_CullTransparentMesh: 0
---- !u!1 &309815467
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 309815469}
-  - component: {fileID: 309815468}
-  m_Layer: 0
-  m_Name: _NoMove(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &309815468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309815467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
-  Name: NULL
-  Type: 10
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 0
-  Animation: {fileID: 0}
-  PartsOfAction: []
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &309815469
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309815467}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1753132254}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &362482973
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 362482975}
-  - component: {fileID: 362482974}
-  m_Layer: 0
-  m_Name: Tackle(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &362482974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362482973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
-  Name: Tackle
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 2
-  Animation: {fileID: 0}
-  PartsOfAction:
-  - Effect: 0
-    Target: 0
-    Power: 40
-    EffectToInflict: {fileID: 0}
-    StatusEffect: 0
-    StatusEffectTurns: 0
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &362482975
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362482973}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 717305594}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &396060618
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 396060620}
-  - component: {fileID: 396060619}
-  m_Layer: 0
-  m_Name: Bite(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &396060619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396060618}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
-  Name: Bite
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 1
-  Animation: {fileID: 0}
-  PartsOfAction:
-  - Effect: 0
-    Target: 0
-    Power: 45
-    EffectToInflict: {fileID: 0}
-    StatusEffect: 0
-    StatusEffectTurns: 0
-  - Effect: 1
-    Target: 0
-    Power: 0
-    EffectToInflict: {fileID: 5530384316006864264, guid: 07f1bed56707041289df2725475fbb6d,
-      type: 3}
-    StatusEffect: 0
-    StatusEffectTurns: 1
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &396060620
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396060618}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7422428, y: -0.78086877, z: 0.55444336}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 236778767}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &407882015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1598,65 +1288,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 613360318}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &627641222
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 627641224}
-  - component: {fileID: 627641223}
-  m_Layer: 0
-  m_Name: DebugGodMove(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &627641223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627641222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
-  Name: DebugGodMove
-  Type: 10
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 0
-  Animation: {fileID: 0}
-  PartsOfAction:
-  - Effect: 0
-    Target: 0
-    Power: 999
-    EffectToInflict: {fileID: 0}
-    StatusEffect: 0
-    StatusEffectTurns: 0
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &627641224
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627641222}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 236778767}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &652271909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,7 +1468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e4880976a7b4b2cadaa6855dac3c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLines: 2
+  maxLines: 6
   myFont: {fileID: 12800000, guid: 4a599d4d38a544cd39bd67ebfe5a60c5, type: 3}
 --- !u!1 &687019224
 GameObject:
@@ -1930,7 +1561,7 @@ GameObject:
   - component: {fileID: 705176118}
   - component: {fileID: 705176117}
   m_Layer: 5
-  m_Name: EscapeButton
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2000,8 +1631,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 652271914}
-        m_MethodName: Player1MenuClick
-        m_Mode: 3
+        m_MethodName: QuitGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2047,82 +1678,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705176115}
   m_CullTransparentMesh: 0
---- !u!1 &717305592
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 717305594}
-  - component: {fileID: 717305593}
-  m_Layer: 0
-  m_Name: Woufa_Woufa_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &717305593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717305592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Woufa
-  Level: 1
-  Exp: {x: 1, y: 1, z: 8}
-  ActionSet:
-  - {fileID: 362482973}
-  StatusEffectObjects: []
-  Health: {x: 21, y: 2, z: 23}
-  Attack: {x: 8, y: 2, z: 10}
-  Defense: {x: 5, y: 1, z: 6}
-  Speed: {x: 7, y: 2, z: 9}
-  AfterEffectStats: {x: 10, y: 6, z: 9}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
-    type: 3}
-  loopback: {fileID: 8082643487578673651}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  CooldownDone: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &717305594
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717305592}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 362482975}
-  m_Father: {fileID: 8082643487578673632}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &719132444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,7 +1754,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &908914899
+--- !u!1 &902688094
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2207,50 +1762,57 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 908914901}
-  - component: {fileID: 908914900}
+  - component: {fileID: 902688096}
+  - component: {fileID: 902688095}
   m_Layer: 0
-  m_Name: _NoMove(Clone)
+  m_Name: Tackle(Clone)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &908914900
+--- !u!114 &902688095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908914899}
+  m_GameObject: {fileID: 902688094}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   loopback: {fileID: 0}
-  Name: NULL
-  Type: 10
+  Name: Tackle
+  Type: 0
   Turns: 1
   AdditionalAffinityCost: 0
-  TimePausePeriod: 0
+  TimePausePeriod: 2
   Animation: {fileID: 0}
-  PartsOfAction: []
+  PartsOfAction:
+  - Effect: 0
+    Target: 0
+    Power: 40
+    EffectToInflict: {fileID: 0}
+    StatusEffect: 0
+    StatusEffectTurns: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
---- !u!4 &908914901
+  SourceActionIndex: 63
+--- !u!4 &902688096
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908914899}
+  m_GameObject: {fileID: 902688094}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1753132254}
-  m_RootOrder: 1
+  m_Father: {fileID: 1313209006}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1004454185 stripped
 GameObject:
@@ -2817,7 +2379,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Inventory
+  m_Text: Save
 --- !u!222 &1251504279
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3073,7 +2635,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299934128}
   m_CullTransparentMesh: 0
---- !u!1 &1306608493
+--- !u!1 &1313209004
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3081,50 +2643,74 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1306608495}
-  - component: {fileID: 1306608494}
+  - component: {fileID: 1313209006}
+  - component: {fileID: 1313209005}
   m_Layer: 0
-  m_Name: _NoMove(Clone)
-  m_TagString: Untagged
+  m_Name: Woufa_Woufa_Monster
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1306608494
+--- !u!114 &1313209005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306608493}
+  m_GameObject: {fileID: 1313209004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
-  Name: NULL
-  Type: 10
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 0
-  Animation: {fileID: 0}
-  PartsOfAction: []
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &1306608495
+  Nickname: Woufa
+  Level: 1
+  Exp: {x: 1, y: 1, z: 8}
+  ActionSet:
+  - {fileID: 902688094}
+  StatusEffectObjects: []
+  Health: {x: 21, y: 2, z: 23}
+  Attack: {x: 8, y: 2, z: 10}
+  Defense: {x: 5, y: 1, z: 6}
+  Speed: {x: 7, y: 2, z: 9}
+  AfterEffectStats: {x: 10, y: 6, z: 9}
+  MonsterTeam: 0
+  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
+    type: 3}
+  SourceLunenIndex: 21
+  loopback: {fileID: 8082643487578673651}
+  CurrCooldown: 0
+  ExpToAdd: 0
+  HealthToSubtract: 0
+  CooldownDone: 0
+  MoveAffinityCost: 0
+  DamageTakenScalar:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+--- !u!4 &1313209006
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1306608493}
+  m_GameObject: {fileID: 1313209004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
+  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1753132254}
-  m_RootOrder: 2
+  m_Children:
+  - {fileID: 902688096}
+  m_Father: {fileID: 8082643487578673632}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1415369564
 PrefabInstance:
@@ -3658,7 +3244,7 @@ GameObject:
   - component: {fileID: 1500601022}
   - component: {fileID: 1500601021}
   m_Layer: 5
-  m_Name: SaveButton (1)
+  m_Name: LoadButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3728,8 +3314,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 652271914}
-        m_MethodName: Player1MenuClick
-        m_Mode: 3
+        m_MethodName: LoadGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3844,7 +3430,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit
+  m_Text: Quit Game
 --- !u!222 &1532421962
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4156,8 +3742,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 652271914}
-        m_MethodName: Player1MenuClick
-        m_Mode: 3
+        m_MethodName: SaveGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4333,88 +3919,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700494024}
   m_CullTransparentMesh: 0
---- !u!1 &1753132252
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1753132254}
-  - component: {fileID: 1753132253}
-  m_Layer: 0
-  m_Name: Nulva Incarnate_Nulva Incarnate_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1753132253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753132252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Nulva Incarnate
-  Level: 12
-  Exp: {x: 1728, y: 1728, z: 2197}
-  ActionSet:
-  - {fileID: 32125422}
-  - {fileID: 908914899}
-  - {fileID: 1306608493}
-  - {fileID: 309815467}
-  StatusEffectObjects: []
-  Health: {x: 35, y: 60, z: 95}
-  Attack: {x: 16, y: 48, z: 64}
-  Defense: {x: 10, y: 36, z: 46}
-  Speed: {x: 14, y: 48, z: 62}
-  AfterEffectStats: {x: 64, y: 46, z: 62}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 1550119101485069792, guid: e40d3d410028a4307b967dcbf8f77717,
-    type: 3}
-  loopback: {fileID: 8082643487578673651}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  CooldownDone: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
---- !u!4 &1753132254
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1753132252}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.3286967, y: 4.0532484, z: -74.79194}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 32125424}
-  - {fileID: 908914901}
-  - {fileID: 1306608495}
-  - {fileID: 309815469}
-  m_Father: {fileID: 8082643487578673632}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1792896845
 GameObject:
   m_ObjectHideFlags: 0
@@ -5162,7 +4666,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Inventory
+  m_Text: Load
 --- !u!222 &2065086872
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5445,65 +4949,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090294768}
   m_CullTransparentMesh: 0
---- !u!1 &2104160581
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2104160583}
-  - component: {fileID: 2104160582}
-  m_Layer: 0
-  m_Name: Tackle(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2104160582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104160581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
-  Name: Tackle
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 2
-  Animation: {fileID: 0}
-  PartsOfAction:
-  - Effect: 0
-    Target: 0
-    Power: 40
-    EffectToInflict: {fileID: 0}
-    StatusEffect: 0
-    StatusEffectTurns: 0
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
---- !u!4 &2104160583
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104160581}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 236778767}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &3316594970504353516
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5593,9 +5038,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 717305594}
-  - {fileID: 236778767}
-  - {fileID: 1753132254}
+  - {fileID: 1313209006}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5613,9 +5056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   PlayerLunenTeam:
-  - {fileID: 717305592}
-  - {fileID: 236778765}
-  - {fileID: 1753132252}
+  - {fileID: 1313209004}
   EnemyLunenTeam: []
   RecycleBinTeam: []
   InBattle: 0
@@ -5631,6 +5072,9 @@ MonoBehaviour:
   dialogueBoxOpen: 0
   dialogueBoxNext: 0
   nextEntrance: 0
+  loadEntrance: 0
+  loadPosition: {x: 0, y: 0}
+  loadDirection: 0
   MonsterTemplate: {fileID: 2324287439143063678, guid: ce7650befca7144ae9e5cc4263c99950,
     type: 3}
   SinceLastEncounter: 0
@@ -5651,6 +5095,7 @@ GameObject:
   - component: {fileID: 8105134383550229048}
   - component: {fileID: 8082643487578673652}
   - component: {fileID: 8082643487578673648}
+  - component: {fileID: 8082643487578673653}
   - component: {fileID: 124750674}
   m_Layer: 0
   m_Name: BattleSetup
@@ -5885,7 +5330,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
-  changeBoot: 1
+  vsync: 1
+  loadSaveFile: 1
+  changeBoot: 0
   bootScene: 0
   bootEntrance: 1
   keepLoaded:
@@ -5944,6 +5391,7 @@ MonoBehaviour:
   playerLogic: {fileID: 0}
   eventLog: {fileID: 652271915}
   sceneAttributes: {fileID: 0}
+  saveSystemObject: {fileID: 8082643487578673653}
 --- !u!114 &8082643487578673652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6022,6 +5470,19 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 6a24bd7541761479db2dc7f3a4e2ea75, type: 3}
   CharacterIdleTime: 0.15
   CharacterWalkTime: 0.1
+--- !u!114 &8082643487578673653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8082643487578673647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1e8518c03b04188bc92307e0b0d8e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
 --- !u!114 &8105134383550229048
 MonoBehaviour:
   m_ObjectHideFlags: 0

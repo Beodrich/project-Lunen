@@ -16,9 +16,10 @@ public class SetupRouter : MonoBehaviour
     public PlayerLogic playerLogic;
     public EventLog eventLog;
     public SceneAttributes sceneAttributes;
+    public SaveSystemObject saveSystemObject;
 
     public void Awake()
     {
-        gameBoot.sr = battleSetup.sr = director.sr = generateMonster.sr = cameraFollow.sr = canvasCollection.sr = this;
+        gameBoot.sr = battleSetup.sr = director.sr = generateMonster.sr = cameraFollow.sr = canvasCollection.sr = saveSystemObject.sr = this;
     }
 }

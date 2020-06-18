@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
 
     public void ReloadTeam()
     {
+        LunenTeam = LunenTeam.Distinct().ToList();
         if (LunenTeam.Count == 0) TEST_AddTeam();
         LunenOut.Clear();
         LunenAlive = 0;

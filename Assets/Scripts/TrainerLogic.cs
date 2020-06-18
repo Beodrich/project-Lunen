@@ -108,17 +108,32 @@ public class TrainerLogic : MonoBehaviour
 
     public void StartTrainerBattle()
     {
-        if (EditorApplication.isPlaying && !sr.battleSetup.InBattle)
-        {
-            ClearTeamOfNull();
-            if (!defeated && !engaged)
+        #if UNITY_EDITOR
+            if (EditorApplication.isPlaying && !sr.battleSetup.InBattle)
             {
-                engaged = true;
-                sr.battleSetup.GenerateTrainerBattle(this);
-                sr.battleSetup.MoveToBattle(0,0);
-                
+                ClearTeamOfNull();
+                if (!defeated && !engaged)
+                {
+                    engaged = true;
+                    sr.battleSetup.GenerateTrainerBattle(this);
+                    sr.battleSetup.MoveToBattle(0,0);
+                    
+                }
             }
-        }
+        #else
+            if (!sr.battleSetup.InBattle)
+            {
+                ClearTeamOfNull();
+                if (!defeated && !engaged)
+                {
+                    engaged = true;
+                    sr.battleSetup.GenerateTrainerBattle(this);
+                    sr.battleSetup.MoveToBattle(0,0);
+                    
+                }
+            }
+        #endif
+        
     }
 
     public void ExitBattle(bool defeat)

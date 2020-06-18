@@ -73,7 +73,7 @@ public class AnimationDex : MonoBehaviour
         Trainer029,
     }
 
-    [NamedArray(typeof(CharacterSpriteEnum))]
+    [EnumNamedArray(typeof(CharacterSpriteEnum))]
     public List<Texture2D> CharacterSpritesheetList = new List<Texture2D>();
     private List<Sprite[]> CharacterSpriteList;
 

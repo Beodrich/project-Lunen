@@ -20,15 +20,30 @@ public class SceneAttributes : MonoBehaviour
     {
         sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
         sr.sceneAttributes = this;
-        int entrance = sr.battleSetup.nextEntrance;
-        if (entrance >= sceneEntrances.Count) entrance = 0;
+
         GameObject newPlayer = Instantiate(player);
-        newPlayer.transform.position = new Vector3(sceneEntrances[entrance].spawn.x, sceneEntrances[entrance].spawn.y, 0);
-        Vector2 input = MoveScripts.GetVector2FromDirection(sceneEntrances[entrance].spawnFacing);
+        Entrance e;
+
+        if (sr.battleSetup.loadEntrance)
+        {
+            e = new Entrance();
+            e.spawn = sr.battleSetup.loadPosition;
+            e.spawnFacing = sr.battleSetup.loadDirection;
+            sr.battleSetup.loadEntrance = false;
+        }
+        else
+        {
+            int entrance = sr.battleSetup.nextEntrance;
+            if (entrance >= sceneEntrances.Count) entrance = 0;
+            e = sceneEntrances[entrance];
+        }
+
+        newPlayer.transform.position = new Vector3(e.spawn.x, e.spawn.y, 0);
+        Vector2 input = MoveScripts.GetVector2FromDirection(e.spawnFacing);
         Move playerMove = newPlayer.GetComponent<Move>();
         playerMove.SetFacingDirection(input);
-        playerMove.lookDirection = sceneEntrances[entrance].spawnFacing;
-        if (sceneEntrances[entrance].moveAtStart)
+        playerMove.lookDirection = e.spawnFacing;
+        if (e.moveAtStart)
         {
             StartCoroutine(playerMove.move(playerMove.transform)); 
         }

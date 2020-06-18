@@ -99,7 +99,7 @@ public class ListOfScenes : MonoBehaviour
         House029,
     }
     
-    [NamedArray(typeof(LocationEnum))]
+    [EnumNamedArray(typeof(LocationEnum))]
     public SceneReference[] ListOfLocations;
 
     public void LoadScene(LocationEnum area)

@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using MyBox;
 
 public class BattleSetup : MonoBehaviour
 {
@@ -35,10 +36,20 @@ public class BattleSetup : MonoBehaviour
     public bool dialogueBoxNext;
     [Space(10)]
     public int nextEntrance;
+    public bool loadEntrance;
+    public Vector2 loadPosition;
+    public MoveScripts.Direction loadDirection;
     [Space(10)]
     public GameObject MonsterTemplate;
     public float SinceLastEncounter = 0f;
     public CanvasCollection.UIState lastUIState;
+    public List<System.Guid> TrainersDefeated;
+    private int lunenIndex;
+
+    private void Awake()
+    {
+        TrainersDefeated = new List<System.Guid>();
+    }
 
     private void Update() {
         SinceLastEncounter -= Time.deltaTime;
@@ -84,6 +95,7 @@ public class BattleSetup : MonoBehaviour
     {
         if (typeOfBattle == BattleType.TrainerBattle)
         {
+            TrainersDefeated.Add(lastTrainerEncounter.GetComponent<GuidComponent>().GetGuid());
             lastTrainerEncounter.ExitBattle(lastBattleVictory);
             //sr.eventLog.AddEvent("GOT HERE");
             if (InCutscene) cutsceneAdvance = true;
@@ -126,7 +138,8 @@ public class BattleSetup : MonoBehaviour
             index++;
             searcher += encounter.possibleEncounters[index].chanceWeight;
         }
-
+        
+        lunenIndex = (int)encounter.possibleEncounters[index].lunen;
         GenerateWildEncounter(sr.lunaDex.GetLunenObject(encounter.possibleEncounters[index].lunen), Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
         MoveToBattle(0,0);
     }
@@ -138,6 +151,7 @@ public class BattleSetup : MonoBehaviour
         Monster wM = wildMonster.GetComponent<Monster>();
         wM.loopback = sr;
         wM.Level = level;
+        wM.SourceLunenIndex = lunenIndex;
         wM.TemplateToMonster(species.GetComponent<Lunen>());
         wM.MonsterTeam = Director.Team.EnemyTeam;
         EnemyLunenTeam.Add(wildMonster);
@@ -193,26 +207,39 @@ public class BattleSetup : MonoBehaviour
     public void NewOverworld(DoorToLocation door)
     {
         nextEntrance = door.entranceIndex;
+        lastOverworld = door.TargetLocation;
         sr.listOfScenes.LoadScene(door.TargetLocation);
     }
 
     public void StartCutscene(Cutscene cutscene)
     {
+        #if UNITY_EDITOR
+            if (EditorApplication.isPlaying && !InCutscene)
+            {
+                sr.eventLog.AddEvent("Started Cutscene!");
+                lastCutscene = cutscene;
+                InCutscene = true;
+                cutscenePart = -1;
+                cutsceneAdvance = true;
+                StartCoroutine(playCutscene(transform));
+            }
+        #else
+            if (!InCutscene)
+            {
+                sr.eventLog.AddEvent("Started Cutscene!");
+                lastCutscene = cutscene;
+                InCutscene = true;
+                cutscenePart = -1;
+                cutsceneAdvance = true;
+                StartCoroutine(playCutscene(transform));
+            }
+        #endif
         
-        if (EditorApplication.isPlaying && !InCutscene)
-        {
-            sr.eventLog.AddEvent("Started Cutscene!");
-            lastCutscene = cutscene;
-            InCutscene = true;
-            cutscenePart = -1;
-            cutsceneAdvance = true;
-            StartCoroutine(playCutscene(transform));
-        }
     }
 
     public bool PlayerCanMove()
     {
-        return (!(InBattle || InCutscene));
+        return (!(InBattle || InCutscene || sr.canvasCollection.currentState == CanvasCollection.UIState.MainMenu));
     }
 
     public void DialogueBoxPrepare(Cutscene.Part part, bool next)
@@ -276,5 +303,22 @@ public class BattleSetup : MonoBehaviour
  
         InCutscene = false;
         yield return 0;
+    }
+
+    public void DestroyAllChildLunen()
+    {
+        while (PlayerLunenTeam.Count > 0)
+        {
+            if (PlayerLunenTeam[0] != null) Destroy(PlayerLunenTeam[0]);
+            PlayerLunenTeam.RemoveAt(0);
+        }
+
+        while (EnemyLunenTeam.Count > 0)
+        {
+            if (EnemyLunenTeam[0] != null) Destroy(EnemyLunenTeam[0]);
+            EnemyLunenTeam.RemoveAt(0);
+        }
+
+        sr.director.PlayerScripts[0].LunenTeam.Clear();
     }
 }

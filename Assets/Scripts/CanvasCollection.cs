@@ -15,7 +15,7 @@ public class CanvasCollection : MonoBehaviour
         Shop,
         MainMenu
     }
-    [NamedArray(typeof(UIState))]
+    [EnumNamedArray(typeof(UIState))]
     public List<GameObject> UIObjects;
     public GameObject DialogueWindow;
     public Text DialogueText;
@@ -195,7 +195,23 @@ public class CanvasCollection : MonoBehaviour
             sr.battleSetup.MoveToOverworld(true);
         }
     }
-    
+
+    public void SaveGame()
+    {
+        sr.canvasCollection.SetState(sr.battleSetup.lastUIState);
+        sr.saveSystemObject.SaveGame();
+    }
+
+    public void LoadGame()
+    {
+        sr.canvasCollection.SetState(sr.battleSetup.lastUIState);
+        sr.saveSystemObject.LoadGame();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
     public void AssignPlayer1Bars(int index)
     {

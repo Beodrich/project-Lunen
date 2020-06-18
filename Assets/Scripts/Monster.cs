@@ -42,6 +42,8 @@ public class Monster : MonoBehaviour
     [HideInInspector]
     public Lunen SourceLunen;
     [HideInInspector]
+    public int SourceLunenIndex;
+    [HideInInspector]
     public SetupRouter loopback;
     [HideInInspector]
     public float CurrCooldown;
@@ -189,6 +191,7 @@ public class Monster : MonoBehaviour
             if (Level == action.Level)
             {
                 GameObject newAction = Instantiate(loopback.lunaDex.GetActionObject(action.Action));
+                newAction.GetComponent<Action>().SourceActionIndex = (int)action.Action;
                 newAction.transform.parent = this.transform;
                 ActionSet.Add(newAction);
             }
@@ -202,6 +205,7 @@ public class Monster : MonoBehaviour
             if (Level >= action.Level)
             {
                 GameObject newAction = Instantiate(loopback.lunaDex.GetActionObject(action.Action));
+                newAction.GetComponent<Action>().SourceActionIndex = (int)action.Action;
                 newAction.transform.parent = this.transform;
                 ActionSet.Add(newAction);
             }
