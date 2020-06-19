@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 743702716897293587}
   - component: {fileID: 6527403505178505503}
   - component: {fileID: 5680156747540250454}
+  - component: {fileID: 4505799869574089705}
   m_Layer: 5
   m_Name: LunenButton1
   m_TagString: Untagged
@@ -573,6 +574,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 1
+--- !u!114 &4505799869574089705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743702716897293590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709952528c4674668b81bc6eb76d5ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  open: 0
+  percentageCurrent: 0
+  percentageTarget: 0
+  currentState: 0
+  transitionType: 2
+  transitionTime: 0
+  transitionScale: 20
+  elements:
+  - name: 
+    gameObject: {fileID: 743702716897293590}
+    elementType: 0
+    image: {fileID: 0}
+    text: {fileID: 0}
+    allowColorChange: 0
+    openColor: {r: 0, g: 0, b: 0, a: 0}
+    closedColor: {r: 0, g: 0, b: 0, a: 0}
+    allowPositionChange: 1
+    closeShift: {x: 0, y: -60}
+    openPosition: {x: 0, y: 0}
+    closedPosition: {x: 0, y: 0}
+    allowRotationChange: 0
+    allowScaleChange: 0
 --- !u!1 &743702716950916983
 GameObject:
   m_ObjectHideFlags: 0

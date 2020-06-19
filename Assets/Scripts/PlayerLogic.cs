@@ -110,23 +110,32 @@ public class PlayerLogic : MonoBehaviour
         bool inGrass2 = false;
         bool inTrainerView2 = false;
         bool inDoor2 = false;
+        int pathsFound = 0;
         if (hit.Length > 0)
         {
             int found = 0;
             for (int i = 0; i < hit.Length; i++)
             {
-                found += MoveBegin(hit[i]) ? 1 : 0;
-                if (inGrass) inGrass2 = true;
-                if (inTrainerView) inTrainerView2 = true;
-                if (inDoor) inDoor2 = true;
+                if (hit[i].gameObject.tag != "Path")
+                {
+                    found += MoveBegin(hit[i]) ? 1 : 0;
+                    if (inGrass) inGrass2 = true;
+                    if (inTrainerView) inTrainerView2 = true;
+                    if (inDoor) inDoor2 = true;
+                }
+                else
+                {
+                    pathsFound++;
+                }
+                
             }
             inGrass = inGrass2;
             inTrainerView = inTrainerView2;
             inDoor = inDoor2;
+            if (pathsFound == hit.Length) return true;
             return (found > 0);
         }
-        
-        else return true;
+        else return false;
     }
 
     public void MoveEnd()

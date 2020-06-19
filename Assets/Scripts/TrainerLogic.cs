@@ -22,6 +22,7 @@ public class TrainerLogic : MonoBehaviour
 
     public List<GameObject> TeamObjects;
     public List<Monster> Team;
+    public List<string> TrainerLookStop;
 
     [Header("Trainer Lunen Info")]
 
@@ -89,8 +90,8 @@ public class TrainerLogic : MonoBehaviour
             {
                 foundRange++;
                 checkVector = MoveScripts.GetFrontVector2(move, (float)foundRange, true);
-                Collider2D hit = Physics2D.OverlapArea(checkVector, checkVector);
-                foundWall = MoveScripts.CheckForTag(this.gameObject,hit,"Wall");
+                Collider2D[] hit = Physics2D.OverlapAreaAll(checkVector, checkVector);
+                foundWall = MoveScripts.CheckForTag(this.gameObject,hit,TrainerLookStop);
                 foundPlayer = MoveScripts.CheckForTag(this.gameObject,hit,"Player");
                 if (foundPlayer) sr.battleSetup.StartCutscene(GetComponent<Cutscene>());
             }

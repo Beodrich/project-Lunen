@@ -83,10 +83,17 @@ public class Director : MonoBehaviour
         for (int i = 0; i < PlayerScripts.Count; i++) PlayerScripts[i].ReloadTeam();
         if (team == Team.PlayerTeam)
         {
-            Action action = PlayerScripts[0].LunenOut[lunen].ActionSet[move].GetComponent<Action>();
-            action.MonsterUser = PlayerScripts[0].LunenOut[lunen];
-            while (PlayerScripts[1].LunenOut.Count <= sr.canvasCollection.GetLunenSelected(Team.EnemyTeam)) sr.canvasCollection.EnemyTarget--;
-            action.Execute();
+            if (PlayerScripts[0].LunenOut.Count > lunen)
+            {
+                if (PlayerScripts[0].LunenOut[lunen].ActionSet.Count > move)
+                {
+                    Action action = PlayerScripts[0].LunenOut[lunen].ActionSet[move].GetComponent<Action>();
+                    action.MonsterUser = PlayerScripts[0].LunenOut[lunen];
+                    while (PlayerScripts[1].LunenOut.Count <= sr.canvasCollection.GetLunenSelected(Team.EnemyTeam)) sr.canvasCollection.EnemyTarget--;
+                    action.Execute();
+                }
+            }
+            
         }
         else
         {
@@ -121,6 +128,9 @@ public class Director : MonoBehaviour
                 break;
         }
         sr.canvasCollection.ScanBothParties();
+        sr.canvasCollection.UIObjects[1].GetComponent<UIPanelCollection>().SetPanelState("LunenMoves1", UITransition.State.ImmediateDisable);
+        sr.canvasCollection.UIObjects[1].GetComponent<UIPanelCollection>().SetPanelState("LunenMoves2", UITransition.State.ImmediateDisable);
+        sr.canvasCollection.UIObjects[1].GetComponent<UIPanelCollection>().SetPanelState("LunenMoves3", UITransition.State.ImmediateDisable);
     }
 
     public void AttemptToCapture()

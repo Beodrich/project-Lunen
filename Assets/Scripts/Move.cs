@@ -296,6 +296,9 @@ public class Move : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        if (sr == null) sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
+        animTime = 0;
+        SetWalkAnimation();
         SetSprite();
     }
 }

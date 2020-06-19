@@ -13,7 +13,10 @@ public class CanvasCollection : MonoBehaviour
         Overworld,
         Battle,
         Shop,
-        MainMenu
+        MainMenu,
+        Options,
+        Inventory,
+        Lunen
     }
     [EnumNamedArray(typeof(UIState))]
     public List<GameObject> UIObjects;
@@ -50,6 +53,8 @@ public class CanvasCollection : MonoBehaviour
     [HideInInspector] public float YToMove;
     [HideInInspector] public float NextFrameY;
 
+    [HideInInspector] public Component[] UIElements;
+
     void Awake()
     {
         sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
@@ -58,9 +63,9 @@ public class CanvasCollection : MonoBehaviour
         Player2Script = Player2.GetComponent<Player>();
 
         ShiftYStart = ShiftY;
-        ShiftY = ShiftYStart * (Screen.height / 360);
+        ShiftY = ShiftYStart;
 
-        dialogueStartPosition = dialogueCurrentPosition = DialogueWindow.transform.position;
+        dialogueStartPosition = dialogueCurrentPosition = DialogueWindow.transform.localPosition;
         dialogueEndPosition = dialogueStartPosition + new Vector3(0, ShiftY, 0);
 
         SetState(UIState.Overworld);
@@ -73,7 +78,7 @@ public class CanvasCollection : MonoBehaviour
     }
     public void UpdateDialogueBox()
     {
-        ShiftY = ShiftYStart * (Screen.height / 360);
+        ShiftY = ShiftYStart;
         dialogueEndPosition = dialogueStartPosition + new Vector3(0, ShiftY, 0);
 
         if (YToMove > 0.0001)
@@ -97,11 +102,11 @@ public class CanvasCollection : MonoBehaviour
         ShiftMove *= -1;
         if (ShiftMove == 1)
         {
-            DialogueWindow.transform.position = dialogueEndPosition;
+            DialogueWindow.transform.localPosition = dialogueEndPosition;
         }
         else
         {
-            DialogueWindow.transform.position = dialogueStartPosition;
+            DialogueWindow.transform.localPosition = dialogueStartPosition;
         }
     }
 
@@ -116,9 +121,53 @@ public class CanvasCollection : MonoBehaviour
     {
         for (int i = 0; i < UIObjects.Count; i++)
         {
-            UIObjects[i].SetActive(i==(int)state);
+            if (i == (int)state)
+            {
+                UIPanelCollection panelCollection = UIObjects[i].GetComponent<UIPanelCollection>();
+                if (panelCollection != null)
+                {
+                    UIObjects[i].SetActive(true);
+                    panelCollection.EnableStartingPanels();
+                }
+                else
+                {
+                    UIObjects[i].SetActive(true);
+                }
+            }
+            else if (i == (int)currentState)
+            {
+                UIPanelCollection panelCollection = UIObjects[i].GetComponent<UIPanelCollection>();
+                if (panelCollection != null)
+                {
+                    panelCollection.DisableAllPanels();
+                }
+                else
+                {
+                    UIObjects[i].SetActive(false);
+                }
+            }
+            else
+            {
+                UIPanelCollection panelCollection = UIObjects[i].GetComponent<UIPanelCollection>();
+                
+                if (panelCollection != null)
+                {
+                    panelCollection.GetElementCollections();
+                    panelCollection.DisableAllPanelsImmediately();
+                }
+                else
+                {
+                    UIObjects[i].SetActive(false);
+                }
+            }
         }
+
         currentState = state;
+    }
+
+    public void SetState(int state)
+    {
+        SetState((UIState) state);
     }
 
     public void ScanBothParties()
@@ -167,7 +216,10 @@ public class CanvasCollection : MonoBehaviour
             }
             //LunenPanels[i].ActionButtonScripts
         }
-        else Player1LunenButtons[i].SetActive(false);
+        else
+        {
+            Player1LunenButtons[i].SetActive(false);
+        }
     }
 
     public void ScanPlayer2Party()
@@ -198,13 +250,13 @@ public class CanvasCollection : MonoBehaviour
 
     public void SaveGame()
     {
-        sr.canvasCollection.SetState(sr.battleSetup.lastUIState);
+        SetState(sr.battleSetup.lastUIState);
         sr.saveSystemObject.SaveGame();
     }
 
     public void LoadGame()
     {
-        sr.canvasCollection.SetState(sr.battleSetup.lastUIState);
+        SetState(sr.battleSetup.lastUIState);
         sr.saveSystemObject.LoadGame();
     }
 
@@ -225,6 +277,32 @@ public class CanvasCollection : MonoBehaviour
         Player2LunenButtonScripts[index].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = Player2Script.LunenOut[index];
     }
 
+    public void OpenMenuPanel(string panel)
+    {
+        UIObjects[3].GetComponent<UIPanelCollection>().SetPanelState(panel, UITransition.State.Enable);
+    }
+
+    public void CloseMenuPanel(string panel)
+    {
+        UIObjects[3].GetComponent<UIPanelCollection>().SetPanelState(panel, UITransition.State.Disable);
+    }
+
+    public void OpenMenuPanel(UIElementCollection panel)
+    {
+        panel.SetCollectionState(UITransition.State.Enable);
+    }
+
+    public void CloseMenuPanel(UIElementCollection panel)
+    {
+        panel.SetCollectionState(UITransition.State.Disable);
+    }
+
+    public void SwitchMenuPanel(string panel)
+    {
+        UIElementCollection uiec = UIObjects[3].GetComponent<UIPanelCollection>().GetPanelWithString(panel);
+        if (uiec.currentState == UITransition.State.Enable) CloseMenuPanel(uiec); else OpenMenuPanel(uiec);
+    }
+
     public void Player1MenuClick(int index)
     {
         if (MenuOpen == index)
@@ -233,7 +311,7 @@ public class CanvasCollection : MonoBehaviour
             {
                 Player1LunenButtonScripts[MenuOpen - 1].isSelected = false;
             }
-            DescriptionPanels[index - 1].SetActive(false);
+            DescriptionPanels[index - 1].GetComponent<UIElementCollection>().SetCollectionState(UITransition.State.Disable);
             MenuOpen = 0;
         }
         else
@@ -244,10 +322,10 @@ public class CanvasCollection : MonoBehaviour
                 {
                     if (MenuOpen != 0)
                     {
-                        DescriptionPanels[MenuOpen - 1].SetActive(false);
+                        DescriptionPanels[MenuOpen - 1].GetComponent<UIElementCollection>().SetCollectionState(UITransition.State.Disable);
                         Player1LunenButtonScripts[MenuOpen - 1].isSelected = false;
                     }
-                    DescriptionPanels[index - 1].SetActive(true);
+                    DescriptionPanels[index - 1].GetComponent<UIElementCollection>().SetCollectionState(UITransition.State.Enable);
                     Player1LunenButtonScripts[index - 1].isSelected = true;
                     MenuOpen = index;
                 }

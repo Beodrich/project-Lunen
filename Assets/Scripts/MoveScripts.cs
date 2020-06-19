@@ -12,8 +12,6 @@ public static class MoveScripts
         West
     }
 
-    public static List<string> PlayerTagColliders = new List<string>(){"Wall", "Creature"};
-
     public static bool CheckForTag(GameObject self, Collider2D hit, string tag)
     {
         if (hit != null && hit.gameObject != self)
@@ -30,6 +28,34 @@ public static class MoveScripts
             if (CheckForTag(self, hit, tag[i])) return true;
         }
         return false;
+    }
+
+    public static bool CheckForTag(GameObject self, Collider2D[] hit, string tag)
+    {
+        if (hit.Length > 0)
+        {
+            int found = 0;
+            for (int i = 0; i < hit.Length; i++)
+            {
+                found += CheckForTag(self, hit[i], tag) ? 1 : 0;
+            }
+            return (found > 0);
+        }
+        else return false;
+    }
+
+    public static bool CheckForTag(GameObject self, Collider2D[] hit, List<string> tag)
+    {
+        if (hit.Length > 0)
+        {
+            int found = 0;
+            for (int i = 0; i < hit.Length; i++)
+            {
+                found += CheckForTag(self, hit[i], tag) ? 1 : 0;
+            }
+            return (found > 0);
+        }
+        else return false;
     }
 
     public static Vector2 DigitizeInput(Vector2 input)

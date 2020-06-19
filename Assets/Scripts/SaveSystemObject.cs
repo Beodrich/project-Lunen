@@ -22,6 +22,7 @@ public class SaveSystemObject : MonoBehaviour
         if (gameData != null)
         {
             //Beginning load
+            if (sr.battleSetup.InBattle) sr.battleSetup.ExitBattle();
 
             //Perform Clean-up
             sr.battleSetup.DestroyAllChildLunen();
