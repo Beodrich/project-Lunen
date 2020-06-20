@@ -140,23 +140,18 @@ public class BattleSetup : MonoBehaviour
         }
         
         lunenIndex = (int)encounter.possibleEncounters[index].lunen;
-        GenerateWildEncounter(sr.lunaDex.GetLunenObject(encounter.possibleEncounters[index].lunen), Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
+        GenerateWildEncounter(encounter.possibleEncounters[index].lunen, Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
         MoveToBattle(0,0);
     }
 
-    public void GenerateWildEncounter(GameObject species, int level)
+    public void GenerateWildEncounter(LunaDex.LunenEnum species, int level)
     {
         EnemyLunenTeam.Clear();
-        GameObject wildMonster = Instantiate(MonsterTemplate);
+        GameObject wildMonster = sr.generateMonster.GenerateLunen(species, level);
         Monster wM = wildMonster.GetComponent<Monster>();
-        wM.loopback = sr;
-        wM.Level = level;
-        wM.SourceLunenIndex = lunenIndex;
-        wM.TemplateToMonster(species.GetComponent<Lunen>());
         wM.MonsterTeam = Director.Team.EnemyTeam;
         EnemyLunenTeam.Add(wildMonster);
         wildMonster.transform.SetParent(this.transform);
-        wM.GetPreviousMoves();
         typeOfBattle = BattleType.WildEncounter;
     }
 
