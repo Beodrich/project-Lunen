@@ -15,14 +15,16 @@ public class CanvasCollection : MonoBehaviour
         Shop,
         MainMenu,
         Options,
+        Dialogue,
         Inventory,
         Lunen
     }
     [EnumNamedArray(typeof(UIState))]
     public List<GameObject> UIObjects;
-    public GameObject DialogueWindow;
+    [HideInInspector] public List<UIPanelCollection> UICollections;
     public Text DialogueText;
     public UIState currentState;
+    public UIState lastState;
 
     [Header("Battle Elements")]
     public List<GameObject> DescriptionPanels;
@@ -41,18 +43,6 @@ public class CanvasCollection : MonoBehaviour
     [HideInInspector] public Player Player1Script;
     [HideInInspector] public Player Player2Script;
 
-    [Header("Dialogue Shift")]
-
-    public Vector3 dialogueStartPosition;
-    public Vector3 dialogueEndPosition;
-    public Vector3 dialogueCurrentPosition;
-    public float ShiftSpeed;
-    public float ShiftY;
-    [HideInInspector] public float ShiftYStart;
-    [HideInInspector] public float ShiftMove = -1f;
-    [HideInInspector] public float YToMove;
-    [HideInInspector] public float NextFrameY;
-
     [HideInInspector] public Component[] UIElements;
 
     void Awake()
@@ -62,52 +52,15 @@ public class CanvasCollection : MonoBehaviour
         Player1Script = Player1.GetComponent<Player>();
         Player2Script = Player2.GetComponent<Player>();
 
-        ShiftYStart = ShiftY;
-        ShiftY = ShiftYStart;
-
-        dialogueStartPosition = dialogueCurrentPosition = DialogueWindow.transform.localPosition;
-        dialogueEndPosition = dialogueStartPosition + new Vector3(0, ShiftY, 0);
+        UICollections = new List<UIPanelCollection>();
+        foreach (GameObject go in UIObjects) UICollections.Add(go.GetComponent<UIPanelCollection>());
 
         SetState(UIState.Overworld);
     }
 
-    void Update()
+    public void SetDialogueBox(string text)
     {
-        UpdateDialogueBox();
-            
-    }
-    public void UpdateDialogueBox()
-    {
-        ShiftY = ShiftYStart;
-        dialogueEndPosition = dialogueStartPosition + new Vector3(0, ShiftY, 0);
-
-        if (YToMove > 0.0001)
-        {
-            NextFrameY = YToMove * ShiftSpeed * Time.deltaTime;
-            YToMove -= NextFrameY;
-        }
-        else
-        {
-            NextFrameY = YToMove;
-            YToMove -= NextFrameY;
-        }
-        dialogueCurrentPosition = DialogueWindow.transform.position;
-        dialogueCurrentPosition.y -= NextFrameY*ShiftMove;
-        DialogueWindow.transform.position = dialogueCurrentPosition;
-    }
-
-    public void OpenDialogueBox()
-    {
-        YToMove = ShiftY;
-        ShiftMove *= -1;
-        if (ShiftMove == 1)
-        {
-            DialogueWindow.transform.localPosition = dialogueEndPosition;
-        }
-        else
-        {
-            DialogueWindow.transform.localPosition = dialogueStartPosition;
-        }
+        DialogueText.text = text;
     }
 
     public void BattleStart()
@@ -117,17 +70,21 @@ public class CanvasCollection : MonoBehaviour
         Player2LunenTarget(0);
     }
 
+    public void RevertState()
+    {
+        SetState(lastState);
+    }
+
     public void SetState(UIState state)
     {
         for (int i = 0; i < UIObjects.Count; i++)
         {
             if (i == (int)state)
             {
-                UIPanelCollection panelCollection = UIObjects[i].GetComponent<UIPanelCollection>();
-                if (panelCollection != null)
+                if (UICollections[i] != null)
                 {
                     UIObjects[i].SetActive(true);
-                    panelCollection.EnableStartingPanels();
+                    UICollections[i].EnableStartingPanels();
                 }
                 else
                 {
@@ -136,10 +93,9 @@ public class CanvasCollection : MonoBehaviour
             }
             else if (i == (int)currentState)
             {
-                UIPanelCollection panelCollection = UIObjects[i].GetComponent<UIPanelCollection>();
-                if (panelCollection != null)
+                if (UICollections[i] != null)
                 {
-                    panelCollection.DisableAllPanels();
+                    UICollections[i].DisableAllPanels();
                 }
                 else
                 {
@@ -148,12 +104,10 @@ public class CanvasCollection : MonoBehaviour
             }
             else
             {
-                UIPanelCollection panelCollection = UIObjects[i].GetComponent<UIPanelCollection>();
-                
-                if (panelCollection != null)
+                if (UICollections[i] != null)
                 {
-                    panelCollection.GetElementCollections();
-                    panelCollection.DisableAllPanelsImmediately();
+                    UICollections[i].GetElementCollections();
+                    UICollections[i].DisableAllPanelsImmediately();
                 }
                 else
                 {
@@ -161,7 +115,7 @@ public class CanvasCollection : MonoBehaviour
                 }
             }
         }
-
+        lastState = currentState;
         currentState = state;
     }
 

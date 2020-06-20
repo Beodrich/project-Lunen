@@ -15,6 +15,7 @@ public class UIPanelCollection : MonoBehaviour
 
     public List<UIPanel> UIPanels;
     public List<string> StartingPanels;
+    public List<string> CurrentlyOpenPanels;
 
     private void Awake() {
         

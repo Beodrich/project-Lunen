@@ -61,7 +61,7 @@ public class BattleSetup : MonoBehaviour
                 if (!dialogueBoxNext)
                 {
                     dialogueBoxOpen = false;
-                    sr.canvasCollection.OpenDialogueBox();
+                    sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Disable);
                 }
                 cutsceneAdvance = true;
             }
@@ -241,7 +241,7 @@ public class BattleSetup : MonoBehaviour
     {
         if (!dialogueBoxNext)
         {
-            sr.canvasCollection.OpenDialogueBox();
+            sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Enable);
         }
         dialogueBoxOpen = true;
         dialogueBoxNext = next;
@@ -250,6 +250,7 @@ public class BattleSetup : MonoBehaviour
 
     public IEnumerator playCutscene(Transform transform)
     {
+        sr.canvasCollection.SetState(CanvasCollection.UIState.Dialogue);
         while (cutscenePart < lastCutscene.parts.Length)
         {
             while (cutsceneAdvance)
@@ -282,7 +283,11 @@ public class BattleSetup : MonoBehaviour
                         case Cutscene.PartType.Trigger:
                             if (part.triggerType == Cutscene.TriggerType.Battle)
                             {
-                                if (!part.trainerLogic.defeated) part.trainerLogic.StartTrainerBattle(); else cutsceneAdvance = true;
+                                if (!part.trainerLogic.defeated)
+                                {
+                                    part.trainerLogic.StartTrainerBattle();
+                                }
+                                else cutsceneAdvance = true;
                             }
                         break;
                     }
