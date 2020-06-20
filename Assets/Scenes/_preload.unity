@@ -563,6 +563,41 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Data Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: transitionScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].allowColorChange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[1].allowColorChange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: transitionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: transitionTime
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88f72773f931140488affde3480e02e0, type: 3}
 --- !u!224 &187814341 stripped
@@ -1107,6 +1142,36 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 652271914}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: transitionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: transitionTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].allowColorChange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[1].allowColorChange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88f72773f931140488affde3480e02e0, type: 3}
 --- !u!224 &275259757 stripped
@@ -1347,6 +1412,36 @@ PrefabInstance:
         type: 3}
       propertyPath: elements.Array.data[0].closedPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: transitionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: transitionTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].allowColorChange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[1].allowColorChange
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88f72773f931140488affde3480e02e0, type: 3}
@@ -2080,6 +2175,7 @@ MonoBehaviour:
   open: 0
   percentageCurrent: 0
   percentageTarget: 0
+  percentageUse: 0
   currentState: 0
   transitionType: 2
   transitionTime: 10
@@ -2328,7 +2424,12 @@ PrefabInstance:
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
       propertyPath: elements.Array.data[0].closeShift.y
-      value: 60
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.x
+      value: 450
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
@@ -2436,12 +2537,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 2032635760}
   - {fileID: 2094879623}
   - {fileID: 719132445}
   - {fileID: 1452554243}
   - {fileID: 802940218}
   - {fileID: 1823833620}
-  - {fileID: 2032635760}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2796,7 +2897,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652271913}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2888,7 +2989,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652271913}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3515,6 +3616,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.x
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
 --- !u!224 &1101997896 stripped
@@ -3734,6 +3845,7 @@ MonoBehaviour:
   open: 0
   percentageCurrent: 0
   percentageTarget: 0
+  percentageUse: 0
   currentState: 0
   transitionType: 2
   transitionTime: 10
@@ -3748,7 +3860,7 @@ MonoBehaviour:
     openColor: {r: 1, g: 1, b: 1, a: 1}
     closedColor: {r: 1, g: 1, b: 1, a: 0}
     allowPositionChange: 1
-    closeShift: {x: 60, y: 0}
+    closeShift: {x: 60, y: -75}
     openPosition: {x: -0.8498535, y: 24.939995}
     closedPosition: {x: 59.150146, y: 24.939995}
     allowRotationChange: 0
@@ -3922,7 +4034,12 @@ PrefabInstance:
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
       propertyPath: elements.Array.data[0].closeShift.y
-      value: 60
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.x
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
@@ -4586,6 +4703,7 @@ MonoBehaviour:
   open: 0
   percentageCurrent: 0
   percentageTarget: 0
+  percentageUse: 0
   currentState: 0
   transitionType: 2
   transitionTime: 10
@@ -4600,7 +4718,7 @@ MonoBehaviour:
     openColor: {r: 1, g: 1, b: 1, a: 1}
     closedColor: {r: 1, g: 1, b: 1, a: 0}
     allowPositionChange: 1
-    closeShift: {x: 60, y: 0}
+    closeShift: {x: 60, y: -50}
     openPosition: {x: -0.8498535, y: -0.06000614}
     closedPosition: {x: 59.150146, y: -0.06000614}
     allowRotationChange: 0
@@ -4771,6 +4889,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.x
+      value: -450
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
 --- !u!224 &1450521064 stripped
@@ -4822,7 +4950,7 @@ RectTransform:
   - {fileID: 610849587}
   - {fileID: 1981080618}
   m_Father: {fileID: 652271913}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5002,6 +5130,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetState
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: transitionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: transitionTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.x
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].allowColorChange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[1].allowColorChange
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88f72773f931140488affde3480e02e0, type: 3}
@@ -5240,7 +5398,12 @@ PrefabInstance:
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
       propertyPath: elements.Array.data[0].closeShift.y
-      value: 60
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.x
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
@@ -5456,6 +5619,7 @@ MonoBehaviour:
   open: 0
   percentageCurrent: 0
   percentageTarget: 0
+  percentageUse: 0
   currentState: 0
   transitionType: 2
   transitionTime: 10
@@ -5470,7 +5634,7 @@ MonoBehaviour:
     openColor: {r: 1, g: 1, b: 1, a: 1}
     closedColor: {r: 1, g: 1, b: 1, a: 0}
     allowPositionChange: 1
-    closeShift: {x: 60, y: 0}
+    closeShift: {x: 60, y: -25}
     openPosition: {x: -0.8498535, y: -25.059984}
     closedPosition: {x: 59.150146, y: -25.059984}
     allowRotationChange: 0
@@ -5694,7 +5858,7 @@ RectTransform:
   - {fileID: 1790149056}
   - {fileID: 1299934129}
   m_Father: {fileID: 652271913}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6109,6 +6273,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.x
+      value: -300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
 --- !u!224 &1895939346 stripped
@@ -6312,7 +6486,7 @@ RectTransform:
   - {fileID: 735224326}
   - {fileID: 1178688630}
   m_Father: {fileID: 652271913}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6432,6 +6606,7 @@ MonoBehaviour:
   open: 0
   percentageCurrent: 0
   percentageTarget: 0
+  percentageUse: 0
   currentState: 0
   transitionType: 2
   transitionTime: 10
@@ -6442,11 +6617,11 @@ MonoBehaviour:
     elementType: 0
     image: {fileID: 2058507922}
     text: {fileID: 0}
-    allowColorChange: 0
+    allowColorChange: 1
     openColor: {r: 1, g: 1, b: 1, a: 1}
     closedColor: {r: 1, g: 1, b: 1, a: 0}
     allowPositionChange: 1
-    closeShift: {x: 0, y: -120}
+    closeShift: {x: -20, y: -20}
     openPosition: {x: 0, y: -120}
     closedPosition: {x: -120, y: -120}
     allowRotationChange: 0
@@ -6573,7 +6748,7 @@ RectTransform:
   m_Children:
   - {fileID: 676951401}
   m_Father: {fileID: 652271913}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7325,8 +7500,33 @@ PrefabInstance:
       objectReference: {fileID: 652271914}
     - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
         type: 3}
+      propertyPath: transitionType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: transitionTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
       propertyPath: elements.Array.data[0].closeShift.x
-      value: -60
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].closeShift.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[0].allowColorChange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: elements.Array.data[1].allowColorChange
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88f72773f931140488affde3480e02e0, type: 3}

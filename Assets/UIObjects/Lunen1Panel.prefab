@@ -164,8 +164,9 @@ MonoBehaviour:
   open: 0
   percentageCurrent: 0
   percentageTarget: 0
+  percentageUse: 0
   currentState: 0
-  transitionType: 2
+  transitionType: 3
   transitionTime: 0.1
   transitionScale: 20
   elements:
@@ -441,8 +442,9 @@ MonoBehaviour:
   open: 0
   percentageCurrent: 0
   percentageTarget: 0
+  percentageUse: 0
   currentState: 3
-  transitionType: 2
+  transitionType: 3
   transitionTime: 0.1
   transitionScale: 20
   elements:
@@ -796,8 +798,9 @@ MonoBehaviour:
   open: 0
   percentageCurrent: 0
   percentageTarget: 0
+  percentageUse: 0
   currentState: 0
-  transitionType: 2
+  transitionType: 3
   transitionTime: 0.1
   transitionScale: 20
   elements:
@@ -1055,8 +1058,9 @@ MonoBehaviour:
   open: 0
   percentageCurrent: 0
   percentageTarget: 0
+  percentageUse: 0
   currentState: 0
-  transitionType: 2
+  transitionType: 3
   transitionTime: 0.1
   transitionScale: 20
   elements:
@@ -1332,8 +1336,9 @@ MonoBehaviour:
   open: 0
   percentageCurrent: 0
   percentageTarget: 0
+  percentageUse: 0
   currentState: 0
-  transitionType: 2
+  transitionType: 3
   transitionTime: 0.1
   transitionScale: 20
   elements:
@@ -1648,6 +1653,7 @@ MonoBehaviour:
   - {fileID: 6420312129916297401}
   - {fileID: 6420312130336704479}
   UITransitions: []
+  currentState: 0
 --- !u!1 &6420312131261888322
 GameObject:
   m_ObjectHideFlags: 0

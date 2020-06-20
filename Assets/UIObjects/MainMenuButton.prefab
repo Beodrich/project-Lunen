@@ -224,9 +224,10 @@ MonoBehaviour:
   open: 0
   percentageCurrent: 0
   percentageTarget: 0
+  percentageUse: 0
   currentState: 0
-  transitionType: 2
-  transitionTime: 10
+  transitionType: 3
+  transitionTime: 0.2
   transitionScale: 20
   elements:
   - name: PartyButton
@@ -238,7 +239,7 @@ MonoBehaviour:
     openColor: {r: 1, g: 1, b: 1, a: 1}
     closedColor: {r: 1, g: 1, b: 1, a: 0}
     allowPositionChange: 1
-    closeShift: {x: -60, y: 0}
+    closeShift: {x: -50, y: 0}
     openPosition: {x: -1, y: 25}
     closedPosition: {x: -61, y: 25}
     allowRotationChange: 0
@@ -257,9 +258,3 @@ MonoBehaviour:
     closedPosition: {x: 0, y: 0}
     allowRotationChange: 0
     allowScaleChange: 0
-  tempV3: {x: 0, y: 0, z: 0}
-  tempV3a: {x: 0, y: 0, z: 0}
-  tempV3b: {x: 0, y: 0, z: 0}
-  tempC: {r: 0, g: 0, b: 0, a: 0}
-  tempCa: {r: 0, g: 0, b: 0, a: 0}
-  tempCb: {r: 0, g: 0, b: 0, a: 0}

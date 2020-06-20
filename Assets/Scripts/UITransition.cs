@@ -24,7 +24,8 @@ public class UITransition : MonoBehaviour
     {
         Instant,
         Linear,
-        Exponential
+        Exponential,
+        SineWave
     }
 
     [System.Serializable]
@@ -68,10 +69,11 @@ public class UITransition : MonoBehaviour
     public bool open;
     public float percentageCurrent;
     public float percentageTarget;
+    public float percentageUse;
     public State currentState;
 
     public MoveType transitionType;
-    [ConditionalField(nameof(transitionType), false, MoveType.Linear)] public float transitionTime;
+    [ConditionalField(nameof(transitionType), false, MoveType.Linear, MoveType.SineWave)] public float transitionTime;
     [ConditionalField(nameof(transitionType), false, MoveType.Exponential)] public float transitionScale;
     public List<UIElement> elements;
 
@@ -167,13 +169,18 @@ public class UITransition : MonoBehaviour
         if (percentageCurrent != percentageTarget)
         {
             percentageCurrent = SetNewPercentage(percentageCurrent, percentageTarget, Time.deltaTime);
+            percentageUse = percentageCurrent;
+            if (transitionType == MoveType.SineWave)
+            {
+                percentageUse = Mathf.Sin((percentageCurrent/200) * Mathf.PI) * 100;
+            }
             for (int i = 0; i < elements.Count; i++)
             {
                 if (elements[i].allowColorChange)
                 {
                     tempCa = elements[i].closedColor;
                     tempCb = elements[i].openColor;
-                    tempC = Color.Lerp(tempCa, tempCb, percentageCurrent/100);
+                    tempC = Color.Lerp(tempCa, tempCb, percentageUse/100);
                     switch (elements[i].elementType)
                     {
                         case ElementType.Image: elements[i].image.color = tempC; break;
@@ -185,7 +192,7 @@ public class UITransition : MonoBehaviour
                 {
                     tempV3a = elements[i].closedPosition;
                     tempV3b = elements[i].openPosition;
-                    tempV3 = Vector3.Lerp(tempV3a, tempV3b, percentageCurrent/100);
+                    tempV3 = Vector3.Lerp(tempV3a, tempV3b, percentageUse/100);
                     elements[i].gameObject.transform.localPosition = tempV3;
                 }
             }
@@ -212,13 +219,14 @@ public class UITransition : MonoBehaviour
             case MoveType.Instant:
                 return target;
             case MoveType.Linear:
+            case MoveType.SineWave:
                 float change = (current > target) ? -1f : 1f;
                 float move = (100 / transitionTime) * delta * change;
                 if (Mathf.Abs(move) > Mathf.Abs(diff)) return target;
                 else return (current + move);
             case MoveType.Exponential:
                 float move2 = diff * delta * transitionScale;
-                if (Mathf.Abs(move2) < 0.1) return target;
+                if (Mathf.Abs(move2) < 0.001) return target;
                 else if (Mathf.Abs(move2) > Mathf.Abs(diff)) return target;
                 else return (current + move2);
         }
