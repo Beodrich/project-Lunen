@@ -192,6 +192,7 @@ public class Monster : MonoBehaviour
             {
                 GameObject newAction = Instantiate(loopback.lunaDex.GetActionObject(action.Action));
                 newAction.GetComponent<Action>().SourceActionIndex = (int)action.Action;
+                newAction.GetComponent<Action>().SourceLunenLearnedLevel = action.Level;
                 newAction.transform.parent = this.transform;
                 ActionSet.Add(newAction);
             }
@@ -206,11 +207,19 @@ public class Monster : MonoBehaviour
             {
                 GameObject newAction = Instantiate(loopback.lunaDex.GetActionObject(action.Action));
                 newAction.GetComponent<Action>().SourceActionIndex = (int)action.Action;
+                newAction.GetComponent<Action>().SourceLunenLearnedLevel = action.Level;
                 newAction.transform.parent = this.transform;
                 ActionSet.Add(newAction);
             }
         }
+    }
 
+    public void SortMoves(bool highLevelFirst)
+    {
+        if (highLevelFirst)
+            ActionSet = ActionSet.OrderByDescending(x=>x.GetComponent<Action>().SourceLunenLearnedLevel).ToList();
+        else
+            ActionSet = ActionSet.OrderBy(x=>x.GetComponent<Action>().SourceLunenLearnedLevel).ToList();
     }
 
     public void TemplateToMonster(Lunen template)

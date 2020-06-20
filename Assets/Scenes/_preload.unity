@@ -314,6 +314,7 @@ MonoBehaviour:
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 14
+  SourceLunenLearnedLevel: 0
 --- !u!4 &71626227
 Transform:
   m_ObjectHideFlags: 0
@@ -2890,6 +2891,7 @@ MonoBehaviour:
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 39
+  SourceLunenLearnedLevel: 0
 --- !u!4 &882737265
 Transform:
   m_ObjectHideFlags: 0
@@ -2950,6 +2952,7 @@ MonoBehaviour:
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 63
+  SourceLunenLearnedLevel: 0
 --- !u!4 &902688096
 Transform:
   m_ObjectHideFlags: 0
@@ -3878,6 +3881,7 @@ MonoBehaviour:
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 12
+  SourceLunenLearnedLevel: 0
 --- !u!4 &1270909126
 Transform:
   m_ObjectHideFlags: 0
@@ -5743,6 +5747,7 @@ MonoBehaviour:
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 13
+  SourceLunenLearnedLevel: 0
 --- !u!4 &1866333341
 Transform:
   m_ObjectHideFlags: 0

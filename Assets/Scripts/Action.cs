@@ -58,6 +58,8 @@ public class Action : MonoBehaviour
     public Monster MonsterTarget;
     [HideInInspector]
     public int SourceActionIndex;
+    [HideInInspector]
+    public int SourceLunenLearnedLevel;
 
     public void Execute()
     {

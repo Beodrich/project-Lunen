@@ -33,18 +33,16 @@ public class SaveSystemObject : MonoBehaviour
             //Then give the player all their lunen
             for (int i = 0; i < gameData.PlayerTeam.Count; i++)
             {
-                GameObject newMonsterObject = Instantiate(sr.lunaDex.MonsterTemplate);
+                GameObject newMonsterObject = sr.generateMonster.GenerateLunen(
+                    (LunaDex.LunenEnum)gameData.PlayerTeam[i].species,
+                    gameData.PlayerTeam[i].level,
+                    GenerateMonster.SortMovesType.None
+                    );
                 Monster newMonster = newMonsterObject.GetComponent<Monster>();
-
-                newMonster.loopback = sr;
-                newMonster.Level = gameData.PlayerTeam[i].level;
-                newMonster.SourceLunenIndex = gameData.PlayerTeam[i].species;
-
-                newMonster.TemplateToMonster(sr.lunaDex.GetLunen((LunaDex.LunenEnum)newMonster.SourceLunenIndex));
 
                 newMonster.Exp.x = gameData.PlayerTeam[i].exp;
                 newMonster.Health.z = gameData.PlayerTeam[i].currentHealth;
-                newMonster.ActionSet.Clear();
+                
                 for (int j = 0; j < gameData.PlayerTeam[i].learnedMoves.Count; j++)
                 {
                     GameObject newAction = Instantiate(sr.lunaDex.GetActionObject((LunaDex.ActionEnum)gameData.PlayerTeam[i].learnedMoves[j]));

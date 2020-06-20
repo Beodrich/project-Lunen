@@ -593,83 +593,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e5b9a42be0d347eb86ae80af335daf3, type: 3}
---- !u!1 &902688094
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 902688095}
-  - component: {fileID: 902688096}
-  m_Layer: 0
-  m_Name: Woufa_Woufa_Monster
-  m_TagString: Monster
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &902688095
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 902688094}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.32869673, y: 19.05325, z: -74.79194}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1313209005}
-  m_Father: {fileID: 1682364549}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &902688096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 902688094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdb59534e4eb452ea87e803e182dc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Nickname: Woufa
-  Level: 3
-  Exp: {x: 27, y: 27, z: 64}
-  ActionSet:
-  - {fileID: 1313209004}
-  StatusEffectObjects: []
-  Health: {x: 21, y: 6, z: 27}
-  Attack: {x: 8, y: 6, z: 14}
-  Defense: {x: 5, y: 3, z: 8}
-  Speed: {x: 7, y: 6, z: 13}
-  AfterEffectStats: {x: 14, y: 8, z: 13}
-  MonsterTeam: 0
-  SourceLunen: {fileID: 4625055788251640247, guid: 2316018688f1a441e9e7cb411d28c4d6,
-    type: 3}
-  SourceLunenIndex: 21
-  loopback: {fileID: 0}
-  CurrCooldown: 0
-  ExpToAdd: 0
-  HealthToSubtract: 0
-  CooldownDone: 0
-  MoveAffinityCost: 0
-  DamageTakenScalar:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
 --- !u!1 &910796619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,66 +2479,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1313209004
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1313209005}
-  - component: {fileID: 1313209006}
-  m_Layer: 0
-  m_Name: Tackle(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1313209005
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313209004}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.597704, y: -0.22520614, z: -21.470383}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 902688095}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1313209006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313209004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
-  Name: Tackle
-  Type: 0
-  Turns: 1
-  AdditionalAffinityCost: 0
-  TimePausePeriod: 2
-  Animation: {fileID: 0}
-  PartsOfAction:
-  - Effect: 0
-    Target: 0
-    Power: 40
-    EffectToInflict: {fileID: 0}
-    StatusEffect: 0
-    StatusEffectTurns: 0
-  MonsterUser: {fileID: 0}
-  MonsterTarget: {fileID: 0}
-  SourceActionIndex: 63
 --- !u!1001 &1518605092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2807,12 +2670,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad50c7d85539d46b39477883f81f4184, type: 3}
---- !u!4 &1682364549 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6539219013480142741, guid: a92523051362e453fbce1069546b2680,
-    type: 3}
-  m_PrefabInstance: {fileID: 6539219013480578281}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1817710809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13464,12 +13321,17 @@ PrefabInstance:
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: TeamObjects.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: Team.Array.size
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: TeamComp.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -13485,12 +13347,12 @@ PrefabInstance:
         type: 3}
       propertyPath: TeamObjects.Array.data[0]
       value: 
-      objectReference: {fileID: 902688094}
+      objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: Team.Array.data[0]
       value: 
-      objectReference: {fileID: 902688096}
+      objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: rangeLimit
@@ -13520,6 +13382,36 @@ PrefabInstance:
         type: 3}
       propertyPath: Team.Array.data[2]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: TeamComp.Array.data[0].species
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: TeamComp.Array.data[0].level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: TeamComp.Array.data[1].species
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: TeamComp.Array.data[1].level
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: TeamComp.Array.data[2].species
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: TeamComp.Array.data[2].level
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142741, guid: a92523051362e453fbce1069546b2680,
         type: 3}

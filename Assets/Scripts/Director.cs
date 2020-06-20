@@ -143,7 +143,7 @@ public class Director : MonoBehaviour
             monsterToCapture.MonsterTeam = Team.PlayerTeam;
             sr.battleSetup.PlayerLunenTeam.Add(monsterToCaptureObject);
             PlayerScripts[1].LunenTeam.RemoveAt(sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
-            sr.canvasCollection.ScanBothParties();
+            sr.battleSetup.MoveToOverworld(true);
         }
     }
 

@@ -7,11 +7,25 @@ public class GenerateMonster : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
 
+    [System.Serializable]
+    public class LunenSetup
+    {
+        public LunaDex.LunenEnum species;
+        public int level;
+    }
+
     public enum TargetPlayer
     {
         Player1,
         Player2,
         NoTarget
+    }
+
+    public enum SortMovesType
+    {
+        LowestFirst,
+        HighestFirst,
+        None
     }
 
     public LunaDex.LunenEnum LunenBase;
@@ -24,25 +38,8 @@ public class GenerateMonster : MonoBehaviour
 
     public bool Generate()
     {
-        sr = GetComponent<SetupRouter>();
-        for (int i = 0; i < sr.battleSetup.PlayerLunenTeam.Count; i++)
-        {
-            if (sr.battleSetup.PlayerLunenTeam[i] == null)
-            {
-                sr.battleSetup.PlayerLunenTeam.RemoveAt(i);
-                i--;
-            }
-        }
-        New1 = Instantiate(sr.lunaDex.MonsterTemplate);
-        //New1.transform.SetParent(this.transform);
-        NewMonster1 = New1.GetComponent<Monster>();
-        NewMonster1.loopback = sr;
-        NewMonster1.Level = LunenLevel;
-        NewMonster1.SourceLunenIndex = (int)LunenBase;
-        NewMonster1.TemplateToMonster(sr.lunaDex.GetLunen(LunenBase));
-        NewMonster1.GetPreviousMoves();
-        
-        
+        New1 = GenerateLunen(LunenBase, LunenLevel);
+
         switch (targetPlayer)
         {
             case TargetPlayer.Player1:
@@ -56,5 +53,30 @@ public class GenerateMonster : MonoBehaviour
                 break;
         }
         return true;
+    }
+
+    public GameObject GenerateLunen(LunaDex.LunenEnum species, int level, SortMovesType moveSort = SortMovesType.HighestFirst)
+    {
+        sr = GetComponent<SetupRouter>();
+        New1 = Instantiate(sr.lunaDex.MonsterTemplate);
+        NewMonster1 = New1.GetComponent<Monster>();
+        NewMonster1.loopback = sr;
+        NewMonster1.Level = level;
+        NewMonster1.SourceLunenIndex = (int)species;
+        NewMonster1.TemplateToMonster(sr.lunaDex.GetLunen(species));
+        switch  (moveSort)
+        {
+            default: break;
+            case SortMovesType.LowestFirst:
+                NewMonster1.GetPreviousMoves();
+                NewMonster1.SortMoves(false);
+            break;
+            case SortMovesType.HighestFirst:
+                NewMonster1.GetPreviousMoves();
+                NewMonster1.SortMoves(true);
+            break;
+        }
+        
+        return New1;
     }
 }

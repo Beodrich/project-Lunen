@@ -15,13 +15,17 @@ public class TrainerLogic : MonoBehaviour
 
     [ConditionalField(nameof(limitRange))] public int rangeLimit;
 
+    [Space(10)]
+
+    public List<GenerateMonster.LunenSetup> TeamComp;
+
     Vector3 Size;
     Vector3 StartPosition;
 
     private int maxSeeDistance = 30;
 
-    public List<GameObject> TeamObjects;
-    public List<Monster> Team;
+    [HideInInspector] public List<GameObject> TeamObjects;
+    [HideInInspector] public List<Monster> Team;
     public List<string> TrainerLookStop;
 
     [Header("Trainer Lunen Info")]
@@ -32,7 +36,19 @@ public class TrainerLogic : MonoBehaviour
     void Start()
     {
         GetImportantVariables();
+        CreateTeam();
         SetMoveLook(startLookDirection);
+    }
+
+    void CreateTeam()
+    {
+        for (int i = 0; i < TeamComp.Count; i++)
+        {
+            GameObject newMonsterObject = sr.generateMonster.GenerateLunen(TeamComp[i].species, TeamComp[i].level);
+            TeamObjects.Add(newMonsterObject);
+            Team.Add(newMonsterObject.GetComponent<Monster>());
+            newMonsterObject.transform.SetParent(this.transform);
+        }
     }
 
     void SetMoveLook(MoveScripts.Direction direction)
