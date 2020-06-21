@@ -41,7 +41,7 @@ public class UIPanelCollection : MonoBehaviour
                 return true;
             }
         }
-        Debug.Log("Panel " + panelName + " not found!");
+        Debug.Log("Panel Not Found: " + panelName);
         return false;
     }
 

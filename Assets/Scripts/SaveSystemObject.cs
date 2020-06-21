@@ -24,7 +24,7 @@ public class SaveSystemObject : MonoBehaviour
         {
             //Beginning load
             isLoading = true;
-            if (sr.battleSetup.InBattle) sr.battleSetup.ExitBattle();
+            if (sr.battleSetup.InBattle) sr.battleSetup.ExitBattle(false);
             sr.battleSetup.InCutscene = false;
             sr.battleSetup.gamePaused = false;
             sr.battleSetup.cutscenePart = 99999999;
@@ -71,11 +71,14 @@ public class SaveSystemObject : MonoBehaviour
             }
             sr.director.PlayerScripts[0].ReloadTeam();
 
+            //Get respawn variables
+            sr.battleSetup.respawnLocation = new Vector2(gameData.respawnX, gameData.respawnY);
+            sr.battleSetup.respawnScene = (ListOfScenes.LocationEnum)gameData.respawnScene;
+            sr.battleSetup.respawnDirection = (MoveScripts.Direction)gameData.respawnDirection;
+
             //Preparing player position, area, and facing direction
-            sr.battleSetup.loadEntrance = true;
-            sr.battleSetup.loadPosition = new Vector2(gameData.positionX, gameData.positionY);
-            sr.battleSetup.loadDirection = (MoveScripts.Direction)gameData.facingDirection;
-            sr.listOfScenes.LoadScene((ListOfScenes.LocationEnum)gameData.currentScene);
+            sr.battleSetup.NewOverworldAt((ListOfScenes.LocationEnum)gameData.currentScene, new Vector2(gameData.positionX, gameData.positionY), (MoveScripts.Direction)gameData.facingDirection);
+            
             return true;
         }
         return false;

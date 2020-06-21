@@ -154,6 +154,7 @@ public class LunaDex : MonoBehaviour
     public List<GameObject> ActionList = new List<GameObject>();
     [EnumNamedArray(typeof(StatusEffectEnum))]
     public List<GameObject> StatusEffectList = new List<GameObject>();
+    public List<GameObject> GlobalCutsceneList;
     
 
     public int LevelCap;

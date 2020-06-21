@@ -16,7 +16,10 @@ public class Cutscene : MonoBehaviour
         Choice,
         Wait,
         HealParty,
-        SetSpawn
+        SetSpawn,
+        ChangeScene,
+        ChangeCameraFollow,
+        NewCutscene
     }
     public enum MoveType
     {
@@ -29,6 +32,20 @@ public class Cutscene : MonoBehaviour
     {
         Null,
         Battle
+    }
+    public enum NewSceneType
+    {
+        Null,
+        ToEntrance,
+        ToPosition,
+        Respawn
+    }
+    public enum NewCutsceneType
+    {
+        Null,
+        Global,
+        SceneBased,
+        Local
     }
     
     [System.Serializable]
@@ -70,6 +87,14 @@ public class Cutscene : MonoBehaviour
 
         //Type: Wait
         [ConditionalField(nameof(type), false, PartType.Wait)] public float waitTime;
+
+        //Type: Change Scene
+        [ConditionalField(nameof(type), false, PartType.ChangeScene)] public NewSceneType newSceneType;
+
+        //Type: New Cutscene
+        [ConditionalField(nameof(type), false, PartType.NewCutscene)] public NewCutsceneType newCutsceneType;
+        [ConditionalField(nameof(newCutsceneType), false, NewCutsceneType.SceneBased)] public int cutsceneIndex;
+        [ConditionalField(nameof(newCutsceneType), false, NewCutsceneType.SceneBased)] public int cutsceneRoute;
 
         [HideInInspector] public TrainerLogic trainerEncounter;
     }

@@ -203,6 +203,11 @@ public class CanvasCollection : MonoBehaviour
         {
             ScanPlayer1Lunen(i);
         }
+
+        if (Player1Script.LunenAlive == 0)
+        {
+            sr.battleSetup.MoveToOverworld(false);
+        }
     }
 
     public void ScanPlayer1Lunen(int i)

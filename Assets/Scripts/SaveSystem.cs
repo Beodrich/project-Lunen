@@ -58,6 +58,12 @@ public class GameData
     public int currentScene;
     public int facingDirection;
 
+    public float respawnX;
+    public float respawnY;
+    public int respawnScene;
+    public int respawnDirection;
+    
+
     public GameData(BattleSetup bs, Player player)
     {
         player.ReloadTeam();
@@ -85,5 +91,10 @@ public class GameData
         positionY = bs.sr.playerLogic.transform.position.y;
         currentScene = (int)bs.lastOverworld;
         facingDirection = (int)bs.sr.playerLogic.move.lookDirection;
+
+        respawnX = bs.respawnLocation.x;
+        respawnY = bs.respawnLocation.y;
+        respawnScene = (int)bs.respawnScene;
+        respawnDirection = (int)bs.respawnDirection;
     }
 }

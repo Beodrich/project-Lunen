@@ -109,7 +109,7 @@ public class TrainerLogic : MonoBehaviour
                 Collider2D[] hit = Physics2D.OverlapAreaAll(checkVector, checkVector);
                 foundWall = MoveScripts.CheckForTag(this.gameObject,hit,TrainerLookStop);
                 foundPlayer = MoveScripts.CheckForTag(this.gameObject,hit,"Player");
-                if (foundPlayer && !sr.saveSystemObject.isLoading) sr.battleSetup.StartCutscene(GetComponent<Cutscene>());
+                if (foundPlayer && !sr.saveSystemObject.isLoading && !sr.battleSetup.playerDead) sr.battleSetup.StartCutscene(GetComponent<Cutscene>());
             }
             foundRange--;
             checkVector = MoveScripts.GetFrontVector2(move, (float)foundRange/2, true);

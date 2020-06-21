@@ -15,6 +15,7 @@ public class SceneAttributes : MonoBehaviour
     }
     public GameObject player;
     public List<Entrance> sceneEntrances;
+    public List<Cutscene> sceneCutscenes;
 
     private void Awake()
     {

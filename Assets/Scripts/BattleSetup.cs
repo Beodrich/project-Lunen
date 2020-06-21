@@ -35,6 +35,7 @@ public class BattleSetup : MonoBehaviour
     public int cutscenePart;
     public int cutsceneRoute;
     public int cutsceneNextRoute;
+    public bool cutsceneLoopGoing;
     public bool cutsceneAdvance;
     public bool dialogueBoxOpen;
     public bool dialogueBoxNext;
@@ -57,6 +58,7 @@ public class BattleSetup : MonoBehaviour
     public CanvasCollection.UIState lastUIState;
     public List<System.Guid> TrainersDefeated;
     private int lunenIndex;
+    public bool playerDead;
 
     private void Awake()
     {
@@ -127,17 +129,34 @@ public class BattleSetup : MonoBehaviour
         InBattle = true;
     }
 
-    public void ExitBattle()
+    public void ExitBattle(bool win)
     {
-        if (typeOfBattle == BattleType.TrainerBattle)
+        if (win)
         {
-            TrainersDefeated.Add(lastTrainerEncounter.GetComponent<GuidComponent>().GetGuid());
-            lastTrainerEncounter.ExitBattle(lastBattleVictory);
-            //sr.eventLog.AddEvent("GOT HERE");
-            if (InCutscene) cutsceneAdvance = true;
+            if (typeOfBattle == BattleType.TrainerBattle)
+            {
+                TrainersDefeated.Add(lastTrainerEncounter.GetComponent<GuidComponent>().GetGuid());
+                lastTrainerEncounter.ExitBattle(lastBattleVictory);
+                //sr.eventLog.AddEvent("GOT HERE");
+                if (InCutscene) cutsceneAdvance = true;
+            }
+            sr.canvasCollection.CloseState(CanvasCollection.UIState.Battle);
+            InBattle = false;
         }
-        sr.canvasCollection.SetState(CanvasCollection.UIState.Overworld);
-        InBattle = false;
+        else
+        {
+            InBattle = false;
+            sr.canvasCollection.CloseState(CanvasCollection.UIState.Battle);
+            if (!sr.saveSystemObject.isLoading)
+            {
+                if (typeOfBattle == BattleType.TrainerBattle) lastTrainerEncounter.ExitBattle(lastBattleVictory);
+                PlayerLose();
+            }
+            else
+            {
+                
+            }
+        }
     }
 
     public bool TryWildEncounter(GrassEncounter encounter)
@@ -232,7 +251,7 @@ public class BattleSetup : MonoBehaviour
             }
         }
         SinceLastEncounter = 5f;
-        ExitBattle();
+        ExitBattle(playerVictory);
     }
 
     public void NewOverworld(DoorToLocation door)
@@ -242,7 +261,15 @@ public class BattleSetup : MonoBehaviour
         sr.listOfScenes.LoadScene(door.TargetLocation);
     }
 
-    public void StartCutscene(Cutscene cutscene)
+    public void NewOverworldAt(ListOfScenes.LocationEnum location, Vector3 position, MoveScripts.Direction direction)
+    {
+        loadEntrance = true;
+        loadPosition = position;
+        loadDirection = direction;
+        sr.listOfScenes.LoadScene(location);
+    }
+
+    public void StartCutscene(Cutscene cutscene, int route = 0)
     {
         #if UNITY_EDITOR
             if (EditorApplication.isPlaying && !InCutscene)
@@ -250,10 +277,10 @@ public class BattleSetup : MonoBehaviour
                 sr.eventLog.AddEvent("Cutscene Started: \"" + cutscene.cutsceneName + "\"");
                 lastCutscene = cutscene;
                 InCutscene = true;
-                cutsceneRoute = 0;
+                cutsceneRoute = route;
                 cutscenePart = -1;
                 cutsceneAdvance = true;
-                StartCoroutine(playCutscene(transform));
+                if (!cutsceneLoopGoing) StartCoroutine(playCutscene(transform));
             }
         #else
             if (!InCutscene)
@@ -261,10 +288,10 @@ public class BattleSetup : MonoBehaviour
                 sr.eventLog.AddEvent("Cutscene Started: \"" + cutscene.cutsceneName + "\"");
                 lastCutscene = cutscene;
                 InCutscene = true;
-                cutsceneRoute = 0;
+                cutsceneRoute = route;
                 cutscenePart = -1;
                 cutsceneAdvance = true;
-                StartCoroutine(playCutscene(transform));
+                if (!cutsceneLoopGoing) StartCoroutine(playCutscene(transform));
             }
         #endif
         
@@ -310,7 +337,8 @@ public class BattleSetup : MonoBehaviour
 
     public IEnumerator playCutscene(Transform transform)
     {
-        sr.canvasCollection.SetState(CanvasCollection.UIState.Dialogue);
+        cutsceneLoopGoing = true;
+        sr.canvasCollection.OpenState(CanvasCollection.UIState.Dialogue);
         while (cutscenePart < lastCutscene.routes[cutsceneRoute].parts.Count)
         {
             while (cutsceneAdvance)
@@ -376,6 +404,25 @@ public class BattleSetup : MonoBehaviour
                             respawnDirection = sr.playerLogic.move.lookDirection;
                             cutsceneAdvance = true;
                         break;
+
+                        case Cutscene.PartType.ChangeScene:
+                            switch(part.newSceneType)
+                            {
+                                case Cutscene.NewSceneType.Respawn:
+                                    NewOverworldAt(respawnScene, respawnLocation, respawnDirection);
+                                break;
+                            }
+                            cutsceneAdvance = true;
+                        break;
+
+                        case Cutscene.PartType.NewCutscene:
+                            switch(part.newCutsceneType)
+                            {
+                                case Cutscene.NewCutsceneType.SceneBased:
+                                    CutsceneStartLite(sr.sceneAttributes.sceneCutscenes[part.cutsceneIndex], part.cutsceneRoute, -1);
+                                break;
+                            }
+                        break;
                     }
                     if (part.startNextSimultaneous)
                     {
@@ -385,8 +432,9 @@ public class BattleSetup : MonoBehaviour
             }
             yield return null;
         }
- 
+        sr.eventLog.AddEvent("Cutscene Ends");
         InCutscene = false;
+        cutsceneLoopGoing = false;
         yield return 0;
     }
 
@@ -423,5 +471,34 @@ public class BattleSetup : MonoBehaviour
         GameObject lunen1 = PlayerLunenTeam[first];
         PlayerLunenTeam[first] = PlayerLunenTeam[second];
         PlayerLunenTeam[second] = lunen1;
+    }
+
+    public void CutsceneStartLite(Cutscene cutscene1, int route, int part)
+    {
+        lastCutscene = cutscene1;
+        cutscenePart = part;
+        cutsceneRoute = route;
+        cutsceneAdvance = true;
+    }
+
+    public Cutscene LoadGlobalCutscene(int index)
+    {
+        GameObject newGlobalCutscene = Instantiate(sr.lunaDex.GlobalCutsceneList[0]);
+        return newGlobalCutscene.GetComponent<Cutscene>();
+    }
+
+    public void PlayerLose()
+    {
+        sr.eventLog.AddEvent("GOT HERE");
+        playerDead = true;
+        Cutscene newCutscene = LoadGlobalCutscene(0);
+        if (cutsceneLoopGoing)
+        {
+            CutsceneStartLite(newCutscene, 0, -1);
+        }
+        else
+        {
+            StartCutscene(newCutscene, 0);
+        }
     }
 }

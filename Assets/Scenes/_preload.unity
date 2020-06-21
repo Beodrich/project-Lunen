@@ -1970,12 +1970,17 @@ PrefabInstance:
     - target: {fileID: 8909552609746736388, guid: 88f72773f931140488affde3480e02e0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenOptionsWindow
+      value: OpenMenuPanel
       objectReference: {fileID: 0}
     - target: {fileID: 8909552609746736388, guid: 88f72773f931140488affde3480e02e0,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909552609746736388, guid: 88f72773f931140488affde3480e02e0,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Inventory Panel
       objectReference: {fileID: 0}
     - target: {fileID: 8909552609746736391, guid: 88f72773f931140488affde3480e02e0,
         type: 3}
@@ -14544,6 +14549,7 @@ MonoBehaviour:
   cutscenePart: 0
   cutsceneRoute: 0
   cutsceneNextRoute: 0
+  cutsceneLoopGoing: 0
   cutsceneAdvance: 0
   dialogueBoxOpen: 0
   dialogueBoxNext: 0
@@ -14552,7 +14558,7 @@ MonoBehaviour:
   loadEntrance: 0
   loadPosition: {x: 0, y: 0}
   loadDirection: 0
-  respawnScene: 0
+  respawnScene: 3
   respawnLocation: {x: 0, y: 0, z: 0}
   respawnDirection: 0
   waitTime: 0
@@ -14561,6 +14567,7 @@ MonoBehaviour:
     type: 3}
   SinceLastEncounter: 0
   lastUIState: 0
+  playerDead: 0
 --- !u!1 &8082643487578673647
 GameObject:
   m_ObjectHideFlags: 0
@@ -14814,21 +14821,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   vsync: 1
-  bootBehaviour: 0
+  bootBehaviour: 1
   bootScene: 0
   bootEntrance: 1
   TestLunenParty:
     Value:
-    - species: 21
-      level: 5
-    - species: 21
-      level: 4
-    - species: 21
-      level: 3
+    - species: 24
+      level: 1
   FirstLunenParty:
     Value:
     - species: 21
-      level: 5
+      level: 1
   keepLoaded:
   - {fileID: 652271909}
   - {fileID: 1021185979}
@@ -15142,6 +15145,8 @@ MonoBehaviour:
   - {fileID: 3168399886294488340, guid: a1c12ab6e718c471b96ff02fbd216a9b, type: 3}
   - {fileID: 4974611095387624337, guid: 2a1068b9ab5994c569f7ccc788c3e621, type: 3}
   - {fileID: 6402786750114326116, guid: 91cef531120ab46a8aea645ac854c846, type: 3}
+  GlobalCutsceneList:
+  - {fileID: 5268435886454511717, guid: 5f22859d418f64625ac3f62af20cff27, type: 3}
   LevelCap: 30
 --- !u!222 &8909552608488871211
 CanvasRenderer:

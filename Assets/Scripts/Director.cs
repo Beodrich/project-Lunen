@@ -111,6 +111,11 @@ public class Director : MonoBehaviour
         switch (lunen.MonsterTeam)
         {
             case Team.PlayerTeam:
+                PlayerScripts[0].ReloadTeam();
+                if (PlayerScripts[0].LunenTeam.Count == 0)
+                {
+                    sr.battleSetup.MoveToOverworld(false);
+                }
                 break;
             case Team.EnemyTeam:
                 for (int i = 0; i < MaxLunenOut; i++)
