@@ -26,6 +26,7 @@ public class Item
             case ItemType.GreatBall: return 50;
             case ItemType.UltraBall: return 75;
             case ItemType.JojoBall: return 250;
+             
 
         
         }
