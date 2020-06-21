@@ -11,20 +11,32 @@ public class EventLog : MonoBehaviour
      // Public VARS
      public int maxLines = 10;
      public Font myFont;
+     public float fadeOutTime;
+     public float hideTime;
      
      void OnGUI()
      {
-         GUIStyle myStyle = new GUIStyle();
-         myStyle.font = myFont;
-         myStyle.normal.textColor = Color.black;
-         GUI.Label(new Rect(1, 1, Screen.width/4, Screen.height / 3), guiText, myStyle);
-         myStyle.normal.textColor = Color.white;
-         GUI.Label(new Rect(0, 0, Screen.width/4, Screen.height / 3), guiText, myStyle);
+         if (hideTime > 0)
+         {
+             GUIStyle myStyle = new GUIStyle();
+            myStyle.font = myFont;
+            myStyle.normal.textColor = Color.black;
+            GUI.Label(new Rect(1, 1, Screen.width/4, Screen.height / 3), guiText, myStyle);
+            myStyle.normal.textColor = Color.white;
+            GUI.Label(new Rect(0, 0, Screen.width/4, Screen.height / 3), guiText, myStyle);
+         }
+         
+     }
+
+     public void Update()
+     {
+         hideTime -= Time.deltaTime;
      }
  
      public void AddEvent(string eventString)
      {
          Eventlog.Add(eventString);
+         hideTime = fadeOutTime;
  
          if (Eventlog.Count >= maxLines)
              Eventlog.RemoveAt(0);

@@ -49,7 +49,7 @@ public class Director : MonoBehaviour
 
     private void Update()
     {
-        if (DirectorTimeFlowing)
+        if (DirectorTimeFlowing && !sr.battleSetup.gamePaused)
         {
             DirectorDeltaTime = Time.deltaTime;
         }

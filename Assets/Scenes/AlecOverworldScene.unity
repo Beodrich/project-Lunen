@@ -121,159 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &83255125
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: sr
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: characterType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: centerPosition.x
-      value: -1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: centerPosition.y
-      value: -15.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: animTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: animIndex
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: lookDirection
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599592, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Name
-      value: NPCTest (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1293883783730593402, guid: 1f79d1cee358141e580a5231f2384a00,
-        type: 3}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[0].text
-      value: This is wild grass! You can run into Lunen here! Things are still super
-        early, so plz don't die
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1293883783730593402, guid: 1f79d1cee358141e580a5231f2384a00,
-        type: 3}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084752253083662851, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: SpriteSheetName
-      value: Char_Template
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084752253083662851, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: SpriteSheetToUse
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 971590232201079164, guid: ad50c7d85539d46b39477883f81f4184, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: ad50c7d85539d46b39477883f81f4184, type: 3}
 --- !u!114 &85151677 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
@@ -355,8 +202,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1168932318292691358, guid: 2b647f245b00d43a2ac9040994474af4,
         type: 3}
+      propertyPath: routes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168932318292691358, guid: 2b647f245b00d43a2ac9040994474af4,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168932318292691358, guid: 2b647f245b00d43a2ac9040994474af4,
+        type: 3}
       propertyPath: parts.Collection.Array.data[0].text
       value: This is a mailbox!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168932318292691358, guid: 2b647f245b00d43a2ac9040994474af4,
+        type: 3}
+      propertyPath: cutsceneName
+      value: It's A Mailbox.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168932318292691358, guid: 2b647f245b00d43a2ac9040994474af4,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168932318292691358, guid: 2b647f245b00d43a2ac9040994474af4,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[0].name
+      value: You've got mail!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1168932318292691358, guid: 2b647f245b00d43a2ac9040994474af4,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[0].text
+      value: It's a mailbox. You've got mail!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b647f245b00d43a2ac9040994474af4, type: 3}
@@ -405,7 +282,7 @@ PrefabInstance:
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -2479,385 +2356,105 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1518605092
+--- !u!1001 &1366319296
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: lookDirection
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: sr
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: logicType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: spriteRenderer
-      value: 
-      objectReference: {fileID: 1919614565}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: characterType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: animMoving
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: centerPosition.x
-      value: -10.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: centerPosition.y
-      value: -15.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: animTime
-      value: 9.838781
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: animIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599592, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Name
-      value: NPCTest (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 5903488652781262050, guid: 1f79d1cee358141e580a5231f2384a00,
-        type: 3}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -3
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15
+      value: -12
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[0].text
-      value: You actually can go in this house!
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[1].name
-      value: Dialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[1].type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[1].moveInFacingDirection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[1].colliderTag
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[1].text
-      value: Try it out!
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 5903488652781262050, guid: 1f79d1cee358141e580a5231f2384a00,
-        type: 3}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084752253083662851, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: SpriteSheetToUse
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ad50c7d85539d46b39477883f81f4184, type: 3}
---- !u!1001 &1817710809
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: lookDirection
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: sr
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: characterType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: centerPosition.x
-      value: -4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: centerPosition.y
-      value: -9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: animTime
-      value: 10.073405
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: animIndex
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599592, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Name
-      value: NPCTest (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 5903488652781262050, guid: 1f79d1cee358141e580a5231f2384a00,
-        type: 3}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
-      propertyPath: parts.Collection.Array.size
-      value: 2
+      propertyPath: TargetLocation
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
-      propertyPath: parts.Collection.Array.data[0].text
-      value: 'This is my home!
-
-        You''re not welcome here!'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[1].name
-      value: Dialogue2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[1].type
+      propertyPath: entranceIndex
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[1].moveInFacingDirection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[1].colliderTag
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[1].text
-      value: And neither am I!
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Collection.Array.data[0].name
-      value: Dialogue1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 5903488652781262050, guid: 1f79d1cee358141e580a5231f2384a00,
-        type: 3}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696778, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 9084752253083662851, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696778, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
-      propertyPath: SpriteSheetName
-      value: Char_FeMC
+      propertyPath: m_SortingLayerID
+      value: 338253055
       objectReference: {fileID: 0}
-    - target: {fileID: 9084752253083662851, guid: ad50c7d85539d46b39477883f81f4184,
+    - target: {fileID: 3052760053721696778, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
-      propertyPath: SpriteSheetToUse
-      value: 2
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696780, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: m_Name
+      value: TestDoor (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6437434055315994143, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: KeepVisible
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ad50c7d85539d46b39477883f81f4184, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 80152272002ce408fae3b00a5f1f0bab, type: 3}
 --- !u!1 &1841209816
 GameObject:
   m_ObjectHideFlags: 0
@@ -3833,13 +3430,7 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!212 &1919614565 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-    type: 3}
-  m_PrefabInstance: {fileID: 1518605092}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2038474101
+--- !u!1001 &1957328909
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -3848,37 +3439,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
-      propertyPath: lookDirection
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
       propertyPath: sr
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: logicType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: animMoving
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: centerPosition.x
-      value: -10.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: centerPosition.y
-      value: -8.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: animator
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
@@ -3889,17 +3450,22 @@ PrefabInstance:
     - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: animTime
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: animIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599377, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: lookDirection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599592, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: m_Name
-      value: NPCTest (2)
+      value: NPCTest
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
@@ -3907,25 +3473,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5903488652781262050, guid: 1f79d1cee358141e580a5231f2384a00,
         type: 3}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
@@ -3955,7 +3511,7 @@ PrefabInstance:
     - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
@@ -3974,8 +3530,653 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
-      propertyPath: parts.Collection.Array.data[0].text
-      value: Help me lol
+      propertyPath: parts.Collection.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].Collection.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.Collection.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[1].parts.array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[1].name
+      value: ChoiceTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[1].type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[1].moveInFacingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[1].colliderTag
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[1].text
+      value: This is a yes or no question!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[1].choiceYesText
+      value: Yes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[1].choiceNoText
+      value: No
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[1].choiceText
+      value: This is a yes or no question!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[2].name
+      value: Route 1 Test!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[2].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[2].moveInFacingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[2].colliderTag
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[2].text
+      value: This is Route Yes!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[2].choiceText
+      value: This is Route 1!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[2].choiceYesText
+      value: Yes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[2].choiceNoText
+      value: No
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[2].route
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[3].name
+      value: Route 1 Test!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[3].route
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[3].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[3].moveInFacingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[3].colliderTag
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[3].text
+      value: This is Route No!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[3].choiceText
+      value: This is Route 1!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[3].choiceYesText
+      value: Yes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Collection.Array.data[3].choiceNoText
+      value: No
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].Collection.Array.data[0].text
+      value: I'm about to ask a yes or no question!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].Collection.Array.data[1].name
+      value: The Ultimate Choice
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].Collection.Array.data[1].type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].Collection.Array.data[1].moveInFacingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].Collection.Array.data[1].text
+      value: I'm about to ask a yes or no question!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].Collection.Array.data[1].choiceYesText
+      value: Of Course!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].Collection.Array.data[1].choiceText
+      value: Pinapple on pizza?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].Collection.Array.data[1].choiceNoText
+      value: Fuck You!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].Collection.Array.data[1].choiceYesRoute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].Collection.Array.data[1].choiceNoRoute
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[0].name
+      value: Talk Part 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[0].moveInFacingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[0].text
+      value: I'm about to ask a yes or no question!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[1].name
+      value: The Ultimate Choice
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[1].type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[1].moveInFacingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[1].text
+      value: I'm about to ask a yes or no question!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[1].choiceText
+      value: Pinapple on pizza?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[1].choiceYesText
+      value: Of Course!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[1].choiceNoText
+      value: Fuck You!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[1].choiceYesRoute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].Collection.Array.data[1].choiceNoRoute
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[0].name
+      value: Talk Part 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[0].moveInFacingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[0].text
+      value: I'm about to ask a yes or no question!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[1].name
+      value: The Ultimate Choice
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[1].type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[1].moveInFacingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[1].text
+      value: I'm about to ask a yes or no question!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[1].choiceText
+      value: Pinapple on pizza?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[1].choiceYesText
+      value: Of Course!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[1].choiceNoText
+      value: Fuck You!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[1].choiceYesRoute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].Collection.Array.data[1].choiceNoRoute
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[0].name
+      value: Talk1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[0].moveInFacingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[0].text
+      value: I'm about to ask you a very important question.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].name
+      value: Question1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].moveInFacingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].text
+      value: Pineapple on pizza?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].choiceYesText
+      value: Of course!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].choiceNoText
+      value: Fuck no!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].choiceYesRoute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].choiceNoRoute
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[1].parts.array.Array.data[0].name
+      value: Response
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[1].parts.array.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[1].parts.array.Array.data[0].moveInFacingDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[1].parts.array.Array.data[0].text
+      value: You chose the first option!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[0].name
+      value: Response2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[0].text
+      value: You chose the second option!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[0].choice1Text
+      value: Choice 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[0].choice2Text
+      value: Choice 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[0].choice3Text
+      value: Choice 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].choice1Text
+      value: Of Course!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].choice2Text
+      value: Fuck No!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].useChoice3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].choice3Text
+      value: ...What?
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[1].parts.array.Array.data[0].choice1Text
+      value: Choice 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[1].parts.array.Array.data[0].choice2Text
+      value: Choice 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[1].parts.array.Array.data[0].choice3Text
+      value: Choice 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[0].choice1Text
+      value: Choice 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[0].choice2Text
+      value: Choice 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[0].choice3Text
+      value: Choice 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].useChoice2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].useChoice1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[1].name
+      value: Response2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[1].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[1].text
+      value: You chose no!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[1].choice1Text
+      value: Choice 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[1].choice2Text
+      value: Choice 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[2].parts.array.Array.data[1].choice3Text
+      value: Choice 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[0].name
+      value: Response3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[0].text
+      value: You chose the third option!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[0].choice1Text
+      value: Choice 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[0].choice2Text
+      value: Choice 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[0].choice3Text
+      value: Choice 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[1].name
+      value: Response2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[1].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[1].text
+      value: You chose no!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[1].choice1Text
+      value: Choice 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[1].choice2Text
+      value: Choice 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[3].parts.array.Array.data[1].choice3Text
+      value: Choice 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].choice3Route
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].choice2Route
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: routes.Array.data[0].parts.array.Array.data[1].choice1Route
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: cutsceneName
+      value: Pineapple On Pizza
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
@@ -3983,21 +4184,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5903488652781262050, guid: 1f79d1cee358141e580a5231f2384a00,
         type: 3}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9084752253083662851, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: SpriteSheetToUse
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad50c7d85539d46b39477883f81f4184, type: 3}
 --- !u!4 &906958031452372812
@@ -13105,7 +13291,7 @@ PrefabInstance:
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -13245,7 +13431,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7620518249995742098, guid: 1f79d1cee358141e580a5231f2384a00,
+      objectReference: {fileID: -9038629444792736143, guid: 1f79d1cee358141e580a5231f2384a00,
         type: 3}
     - target: {fileID: 6539219013389779558, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -13302,11 +13488,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: TrainerTemplate
       objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142736, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142738, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7620518249995742098, guid: 1f79d1cee358141e580a5231f2384a00,
+      objectReference: {fileID: -9038629444792736143, guid: 1f79d1cee358141e580a5231f2384a00,
         type: 3}
     - target: {fileID: 6539219013480142738, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -13361,7 +13552,7 @@ PrefabInstance:
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: startLookDirection
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -13416,7 +13607,7 @@ PrefabInstance:
     - target: {fileID: 6539219013480142741, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142741, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -13562,6 +13753,11 @@ PrefabInstance:
         type: 3}
       propertyPath: parts.Collection.Array.data[3].triggerType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: cutsceneName
+      value: TrainerBattle
       objectReference: {fileID: 0}
     - target: {fileID: 8330623549892584353, guid: a92523051362e453fbce1069546b2680,
         type: 3}

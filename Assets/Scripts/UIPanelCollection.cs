@@ -66,13 +66,13 @@ public class UIPanelCollection : MonoBehaviour
         }
     }
 
-    public void EnableStartingPanels()
+    public void EnableStartingPanels(UITransition.State openState = UITransition.State.Enable)
     {
         for (int i = 0; i < UIPanels.Count; i++)
         {
             if (StartingPanels.Contains(UIPanels[i].name))
             {
-                SetPanelState(UIPanels[i].name, UITransition.State.Enable);
+                SetPanelState(UIPanels[i].name, openState);
             }
             else
             {
@@ -81,11 +81,11 @@ public class UIPanelCollection : MonoBehaviour
         }
     }
 
-    public void DisableAllPanels()
+    public void DisableAllPanels(UITransition.State closeState = UITransition.State.Disable)
     {
         for (int i = 0; i < UIPanels.Count; i++)
         {
-            UIPanels[i].elementCollection.SetCollectionState(UITransition.State.Disable);
+            if (UIPanels[i] != null) UIPanels[i].elementCollection.SetCollectionState(closeState);
         }
     }
 
@@ -93,7 +93,7 @@ public class UIPanelCollection : MonoBehaviour
     {
         for (int i = 0; i < UIPanels.Count; i++)
         {
-            UIPanels[i].elementCollection.SetCollectionState(UITransition.State.ImmediateDisable);
+            if (UIPanels[i] != null) UIPanels[i].elementCollection.SetCollectionState(UITransition.State.ImmediateDisable);
         }
     }
 }

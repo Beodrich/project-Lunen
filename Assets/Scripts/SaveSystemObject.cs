@@ -5,6 +5,7 @@ using UnityEngine;
 public class SaveSystemObject : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
+    public bool isLoading;
 
     void Awake()
     {
@@ -22,7 +23,20 @@ public class SaveSystemObject : MonoBehaviour
         if (gameData != null)
         {
             //Beginning load
+            isLoading = true;
             if (sr.battleSetup.InBattle) sr.battleSetup.ExitBattle();
+            sr.battleSetup.InCutscene = false;
+            sr.battleSetup.gamePaused = false;
+            sr.battleSetup.cutscenePart = 99999999;
+            sr.battleSetup.choiceOpen = false;
+            sr.battleSetup.dialogueBoxNext = false;
+            sr.battleSetup.dialogueBoxOpen = false;
+
+            sr.canvasCollection.CloseState(CanvasCollection.UIState.MainMenu);
+            sr.canvasCollection.CloseState(CanvasCollection.UIState.Options);
+            sr.canvasCollection.MenuPanelOpen = false;
+            sr.canvasCollection.OptionsPanelOpen = false;
+            
 
             //Perform Clean-up
             sr.battleSetup.DestroyAllChildLunen();

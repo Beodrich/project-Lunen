@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.malee.reorderablelist": "https://github.com/cfoulston/Unity-Reorderable-List.git",
     "com.mybox": "https://github.com/Deadcows/MyBox.git",
     "com.unity.2d.pixel-perfect": "2.0.4",
     "com.unity.2d.sprite": "1.0.0",
@@ -11,6 +12,7 @@
     "com.unity.textmeshpro": "2.0.1",
     "com.unity.timeline": "1.2.14",
     "com.unity.ugui": "1.0.0",
+    "com.xeleh.enhancer": "https://github.com/xeleh/enhancer.git",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -44,9 +46,17 @@
     "com.unity.modules.xr": "1.0.0"
   },
   "lock": {
+    "com.malee.reorderablelist": {
+      "revision": "HEAD",
+      "hash": "ac1f508240fb752b1f9d7c222c231d7f2a33df87"
+    },
     "com.mybox": {
       "revision": "HEAD",
       "hash": "a244358ff4139760fecbbd02f0a9b578bbe792b4"
+    },
+    "com.xeleh.enhancer": {
+      "revision": "HEAD",
+      "hash": "78e062bf5467bb3a4caae6315aaf74352050d116"
     }
   }
 }

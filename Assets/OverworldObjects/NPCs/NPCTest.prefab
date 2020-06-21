@@ -48,19 +48,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parts:
-    Collection:
-    - name: Dialogue
+  - Collection:
+    - name: Talk Part 1
       startNextSimultaneous: 0
       type: 1
       moveScript: {fileID: 0}
       moveInFacingDirection: 1
       movementDirection: 0
       moveType: 0
-      colliderTag: Player
+      colliderTag: 
       spacesToMove: 0
       triggerType: 0
       trainerLogic: {fileID: 0}
-      text: Test!
+      text: I'm an NPCTest!
+      choiceText: 
+      choiceYesText: 
+      choiceNoText: 
+      choiceYesRoute: 0
+      choiceNoRoute: 0
       trainerEncounter: {fileID: 0}
 --- !u!114 &4012099485063599377
 MonoBehaviour:
@@ -94,8 +99,8 @@ MonoBehaviour:
   lookDirection: 1
   hit: {fileID: 0}
   hits: []
-  animTime: 0.4
-  animIndex: 10
+  animTime: 0.1
+  animIndex: 8
 --- !u!212 &4012099485063599594
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -135,8 +140,7 @@ SpriteRenderer:
   m_SortingLayerID: -1457864513
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: -4825269781608188942, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
-    type: 3}
+  m_Sprite: {fileID: 787389285625796174, guid: 6a24bd7541761479db2dc7f3a4e2ea75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -244,8 +248,7 @@ SpriteRenderer:
   m_SortingLayerID: -1457864513
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4825269781608188942, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
-    type: 3}
+  m_Sprite: {fileID: 787389285625796174, guid: 6a24bd7541761479db2dc7f3a4e2ea75, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.3764706}
   m_FlipX: 0
   m_FlipY: 0

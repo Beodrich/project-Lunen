@@ -5,6 +5,13 @@ using MyBox;
 
 public class GameBoot : MonoBehaviour
 {
+    public enum BootBehaviour
+    {
+        LoadSaveFile,
+        LoadIntoFirstLaunch,
+        LoadIntoEntrance,
+        LoadIntoCurrentScene
+    }
     [HideInInspector] public SetupRouter sr;
 
     [Header("Settings")]
@@ -13,10 +20,23 @@ public class GameBoot : MonoBehaviour
 
     [Header("On Boot")]
 
-    public bool loadSaveFile;
-    [ConditionalField(nameof(loadSaveFile), true)] public bool changeBoot;
-    [ConditionalField(nameof(changeBoot))] public ListOfScenes.LocationEnum bootScene;
-    [ConditionalField(nameof(changeBoot))] public int bootEntrance;
+    public BootBehaviour bootBehaviour;
+    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance)] public ListOfScenes.LocationEnum bootScene;
+    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance)] public int bootEntrance;
+
+    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance, BootBehaviour.LoadIntoCurrentScene)] 
+    public LunenParty1 TestLunenParty;
+
+    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoFirstLaunch)] 
+    public LunenParty2 FirstLunenParty;
+
+    [System.Serializable]
+    public class LunenParty1 : CollectionWrapper<GenerateMonster.LunenSetup> {}
+
+    [System.Serializable]
+    public class LunenParty2 : CollectionWrapper<GenerateMonster.LunenSetup> {}
+
+    [Space(10)]
     public List<GameObject> keepLoaded;
     // Start is called before the first frame update
     private void Awake() {
@@ -37,24 +57,37 @@ public class GameBoot : MonoBehaviour
     }
     void Start()
     {
-        sr.canvasCollection.SetState(CanvasCollection.UIState.MainMenu);
-        if (loadSaveFile)
+        sr.canvasCollection.SetState(CanvasCollection.UIState.Overworld);
+        switch (bootBehaviour)
         {
-            if (!sr.saveSystemObject.LoadGame())
-            {
+            case BootBehaviour.LoadSaveFile:
+                if (!sr.saveSystemObject.LoadGame())
+                {
+                    goto case BootBehaviour.LoadIntoFirstLaunch;
+                }
+            break;
+            case BootBehaviour.LoadIntoFirstLaunch:
+                GivePlayerLunen(FirstLunenParty.Value);
                 sr.battleSetup.nextEntrance = 1;
                 sr.listOfScenes.LoadScene(ListOfScenes.LocationEnum.Debug000);
-            }
+            break;
+            case BootBehaviour.LoadIntoEntrance:
+                GivePlayerLunen(TestLunenParty.Value);
+                sr.battleSetup.nextEntrance = bootEntrance;
+                sr.listOfScenes.LoadScene(bootScene);
+            break;
+            case BootBehaviour.LoadIntoCurrentScene:
+                GivePlayerLunen(TestLunenParty.Value);
+            break;
         }
-        else if (changeBoot)
+    }
+    public void GivePlayerLunen(GenerateMonster.LunenSetup[] party)
+    {
+        foreach (GenerateMonster.LunenSetup setup in party)
         {
-            sr.battleSetup.nextEntrance = bootEntrance;
-            sr.listOfScenes.LoadScene(bootScene);
-        }
-        else
-        {
-            sr.battleSetup.nextEntrance = 1;
-            sr.listOfScenes.LoadScene(ListOfScenes.LocationEnum.Debug000);
+            GameObject monster = sr.generateMonster.GenerateLunen(setup.species, setup.level);
+            sr.battleSetup.PlayerLunenTeam.Add(monster);
+            monster.transform.parent = this.transform;
         }
     }
 }

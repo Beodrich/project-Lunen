@@ -19,6 +19,15 @@ public class CanvasCollection : MonoBehaviour
         Inventory,
         Lunen
     }
+
+    [System.Serializable]
+    public enum PartyAction
+    {
+        Null,
+        Swap,
+        UseItem,
+        ViewStats
+    }
     [EnumNamedArray(typeof(UIState))]
     public List<GameObject> UIObjects;
     [HideInInspector] public List<UIPanelCollection> UICollections;
@@ -32,6 +41,8 @@ public class CanvasCollection : MonoBehaviour
     public List<GameObject> Player2LunenButtons;
     [HideInInspector] public List<LunenButton> Player1LunenButtonScripts;
     [HideInInspector] public List<LunenButton> Player2LunenButtonScripts;
+    public List<GameObject> PartyLunenButtons;
+    [HideInInspector] public List<LunenButton> PartyLunenButtonScripts;
     public List<LunenActionPanel> LunenPanels;
 
     public GameObject Player1;
@@ -45,6 +56,33 @@ public class CanvasCollection : MonoBehaviour
 
     [HideInInspector] public Component[] UIElements;
 
+    [HideInInspector] public int Choice1Route;
+    [HideInInspector] public int Choice2Route;
+    [HideInInspector] public int Choice3Route;
+
+    public GameObject Choice1Button;
+    public GameObject Choice2Button;
+    public GameObject Choice3Button;
+
+    public Text Choice1Text;
+    public Text Choice2Text;
+    public Text Choice3Text;
+
+    public Text ResolutionText1;
+    public Text ResolutionText2;
+    public Text TestOnText;
+
+    public bool MenuPanelOpen;
+    public bool OptionsPanelOpen;
+
+    [HideInInspector] public UIElementCollection Lastuiec;
+    public bool PartyPanelOpen;
+    [HideInInspector] public int PartySwapSelect = -1;
+    public PartyAction partyAction = PartyAction.Swap;
+
+    [HideInInspector] public string currentOptionsPanel = "Game Settings Panel";
+    [HideInInspector] public List<Monster> PartyTeam;
+
     void Awake()
     {
         sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
@@ -54,8 +92,16 @@ public class CanvasCollection : MonoBehaviour
 
         UICollections = new List<UIPanelCollection>();
         foreach (GameObject go in UIObjects) UICollections.Add(go.GetComponent<UIPanelCollection>());
+        foreach (UIPanelCollection panel in UICollections) panel.GetElementCollections();
 
         SetState(UIState.Overworld);
+    }
+    void Update()
+    {
+        if (sr.settingsSystem.TestOn)
+        {
+            TestOnText.text = "Screen has been set to the new resolution. Click Apply to confirm these changes. Screen will revert in " + Mathf.Ceil(sr.settingsSystem.TestTimeCurrent) + " second" + (Mathf.Ceil(sr.settingsSystem.TestTimeCurrent) == 1 ? "." : "s.");
+        }
     }
 
     public void SetDialogueBox(string text)
@@ -70,12 +116,19 @@ public class CanvasCollection : MonoBehaviour
         Player2LunenTarget(0);
     }
 
+    public void ChangeResolution(int scale)
+    {
+        sr.settingsSystem.ResolutionX.x = 640*scale;
+        sr.settingsSystem.ResolutionY.x = 360*scale;
+        ResolutionText1.text = ResolutionText2.text = "Resolution: " + (640*scale) + "x" + (360*scale);
+    }
+
     public void RevertState()
     {
         SetState(lastState);
     }
 
-    public void SetState(UIState state)
+    public void SetState(UIState state, UITransition.State openState = UITransition.State.Enable, UITransition.State closeState = UITransition.State.Disable)
     {
         for (int i = 0; i < UIObjects.Count; i++)
         {
@@ -84,39 +137,50 @@ public class CanvasCollection : MonoBehaviour
                 if (UICollections[i] != null)
                 {
                     UIObjects[i].SetActive(true);
-                    UICollections[i].EnableStartingPanels();
-                }
-                else
-                {
-                    UIObjects[i].SetActive(true);
+                    UICollections[i].EnableStartingPanels(openState);
                 }
             }
             else if (i == (int)currentState)
             {
                 if (UICollections[i] != null)
                 {
-                    UICollections[i].DisableAllPanels();
-                }
-                else
-                {
-                    UIObjects[i].SetActive(false);
-                }
-            }
-            else
-            {
-                if (UICollections[i] != null)
-                {
-                    UICollections[i].GetElementCollections();
-                    UICollections[i].DisableAllPanelsImmediately();
-                }
-                else
-                {
-                    UIObjects[i].SetActive(false);
+                    UICollections[i].DisableAllPanels(closeState);
                 }
             }
         }
         lastState = currentState;
         currentState = state;
+    }
+
+    public void OpenState(UIState state, UITransition.State openState = UITransition.State.Enable)
+    {
+        for (int i = 0; i < UIObjects.Count; i++)
+        {
+            if (i == (int)state)
+            {
+                if (UICollections[i] != null)
+                {
+                    UIObjects[i].SetActive(true);
+                    UICollections[i].EnableStartingPanels(openState);
+                    return;
+                }
+            }
+        }
+    }
+
+    public void CloseState(UIState state, UITransition.State closeState = UITransition.State.Disable)
+    {
+        for (int i = 0; i < UIObjects.Count; i++)
+        {
+            if (i == (int)state)
+            {
+                if (UICollections[i] != null)
+                {
+                    UICollections[i].DisableAllPanels(closeState);
+                    return;
+                }
+            }
+        }
     }
 
     public void SetState(int state)
@@ -204,13 +268,13 @@ public class CanvasCollection : MonoBehaviour
 
     public void SaveGame()
     {
-        SetState(sr.battleSetup.lastUIState);
+        sr.battleSetup.CloseMainMenu();
         sr.saveSystemObject.SaveGame();
     }
 
     public void LoadGame()
     {
-        SetState(sr.battleSetup.lastUIState);
+        sr.battleSetup.CloseMainMenu();
         sr.saveSystemObject.LoadGame();
     }
 
@@ -251,10 +315,55 @@ public class CanvasCollection : MonoBehaviour
         panel.SetCollectionState(UITransition.State.Disable);
     }
 
+    public void OpenOptionsWindow()
+    {
+        OptionsPanelOpen = true;
+        OpenState(UIState.Options);
+    }
+
     public void SwitchMenuPanel(string panel)
     {
         UIElementCollection uiec = UIObjects[3].GetComponent<UIPanelCollection>().GetPanelWithString(panel);
-        if (uiec.currentState == UITransition.State.Enable) CloseMenuPanel(uiec); else OpenMenuPanel(uiec);
+        if (uiec == Lastuiec)
+        {
+            
+        }
+        else
+        {
+            PartyPanelOpen = (panel == "Party Panel");
+            if (PartyPanelOpen) UpdatePartyPanelLunen();
+            OpenMenuPanel(uiec);
+            if (Lastuiec != null) CloseMenuPanel(Lastuiec);
+        }
+        Lastuiec = uiec;
+    }
+
+    public void UpdatePartyPanelLunen()
+    {
+        //public List<GameObject> PartyLunenButtons;
+        //public List<LunenButton> PartyLunenButtonScripts;
+        PartyLunenButtonScripts = new List<LunenButton>();
+        foreach (GameObject go in PartyLunenButtons) PartyLunenButtonScripts.Add(go.GetComponent<LunenButton>());
+
+        PartyTeam = new List<Monster>();
+        foreach (GameObject go in sr.battleSetup.PlayerLunenTeam) PartyTeam.Add(go.GetComponent<Monster>());
+        for (int i = 0; i < PartyLunenButtonScripts.Count; i++)
+        {
+            if (i < PartyTeam.Count)
+            {
+                PartyLunenButtonScripts[i].Text.GetComponent<Text>().text = PartyTeam[i].Nickname;
+                PartyLunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + PartyTeam[i].Level;
+                PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
+                //PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
+            }
+            else
+            {
+                PartyLunenButtonScripts[i].Text.GetComponent<Text>().text = "";
+                PartyLunenButtonScripts[i].LevelText.GetComponent<Text>().text = "";
+                PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = null;
+                //PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = null;
+            }
+        }
     }
 
     public void Player1MenuClick(int index)
@@ -332,5 +441,71 @@ public class CanvasCollection : MonoBehaviour
     public void ExecuteAction(int index)
     {
         sr.director.PerformAction(Director.Team.PlayerTeam,GetLunenSelected(Director.Team.PlayerTeam), index);
+    }
+
+    public void SelectChoice1()
+    {
+        sr.battleSetup.choiceOpen = false;
+        sr.battleSetup.cutscenePart = -1;
+        sr.battleSetup.cutsceneRoute = Choice1Route;
+        sr.battleSetup.cutsceneAdvance = true;
+        UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Choice Panel", UITransition.State.Disable);
+    }
+
+    public void SelectChoice2()
+    {
+        sr.battleSetup.choiceOpen = false;
+        sr.battleSetup.cutscenePart = -1;
+        sr.battleSetup.cutsceneRoute = Choice2Route;
+        sr.battleSetup.cutsceneAdvance = true;
+        UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Choice Panel", UITransition.State.Disable);
+    }
+    
+    public void SelectChoice3()
+    {
+        sr.battleSetup.choiceOpen = false;
+        sr.battleSetup.cutscenePart = -1;
+        sr.battleSetup.cutsceneRoute = Choice3Route;
+        sr.battleSetup.cutsceneAdvance = true;
+        UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Choice Panel", UITransition.State.Disable);
+    }
+
+    public void OpenOptionsPanel(string panelName)
+    {
+        UICollections[(int)CanvasCollection.UIState.Options].SetPanelState(currentOptionsPanel, UITransition.State.Disable);
+        currentOptionsPanel = panelName;
+        UICollections[(int)CanvasCollection.UIState.Options].SetPanelState(currentOptionsPanel, UITransition.State.Enable);
+    }
+
+    public void PartyAccess(int index)
+    {
+        if (index < PartyTeam.Count) //Make sure selected lunen is within team.
+        {
+            switch (partyAction)
+            {
+                default:
+
+                break;
+
+                case PartyAction.Swap:
+                    if (PartySwapSelect != -1)
+                    {
+                        //Player intends swap now
+                        PartyLunenButtonScripts[PartySwapSelect].isSelected = false;
+                        sr.battleSetup.PartyLunenSwap(PartySwapSelect, index);
+                        UpdatePartyPanelLunen();
+                        Player1Script.LunenTeam = sr.battleSetup.PlayerLunenTeam;
+                        if (sr.battleSetup.InBattle) ScanPlayer1Party();
+                        PartySwapSelect = -1;
+                    }
+                    else
+                    {
+                        PartySwapSelect = index;
+                        PartyLunenButtonScripts[PartySwapSelect].isSelected = true;
+                    }
+                break;
+            }
+            
+        }
     }
 }

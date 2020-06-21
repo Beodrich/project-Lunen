@@ -104,13 +104,16 @@ public class Move : MonoBehaviour
             logicType = LogicType.Player;
             endMove = pLogic.MoveEnd;
         }
-        if (tLogic != null)
+        else if (tLogic != null)
         {
             logicType = LogicType.Trainer;
             endMove = tLogic.MoveEnd;
         }
-
-        if (logicType == LogicType.Null) logicType = LogicType.NPC;
+        else
+        {
+            logicType = LogicType.NPC;
+            endMove = MoveEndStub;
+        }
     }
     
     public void StartCutsceneMove(Cutscene.Part part)
@@ -122,7 +125,7 @@ public class Move : MonoBehaviour
         {
             cutsceneMoveSpaces = part.spacesToMove;
         }
-        if (!part.moveInFacingDirection)
+        if (part.chooseMoveDirection)
         {
             SetFacingDirectionLogic(part.movementDirection);
         }
@@ -174,9 +177,9 @@ public class Move : MonoBehaviour
                         
                         checkPoint = new Vector2(centerPosition.x+input.x, centerPosition.y+input.y);
                         
-                        hit = Physics2D.OverlapArea(checkPoint,checkPoint);
+                        hits = Physics2D.OverlapAreaAll(checkPoint,checkPoint);
                         
-                        if (!MoveScripts.CheckForTag(this.gameObject, hit, "Player"))
+                        if (tLogic.MoveBegin(hits))
                         {
                             SetFacingDirection(input);
                             StartCoroutine(move(transform));
@@ -198,7 +201,7 @@ public class Move : MonoBehaviour
 
                     animMoving = false;
                     last = input;
-                    if (input != Vector2.zero && ableToMove)
+                    if (input != Vector2.zero && npcMove)
                     {
                         factor = 1f;
                         
@@ -288,7 +291,7 @@ public class Move : MonoBehaviour
         if (cutsceneMoveSpaces == 0)
         {
             npcMove = false;
-            tLogic.sr.battleSetup.cutsceneAdvance = true;
+            sr.battleSetup.cutsceneAdvance = true;
         }
         endMove();
         yield return 0;
@@ -300,5 +303,10 @@ public class Move : MonoBehaviour
         animTime = 0;
         SetWalkAnimation();
         SetSprite();
+    }
+
+    private void MoveEndStub()
+    {
+        //
     }
 }

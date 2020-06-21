@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: -1457864513
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8812394758414481895, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+  m_Sprite: {fileID: -3230498983067923680, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
     type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.3764706}
   m_FlipX: 0
@@ -165,6 +165,7 @@ MonoBehaviour:
   startLookDirection: 2
   limitRange: 0
   rangeLimit: 1
+  TeamComp: []
   TeamObjects: []
   Team: []
   TrainerLookStop:
@@ -185,34 +186,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts:
-    Collection:
-    - name: Move To Trainer
-      startNextSimultaneous: 0
-      type: 2
-      moveScript: {fileID: 6539219013480142697}
-      moveInFacingDirection: 1
-      movementDirection: 0
-      moveType: 1
-      colliderTag: Player
-      spacesToMove: 0
-      triggerType: 0
-      trainerLogic: {fileID: 0}
-      text: 
-      trainerEncounter: {fileID: 0}
-    - name: Start Battle
-      startNextSimultaneous: 0
-      type: 4
-      moveScript: {fileID: 0}
-      moveInFacingDirection: 1
-      movementDirection: 0
-      moveType: 0
-      colliderTag: Player
-      spacesToMove: 0
-      triggerType: 1
-      trainerLogic: {fileID: 6539219013480142739}
-      text: 
-      trainerEncounter: {fileID: 0}
+  routes:
+  - parts:
+      array:
+      - name: Walk To Player
+        type: 2
+        startNextSimultaneous: 0
+        moveScript: {fileID: 6539219013480142697}
+        chooseMoveDirection: 0
+        movementDirection: 0
+        moveType: 1
+        colliderTag: Player
+        spacesToMove: 0
+        trainerLogic: {fileID: 0}
+        text: 
+        useChoice1: 0
+        choice1Text: 
+        choice1Route: 0
+        useChoice2: 0
+        choice2Text: 
+        choice2Route: 0
+        useChoice3: 0
+        choice3Text: 
+        choice3Route: 0
+        trainerEncounter: {fileID: 0}
+      - name: Talk To Player
+        type: 1
+        startNextSimultaneous: 0
+        moveScript: {fileID: 6539219013480142697}
+        chooseMoveDirection: 0
+        movementDirection: 0
+        moveType: 0
+        colliderTag: Player
+        spacesToMove: 0
+        trainerLogic: {fileID: 0}
+        text: I am a trainer! Let's fight!
+        useChoice1: 0
+        choice1Text: 
+        choice1Route: 0
+        useChoice2: 0
+        choice2Text: 
+        choice2Route: 0
+        useChoice3: 0
+        choice3Text: 
+        choice3Route: 0
+        trainerEncounter: {fileID: 0}
+      - name: Start Battle
+        type: 4
+        startNextSimultaneous: 0
+        moveScript: {fileID: 6539219013480142697}
+        chooseMoveDirection: 0
+        movementDirection: 0
+        moveType: 0
+        colliderTag: Player
+        spacesToMove: 0
+        trainerLogic: {fileID: 6539219013480142739}
+        text: I am a trainer! Let's fight!
+        useChoice1: 0
+        choice1Text: 
+        choice1Route: 0
+        useChoice2: 0
+        choice2Text: 
+        choice2Route: 0
+        useChoice3: 0
+        choice3Text: 
+        choice3Route: 0
+        trainerEncounter: {fileID: 0}
 --- !u!114 &6539219013480142697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,8 +284,8 @@ MonoBehaviour:
   lookDirection: 2
   hit: {fileID: 0}
   hits: []
-  animTime: 0.16084631
-  animIndex: 1
+  animTime: 0.1
+  animIndex: 17
 --- !u!212 &6539219013480142738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -286,7 +325,7 @@ SpriteRenderer:
   m_SortingLayerID: -1457864513
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 8812394758414481895, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+  m_Sprite: {fileID: 4780240989442642023, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

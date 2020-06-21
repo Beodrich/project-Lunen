@@ -21,6 +21,8 @@ public class SceneAttributes : MonoBehaviour
         sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
         sr.sceneAttributes = this;
 
+        sr.saveSystemObject.isLoading = false;
+
         GameObject newPlayer = Instantiate(player);
         Entrance e;
 

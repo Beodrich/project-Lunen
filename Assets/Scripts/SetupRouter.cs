@@ -17,6 +17,7 @@ public class SetupRouter : MonoBehaviour
     public EventLog eventLog;
     public SceneAttributes sceneAttributes;
     public SaveSystemObject saveSystemObject;
+    public SettingsSystem settingsSystem;
 
     public void Awake()
     {

@@ -70,11 +70,20 @@ public class UITransition : MonoBehaviour
     public float percentageCurrent;
     public float percentageTarget;
     public float percentageUse;
-    public State currentState;
-
+    [ReadOnly] public State currentState;
     public MoveType transitionType;
     [ConditionalField(nameof(transitionType), false, MoveType.Linear, MoveType.SineWave)] public float transitionTime;
     [ConditionalField(nameof(transitionType), false, MoveType.Exponential)] public float transitionScale;
+
+    [Space(10)]
+
+    public float openDelay;
+    public float closeDelay;
+    [ReadOnly] public float percentageDelay;
+
+    [Space(10)]
+    
+    
     public List<UIElement> elements;
 
     private Vector3 tempV3;
@@ -144,20 +153,50 @@ public class UITransition : MonoBehaviour
         {
             case State.Enable:
                 percentageTarget = 100f;
+                percentageDelay = openDelay;
+                if (button != null) button.interactable = true;
+                foreach (UIElement element in elements)
+                {
+                    switch (element.elementType)
+                    {
+                        case ElementType.Image:
+                            element.image.enabled = true;
+                        break;
+                        case ElementType.Text:
+                            element.text.enabled = true;
+                        break;
+                    }
+                }
             break;
 
             case State.Disable:
                 percentageTarget = 0f;
+                if (percentageCurrent != 1f) percentageDelay = closeDelay;
             break;
 
             case State.ImmediateEnable:
                 percentageTarget = 100f;
                 percentageCurrent = 99f;
+                percentageDelay = 0f;
+                if (button != null) button.interactable = true;
+                foreach (UIElement element in elements)
+                {
+                    switch (element.elementType)
+                    {
+                        case ElementType.Image:
+                            element.image.enabled = true;
+                        break;
+                        case ElementType.Text:
+                            element.text.enabled = true;
+                        break;
+                    }
+                }
             break;
 
             case State.ImmediateDisable:
                 percentageTarget = 0f;
                 percentageCurrent = 1f;
+                percentageDelay = 0f;
             break;
         }
         currentState = uistate;
@@ -168,45 +207,60 @@ public class UITransition : MonoBehaviour
     {
         if (percentageCurrent != percentageTarget)
         {
-            percentageCurrent = SetNewPercentage(percentageCurrent, percentageTarget, Time.deltaTime);
-            percentageUse = percentageCurrent;
-            if (transitionType == MoveType.SineWave)
+            if (percentageDelay <= 0)
             {
-                percentageUse = Mathf.Sin((percentageCurrent/200) * Mathf.PI) * 100;
-            }
-            for (int i = 0; i < elements.Count; i++)
-            {
-                if (elements[i].allowColorChange)
+                percentageCurrent = SetNewPercentage(percentageCurrent, percentageTarget, Time.deltaTime);
+                percentageUse = percentageCurrent;
+                if (transitionType == MoveType.SineWave)
                 {
-                    tempCa = elements[i].closedColor;
-                    tempCb = elements[i].openColor;
-                    tempC = Color.Lerp(tempCa, tempCb, percentageUse/100);
-                    switch (elements[i].elementType)
+                    percentageUse = Mathf.Sin((percentageCurrent/200) * Mathf.PI) * 100;
+                }
+                for (int i = 0; i < elements.Count; i++)
+                {
+                    if (elements[i].allowColorChange)
                     {
-                        case ElementType.Image: elements[i].image.color = tempC; break;
-                        case ElementType.Text: elements[i].text.color = tempC; break;
+                        tempCa = elements[i].closedColor;
+                        tempCb = elements[i].openColor;
+                        tempC = Color.Lerp(tempCa, tempCb, percentageUse/100);
+                        switch (elements[i].elementType)
+                        {
+                            case ElementType.Image: elements[i].image.color = tempC; break;
+                            case ElementType.Text: elements[i].text.color = tempC; break;
+                        }
+                    }
+
+                    if (elements[i].allowPositionChange)
+                    {
+                        tempV3a = elements[i].closedPosition;
+                        tempV3b = elements[i].openPosition;
+                        tempV3 = Vector3.Lerp(tempV3a, tempV3b, percentageUse/100);
+                        elements[i].gameObject.transform.localPosition = tempV3;
                     }
                 }
-
-                if (elements[i].allowPositionChange)
+                
+                //This function is called if the percentage just hit zero.
+                if (percentageCurrent == 0)
                 {
-                    tempV3a = elements[i].closedPosition;
-                    tempV3b = elements[i].openPosition;
-                    tempV3 = Vector3.Lerp(tempV3a, tempV3b, percentageUse/100);
-                    elements[i].gameObject.transform.localPosition = tempV3;
+                    if (button != null) button.interactable = false;
+                    foreach (UIElement element in elements)
+                    {
+                        switch (element.elementType)
+                        {
+                            case ElementType.Image:
+                                element.image.enabled = false;
+                            break;
+                            case ElementType.Text:
+                                element.text.enabled = false;
+                            break;
+                        }
+                    }
                 }
             }
-        }
-        if (button != null)
-        {
-            if (currentState == State.Disable || currentState == State.ImmediateDisable)
+            else
             {
-                button.interactable = false;
+                percentageDelay -= Time.deltaTime;
             }
-            if (currentState == State.Enable || currentState == State.ImmediateEnable)
-            {
-                button.interactable = true;
-            }
+            
         }
         
     }

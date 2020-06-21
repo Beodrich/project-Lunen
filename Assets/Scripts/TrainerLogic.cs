@@ -109,7 +109,7 @@ public class TrainerLogic : MonoBehaviour
                 Collider2D[] hit = Physics2D.OverlapAreaAll(checkVector, checkVector);
                 foundWall = MoveScripts.CheckForTag(this.gameObject,hit,TrainerLookStop);
                 foundPlayer = MoveScripts.CheckForTag(this.gameObject,hit,"Player");
-                if (foundPlayer) sr.battleSetup.StartCutscene(GetComponent<Cutscene>());
+                if (foundPlayer && !sr.saveSystemObject.isLoading) sr.battleSetup.StartCutscene(GetComponent<Cutscene>());
             }
             foundRange--;
             checkVector = MoveScripts.GetFrontVector2(move, (float)foundRange/2, true);
@@ -160,10 +160,58 @@ public class TrainerLogic : MonoBehaviour
         engaged = false;
     }
 
-    public void MoveEnd()
+    public bool MoveBegin(Collider2D hit)
     {
-
+        if (hit == null)
+        {
+            return true;
+        }
+        else
+        {
+            switch(hit.gameObject.tag)
+            {
+                default: return true;
+                case "Wall": return false;
+                case "Player": return false;
+                case "Creature": return false;
+                case "Trainer": return false;
+                case "Thing": return false;
+                case "NPC": return false;
+                case "Grass":
+                    return true;
+                case "TrainerSight":
+                    return true;
+                case "Door":
+                    return true;
+            }
+        }
     }
+
+    public bool MoveBegin(Collider2D[] hit)
+    {
+        int pathsFound = 0;
+        if (hit.Length > 0)
+        {
+            int found = 0;
+            for (int i = 0; i < hit.Length; i++)
+            {
+                if (hit[i].gameObject.tag != "Path")
+                {
+                    found += MoveBegin(hit[i]) ? 1 : 0;
+                }
+                else
+                {
+                    pathsFound++;
+                }
+                
+            }
+            if (pathsFound == hit.Length) return true;
+            return (found > 0);
+        }
+        else return false;
+    }
+    
+
     public void ClearTeamOfNull()
     {
         for (int i = 0; i < TeamObjects.Count; i++)
@@ -174,6 +222,11 @@ public class TrainerLogic : MonoBehaviour
                 i--;
             }
         }
+    }
+
+    public void MoveEnd()
+    {
+
     }
     
 }
