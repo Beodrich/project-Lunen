@@ -58,6 +58,8 @@ public class Monster : MonoBehaviour
     public bool CooldownDone;
     private int EndOfTurnDamage;
     [HideInInspector]
+    public AIScripts.AILevel level = AIScripts.AILevel.Random;
+    [HideInInspector]
     public int MoveAffinityCost;
     [EnumNamedArray(typeof(Types.Element))]
     public List<float> DamageTakenScalar;
@@ -86,6 +88,11 @@ public class Monster : MonoBehaviour
                     {
                         //This is the point where the cooldown finishes. There's a lot to program here.
                         CalculateStats();
+                        if (MonsterTeam == Director.Team.EnemyTeam)
+                        {
+                            //StartAI
+                            PerformAction(AIScripts.StartDecision(loopback, this));
+                        }
                         if (EndOfTurnDamage > 0)
                         {
                             TakeDamage(EndOfTurnDamage);
@@ -158,6 +165,20 @@ public class Monster : MonoBehaviour
                     }
             }
         }
+    }
+
+    public void PerformAction(int index)
+    {
+        loopback.canvasCollection.EnsureValidTarget();
+        Action action = ActionSet[index].GetComponent<Action>();
+        action.MonsterUser = this;
+        action.Execute();
+    }
+
+    public void PerformAction(AIDecision decision)
+    {
+        loopback.director.EnemyLunenSelect = decision.targetIndex;
+        PerformAction(decision.moveIndex);
     }
 
     public void LevelUp()

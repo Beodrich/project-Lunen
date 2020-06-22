@@ -79,11 +79,14 @@ public class Director : MonoBehaviour
         LoadTeams();
         ResetLunenCooldowns();
         sr.canvasCollection.ScanBothParties();
+        sr.canvasCollection.Player2LunenTarget(0);
     }
 
     public void CleanUpBattle()
     {
         DirectorGamePaused = true;
+        DirectorTimeFlowing = false;
+        ResetLunenCooldowns();
     }
 
     public void ResetLunenCooldowns()
@@ -125,33 +128,6 @@ public class Director : MonoBehaviour
         return AliveLunen;
     }
 
-    public void PerformAction(Team team, int lunen, int move)
-    {
-        if (team == Team.PlayerTeam)
-        {
-            if (PlayerLunenAlive.Count > lunen)
-            {
-                if (PlayerLunenAlive[lunen].ActionSet.Count > move)
-                {
-                    Action action = PlayerLunenAlive[lunen].ActionSet[move].GetComponent<Action>();
-                    action.MonsterUser = PlayerLunenAlive[lunen];
-                    while (EnemyLunenAlive.Count <= sr.canvasCollection.GetLunenSelected(Team.EnemyTeam)) sr.canvasCollection.EnemyTarget--;
-                    action.Execute();
-                }
-            }
-            
-        }
-        else
-        {
-            Action action = EnemyLunenAlive[lunen].ActionSet[move].GetComponent<Action>();
-            action.MonsterUser = EnemyLunenAlive[lunen];
-            action.Execute();
-        }
-        
-    }
-
-    
-
     public void LunenHasDied(Monster lunen)
     {
         switch (lunen.MonsterTeam)
@@ -170,6 +146,7 @@ public class Director : MonoBehaviour
                 }
                 EnemyLunenAlive = LoadPartyAlive(EnemyLunenMonsters);
                 if (EnemyLunenAlive.Count == 0) sr.battleSetup.PlayerWin();
+                else sr.canvasCollection.EnsureValidTarget();
                 break;
         }
         sr.canvasCollection.ScanBothParties();

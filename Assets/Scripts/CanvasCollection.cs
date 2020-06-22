@@ -330,14 +330,14 @@ public class CanvasCollection : MonoBehaviour
                 PartyLunenButtonScripts[i].Text.GetComponent<Text>().text = PartyTeam[i].Nickname;
                 PartyLunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + PartyTeam[i].Level;
                 PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
-                //PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
+                PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
             }
             else
             {
                 PartyLunenButtonScripts[i].Text.GetComponent<Text>().text = "";
                 PartyLunenButtonScripts[i].LevelText.GetComponent<Text>().text = "";
                 PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = null;
-                //PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = null;
+                PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = null;
             }
         }
     }
@@ -416,7 +416,8 @@ public class CanvasCollection : MonoBehaviour
 
     public void ExecuteAction(int index)
     {
-        sr.director.PerformAction(Director.Team.PlayerTeam,GetLunenSelected(Director.Team.PlayerTeam), index);
+        sr.director.GetMonsterOut(Director.Team.PlayerTeam, GetLunenSelected(Director.Team.PlayerTeam)).PerformAction(index);
+        //sr.director.PerformAction(Director.Team.PlayerTeam,GetLunenSelected(Director.Team.PlayerTeam), index);
     }
 
     public void SelectChoice1()
@@ -481,6 +482,14 @@ public class CanvasCollection : MonoBehaviour
                 break;
             }
             
+        }
+    }
+
+    public void EnsureValidTarget()
+    {
+        if (sr.director.GetLunenCountOut(Director.Team.EnemyTeam) <= EnemyTarget)
+        {
+            Player2LunenTarget(sr.director.GetLunenCountOut(Director.Team.EnemyTeam) - 1);
         }
     }
 }
