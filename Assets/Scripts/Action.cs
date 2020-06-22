@@ -73,13 +73,13 @@ public class Action : MonoBehaviour
             switch (part.Target)
             {
                 case MonsterAim.SingleOpponent:
-                    if (actionTeam == Director.Team.PlayerTeam) ExecutePerMonster(part, loopback.director.GetMonster(targetTeam, loopback.canvasCollection.GetLunenSelected(Director.Team.EnemyTeam)));
-                    if (actionTeam == Director.Team.EnemyTeam) ExecutePerMonster(part, loopback.director.GetMonster(targetTeam, loopback.director.EnemyLunenSelect));
+                    if (actionTeam == Director.Team.PlayerTeam) ExecutePerMonster(part, loopback.director.GetMonsterOut(targetTeam, loopback.canvasCollection.GetLunenSelected(Director.Team.EnemyTeam)));
+                    if (actionTeam == Director.Team.EnemyTeam) ExecutePerMonster(part, loopback.director.GetMonsterOut(targetTeam, loopback.director.EnemyLunenSelect));
                     break;
                 case MonsterAim.AllOpponents:
-                    for (int i = 0; i < loopback.director.PlayerScripts[(int)targetTeam].LunenOut.Count; i++)
+                    for (int i = 0; i < loopback.director.GetLunenCountOut(targetTeam); i++)
                     {
-                        ExecutePerMonster(part, loopback.director.GetMonster(targetTeam, i));
+                        ExecutePerMonster(part, loopback.director.GetMonsterOut(targetTeam, i));
                     }
                     break;
                 case MonsterAim.Self:

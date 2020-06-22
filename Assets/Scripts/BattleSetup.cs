@@ -122,39 +122,37 @@ public class BattleSetup : MonoBehaviour
         sr.canvasCollection.CloseState(CanvasCollection.UIState.MainMenu);
     }
 
-    public void EnterBattle()
+    public void EnterBattle(int music = 0)
     {
+        EmptyRecycleBin();
         sr.director.PrepareBattle();
-        sr.canvasCollection.SetState(CanvasCollection.UIState.Battle);
+        sr.canvasCollection.OpenState(CanvasCollection.UIState.Battle);
         InBattle = true;
     }
 
-    public void ExitBattle(bool win)
+    public void ExitTrainerBattle(bool win)
     {
-        if (win)
+        lastBattleVictory = win;
+        TrainersDefeated.Add(lastTrainerEncounter.GetComponent<GuidComponent>().GetGuid());
+        lastTrainerEncounter.ExitBattle(win);
+        
+    }
+
+    public void ExitBattleState()
+    {
+        sr.director.CleanUpBattle();
+        sr.canvasCollection.CloseState(CanvasCollection.UIState.Battle);
+        InBattle = false;
+        SinceLastEncounter = 5f;
+
+        List<GameObject> checkToDelete = new List<GameObject>();
+        checkToDelete.AddRange(gameObject.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Monster").Select(c => c.gameObject).ToArray());
+        foreach (GameObject monster in checkToDelete)
         {
-            if (typeOfBattle == BattleType.TrainerBattle)
+            if (monster.GetComponent<Monster>().MonsterTeam == Director.Team.EnemyTeam)
             {
-                TrainersDefeated.Add(lastTrainerEncounter.GetComponent<GuidComponent>().GetGuid());
-                lastTrainerEncounter.ExitBattle(lastBattleVictory);
-                //sr.eventLog.AddEvent("GOT HERE");
-                if (InCutscene) cutsceneAdvance = true;
-            }
-            sr.canvasCollection.CloseState(CanvasCollection.UIState.Battle);
-            InBattle = false;
-        }
-        else
-        {
-            InBattle = false;
-            sr.canvasCollection.CloseState(CanvasCollection.UIState.Battle);
-            if (!sr.saveSystemObject.isLoading)
-            {
-                if (typeOfBattle == BattleType.TrainerBattle) lastTrainerEncounter.ExitBattle(lastBattleVictory);
-                PlayerLose();
-            }
-            else
-            {
-                
+                RecycleBinTeam.Add(monster);
+                //Destroy(monster);
             }
         }
     }
@@ -196,7 +194,7 @@ public class BattleSetup : MonoBehaviour
         
         lunenIndex = (int)encounter.possibleEncounters[index].lunen;
         GenerateWildEncounter(encounter.possibleEncounters[index].lunen, Random.Range(encounter.possibleEncounters[index].LevelRange.Min, encounter.possibleEncounters[index].LevelRange.Max + 1));
-        MoveToBattle(0,0);
+        EnterBattle();
     }
 
     public void GenerateWildEncounter(LunaDex.LunenEnum species, int level)
@@ -224,34 +222,13 @@ public class BattleSetup : MonoBehaviour
         sr.eventLog.AddEvent("Trainer Battle Generated!");
     }
 
-    public void MoveToBattle(int backdrop, int musicTrack)
+    public void EmptyRecycleBin()
     {
-        sr.director.PlayerScripts[0].LunenTeam = PlayerLunenTeam;
-        sr.director.PlayerScripts[1].LunenTeam = EnemyLunenTeam;
         foreach (GameObject monster in RecycleBinTeam)
         {
             Destroy(monster);
         }
-        EnterBattle();
-        //sceneReference.LoadScene(ListOfScenes.LocationEnum.BattleScene);
-    }
-
-    public void MoveToOverworld(bool playerVictory)
-    {
-        //sceneReference.LoadScene(lastOverworld);
-        lastBattleVictory = playerVictory;
-        List<GameObject> checkToDelete = new List<GameObject>();
-        checkToDelete.AddRange(gameObject.transform.Cast<Transform>().Where(c => c.gameObject.tag == "Monster").Select(c => c.gameObject).ToArray());
-        foreach (GameObject monster in checkToDelete)
-        {
-            if (monster.GetComponent<Monster>().MonsterTeam == Director.Team.EnemyTeam)
-            {
-                RecycleBinTeam.Add(monster);
-                //Destroy(monster);
-            }
-        }
-        SinceLastEncounter = 5f;
-        ExitBattle(playerVictory);
+        RecycleBinTeam.Clear();
     }
 
     public void NewOverworld(DoorToLocation door)
@@ -452,7 +429,7 @@ public class BattleSetup : MonoBehaviour
             EnemyLunenTeam.RemoveAt(0);
         }
 
-        sr.director.PlayerScripts[0].LunenTeam.Clear();
+        //sr.director.PlayerScripts[0].LunenTeam.Clear();
     }
 
     public IEnumerator cutsceneWait(Transform transform)
@@ -487,9 +464,18 @@ public class BattleSetup : MonoBehaviour
         return newGlobalCutscene.GetComponent<Cutscene>();
     }
 
+    public void PlayerWin()
+    {
+        sr.eventLog.AddEvent("Got To Player Win Function");
+        if (typeOfBattle == BattleType.TrainerBattle) ExitTrainerBattle(true);
+        ExitBattleState();
+    }
+
     public void PlayerLose()
     {
-        sr.eventLog.AddEvent("GOT HERE");
+        sr.eventLog.AddEvent("Got To Player Lose Function");
+        if (typeOfBattle == BattleType.TrainerBattle) ExitTrainerBattle(false);
+        ExitBattleState();
         playerDead = true;
         Cutscene newCutscene = LoadGlobalCutscene(0);
         if (cutsceneLoopGoing)
@@ -501,4 +487,58 @@ public class BattleSetup : MonoBehaviour
             StartCutscene(newCutscene, 0);
         }
     }
+
+    public void PlayerEscape()
+    {
+        sr.eventLog.AddEvent("Got To Player Escape Function");
+        if (typeOfBattle == BattleType.WildEncounter)
+        {
+            ExitBattleState();
+        }
+    }
+
+    /*
+    public void ReloadTeam()
+    {
+        LunenTeam = LunenTeam.Distinct().ToList();
+        if (LunenTeam.Count == 0) TEST_AddTeam();
+        LunenOut.Clear();
+        LunenAlive = 0;
+        LunenDead = 0;
+
+        List<GameObject> LunenGood = new List<GameObject>();
+        List<GameObject> LunenBad = new List<GameObject>();
+
+        for (int i = 0; i < LunenTeam.Count; i++)
+        {
+            Monster tempLunen = LunenTeam[i].GetComponent<Monster>();
+            tempLunen.CalculateStats();
+            if (tempLunen.Health.z <= 0)
+            {
+                LunenBad.Add(LunenTeam[i]);
+                LunenDead++;
+            }
+            else
+            {
+                if (LunenOut.Count < LunenMax)
+                {
+                    LunenOut.Add(tempLunen);
+                }
+                LunenGood.Add(LunenTeam[i]);
+                LunenAlive++;
+            }
+        }
+        LunenTeam.Clear();
+        LunenTeam.AddRange(LunenGood);
+        LunenTeam.AddRange(LunenBad);
+    }
+
+    public void PrepareLunenForBattle()
+    {
+        for (int i = 0; i < LunenOut.Count; i++)
+        {
+            LunenOut[i].ResetCooldown();
+        }
+    }
+    */
 }

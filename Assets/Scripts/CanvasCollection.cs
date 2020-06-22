@@ -51,9 +51,6 @@ public class CanvasCollection : MonoBehaviour
     public int MenuOpen = 0;
     public int EnemyTarget = 0;
 
-    [HideInInspector] public Player Player1Script;
-    [HideInInspector] public Player Player2Script;
-
     [HideInInspector] public Component[] UIElements;
 
     [HideInInspector] public int Choice1Route;
@@ -86,9 +83,6 @@ public class CanvasCollection : MonoBehaviour
     void Awake()
     {
         sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
-
-        Player1Script = Player1.GetComponent<Player>();
-        Player2Script = Player2.GetComponent<Player>();
 
         UICollections = new List<UIPanelCollection>();
         foreach (GameObject go in UIObjects) UICollections.Add(go.GetComponent<UIPanelCollection>());
@@ -196,85 +190,62 @@ public class CanvasCollection : MonoBehaviour
 
     public void ScanPlayer1Party()
     {
-        
-        Player1Script.ReloadTeam();
-
         for (int i = 0; i < sr.director.MaxLunenOut; i++)
         {
-            ScanPlayer1Lunen(i);
-        }
-
-        if (Player1Script.LunenAlive == 0)
-        {
-            sr.battleSetup.MoveToOverworld(false);
-        }
-    }
-
-    public void ScanPlayer1Lunen(int i)
-    {
-        if (Player1Script.LunenOut.Count > i)
-        {
-            Player1LunenButtonScripts[i] = Player1LunenButtons[i].GetComponent<LunenButton>();
-            Player1LunenButtonScripts[i].Text.GetComponent<Text>().text = Player1Script.LunenOut[i].Nickname;
-            Player1LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + Player1Script.LunenOut[i].Level;
-            Player1LunenButtons[i].SetActive(true);
-            Player1Script.LunenOut[i].loopback = sr;
-            Player1Script.LunenOut[i].MonsterTeam = Director.Team.PlayerTeam;
-            AssignPlayer1Bars(i);
-            LunenPanels[i] = DescriptionPanels[i].GetComponent<LunenActionPanel>();
-            LunenPanels[i].FindScripts();
-            for (int j = 0; j < 4; j++)
+            if (sr.director.GetLunenCountOut(Director.Team.PlayerTeam) > i)
             {
-                if (j >= Player1Script.LunenOut[i].ActionSet.Count)
+                Player1LunenButtonScripts[i] = Player1LunenButtons[i].GetComponent<LunenButton>();
+                Player1LunenButtonScripts[i].Text.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].Nickname;
+                Player1LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + sr.director.PlayerLunenAlive[i].Level;
+                Player1LunenButtons[i].SetActive(true);
+                sr.director.PlayerLunenAlive[i].MonsterTeam = Director.Team.PlayerTeam;
+                AssignPlayer1Bars(i);
+                LunenPanels[i] = DescriptionPanels[i].GetComponent<LunenActionPanel>();
+                LunenPanels[i].FindScripts();
+                for (int j = 0; j < 4; j++)
                 {
-                    LunenPanels[i].ActionButtons[j].SetActive(false);
-                }
-                else
-                {
-                    LunenPanels[i].ActionButtons[j].SetActive(true);
-                    LunenPanels[i].ActionButtonScripts[j].Name.GetComponent<Text>().text = Player1Script.LunenOut[i].ActionSet[j].GetComponent<Action>().Name;
-                    LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = Types.GetTypeString(Player1Script.LunenOut[i].ActionSet[j].GetComponent<Action>().Type);
-                    
+                    if (j >= sr.director.PlayerLunenAlive[i].ActionSet.Count)
+                    {
+                        LunenPanels[i].ActionButtons[j].SetActive(false);
+                    }
+                    else
+                    {
+                        LunenPanels[i].ActionButtons[j].SetActive(true);
+                        LunenPanels[i].ActionButtonScripts[j].Name.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].ActionSet[j].GetComponent<Action>().Name;
+                        LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = Types.GetTypeString(sr.director.PlayerLunenAlive[i].ActionSet[j].GetComponent<Action>().Type);
+                        
+                    }
                 }
             }
-            //LunenPanels[i].ActionButtonScripts
-        }
-        else
-        {
-            Player1LunenButtons[i].SetActive(false);
+            else
+            {
+                Player1LunenButtons[i].SetActive(false);
+            }
         }
     }
 
     public void ScanPlayer2Party()
     {
         
-        Player2Script.ReloadTeam();
-
         for (int i = 0; i < sr.director.MaxLunenOut; i++)
         {
-            if (Player2Script.LunenOut.Count > i)
+            if (sr.director.GetLunenCountOut(Director.Team.EnemyTeam) > i)
             {
                 Player2LunenButtonScripts[i] = Player2LunenButtons[i].GetComponent<LunenButton>();
-                Player2LunenButtonScripts[i].Text.GetComponent<Text>().text = Player2Script.LunenOut[i].Nickname;
-                Player2LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + Player2Script.LunenOut[i].Level;
+                Player2LunenButtonScripts[i].Text.GetComponent<Text>().text = sr.director.EnemyLunenAlive[i].Nickname;
+                Player2LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + sr.director.EnemyLunenAlive[i].Level;
                 Player2LunenButtons[i].SetActive(true);
-                Player2Script.LunenOut[i].loopback = sr;
-                Player2Script.LunenOut[i].MonsterTeam = Director.Team.EnemyTeam;
+                sr.director.EnemyLunenAlive[i].MonsterTeam = Director.Team.EnemyTeam;
                 AssignPlayer2Bars(i);
             }
             else Player2LunenButtons[i].SetActive(false);
-        }
-
-        if (Player2Script.LunenAlive == 0)
-        {
-            sr.battleSetup.MoveToOverworld(true);
         }
     }
 
     public void SaveGame()
     {
-        sr.battleSetup.CloseMainMenu();
         sr.saveSystemObject.SaveGame();
+        sr.battleSetup.CloseMainMenu();
     }
 
     public void LoadGame()
@@ -290,14 +261,14 @@ public class CanvasCollection : MonoBehaviour
 
     public void AssignPlayer1Bars(int index)
     {
-        Player1LunenButtonScripts[index].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = Player1Script.LunenOut[index];
-        Player1LunenButtonScripts[index].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = Player1Script.LunenOut[index];
+        Player1LunenButtonScripts[index].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = sr.director.GetMonsterOut(Director.Team.PlayerTeam, index);
+        Player1LunenButtonScripts[index].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = sr.director.GetMonsterOut(Director.Team.PlayerTeam, index);
     }
 
     public void AssignPlayer2Bars(int index)
     {
-        Player2LunenButtonScripts[index].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = Player2Script.LunenOut[index];
-        Player2LunenButtonScripts[index].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = Player2Script.LunenOut[index];
+        Player2LunenButtonScripts[index].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = sr.director.GetMonsterOut(Director.Team.EnemyTeam, index);
+        Player2LunenButtonScripts[index].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = sr.director.GetMonsterOut(Director.Team.EnemyTeam, index);
     }
 
     public void OpenMenuPanel(string panel)
@@ -386,7 +357,7 @@ public class CanvasCollection : MonoBehaviour
         {
             if (index < 4)
             {
-                if (Player1Script.LunenOut[index - 1].CurrCooldown <= 0f)
+                if (sr.director.GetMonsterOut(Director.Team.PlayerTeam, index - 1).CurrCooldown <= 0f)
                 {
                     if (MenuOpen != 0)
                     {
@@ -405,8 +376,8 @@ public class CanvasCollection : MonoBehaviour
             }
             else if (index == 6)
             {
-                if (sr.battleSetup.InCutscene) sr.battleSetup.cutsceneAdvance = true;
-                sr.battleSetup.MoveToOverworld(true);
+                //if (sr.battleSetup.InCutscene) sr.battleSetup.cutsceneAdvance = true;
+                sr.battleSetup.PlayerEscape();
 
             }
             else
@@ -499,7 +470,6 @@ public class CanvasCollection : MonoBehaviour
                         PartyLunenButtonScripts[PartySwapSelect].isSelected = false;
                         sr.battleSetup.PartyLunenSwap(PartySwapSelect, index);
                         UpdatePartyPanelLunen();
-                        Player1Script.LunenTeam = sr.battleSetup.PlayerLunenTeam;
                         if (sr.battleSetup.InBattle) ScanPlayer1Party();
                         PartySwapSelect = -1;
                     }

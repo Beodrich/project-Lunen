@@ -14,7 +14,7 @@ public class SaveSystemObject : MonoBehaviour
     
     public void SaveGame()
     {
-        SaveSystem.SaveGameData(sr.battleSetup, sr.director.PlayerScripts[0]);
+        SaveSystem.SaveGameData(sr.battleSetup);
     }
 
     public bool LoadGame()
@@ -24,7 +24,7 @@ public class SaveSystemObject : MonoBehaviour
         {
             //Beginning load
             isLoading = true;
-            if (sr.battleSetup.InBattle) sr.battleSetup.ExitBattle(false);
+            if (sr.battleSetup.InBattle) sr.battleSetup.ExitBattleState();
             sr.battleSetup.InCutscene = false;
             sr.battleSetup.gamePaused = false;
             sr.battleSetup.cutscenePart = 99999999;
@@ -66,10 +66,9 @@ public class SaveSystemObject : MonoBehaviour
                 }
 
                 sr.battleSetup.PlayerLunenTeam.Add(newMonsterObject);
-                sr.director.PlayerScripts[0].LunenTeam.Add(newMonsterObject);
                 newMonsterObject.transform.parent = this.transform;
             }
-            sr.director.PlayerScripts[0].ReloadTeam();
+            sr.director.LoadTeams();
 
             //Get respawn variables
             sr.battleSetup.respawnLocation = new Vector2(gameData.respawnX, gameData.respawnY);

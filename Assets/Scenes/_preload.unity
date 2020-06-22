@@ -1354,60 +1354,6 @@ MonoBehaviour:
   - {fileID: 1700494024}
   UITransitions: []
   currentState: 0
---- !u!1 &263763002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 263763004}
-  - component: {fileID: 263763003}
-  m_Layer: 0
-  m_Name: Player1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &263763003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263763002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7a2ff8e76d44602ac2bbba1d72d97c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sr: {fileID: 0}
-  isAI: 0
-  skillLevel: 0
-  Name: Player1
-  AffinityCap: 0
-  LevelCap: 0
-  LunenTeam: []
-  LunenAlive: 0
-  LunenDead: 0
-  LunenOut: []
-  LunenMax: 3
---- !u!4 &263763004
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263763002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.0709395, y: 3.2723796, z: -74.237495}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &271033113
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,10 +2304,10 @@ MonoBehaviour:
     Ben Odrich - Programmer
 
 
-    Eleanore - Artist
+    Eleanore Falck - Artist
 
-    Theo Phan
-    - Artist
+    Theo
+    Phan - Artist
 
     Ben Hawkinson - Artist, Composer
 
@@ -2882,60 +2828,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 414171548}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &449329974
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 449329976}
-  - component: {fileID: 449329975}
-  m_Layer: 0
-  m_Name: Player4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &449329975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449329974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7a2ff8e76d44602ac2bbba1d72d97c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sr: {fileID: 0}
-  isAI: 0
-  skillLevel: 0
-  Name: Player4
-  AffinityCap: 0
-  LevelCap: 0
-  LunenTeam: []
-  LunenAlive: 0
-  LunenDead: 0
-  LunenOut: []
-  LunenMax: 3
---- !u!4 &449329976
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449329974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.0709395, y: 3.2723796, z: -74.237495}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450270904
 GameObject:
   m_ObjectHideFlags: 0
@@ -3537,60 +3429,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 557752621}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &570390791
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 570390793}
-  - component: {fileID: 570390792}
-  m_Layer: 0
-  m_Name: Player2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &570390792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 570390791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7a2ff8e76d44602ac2bbba1d72d97c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sr: {fileID: 0}
-  isAI: 1
-  skillLevel: 0
-  Name: Player2
-  AffinityCap: 0
-  LevelCap: 0
-  LunenTeam: []
-  LunenAlive: 0
-  LunenDead: 0
-  LunenOut: []
-  LunenMax: 3
---- !u!4 &570390793
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 570390791}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.0709395, y: 3.2723796, z: -74.237495}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572432497
 GameObject:
   m_ObjectHideFlags: 0
@@ -4279,12 +4117,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Player1: {fileID: 263763002}
-  Player2: {fileID: 570390791}
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
   MenuOpen: 0
   EnemyTarget: 0
-  Player1Script: {fileID: 0}
-  Player2Script: {fileID: 0}
   UIElements: []
   Choice1Route: 0
   Choice2Route: 0
@@ -6281,7 +6117,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1021185983
 MonoBehaviour:
@@ -6850,10 +6686,10 @@ MonoBehaviour:
     Ben Odrich - Programmer
 
 
-    Eleanore - Artist
+    Eleanore Falck - Artist
 
-    Theo Phan
-    - Artist
+    Theo
+    Phan - Artist
 
     Ben Hawkinson - Artist, Composer
 
@@ -10445,60 +10281,6 @@ RectTransform:
   m_AnchoredPosition: {x: -3.1, y: 2.1}
   m_SizeDelta: {x: 430.05255, y: 79.594666}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1614432466
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1614432468}
-  - component: {fileID: 1614432467}
-  m_Layer: 0
-  m_Name: Player3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1614432467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614432466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c7a2ff8e76d44602ac2bbba1d72d97c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sr: {fileID: 0}
-  isAI: 0
-  skillLevel: 0
-  Name: Player3
-  AffinityCap: 0
-  LevelCap: 0
-  LunenTeam: []
-  LunenAlive: 0
-  LunenDead: 0
-  LunenOut: []
-  LunenMax: 3
---- !u!4 &1614432468
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614432466}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.0709395, y: 3.2723796, z: -74.237495}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1617306527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8909552609746736386, guid: 88f72773f931140488affde3480e02e0,
@@ -14148,7 +13930,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2087977948
 PrefabInstance:
@@ -14821,7 +14603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   vsync: 1
-  bootBehaviour: 1
+  bootBehaviour: 0
   bootScene: 0
   bootEntrance: 1
   TestLunenParty:
@@ -14835,11 +14617,7 @@ MonoBehaviour:
   keepLoaded:
   - {fileID: 652271909}
   - {fileID: 1021185979}
-  - {fileID: 263763002}
-  - {fileID: 570390791}
   - {fileID: 2077289356}
-  - {fileID: 1614432466}
-  - {fileID: 449329974}
 --- !u!114 &8082643487578673650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14853,16 +14631,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
-  MaxPlayers: 2
-  Players:
-  - {fileID: 263763002}
-  - {fileID: 570390791}
-  PlayerScripts: []
+  PlayerLunenMonsters: []
+  PlayerLunenAlive: []
+  EnemyLunenMonsters: []
+  EnemyLunenAlive: []
   MaxLunenOut: 3
   DirectorDeltaTime: 0
-  DirectorTimeFlowing: 1
+  DirectorTimeFlowing: 0
   DirectorTimeToWait: 0
-  DirectorGamePaused: 0
+  DirectorGamePaused: 1
   EnemyLunenSelect: 0
 --- !u!114 &8082643487578673651
 MonoBehaviour:

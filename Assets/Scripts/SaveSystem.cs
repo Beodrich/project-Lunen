@@ -9,12 +9,12 @@ using MyBox;
 
 public static class SaveSystem
 {
-    public static void SaveGameData(BattleSetup bs, Player player)
+    public static void SaveGameData(BattleSetup bs)
     {
         BinaryFormatter bf = new BinaryFormatter();
         FileStream stream = new FileStream(Application.persistentDataPath + "/GameData.sav", FileMode.Create);
 
-        GameData data = new GameData(bs, player);
+        GameData data = new GameData(bs);
 
         bf.Serialize(stream, data);
         stream.Close();
@@ -64,13 +64,13 @@ public class GameData
     public int respawnDirection;
     
 
-    public GameData(BattleSetup bs, Player player)
+    public GameData(BattleSetup bs)
     {
-        player.ReloadTeam();
         PlayerTeam = new List<PlayerLunen>();
-        for (int i = 0; i < player.LunenTeam.Count; i++)
+        Debug.Log("Found " + bs.PlayerLunenTeam.Count + " Lunen!");
+        for (int i = 0; i < bs.PlayerLunenTeam.Count; i++)
         {
-            Monster currentMonster = player.LunenTeam[i].GetComponent<Monster>();
+            Monster currentMonster = bs.PlayerLunenTeam[i].GetComponent<Monster>();
             PlayerLunen a = new PlayerLunen();
             a.species = currentMonster.SourceLunenIndex;
             a.nickname = currentMonster.Nickname;

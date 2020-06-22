@@ -148,7 +148,7 @@ MonoBehaviour:
         useChoice3: 0
         choice3Text: 
         choice3Route: 0
-        waitTime: 1
+        waitTime: 0
         newSceneType: 3
         newCutsceneType: 0
         cutsceneIndex: 0

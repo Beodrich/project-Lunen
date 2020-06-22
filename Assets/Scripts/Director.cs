@@ -10,9 +10,15 @@ public class Director : MonoBehaviour
     public enum Team
     {
         PlayerTeam,
-        EnemyTeam,
-        EnemyTeam2,
-        EnemyTeam3,
+        EnemyTeam
+    }
+
+    public enum LunenState
+    {
+        All,
+        Alive,
+        Dead,
+        Out
     }
 
     [System.Serializable]
@@ -25,10 +31,11 @@ public class Director : MonoBehaviour
         Top
     }
 
-    public int MaxPlayers;
-    public List<GameObject> Players;
-    
-    [HideInInspector] public List<Player> PlayerScripts;
+    public List<Monster> PlayerLunenMonsters;
+    public List<Monster> PlayerLunenAlive;
+
+    public List<Monster> EnemyLunenMonsters;
+    public List<Monster> EnemyLunenAlive;
 
     public int MaxLunenOut = 3;
     
@@ -43,8 +50,6 @@ public class Director : MonoBehaviour
     private void Awake()
     {
         sr = GetComponent<SetupRouter>();
-
-        for (int i = 0; i < Players.Count; i++) PlayerScripts.Add(Players[i].GetComponent<Player>());
     }
 
     private void Update()
@@ -70,26 +75,67 @@ public class Director : MonoBehaviour
 
     public void PrepareBattle()
     {
-        for (int i = 0; i < Players.Count; i++)
-        {
-            PlayerScripts[i].ReloadTeam();
-            PlayerScripts[i].PrepareLunenForBattle();
-        }
+        DirectorGamePaused = false;
+        LoadTeams();
+        ResetLunenCooldowns();
         sr.canvasCollection.ScanBothParties();
+    }
+
+    public void CleanUpBattle()
+    {
+        DirectorGamePaused = true;
+    }
+
+    public void ResetLunenCooldowns()
+    {
+        foreach (Monster m in PlayerLunenMonsters) m.ResetCooldown();
+        foreach (Monster m in EnemyLunenMonsters) m.ResetCooldown();
+    }
+
+    public void LoadTeams()
+    {
+        PlayerLunenMonsters = LoadParty(Team.PlayerTeam);
+        EnemyLunenMonsters = LoadParty(Team.EnemyTeam);
+
+        PlayerLunenAlive = LoadPartyAlive(PlayerLunenMonsters);
+        EnemyLunenAlive = LoadPartyAlive(EnemyLunenMonsters);
+    }
+
+    public List<Monster> LoadParty(Team team)
+    {
+        List<GameObject> LunenTeamObjects;
+        List<Monster> LunenTeamMonsters = new List<Monster>();
+
+        if (team == Team.PlayerTeam) LunenTeamObjects = sr.battleSetup.PlayerLunenTeam;
+        else if (team == Team.EnemyTeam) LunenTeamObjects = sr.battleSetup.EnemyLunenTeam;
+        else LunenTeamObjects = sr.battleSetup.EnemyLunenTeam;
+
+        foreach (GameObject go in LunenTeamObjects)
+            LunenTeamMonsters.Add(go.GetComponent<Monster>());
+
+        return LunenTeamMonsters;
+    }
+
+    public List<Monster> LoadPartyAlive(List<Monster> source)
+    {
+        List<Monster> AliveLunen = new List<Monster>();
+
+        foreach (Monster m in source) {if (m.Health.z > 0) AliveLunen.Add(m);}
+
+        return AliveLunen;
     }
 
     public void PerformAction(Team team, int lunen, int move)
     {
-        for (int i = 0; i < PlayerScripts.Count; i++) PlayerScripts[i].ReloadTeam();
         if (team == Team.PlayerTeam)
         {
-            if (PlayerScripts[0].LunenOut.Count > lunen)
+            if (PlayerLunenAlive.Count > lunen)
             {
-                if (PlayerScripts[0].LunenOut[lunen].ActionSet.Count > move)
+                if (PlayerLunenAlive[lunen].ActionSet.Count > move)
                 {
-                    Action action = PlayerScripts[0].LunenOut[lunen].ActionSet[move].GetComponent<Action>();
-                    action.MonsterUser = PlayerScripts[0].LunenOut[lunen];
-                    while (PlayerScripts[1].LunenOut.Count <= sr.canvasCollection.GetLunenSelected(Team.EnemyTeam)) sr.canvasCollection.EnemyTarget--;
+                    Action action = PlayerLunenAlive[lunen].ActionSet[move].GetComponent<Action>();
+                    action.MonsterUser = PlayerLunenAlive[lunen];
+                    while (EnemyLunenAlive.Count <= sr.canvasCollection.GetLunenSelected(Team.EnemyTeam)) sr.canvasCollection.EnemyTarget--;
                     action.Execute();
                 }
             }
@@ -97,8 +143,8 @@ public class Director : MonoBehaviour
         }
         else
         {
-            Action action = PlayerScripts[1].LunenOut[lunen].ActionSet[move].GetComponent<Action>();
-            action.MonsterUser = PlayerScripts[1].LunenOut[lunen];
+            Action action = EnemyLunenAlive[lunen].ActionSet[move].GetComponent<Action>();
+            action.MonsterUser = EnemyLunenAlive[lunen];
             action.Execute();
         }
         
@@ -111,31 +157,25 @@ public class Director : MonoBehaviour
         switch (lunen.MonsterTeam)
         {
             case Team.PlayerTeam:
-                PlayerScripts[0].ReloadTeam();
-                if (PlayerScripts[0].LunenTeam.Count == 0)
-                {
-                    sr.battleSetup.MoveToOverworld(false);
-                }
+                PlayerLunenAlive = LoadPartyAlive(PlayerLunenMonsters);
+                if (PlayerLunenAlive.Count == 0) sr.battleSetup.PlayerLose();
                 break;
             case Team.EnemyTeam:
                 for (int i = 0; i < MaxLunenOut; i++)
                 {
-                    if (PlayerScripts[0].LunenOut.Count > i)
+                    if (PlayerLunenAlive.Count > i)
                     {
-                        PlayerScripts[0].LunenOut[i].GetExp(CalculateExpPayout(lunen, PlayerScripts[0].LunenOut[i]));
+                        PlayerLunenAlive[i].GetExp(CalculateExpPayout(lunen, PlayerLunenAlive[i]));
                     }
                 }
-                PlayerScripts[1].ReloadTeam();
-                if (PlayerScripts[1].LunenTeam.Count == 0)
-                {
-                    sr.battleSetup.MoveToOverworld(true);
-                }
+                EnemyLunenAlive = LoadPartyAlive(EnemyLunenMonsters);
+                if (EnemyLunenAlive.Count == 0) sr.battleSetup.PlayerWin();
                 break;
         }
         sr.canvasCollection.ScanBothParties();
-        sr.canvasCollection.UIObjects[1].GetComponent<UIPanelCollection>().SetPanelState("LunenMoves1", UITransition.State.ImmediateDisable);
-        sr.canvasCollection.UIObjects[1].GetComponent<UIPanelCollection>().SetPanelState("LunenMoves2", UITransition.State.ImmediateDisable);
-        sr.canvasCollection.UIObjects[1].GetComponent<UIPanelCollection>().SetPanelState("LunenMoves3", UITransition.State.ImmediateDisable);
+        sr.canvasCollection.UIObjects[1].GetComponent<UIPanelCollection>().SetPanelState("LunenMoves1", UITransition.State.Disable);
+        sr.canvasCollection.UIObjects[1].GetComponent<UIPanelCollection>().SetPanelState("LunenMoves2", UITransition.State.Disable);
+        sr.canvasCollection.UIObjects[1].GetComponent<UIPanelCollection>().SetPanelState("LunenMoves3", UITransition.State.Disable);
     }
 
     public void AttemptToCapture()
@@ -143,12 +183,12 @@ public class Director : MonoBehaviour
         //TODO: Add chance to capture
         if (true)
         {
-            Monster monsterToCapture = PlayerScripts[1].LunenOut[sr.canvasCollection.GetLunenSelected(Team.EnemyTeam)];
+            Monster monsterToCapture = GetMonsterOut(Team.EnemyTeam, sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
             GameObject monsterToCaptureObject= monsterToCapture.gameObject;
             monsterToCapture.MonsterTeam = Team.PlayerTeam;
             sr.battleSetup.PlayerLunenTeam.Add(monsterToCaptureObject);
-            PlayerScripts[1].LunenTeam.RemoveAt(sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
-            sr.battleSetup.MoveToOverworld(true);
+            sr.battleSetup.EnemyLunenTeam.RemoveAt(sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
+            sr.battleSetup.PlayerWin();
         }
     }
 
@@ -185,8 +225,85 @@ public class Director : MonoBehaviour
         return exactPayoutInt;
     }
 
-    public Monster GetMonster(Team lunenTeam, int index)
+    public Monster GetMonster(Team lunenTeam, LunenState state, int index)
     {
-        return PlayerScripts[(int)lunenTeam].LunenOut[index];
+        if (lunenTeam == Team.PlayerTeam)
+        {
+            switch (state)
+            {
+                default:
+                    return null;
+                case LunenState.Alive:
+                case LunenState.Out:
+                    if (PlayerLunenAlive.Count > index)
+                        return PlayerLunenAlive[index];
+                    else
+                        return null;
+                case LunenState.All:
+                    if (PlayerLunenMonsters.Count > index)
+                        return PlayerLunenMonsters[index];
+                    else
+                        return null;
+
+            }
+        }
+        else if (lunenTeam == Team.EnemyTeam)
+        {
+            switch (state)
+            {
+                default:
+                    return null;
+                case LunenState.Alive:
+                case LunenState.Out:
+                    if (EnemyLunenAlive.Count > index)
+                        return EnemyLunenAlive[index];
+                    else
+                        return null;
+                case LunenState.All:
+                    if (EnemyLunenMonsters.Count > index)
+                        return EnemyLunenMonsters[index];
+                    else
+                        return null;
+
+            }
+        }
+        else return null;
+    }
+
+    public Monster GetMonsterOut(Team lunenTeam, int index)
+    {
+        return GetMonster(lunenTeam, LunenState.Out, index);
+    }
+
+    public int GetLunenCount(Team lunenTeam, LunenState state)
+    {
+        if (lunenTeam == Team.PlayerTeam)
+        {
+            switch (state)
+            {
+                default: return 0;
+                case LunenState.Alive: return PlayerLunenAlive.Count;
+                case LunenState.Out: return (PlayerLunenAlive.Count > MaxLunenOut ? MaxLunenOut : PlayerLunenAlive.Count);
+                case LunenState.All: return PlayerLunenMonsters.Count;
+                case LunenState.Dead: return (PlayerLunenMonsters.Count - PlayerLunenAlive.Count);
+            }
+        }
+        else if (lunenTeam == Team.EnemyTeam)
+        {
+            switch (state)
+            {
+                default: return 0;
+                case LunenState.Alive: return EnemyLunenAlive.Count;
+                case LunenState.Out: return (EnemyLunenAlive.Count > MaxLunenOut ? MaxLunenOut : EnemyLunenAlive.Count);
+                case LunenState.All: return EnemyLunenMonsters.Count;
+                case LunenState.Dead: return (EnemyLunenMonsters.Count - EnemyLunenAlive.Count);
+            }
+        }
+        else return 0;
+    }
+
+    public int GetLunenCountOut(Team lunenTeam)
+    {
+        return GetLunenCount(lunenTeam, LunenState.Out);
     }
 }

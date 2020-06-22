@@ -133,7 +133,7 @@ public class TrainerLogic : MonoBehaviour
                 {
                     engaged = true;
                     sr.battleSetup.GenerateTrainerBattle(this);
-                    sr.battleSetup.MoveToBattle(0,0);
+                    sr.battleSetup.EnterBattle();
                     
                 }
             }
@@ -145,7 +145,7 @@ public class TrainerLogic : MonoBehaviour
                 {
                     engaged = true;
                     sr.battleSetup.GenerateTrainerBattle(this);
-                    sr.battleSetup.MoveToBattle(0,0);
+                    sr.battleSetup.EnterBattle();
                     
                 }
             }
