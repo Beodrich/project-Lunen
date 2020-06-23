@@ -92,6 +92,13 @@ public class BattleSetup : MonoBehaviour
                 {
                     sr.settingsSystem.ExitSettings();
                 }
+                else if (sr.canvasCollection.PartyPanelOpen)
+                {
+                    sr.canvasCollection.PartyPanelOpen = false;
+                    //if (!InBattle) sr.canvasCollection.OpenState(CanvasCollection.UIState.MainMenu);
+                    sr.canvasCollection.CloseState(CanvasCollection.UIState.Party);
+                    
+                }
                 else
                 {
                     CloseMainMenu();
@@ -135,7 +142,7 @@ public class BattleSetup : MonoBehaviour
         lastBattleVictory = win;
         TrainersDefeated.Add(lastTrainerEncounter.GetComponent<GuidComponent>().GetGuid());
         lastTrainerEncounter.ExitBattle(win);
-        
+        cutsceneAdvance = true;
     }
 
     public void ExitBattleState()

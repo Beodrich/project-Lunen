@@ -16,6 +16,7 @@ public class CanvasCollection : MonoBehaviour
         MainMenu,
         Options,
         Dialogue,
+        Party,
         Inventory,
         Lunen
     }
@@ -295,6 +296,14 @@ public class CanvasCollection : MonoBehaviour
     {
         OptionsPanelOpen = true;
         OpenState(UIState.Options);
+    }
+
+    public void OpenPartyWindow()
+    {
+        UpdatePartyPanelLunen();
+        PartyPanelOpen = true;
+        //CloseState(UIState.MainMenu);
+        OpenState(UIState.Party);
     }
 
     public void SwitchMenuPanel(string panel)

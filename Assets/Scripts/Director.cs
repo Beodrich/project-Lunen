@@ -38,6 +38,8 @@ public class Director : MonoBehaviour
     public List<Monster> EnemyLunenAlive;
 
     public int MaxLunenOut = 3;
+    public int PlayerLunenCurrentlyOut = 0;
+    public int EnemyLunenCurrentlyOut = 0;
     
 
     [HideInInspector]
@@ -100,8 +102,8 @@ public class Director : MonoBehaviour
         PlayerLunenMonsters = LoadParty(Team.PlayerTeam);
         EnemyLunenMonsters = LoadParty(Team.EnemyTeam);
 
-        PlayerLunenAlive = LoadPartyAlive(PlayerLunenMonsters);
-        EnemyLunenAlive = LoadPartyAlive(EnemyLunenMonsters);
+        PlayerLunenAlive = LoadPartyAlive(PlayerLunenMonsters, Team.PlayerTeam);
+        EnemyLunenAlive = LoadPartyAlive(EnemyLunenMonsters, Team.EnemyTeam);
     }
 
     public List<Monster> LoadParty(Team team)
@@ -114,26 +116,50 @@ public class Director : MonoBehaviour
         else LunenTeamObjects = sr.battleSetup.EnemyLunenTeam;
 
         foreach (GameObject go in LunenTeamObjects)
+        {
             LunenTeamMonsters.Add(go.GetComponent<Monster>());
+            go.GetComponent<Monster>().MonsterTeam = team;
+        }
+            
 
         return LunenTeamMonsters;
     }
 
-    public List<Monster> LoadPartyAlive(List<Monster> source)
+    public List<Monster> LoadPartyAlive(List<Monster> source, Team team)
     {
+        if (team == Team.PlayerTeam) PlayerLunenCurrentlyOut = 0;
+        if (team == Team.EnemyTeam) EnemyLunenCurrentlyOut = 0;
+
         List<Monster> AliveLunen = new List<Monster>();
 
-        foreach (Monster m in source) {if (m.Health.z > 0) AliveLunen.Add(m);}
+        foreach (Monster m in source)
+        {
+            if (m.Health.z > 0)
+            {
+                AliveLunen.Add(m);
+                if (team == Team.PlayerTeam && PlayerLunenCurrentlyOut < MaxLunenOut)
+                {
+                    PlayerLunenCurrentlyOut++;
+                    m.LunenOut = true;
+                }
+                if (team == Team.EnemyTeam && EnemyLunenCurrentlyOut < MaxLunenOut)
+                {
+                    EnemyLunenCurrentlyOut++;
+                    m.LunenOut = true;
+                }
+            }
+        }
 
         return AliveLunen;
     }
 
     public void LunenHasDied(Monster lunen)
     {
+        lunen.LunenOut = false;
         switch (lunen.MonsterTeam)
         {
             case Team.PlayerTeam:
-                PlayerLunenAlive = LoadPartyAlive(PlayerLunenMonsters);
+                PlayerLunenAlive = LoadPartyAlive(PlayerLunenMonsters, Team.PlayerTeam);
                 if (PlayerLunenAlive.Count == 0) sr.battleSetup.PlayerLose();
                 break;
             case Team.EnemyTeam:
@@ -144,7 +170,7 @@ public class Director : MonoBehaviour
                         PlayerLunenAlive[i].GetExp(CalculateExpPayout(lunen, PlayerLunenAlive[i]));
                     }
                 }
-                EnemyLunenAlive = LoadPartyAlive(EnemyLunenMonsters);
+                EnemyLunenAlive = LoadPartyAlive(EnemyLunenMonsters, Team.EnemyTeam);
                 if (EnemyLunenAlive.Count == 0) sr.battleSetup.PlayerWin();
                 else sr.canvasCollection.EnsureValidTarget();
                 break;

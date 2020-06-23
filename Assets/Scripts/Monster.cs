@@ -57,6 +57,7 @@ public class Monster : MonoBehaviour
 
     public bool CooldownDone;
     private int EndOfTurnDamage;
+    public bool LunenOut;
     [HideInInspector]
     public AIScripts.AILevel level = AIScripts.AILevel.Random;
     [HideInInspector]
@@ -74,7 +75,7 @@ public class Monster : MonoBehaviour
     {
         if (loopback != null)
         {
-            if (loopback.director.DirectorDeltaTime != 0)
+            if (loopback.director.DirectorDeltaTime != 0 && LunenOut)
             {
                 if (CurrCooldown > 0f)
                 {
