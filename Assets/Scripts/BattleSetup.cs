@@ -84,7 +84,16 @@ public class BattleSetup : MonoBehaviour
         {
             if (!sr.canvasCollection.MenuPanelOpen)
             {
-                OpenMainMenu();
+                if (!InBattle) OpenMainMenu();
+                else
+                {
+                    if (sr.canvasCollection.PartyPanelOpen)
+                    {
+                        sr.canvasCollection.PartyPanelOpen = false;
+                        sr.canvasCollection.SetPartyViewState((int)CanvasCollection.PartyAction.Null);
+                        sr.canvasCollection.CloseState(CanvasCollection.UIState.Party);
+                    }
+                }
             }
             else
             {
@@ -95,7 +104,8 @@ public class BattleSetup : MonoBehaviour
                 else if (sr.canvasCollection.PartyPanelOpen)
                 {
                     sr.canvasCollection.PartyPanelOpen = false;
-                    //if (!InBattle) sr.canvasCollection.OpenState(CanvasCollection.UIState.MainMenu);
+                    sr.canvasCollection.SetPartyViewState((int)CanvasCollection.PartyAction.Null);
+                    if (!InBattle) sr.canvasCollection.OpenState(CanvasCollection.UIState.MainMenu);
                     sr.canvasCollection.CloseState(CanvasCollection.UIState.Party);
                     
                 }
@@ -455,6 +465,7 @@ public class BattleSetup : MonoBehaviour
         GameObject lunen1 = PlayerLunenTeam[first];
         PlayerLunenTeam[first] = PlayerLunenTeam[second];
         PlayerLunenTeam[second] = lunen1;
+        if (InBattle) sr.director.LoadTeams();
     }
 
     public void CutsceneStartLite(Cutscene cutscene1, int route, int part)

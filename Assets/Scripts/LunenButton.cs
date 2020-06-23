@@ -16,11 +16,13 @@ public class LunenButton : MonoBehaviour
     public bool isSelected;
     private SpriteColorShift scs;
     private Image thisImage;
+    [HideInInspector] public Button button;
 
     private void Awake()
     {
         scs = GetComponent<SpriteColorShift>();
         thisImage = GetComponent<Image>();
+        button = GetComponent<Button>();
     }
 
     private void Update()

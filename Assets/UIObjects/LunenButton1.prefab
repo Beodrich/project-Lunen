@@ -544,6 +544,7 @@ MonoBehaviour:
   CooldownSlider: {fileID: 743702716114450530}
   DefaultButtonColor: {r: 1, g: 1, b: 1, a: 1}
   isSelected: 0
+  button: {fileID: 0}
 --- !u!114 &6527403505178505503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,9 +600,8 @@ MonoBehaviour:
   percentageDelay: 0
   elements:
   - name: 
-    gameObject: {fileID: 743702716897293590}
     elementType: 0
-    image: {fileID: 0}
+    image: {fileID: 743702716897293585}
     text: {fileID: 0}
     allowColorChange: 1
     openColor: {r: 1, g: 1, b: 1, a: 1}
@@ -612,6 +612,8 @@ MonoBehaviour:
     closedPosition: {x: 0, y: 0}
     allowRotationChange: 0
     allowScaleChange: 0
+    source: {fileID: 0}
+  updateButton: 0
 --- !u!1 &743702716950916983
 GameObject:
   m_ObjectHideFlags: 0

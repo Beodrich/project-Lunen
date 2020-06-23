@@ -46,6 +46,7 @@ public class DrawHealthbar : MonoBehaviour
         hb = GetComponent<Slider>();
         //audio = GameObject.Find("Audio Source").GetComponent<AudioLibrary>();
         midHealth = (100 - lowHealthFlash) / 2;
+        HealthToShow = 0f;
     }
 
     // Update is called once per frame

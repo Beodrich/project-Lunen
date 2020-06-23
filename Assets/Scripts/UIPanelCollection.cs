@@ -9,7 +9,6 @@ public class UIPanelCollection : MonoBehaviour
     public class UIPanel
     {
         public string name;
-        public GameObject gameObject;
         public UIElementCollection elementCollection;
     }
 
@@ -18,17 +17,7 @@ public class UIPanelCollection : MonoBehaviour
     public List<string> CurrentlyOpenPanels;
 
     private void Awake() {
-        
-        GetElementCollections();
         DisableAllPanelsImmediately();
-    }
-
-    public void GetElementCollections()
-    {
-        foreach (UIPanel panel in UIPanels)
-        {
-            panel.elementCollection = panel.gameObject.GetComponent<UIElementCollection>();
-        }
     }
 
     public bool SetPanelState(string panelName, UITransition.State state)

@@ -484,4 +484,11 @@ public class Monster : MonoBehaviour
     {
         return Health.x + Health.y;
     }
+
+    public void ActionSwap(int first, int second)
+    {
+        GameObject lunen1 = ActionSet[first];
+        ActionSet[first] = ActionSet[second];
+        ActionSet[second] = lunen1;
+    }
 }

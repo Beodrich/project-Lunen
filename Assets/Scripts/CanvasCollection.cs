@@ -17,6 +17,7 @@ public class CanvasCollection : MonoBehaviour
         Options,
         Dialogue,
         Party,
+        YesNo,
         Inventory,
         Lunen
     }
@@ -25,9 +26,11 @@ public class CanvasCollection : MonoBehaviour
     public enum PartyAction
     {
         Null,
-        Swap,
+        ViewStats,
+        SwapLunen,
+        SwapMoves,
         UseItem,
-        ViewStats
+        Release
     }
     [EnumNamedArray(typeof(UIState))]
     public List<GameObject> UIObjects;
@@ -44,6 +47,7 @@ public class CanvasCollection : MonoBehaviour
     [HideInInspector] public List<LunenButton> Player2LunenButtonScripts;
     public List<GameObject> PartyLunenButtons;
     [HideInInspector] public List<LunenButton> PartyLunenButtonScripts;
+    public List<LunenActionButton> PartyActionButtonScripts;
     public List<LunenActionPanel> LunenPanels;
 
     public GameObject Player1;
@@ -70,16 +74,29 @@ public class CanvasCollection : MonoBehaviour
     public Text ResolutionText2;
     public Text TestOnText;
 
+    public Text YNDialogueText;
+    public Text YNYesText;
+    public Text YNNoText;
+
     public bool MenuPanelOpen;
     public bool OptionsPanelOpen;
 
     [HideInInspector] public UIElementCollection Lastuiec;
     public bool PartyPanelOpen;
     [HideInInspector] public int PartySwapSelect = -1;
-    public PartyAction partyAction = PartyAction.Swap;
+    [HideInInspector] public int ActionSwapSelect = -1;
+    public PartyAction partyAction = PartyAction.Null;
 
     [HideInInspector] public string currentOptionsPanel = "Game Settings Panel";
     [HideInInspector] public List<Monster> PartyTeam;
+
+    [EnumNamedArray(typeof(PartyAction))]
+    public List<PartySelectScript> PartyModeSelectButtons;
+
+    public delegate void YesNoFunction();
+    public YesNoFunction yesNoFunction;
+
+    public bool actionModify;
 
     void Awake()
     {
@@ -87,7 +104,6 @@ public class CanvasCollection : MonoBehaviour
 
         UICollections = new List<UIPanelCollection>();
         foreach (GameObject go in UIObjects) UICollections.Add(go.GetComponent<UIPanelCollection>());
-        foreach (UIPanelCollection panel in UICollections) panel.GetElementCollections();
 
         SetState(UIState.Overworld);
     }
@@ -97,6 +113,15 @@ public class CanvasCollection : MonoBehaviour
         {
             TestOnText.text = "Screen has been set to the new resolution. Click Apply to confirm these changes. Screen will revert in " + Mathf.Ceil(sr.settingsSystem.TestTimeCurrent) + " second" + (Mathf.Ceil(sr.settingsSystem.TestTimeCurrent) == 1 ? "." : "s.");
         }
+    }
+
+    public void YesNoPrompt(YesNoFunction newFunction, string dialogueText, string yesText, string noText)
+    {
+        yesNoFunction = newFunction;
+        YNDialogueText.text = dialogueText;
+        YNYesText.text = yesText;
+        YNNoText.text = noText;
+        OpenState(UIState.YesNo);
     }
 
     public void SetDialogueBox(string text)
@@ -121,6 +146,68 @@ public class CanvasCollection : MonoBehaviour
     public void RevertState()
     {
         SetState(lastState);
+    }
+
+    public void SetPartyViewState(int index)
+    {
+        int lastParty = (int)partyAction;
+        if (index != lastParty)
+        {
+            partyAction = (PartyAction)index;
+            if ((PartyAction)lastParty != PartyAction.Null) PartyModeSelectButtons[lastParty].SetSelected(false);
+            if ((PartyAction)index != PartyAction.Null) PartyModeSelectButtons[index].SetSelected(true);
+            EnablePartyViewState((PartyAction)index);
+            DisablePartyViewState((PartyAction)lastParty);
+            
+        }
+        else
+        {
+            partyAction = PartyAction.Null;
+            if ((PartyAction)index != PartyAction.Null) PartyModeSelectButtons[index].SetSelected(false);
+            DisablePartyViewState((PartyAction)lastParty);
+            
+            
+        }
+        
+    }
+
+    public void AskToQuit()
+    {
+        YesNoPrompt(QuitGame, "Are you sure you want to quit?", "Yes, Quit", "No, Don't");
+    }
+
+    public void CallYesFunction()
+    {
+        yesNoFunction();
+    }
+
+    public void CallNoFunction()
+    {
+        CloseState(UIState.YesNo);
+    }
+
+    public void EnablePartyViewState(PartyAction action)
+    {
+        switch (action)
+        {
+            default: break;
+            case PartyAction.SwapMoves:
+                
+                UICollections[(int)UIState.Party].SetPanelState("Action Panel", UITransition.State.Enable);
+                if (PartySwapSelect == -1) PartyAccess(0);
+            break;
+        }
+    }
+
+    public void DisablePartyViewState(PartyAction action)
+    {
+        switch (action)
+        {
+            default: break;
+            case PartyAction.SwapMoves:
+                UICollections[(int)UIState.Party].SetPanelState("Action Panel", UITransition.State.Disable);
+            break;
+        }
     }
 
     public void SetState(UIState state, UITransition.State openState = UITransition.State.Enable, UITransition.State closeState = UITransition.State.Disable)
@@ -302,8 +389,11 @@ public class CanvasCollection : MonoBehaviour
     {
         UpdatePartyPanelLunen();
         PartyPanelOpen = true;
-        //CloseState(UIState.MainMenu);
+        CloseState(UIState.MainMenu);
         OpenState(UIState.Party);
+        if (sr.battleSetup.InBattle) SetPartyViewState(2);
+        else SetPartyViewState(1);
+        
     }
 
     public void SwitchMenuPanel(string panel)
@@ -311,7 +401,8 @@ public class CanvasCollection : MonoBehaviour
         UIElementCollection uiec = UIObjects[3].GetComponent<UIPanelCollection>().GetPanelWithString(panel);
         if (uiec == Lastuiec)
         {
-            
+            if (Lastuiec != null) CloseMenuPanel(Lastuiec);
+            Lastuiec = null;
         }
         else
         {
@@ -319,8 +410,9 @@ public class CanvasCollection : MonoBehaviour
             if (PartyPanelOpen) UpdatePartyPanelLunen();
             OpenMenuPanel(uiec);
             if (Lastuiec != null) CloseMenuPanel(Lastuiec);
+            Lastuiec = uiec;
         }
-        Lastuiec = uiec;
+        
     }
 
     public void UpdatePartyPanelLunen()
@@ -340,6 +432,7 @@ public class CanvasCollection : MonoBehaviour
                 PartyLunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + PartyTeam[i].Level;
                 PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
                 PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
+                PartyLunenButtonScripts[i].button.interactable = true;
             }
             else
             {
@@ -347,7 +440,40 @@ public class CanvasCollection : MonoBehaviour
                 PartyLunenButtonScripts[i].LevelText.GetComponent<Text>().text = "";
                 PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = null;
                 PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = null;
+                PartyLunenButtonScripts[i].button.interactable = false;
+                
             }
+        }
+    }
+
+    public void UpdatePartyPanelAction(int index)
+    {
+        Monster BaseMonster = PartyTeam[index];
+        for (int i = 0; i < PartyActionButtonScripts.Count; i++)
+        {
+            
+            if (i < BaseMonster.ActionSet.Count)
+            {
+                PartyActionButtonScripts[i].Name.GetComponent<Text>().text = BaseMonster.ActionSet[i].GetComponent<Action>().Name;
+                PartyActionButtonScripts[i].button.interactable = true;
+                if (partyAction == PartyAction.SwapMoves) PartyActionButtonScripts[i].GetComponent<UITransition>().SetState(UITransition.State.Enable);
+                //PartyActionButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + PartyTeam[i].Level;
+            }
+            //else if (i < BaseMonster.SourceLunen.LearnedActions.Count)
+            else
+            {
+                PartyActionButtonScripts[i].Name.GetComponent<Text>().text = "";
+                PartyActionButtonScripts[i].button.interactable = false;
+                if (partyAction == PartyAction.SwapMoves) PartyActionButtonScripts[i].GetComponent<UITransition>().SetState(UITransition.State.Enable);
+            }
+            /*
+            else
+            {
+                PartyActionButtonScripts[i].Name.GetComponent<Text>().text = "";
+                PartyActionButtonScripts[i].button.interactable = false;
+                PartyActionButtonScripts[i].GetComponent<UITransition>().SetState(UITransition.State.Disable);
+            }
+            */
         }
     }
 
@@ -463,6 +589,11 @@ public class CanvasCollection : MonoBehaviour
         UICollections[(int)CanvasCollection.UIState.Options].SetPanelState(currentOptionsPanel, UITransition.State.Enable);
     }
 
+    public void ToggleActionModify()
+    {
+        actionModify = !actionModify;
+    }
+
     public void PartyAccess(int index)
     {
         if (index < PartyTeam.Count) //Make sure selected lunen is within team.
@@ -470,10 +601,11 @@ public class CanvasCollection : MonoBehaviour
             switch (partyAction)
             {
                 default:
-
+                    PartySwitchMode(index);
+                    UpdatePartyPanelAction(PartySwapSelect);
                 break;
 
-                case PartyAction.Swap:
+                case PartyAction.SwapLunen:
                     if (PartySwapSelect != -1)
                     {
                         //Player intends swap now
@@ -485,13 +617,71 @@ public class CanvasCollection : MonoBehaviour
                     }
                     else
                     {
-                        PartySwapSelect = index;
-                        PartyLunenButtonScripts[PartySwapSelect].isSelected = true;
+                        PartySwitchMode(index);
+                        UpdatePartyPanelAction(PartySwapSelect);
                     }
+                    
+                break;
+
+                case PartyAction.SwapMoves:
+                    PartySwitchMode(index);
+                    UpdatePartyPanelAction(PartySwapSelect);
                 break;
             }
             
         }
+    }
+
+    public void ActionAccess(int index)
+    {
+        if (index < PartyTeam[PartySwapSelect].ActionSet.Count) //Make sure selected lunen is within team.
+        {
+            if (actionModify)
+            {
+                if (ActionSwapSelect != -1)
+                {
+                    PartyActionButtonScripts[ActionSwapSelect].scs.enabled = false;
+                    PartyActionButtonScripts[ActionSwapSelect].RestoreOriginalColor();
+                    PartyTeam[PartySwapSelect].ActionSwap(ActionSwapSelect, index);
+                    UpdatePartyPanelAction(PartySwapSelect);
+                    ActionSwapSelect = -1;
+                }
+                else
+                {
+                    ActionSwitchMode(index);
+                }
+            }
+            else
+            {
+                if (ActionSwapSelect != index)
+                {
+                    ActionSwitchMode(index);
+                }
+                else
+                {
+                    ActionSwitchMode(-1);
+                }
+            }
+            
+        }
+    }
+    
+    public void PartySwitchMode(int index)
+    {
+        if (PartySwapSelect != -1) PartyLunenButtonScripts[PartySwapSelect].isSelected = false;
+        PartySwapSelect = index;
+        PartyLunenButtonScripts[PartySwapSelect].isSelected = true;
+    }
+
+    public void ActionSwitchMode(int index)
+    {
+        if (ActionSwapSelect != -1)
+        {
+            PartyActionButtonScripts[ActionSwapSelect].scs.enabled = false;
+            PartyActionButtonScripts[ActionSwapSelect].RestoreOriginalColor();
+        }
+        ActionSwapSelect = index;
+        if (ActionSwapSelect != -1) PartyActionButtonScripts[ActionSwapSelect].scs.enabled = true;
     }
 
     public void EnsureValidTarget()

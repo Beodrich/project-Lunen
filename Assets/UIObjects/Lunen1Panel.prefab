@@ -149,6 +149,10 @@ MonoBehaviour:
   Power: {fileID: 0}
   Type: {fileID: 6420312130961541354}
   Cooldown: {fileID: 0}
+  button: {fileID: 0}
+  scs: {fileID: 0}
+  image: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &130165920969595631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,9 +173,11 @@ MonoBehaviour:
   transitionType: 3
   transitionTime: 0.1
   transitionScale: 20
+  openDelay: 0
+  closeDelay: 0
+  percentageDelay: 0
   elements:
   - name: Move2
-    gameObject: {fileID: 6420312129286016082}
     elementType: 0
     image: {fileID: 6420312129286016095}
     text: {fileID: 0}
@@ -184,8 +190,8 @@ MonoBehaviour:
     closedPosition: {x: -75.3, y: 5}
     allowRotationChange: 0
     allowScaleChange: 0
+    source: {fileID: 0}
   - name: Title
-    gameObject: {fileID: 6420312131280970470}
     elementType: 1
     image: {fileID: 0}
     text: {fileID: 6420312131280970464}
@@ -198,6 +204,8 @@ MonoBehaviour:
     closedPosition: {x: 0, y: 0}
     allowRotationChange: 0
     allowScaleChange: 0
+    source: {fileID: 0}
+  updateButton: 0
 --- !u!1 &6420312129300033799
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +435,10 @@ MonoBehaviour:
   Power: {fileID: 0}
   Type: {fileID: 6420312129920138426}
   Cooldown: {fileID: 0}
+  button: {fileID: 0}
+  scs: {fileID: 0}
+  image: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &4295335877658370805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,9 +459,11 @@ MonoBehaviour:
   transitionType: 3
   transitionTime: 0.1
   transitionScale: 20
+  openDelay: 0
+  closeDelay: 0
+  percentageDelay: 0
   elements:
   - name: Move1
-    gameObject: {fileID: 6420312129717839907}
     elementType: 0
     image: {fileID: 6420312129717839916}
     text: {fileID: 0}
@@ -462,8 +476,8 @@ MonoBehaviour:
     closedPosition: {x: -75.29999, y: 20}
     allowRotationChange: 0
     allowScaleChange: 0
+    source: {fileID: 0}
   - name: Title
-    gameObject: {fileID: 6420312130927354105}
     elementType: 1
     image: {fileID: 0}
     text: {fileID: 6420312130927354107}
@@ -476,6 +490,8 @@ MonoBehaviour:
     closedPosition: {x: 0, y: 0}
     allowRotationChange: 0
     allowScaleChange: 0
+    source: {fileID: 0}
+  updateButton: 0
 --- !u!1 &6420312129870310973
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +799,10 @@ MonoBehaviour:
   Power: {fileID: 0}
   Type: {fileID: 6420312130549734164}
   Cooldown: {fileID: 0}
+  button: {fileID: 0}
+  scs: {fileID: 0}
+  image: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1237658412001193324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,9 +823,11 @@ MonoBehaviour:
   transitionType: 3
   transitionTime: 0.1
   transitionScale: 20
+  openDelay: 0
+  closeDelay: 0
+  percentageDelay: 0
   elements:
   - name: Move4
-    gameObject: {fileID: 6420312129916297401}
     elementType: 0
     image: {fileID: 6420312129916297402}
     text: {fileID: 0}
@@ -818,8 +840,8 @@ MonoBehaviour:
     closedPosition: {x: -75.3, y: -45}
     allowRotationChange: 0
     allowScaleChange: 0
+    source: {fileID: 0}
   - name: Title
-    gameObject: {fileID: 6420312129300033799}
     elementType: 1
     image: {fileID: 0}
     text: {fileID: 6420312129300033793}
@@ -832,6 +854,8 @@ MonoBehaviour:
     closedPosition: {x: 0, y: 0}
     allowRotationChange: 0
     allowScaleChange: 0
+    source: {fileID: 0}
+  updateButton: 0
 --- !u!1 &6420312129920138426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,11 +1087,13 @@ MonoBehaviour:
   transitionType: 3
   transitionTime: 0.1
   transitionScale: 20
+  openDelay: 0
+  closeDelay: 0
+  percentageDelay: 0
   elements:
   - name: PartyButton
-    gameObject: {fileID: 6420312130336704479}
     elementType: 0
-    image: {fileID: 0}
+    image: {fileID: 6420312130336704472}
     text: {fileID: 0}
     allowColorChange: 1
     openColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1078,11 +1104,11 @@ MonoBehaviour:
     closedPosition: {x: -61, y: 25}
     allowRotationChange: 0
     allowScaleChange: 0
+    source: {fileID: 0}
   - name: Text
-    gameObject: {fileID: 6420312129908661892}
     elementType: 1
     image: {fileID: 0}
-    text: {fileID: 0}
+    text: {fileID: 6420312129908661894}
     allowColorChange: 1
     openColor: {r: 0, g: 0, b: 0, a: 1}
     closedColor: {r: 0, g: 0, b: 0, a: 0}
@@ -1092,6 +1118,8 @@ MonoBehaviour:
     closedPosition: {x: 0, y: 0}
     allowRotationChange: 0
     allowScaleChange: 0
+    source: {fileID: 0}
+  updateButton: 0
 --- !u!1 &6420312130549734164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,6 +1349,10 @@ MonoBehaviour:
   Power: {fileID: 0}
   Type: {fileID: 6420312131261888322}
   Cooldown: {fileID: 0}
+  button: {fileID: 0}
+  scs: {fileID: 0}
+  image: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &8273001668339599689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,9 +1373,11 @@ MonoBehaviour:
   transitionType: 3
   transitionTime: 0.1
   transitionScale: 20
+  openDelay: 0
+  closeDelay: 0
+  percentageDelay: 0
   elements:
   - name: Move3
-    gameObject: {fileID: 6420312130655662303}
     elementType: 0
     image: {fileID: 6420312130655662296}
     text: {fileID: 0}
@@ -1356,8 +1390,8 @@ MonoBehaviour:
     closedPosition: {x: -75.3, y: -20}
     allowRotationChange: 0
     allowScaleChange: 0
+    source: {fileID: 0}
   - name: Title
-    gameObject: {fileID: 6420312129870310973}
     elementType: 1
     image: {fileID: 0}
     text: {fileID: 6420312129870310975}
@@ -1370,6 +1404,8 @@ MonoBehaviour:
     closedPosition: {x: 0, y: 0}
     allowRotationChange: 0
     allowScaleChange: 0
+    source: {fileID: 0}
+  updateButton: 0
 --- !u!1 &6420312130927354105
 GameObject:
   m_ObjectHideFlags: 0

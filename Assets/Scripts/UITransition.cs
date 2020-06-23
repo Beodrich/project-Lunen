@@ -32,7 +32,6 @@ public class UITransition : MonoBehaviour
     public class UIElement
     {
         [HideInInspector] public string name;
-        public GameObject gameObject;
 
         [Space(10)]
         public ElementType elementType;
@@ -65,6 +64,8 @@ public class UITransition : MonoBehaviour
         //Scale Change
         [Space(10)]
         public bool allowScaleChange;
+
+        [HideInInspector] public GameObject source;
     }
     public bool open;
     public float percentageCurrent;
@@ -95,6 +96,7 @@ public class UITransition : MonoBehaviour
     private Color tempCb;
 
     private Button button;
+    public bool updateButton;
 
     #if UNITY_EDITOR // conditional compilation is not mandatory
     [ButtonMethod]
@@ -116,22 +118,14 @@ public class UITransition : MonoBehaviour
     {
         for (int i = 0; i < elements.Count; i++)
         {
-            if (elements[i].gameObject != null)
+            if (elements[i].elementType == ElementType.Image) elements[i].source = elements[i].image.gameObject; 
+            else if (elements[i].elementType == ElementType.Text) elements[i].source = elements[i].text.gameObject;
+            if (elements[i].source != null)
             {
-                elements[i].name = elements[i].gameObject.name;
-                switch(elements[i].elementType)
-                {
-                    default: break;
-                    case ElementType.Image:
-                        elements[i].image = elements[i].gameObject.GetComponent<Image>();
-                    break;
-                    case ElementType.Text:
-                        elements[i].text = elements[i].gameObject.GetComponent<Text>();
-                    break;
-                }
+                elements[i].name = elements[i].source.name;
                 if (elements[i].allowPositionChange)
                 {
-                    elements[i].openPosition = elements[i].gameObject.transform.localPosition;
+                    elements[i].openPosition = elements[i].source.transform.localPosition;
                     elements[i].closedPosition = elements[i].openPosition + elements[i].closeShift;
                 }
             }
@@ -154,7 +148,7 @@ public class UITransition : MonoBehaviour
             case State.Enable:
                 percentageTarget = 100f;
                 percentageDelay = openDelay;
-                if (button != null) button.interactable = true;
+                if (button != null && updateButton) button.interactable = true;
                 foreach (UIElement element in elements)
                 {
                     switch (element.elementType)
@@ -178,7 +172,7 @@ public class UITransition : MonoBehaviour
                 percentageTarget = 100f;
                 percentageCurrent = 99f;
                 percentageDelay = 0f;
-                if (button != null) button.interactable = true;
+                if (button != null && updateButton) button.interactable = true;
                 foreach (UIElement element in elements)
                 {
                     switch (element.elementType)
@@ -234,14 +228,14 @@ public class UITransition : MonoBehaviour
                         tempV3a = elements[i].closedPosition;
                         tempV3b = elements[i].openPosition;
                         tempV3 = Vector3.Lerp(tempV3a, tempV3b, percentageUse/100);
-                        elements[i].gameObject.transform.localPosition = tempV3;
+                        elements[i].source.transform.localPosition = tempV3;
                     }
                 }
                 
                 //This function is called if the percentage just hit zero.
                 if (percentageCurrent == 0)
                 {
-                    if (button != null) button.interactable = false;
+                    if (button != null && updateButton) button.interactable = false;
                     foreach (UIElement element in elements)
                     {
                         switch (element.elementType)
@@ -254,6 +248,24 @@ public class UITransition : MonoBehaviour
                             break;
                         }
                     }
+                }
+
+                if (percentageCurrent == 100)
+                {
+                    if (button != null)
+                    {
+                        if (!button.interactable)
+                        {
+                            button.interactable = true;
+                            button.interactable = false;
+                        }
+                        else
+                        {
+                            button.interactable = false;
+                            button.interactable = true;
+                        }
+                    } 
+                    
                 }
             }
             else
