@@ -2015,6 +2015,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452554243}
     m_Modifications:
+    - target: {fileID: 130165920969595631, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237658412001193324, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295335877658370805, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468149944841607931, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6420312129286016092, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2179,6 +2199,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273001668339599689, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a5dec6ec78364b1bacb444a667cb7ba, type: 3}
@@ -3785,6 +3810,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452554243}
     m_Modifications:
+    - target: {fileID: 130165920969595631, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237658412001193324, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295335877658370805, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468149944841607931, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6420312129286016092, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3949,6 +3994,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273001668339599689, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a5dec6ec78364b1bacb444a667cb7ba, type: 3}
@@ -5855,6 +5905,11 @@ PrefabInstance:
         type: 3}
       propertyPath: elements.Array.data[0].allowColorChange
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
@@ -10602,6 +10657,11 @@ PrefabInstance:
       propertyPath: elements.Array.data[0].allowColorChange
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
 --- !u!224 &1101997896 stripped
@@ -13031,6 +13091,11 @@ PrefabInstance:
       propertyPath: elements.Array.data[0].allowColorChange
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
 --- !u!224 &1267240465 stripped
@@ -14154,6 +14219,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452554243}
     m_Modifications:
+    - target: {fileID: 130165920969595631, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237658412001193324, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4295335877658370805, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468149944841607931, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6420312129286016092, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -14318,6 +14403,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273001668339599689, guid: 8a5dec6ec78364b1bacb444a667cb7ba,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a5dec6ec78364b1bacb444a667cb7ba, type: 3}
@@ -14845,6 +14935,11 @@ PrefabInstance:
         type: 3}
       propertyPath: elements.Array.data[0].allowColorChange
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
@@ -16448,6 +16543,11 @@ PrefabInstance:
         type: 3}
       propertyPath: elements.Array.data[0].allowColorChange
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
@@ -18962,6 +19062,11 @@ PrefabInstance:
       propertyPath: elements.Array.data[0].allowColorChange
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
+        type: 3}
+      propertyPath: updateButton
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70cb7206f57734adebd01904d38517c9, type: 3}
 --- !u!224 &1895939346 stripped
@@ -20650,7 +20755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2032635760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21325,7 +21430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
+  m_sendNavigationEvents: 0
   m_DragThreshold: 10
 --- !u!4 &2077289359
 Transform:
@@ -22151,11 +22256,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   vsync: 1
-  bootBehaviour: 0
+  bootBehaviour: 2
   bootScene: 0
   bootEntrance: 1
   TestLunenParty:
     Value:
+    - species: 24
+      level: 1
+    - species: 24
+      level: 1
+    - species: 24
+      level: 1
+    - species: 24
+      level: 1
     - species: 24
       level: 1
   FirstLunenParty:

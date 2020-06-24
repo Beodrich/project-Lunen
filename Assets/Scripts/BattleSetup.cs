@@ -293,7 +293,7 @@ public class BattleSetup : MonoBehaviour
 
     public bool PlayerCanMove()
     {
-        return (!(InBattle || InCutscene || sr.canvasCollection.MenuPanelOpen));
+        return (!(InBattle || InCutscene || sr.canvasCollection.MenuPanelOpen || cutsceneLoopGoing));
     }
 
     public void DialogueBoxPrepare(Cutscene.Part part, bool next)
@@ -429,6 +429,8 @@ public class BattleSetup : MonoBehaviour
         sr.eventLog.AddEvent("Cutscene Ends");
         InCutscene = false;
         cutsceneLoopGoing = false;
+        cutsceneRoute = 0;
+        cutscenePart = 0;
         yield return 0;
     }
 

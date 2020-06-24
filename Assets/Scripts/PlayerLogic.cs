@@ -35,7 +35,7 @@ public class PlayerLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sr.battleSetup.PlayerCanMove() && !move.isMoving)
+        if (sr.battleSetup.PlayerCanMove() && !move.isMoving )
         {
             if (Input.GetButtonDown("Submit"))
             {
