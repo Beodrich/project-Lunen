@@ -90,6 +90,10 @@ public class Cutscene : MonoBehaviour
 
         //Type: Change Scene
         [ConditionalField(nameof(type), false, PartType.ChangeScene)] public NewSceneType newSceneType;
+        [ConditionalField(nameof(newSceneType), false, NewSceneType.ToEntrance, NewSceneType.ToPosition)] public SceneReference newScene;
+        [ConditionalField(nameof(newSceneType), false, NewSceneType.ToEntrance)] public int newSceneEntranceIndex;
+        [ConditionalField(nameof(newSceneType), false, NewSceneType.ToPosition)] public Vector2 newScenePosition;
+        [ConditionalField(nameof(newSceneType), false, NewSceneType.ToPosition)] public MoveScripts.Direction newSceneDirection;
 
         //Type: New Cutscene
         [ConditionalField(nameof(type), false, PartType.NewCutscene)] public NewCutsceneType newCutsceneType;

@@ -16,6 +16,8 @@ public class SceneAttributes : MonoBehaviour
     public GameObject player;
     public List<Entrance> sceneEntrances;
     public List<Cutscene> sceneCutscenes;
+    public bool spawnPlayer;
+    [HideInInspector] Entrance e;
 
     private void Awake()
     {
@@ -23,9 +25,6 @@ public class SceneAttributes : MonoBehaviour
         sr.sceneAttributes = this;
 
         sr.saveSystemObject.isLoading = false;
-
-        GameObject newPlayer = Instantiate(player);
-        Entrance e;
 
         if (sr.battleSetup.loadEntrance)
         {
@@ -41,6 +40,12 @@ public class SceneAttributes : MonoBehaviour
             e = sceneEntrances[entrance];
         }
 
+        if (spawnPlayer) PreparePlayer();
+    }
+
+    public void PreparePlayer()
+    {
+        GameObject newPlayer = Instantiate(player);
         newPlayer.transform.position = new Vector3(e.spawn.x, e.spawn.y, 0);
         Vector2 input = MoveScripts.GetVector2FromDirection(e.spawnFacing);
         Move playerMove = newPlayer.GetComponent<Move>();

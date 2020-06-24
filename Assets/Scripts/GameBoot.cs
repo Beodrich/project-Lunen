@@ -21,7 +21,7 @@ public class GameBoot : MonoBehaviour
     [Header("On Boot")]
 
     public BootBehaviour bootBehaviour;
-    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance)] public ListOfScenes.LocationEnum bootScene;
+    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance)] public SceneReference bootScene;
     [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance)] public int bootEntrance;
 
     [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance, BootBehaviour.LoadIntoCurrentScene)] 
@@ -29,6 +29,8 @@ public class GameBoot : MonoBehaviour
 
     [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoFirstLaunch)] 
     public LunenParty2 FirstLunenParty;
+    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoFirstLaunch)]
+    public Cutscene FirstLaunchCutscene;
 
     [System.Serializable]
     public class LunenParty1 : CollectionWrapper<GenerateMonster.LunenSetup> {}
@@ -68,13 +70,12 @@ public class GameBoot : MonoBehaviour
             break;
             case BootBehaviour.LoadIntoFirstLaunch:
                 GivePlayerLunen(FirstLunenParty.Value);
-                sr.battleSetup.nextEntrance = 1;
-                sr.listOfScenes.LoadScene(ListOfScenes.LocationEnum.Debug000);
+                sr.battleSetup.StartCutscene(FirstLaunchCutscene);
             break;
             case BootBehaviour.LoadIntoEntrance:
                 GivePlayerLunen(TestLunenParty.Value);
                 sr.battleSetup.nextEntrance = bootEntrance;
-                sr.listOfScenes.LoadScene(bootScene);
+                bootScene.LoadScene();
             break;
             case BootBehaviour.LoadIntoCurrentScene:
                 GivePlayerLunen(TestLunenParty.Value);

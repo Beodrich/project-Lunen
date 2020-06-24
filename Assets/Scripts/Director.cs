@@ -115,12 +115,13 @@ public class Director : MonoBehaviour
         else if (team == Team.EnemyTeam) LunenTeamObjects = sr.battleSetup.EnemyLunenTeam;
         else LunenTeamObjects = sr.battleSetup.EnemyLunenTeam;
 
-        foreach (GameObject go in LunenTeamObjects)
+        for (int i = 0; i < LunenTeamObjects.Count; i++)
         {
+            GameObject go = LunenTeamObjects[i];
             LunenTeamMonsters.Add(go.GetComponent<Monster>());
             go.GetComponent<Monster>().MonsterTeam = team;
+            go.GetComponent<Monster>().LunenOrder = i;
         }
-            
 
         return LunenTeamMonsters;
     }

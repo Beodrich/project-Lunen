@@ -10,7 +10,6 @@ public class SetupRouter : MonoBehaviour
     public BattleSetup battleSetup;
     public Director director;
     public GenerateMonster generateMonster;
-    public ListOfScenes listOfScenes;
     public CameraFollow cameraFollow;
     public CanvasCollection canvasCollection;
     public PlayerLogic playerLogic;

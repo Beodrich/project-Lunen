@@ -32,6 +32,7 @@ public class DrawHealthbar : MonoBehaviour
 
     public bool isShowingHealth;
     public bool isShowingEnergy;
+    public bool isShowingExperience;
 
     private float midHealth;
 
@@ -65,6 +66,14 @@ public class DrawHealthbar : MonoBehaviour
                 else if (isShowingEnergy)
                 {
                     PlayerHealth = (((float)targetMonster.CurrCooldown - (float)targetMonster.GetMaxCooldown()) / (float)targetMonster.GetMaxCooldown()) * -100f;
+                    LastPlayerHealth += (PlayerHealth - LastPlayerHealth) * ChangeSpeed * Time.unscaledDeltaTime;
+                    HealthToShow = LastPlayerHealth;
+                }
+                else if (isShowingExperience)
+                {
+                    float AlteredCurrent = (float)targetMonster.Exp.x-(float)targetMonster.Exp.y;
+                    float AlteredNext = (float)targetMonster.Exp.z-(float)targetMonster.Exp.y;
+                    PlayerHealth = (AlteredCurrent / AlteredNext) * 100f;
                     LastPlayerHealth += (PlayerHealth - LastPlayerHealth) * ChangeSpeed * Time.unscaledDeltaTime;
                     HealthToShow = LastPlayerHealth;
                 }
@@ -103,7 +112,7 @@ public class DrawHealthbar : MonoBehaviour
                     fill.color = Color.Lerp(minHealthColor, Color.white, flashTimer / flashAdjustment);
                 }
             }
-            if (isShowingEnergy)
+            if (isShowingEnergy || isShowingExperience)
             {
 
                 hb.value = HealthToShow;

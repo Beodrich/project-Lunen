@@ -58,6 +58,7 @@ public class Monster : MonoBehaviour
     public bool CooldownDone;
     private int EndOfTurnDamage;
     public bool LunenOut;
+    public int LunenOrder;
     [HideInInspector]
     public AIScripts.AILevel level = AIScripts.AILevel.Random;
     [HideInInspector]
@@ -75,7 +76,7 @@ public class Monster : MonoBehaviour
     {
         if (loopback != null)
         {
-            if (loopback.director.DirectorDeltaTime != 0 && LunenOut)
+            if (loopback.director.DirectorDeltaTime != 0 && LunenOut && LunenOrder < loopback.director.MaxLunenOut)
             {
                 if (CurrCooldown > 0f)
                 {
@@ -201,6 +202,7 @@ public class Monster : MonoBehaviour
 
     public void Evolve()
     {
+        SourceLunenIndex = (int)SourceLunen.EvolutionLunen;
         SourceLunen = loopback.lunaDex.GetLunen(SourceLunen.EvolutionLunen);
         loopback.eventLog.AddEvent(Nickname + " evolves into " + SourceLunen.Name);
         TemplateToMonster(SourceLunen);

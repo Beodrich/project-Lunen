@@ -72,11 +72,11 @@ public class SaveSystemObject : MonoBehaviour
 
             //Get respawn variables
             sr.battleSetup.respawnLocation = new Vector2(gameData.respawnX, gameData.respawnY);
-            sr.battleSetup.respawnScene = (ListOfScenes.LocationEnum)gameData.respawnScene;
+            sr.battleSetup.respawnScene = gameData.respawnScene;
             sr.battleSetup.respawnDirection = (MoveScripts.Direction)gameData.respawnDirection;
 
             //Preparing player position, area, and facing direction
-            sr.battleSetup.NewOverworldAt((ListOfScenes.LocationEnum)gameData.currentScene, new Vector2(gameData.positionX, gameData.positionY), (MoveScripts.Direction)gameData.facingDirection);
+            sr.battleSetup.NewOverworldAt(gameData.currentScene, new Vector2(gameData.positionX, gameData.positionY), (MoveScripts.Direction)gameData.facingDirection);
             
             return true;
         }

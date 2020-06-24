@@ -9,6 +9,7 @@ public class LunenButton : MonoBehaviour
     public GameObject LevelText;
     public GameObject HealthSlider;
     public GameObject CooldownSlider;
+    public GameObject ExperienceSlider;
 
     public Color DefaultButtonColor;
 

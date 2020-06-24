@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1279976587180690137
+--- !u!1 &9038499459301426964
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8293104067244523803}
-  - component: {fileID: 6315108095897645941}
+  - component: {fileID: 9038499459301426961}
+  - component: {fileID: 9027882236807006168}
   m_Layer: 0
-  m_Name: Cutscene_BlackOut
+  m_Name: Cutscene_Opening
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8293104067244523803
+--- !u!4 &9038499459301426961
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279976587180690137}
+  m_GameObject: {fileID: 9038499459301426964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,115 +31,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6315108095897645941
+--- !u!114 &9027882236807006168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279976587180690137}
+  m_GameObject: {fileID: 9038499459301426964}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutsceneName: BlackOut
+  cutsceneName: GameIntro
   routes:
   - parts:
       array:
-      - name: FaintDialogue
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: You have run out of usable lunen!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newSceneName: 
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: FaintDialogue2
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: If the program works right, you will respawn at a lunen center! Adios
-          gracias!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newSceneName: 
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: WarpPlayer
-        type: 9
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: If the program works right, you will respawn at a lunen center! Adios
-          gracias!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 3
-        newSceneName: 
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: WaitToLoad
+      - name: GiveGameASec
         type: 6
         startNextSimultaneous: 0
         moveScript: {fileID: 0}
@@ -149,8 +57,7 @@ MonoBehaviour:
         colliderTag: 
         spacesToMove: 0
         trainerLogic: {fileID: 0}
-        text: If the program works right, you will respawn at a lunen center! Adios
-          gracias!
+        text: This is a test!
         useChoice1: 0
         choice1Text: 
         choice1Route: 0
@@ -160,18 +67,22 @@ MonoBehaviour:
         useChoice3: 0
         choice3Text: 
         choice3Route: 0
-        waitTime: 0
-        newSceneType: 3
-        newSceneName: 
-        newSceneEntranceIndex: 0
+        waitTime: 1
+        newSceneType: 0
+        newScene:
+          Scene: {fileID: 102900000, guid: 2b691c676b0ff499c9513449852f4d03, type: 3}
+          SceneName: AlecOverworldScene
+          sceneIndex: 4
+          sceneEnabled: 1
+        newSceneEntranceIndex: 1
         newScenePosition: {x: 0, y: 0}
         newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
-        cutsceneRoute: 1
+        cutsceneRoute: 0
         trainerEncounter: {fileID: 0}
-      - name: StartCutsceneAtCenter
-        type: 11
+      - name: This is a test!
+        type: 1
         startNextSimultaneous: 0
         moveScript: {fileID: 0}
         chooseMoveDirection: 0
@@ -180,8 +91,7 @@ MonoBehaviour:
         colliderTag: 
         spacesToMove: 0
         trainerLogic: {fileID: 0}
-        text: If the program works right, you will respawn at a lunen center! Adios
-          gracias!
+        text: This is a test!
         useChoice1: 0
         choice1Text: 
         choice1Route: 0
@@ -192,12 +102,50 @@ MonoBehaviour:
         choice3Text: 
         choice3Route: 0
         waitTime: 0
-        newSceneType: 3
-        newSceneName: 
+        newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
         newSceneEntranceIndex: 0
         newScenePosition: {x: 0, y: 0}
         newSceneDirection: 0
-        newCutsceneType: 2
-        cutsceneIndex: 1
-        cutsceneRoute: 3
+        newCutsceneType: 0
+        cutsceneIndex: 0
+        cutsceneRoute: 0
+        trainerEncounter: {fileID: 0}
+      - name: Change Scene
+        type: 9
+        startNextSimultaneous: 0
+        moveScript: {fileID: 0}
+        chooseMoveDirection: 0
+        movementDirection: 0
+        moveType: 0
+        colliderTag: 
+        spacesToMove: 0
+        trainerLogic: {fileID: 0}
+        text: This is a test!
+        useChoice1: 0
+        choice1Text: 
+        choice1Route: 0
+        useChoice2: 0
+        choice2Text: 
+        choice2Route: 0
+        useChoice3: 0
+        choice3Text: 
+        choice3Route: 0
+        waitTime: 0
+        newSceneType: 1
+        newScene:
+          Scene: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d, type: 3}
+          SceneName: LunenIslandPort
+          sceneIndex: 5
+          sceneEnabled: 1
+        newSceneEntranceIndex: 1
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
+        newCutsceneType: 0
+        cutsceneIndex: 0
+        cutsceneRoute: 0
         trainerEncounter: {fileID: 0}

@@ -55,12 +55,12 @@ public class GameData
     public List<System.Guid> TrainersDefeated;
     public float positionX;
     public float positionY;
-    public int currentScene;
+    public SceneReference currentScene;
     public int facingDirection;
 
     public float respawnX;
     public float respawnY;
-    public int respawnScene;
+    public SceneReference respawnScene;
     public int respawnDirection;
     
 
@@ -89,12 +89,12 @@ public class GameData
         TrainersDefeated = bs.TrainersDefeated;
         positionX = bs.sr.playerLogic.transform.position.x;
         positionY = bs.sr.playerLogic.transform.position.y;
-        currentScene = (int)bs.lastOverworld;
+        currentScene = bs.lastOverworld;
         facingDirection = (int)bs.sr.playerLogic.move.lookDirection;
 
         respawnX = bs.respawnLocation.x;
         respawnY = bs.respawnLocation.y;
-        respawnScene = (int)bs.respawnScene;
+        respawnScene = bs.respawnScene;
         respawnDirection = (int)bs.respawnDirection;
     }
 }

@@ -351,12 +351,14 @@ public class CanvasCollection : MonoBehaviour
     {
         Player1LunenButtonScripts[index].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = sr.director.GetMonsterOut(Director.Team.PlayerTeam, index);
         Player1LunenButtonScripts[index].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = sr.director.GetMonsterOut(Director.Team.PlayerTeam, index);
+        Player1LunenButtonScripts[index].ExperienceSlider.GetComponent<DrawHealthbar>().targetMonster = sr.director.GetMonsterOut(Director.Team.PlayerTeam, index);
     }
 
     public void AssignPlayer2Bars(int index)
     {
         Player2LunenButtonScripts[index].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = sr.director.GetMonsterOut(Director.Team.EnemyTeam, index);
         Player2LunenButtonScripts[index].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = sr.director.GetMonsterOut(Director.Team.EnemyTeam, index);
+        Player2LunenButtonScripts[index].ExperienceSlider.GetComponent<DrawHealthbar>().targetMonster = sr.director.GetMonsterOut(Director.Team.EnemyTeam, index);
     }
 
     public void OpenMenuPanel(string panel)
@@ -432,6 +434,7 @@ public class CanvasCollection : MonoBehaviour
                 PartyLunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + PartyTeam[i].Level;
                 PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
                 PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
+                PartyLunenButtonScripts[i].ExperienceSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
                 PartyLunenButtonScripts[i].button.interactable = true;
             }
             else
@@ -440,6 +443,7 @@ public class CanvasCollection : MonoBehaviour
                 PartyLunenButtonScripts[i].LevelText.GetComponent<Text>().text = "";
                 PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = null;
                 PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = null;
+                PartyLunenButtonScripts[i].ExperienceSlider.GetComponent<DrawHealthbar>().targetMonster = null;
                 PartyLunenButtonScripts[i].button.interactable = false;
                 
             }

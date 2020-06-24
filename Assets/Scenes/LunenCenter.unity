@@ -2059,6 +2059,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: entranceIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation
+      value: Alec Overworld Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.Scene
+      value: 
+      objectReference: {fileID: 102900000, guid: 2b691c676b0ff499c9513449852f4d03,
+        type: 3}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.SceneName
+      value: AlecOverworldScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.sceneIndex
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.sceneEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696780, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_Name
@@ -2228,6 +2259,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2254,6 +2293,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2282,6 +2329,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2308,6 +2363,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2334,6 +2397,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2360,6 +2431,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 5
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2386,6 +2465,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 3
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2412,6 +2499,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 5
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2438,6 +2533,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 5
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2464,6 +2567,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 5
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2492,6 +2603,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2520,6 +2639,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2546,6 +2673,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2572,6 +2707,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 5
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2598,6 +2741,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 3
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2624,6 +2775,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 5
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2650,6 +2809,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 5
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2676,6 +2843,14 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 5
         newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
         newCutsceneType: 0
         cutsceneIndex: 0
         cutsceneRoute: 0
@@ -2928,7 +3103,7 @@ PrefabInstance:
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: sceneCutscenes.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
@@ -2953,6 +3128,17 @@ PrefabInstance:
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: sceneCutscenes.Array.data[0]
+      value: 
+      objectReference: {fileID: 5268435886454511715, guid: 5f22859d418f64625ac3f62af20cff27,
+        type: 3}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: spawnPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: sceneCutscenes.Array.data[1]
       value: 
       objectReference: {fileID: 4012099485063855396}
     m_RemovedComponents: []

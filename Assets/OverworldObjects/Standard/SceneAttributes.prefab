@@ -50,3 +50,6 @@ MonoBehaviour:
     spawn: {x: 0, y: 0}
     spawnFacing: 2
     moveAtStart: 0
+  sceneCutscenes:
+  - {fileID: 5268435886454511715, guid: 5f22859d418f64625ac3f62af20cff27, type: 3}
+  spawnPlayer: 0

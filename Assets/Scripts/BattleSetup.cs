@@ -23,7 +23,7 @@ public class BattleSetup : MonoBehaviour
     [Space(10)]
     public bool InBattle;
     public BattleType typeOfBattle;
-    public ListOfScenes.LocationEnum lastOverworld;
+    public SceneReference lastOverworld;
     public Vector3 lastSceneLocation;
     public TrainerLogic lastTrainerEncounter;
     public bool lastBattleVictory;
@@ -46,7 +46,7 @@ public class BattleSetup : MonoBehaviour
     public Vector2 loadPosition;
     public MoveScripts.Direction loadDirection;
     [Space(10)]
-    public ListOfScenes.LocationEnum respawnScene;
+    public SceneReference respawnScene;
     public Vector3 respawnLocation;
     public MoveScripts.Direction respawnDirection;
     [Space(10)]
@@ -82,36 +82,42 @@ public class BattleSetup : MonoBehaviour
         }
         if (Input.GetButtonDown("Cancel"))
         {
-            if (!sr.canvasCollection.MenuPanelOpen)
+            if (sr.playerLogic != null)
             {
-                if (!InBattle) OpenMainMenu();
-                else
+                if (!sr.playerLogic.move.isMoving)
                 {
-                    if (sr.canvasCollection.PartyPanelOpen)
+                    if (!sr.canvasCollection.MenuPanelOpen)
                     {
-                        sr.canvasCollection.PartyPanelOpen = false;
-                        sr.canvasCollection.SetPartyViewState((int)CanvasCollection.PartyAction.Null);
-                        sr.canvasCollection.CloseState(CanvasCollection.UIState.Party);
+                        if (!InBattle) OpenMainMenu();
+                        else
+                        {
+                            if (sr.canvasCollection.PartyPanelOpen)
+                            {
+                                sr.canvasCollection.PartyPanelOpen = false;
+                                sr.canvasCollection.SetPartyViewState((int)CanvasCollection.PartyAction.Null);
+                                sr.canvasCollection.CloseState(CanvasCollection.UIState.Party);
+                            }
+                        }
                     }
-                }
-            }
-            else
-            {
-                if (sr.canvasCollection.OptionsPanelOpen)
-                {
-                    sr.settingsSystem.ExitSettings();
-                }
-                else if (sr.canvasCollection.PartyPanelOpen)
-                {
-                    sr.canvasCollection.PartyPanelOpen = false;
-                    sr.canvasCollection.SetPartyViewState((int)CanvasCollection.PartyAction.Null);
-                    if (!InBattle) sr.canvasCollection.OpenState(CanvasCollection.UIState.MainMenu);
-                    sr.canvasCollection.CloseState(CanvasCollection.UIState.Party);
-                    
-                }
-                else
-                {
-                    CloseMainMenu();
+                    else
+                    {
+                        if (sr.canvasCollection.OptionsPanelOpen)
+                        {
+                            sr.settingsSystem.ExitSettings();
+                        }
+                        else if (sr.canvasCollection.PartyPanelOpen)
+                        {
+                            sr.canvasCollection.PartyPanelOpen = false;
+                            sr.canvasCollection.SetPartyViewState((int)CanvasCollection.PartyAction.Null);
+                            if (!InBattle) sr.canvasCollection.OpenState(CanvasCollection.UIState.MainMenu);
+                            sr.canvasCollection.CloseState(CanvasCollection.UIState.Party);
+                            
+                        }
+                        else
+                        {
+                            CloseMainMenu();
+                        }
+                    }
                 }
             }
         }
@@ -252,15 +258,22 @@ public class BattleSetup : MonoBehaviour
     {
         nextEntrance = door.entranceIndex;
         lastOverworld = door.TargetLocation;
-        sr.listOfScenes.LoadScene(door.TargetLocation);
+        door.TargetLocation.LoadScene();
     }
 
-    public void NewOverworldAt(ListOfScenes.LocationEnum location, Vector3 position, MoveScripts.Direction direction)
+    public void NewOverworldAt(SceneReference location, Vector3 position, MoveScripts.Direction direction)
     {
         loadEntrance = true;
         loadPosition = position;
         loadDirection = direction;
-        sr.listOfScenes.LoadScene(location);
+        location.LoadScene();
+    }
+
+    public void NewOverworldAt(SceneReference location, int entranceIndex)
+    {
+        nextEntrance = entranceIndex;
+        lastOverworld = location;
+        location.LoadScene();
     }
 
     public void StartCutscene(Cutscene cutscene, int route = 0)
@@ -405,6 +418,12 @@ public class BattleSetup : MonoBehaviour
                                 case Cutscene.NewSceneType.Respawn:
                                     NewOverworldAt(respawnScene, respawnLocation, respawnDirection);
                                 break;
+                                case Cutscene.NewSceneType.ToEntrance:
+                                    NewOverworldAt(part.newScene, part.newSceneEntranceIndex);
+                                break;
+                                case Cutscene.NewSceneType.ToPosition:
+                                    NewOverworldAt(part.newScene, part.newScenePosition, part.newSceneDirection);
+                                break;
                             }
                             cutsceneAdvance = true;
                         break;
@@ -467,6 +486,8 @@ public class BattleSetup : MonoBehaviour
         GameObject lunen1 = PlayerLunenTeam[first];
         PlayerLunenTeam[first] = PlayerLunenTeam[second];
         PlayerLunenTeam[second] = lunen1;
+        PlayerLunenTeam[first].GetComponent<Monster>().ResetCooldown();
+        PlayerLunenTeam[second].GetComponent<Monster>().ResetCooldown();
         if (InBattle) sr.director.LoadTeams();
     }
 
