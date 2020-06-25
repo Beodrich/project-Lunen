@@ -13355,6 +13355,12 @@ PrefabInstance:
       propertyPath: possibleEncounters.Array.data[0].chanceWeight
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 2081404003297415584, guid: e2df6ef20b8994e1899b68c97e2b82d4,
+        type: 3}
+      propertyPath: possibleEncounters.Array.data[0].lunen
+      value: 
+      objectReference: {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748,
+        type: 2}
     - target: {fileID: 2081404003297415586, guid: e2df6ef20b8994e1899b68c97e2b82d4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13719,7 +13725,7 @@ PrefabInstance:
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: TeamComp.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -13774,12 +13780,13 @@ PrefabInstance:
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: TeamComp.Array.data[0].species
-      value: 21
-      objectReference: {fileID: 0}
+      value: 
+      objectReference: {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748,
+        type: 2}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: TeamComp.Array.data[0].level
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}

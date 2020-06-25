@@ -32,6 +32,17 @@ public class CanvasCollection : MonoBehaviour
         UseItem,
         Release
     }
+
+    [System.Serializable]
+    public enum InventoryAction
+    {
+        Null,
+        LunenCapture,
+        HealingItems,
+        BuffItems,
+        KeyItems,
+    }
+
     [EnumNamedArray(typeof(UIState))]
     public List<GameObject> UIObjects;
     [HideInInspector] public List<UIPanelCollection> UICollections;
@@ -80,11 +91,15 @@ public class CanvasCollection : MonoBehaviour
 
     public bool MenuPanelOpen;
     public bool OptionsPanelOpen;
+    public bool PartyPanelOpen;
+    public bool InventoryPanelOpen;
 
     [HideInInspector] public UIElementCollection Lastuiec;
-    public bool PartyPanelOpen;
+    
     [HideInInspector] public int PartySwapSelect = -1;
     [HideInInspector] public int ActionSwapSelect = -1;
+    [HideInInspector] public int ItemIndexSelect = -1;
+    [HideInInspector] public int InventoryModeSelect = 0;
     public PartyAction partyAction = PartyAction.Null;
 
     [HideInInspector] public string currentOptionsPanel = "Game Settings Panel";
@@ -92,6 +107,10 @@ public class CanvasCollection : MonoBehaviour
 
     [EnumNamedArray(typeof(PartyAction))]
     public List<PartySelectScript> PartyModeSelectButtons;
+    public List<PartySelectScript> InventoryModeSelectButtons;
+    public List<ItemButtonScript> ItemButtonScripts;
+
+    public UIState openedFirst;
 
     public delegate void YesNoFunction();
     public YesNoFunction yesNoFunction;
@@ -186,6 +205,11 @@ public class CanvasCollection : MonoBehaviour
         CloseState(UIState.YesNo);
     }
 
+    public void HandleBackOrder()
+    {
+
+    }
+
     public void EnablePartyViewState(PartyAction action)
     {
         switch (action)
@@ -194,6 +218,10 @@ public class CanvasCollection : MonoBehaviour
             case PartyAction.SwapMoves:
                 
                 UICollections[(int)UIState.Party].SetPanelState("Action Panel", UITransition.State.Enable);
+                if (PartySwapSelect == -1) PartyAccess(0);
+            break;
+            case PartyAction.UseItem:
+                OpenInventoryWindow();
                 if (PartySwapSelect == -1) PartyAccess(0);
             break;
         }
@@ -206,6 +234,9 @@ public class CanvasCollection : MonoBehaviour
             default: break;
             case PartyAction.SwapMoves:
                 UICollections[(int)UIState.Party].SetPanelState("Action Panel", UITransition.State.Disable);
+            break;
+            case PartyAction.UseItem:
+                CloseInventoryWindow(sr.battleSetup.InBattle);
             break;
         }
     }
@@ -299,8 +330,8 @@ public class CanvasCollection : MonoBehaviour
                     else
                     {
                         LunenPanels[i].ActionButtons[j].SetActive(true);
-                        LunenPanels[i].ActionButtonScripts[j].Name.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].ActionSet[j].GetComponent<Action>().Name;
-                        LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = Types.GetTypeString(sr.director.PlayerLunenAlive[i].ActionSet[j].GetComponent<Action>().Type);
+                        LunenPanels[i].ActionButtonScripts[j].Name.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].ActionSet[j].Name;
+                        LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = Types.GetTypeString(sr.director.PlayerLunenAlive[i].ActionSet[j].Type);
                         
                     }
                 }
@@ -384,6 +415,7 @@ public class CanvasCollection : MonoBehaviour
     public void OpenOptionsWindow()
     {
         OptionsPanelOpen = true;
+        CloseState(UIState.MainMenu);
         OpenState(UIState.Options);
     }
 
@@ -395,7 +427,57 @@ public class CanvasCollection : MonoBehaviour
         OpenState(UIState.Party);
         if (sr.battleSetup.InBattle) SetPartyViewState(2);
         else SetPartyViewState(1);
+    }
+
+    public void ClosePartyWindow(bool battle)
+    {
+        PartyPanelOpen = false;
+        SetPartyViewState((int)PartyAction.Null);
+        if (!battle) OpenState(UIState.MainMenu);
+        CloseState(UIState.Party);
+    }
+
+    public void OpenInventoryWindow()
+    {
+        InventoryModeSelect = 0;
+        InventoryPanelOpen = true;
+        CloseState(UIState.MainMenu);
+        OpenState(UIState.Inventory);
+        SetInventoryWindow(0);
         
+    }
+
+    public void CloseInventoryWindow(bool battle)
+    {
+        InventoryPanelOpen = false;
+        //SetPartyViewState((int)PartyAction.Null);
+        if (!battle && !PartyPanelOpen) OpenState(UIState.MainMenu);
+        CloseState(UIState.Inventory);
+        InventoryModeSelectButtons[InventoryModeSelect].SetSelected(false);
+    }
+
+    public void SetInventoryWindow(int index)
+    {
+        InventoryModeSelectButtons[InventoryModeSelect].SetSelected(false);
+        InventoryModeSelect = index;
+        InventoryModeSelectButtons[InventoryModeSelect].SetSelected(true);
+        sr.inventory.NewInventoryType((ScriptableItem.ItemType) index);
+        RefreshInventoryButtons();
+    }
+
+    public void RefreshInventoryButtons()
+    {
+        for (int i = 0; i < ItemButtonScripts.Count; i++)
+        {
+            if (sr.inventory.requestedItems.Count > i)
+            {
+                ItemButtonScripts[i].SetInventoryEntry(sr.inventory.requestedItems[i]);
+            }
+            else
+            {
+                ItemButtonScripts[i].SetInventoryEntry(null);
+            }
+        }
     }
 
     public void SwitchMenuPanel(string panel)
@@ -458,7 +540,7 @@ public class CanvasCollection : MonoBehaviour
             
             if (i < BaseMonster.ActionSet.Count)
             {
-                PartyActionButtonScripts[i].Name.GetComponent<Text>().text = BaseMonster.ActionSet[i].GetComponent<Action>().Name;
+                PartyActionButtonScripts[i].Name.GetComponent<Text>().text = BaseMonster.ActionSet[i].Name;
                 PartyActionButtonScripts[i].button.interactable = true;
                 if (partyAction == PartyAction.SwapMoves) PartyActionButtonScripts[i].GetComponent<UITransition>().SetState(UITransition.State.Enable);
                 //PartyActionButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + PartyTeam[i].Level;

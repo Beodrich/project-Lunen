@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
 
-public class Effects : MonoBehaviour
+[CreateAssetMenu(fileName = "New Effect", menuName = "GameElements/Effect")]
+public class Effects : ScriptableObject
 {
+    
     
     [System.Serializable]
     public class StatChange
@@ -68,5 +70,13 @@ public class Effects : MonoBehaviour
     [ConditionalField(nameof(ShowMiscChanges))] public bool UsesRandomMoves;
     [ConditionalField(nameof(ShowMiscChanges))] public bool IsAStatusEffect;
     [ConditionalField(nameof(ShowMiscChanges))] public bool InflictsAnotherEffect;
-    [ConditionalField(nameof(InflictsAnotherEffect))] public GameObject NextEffect;
+    [ConditionalField(nameof(InflictsAnotherEffect))] public Effects NextEffect;
+}
+
+[System.Serializable]
+public class MonsterEffect
+{
+    public Effects Effect;
+    public bool Expires;
+    public int ExpiresIn;
 }

@@ -10,7 +10,7 @@ public class GenerateMonster : MonoBehaviour
     [System.Serializable]
     public class LunenSetup
     {
-        public LunaDex.LunenEnum species;
+        public Lunen species;
         public int level;
     }
 
@@ -28,7 +28,7 @@ public class GenerateMonster : MonoBehaviour
         None
     }
 
-    public LunaDex.LunenEnum LunenBase;
+    public Lunen LunenBase;
     [Range(1, 30)]
     public int LunenLevel = 1;
     public TargetPlayer targetPlayer;
@@ -55,15 +55,15 @@ public class GenerateMonster : MonoBehaviour
         return true;
     }
 
-    public GameObject GenerateLunen(LunaDex.LunenEnum species, int level, SortMovesType moveSort = SortMovesType.HighestFirst)
+    public GameObject GenerateLunen(Lunen species, int level, SortMovesType moveSort = SortMovesType.HighestFirst)
     {
         sr = GetComponent<SetupRouter>();
-        New1 = Instantiate(sr.lunaDex.MonsterTemplate);
+        New1 = Instantiate(sr.database.MonsterTemplate);
         NewMonster1 = New1.GetComponent<Monster>();
         NewMonster1.loopback = sr;
         NewMonster1.Level = level;
-        NewMonster1.SourceLunenIndex = (int)species;
-        NewMonster1.TemplateToMonster(sr.lunaDex.GetLunen(species));
+        NewMonster1.SourceLunen = species;
+        NewMonster1.TemplateToMonster(species);
         switch  (moveSort)
         {
             default: break;

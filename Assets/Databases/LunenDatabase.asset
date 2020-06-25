@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e4866acac64430ba7dbbcca8df61c0, type: 3}
+  m_Name: LunenDatabase
+  m_EditorClassIdentifier: 
+  LevelCap: 0
+  AllItems:
+  - {fileID: 11400000, guid: 54dbbd98dc03b4763a5482e1dbd1c9a3, type: 2}
+  AllLunen:
+  - {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748, type: 2}
+  AllActions:
+  - {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
+  GlobalCutsceneList:
+  - {fileID: 5268435886454511715, guid: 5f22859d418f64625ac3f62af20cff27, type: 3}
+  - {fileID: 6315108095897645941, guid: a3c1d9803a93c4c03b76c0a80df0f07b, type: 3}
+  - {fileID: 9027882236807006168, guid: 201c7acaa95f74c629dbee02cf87fb9e, type: 3}
+  MonsterTemplate: {fileID: 2324287439143063678, guid: ce7650befca7144ae9e5cc4263c99950,
+    type: 3}

@@ -6,7 +6,6 @@ using System.Linq;
 
 public class Monster : MonoBehaviour
 {
-    
     [Header("Individual Stuff")]
 
     public string Nickname;
@@ -15,9 +14,8 @@ public class Monster : MonoBehaviour
     [VectorLabels("Curr", " Last", " Next")]
     public Vector3Int Exp;
 
-    public List<GameObject> ActionSet;
-    public List<GameObject> StatusEffectObjects;
-    private List<Effects> StatusEffects = new List<Effects>();
+    public List<Action> ActionSet;
+    public List<MonsterEffect> StatusEffects = new List<MonsterEffect>();
 
     [Header("Stats")]
 
@@ -41,8 +39,6 @@ public class Monster : MonoBehaviour
 
     [HideInInspector]
     public Lunen SourceLunen;
-    [HideInInspector]
-    public int SourceLunenIndex;
     [HideInInspector]
     public SetupRouter loopback;
     [HideInInspector]
@@ -103,7 +99,7 @@ public class Monster : MonoBehaviour
                     }
                     else CurrCooldown = 0f;
                 }
-                if (Level < loopback.lunaDex.LevelCap)
+                if (Level < loopback.database.LevelCap)
                 {
                     ExpAddCurrent -= loopback.director.DirectorDeltaTime;
                 if (ExpAddCurrent < 0)
@@ -172,7 +168,7 @@ public class Monster : MonoBehaviour
     public void PerformAction(int index)
     {
         loopback.canvasCollection.EnsureValidTarget();
-        Action action = ActionSet[index].GetComponent<Action>();
+        Action action = ActionSet[index];
         action.MonsterUser = this;
         action.Execute();
     }
@@ -202,8 +198,7 @@ public class Monster : MonoBehaviour
 
     public void Evolve()
     {
-        SourceLunenIndex = (int)SourceLunen.EvolutionLunen;
-        SourceLunen = loopback.lunaDex.GetLunen(SourceLunen.EvolutionLunen);
+        SourceLunen = SourceLunen.EvolutionLunen;
         loopback.eventLog.AddEvent(Nickname + " evolves into " + SourceLunen.Name);
         TemplateToMonster(SourceLunen);
     }
@@ -212,13 +207,9 @@ public class Monster : MonoBehaviour
     {
         foreach (Lunen.LearnedAction action in SourceLunen.LearnedActions)
         {
-            if (Level == action.Level)
+            if (Level == action.level)
             {
-                GameObject newAction = Instantiate(loopback.lunaDex.GetActionObject(action.Action));
-                newAction.GetComponent<Action>().SourceActionIndex = (int)action.Action;
-                newAction.GetComponent<Action>().SourceLunenLearnedLevel = action.Level;
-                newAction.transform.parent = this.transform;
-                ActionSet.Add(newAction);
+                ActionSet.Add(action.action);
             }
         }
     }
@@ -227,23 +218,21 @@ public class Monster : MonoBehaviour
     {
         foreach (Lunen.LearnedAction action in SourceLunen.LearnedActions)
         {
-            if (Level >= action.Level)
+            if (Level >= action.level)
             {
-                GameObject newAction = Instantiate(loopback.lunaDex.GetActionObject(action.Action));
-                newAction.GetComponent<Action>().SourceActionIndex = (int)action.Action;
-                newAction.GetComponent<Action>().SourceLunenLearnedLevel = action.Level;
-                newAction.transform.parent = this.transform;
-                ActionSet.Add(newAction);
+                ActionSet.Add(action.action);
             }
         }
     }
 
     public void SortMoves(bool highLevelFirst)
     {
+        /*
         if (highLevelFirst)
-            ActionSet = ActionSet.OrderByDescending(x=>x.GetComponent<Action>().SourceLunenLearnedLevel).ToList();
+            //ActionSet = ActionSet.OrderByDescending(x=>x.GetComponent<Action>().SourceLunenLearnedLevel).ToList();
         else
-            ActionSet = ActionSet.OrderBy(x=>x.GetComponent<Action>().SourceLunenLearnedLevel).ToList();
+            //ActionSet = ActionSet.OrderBy(x=>x.GetComponent<Action>().SourceLunenLearnedLevel).ToList();
+            */
     }
 
     public void TemplateToMonster(Lunen template)
@@ -290,7 +279,7 @@ public class Monster : MonoBehaviour
         MoveAffinityCost = 0;
         for (int i = 0; i < ActionSet.Count; i++)
         {
-            MoveAffinityCost += ActionSet[i].GetComponent<Action>().AdditionalAffinityCost;
+            MoveAffinityCost += ActionSet[i].AdditionalAffinityCost;
         }
     }
 
@@ -330,91 +319,91 @@ public class Monster : MonoBehaviour
 
         for (int i = 0; i < StatusEffects.Count; i++)
         {
-             switch (StatusEffects[i].AttackEffect)
+             switch (StatusEffects[i].Effect.AttackEffect)
                 {
                     case Effects.RangeOfEffect.Global:
-                        switch (StatusEffects[i].GlobalAttack.StatChangeType)
+                        switch (StatusEffects[i].Effect.GlobalAttack.StatChangeType)
                         {
                             case Effects.StatChange.NumberType.Percentage:
-                                AfterEffectStats.x += (AfterEffectStats.x * (StatusEffects[i].GlobalAttack.PercentageChange / 100));
+                                AfterEffectStats.x += (AfterEffectStats.x * (StatusEffects[i].Effect.GlobalAttack.PercentageChange / 100));
                                 break;
                             case Effects.StatChange.NumberType.HardNumber:
-                                AfterEffectStats.x += StatusEffects[i].GlobalAttack.HardNumberChange;
+                                AfterEffectStats.x += StatusEffects[i].Effect.GlobalAttack.HardNumberChange;
                                 break;
                         }
                         break;
 
                 }
-                switch (StatusEffects[i].DefenseEffect)
+                switch (StatusEffects[i].Effect.DefenseEffect)
                 {
                     case Effects.RangeOfEffect.Global:
-                        switch (StatusEffects[i].GlobalDefense.StatChangeType)
+                        switch (StatusEffects[i].Effect.GlobalDefense.StatChangeType)
                         {
                             case Effects.StatChange.NumberType.Percentage:
-                                AfterEffectStats.y += (AfterEffectStats.y * (StatusEffects[i].GlobalDefense.PercentageChange / 100));
+                                AfterEffectStats.y += (AfterEffectStats.y * (StatusEffects[i].Effect.GlobalDefense.PercentageChange / 100));
                                 break;
                             case Effects.StatChange.NumberType.HardNumber:
-                                AfterEffectStats.y += StatusEffects[i].GlobalDefense.HardNumberChange;
+                                AfterEffectStats.y += StatusEffects[i].Effect.GlobalDefense.HardNumberChange;
                                 break;
                         }
                         break;
 
                 }
-                switch (StatusEffects[i].SpeedEffect)
+                switch (StatusEffects[i].Effect.SpeedEffect)
                 {
                     case Effects.RangeOfEffect.Global:
-                        switch (StatusEffects[i].GlobalSpeed.StatChangeType)
+                        switch (StatusEffects[i].Effect.GlobalSpeed.StatChangeType)
                         {
                             case Effects.StatChange.NumberType.Percentage:
-                                AfterEffectStats.z += (AfterEffectStats.z * (StatusEffects[i].GlobalSpeed.PercentageChange / 100));
+                                AfterEffectStats.z += (AfterEffectStats.z * (StatusEffects[i].Effect.GlobalSpeed.PercentageChange / 100));
                                 break;
                             case Effects.StatChange.NumberType.HardNumber:
-                                AfterEffectStats.z += StatusEffects[i].GlobalSpeed.HardNumberChange;
+                                AfterEffectStats.z += StatusEffects[i].Effect.GlobalSpeed.HardNumberChange;
                                 break;
                         }
                         break;
 
                 }
-                switch (StatusEffects[i].DamageTakenEffect)
+                switch (StatusEffects[i].Effect.DamageTakenEffect)
                 {
                     case Effects.RangeOfEffect.Global:
                         for (int j = 0; j < 11; j++)
                         {
-                            DamageTakenScalar[j] += (DamageTakenScalar[j] * (StatusEffects[i].GlobalDamageTaken.PercentageChange / 100));
+                            DamageTakenScalar[j] += (DamageTakenScalar[j] * (StatusEffects[i].Effect.GlobalDamageTaken.PercentageChange / 100));
                         }
                         break;
                     case Effects.RangeOfEffect.TypeBased: //StatusEffects[i].DamageTakenByType
-                        for (int j = 0; j < StatusEffects[i].TypesAfflicted.VulnerableTypes.Count; j++)
+                        for (int j = 0; j < StatusEffects[i].Effect.TypesAfflicted.VulnerableTypes.Count; j++)
                         {
-                            DamageTakenScalar[(int)StatusEffects[i].TypesAfflicted.VulnerableTypes[j]] += DamageTakenScalar[(int)StatusEffects[i].TypesAfflicted.VulnerableTypes[j]] * (StatusEffects[i].GlobalDamageTaken.PercentageChange / 100);
+                            DamageTakenScalar[(int)StatusEffects[i].Effect.TypesAfflicted.VulnerableTypes[j]] += DamageTakenScalar[(int)StatusEffects[i].Effect.TypesAfflicted.VulnerableTypes[j]] * (StatusEffects[i].Effect.GlobalDamageTaken.PercentageChange / 100);
                         }
                         break;
                 }
 
-                switch (StatusEffects[i].EndOfTurnDamage)
+                switch (StatusEffects[i].Effect.EndOfTurnDamage)
                 {
                     case Effects.HealthRelativity.OfMaxHP:
-                        switch (StatusEffects[i].EndOfTurnDamageType.StatChangeType)
+                        switch (StatusEffects[i].Effect.EndOfTurnDamageType.StatChangeType)
                         {
                             case Effects.StatChange.NumberType.Percentage:
-                                EndOfTurnDamage += Mathf.FloorToInt((Health.x + Health.y) * (StatusEffects[i].EndOfTurnDamageType.PercentageChange / 100));
+                                EndOfTurnDamage += Mathf.FloorToInt((Health.x + Health.y) * (StatusEffects[i].Effect.EndOfTurnDamageType.PercentageChange / 100));
                                 Debug.Log(EndOfTurnDamage);
                                 break;
                         }
 
                         break;
                     case Effects.HealthRelativity.OfRemainingHP:
-                        switch (StatusEffects[i].EndOfTurnDamageType.StatChangeType)
+                        switch (StatusEffects[i].Effect.EndOfTurnDamageType.StatChangeType)
                         {
                             case Effects.StatChange.NumberType.Percentage:
                                 
-                                EndOfTurnDamage += Mathf.FloorToInt((Health.z) * (StatusEffects[i].EndOfTurnDamageType.PercentageChange / 100));
+                                EndOfTurnDamage += Mathf.FloorToInt((Health.z) * (StatusEffects[i].Effect.EndOfTurnDamageType.PercentageChange / 100));
                                 Debug.Log(EndOfTurnDamage);
                                 break;
                         }
                         break;
                 }
-                if (StatusEffects[i].SwapsAttackAndDefense) switchATKandDEF = true;
+                if (StatusEffects[i].Effect.SwapsAttackAndDefense) switchATKandDEF = true;
             }
 
         if (switchATKandDEF)
@@ -425,36 +414,22 @@ public class Monster : MonoBehaviour
         }
     }
 
-    public void GetStatusEffects()
-    {
-        StatusEffects.Clear();
-
-        for (int i = 0; i < StatusEffectObjects.Count; i++)
-        {
-            StatusEffects.Add(StatusEffectObjects[i].GetComponent<Effects>());
-        }
-    }
-
     public void EndTurn()
     {
         ResetCooldown();
         if (MonsterTeam == Director.Team.PlayerTeam) loopback.canvasCollection.Player1MenuClick(loopback.canvasCollection.MenuOpen);
-        GetStatusEffects();
         for (int i = 0; i < StatusEffects.Count; i++)
         {
             StatusEffects[i].ExpiresIn--;
             if (StatusEffects[i].ExpiresIn < 0)
             {
-                GameObject temp = StatusEffectObjects[i];
-                if (StatusEffects[i].InflictsAnotherEffect)
+                if (StatusEffects[i].Effect.InflictsAnotherEffect)
                 {
-                    GameObject newBuff = Instantiate(StatusEffects[i].NextEffect);
-                    newBuff.transform.SetParent(this.transform);
-                    StatusEffectObjects.Add(newBuff);
+                    MonsterEffect newBuff = new MonsterEffect();
+                    newBuff.Effect = StatusEffects[i].Effect.NextEffect;
+                    StatusEffects.Add(newBuff);
                 }
                 StatusEffects.RemoveAt(i);
-                StatusEffectObjects.RemoveAt(i);
-                Destroy(temp);
                 i--;
             }
         }
@@ -489,7 +464,7 @@ public class Monster : MonoBehaviour
 
     public void ActionSwap(int first, int second)
     {
-        GameObject lunen1 = ActionSet[first];
+        Action lunen1 = ActionSet[first];
         ActionSet[first] = ActionSet[second];
         ActionSet[second] = lunen1;
     }

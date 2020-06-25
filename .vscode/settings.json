@@ -52,5 +52,10 @@
         "ProjectSettings/":true,
         "temp/":true,
         "Temp/":true
-    }
+    },
+    "editor.tokenColorCustomizations": {
+        "[Community Material Theme Darker]": {
+            "comments": "#2ECC40"
+        }
+    },
 }

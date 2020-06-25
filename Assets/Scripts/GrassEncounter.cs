@@ -8,7 +8,7 @@ public class GrassEncounter : MonoBehaviour
     [System.Serializable]
     public struct Encounter
     {
-        public LunaDex.LunenEnum lunen;
+        public Lunen lunen;
         [MinMaxRange(1,30)]
         public RangedInt LevelRange;
         [Range(0f, 100f)]
