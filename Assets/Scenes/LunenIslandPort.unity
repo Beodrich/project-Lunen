@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 237250320}
   - component: {fileID: 237250319}
   - component: {fileID: 237250318}
+  - component: {fileID: 237250321}
   m_Layer: 0
   m_Name: FloorDecorations
   m_TagString: Path
@@ -505,6 +506,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &237250321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237250316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ac75e7c54ca4429811f3e906e5c61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &312781800
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +530,7 @@ GameObject:
   - component: {fileID: 312781805}
   - component: {fileID: 312781804}
   - component: {fileID: 312781803}
+  - component: {fileID: 312781806}
   - component: {fileID: 312781802}
   m_Layer: 0
   m_Name: EncounterGrass
@@ -1030,6 +1044,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &312781806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312781800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ac75e7c54ca4429811f3e906e5c61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &313321348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1068,7 @@ GameObject:
   - component: {fileID: 313321352}
   - component: {fileID: 313321351}
   - component: {fileID: 313321350}
+  - component: {fileID: 313321353}
   m_Layer: 0
   m_Name: Objects
   m_TagString: Wall
@@ -16713,6 +16740,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &313321353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313321348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ac75e7c54ca4429811f3e906e5c61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &767757600
 GameObject:
   m_ObjectHideFlags: 0
@@ -16725,6 +16764,7 @@ GameObject:
   - component: {fileID: 767757603}
   - component: {fileID: 767757602}
   - component: {fileID: 767757604}
+  - component: {fileID: 767757605}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Path
@@ -20697,6 +20737,18 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &767757605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767757600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ac75e7c54ca4429811f3e906e5c61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &810979486
 GameObject:
   m_ObjectHideFlags: 0
@@ -20709,6 +20761,7 @@ GameObject:
   - component: {fileID: 810979490}
   - component: {fileID: 810979489}
   - component: {fileID: 810979488}
+  - component: {fileID: 810979491}
   m_Layer: 0
   m_Name: ObjectDecorations
   m_TagString: Wall
@@ -21012,6 +21065,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &810979491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810979486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ac75e7c54ca4429811f3e906e5c61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2084076182
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -191,7 +191,7 @@ public class Move : MonoBehaviour
                         else
                         {
                             npcMove = false;
-                            tLogic.sr.battleSetup.cutsceneAdvance = true;
+                            tLogic.sr.battleSetup.AdvanceCutscene();
                         }
                     }
                     SetWalkAnimation();
@@ -221,7 +221,7 @@ public class Move : MonoBehaviour
                         else
                         {
                             npcMove = false;
-                            tLogic.sr.battleSetup.cutsceneAdvance = true;
+                            tLogic.sr.battleSetup.AdvanceCutscene();
                         }
                     }
                     SetWalkAnimation();
@@ -294,7 +294,7 @@ public class Move : MonoBehaviour
         if (cutsceneMoveSpaces == 0)
         {
             npcMove = false;
-            sr.battleSetup.cutsceneAdvance = true;
+            sr.battleSetup.AdvanceCutscene();
         }
         endMove();
         yield return 0;

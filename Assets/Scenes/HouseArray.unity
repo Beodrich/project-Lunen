@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 426670974}
   - component: {fileID: 426670973}
   - component: {fileID: 426670972}
+  - component: {fileID: 426670975}
   m_Layer: 0
   m_Name: Objects
   m_TagString: Wall
@@ -684,6 +685,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &426670975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426670970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ac75e7c54ca4429811f3e906e5c61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &717429661
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +709,7 @@ GameObject:
   - component: {fileID: 717429664}
   - component: {fileID: 717429663}
   - component: {fileID: 717429665}
+  - component: {fileID: 717429666}
   m_Layer: 0
   m_Name: Floor Decorations
   m_TagString: Path
@@ -1705,6 +1719,18 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &717429666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717429661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ac75e7c54ca4429811f3e906e5c61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &767757600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,6 +1743,7 @@ GameObject:
   - component: {fileID: 767757603}
   - component: {fileID: 767757602}
   - component: {fileID: 767757604}
+  - component: {fileID: 767757605}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Path
@@ -2734,6 +2761,18 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &767757605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767757600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ac75e7c54ca4429811f3e906e5c61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1130103291
 PrefabInstance:
   m_ObjectHideFlags: 0

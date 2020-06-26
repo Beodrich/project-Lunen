@@ -438,7 +438,7 @@ public class CanvasCollection : MonoBehaviour
         if (partyPanelOpenForBattle)
         {
             partyPanelOpenForBattle = false;
-            sr.battleSetup.cutsceneAdvance = true;
+            sr.battleSetup.AdvanceCutscene();
         }
         if (!battle) OpenState(UIState.MainMenu);
         CloseState(UIState.Party);
@@ -604,7 +604,7 @@ public class CanvasCollection : MonoBehaviour
             }
             else if (index == 6)
             {
-                //if (sr.battleSetup.InCutscene) sr.battleSetup.cutsceneAdvance = true;
+                //if (sr.battleSetup.InCutscene) sr.battleSetup.AdvanceCutscene();
                 sr.battleSetup.PlayerEscape();
 
             }
@@ -651,27 +651,24 @@ public class CanvasCollection : MonoBehaviour
     public void SelectChoice1()
     {
         sr.battleSetup.choiceOpen = false;
-        sr.battleSetup.cutscenePart = -1;
-        sr.battleSetup.cutsceneRoute = Choice1Route;
-        sr.battleSetup.cutsceneAdvance = true;
+        sr.battleSetup.CutsceneChangeInternal(Choice1Route);
+        sr.battleSetup.AdvanceCutscene();
         UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Choice Panel", UITransition.State.Disable);
     }
 
     public void SelectChoice2()
     {
         sr.battleSetup.choiceOpen = false;
-        sr.battleSetup.cutscenePart = -1;
-        sr.battleSetup.cutsceneRoute = Choice2Route;
-        sr.battleSetup.cutsceneAdvance = true;
+        sr.battleSetup.CutsceneChangeInternal(Choice2Route);
+        sr.battleSetup.AdvanceCutscene();
         UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Choice Panel", UITransition.State.Disable);
     }
     
     public void SelectChoice3()
     {
         sr.battleSetup.choiceOpen = false;
-        sr.battleSetup.cutscenePart = -1;
-        sr.battleSetup.cutsceneRoute = Choice3Route;
-        sr.battleSetup.cutsceneAdvance = true;
+        sr.battleSetup.CutsceneChangeInternal(Choice3Route);
+        sr.battleSetup.AdvanceCutscene();
         UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Choice Panel", UITransition.State.Disable);
     }
 

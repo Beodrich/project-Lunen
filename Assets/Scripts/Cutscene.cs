@@ -60,6 +60,8 @@ public class CutscenePart
         OpenPanel,
         ClosePanel,
         CheckBattleOver,
+        ObtainLunen,
+        ChangeRoute,
     }
     public enum MoveType
     {
@@ -145,6 +147,17 @@ public class CutscenePart
 
     //Type: Close Panel
     [ConditionalField(nameof(type), false, PartType.ClosePanel)] public CanvasCollection.UIState closePanel;
+
+    //Type: Obtain Item
+    [ConditionalField(nameof(type), false, PartType.ObtainItem)] public ScriptableItem itemObtained;
+    [ConditionalField(nameof(type), false, PartType.ObtainItem)] public int itemAmount;
+
+    //Type: Obtain Lunen
+    [ConditionalField(nameof(type), false, PartType.ObtainLunen)] public Lunen lunenObtained;
+    [ConditionalField(nameof(type), false, PartType.ObtainLunen)] public int lunenLevel;
+
+    //Type: Change Route
+    [ConditionalField(nameof(type), false, PartType.ChangeRoute)] public int newRoute;
 
     [HideInInspector] public TrainerLogic trainerEncounter;
 }

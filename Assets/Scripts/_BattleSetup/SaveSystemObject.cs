@@ -27,7 +27,7 @@ public class SaveSystemObject : MonoBehaviour
             if (sr.battleSetup.InBattle) sr.battleSetup.ExitBattleState();
             sr.battleSetup.InCutscene = false;
             sr.battleSetup.gamePaused = false;
-            sr.battleSetup.cutscenePart = 99999999;
+            sr.battleSetup.ForceEndCutscene();
             sr.battleSetup.choiceOpen = false;
             sr.battleSetup.dialogueBoxNext = false;
             sr.battleSetup.dialogueBoxOpen = false;
