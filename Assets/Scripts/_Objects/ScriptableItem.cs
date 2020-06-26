@@ -22,4 +22,7 @@ public class ScriptableItem : ScriptableObject
 
     public ItemType itemType;
 
+    public int buyValue;
+    public int sellValue;
+
 }

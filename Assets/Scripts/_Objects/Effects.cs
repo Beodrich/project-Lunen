@@ -27,7 +27,7 @@ public class Effects : ScriptableObject
     [System.Serializable]
     public class EnumFlags
     {
-        public List<Types.Element> VulnerableTypes;
+        public List<Type> VulnerableTypes;
     }
 
     public enum RangeOfEffect

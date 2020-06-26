@@ -16,8 +16,7 @@ public class Lunen : ScriptableObject
 
     [Header("Species Info")]
 
-    public string Name;
-    public List<Types.Element> Elements;
+    public List<Type> Elements;
     //public List<LearnedAction> ActionsToLearn;
     public List<LearnedAction> LearnedActions;
 

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c658083cf4dfc449d8161fab3ab80319, type: 3}
+  m_Name: Psychic
+  m_EditorClassIdentifier: 
+  indexValue: 8
+  StrongAgainst:
+  - {fileID: 11400000, guid: fe54b427033d84e2d8485594d7c9b74b, type: 2}
+  - {fileID: 11400000, guid: 0b0f687bd21824a9f9bfb0703ebef24e, type: 2}
+  WeakAgainst:
+  - {fileID: 11400000, guid: f26c034e41d264356903d61fc22f7539, type: 2}
+  - {fileID: 11400000}

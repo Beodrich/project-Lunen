@@ -44,7 +44,7 @@ public class Action : ScriptableObject
     [Separator("Basic Action Info")]
 
     public string Name;
-    public Types.Element Type;
+    public Type Type;
     public int Turns;
     public int AdditionalAffinityCost;
     public float TimePausePeriod;
@@ -120,8 +120,8 @@ public class Action : ScriptableObject
         float Attack = MonsterUser.AfterEffectStats.x;
         float Defense = MonsterTarget.AfterEffectStats.y;
         Debug.Log("Attack: " + Attack + " | Defense: " + Defense);
-        float STAB = Types.SameTypeAttackBonus(MonsterUser.SourceLunen.Elements, Type);
-        float Modifier = Types.TypeMatch(Type, MonsterTarget.SourceLunen.Elements);
+        float STAB = Type.SameTypeAttackBonus(MonsterUser.SourceLunen.Elements, Type);
+        float Modifier = Type.TypeMatch(Type, MonsterTarget.SourceLunen.Elements);
         float Damage = (3 + ((float)MonsterUser.Level / 100) * ((float)part.Power / 2) * (1 + Attack / 100) * (1 - (0.004f * Defense))) * STAB * Modifier;
         MonsterTarget.TakeDamage(Mathf.RoundToInt(Damage));
         //Debug.Log(Damage);

@@ -59,7 +59,7 @@ public class Monster : MonoBehaviour
     public AIScripts.AILevel level = AIScripts.AILevel.Random;
     [HideInInspector]
     public int MoveAffinityCost;
-    [EnumNamedArray(typeof(Types.Element))]
+    [EnumNamedArray(typeof(Type))]
     public List<float> DamageTakenScalar;
 
     private void Start()
@@ -204,7 +204,7 @@ public class Monster : MonoBehaviour
     public void Evolve()
     {
         SourceLunen = SourceLunen.EvolutionLunen;
-        loopback.eventLog.AddEvent(Nickname + " evolves into " + SourceLunen.Name);
+        loopback.eventLog.AddEvent(Nickname + " evolves into " + SourceLunen.name);
         TemplateToMonster(SourceLunen);
     }
 
@@ -258,7 +258,7 @@ public class Monster : MonoBehaviour
         CalculateExpTargets();
         UpdateMoveCost();
         Exp.x = Exp.y;
-        Nickname = template.Name;
+        Nickname = template.name;
         SetObjectName();
     }
 
@@ -380,7 +380,7 @@ public class Monster : MonoBehaviour
                     case Effects.RangeOfEffect.TypeBased: //StatusEffects[i].DamageTakenByType
                         for (int j = 0; j < StatusEffects[i].Effect.TypesAfflicted.VulnerableTypes.Count; j++)
                         {
-                            DamageTakenScalar[(int)StatusEffects[i].Effect.TypesAfflicted.VulnerableTypes[j]] += DamageTakenScalar[(int)StatusEffects[i].Effect.TypesAfflicted.VulnerableTypes[j]] * (StatusEffects[i].Effect.GlobalDamageTaken.PercentageChange / 100);
+                            DamageTakenScalar[StatusEffects[i].Effect.TypesAfflicted.VulnerableTypes[j].indexValue] += DamageTakenScalar[StatusEffects[i].Effect.TypesAfflicted.VulnerableTypes[j].indexValue] * (StatusEffects[i].Effect.GlobalDamageTaken.PercentageChange / 100);
                         }
                         break;
                 }
@@ -459,7 +459,7 @@ public class Monster : MonoBehaviour
 
     public void SetObjectName()
     {
-        transform.name = SourceLunen.Name + "_" + Nickname + "_Monster";
+        transform.name = SourceLunen.name + "_" + Nickname + "_Monster";
     }
 
     public int GetMaxHealth()

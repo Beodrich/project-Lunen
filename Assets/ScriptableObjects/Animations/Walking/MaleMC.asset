@@ -15,5 +15,5 @@ MonoBehaviour:
   CharacterSpritesheet: {fileID: 2800000, guid: 1f79d1cee358141e580a5231f2384a00,
     type: 3}
   CharacterSpriteList: []
-  CharacterIdleTime: 0.2
+  CharacterIdleTime: 0.25
   CharacterWalkTime: 0.1
