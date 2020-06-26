@@ -6,6 +6,8 @@ public class PlayerLogic : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
 
+    public WalkingAnimation animationSet;
+
     public bool inGrass = false;
     public GameObject grassObject;
     [Space(10)]
@@ -30,6 +32,8 @@ public class PlayerLogic : MonoBehaviour
         //transform.position = sr.battleSetup.lastSceneLocation;
         sr.playerLogic = this;
         sr.cameraFollow.Sel = this.gameObject;
+
+        move.animationSet = animationSet;
     }
 
     // Update is called once per frame
@@ -158,9 +162,16 @@ public class PlayerLogic : MonoBehaviour
         Move moveScript = npc.GetComponent<Move>();
         if (moveScript != null) moveScript.SetFacingDirectionLogic(MoveScripts.GetOppositeDirection(move.lookDirection));
 
+        //Check if the npc is a trainer and set the appropriate route
+        int route = 0;
+        if (npc.GetComponent<TrainerLogic>() != null)
+        {
+            if (npc.GetComponent<TrainerLogic>().defeated) route = 2;
+        }
+
         //Check if the npc has a cutscene attached and run it.
-        Cutscene c = npc.GetComponent<Cutscene>();
-        if (c != null) sr.battleSetup.StartCutscene(c); else return false;
+        PackedCutscene c = new PackedCutscene(npc.GetComponent<Cutscene>());
+        if (c != null) sr.battleSetup.StartCutscene(c, route); else return false;
 
         return true;
     }

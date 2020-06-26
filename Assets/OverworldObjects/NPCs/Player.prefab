@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
+  animationSet: {fileID: 11400000, guid: 7f2e8ce27fe45423caefa50a579c685c, type: 2}
   inGrass: 0
   grassObject: {fileID: 0}
   inTrainerView: 0
@@ -172,7 +173,7 @@ MonoBehaviour:
   pLogic: {fileID: 5585906584724857795}
   tLogic: {fileID: 0}
   spriteRenderer: {fileID: 5585906584724857796}
-  characterType: 2
+  animationSet: {fileID: 11400000, guid: 7f2e8ce27fe45423caefa50a579c685c, type: 2}
   moveSpeed: 5
   gridSize: 1
   playerSize: 1

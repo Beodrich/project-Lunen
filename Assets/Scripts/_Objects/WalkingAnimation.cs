@@ -1,108 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MyBox;
 
-
-[ExecuteAlways]
-public class AnimationDex : MonoBehaviour
+[CreateAssetMenu(fileName = "New Walking Animation", menuName = "GameElements/Animation/Walking")]
+public class WalkingAnimation : ScriptableObject
 {
-    public enum CharacterSpriteEnum
-    {
-        Template,
-        MaleMainCharacter,
-        FemaleMainCharacter,
-        Character000,
-        Character001,
-        Character002,
-        Character003,
-        Character004,
-        Character005,
-        Character006,
-        Character007,
-        Character008,
-        Character009,
-        Character010,
-        Character011,
-        Character012,
-        Character013,
-        Character014,
-        Character015,
-        Character016,
-        Character017,
-        Character018,
-        Character019,
-        Character020,
-        Character021,
-        Character022,
-        Character023,
-        Character024,
-        Character025,
-        Character026,
-        Character027,
-        Character028,
-        Character029,
-        Trainer000,
-        Trainer001,
-        Trainer002,
-        Trainer003,
-        Trainer004,
-        Trainer005,
-        Trainer006,
-        Trainer007,
-        Trainer008,
-        Trainer009,
-        Trainer010,
-        Trainer011,
-        Trainer012,
-        Trainer013,
-        Trainer014,
-        Trainer015,
-        Trainer016,
-        Trainer017,
-        Trainer018,
-        Trainer019,
-        Trainer020,
-        Trainer021,
-        Trainer022,
-        Trainer023,
-        Trainer024,
-        Trainer025,
-        Trainer026,
-        Trainer027,
-        Trainer028,
-        Trainer029,
-    }
-
-    [EnumNamedArray(typeof(CharacterSpriteEnum))]
-    public List<Texture2D> CharacterSpritesheetList = new List<Texture2D>();
-    private List<Sprite[]> CharacterSpriteList;
+    public Texture2D CharacterSpritesheet;
+    [HideInInspector] public Sprite[] CharacterSpriteList;
 
     public float CharacterIdleTime;
     public float CharacterWalkTime;
 
-    void Awake()
+    public void RepopulateSprites()
     {
-        SetupSprites();
+        CharacterSpriteList = Resources.LoadAll<Sprite>(CharacterSpritesheet.name);
     }
 
-    public void SetupSprites()
+    public Sprite GetAnimationSprite(int index)
     {
-        if (CharacterSpriteList == null)
-        {
-            CharacterSpriteList = new List<Sprite[]>();
-            for (int i = 0; i < CharacterSpritesheetList.Count; i++)
-            {
-                Sprite[] a = Resources.LoadAll<Sprite>(CharacterSpritesheetList[i].name);
-                CharacterSpriteList.Add(a);
-            }
-        }
-        
-    }
-
-    public Sprite GetAnimationSprite(CharacterSpriteEnum charType, int index)
-    {
-        SetupSprites();
-        return CharacterSpriteList[(int)charType][index];
+        if (index >= CharacterSpriteList.Length) RepopulateSprites();
+        if (index < CharacterSpriteList.Length) return CharacterSpriteList[index];
+        else return null;
     }
 
     public int GetAnimationIndex(MoveScripts.Direction direction, bool moving, float time)

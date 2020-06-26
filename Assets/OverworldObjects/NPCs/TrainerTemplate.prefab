@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: -1457864513
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3230498983067923680, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+  m_Sprite: {fileID: 4780240989442642023, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
     type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.3764706}
   m_FlipX: 0
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   move: {fileID: 6539219013480142697}
+  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
   startLookDirection: 2
   limitRange: 0
   rangeLimit: 1
@@ -186,8 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutsceneName: 
   routes:
-  - parts:
+  - name: StandardTrainerStuff
+    parts:
       array:
       - name: Walk To Player
         type: 2
@@ -199,6 +202,9 @@ MonoBehaviour:
         colliderTag: Player
         spacesToMove: 0
         trainerLogic: {fileID: 0}
+        postBattleCutscene: 0
+        cutsceneAfterBattle: {fileID: 0}
+        routeAfterBattle: 0
         text: 
         useChoice1: 0
         choice1Text: 
@@ -209,6 +215,19 @@ MonoBehaviour:
         useChoice3: 0
         choice3Text: 
         choice3Route: 0
+        waitTime: 0
+        newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
+        newCutsceneType: 0
+        cutsceneIndex: 0
+        cutsceneRoute: 0
         trainerEncounter: {fileID: 0}
       - name: Talk To Player
         type: 1
@@ -220,6 +239,9 @@ MonoBehaviour:
         colliderTag: Player
         spacesToMove: 0
         trainerLogic: {fileID: 0}
+        postBattleCutscene: 0
+        cutsceneAfterBattle: {fileID: 0}
+        routeAfterBattle: 0
         text: I am a trainer! Let's fight!
         useChoice1: 0
         choice1Text: 
@@ -230,6 +252,19 @@ MonoBehaviour:
         useChoice3: 0
         choice3Text: 
         choice3Route: 0
+        waitTime: 0
+        newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
+        newCutsceneType: 0
+        cutsceneIndex: 0
+        cutsceneRoute: 0
         trainerEncounter: {fileID: 0}
       - name: Start Battle
         type: 4
@@ -241,6 +276,9 @@ MonoBehaviour:
         colliderTag: Player
         spacesToMove: 0
         trainerLogic: {fileID: 6539219013480142739}
+        postBattleCutscene: 1
+        cutsceneAfterBattle: {fileID: 6539219013480142742}
+        routeAfterBattle: 1
         text: I am a trainer! Let's fight!
         useChoice1: 0
         choice1Text: 
@@ -251,6 +289,99 @@ MonoBehaviour:
         useChoice3: 0
         choice3Text: 
         choice3Route: 0
+        waitTime: 0
+        newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
+        newCutsceneType: 0
+        cutsceneIndex: 0
+        cutsceneRoute: 0
+        trainerEncounter: {fileID: 0}
+  - name: DefeatedTrainerStuff
+    parts:
+      array:
+      - name: Complaint
+        type: 1
+        startNextSimultaneous: 0
+        moveScript: {fileID: 6539219013480142697}
+        chooseMoveDirection: 0
+        movementDirection: 0
+        moveType: 0
+        colliderTag: Player
+        spacesToMove: 0
+        trainerLogic: {fileID: 0}
+        postBattleCutscene: 0
+        cutsceneAfterBattle: {fileID: 0}
+        routeAfterBattle: 0
+        text: Dang, I lost!
+        useChoice1: 0
+        choice1Text: 
+        choice1Route: 0
+        useChoice2: 0
+        choice2Text: 
+        choice2Route: 0
+        useChoice3: 0
+        choice3Text: 
+        choice3Route: 0
+        waitTime: 0
+        newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
+        newCutsceneType: 0
+        cutsceneIndex: 0
+        cutsceneRoute: 0
+        trainerEncounter: {fileID: 0}
+  - name: PostDefeatTrainer
+    parts:
+      array:
+      - name: Complaint
+        type: 1
+        startNextSimultaneous: 0
+        moveScript: {fileID: 6539219013480142697}
+        chooseMoveDirection: 0
+        movementDirection: 0
+        moveType: 0
+        colliderTag: Player
+        spacesToMove: 0
+        trainerLogic: {fileID: 0}
+        postBattleCutscene: 0
+        cutsceneAfterBattle: {fileID: 0}
+        routeAfterBattle: 0
+        text: I can't believe I lost to you!
+        useChoice1: 0
+        choice1Text: 
+        choice1Route: 0
+        useChoice2: 0
+        choice2Text: 
+        choice2Route: 0
+        useChoice3: 0
+        choice3Text: 
+        choice3Route: 0
+        waitTime: 0
+        newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: -1
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
+        newCutsceneType: 0
+        cutsceneIndex: 0
+        cutsceneRoute: 0
         trainerEncounter: {fileID: 0}
 --- !u!114 &6539219013480142697
 MonoBehaviour:
@@ -269,7 +400,7 @@ MonoBehaviour:
   pLogic: {fileID: 0}
   tLogic: {fileID: 6539219013480142739}
   spriteRenderer: {fileID: 6539219013480142738}
-  characterType: 0
+  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
   moveSpeed: 5
   gridSize: 1
   playerSize: 1

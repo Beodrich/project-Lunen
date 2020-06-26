@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4012099485063599597}
+  - component: {fileID: 3089258284872052784}
   - component: {fileID: 4012099485063599598}
   - component: {fileID: 4012099485063599377}
   - component: {fileID: 4012099485063599594}
@@ -35,6 +36,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3089258284872052784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4012099485063599592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb947e764aad456ca5c0160d449f444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  move: {fileID: 0}
+  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  lookDirection: 0
 --- !u!114 &4012099485063599598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,26 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts:
-  - Collection:
-    - name: Talk Part 1
-      startNextSimultaneous: 0
-      type: 1
-      moveScript: {fileID: 0}
-      moveInFacingDirection: 1
-      movementDirection: 0
-      moveType: 0
-      colliderTag: 
-      spacesToMove: 0
-      triggerType: 0
-      trainerLogic: {fileID: 0}
-      text: I'm an NPCTest!
-      choiceText: 
-      choiceYesText: 
-      choiceNoText: 
-      choiceYesRoute: 0
-      choiceNoRoute: 0
-      trainerEncounter: {fileID: 0}
+  cutsceneName: 
+  routes: []
 --- !u!114 &4012099485063599377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +83,7 @@ MonoBehaviour:
   pLogic: {fileID: 0}
   tLogic: {fileID: 0}
   spriteRenderer: {fileID: 4012099485063599594}
-  characterType: 0
+  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
   moveSpeed: 5
   gridSize: 1
   playerSize: 1

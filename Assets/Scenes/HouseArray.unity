@@ -185,39 +185,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
-      propertyPath: entranceIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: TargetLocation
-      value: Alec Overworld Scene
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
       propertyPath: TargetLocation.Scene
       value: 
-      objectReference: {fileID: 102900000, guid: 2b691c676b0ff499c9513449852f4d03,
+      objectReference: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d,
         type: 3}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: TargetLocation.SceneName
-      value: AlecOverworldScene
+      value: LunenIslandPort
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: TargetLocation.sceneIndex
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: TargetLocation.sceneEnabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696778, guid: 80152272002ce408fae3b00a5f1f0bab,
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
-      propertyPath: m_Color.a
-      value: 0.74509805
+      propertyPath: TargetEntrance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d,
+        type: 3}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.scenePath
+      value: Assets/Scenes/LunenIslandPort.unity
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696780, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -2809,22 +2810,38 @@ PrefabInstance:
         type: 3}
       propertyPath: TargetLocation.Scene
       value: 
-      objectReference: {fileID: 102900000, guid: 2b691c676b0ff499c9513449852f4d03,
+      objectReference: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d,
         type: 3}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: TargetLocation.SceneName
-      value: AlecOverworldScene
+      value: LunenIslandPort
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: TargetLocation.sceneIndex
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: TargetLocation.sceneEnabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetEntrance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d,
+        type: 3}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.scenePath
+      value: Assets/Scenes/LunenIslandPort.unity
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696778, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -2955,6 +2972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneEntrances.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: sceneCutscenes.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}

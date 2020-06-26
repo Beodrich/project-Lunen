@@ -56,7 +56,7 @@ public class Director : MonoBehaviour
 
     private void Update()
     {
-        if (DirectorTimeFlowing && !sr.battleSetup.gamePaused)
+        if (DirectorTimeFlowing && !sr.battleSetup.gamePaused && !sr.battleSetup.cutsceneStoppedBattle)
         {
             DirectorDeltaTime = Time.deltaTime;
         }
@@ -164,6 +164,7 @@ public class Director : MonoBehaviour
                 if (PlayerLunenAlive.Count == 0) sr.battleSetup.PlayerLose();
                 break;
             case Team.EnemyTeam:
+                
                 for (int i = 0; i < MaxLunenOut; i++)
                 {
                     if (PlayerLunenAlive.Count > i)
@@ -171,9 +172,8 @@ public class Director : MonoBehaviour
                         PlayerLunenAlive[i].GetExp(CalculateExpPayout(lunen, PlayerLunenAlive[i]));
                     }
                 }
+                sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Enemy Lunen Defeated"));
                 EnemyLunenAlive = LoadPartyAlive(EnemyLunenMonsters, Team.EnemyTeam);
-                if (EnemyLunenAlive.Count == 0) sr.battleSetup.PlayerWin();
-                else sr.canvasCollection.EnsureValidTarget();
                 break;
         }
         sr.canvasCollection.ScanBothParties();
@@ -205,7 +205,8 @@ public class Director : MonoBehaviour
         if (sr.battleSetup.typeOfBattle == BattleSetup.BattleType.TrainerBattle) P = 1.5;
 
         //C = Defeated Lunen’s Affinity Cost
-        double C = deadLunen.SourceLunen.AffinityCost + deadLunen.MoveAffinityCost;
+        //double C = deadLunen.SourceLunen.AffinityCost + deadLunen.MoveAffinityCost;
+        double C = 10;
 
         //[TODO] G = EXP boosting item; no boost = 1, EXP Amplifier = 1.5
         double G = 1;

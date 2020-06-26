@@ -2209,6 +2209,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4012099485063855399}
+  - component: {fileID: 4012099485063855395}
   - component: {fileID: 4012099485063855396}
   - component: {fileID: 4012099485063855579}
   - component: {fileID: 4012099485063855392}
@@ -2220,6 +2221,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4012099485063855395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4012099485063855394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb947e764aad456ca5c0160d449f444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  move: {fileID: 0}
+  animationSet: {fileID: 11400000, guid: b65aa9586ea654bd19cbf0d29442f3c5, type: 2}
+  lookDirection: 2
 --- !u!114 &4012099485063855396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2234,7 +2251,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneName: HealLunen
   routes:
-  - parts:
+  - name: 
+    parts:
       array:
       - name: Welcome
         type: 1
@@ -2305,7 +2323,8 @@ MonoBehaviour:
         cutsceneIndex: 0
         cutsceneRoute: 0
         trainerEncounter: {fileID: 0}
-  - parts:
+  - name: 
+    parts:
       array:
       - name: Accepted
         type: 1
@@ -2579,7 +2598,8 @@ MonoBehaviour:
         cutsceneIndex: 0
         cutsceneRoute: 0
         trainerEncounter: {fileID: 0}
-  - parts:
+  - name: 
+    parts:
       array:
       - name: Rejected
         type: 1
@@ -2615,7 +2635,8 @@ MonoBehaviour:
         cutsceneIndex: 0
         cutsceneRoute: 0
         trainerEncounter: {fileID: 0}
-  - parts:
+  - name: 
+    parts:
       array:
       - name: Retreat
         type: 1
@@ -2913,7 +2934,7 @@ MonoBehaviour:
   pLogic: {fileID: 0}
   tLogic: {fileID: 0}
   spriteRenderer: {fileID: 4012099485063855392}
-  characterType: 2
+  animationSet: {fileID: 0}
   moveSpeed: 5
   gridSize: 1
   playerSize: 1
@@ -3103,7 +3124,7 @@ PrefabInstance:
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: sceneCutscenes.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
@@ -3129,8 +3150,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneCutscenes.Array.data[0]
       value: 
-      objectReference: {fileID: 5268435886454511715, guid: 5f22859d418f64625ac3f62af20cff27,
-        type: 3}
+      objectReference: {fileID: 4012099485063855396}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: spawnPlayer

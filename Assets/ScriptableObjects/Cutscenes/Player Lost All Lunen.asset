@@ -1,53 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1279976587180690137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8293104067244523803}
-  - component: {fileID: 6315108095897645941}
-  m_Layer: 0
-  m_Name: Cutscene_BlackOut
-  m_TagString: NPC
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8293104067244523803
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279976587180690137}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6315108095897645941
+--- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1279976587180690137}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
-  m_Name: 
+  m_Script: {fileID: 11500000, guid: b9f833411ddbf4e28abde908d974aed7, type: 3}
+  m_Name: Player Lost All Lunen
   m_EditorClassIdentifier: 
-  cutsceneName: BlackOut
   routes:
-  - parts:
+  - name: YEETScene
+    parts:
       array:
-      - name: FaintDialogue
+      - name: Dialogue1
         type: 1
         startNextSimultaneous: 0
         moveScript: {fileID: 0}
@@ -57,7 +26,7 @@ MonoBehaviour:
         colliderTag: 
         spacesToMove: 0
         trainerLogic: {fileID: 0}
-        text: You have run out of usable lunen!
+        text: You're out of Lunen. You'll be whisked back to a Lunen Center.
         useChoice1: 0
         choice1Text: 
         choice1Route: 0
@@ -69,7 +38,11 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 0
-        newSceneName: 
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: 0
+          sceneEnabled: 0
         newSceneEntranceIndex: 0
         newScenePosition: {x: 0, y: 0}
         newSceneDirection: 0
@@ -77,7 +50,7 @@ MonoBehaviour:
         cutsceneIndex: 0
         cutsceneRoute: 0
         trainerEncounter: {fileID: 0}
-      - name: FaintDialogue2
+      - name: YEET
         type: 1
         startNextSimultaneous: 0
         moveScript: {fileID: 0}
@@ -87,8 +60,7 @@ MonoBehaviour:
         colliderTag: 
         spacesToMove: 0
         trainerLogic: {fileID: 0}
-        text: If the program works right, you will respawn at a lunen center! Adios
-          gracias!
+        text: YEET
         useChoice1: 0
         choice1Text: 
         choice1Route: 0
@@ -100,7 +72,11 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 0
-        newSceneName: 
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: 0
+          sceneEnabled: 0
         newSceneEntranceIndex: 0
         newScenePosition: {x: 0, y: 0}
         newSceneDirection: 0
@@ -108,7 +84,7 @@ MonoBehaviour:
         cutsceneIndex: 0
         cutsceneRoute: 0
         trainerEncounter: {fileID: 0}
-      - name: WarpPlayer
+      - name: NewScene
         type: 9
         startNextSimultaneous: 0
         moveScript: {fileID: 0}
@@ -118,8 +94,7 @@ MonoBehaviour:
         colliderTag: 
         spacesToMove: 0
         trainerLogic: {fileID: 0}
-        text: If the program works right, you will respawn at a lunen center! Adios
-          gracias!
+        text: YEET
         useChoice1: 0
         choice1Text: 
         choice1Route: 0
@@ -131,7 +106,11 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 3
-        newSceneName: 
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: 0
+          sceneEnabled: 0
         newSceneEntranceIndex: 0
         newScenePosition: {x: 0, y: 0}
         newSceneDirection: 0
@@ -139,38 +118,7 @@ MonoBehaviour:
         cutsceneIndex: 0
         cutsceneRoute: 0
         trainerEncounter: {fileID: 0}
-      - name: WaitToLoad
-        type: 6
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: If the program works right, you will respawn at a lunen center! Adios
-          gracias!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 3
-        newSceneName: 
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 1
-        trainerEncounter: {fileID: 0}
-      - name: StartCutsceneAtCenter
+      - name: NewCutscene
         type: 11
         startNextSimultaneous: 0
         moveScript: {fileID: 0}
@@ -180,8 +128,7 @@ MonoBehaviour:
         colliderTag: 
         spacesToMove: 0
         trainerLogic: {fileID: 0}
-        text: If the program works right, you will respawn at a lunen center! Adios
-          gracias!
+        text: YEET
         useChoice1: 0
         choice1Text: 
         choice1Route: 0
@@ -193,11 +140,15 @@ MonoBehaviour:
         choice3Route: 0
         waitTime: 0
         newSceneType: 3
-        newSceneName: 
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: 0
+          sceneEnabled: 0
         newSceneEntranceIndex: 0
         newScenePosition: {x: 0, y: 0}
         newSceneDirection: 0
         newCutsceneType: 2
-        cutsceneIndex: 1
+        cutsceneIndex: 0
         cutsceneRoute: 3
         trainerEncounter: {fileID: 0}

@@ -42,7 +42,7 @@ public class SaveSystemObject : MonoBehaviour
             sr.battleSetup.DestroyAllChildLunen();
 
             //Load standard variables
-            sr.battleSetup.TrainersDefeated = gameData.TrainersDefeated;
+            sr.battleSetup.GuidList = gameData.GuidList;
 
             //Then give the player all their lunen
             for (int i = 0; i < gameData.PlayerTeam.Count; i++)

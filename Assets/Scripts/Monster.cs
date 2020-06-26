@@ -46,7 +46,7 @@ public class Monster : MonoBehaviour
 
     private float ExpAddEvery = 0.1f;
     private float ExpAddCurrent = 0.1f;
-    private int FractionOfExp = 30;
+    private int FractionOfExp = 10;
     private int FractionOfHealth = 10;
     public int ExpToAdd;
     public int HealthToSubtract;
@@ -72,6 +72,49 @@ public class Monster : MonoBehaviour
     {
         if (loopback != null)
         {
+            if (loopback.canvasCollection.partyPanelOpenForBattle)
+            {
+                if (Level < loopback.database.LevelCap)
+                {
+                    ExpAddCurrent -= Time.deltaTime;
+                    if (ExpAddCurrent < 0)
+                    {
+                        ExpAddCurrent += ExpAddEvery;
+                        if (ExpToAdd > 0)
+                        {
+                            int maxExpPerTick = (Exp.z - Exp.y) / FractionOfExp;
+                            if (maxExpPerTick == 0) maxExpPerTick = 1;
+                            if (maxExpPerTick >= (Exp.z - Exp.x)) //If next exp tick goes over or equals next
+                            {
+                                if (ExpToAdd >= (Exp.z - Exp.x)) //If exp recieved is greater than or equal to next level
+                                {
+                                    ExpToAdd -= (Exp.z - Exp.x); //Subtract exp from pool
+                                    Exp.x += (Exp.z - Exp.x); //Add from pool to exp total
+                                    LevelUp();
+                                }
+                                else
+                                {
+                                    Exp.x += ExpToAdd; //Finish off exp pool
+                                    ExpToAdd = 0; //Set exp pool to zero.
+                                }
+                            }
+                            else
+                            {
+                                if (ExpToAdd >= maxExpPerTick) //If exp recieved is greater than or equal to max pool per tick
+                                {
+                                    ExpToAdd -= maxExpPerTick; //Subtract exp from pool
+                                    Exp.x += maxExpPerTick; //Add from pool to exp total
+                                }
+                                else
+                                {
+                                    Exp.x += ExpToAdd; //Finish off exp pool
+                                    ExpToAdd = 0; //Set exp pool to zero.
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             if (loopback.director.DirectorDeltaTime != 0 && LunenOut && LunenOrder < loopback.director.MaxLunenOut)
             {
                 if (CurrCooldown > 0f)
@@ -86,7 +129,7 @@ public class Monster : MonoBehaviour
                     {
                         //This is the point where the cooldown finishes. There's a lot to program here.
                         CalculateStats();
-                        if (MonsterTeam == Director.Team.EnemyTeam)
+                        if (MonsterTeam == Director.Team.EnemyTeam && loopback.director.PlayerLunenAlive.Count != 0)
                         {
                             //StartAI
                             PerformAction(AIScripts.StartDecision(loopback, this));
@@ -99,46 +142,7 @@ public class Monster : MonoBehaviour
                     }
                     else CurrCooldown = 0f;
                 }
-                if (Level < loopback.database.LevelCap)
-                {
-                    ExpAddCurrent -= loopback.director.DirectorDeltaTime;
-                if (ExpAddCurrent < 0)
-                {
-                    ExpAddCurrent += ExpAddEvery;
-                    if (ExpToAdd > 0)
-                    {
-                        int maxExpPerTick = (Exp.z - Exp.y) / FractionOfExp;
-                        if (maxExpPerTick == 0) maxExpPerTick = 1;
-                        if (maxExpPerTick >= (Exp.z - Exp.x)) //If next exp tick goes over or equals next
-                        {
-                            if (ExpToAdd >= (Exp.z - Exp.x)) //If exp recieved is greater than or equal to next level
-                            {
-                                ExpToAdd -= (Exp.z - Exp.x); //Subtract exp from pool
-                                Exp.x += (Exp.z - Exp.x); //Add from pool to exp total
-                                LevelUp();
-                            }
-                            else
-                            {
-                                Exp.x += ExpToAdd; //Finish off exp pool
-                                ExpToAdd = 0; //Set exp pool to zero.
-                            }
-                        }
-                        else
-                        {
-                            if (ExpToAdd >= maxExpPerTick) //If exp recieved is greater than or equal to max pool per tick
-                            {
-                                ExpToAdd -= maxExpPerTick; //Subtract exp from pool
-                                Exp.x += maxExpPerTick; //Add from pool to exp total
-                            }
-                            else
-                            {
-                                Exp.x += ExpToAdd; //Finish off exp pool
-                                ExpToAdd = 0; //Set exp pool to zero.
-                            }
-                        }
-                    }
-                }
-                }
+                
                 
                 if (HealthToSubtract > 0)
                     {
@@ -193,6 +197,7 @@ public class Monster : MonoBehaviour
         CalculateExpTargets();
         GetLevelUpMove(Level);
         loopback.canvasCollection.ScanBothParties();
+        loopback.canvasCollection.UpdatePartyPanelLunen();
         
     }
 

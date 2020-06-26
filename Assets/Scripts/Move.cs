@@ -15,6 +15,7 @@ public class Move : MonoBehaviour
         NPC,
         Lunen
     }
+    [Foldout("Advanced Settings", true)] 
 
     [HideInInspector] public LogicType logicType = LogicType.Null;
 
@@ -26,7 +27,7 @@ public class Move : MonoBehaviour
     public delegate void MoveEnd();
     [HideInInspector] public MoveEnd endMove;
 
-    public AnimationDex.CharacterSpriteEnum characterType;
+    public WalkingAnimation animationSet;
 
     public float moveSpeed;
     public float gridSize;
@@ -90,12 +91,14 @@ public class Move : MonoBehaviour
         }
     }
 
-    public void Awake()
+    public void Start()
     {
         if (sr == null) sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
 
         pLogic = GetComponent<PlayerLogic>();
         tLogic = GetComponent<TrainerLogic>();
+
+
 
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -116,12 +119,12 @@ public class Move : MonoBehaviour
         }
     }
     
-    public void StartCutsceneMove(Cutscene.Part part)
+    public void StartCutsceneMove(CutscenePart part)
     {
         sr.eventLog.AddEvent("Started Cutscene Move!");
         npcMove = true;
         cutsceneMoveSpaces = npcFallbackMaxMoves;
-        if (part.moveType == Cutscene.MoveType.ToSpaces)
+        if (part.moveType == CutscenePart.MoveType.ToSpaces)
         {
             cutsceneMoveSpaces = part.spacesToMove;
         }
@@ -246,7 +249,7 @@ public class Move : MonoBehaviour
         {
             animTime += Time.deltaTime;
         }
-        animIndex = sr.animationDex.GetAnimationIndex(lookDirection, animMoving, animTime);
+        animIndex = animationSet.GetAnimationIndex(lookDirection, animMoving, animTime);
         SetSprite();
         //animator.SetFloat("Horizontal", last.x);
         //animator.SetFloat("Vertical", last.y);
@@ -255,7 +258,7 @@ public class Move : MonoBehaviour
 
     public void SetSprite()
     {
-        spriteRenderer.sprite = sr.animationDex.GetAnimationSprite(characterType, animIndex);
+        spriteRenderer.sprite = animationSet.GetAnimationSprite(animIndex);
     }
 
     public void SetFacingDirectionLogic(MoveScripts.Direction newDirection)

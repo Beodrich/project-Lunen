@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using MyBox;
 
 public class GameBoot : MonoBehaviour
@@ -30,7 +31,7 @@ public class GameBoot : MonoBehaviour
     [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoFirstLaunch)] 
     public LunenParty2 FirstLunenParty;
     [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoFirstLaunch)]
-    public Cutscene FirstLaunchCutscene;
+    public CutsceneScript FirstLaunchCutscene;
 
     [System.Serializable]
     public class LunenParty1 : CollectionWrapper<GenerateMonster.LunenSetup> {}
@@ -70,12 +71,12 @@ public class GameBoot : MonoBehaviour
             break;
             case BootBehaviour.LoadIntoFirstLaunch:
                 GivePlayerLunen(FirstLunenParty.Value);
-                sr.battleSetup.StartCutscene(FirstLaunchCutscene);
+                sr.battleSetup.StartCutscene(new PackedCutscene(FirstLaunchCutscene));
             break;
             case BootBehaviour.LoadIntoEntrance:
                 GivePlayerLunen(TestLunenParty.Value);
                 sr.battleSetup.nextEntrance = bootEntrance;
-                bootScene.LoadScene();
+                SceneManager.LoadScene(bootScene.ScenePath);
             break;
             case BootBehaviour.LoadIntoCurrentScene:
                 GivePlayerLunen(TestLunenParty.Value);

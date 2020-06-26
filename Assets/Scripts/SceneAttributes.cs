@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneAttributes : MonoBehaviour
 {
@@ -21,7 +22,13 @@ public class SceneAttributes : MonoBehaviour
 
     private void Awake()
     {
-        sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
+        GameObject main = GameObject.Find("BattleSetup");
+        if (main == null)
+        {
+            SceneManager.LoadScene("_preload");
+            return;
+        }
+        sr = main.GetComponent<SetupRouter>();
         sr.sceneAttributes = this;
 
         sr.saveSystemObject.isLoading = false;

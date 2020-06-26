@@ -52,7 +52,7 @@ public class GameData
     }
 
     public List<PlayerLunen> PlayerTeam;
-    public List<System.Guid> TrainersDefeated;
+    public List<System.Guid> GuidList;
     public float positionX;
     public float positionY;
     public string currentScene;
@@ -86,7 +86,7 @@ public class GameData
             
         }
 
-        TrainersDefeated = sr.battleSetup.TrainersDefeated;
+        GuidList = sr.battleSetup.GuidList;
         positionX = sr.playerLogic.transform.position.x;
         positionY = sr.playerLogic.transform.position.y;
         currentScene = sr.battleSetup.lastOverworld;

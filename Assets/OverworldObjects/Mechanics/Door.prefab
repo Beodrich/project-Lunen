@@ -46,8 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d9e60be90e6433c8bca27efdf7bced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetLocation: 0
-  entranceIndex: 0
+  TargetLocation:
+    Scene: {fileID: 102900000, guid: 2b691c676b0ff499c9513449852f4d03, type: 3}
+    SceneName: AlecOverworldScene
+    sceneIndex: 4
+    sceneEnabled: 1
+  TargetEntrance: 0
+  ThisSceneEntrance: 0
 --- !u!114 &6437434055315994143
 MonoBehaviour:
   m_ObjectHideFlags: 0

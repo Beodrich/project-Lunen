@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f833411ddbf4e28abde908d974aed7, type: 3}
+  m_Name: Cannot Use Item Now
+  m_EditorClassIdentifier: 
+  stopsBattle: 1
+  routes:
+  - name: 
+    parts:
+      array:
+      - name: Cannot Use Item
+        type: 1
+        startNextSimultaneous: 0
+        moveScript: {fileID: 0}
+        chooseMoveDirection: 0
+        movementDirection: 0
+        moveType: 0
+        colliderTag: 
+        spacesToMove: 0
+        trainerLogic: {fileID: 0}
+        postBattleCutscene: 0
+        cutsceneAfterBattle: {fileID: 0}
+        routeAfterBattle: 0
+        text: 'You hear his voice in the distance: "lol dun do that"'
+        useChoice1: 0
+        choice1Text: 
+        choice1Route: 0
+        useChoice2: 0
+        choice2Text: 
+        choice2Route: 0
+        useChoice3: 0
+        choice3Text: 
+        choice3Route: 0
+        waitTime: 0
+        newSceneType: 0
+        newScene:
+          Scene: {fileID: 0}
+          SceneName: 
+          sceneIndex: 0
+          sceneEnabled: 0
+        newSceneEntranceIndex: 0
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
+        newCutsceneType: 0
+        cutsceneIndex: 0
+        cutsceneRoute: 0
+        openPanel: 0
+        trainerEncounter: {fileID: 0}

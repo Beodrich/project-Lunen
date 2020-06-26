@@ -17,6 +17,8 @@ MonoBehaviour:
   LearnedActions:
   - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
     level: 1
+  - action: {fileID: 11400000, guid: 3becbc3900461401ebe8af174f399876, type: 2}
+    level: 10
   Evolves: 0
   EvolutionLunen: {fileID: 0}
   EvolutionLevel: 0

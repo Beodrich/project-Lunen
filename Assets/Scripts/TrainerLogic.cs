@@ -10,6 +10,8 @@ public class TrainerLogic : MonoBehaviour
     [HideInInspector] public SetupRouter sr;
     [HideInInspector] public Move move;
 
+    public WalkingAnimation animationSet;
+
     public MoveScripts.Direction startLookDirection;
     public bool limitRange;
 
@@ -30,6 +32,7 @@ public class TrainerLogic : MonoBehaviour
 
     [Header("Trainer Lunen Info")]
 
+    public bool overrideDefeated;
     public bool engaged;
     public bool defeated;
     // Start is called before the first frame update
@@ -60,6 +63,10 @@ public class TrainerLogic : MonoBehaviour
     {
         if (sr == null) sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
         if (move == null) move = GetComponent<Move>();
+
+        move.animationSet = animationSet;
+
+        if (sr != null && !overrideDefeated) defeated = sr.battleSetup.GuidInList(GetComponent<GuidComponent>().GetGuid());
 
         UpdateTeam();
     }
@@ -109,7 +116,7 @@ public class TrainerLogic : MonoBehaviour
                 Collider2D[] hit = Physics2D.OverlapAreaAll(checkVector, checkVector);
                 foundWall = MoveScripts.CheckForTag(this.gameObject,hit,TrainerLookStop);
                 foundPlayer = MoveScripts.CheckForTag(this.gameObject,hit,"Player");
-                if (foundPlayer && !sr.saveSystemObject.isLoading && !sr.battleSetup.playerDead) sr.battleSetup.StartCutscene(GetComponent<Cutscene>());
+                if (foundPlayer && !sr.saveSystemObject.isLoading && !sr.battleSetup.playerDead && !engaged) sr.battleSetup.StartCutscene(new PackedCutscene(GetComponent<Cutscene>()));
             }
             foundRange--;
             checkVector = MoveScripts.GetFrontVector2(move, (float)foundRange/2, true);
@@ -126,31 +133,19 @@ public class TrainerLogic : MonoBehaviour
     public void StartTrainerBattle()
     {
         #if UNITY_EDITOR
-            if (EditorApplication.isPlaying && !sr.battleSetup.InBattle)
-            {
-                ClearTeamOfNull();
-                if (!defeated && !engaged)
-                {
-                    engaged = true;
-                    sr.battleSetup.GenerateTrainerBattle(this);
-                    sr.battleSetup.EnterBattle();
-                    
-                }
-            }
-        #else
-            if (!sr.battleSetup.InBattle)
-            {
-                ClearTeamOfNull();
-                if (!defeated && !engaged)
-                {
-                    engaged = true;
-                    sr.battleSetup.GenerateTrainerBattle(this);
-                    sr.battleSetup.EnterBattle();
-                    
-                }
-            }
+            if (!EditorApplication.isPlaying) return;
         #endif
-        
+        if (!sr.battleSetup.InBattle)
+        {
+            ClearTeamOfNull();
+            if (!defeated && !engaged)
+            {
+                engaged = true;
+                sr.battleSetup.GenerateTrainerBattle(this);
+                sr.battleSetup.EnterBattle();
+                
+            }
+        }
     }
 
     public void ExitBattle(bool defeat)
@@ -158,6 +153,7 @@ public class TrainerLogic : MonoBehaviour
         sr.eventLog.AddEvent("Setting defeated to: " + defeat);
         defeated = defeat;
         engaged = false;
+        if (defeated) sr.battleSetup.GuidList.Add(GetComponent<GuidComponent>().GetGuid());
     }
 
     public bool MoveBegin(Collider2D hit)

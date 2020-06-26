@@ -116,8 +116,10 @@ public class Action : ScriptableObject
 
     public void Attack(ActionPart part)
     {
+        
         float Attack = MonsterUser.AfterEffectStats.x;
         float Defense = MonsterTarget.AfterEffectStats.y;
+        Debug.Log("Attack: " + Attack + " | Defense: " + Defense);
         float STAB = Types.SameTypeAttackBonus(MonsterUser.SourceLunen.Elements, Type);
         float Modifier = Types.TypeMatch(Type, MonsterTarget.SourceLunen.Elements);
         float Damage = (3 + ((float)MonsterUser.Level / 100) * ((float)part.Power / 2) * (1 + Attack / 100) * (1 - (0.004f * Defense))) * STAB * Modifier;

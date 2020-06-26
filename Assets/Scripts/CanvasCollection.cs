@@ -117,6 +117,8 @@ public class CanvasCollection : MonoBehaviour
 
     public bool actionModify;
 
+    public bool partyPanelOpenForBattle;
+
     void Awake()
     {
         sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
@@ -433,6 +435,11 @@ public class CanvasCollection : MonoBehaviour
     {
         PartyPanelOpen = false;
         SetPartyViewState((int)PartyAction.Null);
+        if (partyPanelOpenForBattle)
+        {
+            partyPanelOpenForBattle = false;
+            sr.battleSetup.cutsceneAdvance = true;
+        }
         if (!battle) OpenState(UIState.MainMenu);
         CloseState(UIState.Party);
     }
@@ -776,5 +783,37 @@ public class CanvasCollection : MonoBehaviour
         {
             Player2LunenTarget(sr.director.GetLunenCountOut(Director.Team.EnemyTeam) - 1);
         }
+    }
+
+    public void UseItem(int index)
+    {
+        bool itemUseSuccess = true;
+        ScriptableItem item = sr.inventory.requestedItems[index].item;
+        switch (item.itemType)
+        {
+            case ScriptableItem.ItemType.Capture:
+                if (sr.battleSetup.InBattle)
+                {
+                    if (sr.battleSetup.typeOfBattle == BattleSetup.BattleType.TrainerBattle)
+                    {
+                        sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Cannot Use Capture In Trainer Battle"));
+                        itemUseSuccess = false;
+                        
+                    }
+                    else
+                    {
+                        sr.director.AttemptToCapture();
+                        CloseInventoryWindow(true);
+                    }
+                }
+                else
+                {
+                    sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Cannot Use Item Now"));
+                    itemUseSuccess = false;
+                }
+                
+            break;
+        }
+        if (itemUseSuccess) sr.inventory.RemoveItem(item, 1);
     }
 }

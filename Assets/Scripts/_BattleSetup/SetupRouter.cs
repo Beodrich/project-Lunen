@@ -9,7 +9,6 @@ public class SetupRouter : MonoBehaviour
     [Space(10)]
     
     public GameBoot gameBoot;
-    public AnimationDex animationDex;
     public BattleSetup battleSetup;
     public Director director;
     public GenerateMonster generateMonster;
