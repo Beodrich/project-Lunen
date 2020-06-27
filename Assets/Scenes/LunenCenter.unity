@@ -2090,6 +2090,22 @@ PrefabInstance:
       propertyPath: TargetLocation.sceneEnabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d,
+        type: 3}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.scenePath
+      value: Assets/Scenes/LunenIslandPort.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetEntrance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696780, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_Name
@@ -2235,7 +2251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   move: {fileID: 0}
-  animationSet: {fileID: 11400000, guid: b65aa9586ea654bd19cbf0d29442f3c5, type: 2}
+  animationSet: {fileID: 11400000, guid: 7f2e8ce27fe45423caefa50a579c685c, type: 2}
   lookDirection: 2
 --- !u!114 &4012099485063855396
 MonoBehaviour:
@@ -2250,632 +2266,985 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneName: HealLunen
-  routes:
-  - name: 
-    parts:
-      array:
-      - name: Welcome
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Hi there! Welcome to the Lunen Center! We take your Lunen and heal
-          them up for you!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: LunenHealQuestion
-        type: 5
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Would you like us to heal your Lunen?
-        useChoice1: 1
-        choice1Text: Yes
-        choice1Route: 1
-        useChoice2: 1
-        choice2Text: No
-        choice2Route: 2
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-  - name: 
-    parts:
-      array:
-      - name: Accepted
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Sure thing! We'll heal your lunen up right away! Just give us a sec!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: Heal
-        type: 7
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Sounds good! We'll heal your lunen up right away! Just give us a sec!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: SetSpawn
-        type: 8
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Sounds good! We'll heal your lunen up right away! Just give us a sec!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: WalkUp
-        type: 2
-        startNextSimultaneous: 0
-        moveScript: {fileID: 4012099485063855579}
-        chooseMoveDirection: 1
-        movementDirection: 0
-        moveType: 2
-        colliderTag: 
-        spacesToMove: 1
-        trainerLogic: {fileID: 0}
-        text: Thanks for stopping by! Have a great rest of your day!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 5
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: Wait 3 Seconds
-        type: 6
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Sounds good! We'll heal your lunen up right away! Just give us a sec!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 3
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: WalkDown
-        type: 2
-        startNextSimultaneous: 0
-        moveScript: {fileID: 4012099485063855579}
-        chooseMoveDirection: 1
-        movementDirection: 2
-        moveType: 2
-        colliderTag: 
-        spacesToMove: 1
-        trainerLogic: {fileID: 0}
-        text: Thanks for stopping by! Have a great rest of your day!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 5
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: Thanks
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Thank you for waiting! Your Lunen are raring to go!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 5
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: Thanks2
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Thanks for stopping by! Have a great rest of your day!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 5
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-  - name: 
-    parts:
-      array:
-      - name: Rejected
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: No problem! Have a great rest of your day!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-  - name: 
-    parts:
-      array:
-      - name: Retreat
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Oh no! We'll heal your lunen up right away! Give us some time!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: Heal
-        type: 7
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Sounds good! We'll heal your lunen up right away! Just give us a sec!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: WalkUp
-        type: 2
-        startNextSimultaneous: 0
-        moveScript: {fileID: 4012099485063855579}
-        chooseMoveDirection: 1
-        movementDirection: 0
-        moveType: 2
-        colliderTag: 
-        spacesToMove: 1
-        trainerLogic: {fileID: 0}
-        text: Thanks for stopping by! Have a great rest of your day!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 5
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: Wait 3 Seconds
-        type: 6
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Sounds good! We'll heal your lunen up right away! Just give us a sec!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 3
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: WalkDown
-        type: 2
-        startNextSimultaneous: 0
-        moveScript: {fileID: 4012099485063855579}
-        chooseMoveDirection: 1
-        movementDirection: 2
-        moveType: 2
-        colliderTag: 
-        spacesToMove: 1
-        trainerLogic: {fileID: 0}
-        text: Thanks for stopping by! Have a great rest of your day!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 5
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: Thanks
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Thank you for waiting! Your Lunen up and ready!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 5
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: Thanks2
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: Be careful out there! Have a great rest of your day!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 5
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
+  stopsBattle: 0
+  showAllData: 0
+  parts:
+  - name: ' [Dialogue] Hi there! Welcome to the Lunen Center!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Hi there! Welcome to the Lunen Center!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Choice] Would you like us to heal your lunen?'
+    title: 
+    type: 2
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Would you like us to heal your lunen?
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: Yes Heal
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: No Don't
+    useChoice3: 1
+    choice3Text: TestLoss
+    choice3Route: Player Just Lost
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: End Of Reject Route
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Yes Heal'
+    title: Yes Heal
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Okay, sounds good! I''ll heal them up immediately! Just give
+      me a moment!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Okay, sounds good! I'll heal them up immediately! Just give me a moment!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [SetSpawn] '
+    title: 
+    type: 11
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Wait] Three Seconds'
+    title: Three Seconds
+    type: 8
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 3
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [HealParty] '
+    title: 
+    type: 9
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Your lunen are up and at ''em! Thank you for coming, and have
+      a great day!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Your lunen are up and at 'em! Thank you for coming, and have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [END] End Of Heal Route'
+    title: End Of Heal Route
+    type: 4
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: End Of Reject Route
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] No Don''t'
+    title: No Don't
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] No problem! Have a great day!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [END] End Of Reject Route'
+    title: End Of Reject Route
+    type: 4
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: End Of Reject Route
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Player Just Lost'
+    title: Player Just Lost
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Oh no! Your lunen are in bad shape! Let me look at them!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Oh no! Your lunen are in bad shape! Let me look at them!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [SetSpawn] '
+    title: 
+    type: 11
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Wait] Three Seconds'
+    title: Three Seconds
+    type: 8
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 3
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [HealParty] '
+    title: 
+    type: 9
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Your lunen are up and at ''em! Stay safe out there!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Your lunen are up and at 'em! Stay safe out there!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [END] End Of Loss Route'
+    title: End Of Loss Route
+    type: 4
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
 --- !u!61 &4012099485063855397
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2934,7 +3303,7 @@ MonoBehaviour:
   pLogic: {fileID: 0}
   tLogic: {fileID: 0}
   spriteRenderer: {fileID: 4012099485063855392}
-  animationSet: {fileID: 0}
+  animationSet: {fileID: 11400000, guid: 7f2e8ce27fe45423caefa50a579c685c, type: 2}
   moveSpeed: 5
   gridSize: 1
   playerSize: 1
@@ -2949,7 +3318,7 @@ MonoBehaviour:
   lookDirection: 2
   hit: {fileID: 0}
   hits: []
-  animTime: 0.02
+  animTime: 0.1
   animIndex: 0
 --- !u!212 &4012099485112002772
 SpriteRenderer:

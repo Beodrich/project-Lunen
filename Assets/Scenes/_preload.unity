@@ -26795,7 +26795,7 @@ MonoBehaviour:
   lastCutscene:
     cutsceneName: 
     stopsBattle: 0
-    routes: []
+    parts: []
   InCutscene: 0
   cutsceneNextRoute: 0
   cutsceneLoopGoing: 0
@@ -26812,7 +26812,7 @@ MonoBehaviour:
   cutsceneAfterBattle:
     cutsceneName: 
     stopsBattle: 0
-    routes: []
+    parts: []
   cutsceneAfterBattleRoute: 0
   waitTime: 0
   waitTimeCurrent: 0
@@ -26878,10 +26878,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   vsync: 1
-  bootBehaviour: 1
+  bootBehaviour: 2
   bootScene:
-    sceneAsset: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d, type: 3}
-    scenePath: Assets/Scenes/LunenIslandPort.unity
+    sceneAsset: {fileID: 102900000, guid: 59b870602814d455ba582557c76925b2, type: 3}
+    scenePath: Assets/Scenes/LunenCenter.unity
   bootEntrance: 1
   TestLunenParty:
     Value:

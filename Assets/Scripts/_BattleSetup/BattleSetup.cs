@@ -34,7 +34,6 @@ public class BattleSetup : MonoBehaviour
     public PackedCutscene lastCutscene;
     public bool InCutscene;
     private int cutscenePart;
-    private int cutsceneRoute;
     public int cutsceneNextRoute;
     public bool cutsceneLoopGoing;
     private bool cutsceneAdvance;
@@ -277,31 +276,20 @@ public class BattleSetup : MonoBehaviour
         SceneManager.LoadScene(location);
     }
 
-    public void StartCutscene(PackedCutscene cutscene, int route = 0)
+    public void StartCutscene(PackedCutscene cutscene, string route = "")
     {
         #if UNITY_EDITOR
-            if (EditorApplication.isPlaying && !InCutscene)
-            {
-                sr.eventLog.AddEvent("Cutscene Started: \"" + cutscene.cutsceneName + "\"");
-                lastCutscene = cutscene;
-                InCutscene = true;
-                cutsceneRoute = route;
-                cutscenePart = -1;
-                AdvanceCutscene();
-                if (!cutsceneLoopGoing) StartCoroutine(playCutscene(transform));
-            }
-        #else
-            if (!InCutscene)
-            {
-                sr.eventLog.AddEvent("Cutscene Started: \"" + cutscene.cutsceneName + "\"");
-                lastCutscene = cutscene;
-                InCutscene = true;
-                cutsceneRoute = route;
-                cutscenePart = -1;
-                AdvanceCutscene();
-                if (!cutsceneLoopGoing) StartCoroutine(playCutscene(transform));
-            }
+            if (!EditorApplication.isPlaying) return;
         #endif
+        if (!InCutscene)
+        {
+            sr.eventLog.AddEvent("Cutscene Started: \"" + cutscene.cutsceneName + "\"");
+            lastCutscene = cutscene;
+            InCutscene = true;
+            CutsceneChangeInternal(CutsceneFindRoute(route));
+            AdvanceCutscene();
+            if (!cutsceneLoopGoing) StartCoroutine(playCutscene(transform));
+        }
         
     }
 
@@ -335,12 +323,22 @@ public class BattleSetup : MonoBehaviour
             sr.canvasCollection.Choice2Text.text = part.choice2Text;
             sr.canvasCollection.Choice3Text.text = part.choice3Text;
 
-            sr.canvasCollection.Choice1Route = part.choice1Route;
-            sr.canvasCollection.Choice2Route = part.choice2Route;
-            sr.canvasCollection.Choice3Route = part.choice3Route;
+            sr.canvasCollection.Choice1Route = CutsceneFindRoute(part.choice1Route);
+            sr.canvasCollection.Choice2Route = CutsceneFindRoute(part.choice2Route);
+            sr.canvasCollection.Choice3Route = CutsceneFindRoute(part.choice3Route);
 
             sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Choice Panel", UITransition.State.Enable);
         }
+    }
+
+    public int CutsceneFindRoute(string route)
+    {
+        for (int i = 0; i < lastCutscene.parts.Count; i++)
+        {
+            if (lastCutscene.parts[i].title == route) return i;
+        }
+        if (route != "") Debug.Log("Unable To Find Route: " + route);
+        return 0;
     }
 
     public IEnumerator playCutscene(Transform transform)
@@ -348,7 +346,7 @@ public class BattleSetup : MonoBehaviour
         cutsceneLoopGoing = true;
         
         sr.canvasCollection.OpenState(CanvasCollection.UIState.Dialogue);
-        while (cutscenePart < lastCutscene.routes[cutsceneRoute].parts.Count)
+        while (cutscenePart < lastCutscene.parts.Count)
         {
             if (lastCutscene.stopsBattle) cutsceneStoppedBattle = true; else cutsceneStoppedBattle = false;
             while (cutsceneAdvance)
@@ -357,10 +355,10 @@ public class BattleSetup : MonoBehaviour
                 cutsceneAdvance = false;
                 
                 
-                if (cutscenePart < lastCutscene.routes[cutsceneRoute].parts.Count)
+                if (cutscenePart < lastCutscene.parts.Count)
                 {
-                    CutscenePart part = lastCutscene.routes[cutsceneRoute].parts[cutscenePart];
-                    sr.eventLog.AddEvent("Cutscene Route " + cutsceneRoute + " Part " + (cutscenePart+1) + "/" + lastCutscene.routes[cutsceneRoute].parts.Count + " \"" + part.name + "\"");
+                    CutscenePart part = lastCutscene.parts[cutscenePart];
+                    sr.eventLog.AddEvent("Cutscene Part " + (cutscenePart+1) + "/" + lastCutscene.parts.Count + " \"" + part.name + "\"");
                     
                     switch (part.type)
                     {
@@ -376,11 +374,11 @@ public class BattleSetup : MonoBehaviour
                             goto case CutscenePart.PartType.Dialogue;
                         case CutscenePart.PartType.Dialogue:
                             bool next = true;
-                            if (cutscenePart+1 == lastCutscene.routes[cutsceneRoute].parts.Count)
+                            if (cutscenePart+1 == lastCutscene.parts.Count)
                             {
                                 next = false;
                             }
-                            else if (lastCutscene.routes[cutsceneRoute].parts[cutscenePart+1].type != CutscenePart.PartType.Dialogue && lastCutscene.routes[cutsceneRoute].parts[cutscenePart+1].type != CutscenePart.PartType.Choice)
+                            else if (lastCutscene.parts[cutscenePart+1].type != CutscenePart.PartType.Dialogue && lastCutscene.parts[cutscenePart+1].type != CutscenePart.PartType.Choice)
                             {
                                 next = false;
                             }
@@ -498,6 +496,11 @@ public class BattleSetup : MonoBehaviour
                             
                             AdvanceCutscene();
                         break;
+
+                        case CutscenePart.PartType.END:
+                            CutsceneChangeInternal(lastCutscene.parts.Count);
+                            AdvanceCutscene();
+                        break;
                     }
                     if (part.startNextSimultaneous)
                     {
@@ -507,13 +510,17 @@ public class BattleSetup : MonoBehaviour
             }
             yield return null;
         }
+        EndCutscene();
+        yield return 0;
+    }
+
+    private void EndCutscene()
+    {
         sr.eventLog.AddEvent("Cutscene Ends");
         InCutscene = false;
         cutsceneLoopGoing = false;
-        cutsceneRoute = 0;
-        cutscenePart = 0;
+        cutscenePart = 999999999;
         cutsceneStoppedBattle = false;
-        yield return 0;
     }
 
     public void DestroyAllChildLunen()
@@ -554,11 +561,10 @@ public class BattleSetup : MonoBehaviour
         if (InBattle) sr.director.LoadTeams();
     }
 
-    public void CutsceneStartLite(PackedCutscene cutscene1, int route, int part = -1)
+    public void CutsceneStartLite(PackedCutscene cutscene1, int route, int part = 0)
     {
         lastCutscene = cutscene1;
-        cutscenePart = part;
-        cutsceneRoute = route;
+        CutsceneChangeInternal(part);
         AdvanceCutscene();
     }
 
@@ -567,10 +573,9 @@ public class BattleSetup : MonoBehaviour
         cutsceneAdvance = true;
     }
 
-    public void CutsceneChangeInternal(int _route, int _part = -1)
+    public void CutsceneChangeInternal(int _part = 0)
     {
-        cutsceneRoute = _route;
-        cutscenePart = _part;
+        cutscenePart = _part - 1;
     }
 
     public void ForceEndCutscene()
@@ -609,7 +614,7 @@ public class BattleSetup : MonoBehaviour
         }
         else
         {
-            StartCutscene(newCutscene, 0);
+            StartCutscene(newCutscene);
         }
     }
 

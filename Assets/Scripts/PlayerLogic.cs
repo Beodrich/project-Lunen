@@ -163,10 +163,10 @@ public class PlayerLogic : MonoBehaviour
         if (moveScript != null) moveScript.SetFacingDirectionLogic(MoveScripts.GetOppositeDirection(move.lookDirection));
 
         //Check if the npc is a trainer and set the appropriate route
-        int route = 0;
+        string route = "";
         if (npc.GetComponent<TrainerLogic>() != null)
         {
-            if (npc.GetComponent<TrainerLogic>().defeated) route = 2;
+            if (npc.GetComponent<TrainerLogic>().defeated) route = "Trainer Defeated";
         }
 
         //Check if the npc has a cutscene attached and run it.

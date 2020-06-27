@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Cutscene", menuName = "GameElements/Cutscene")]
 public class CutsceneScript : ScriptableObject
 {
+    [Space(10)]
+    [Header("Edit Cutscenes With Window->Cutscene Editor!")]
+    
     public bool stopsBattle;
-    public List<CutsceneRoute> routes;
+    public List<CutscenePart> parts;
 }

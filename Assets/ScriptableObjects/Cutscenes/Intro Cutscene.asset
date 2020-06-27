@@ -13,121 +13,132 @@ MonoBehaviour:
   m_Name: Intro Cutscene
   m_EditorClassIdentifier: 
   stopsBattle: 0
-  routes:
-  - name: MainRoute
-    parts:
-      array:
-      - name: GiveGameTimeToLoad
-        type: 6
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        postBattleCutscene: 0
-        cutsceneAfterBattle: {fileID: 0}
-        routeAfterBattle: 0
-        text: 
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0.5
-        newSceneType: 0
-        newScene:
-          sceneAsset: {fileID: 0}
-          scenePath: 
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        openPanel: 0
-        closePanel: 0
-        trainerEncounter: {fileID: 0}
-      - name: Welcome
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        postBattleCutscene: 0
-        cutsceneAfterBattle: {fileID: 0}
-        routeAfterBattle: 0
-        text: Welcome to Lunen Island! If you're seeing this and not in the development
-          team, that's a slight issue. Whatever, do what you want with it.
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0.5
-        newSceneType: 0
-        newScene:
-          sceneAsset: {fileID: 0}
-          scenePath: 
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        openPanel: 0
-        closePanel: 0
-        trainerEncounter: {fileID: 0}
-      - name: NextScene
-        type: 9
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        postBattleCutscene: 0
-        cutsceneAfterBattle: {fileID: 0}
-        routeAfterBattle: 0
-        text: Welcome to Lunen Island! If you're seeing this and not in the development
-          team, that's a slight issue. Whatever, do what you want with it.
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0.5
-        newSceneType: 1
-        newScene:
-          sceneAsset: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d,
-            type: 3}
-          scenePath: Assets/Scenes/LunenIslandPort.unity
-        newSceneEntranceIndex: 1
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        openPanel: 0
-        closePanel: 0
-        trainerEncounter: {fileID: 0}
+  parts:
+  - name: TestText
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Check this out!
+
+      It''s working perfectly!'
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: TestText2
+    type: 2
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: te2st23
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: LolTest
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
