@@ -580,11 +580,15 @@ public class BattleSetup : MonoBehaviour
 
     public void PlayerWin()
     {
-        if (cutsceneAfterBattle != null)
+        if (cutsceneAfterBattle != null && typeOfBattle == BattleType.TrainerBattle)
         {
             CutsceneStartLite(cutsceneAfterBattle, cutsceneAfterBattleRoute);
             cutsceneAfterBattle = null;
             cutsceneAfterBattleRoute = 0;
+        }
+        else
+        {
+            AdvanceCutscene();
         }
         sr.eventLog.AddEvent("Got To Player Win Function");
         if (typeOfBattle == BattleType.TrainerBattle) ExitTrainerBattle(true);

@@ -7,7 +7,7 @@ public class Database : ScriptableObject
 {
     public int LevelCap;
     
-    public List<ScriptableItem> AllItems;
+    public List<Item> AllItems;
     public List<Lunen> AllLunen;
     public List<Action> AllActions;
 

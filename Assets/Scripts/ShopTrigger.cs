@@ -5,7 +5,11 @@ using UnityEngine;
 public class ShopTrigger : MonoBehaviour
 {
     [SerializeField] private UI_Shop shop;
-    // Start is called before the first frame update
+    void Start()
+    {
+        shop.Show();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player")) {

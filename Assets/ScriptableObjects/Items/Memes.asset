@@ -7,13 +7,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe3f3de1279d24685b8e6ca8dcac2788, type: 3}
-  m_Name: MaleMC
+  m_Script: {fileID: 11500000, guid: 7a04a60759c7742bbaf114d589cb9f7c, type: 3}
+  m_Name: Memes
   m_EditorClassIdentifier: 
-  CharacterSpritesheet: {fileID: 2800000, guid: 1f79d1cee358141e580a5231f2384a00,
-    type: 3}
-  CharacterSpriteList: []
-  CharacterIdleTime: 0.2
-  CharacterWalkTime: 0.1
+  description: 
+  tossable: 0
+  icon: {fileID: 21300000, guid: bbe7741aef04c7f4eb4f79f94ff3585a, type: 3}
+  itemType: 0
+  buyValue: 99999999
+  sellValue: 0

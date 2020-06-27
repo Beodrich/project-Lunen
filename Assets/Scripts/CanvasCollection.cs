@@ -468,7 +468,7 @@ public class CanvasCollection : MonoBehaviour
         InventoryModeSelectButtons[InventoryModeSelect].SetSelected(false);
         InventoryModeSelect = index;
         InventoryModeSelectButtons[InventoryModeSelect].SetSelected(true);
-        sr.inventory.NewInventoryType((ScriptableItem.ItemType) index);
+        sr.inventory.NewInventoryType((Item.ItemType) index);
         RefreshInventoryButtons();
     }
 
@@ -785,10 +785,10 @@ public class CanvasCollection : MonoBehaviour
     public void UseItem(int index)
     {
         bool itemUseSuccess = true;
-        ScriptableItem item = sr.inventory.requestedItems[index].item;
+        Item item = sr.inventory.requestedItems[index].item;
         switch (item.itemType)
         {
-            case ScriptableItem.ItemType.Capture:
+            case Item.ItemType.Capture:
                 if (sr.battleSetup.InBattle)
                 {
                     if (sr.battleSetup.typeOfBattle == BattleSetup.BattleType.TrainerBattle)

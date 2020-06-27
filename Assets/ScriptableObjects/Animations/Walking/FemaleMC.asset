@@ -63,5 +63,5 @@ MonoBehaviour:
   - {fileID: -8834634479458255802, guid: 68903cc6420cc4045b2b16a97a33632a, type: 3}
   - {fileID: 88416035207106595, guid: 68903cc6420cc4045b2b16a97a33632a, type: 3}
   - {fileID: 802210138808794822, guid: 68903cc6420cc4045b2b16a97a33632a, type: 3}
-  CharacterIdleTime: 0.25
+  CharacterIdleTime: 0.2
   CharacterWalkTime: 0.1

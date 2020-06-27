@@ -9,9 +9,9 @@ public class Inventory : MonoBehaviour
     [System.Serializable]
     public class InventoryEntry
     {
-        public ScriptableItem item;
+        public Item item;
         public int amount;
-        public InventoryEntry(ScriptableItem _item, int _amount)
+        public InventoryEntry(Item _item, int _amount)
         {
             item = _item;
             amount = _amount;
@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour
 
     public List<InventoryEntry> listOfItems;
     public List<InventoryEntry> requestedItems;
-    public ScriptableItem.ItemType currentRequestedType;
+    public Item.ItemType currentRequestedType;
 
     public int itemCap;
 
@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour
         NewInventoryType(currentRequestedType);
     }
 
-    public void NewInventoryType(ScriptableItem.ItemType type)
+    public void NewInventoryType(Item.ItemType type)
     {
         requestedItems = new List<InventoryEntry>();
         foreach(InventoryEntry entry in listOfItems)
@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour
         currentRequestedType = type;
     }
 
-    public bool RemoveItem(ScriptableItem item, int amount)
+    public bool RemoveItem(Item item, int amount)
     {
         int index = FindIndexInInventory(item);
         if (index != -1)
@@ -59,7 +59,7 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
-    public void AddItem(ScriptableItem item, int amount)
+    public void AddItem(Item item, int amount)
     {
         int index = FindIndexInInventory(item);
         if (index != -1)
@@ -73,7 +73,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public int FindIndexInInventory(ScriptableItem item)
+    public int FindIndexInInventory(Item item)
     {
         for (int i = 0; i < listOfItems.Count; i++)
         {
@@ -82,7 +82,7 @@ public class Inventory : MonoBehaviour
         return -1; //Returns -1 In Error
     }
 
-    public void CheckToRescan(ScriptableItem item)
+    public void CheckToRescan(Item item)
     {
         if (item.itemType == currentRequestedType)
         {

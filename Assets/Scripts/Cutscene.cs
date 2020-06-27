@@ -149,7 +149,7 @@ public class CutscenePart
     [ConditionalField(nameof(type), false, PartType.ClosePanel)] public CanvasCollection.UIState closePanel;
 
     //Type: Obtain Item
-    [ConditionalField(nameof(type), false, PartType.ObtainItem)] public ScriptableItem itemObtained;
+    [ConditionalField(nameof(type), false, PartType.ObtainItem)] public Item itemObtained;
     [ConditionalField(nameof(type), false, PartType.ObtainItem)] public int itemAmount;
 
     //Type: Obtain Lunen

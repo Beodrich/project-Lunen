@@ -26797,11 +26797,8 @@ MonoBehaviour:
     stopsBattle: 0
     routes: []
   InCutscene: 0
-  cutscenePart: 0
-  cutsceneRoute: 0
   cutsceneNextRoute: 0
   cutsceneLoopGoing: 0
-  cutsceneAdvance: 0
   dialogueBoxOpen: 0
   dialogueBoxNext: 0
   choiceOpen: 0

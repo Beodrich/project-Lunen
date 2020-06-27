@@ -8,9 +8,9 @@ public class UI_Shop : MonoBehaviour
     // Start is called before the first frame update
     private Transform container;
     private Transform shopItemTemp;
-    private List<Item.ItemType> playerInventory = new List<Item.ItemType>();
     private int gold = 40;
 
+    public List<Item> sellItems;
 
 
 
@@ -23,28 +23,35 @@ public class UI_Shop : MonoBehaviour
     }
     private void Start()
     {
-        CreateButton(Item.ItemType.Pokeball, Item.GetSprite(Item.ItemType.Pokeball), "PokeBall", Item.GetCost(Item.ItemType.Pokeball), 0);
-        CreateButton(Item.ItemType.Potion, Item.GetSprite(Item.ItemType.Potion), "Potion", Item.GetCost(Item.ItemType.Potion), 1);
+        for (int i = 0; i < sellItems.Count; i++)
+        {
+            CreateButton(sellItems[i], i);
+        }
         Hide();
     }
-    void CreateButton(Item.ItemType itemType, Sprite itemSprint, string itemName, int itemCost, int positionIndex)
+    void CreateButton(Item item, int positionIndex)
     {
+        int itemCost = item.buyValue;
+        string itemName = item.name;
+        Sprite itemSprite = item.icon;
+        Item.ItemType itemType = item.itemType;
+
         Transform shopItemTransform = Instantiate(shopItemTemp, container);//make a copy of the item temp
         RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
         shopItemTransform.gameObject.SetActive(true);
-        float shopItemHeight = 100f;
+        float shopItemHeight = 50f;
         shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
         shopItemTransform.Find("PriceText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
 
         shopItemTransform.Find("nametext").GetComponent<TextMeshProUGUI>().SetText(itemName);
-        shopItemTransform.Find("itemPicture").GetComponent<Image>().sprite = itemSprint;
-        shopItemTransform.GetComponent<Button>().onClick.AddListener(() => TryBuyItem(itemType));
+        shopItemTransform.Find("itemPicture").GetComponent<Image>().sprite = itemSprite;
+        shopItemTransform.GetComponent<Button>().onClick.AddListener(() => TryBuyItem(item));
     }
-    void TryBuyItem(Item.ItemType itemType) {
-        if (HasEnoughGold(itemType))
+    void TryBuyItem(Item item) {
+        if (HasEnoughGold(item))
         {
             Debug.Log("Has enough gold");
-            BoughtItem(itemType);
+            BoughtItem(item);
 
         }
         else {
@@ -55,15 +62,15 @@ public class UI_Shop : MonoBehaviour
         gameObject.SetActive(true);
     }
     public void Hide() { gameObject.SetActive(false); }
-    void BoughtItem(Item.ItemType itemType) {
-         Debug.Log("Bought an item"+ itemType);
-        playerInventory.Add(itemType);
+    void BoughtItem(Item item) {
+         Debug.Log("Bought an item"+ item.name);
+        //playerInventory.Add(itemType);
     }
-    private bool HasEnoughGold(Item.ItemType itemType) {
+    private bool HasEnoughGold(Item item) {
 
-        if (gold >= Item.GetCost(itemType))
+        if (gold >= item.buyValue)
         {
-            gold -= Item.GetCost(itemType);
+            gold -= item.buyValue;
             return true;
         }
         else {
