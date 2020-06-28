@@ -306,6 +306,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad50c7d85539d46b39477883f81f4184, type: 3}
+--- !u!114 &302586976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+    type: 3}
+  m_PrefabInstance: {fileID: 302586975}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &383272076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3200,7 +3212,7 @@ PrefabInstance:
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: sceneCutscenes.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
@@ -3252,5 +3264,10 @@ PrefabInstance:
       propertyPath: spawnPlayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: sceneCutscenes.Array.data[0]
+      value: 
+      objectReference: {fileID: 302586976}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e5b9a42be0d347eb86ae80af335daf3, type: 3}

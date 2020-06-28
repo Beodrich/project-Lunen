@@ -439,7 +439,17 @@ public class BattleSetup : MonoBehaviour
                                 break;
 
                                 case CutscenePart.NewCutsceneType.SceneBased:
-                                    CutsceneStartLite(new PackedCutscene(sr.sceneAttributes.sceneCutscenes[part.cutsceneIndex]), CutsceneFindRoute(part.cutsceneRoute));
+                                    if (sr.sceneAttributes.sceneCutscenes.Count == 0)
+                                    {
+                                        AdvanceCutscene();
+                                    }
+                                    else
+                                    {
+                                        int nextcutscene = part.cutsceneIndex;
+                                        if (sr.sceneAttributes.sceneCutscenes.Count <= nextcutscene) nextcutscene = 0;
+                                        CutsceneStartLite(new PackedCutscene(sr.sceneAttributes.sceneCutscenes[part.cutsceneIndex]), CutsceneFindRoute(part.cutsceneRoute));
+                                    }
+                                    
                                 break;
 
                                 case CutscenePart.NewCutsceneType.Local:

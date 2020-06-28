@@ -12,143 +12,200 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f833411ddbf4e28abde908d974aed7, type: 3}
   m_Name: Player Lost All Lunen
   m_EditorClassIdentifier: 
-  routes:
-  - name: YEETScene
-    parts:
-      array:
-      - name: Dialogue1
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: You're out of Lunen. You'll be whisked back to a Lunen Center.
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: 0
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: YEET
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: YEET
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: 0
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: NewScene
-        type: 9
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: YEET
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 3
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: 0
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: NewCutscene
-        type: 11
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        text: YEET
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 3
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: 0
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 2
-        cutsceneIndex: 0
-        cutsceneRoute: 3
-        trainerEncounter: {fileID: 0}
+  stopsBattle: 0
+  showAllData: 0
+  parts:
+  - name: ' [Dialogue] You lost all your Lunen! You''re going to be yeeted back to
+      the last place you healed.'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: You lost all your Lunen! You're going to be yeeted back to the last place
+      you healed.
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Y
+
+      E
+
+      E
+
+      T'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: 'Y
+
+      E
+
+      E
+
+      T'
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ChangeScene] '
+    title: 
+    type: 13
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: YEET
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 
+    newSceneType: 3
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [NewCutscene] '
+    title: 
+    type: 15
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: YEET
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 
+    newSceneType: 3
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 2
+    cutsceneIndex: 0
+    cutsceneRoute: Player Just Lost
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
