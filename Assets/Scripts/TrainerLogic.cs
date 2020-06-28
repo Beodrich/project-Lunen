@@ -39,6 +39,7 @@ public class TrainerLogic : MonoBehaviour
     void Start()
     {
         GetImportantVariables();
+        GetDefeated();
         CreateTeam();
         SetMoveLook(startLookDirection);
     }
@@ -66,9 +67,12 @@ public class TrainerLogic : MonoBehaviour
 
         move.animationSet = animationSet;
 
-        if (sr != null && !overrideDefeated) defeated = sr.battleSetup.GuidInList(GetComponent<GuidComponent>().GetGuid());
-
         UpdateTeam();
+    }
+
+    void GetDefeated()
+    {
+        if (sr != null && !overrideDefeated) defeated = sr.battleSetup.GuidInList(GetComponent<GuidComponent>().GetGuid());
     }
 
     void UpdateTeam()

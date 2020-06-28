@@ -3318,7 +3318,7 @@ MonoBehaviour:
   lookDirection: 2
   hit: {fileID: 0}
   hits: []
-  animTime: 0.1
+  animTime: 0.02
   animIndex: 0
 --- !u!212 &4012099485112002772
 SpriteRenderer:

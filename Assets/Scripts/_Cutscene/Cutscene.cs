@@ -60,21 +60,22 @@ public class CutscenePart
         HealParty,
         BLANK,
         SetSpawn,
+        ChangeRoute,
         ChangeScene,
         ChangeCameraFollow,
         NewCutscene,
         ObtainItem,
-        SetAsCollected,
-        OpenPanel,
-        ClosePanel,
-        CheckBattleOver,
         ObtainLunen,
-        ChangeRoute,
+        SetAsCollected,
+        SetPanel,
+        CheckBattleOver,
+        
+        
     }
     public enum MoveType
     {
         Null,
-        ToCollider,
+        ToColliderTag,
         ToSpaces,
         ToAnyCollider
     }
@@ -118,7 +119,7 @@ public class CutscenePart
     public TrainerLogic trainerLogic;
     public bool postBattleCutscene;
     public Cutscene cutsceneAfterBattle;
-    public int routeAfterBattle;
+    public string routeAfterBattle;
 
     //Type: Dialogue
     [TextArea(5,10)] public string text;
@@ -149,13 +150,13 @@ public class CutscenePart
     //Type: New Cutscene
     public NewCutsceneType newCutsceneType;
     public int cutsceneIndex;
-    public int cutsceneRoute;
+    public string cutsceneRoute;
+    public CutsceneScript cutsceneGlobal;
+    public Cutscene cutsceneLocal;
 
-    //Type: Open Panel
-    public CanvasCollection.UIState openPanel;
-
-    //Type: Close Panel
-    public CanvasCollection.UIState closePanel;
+    //Type: Set Panel
+    public CanvasCollection.UIState panelSelect;
+    public UITransition.State panelState;
 
     //Type: Obtain Item
     public Item itemObtained;
@@ -164,9 +165,6 @@ public class CutscenePart
     //Type: Obtain Lunen
     public Lunen lunenObtained;
     public int lunenLevel;
-
-    //Type: Change Route
-    public int newRoute;
 
     [HideInInspector] public TrainerLogic trainerEncounter;
 }

@@ -7,10 +7,10 @@ using UnityEditor;
 using UnityEditorInternal;
 using UnityEditor.SceneManagement;
 
-[CustomEditor(typeof(Cutscene))]
-public class CutsceneEditor : Editor
+[CustomEditor(typeof(CutsceneScript))]
+public class CutsceneScriptEditor : Editor
 {
-    Cutscene cutscene;
+    CutsceneScript cutscene;
     public ReorderableList list = null;
     SerializedProperty scene;
 
@@ -19,7 +19,7 @@ public class CutsceneEditor : Editor
 
     private void OnEnable()
     {
-        cutscene = (Cutscene)target;
+        cutscene = (CutsceneScript)target;
         list = new ReorderableList(serializedObject, serializedObject.FindProperty("parts"), true, false, true, true);
         //scene = serializedObject.FindProperty("newScene");
     }
@@ -79,7 +79,6 @@ public class CutsceneEditor : Editor
             if (GUI.changed)
             {
                 EditorUtility.SetDirty(cutscene);
-                EditorSceneManager.MarkSceneDirty(cutscene.gameObject.scene);
             }
         }
         

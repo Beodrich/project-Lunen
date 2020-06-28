@@ -790,6 +790,17 @@ PrefabInstance:
       propertyPath: ThisSceneEntrance
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 61a5f30f8d1ee411783403779f55dbc9,
+        type: 3}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.scenePath
+      value: Assets/Scenes/HouseArray.unity
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696778, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_SortingOrder
@@ -817,6 +828,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80152272002ce408fae3b00a5f1f0bab, type: 3}
+--- !u!114 &616499233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+    type: 3}
+  m_PrefabInstance: {fileID: 1273592377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &616499234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
+    type: 3}
+  m_PrefabInstance: {fileID: 1273592377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56b80adc773ec4b81bda5bc377218630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &756672128
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2888,88 +2923,88 @@ PrefabInstance:
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[0]
-      value: 198
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[1]
-      value: 183
+      value: 103
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[2]
-      value: 126
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[3]
-      value: 230
+      value: 222
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[4]
-      value: 234
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[5]
-      value: 249
+      value: 235
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[6]
-      value: 182
+      value: 118
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[7]
-      value: 64
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[8]
-      value: 152
+      value: 139
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[9]
-      value: 125
+      value: 222
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[10]
-      value: 34
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[11]
-      value: 122
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[12]
-      value: 73
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[13]
-      value: 181
+      value: 226
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[14]
-      value: 20
+      value: 242
       objectReference: {fileID: 0}
     - target: {fileID: 1029749036027700271, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: serializedGuid.Array.data[15]
-      value: 67
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013389779558, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 8107309767080200195, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+      objectReference: {fileID: 7393945022160921464, guid: 1f79d1cee358141e580a5231f2384a00,
         type: 3}
     - target: {fileID: 6539219013480142736, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -2980,22 +3015,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 8107309767080200195, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+      objectReference: {fileID: 7393945022160921464, guid: 1f79d1cee358141e580a5231f2384a00,
         type: 3}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: TeamComp.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: sr
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
-        type: 3}
-      propertyPath: startLookDirection
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -3006,33 +3036,17 @@ PrefabInstance:
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: TeamComp.Array.data[0].level
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
-      propertyPath: TeamComp.Array.data[1].species
+      propertyPath: animationSet
       value: 
-      objectReference: {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748,
+      objectReference: {fileID: 11400000, guid: b65aa9586ea654bd19cbf0d29442f3c5,
         type: 2}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
-      propertyPath: TeamComp.Array.data[1].level
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
-        type: 3}
-      propertyPath: TeamComp.Array.data[2].species
-      value: 
-      objectReference: {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748,
-        type: 2}
-    - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
-        type: 3}
-      propertyPath: TeamComp.Array.data[2].level
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
-        type: 3}
-      propertyPath: overrideDefeated
+      propertyPath: limitRange
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142741, guid: a92523051362e453fbce1069546b2680,
@@ -3092,11 +3106,134 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
         type: 3}
-      propertyPath: cutsceneName
-      value: BattleStart
+      propertyPath: parts.Array.size
+      value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[3].cutsceneAfterBattle
+      value: 
+      objectReference: {fileID: 616499233}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[3].trainerLogic
+      value: 
+      objectReference: {fileID: 616499234}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[1].moveType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[1].spacesToMove
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: showAllData
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[13].name
+      value: ' [SetPanel] Loss Route End'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[13].title
+      value: Loss Route End
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[13].type
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[13].moveScript
+      value: 
+      objectReference: {fileID: 1273592378}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[13].moveType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[13].text
+      value: Hi, I'm a trainer! Let's fight!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[13].newScene.sceneAsset
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[13].newScene.scenePath
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[13].newSceneType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[14].name
+      value: ' [NewCutscene] Loss Route End'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[14].title
+      value: Loss Route End
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[14].type
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[14].moveScript
+      value: 
+      objectReference: {fileID: 1273592378}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[14].moveType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[14].text
+      value: Hi, I'm a trainer! Let's fight!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[13].newCutsceneType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539219013480142742, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: parts.Array.data[13].itemObtained
+      value: 
+      objectReference: {fileID: 11400000, guid: 99a4b3e8ff9bc467db0ed96253e84e7e,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a92523051362e453fbce1069546b2680, type: 3}
+--- !u!114 &1273592378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6539219013480142697, guid: a92523051362e453fbce1069546b2680,
+    type: 3}
+  m_PrefabInstance: {fileID: 1273592377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: badf3e2d1cabc4ad98d3d680a7dc9943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1366319296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12672,6 +12809,17 @@ PrefabInstance:
         type: 3}
       propertyPath: TargetEntrance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 59b870602814d455ba582557c76925b2,
+        type: 3}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: TargetLocation.scenePath
+      value: Assets/Scenes/LunenCenter.unity
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696778, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}

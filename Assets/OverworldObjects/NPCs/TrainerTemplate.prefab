@@ -173,6 +173,7 @@ MonoBehaviour:
   - Wall
   - Trainer
   - NPC
+  overrideDefeated: 0
   engaged: 0
   defeated: 0
 --- !u!114 &6539219013480142742
@@ -187,202 +188,569 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutsceneName: 
-  routes:
-  - name: StandardTrainerStuff
-    parts:
-      array:
-      - name: Walk To Player
-        type: 2
-        startNextSimultaneous: 0
-        moveScript: {fileID: 6539219013480142697}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 1
-        colliderTag: Player
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        postBattleCutscene: 0
-        cutsceneAfterBattle: {fileID: 0}
-        routeAfterBattle: 0
-        text: 
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: Talk To Player
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 6539219013480142697}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: Player
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        postBattleCutscene: 0
-        cutsceneAfterBattle: {fileID: 0}
-        routeAfterBattle: 0
-        text: I am a trainer! Let's fight!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-      - name: Start Battle
-        type: 4
-        startNextSimultaneous: 0
-        moveScript: {fileID: 6539219013480142697}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: Player
-        spacesToMove: 0
-        trainerLogic: {fileID: 6539219013480142739}
-        postBattleCutscene: 1
-        cutsceneAfterBattle: {fileID: 6539219013480142742}
-        routeAfterBattle: 1
-        text: I am a trainer! Let's fight!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-  - name: DefeatedTrainerStuff
-    parts:
-      array:
-      - name: Complaint
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 6539219013480142697}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: Player
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        postBattleCutscene: 0
-        cutsceneAfterBattle: {fileID: 0}
-        routeAfterBattle: 0
-        text: Dang, I lost!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
-  - name: PostDefeatTrainer
-    parts:
-      array:
-      - name: Complaint
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 6539219013480142697}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: Player
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        postBattleCutscene: 0
-        cutsceneAfterBattle: {fileID: 0}
-        routeAfterBattle: 0
-        text: I can't believe I lost to you!
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: -1
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        trainerEncounter: {fileID: 0}
+  cutsceneName: BattleStart
+  stopsBattle: 0
+  showAllData: 0
+  parts:
+  - name: ' [ROUTE_START] Battle Start'
+    title: Battle Start
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Hi, I'm a trainer! Let's fight!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Movement] Move To Player'
+    title: Move To Player
+    type: 5
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: 
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Hi, I''m a trainer! Let''s fight!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Hi, I'm a trainer! Let's fight!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Battle] Lunen Trainer Battle'
+    title: Lunen Trainer Battle
+    type: 7
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 1
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: Loss Route
+    text: Hi, I'm a trainer! Let's fight!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [END] Battle Start End'
+    title: Battle Start End
+    type: 4
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Hi, I'm a trainer! Let's fight!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: Battle Start End
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Hi, I'm a trainer! Let's fight!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Loss Route'
+    title: Loss Route
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Hi, I'm a trainer! Let's fight!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Dammit, I lost!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Dammit, I lost!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [END] Loss Route End'
+    title: Loss Route End
+    type: 4
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Hi, I'm a trainer! Let's fight!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: Battle Start End
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Hi, I'm a trainer! Let's fight!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Trainer Defeated'
+    title: Trainer Defeated
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Hi, I'm a trainer! Let's fight!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] I can''t believe I lost to you!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: I can't believe I lost to you!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [END] Loss Route End'
+    title: Loss Route End
+    type: 4
+    startNextSimultaneous: 0
+    moveScript: {fileID: 6539219013480142697}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 3
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Hi, I'm a trainer! Let's fight!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    openPanel: 0
+    closePanel: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    newRoute: 0
+    trainerEncounter: {fileID: 0}
 --- !u!114 &6539219013480142697
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,163 +13,181 @@ MonoBehaviour:
   m_Name: Enemy Lunen Defeated
   m_EditorClassIdentifier: 
   stopsBattle: 1
-  routes:
-  - name: Enemy Lunen Defeated
-    parts:
-      array:
-      - name: Enemy Lunen Defeated
-        type: 1
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        postBattleCutscene: 0
-        cutsceneAfterBattle: {fileID: 0}
-        routeAfterBattle: 0
-        text: Enemy Lunen Defeated
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: 0
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        openPanel: 0
-        closePanel: 0
-        trainerEncounter: {fileID: 0}
-      - name: Close Battle Panel
-        type: 15
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        postBattleCutscene: 0
-        cutsceneAfterBattle: {fileID: 0}
-        routeAfterBattle: 0
-        text: Enemy Lunen Defeated
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: 0
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        openPanel: 0
-        closePanel: 1
-        trainerEncounter: {fileID: 0}
-      - name: Open Party Panel
-        type: 14
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        postBattleCutscene: 0
-        cutsceneAfterBattle: {fileID: 0}
-        routeAfterBattle: 0
-        text: Enemy Lunen Defeated
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: 0
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        openPanel: 6
-        closePanel: 0
-        trainerEncounter: {fileID: 0}
-      - name: Check If The Battle Is Over
-        type: 16
-        startNextSimultaneous: 0
-        moveScript: {fileID: 0}
-        chooseMoveDirection: 0
-        movementDirection: 0
-        moveType: 0
-        colliderTag: 
-        spacesToMove: 0
-        trainerLogic: {fileID: 0}
-        postBattleCutscene: 0
-        cutsceneAfterBattle: {fileID: 0}
-        routeAfterBattle: 0
-        text: Enemy Lunen Defeated
-        useChoice1: 0
-        choice1Text: 
-        choice1Route: 0
-        useChoice2: 0
-        choice2Text: 
-        choice2Route: 0
-        useChoice3: 0
-        choice3Text: 
-        choice3Route: 0
-        waitTime: 0
-        newSceneType: 0
-        newScene:
-          Scene: {fileID: 0}
-          SceneName: 
-          sceneIndex: 0
-          sceneEnabled: 0
-        newSceneEntranceIndex: 0
-        newScenePosition: {x: 0, y: 0}
-        newSceneDirection: 0
-        newCutsceneType: 0
-        cutsceneIndex: 0
-        cutsceneRoute: 0
-        openPanel: 0
-        closePanel: 0
-        trainerEncounter: {fileID: 0}
+  showAllData: 0
+  parts:
+  - name: ' [SetPanel] Battle Panel Close'
+    title: Battle Panel Close
+    type: 19
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Enemy Lunen Defeated!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 1
+    panelState: 1
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Enemy Lunen Defeated!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Enemy Lunen Defeated!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [SetPanel] Party Panel Open'
+    title: Party Panel Open
+    type: 19
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Enemy Lunen Defeated!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 6
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [CheckBattleOver] Party Panel Open'
+    title: Party Panel Open
+    type: 20
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Enemy Lunen Defeated!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 6
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}

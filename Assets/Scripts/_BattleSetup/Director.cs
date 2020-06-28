@@ -221,7 +221,7 @@ public class Director : MonoBehaviour
         //Tentative EXP calculation = ( P * C * G * L) / (7 * N)
         exactPayout = (P * C * G * L) / (2 * N);
 
-        Debug.Log(exactPayout);
+        Debug.Log("Exp Payout: " + exactPayout);
 
         int exactPayoutInt = Mathf.RoundToInt((float)exactPayout);
 

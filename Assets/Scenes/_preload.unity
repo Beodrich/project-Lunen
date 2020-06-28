@@ -7150,7 +7150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e4880976a7b4b2cadaa6855dac3c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLines: 4
+  maxLines: 11
   myFont: {fileID: 12800000, guid: 4a599d4d38a544cd39bd67ebfe5a60c5, type: 3}
   fadeOutTime: 3
   hideTime: 0
@@ -26886,8 +26886,8 @@ MonoBehaviour:
   vsync: 1
   bootBehaviour: 2
   bootScene:
-    sceneAsset: {fileID: 102900000, guid: 59b870602814d455ba582557c76925b2, type: 3}
-    scenePath: Assets/Scenes/LunenCenter.unity
+    sceneAsset: {fileID: 102900000, guid: 2b691c676b0ff499c9513449852f4d03, type: 3}
+    scenePath: Assets/Scenes/AlecOverworldScene.unity
   bootEntrance: 1
   TestLunenParty:
     Value:
