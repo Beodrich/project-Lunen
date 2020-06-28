@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: c658083cf4dfc449d8161fab3ab80319, type: 3}
   m_Name: Floral
-  m_EditorClassIdentifier: Assembly-CSharp::Type
+  m_EditorClassIdentifier: 
   indexValue: 3
   StrongAgainst:
   - {fileID: 11400000, guid: 8ca3cee93490140b0b9e0ddb9b65c0ad, type: 2}
-  - {fileID: 11400000, guid: bb44269f8236e41a984730122e43064c, type: 2}
+  - {fileID: 11400000, guid: a13de93d4dfea408c97d2cfb3b120461, type: 2}
   WeakAgainst:
   - {fileID: 11400000, guid: 6ff4b9b35b664489f8e80786889294d9, type: 2}
   - {fileID: 11400000, guid: 250f2c032f4eb45e18c7bf225a7973f5, type: 2}

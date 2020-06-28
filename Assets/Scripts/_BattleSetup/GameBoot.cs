@@ -76,6 +76,7 @@ public class GameBoot : MonoBehaviour
             case BootBehaviour.LoadIntoEntrance:
                 GivePlayerLunen(TestLunenParty.Value);
                 sr.battleSetup.nextEntrance = bootEntrance;
+                sr.battleSetup.lastOverworld = bootScene.ScenePath;
                 SceneManager.LoadScene(bootScene.ScenePath);
             break;
             case BootBehaviour.LoadIntoCurrentScene:

@@ -333,7 +333,7 @@ public class CanvasCollection : MonoBehaviour
                     {
                         LunenPanels[i].ActionButtons[j].SetActive(true);
                         LunenPanels[i].ActionButtonScripts[j].Name.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].ActionSet[j].Name;
-                        LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].ActionSet[j].Type.name;
+                        //LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].ActionSet[j].Type.name;
                         
                     }
                 }
