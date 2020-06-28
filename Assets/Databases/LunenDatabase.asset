@@ -15,12 +15,18 @@ MonoBehaviour:
   LevelCap: 30
   AllItems:
   - {fileID: 11400000, guid: 54dbbd98dc03b4763a5482e1dbd1c9a3, type: 2}
+  - {fileID: 11400000, guid: 99a4b3e8ff9bc467db0ed96253e84e7e, type: 2}
   AllLunen:
   - {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748, type: 2}
+  - {fileID: 11400000, guid: 9ab71ebd2c0fe4c428bc0b9b5329e46e, type: 2}
+  - {fileID: 11400000, guid: 78f0960b772b240ccafabbae7f888a6b, type: 2}
+  - {fileID: 11400000, guid: d271bc018be6a4303843c58710dd56b7, type: 2}
+  - {fileID: 11400000, guid: 223665715cf09408bad8757fff6b2557, type: 2}
   AllActions:
   - {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
   - {fileID: 11400000, guid: 3becbc3900461401ebe8af174f399876, type: 2}
   - {fileID: 11400000, guid: 89f6c6a5537fb4fef8430725060cb6be, type: 2}
+  - {fileID: 11400000, guid: 977890cc13598462f8380edf5670307b, type: 2}
   GlobalCutsceneList:
   - {fileID: 11400000, guid: 420020b0d7eaa4de8bb17765e5858981, type: 2}
   - {fileID: 11400000, guid: 76ff2a0513a1942019e079fb476840cb, type: 2}

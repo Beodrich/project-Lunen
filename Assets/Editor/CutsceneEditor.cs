@@ -41,6 +41,7 @@ public class CutsceneEditor : Editor
         {
             serializedObject.Update();
             list.DoLayoutList();
+            EditorStyles.textField.wordWrap = true;
             //EditorGUILayout.PropertyField(scene, true);
             
 
@@ -334,8 +335,7 @@ public class CutsceneEditor : Editor
             
 
             case CutscenePart.PartType.ChangeRoute:
-                //TODO
-                GUILayout.Label("TODO", EditorStyles.boldLabel);
+                part.newRoute = EditorGUILayout.TextField("Change Route To: ", part.newRoute);
             break;
         }
     }

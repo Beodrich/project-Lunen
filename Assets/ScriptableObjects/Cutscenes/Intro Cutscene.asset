@@ -13,8 +13,57 @@ MonoBehaviour:
   m_Name: Intro Cutscene
   m_EditorClassIdentifier: 
   stopsBattle: 0
+  showAllData: 0
   parts:
-  - name: TestText
+  - name: ' [Wait] Wait for 0.25 seconds'
+    title: Wait for 0.25 seconds
+    type: 8
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Time to send you into Lunen Island! Enjoy your stay!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0.25
+    newRoute: 
+    newSceneType: 1
+    newScene:
+      sceneAsset: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d, type: 3}
+      scenePath: Assets/Scenes/LunenIslandPort.unity
+    newSceneEntranceIndex: 1
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Welcome to Lunen Island! This is a development build! If you''re
+      interested in learning more, well, you''ll have to wait a bit. Just give us
+      some time!'
+    title: 
     type: 1
     startNextSimultaneous: 0
     moveScript: {fileID: 0}
@@ -27,9 +76,8 @@ MonoBehaviour:
     postBattleCutscene: 0
     cutsceneAfterBattle: {fileID: 0}
     routeAfterBattle: 0
-    text: 'Check this out!
-
-      It''s working perfectly!'
+    text: Welcome to Lunen Island! This is a development build! If you're interested
+      in learning more, well, you'll have to wait a bit. Just give us some time!
     useChoice1: 0
     choice1Text: 
     choice1Route: 0
@@ -40,6 +88,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 0
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -50,58 +99,18 @@ MonoBehaviour:
     newCutsceneType: 0
     cutsceneIndex: 0
     cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
-  - name: TestText2
-    type: 2
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 0
-    text: te2st23
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 0
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 0
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 0
-    waitTime: 0
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    newRoute: 0
-    trainerEncounter: {fileID: 0}
-  - name: LolTest
-    type: 1
+  - name: ' '
+    title: 
+    type: 10
     startNextSimultaneous: 0
     moveScript: {fileID: 0}
     chooseMoveDirection: 0
@@ -124,6 +133,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 0
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -134,11 +144,1563 @@ MonoBehaviour:
     newCutsceneType: 0
     cutsceneIndex: 0
     cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Choose Lunen'
+    title: Choose Lunen
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] As we don''t have a professor giving you a starter Lunen cutscene
+      ready yet, we''ll give you a Lunen now! '
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'As we don''t have a professor giving you a starter Lunen cutscene ready
+      yet, we''ll give you a Lunen now! '
+    useChoice1: 1
+    choice1Text: Rootle
+    choice1Route: Get Rootle
+    useChoice2: 1
+    choice2Text: Wavi
+    choice2Route: Get Wavi
+    useChoice3: 1
+    choice3Text: Flamela
+    choice3Route: Get Flamela
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Choice] What Lunen would you like?
+
+
+      Rootle, the Floral Lunen?
+
+      Wavi,
+      the Water Lunen?
+
+      Flamela, the Fire Lunen?'
+    title: 
+    type: 2
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'What Lunen would you like?
+
+
+      Rootle, the Floral Lunen?
+
+      Wavi,
+      the Water Lunen?
+
+      Flamela, the Fire Lunen?'
+    useChoice1: 1
+    choice1Text: Rootle
+    choice1Route: Get Rootle
+    useChoice2: 1
+    choice2Text: Wavi
+    choice2Route: Get Wavi
+    useChoice3: 1
+    choice3Text: Flamela
+    choice3Route: Get Flamela
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: 
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Get Rootle'
+    title: Get Rootle
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] You chose the Floral Lunen, Rootle!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: You chose the Floral Lunen, Rootle!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: Confirm Rootle
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: Choose Lunen
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Choice] Are you sure you want Rootle?'
+    title: 
+    type: 2
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Are you sure you want Rootle?
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: Confirm Rootle
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: Choose Lunen
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: 
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Confirm Rootle'
+    title: Confirm Rootle
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Excellent choice! Rootle is great for starting trainers!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Excellent choice! Rootle is great for starting trainers!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ObtainLunen] Get Rootle'
+    title: Get Rootle
+    type: 17
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Excellent choice! Rootle is great for starting trainers!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 11400000, guid: 78f0960b772b240ccafabbae7f888a6b, type: 2}
+    lunenLevel: 3
+    trainerEncounter: {fileID: 0}
+  - name: ' [ChangeRoute] Go To Sendoff'
+    title: Go To Sendoff
+    type: 12
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: Sendoff
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: 
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Get Wavi'
+    title: Get Wavi
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] You chose the Water Lunen, Wavi!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: You chose the Water Lunen, Wavi!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: Confirm Wavi
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: Choose Lunen
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Choice] Are you sure you want Wavi?'
+    title: 
+    type: 2
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Are you sure you want Wavi?
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: Confirm Wavi
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: Choose Lunen
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: 
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Confirm Wavi'
+    title: Confirm Wavi
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Excellent choice! Wavi is really fast and difficult to take
+      down!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Excellent choice! Wavi is really fast and difficult to take down!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ObtainLunen] Get Wavi'
+    title: Get Wavi
+    type: 17
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Excellent choice! Rootle is great for starting trainers!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 11400000, guid: d271bc018be6a4303843c58710dd56b7, type: 2}
+    lunenLevel: 3
+    trainerEncounter: {fileID: 0}
+  - name: ' [ChangeRoute] Go To Sendoff'
+    title: Go To Sendoff
+    type: 12
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: Sendoff
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: 
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Get Flamela'
+    title: Get Flamela
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] You chose the Fire Lunen, Flamela!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: You chose the Fire Lunen, Flamela!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: Confirm Flamela
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: Choose Lunen
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Choice] Are you sure you want Flamela?'
+    title: 
+    type: 2
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Are you sure you want Flamela?
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: Confirm Flamela
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: Choose Lunen
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: 
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Confirm Flamela'
+    title: Confirm Flamela
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Excellent choice! Flamela is great for those who know how
+      to get the best out of them!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Excellent choice! Flamela is great for those who know how to get the best
+      out of them!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ObtainLunen] Get Flamela'
+    title: Get Flamela
+    type: 17
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Excellent choice! Rootle is great for starting trainers!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 11400000, guid: 9ab71ebd2c0fe4c428bc0b9b5329e46e, type: 2}
+    lunenLevel: 3
+    trainerEncounter: {fileID: 0}
+  - name: ' [ChangeRoute] Go To Sendoff'
+    title: Go To Sendoff
+    type: 12
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: Sendoff
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' '
+    title: 
+    type: 10
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ROUTE_START] Sendoff'
+    title: Sendoff
+    type: 3
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Test345
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Time to send you into Lunen Island! Enjoy your stay!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Time to send you into Lunen Island! Enjoy your stay!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [ChangeScene] Move To Lunen Island Port'
+    title: Move To Lunen Island Port
+    type: 13
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Time to send you into Lunen Island! Enjoy your stay!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 0
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 0
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 0
+    waitTime: 0
+    newRoute: 
+    newSceneType: 1
+    newScene:
+      sceneAsset: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d, type: 3}
+      scenePath: Assets/Scenes/LunenIslandPort.unity
+    newSceneEntranceIndex: 1
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
     trainerEncounter: {fileID: 0}

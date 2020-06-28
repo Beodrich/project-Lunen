@@ -300,10 +300,7 @@ public class BattleSetup : MonoBehaviour
 
     public void DialogueBoxPrepare(CutscenePart part, bool next)
     {
-        if (!dialogueBoxNext)
-        {
-            sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Enable);
-        }
+        sr.canvasCollection.RefreshDialogueBox();
         dialogueBoxOpen = true;
         dialogueBoxNext = next;
         if (part.type == CutscenePart.PartType.Dialogue)
@@ -505,12 +502,14 @@ public class BattleSetup : MonoBehaviour
 
                         case CutscenePart.PartType.ObtainLunen:
                             GameObject go = sr.generateMonster.GenerateLunen(part.lunenObtained, part.lunenLevel);
+                            //go.GetComponent<Monster>().MonsterTeam = Director.Team.PlayerTeam;
                             PlayerLunenTeam.Add(go);
+                            go.transform.SetParent(transform);
                             AdvanceCutscene();
                         break;
 
                         case CutscenePart.PartType.ChangeRoute:
-                            CutsceneChangeInternal(CutsceneFindRoute(part.cutsceneRoute));
+                            CutsceneChangeInternal(CutsceneFindRoute(part.newRoute));
                             
                             AdvanceCutscene();
                         break;

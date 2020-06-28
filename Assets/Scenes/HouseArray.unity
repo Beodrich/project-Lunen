@@ -121,6 +121,191 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &302586975
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3089258284872052784, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: animationSet
+      value: 
+      objectReference: {fileID: 11400000, guid: b65aa9586ea654bd19cbf0d29442f3c5,
+        type: 2}
+    - target: {fileID: 3089258284872052784, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: lookDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599592, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_Name
+      value: NPCTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].name
+      value: ' [Dialogue] Hi! I''m not a Nurse Joy, but I can still heal your lunen.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].title
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[0].text
+      value: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].name
+      value: ' [SetSpawn] '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].type
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[1].text
+      value: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].name
+      value: ' [HealParty] '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].type
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].text
+      value: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[3].name
+      value: ' [Wait] 3 seconds'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[3].type
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[3].text
+      value: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[3].waitTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[2].waitTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[4].name
+      value: ' [Dialogue] Your Lunen are fighting fit! Be safe out there!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[4].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[4].text
+      value: Your Lunen are fighting fit! Be safe out there!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[4].waitTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[3].title
+      value: 3 seconds
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad50c7d85539d46b39477883f81f4184, type: 3}
 --- !u!1001 &383272076
 PrefabInstance:
   m_ObjectHideFlags: 0

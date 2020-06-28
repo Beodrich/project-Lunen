@@ -50,8 +50,15 @@ public class GameData
         public List<int> learnedMoves;
 
     }
+    [Serializable]
+    public class InventoryItem
+    {
+        public int itemIndex;
+        public int itemAmount;
+    }
 
     public List<PlayerLunen> PlayerTeam;
+    public List<InventoryItem> InventoryItems;
     public List<System.Guid> GuidList;
     public float positionX;
     public float positionY;
@@ -84,6 +91,17 @@ public class GameData
             }
             PlayerTeam.Add(a);
             
+        }
+
+        InventoryItems = new List<InventoryItem>();
+        Debug.Log("Found " + sr.inventory.listOfItems.Count + " Item" + (sr.inventory.listOfItems.Count == 1 ? "" : "s") + "!");
+        for (int i = 0; i < sr.inventory.listOfItems.Count; i++)
+        {
+            Inventory.InventoryEntry currentItem = sr.inventory.listOfItems[i];
+            InventoryItem a = new InventoryItem();
+            a.itemIndex = sr.database.ItemToIndex(currentItem.item);
+            a.itemAmount = currentItem.amount;
+            InventoryItems.Add(a);
         }
 
         GuidList = sr.battleSetup.GuidList;

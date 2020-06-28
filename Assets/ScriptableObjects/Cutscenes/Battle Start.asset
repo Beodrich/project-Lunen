@@ -12,4 +12,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f833411ddbf4e28abde908d974aed7, type: 3}
   m_Name: Battle Start
   m_EditorClassIdentifier: 
-  routes: []
+  stopsBattle: 1
+  showAllData: 0
+  parts:
+  - name: ' [Dialogue] Battle Start!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: Battle Start!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    trainerEncounter: {fileID: 0}

@@ -29,6 +29,20 @@ public class Database : ScriptableObject
         return AllLunen[index];
     }
 
+    public int ItemToIndex(Item item)
+    {
+        for (int i = 0; i < AllItems.Count; i++)
+        {
+            if (item == AllItems[i]) return i;
+        }
+        return -1;
+    }
+
+    public Item IndexToItem(int index)
+    {
+        return AllItems[index];
+    }
+
     public int ActionToIndex(Action action)
     {
         for (int i = 0; i < AllActions.Count; i++)

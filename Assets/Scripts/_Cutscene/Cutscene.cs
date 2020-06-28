@@ -140,6 +140,9 @@ public class CutscenePart
     //Type: Wait
     public float waitTime;
 
+    //Type: Change Route
+    public string newRoute;
+
     //Type: Change Scene
     public NewSceneType newSceneType;
     public SceneReference newScene;
@@ -165,6 +168,8 @@ public class CutscenePart
     //Type: Obtain Lunen
     public Lunen lunenObtained;
     public int lunenLevel;
+
+    
 
     [HideInInspector] public TrainerLogic trainerEncounter;
 }

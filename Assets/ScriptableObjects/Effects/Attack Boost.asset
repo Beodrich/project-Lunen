@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b8ac25374cc248dab6f771eebacd965, type: 3}
   m_Name: Attack Boost
   m_EditorClassIdentifier: 
-  ExpiresIn: 3
+  ExpiresIn: 4
   AttackEffect: 1
   GlobalAttack:
     StatChangeType: 2
@@ -38,7 +38,7 @@ MonoBehaviour:
     HardNumberChange: 0
     PercentageChange: 0
   TypesAfflicted:
-    VulnerableTypes: 
+    VulnerableTypes: []
   EndOfTurnDamage: 0
   EndOfTurnDamageType:
     StatChangeType: 0

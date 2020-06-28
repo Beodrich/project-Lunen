@@ -147,7 +147,14 @@ public class CanvasCollection : MonoBehaviour
 
     public void SetDialogueBox(string text)
     {
+        
         DialogueText.text = text;
+    }
+
+    public void RefreshDialogueBox()
+    {
+        UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.HalfDisable);
+        UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Enable);
     }
 
     public void BattleStart()

@@ -44,6 +44,11 @@ public class SaveSystemObject : MonoBehaviour
             //Load standard variables
             sr.battleSetup.GuidList = gameData.GuidList;
 
+            //Give the player all their items
+            sr.inventory.listOfItems.Clear();
+            foreach (GameData.InventoryItem a in gameData.InventoryItems)
+                sr.inventory.listOfItems.Add(new Inventory.InventoryEntry(sr.database.IndexToItem(a.itemIndex), a.itemAmount));
+
             //Then give the player all their lunen
             for (int i = 0; i < gameData.PlayerTeam.Count; i++)
             {

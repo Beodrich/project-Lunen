@@ -11,7 +11,8 @@ public class UITransition : MonoBehaviour
         Enable,
         Disable,
         ImmediateEnable,
-        ImmediateDisable
+        ImmediateDisable,
+        HalfDisable
     }
 
     public enum ElementType
@@ -190,6 +191,12 @@ public class UITransition : MonoBehaviour
             case State.ImmediateDisable:
                 percentageTarget = 0f;
                 percentageCurrent = 1f;
+                percentageDelay = 0f;
+            break;
+
+            case State.HalfDisable:
+                percentageTarget = 0f;
+                percentageCurrent = 0.7f;
                 percentageDelay = 0f;
             break;
         }
