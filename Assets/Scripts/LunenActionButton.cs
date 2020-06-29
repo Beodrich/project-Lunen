@@ -24,8 +24,7 @@ public class LunenActionButton : MonoBehaviour
 
     public void ToggleSCS()
     {
-        scs.enabled = !scs.enabled;
-        if (!scs.enabled) RestoreOriginalColor();
+        scs.SetColorState(!scs.changeColor);
     }
 
     public void RestoreOriginalColor()

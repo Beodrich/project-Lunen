@@ -56,10 +56,6 @@ public class ItemButtonScript : MonoBehaviour
 
     public void SetSelected(bool selected)
     {
-        scs.enabled = selected;
-        if (!selected)
-        {
-            image.color = defaultColor;
-        }
+        scs.SetColorState(selected);
     }
 }

@@ -737,8 +737,7 @@ public class CanvasCollection : MonoBehaviour
             {
                 if (ActionSwapSelect != -1)
                 {
-                    PartyActionButtonScripts[ActionSwapSelect].scs.enabled = false;
-                    PartyActionButtonScripts[ActionSwapSelect].RestoreOriginalColor();
+                    PartyActionButtonScripts[ActionSwapSelect].scs.SetColorState(false);
                     PartyTeam[PartySwapSelect].ActionSwap(ActionSwapSelect, index);
                     UpdatePartyPanelAction(PartySwapSelect);
                     ActionSwapSelect = -1;
@@ -774,11 +773,11 @@ public class CanvasCollection : MonoBehaviour
     {
         if (ActionSwapSelect != -1)
         {
-            PartyActionButtonScripts[ActionSwapSelect].scs.enabled = false;
+            PartyActionButtonScripts[ActionSwapSelect].scs.SetColorState(false);
             PartyActionButtonScripts[ActionSwapSelect].RestoreOriginalColor();
         }
         ActionSwapSelect = index;
-        if (ActionSwapSelect != -1) PartyActionButtonScripts[ActionSwapSelect].scs.enabled = true;
+        if (ActionSwapSelect != -1) PartyActionButtonScripts[ActionSwapSelect].scs.SetColorState(true);
     }
 
     public void EnsureValidTarget()

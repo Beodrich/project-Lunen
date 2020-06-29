@@ -30166,6 +30166,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCTest
       objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599592, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: m_LocalPosition.x

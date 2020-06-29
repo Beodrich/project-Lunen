@@ -11,33 +11,37 @@ public class LunenButton : MonoBehaviour
     public GameObject CooldownSlider;
     public GameObject ExperienceSlider;
 
+    public GameObject innerImage;
+
     public Color DefaultButtonColor;
 
     [HideInInspector]
     public bool isSelected;
     private SpriteColorShift scs;
+    private SpriteColorShift scsInner;
     private Image thisImage;
+    
     [HideInInspector] public Button button;
 
     private void Awake()
     {
         scs = GetComponent<SpriteColorShift>();
+        scsInner = innerImage.GetComponent<SpriteColorShift>();
         thisImage = GetComponent<Image>();
         button = GetComponent<Button>();
     }
 
     private void Update()
     {
-        if (scs != null)
+        if (scsInner != null)
         {
             if (isSelected)
             {
-                scs.enabled = true;
+                scsInner.SetColorState(true);
             }
             else
             {
-                scs.enabled = false;
-                thisImage.color = DefaultButtonColor;
+                scsInner.SetColorState(false);
             }
         }
     }
