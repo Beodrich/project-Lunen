@@ -27,4 +27,5 @@ MonoBehaviour:
   Defense: {x: 4, y: 1}
   Speed: {x: 5, y: 1}
   AffinityCost: 1
+  CatchRate: 100
   CooldownTime: 5

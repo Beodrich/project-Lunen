@@ -6,7 +6,7 @@ public class PlayerLogic : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
 
-    public WalkingAnimation animationSet;
+    public AnimationSet animationSet;
 
     public bool inGrass = false;
     public GameObject grassObject;

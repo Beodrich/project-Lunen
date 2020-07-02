@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe3f3de1279d24685b8e6ca8dcac2788, type: 3}
-  m_Name: Template
+  m_Name: UnfilledTemplate
   m_EditorClassIdentifier: 
-  CharacterSpritesheet: {fileID: 2800000, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
-    type: 3}
-  CharacterSpriteList: []
-  CharacterIdleTime: 0.2
-  CharacterWalkTime: 0.1
+  animations:
+  - name: Idle
+    iterateTime: 0.2
+    spriteArray: []
+  - name: Walk
+    iterateTime: 0.1
+    spriteArray: []
+  - name: Run
+    iterateTime: 0.05
+    spriteArray: []

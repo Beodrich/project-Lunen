@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MyBox;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "GameElements/Item")]
 public class Item : ScriptableObject
@@ -24,5 +25,7 @@ public class Item : ScriptableObject
 
     public int buyValue;
     public int sellValue;
+
+    [ConditionalField(nameof(itemType), false, ItemType.Capture)] public float CatchRate;
 
 }

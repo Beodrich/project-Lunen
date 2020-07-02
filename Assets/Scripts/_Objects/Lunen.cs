@@ -36,6 +36,6 @@ public class Lunen : ScriptableObject
     public Vector2Int Speed;
 
     public int AffinityCost;
-
+    public float CatchRate;
     public float CooldownTime;
 }

@@ -604,11 +604,6 @@ public class CanvasCollection : MonoBehaviour
                     MenuOpen = index;
                 }
             }
-            else if (index == 5)
-            {
-                //TEMPORARY: Until Inventory is added
-                sr.director.AttemptToCapture();
-            }
             else if (index == 6)
             {
                 //if (sr.battleSetup.InCutscene) sr.battleSetup.AdvanceCutscene();
@@ -805,7 +800,7 @@ public class CanvasCollection : MonoBehaviour
                     }
                     else
                     {
-                        sr.director.AttemptToCapture();
+                        sr.director.AttemptToCapture(item.CatchRate);
                         CloseInventoryWindow(true);
                     }
                 }

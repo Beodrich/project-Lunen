@@ -7,6 +7,7 @@ public class Director : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
 
+    [System.Serializable]
     public enum Team
     {
         PlayerTeam,
@@ -89,12 +90,19 @@ public class Director : MonoBehaviour
         DirectorGamePaused = true;
         DirectorTimeFlowing = false;
         ResetLunenCooldowns();
+        ResetLunenEffects();
     }
 
     public void ResetLunenCooldowns()
     {
         foreach (Monster m in PlayerLunenMonsters) m.ResetCooldown();
         foreach (Monster m in EnemyLunenMonsters) m.ResetCooldown();
+    }
+
+    public void ResetLunenEffects()
+    {
+        foreach (Monster m in PlayerLunenMonsters) m.StatusEffects.Clear();
+        foreach (Monster m in EnemyLunenMonsters) m.StatusEffects.Clear();
     }
 
     public void LoadTeams()
@@ -182,18 +190,57 @@ public class Director : MonoBehaviour
         sr.canvasCollection.UIObjects[1].GetComponent<UIPanelCollection>().SetPanelState("LunenMoves3", UITransition.State.Disable);
     }
 
-    public void AttemptToCapture()
+    public void AttemptToCapture(float ballModifier)
     {
         //TODO: Add chance to capture
-        if (true)
+        Monster monster = GetMonsterOut(Team.EnemyTeam, sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
+
+        float captureValue = GetCaptureValue(monster, ballModifier);
+        List<float> captureValues = GetShakeValues(captureValue, 3);
+
+        float catchChance = Random.RandomRange(0,100);
+
+        Debug.Log("Capture Value: " + captureValue);
+        if (true) //Successful capture condition
         {
-            Monster monsterToCapture = GetMonsterOut(Team.EnemyTeam, sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
-            GameObject monsterToCaptureObject= monsterToCapture.gameObject;
-            monsterToCapture.MonsterTeam = Team.PlayerTeam;
-            sr.battleSetup.PlayerLunenTeam.Add(monsterToCaptureObject);
-            sr.battleSetup.EnemyLunenTeam.RemoveAt(sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
-            sr.battleSetup.PlayerWin();
+            CaptureLunen(monster);
         }
+    }
+
+    public float GetCaptureValue(Monster monster, float ballModifier)
+    {
+        float value = 1;
+
+        float monsterMaxHP = monster.GetMaxHealth();
+        float monsterCurrentHP = monster.Health.z;
+        float monsterCatchRate = monster.SourceLunen.CatchRate;
+
+        //((( 3 * Max HP - 2 * HP ) * (Catch Rate * Ball Modifier ) / (3 * Max HP) ) * Status Modifier
+
+        value = (((3*monsterMaxHP-2*monsterCurrentHP)*(monsterCatchRate*ballModifier)/(3*monsterMaxHP)));
+        //TODO: Status Modifiers
+
+        return value;
+    }
+
+    public List<float> GetShakeValues(float captureValue, int maxShakes)
+    {
+        List<float> values = new List<float>();
+        for (int i = 0; i <= maxShakes; i++)
+        {
+            values.Add(captureValue + captureValue*((float)i/2));
+        }
+        values.Reverse();
+        return values;
+    }
+
+    public void CaptureLunen(Monster monster)
+    {
+        GameObject monsterToCaptureObject = monster.gameObject;
+        monster.MonsterTeam = Team.PlayerTeam;
+        sr.battleSetup.PlayerLunenTeam.Add(monsterToCaptureObject);
+        sr.battleSetup.EnemyLunenTeam.RemoveAt(sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
+        sr.battleSetup.PlayerWin();
     }
 
     public int CalculateExpPayout(Monster deadLunen, Monster lunenGettingEXP)

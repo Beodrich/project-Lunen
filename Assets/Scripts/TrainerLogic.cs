@@ -10,7 +10,7 @@ public class TrainerLogic : MonoBehaviour
     [HideInInspector] public SetupRouter sr;
     [HideInInspector] public Move move;
 
-    public WalkingAnimation animationSet;
+    public AnimationSet animationSet;
 
     public MoveScripts.Direction startLookDirection;
     public bool limitRange;

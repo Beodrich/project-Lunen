@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using MyBox;
 
 [CreateAssetMenu(fileName = "New Action", menuName = "GameElements/Action")]
@@ -62,6 +63,9 @@ public class Action : ScriptableObject
     [HideInInspector]
     public int SourceLunenLearnedLevel;
 
+    [Separator("Custom Events")]
+    public UnityEvent customEvent;
+
     public void Execute()
     {
         loopback = MonsterUser.loopback;
@@ -69,6 +73,10 @@ public class Action : ScriptableObject
         Director.Team targetTeam = Director.Team.PlayerTeam;
         if (actionTeam == Director.Team.PlayerTeam) targetTeam = Director.Team.EnemyTeam;
         loopback.eventLog.AddEvent("Attack: " + MonsterUser.Nickname + " attacks with " + Name + " targetting one enemy");
+        if (customEvent != null)
+        {
+            customEvent.Invoke();
+        }
         foreach (ActionPart part in PartsOfAction)
         {
             switch (part.Target)
@@ -134,5 +142,10 @@ public class Action : ScriptableObject
         newEffect.ExpiresIn = part.StatusEffectTurns;
         MonsterTarget.StatusEffects.Add(newEffect);
         MonsterTarget.CalculateStats();
+    }
+
+    public void SetTypeToUserMonster()
+    {
+        Type = MonsterUser.SourceLunen.Elements[0];
     }
 }

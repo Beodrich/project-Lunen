@@ -7,7 +7,7 @@ public class NPCLogic : MonoBehaviour
     [HideInInspector] public SetupRouter sr;
     [HideInInspector] public Move move;
 
-    public WalkingAnimation animationSet;
+    public AnimationSet animationSet;
     public MoveScripts.Direction lookDirection;
 
     void Start()

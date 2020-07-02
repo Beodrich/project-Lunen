@@ -29813,8 +29813,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -6418054059245859064, guid: 1f79d1cee358141e580a5231f2384a00,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142736, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: m_Name
@@ -29840,7 +29839,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animationSet
       value: 
-      objectReference: {fileID: 11400000, guid: b65aa9586ea654bd19cbf0d29442f3c5,
+      objectReference: {fileID: 11400000, guid: 62bc6497e63744c848001c1e86ab5091,
         type: 2}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}

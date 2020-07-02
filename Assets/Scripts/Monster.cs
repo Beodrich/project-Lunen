@@ -425,18 +425,22 @@ public class Monster : MonoBehaviour
         if (MonsterTeam == Director.Team.PlayerTeam) loopback.canvasCollection.Player1MenuClick(loopback.canvasCollection.MenuOpen);
         for (int i = 0; i < StatusEffects.Count; i++)
         {
-            StatusEffects[i].ExpiresIn--;
-            if (StatusEffects[i].ExpiresIn < 0)
+            if (StatusEffects[i].Expires)
             {
-                if (StatusEffects[i].Effect.InflictsAnotherEffect)
+                StatusEffects[i].ExpiresIn--;
+                if (StatusEffects[i].ExpiresIn < 0)
                 {
-                    MonsterEffect newBuff = new MonsterEffect();
-                    newBuff.Effect = StatusEffects[i].Effect.NextEffect;
-                    StatusEffects.Add(newBuff);
+                    if (StatusEffects[i].Effect.InflictsAnotherEffect)
+                    {
+                        MonsterEffect newBuff = new MonsterEffect();
+                        newBuff.Effect = StatusEffects[i].Effect.NextEffect;
+                        StatusEffects.Add(newBuff);
+                    }
+                    StatusEffects.RemoveAt(i);
+                    i--;
                 }
-                StatusEffects.RemoveAt(i);
-                i--;
             }
+            
         }
         CalculateStats();
     }

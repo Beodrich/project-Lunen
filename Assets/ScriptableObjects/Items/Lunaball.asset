@@ -18,3 +18,4 @@ MonoBehaviour:
   itemType: 0
   buyValue: 100
   sellValue: 0
+  CatchRate: 1

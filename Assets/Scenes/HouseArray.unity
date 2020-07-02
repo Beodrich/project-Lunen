@@ -132,7 +132,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animationSet
       value: 
-      objectReference: {fileID: 11400000, guid: b65aa9586ea654bd19cbf0d29442f3c5,
+      objectReference: {fileID: 11400000, guid: 62bc6497e63744c848001c1e86ab5091,
         type: 2}
     - target: {fileID: 3089258284872052784, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
@@ -143,6 +143,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPCTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1316929954379532978, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+        type: 3}
+    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
@@ -303,6 +314,17 @@ PrefabInstance:
         type: 3}
       propertyPath: parts.Array.data[3].title
       value: 3 seconds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1316929954379532978, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+        type: 3}
+    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad50c7d85539d46b39477883f81f4184, type: 3}

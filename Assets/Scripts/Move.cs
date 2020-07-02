@@ -6,6 +6,7 @@ using MyBox;
 public class Move : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
+    [HideInInspector] public GameObject srObject;
 
     public enum LogicType
     {
@@ -27,7 +28,7 @@ public class Move : MonoBehaviour
     public delegate void MoveEnd();
     [HideInInspector] public MoveEnd endMove;
 
-    public WalkingAnimation animationSet;
+    public AnimationSet animationSet;
 
     public float moveSpeed;
     public float gridSize;
@@ -63,6 +64,7 @@ public class Move : MonoBehaviour
 
     public float animTime;
     public int animIndex;
+    public AnimationSet.AnimationType animationType;
 
     public bool ableToMove
     {
@@ -249,7 +251,17 @@ public class Move : MonoBehaviour
         {
             animTime += Time.deltaTime;
         }
-        animIndex = animationSet.GetAnimationIndex(lookDirection, animMoving, animTime);
+
+        if (animMoving)
+        {
+            animationType = AnimationSet.AnimationType.Walk;
+        }
+        else
+        {
+            animationType = AnimationSet.AnimationType.Idle;
+        }
+
+        animIndex = animationSet.GetAnimationIndex(animationType, lookDirection, animTime);
         SetSprite();
         //animator.SetFloat("Horizontal", last.x);
         //animator.SetFloat("Vertical", last.y);
@@ -258,7 +270,7 @@ public class Move : MonoBehaviour
 
     public void SetSprite()
     {
-        spriteRenderer.sprite = animationSet.GetAnimationSprite(animIndex);
+        spriteRenderer.sprite = animationSet.GetAnimationSprite(animationType, animIndex);
     }
 
     public void SetFacingDirectionLogic(MoveScripts.Direction newDirection)
@@ -302,7 +314,14 @@ public class Move : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (sr == null) sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
+        if (sr == null)
+        {
+            srObject = GameObject.Find("BattleSetup");
+            if (srObject != null)
+            {
+                sr = srObject.GetComponent<SetupRouter>();
+            }
+        }
         animTime = 0;
         SetWalkAnimation();
         SetSprite();

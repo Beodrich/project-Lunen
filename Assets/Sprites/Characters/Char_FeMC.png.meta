@@ -422,6 +422,18 @@ TextureImporter:
   - first:
       213: 1742393412447646332
     second: Walk_Left_7
+  - first:
+      213: 7425899395177054063
+    second: Char_FeMC_0
+  - first:
+      213: 3174610574018634580
+    second: Char_FeMC_1
+  - first:
+      213: 3507013957474503672
+    second: Char_FeMC_2
+  - first:
+      213: 2840261878684189277
+    second: Char_FeMC_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -531,7 +543,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_Down_0
+      name: Char_FeMC_0
       rect:
         serializedVersion: 2
         x: 0
@@ -543,16 +555,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ce1fef2e5141195a0800000000000000
-      internalID: -6516405101593169428
+      spriteID: f6ff053e7281e0760800000000000000
+      internalID: 7425899395177054063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Down_1
+      name: Char_FeMC_1
       rect:
         serializedVersion: 2
         x: 32
@@ -564,16 +576,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a8eea0699c9b79fe0800000000000000
-      internalID: -1182272101704601974
+      spriteID: 453649c4f7b7e0c20800000000000000
+      internalID: 3174610574018634580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Down_2
+      name: Char_FeMC_2
       rect:
         serializedVersion: 2
         x: 64
@@ -585,16 +597,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 30c55cc6eeac04f30800000000000000
-      internalID: 4557865948274842627
+      spriteID: 8fbca950d9a6ba030800000000000000
+      internalID: 3507013957474503672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Down_3
+      name: Char_FeMC_3
       rect:
         serializedVersion: 2
         x: 96
@@ -606,16 +618,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6121d0c719682c9f0800000000000000
-      internalID: -449649053374017002
+      spriteID: d520e0c5123aa6720800000000000000
+      internalID: 2840261878684189277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Up_0
+      name: Char_FeMC_4
       rect:
         serializedVersion: 2
         x: 128
@@ -627,16 +639,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a0f0a8fbaa12e1d30800000000000000
-      internalID: 4403994502856576778
+      spriteID: b8c8bc3abad0f68a0800000000000000
+      internalID: -6309809522084180853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Up_1
+      name: Char_FeMC_5
       rect:
         serializedVersion: 2
         x: 160
@@ -648,16 +660,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d542207f53063ebe0800000000000000
-      internalID: -1449208870189521827
+      spriteID: 36004ad0f85efaee0800000000000000
+      internalID: -1247526169186402205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Up_2
+      name: Char_FeMC_6
       rect:
         serializedVersion: 2
         x: 192
@@ -669,16 +681,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 10bd8c3f244d02900800000000000000
-      internalID: 657758929619049217
+      spriteID: 71898e8623ef25a00800000000000000
+      internalID: 743936380931446807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Up_3
+      name: Char_FeMC_7
       rect:
         serializedVersion: 2
         x: 224
@@ -690,16 +702,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7adf558a4c3ff5380800000000000000
-      internalID: -8980191105990132313
+      spriteID: 63b08d80a08084400800000000000000
+      internalID: 308505413665950518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Right_0
+      name: Char_FeMC_8
       rect:
         serializedVersion: 2
         x: 0
@@ -711,16 +723,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9ba43f9198ff4db50800000000000000
-      internalID: 6617194716825078457
+      spriteID: 88e712c41d52d8f60800000000000000
+      internalID: 8038122490781859464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Right_1
+      name: Char_FeMC_9
       rect:
         serializedVersion: 2
         x: 32
@@ -732,16 +744,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 06af940d4013c2750800000000000000
-      internalID: 6281449477019138656
+      spriteID: dfcad8e4684380a50800000000000000
+      internalID: 6487493014675369213
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Right_2
+      name: Char_FeMC_10
       rect:
         serializedVersion: 2
         x: 64
@@ -753,16 +765,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f056ef576a2a8f7c0800000000000000
-      internalID: -4037298230109772529
+      spriteID: ebd50a1086e8c2510800000000000000
+      internalID: 1525750951126785470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Right_3
+      name: Char_FeMC_11
       rect:
         serializedVersion: 2
         x: 96
@@ -774,16 +786,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 18c4a98ed834d58e0800000000000000
-      internalID: -1703130807304303487
+      spriteID: cf3de630bf8380050800000000000000
+      internalID: 5766921973593461756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Left_0
+      name: Char_FeMC_12
       rect:
         serializedVersion: 2
         x: 128
@@ -795,16 +807,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6818912dd833b0ee0800000000000000
-      internalID: -1293883783730593402
+      spriteID: f9fec469357b12610800000000000000
+      internalID: 1594757312697659295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Left_1
+      name: Char_FeMC_13
       rect:
         serializedVersion: 2
         x: 160
@@ -816,16 +828,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 165cee312da71fa10800000000000000
-      internalID: 1941467957069530465
+      spriteID: 55b7b9c5d62ba77e0800000000000000
+      internalID: -1766903721014625451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Left_2
+      name: Char_FeMC_14
       rect:
         serializedVersion: 2
         x: 192
@@ -837,16 +849,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c99bca57c273b84d0800000000000000
-      internalID: -3131348451813705316
+      spriteID: ffe620e48b740f830800000000000000
+      internalID: 4102858117442858751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_Left_3
+      name: Char_FeMC_15
       rect:
         serializedVersion: 2
         x: 224
@@ -858,16 +870,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 938a72c4a4c9ba8e0800000000000000
-      internalID: -1681078192973567943
+      spriteID: 2da3230bc2bdcfc60800000000000000
+      internalID: 7853392835208428242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Down_0
+      name: Char_FeMC_16
       rect:
         serializedVersion: 2
         x: 0
@@ -879,16 +891,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8c341fdfba8059cd0800000000000000
-      internalID: -2552124079042640952
+      spriteID: 03d0c34842b9945c0800000000000000
+      internalID: -4230679793798214352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Down_1
+      name: Char_FeMC_17
       rect:
         serializedVersion: 2
         x: 32
@@ -900,16 +912,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8736ba6a2d19c9660800000000000000
-      internalID: 7393945022160921464
+      spriteID: 3162ece99805621d0800000000000000
+      internalID: -3375922318662556141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Down_2
+      name: Char_FeMC_18
       rect:
         serializedVersion: 2
         x: 64
@@ -921,16 +933,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c8859810e96f68d10800000000000000
-      internalID: 2127659032470182028
+      spriteID: 3d082657d69d995a0800000000000000
+      internalID: -6513936321870659373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Down_3
+      name: Char_FeMC_19
       rect:
         serializedVersion: 2
         x: 96
@@ -942,16 +954,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4b0c1d4a3695425c0800000000000000
-      internalID: -4241166664574320460
+      spriteID: 41cff1c5ac1a380e0800000000000000
+      internalID: -2268791896763532268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Down_4
+      name: Char_FeMC_20
       rect:
         serializedVersion: 2
         x: 128
@@ -963,16 +975,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 926c37bda8e08feb0800000000000000
-      internalID: -4685979422728927703
+      spriteID: 09b844164fa702080800000000000000
+      internalID: -9214229647577543792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Down_5
+      name: Char_FeMC_21
       rect:
         serializedVersion: 2
         x: 160
@@ -984,20 +996,20 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 20de3e48c3369b7b0800000000000000
-      internalID: -5208022382498550526
+      spriteID: 2c08a444fa5128230800000000000000
+      internalID: 3639495291377975490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Down_6
+      name: Char_FeMC_22
       rect:
         serializedVersion: 2
         x: 192
-        y: 97
+        y: 96
         width: 32
         height: 32
       alignment: 4
@@ -1005,16 +1017,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d46b0408f9a0acc60800000000000000
-      internalID: 7839089781559572045
+      spriteID: b430db3fe99c1c690800000000000000
+      internalID: -7583558612983938229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Down_7
+      name: Char_FeMC_23
       rect:
         serializedVersion: 2
         x: 224
@@ -1026,16 +1038,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 13a3bd4ffe0ac2ee0800000000000000
-      internalID: -1284474841241798095
+      spriteID: 842ca119bfc590140800000000000000
+      internalID: 4686379122796708424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Up_0
+      name: Char_FeMC_24
       rect:
         serializedVersion: 2
         x: 0
@@ -1047,16 +1059,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0a8b922e3658e0b60800000000000000
-      internalID: 7714249875774879904
+      spriteID: 79497437f26c0fb80800000000000000
+      internalID: -8362966600927177577
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Up_1
+      name: Char_FeMC_25
       rect:
         serializedVersion: 2
         x: 32
@@ -1068,16 +1080,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1762ebe9866509280800000000000000
-      internalID: -9038629444792736143
+      spriteID: 12c47759dc5441cd0800000000000000
+      internalID: -2588367136552956895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Up_2
+      name: Char_FeMC_26
       rect:
         serializedVersion: 2
         x: 64
@@ -1089,16 +1101,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4eed462fcfa5e8990800000000000000
-      internalID: -7381862696768708892
+      spriteID: 542396cb15d6b6d30800000000000000
+      internalID: 4425751256642433605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Up_3
+      name: Char_FeMC_27
       rect:
         serializedVersion: 2
         x: 96
@@ -1110,16 +1122,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ad94dddfc0e08d410800000000000000
-      internalID: 1501965924689594842
+      spriteID: ee2ddf9f856c5fab0800000000000000
+      internalID: -4974852127907261714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Up_4
+      name: Char_FeMC_28
       rect:
         serializedVersion: 2
         x: 128
@@ -1131,16 +1143,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 14cc25ac2813393e0800000000000000
-      internalID: -2048238967713510335
+      spriteID: 54c2a1d83926c1840800000000000000
+      internalID: 5196136455945727045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Up_5
+      name: Char_FeMC_29
       rect:
         serializedVersion: 2
         x: 160
@@ -1152,16 +1164,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 64cf873bfb2156580800000000000000
-      internalID: -8834634479458255802
+      spriteID: b12d8db590a95ab60800000000000000
+      internalID: 7756775298201866779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Up_6
+      name: Char_FeMC_30
       rect:
         serializedVersion: 2
         x: 192
@@ -1173,16 +1185,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 320d7f26aed1a3100800000000000000
-      internalID: 88416035207106595
+      spriteID: bd54ae2368ff988a0800000000000000
+      internalID: -6302225251683383845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Up_7
+      name: Char_FeMC_31
       rect:
         serializedVersion: 2
         x: 224
@@ -1194,16 +1206,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6ce3ae6fed5022b00800000000000000
-      internalID: 802210138808794822
+      spriteID: f82e3902f5e2cee40800000000000000
+      internalID: 5686971415565427343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Right_0
+      name: Char_FeMC_32
       rect:
         serializedVersion: 2
         x: 0
@@ -1215,16 +1227,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 29c86c6136062e6b0800000000000000
-      internalID: -5268542635369919342
+      spriteID: eee646c26b21b6610800000000000000
+      internalID: 1615405464980582126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Right_1
+      name: Char_FeMC_33
       rect:
         serializedVersion: 2
         x: 32
@@ -1236,16 +1248,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 80f856166dd7ee6a0800000000000000
-      internalID: -6418054059245859064
+      spriteID: 23ffb51b725a4bdd0800000000000000
+      internalID: -2471168705621655758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Right_2
+      name: Char_FeMC_34
       rect:
         serializedVersion: 2
         x: 64
@@ -1257,16 +1269,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a4cf5bdf6e58f3cb0800000000000000
-      internalID: -4882036243900793782
+      spriteID: 0fadece1254218b20800000000000000
+      internalID: 3134826750749367024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Right_3
+      name: Char_FeMC_35
       rect:
         serializedVersion: 2
         x: 96
@@ -1278,16 +1290,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b83c422e2906726e0800000000000000
-      internalID: -1862413736918858869
+      spriteID: f007bff164f3380f0800000000000000
+      internalID: -1115978712240918513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Right_4
+      name: Char_FeMC_36
       rect:
         serializedVersion: 2
         x: 128
@@ -1299,16 +1311,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8a0fb2f6e0aa085f0800000000000000
-      internalID: -756417758426828632
+      spriteID: 91cab9d54e19a9c10800000000000000
+      internalID: 2061120189484477465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Right_5
+      name: Char_FeMC_37
       rect:
         serializedVersion: 2
         x: 160
@@ -1320,16 +1332,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9238bf186bc5cc920800000000000000
-      internalID: 3011884189738566441
+      spriteID: 1ea6a494a2715bc50800000000000000
+      internalID: 6680271092659677921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Right_6
+      name: Char_FeMC_38
       rect:
         serializedVersion: 2
         x: 192
@@ -1341,16 +1353,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cf63051ddfd2f2b40800000000000000
-      internalID: 5417599444911666940
+      spriteID: b51d24a2d1c59b4a0800000000000000
+      internalID: -6577124500465069733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Right_7
+      name: Char_FeMC_39
       rect:
         serializedVersion: 2
         x: 224
@@ -1362,16 +1374,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cd767375f98d790e0800000000000000
-      internalID: -2263102108855736356
+      spriteID: 726721b0d8febb020800000000000000
+      internalID: 2358742218913773095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Left_0
+      name: Char_FeMC_40
       rect:
         serializedVersion: 2
         x: 0
@@ -1383,16 +1395,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 46fe608fc182fefa0800000000000000
-      internalID: -5769348492752916636
+      spriteID: 20cec3a325c236640800000000000000
+      internalID: 5071946337025321986
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Left_1
+      name: Char_FeMC_41
       rect:
         serializedVersion: 2
         x: 32
@@ -1404,16 +1416,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 29ba06f19f481c960800000000000000
-      internalID: 7620518249995742098
+      spriteID: 0ce0675bce376e750800000000000000
+      internalID: 6333877386437070528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Left_2
+      name: Char_FeMC_42
       rect:
         serializedVersion: 2
         x: 64
@@ -1425,16 +1437,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8baa8a0fc1dbc5bd0800000000000000
-      internalID: -2640027349551633736
+      spriteID: 629d0dab177b3e640800000000000000
+      internalID: 5108128101461711142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Left_3
+      name: Char_FeMC_43
       rect:
         serializedVersion: 2
         x: 96
@@ -1446,16 +1458,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3948e030d7c95c920800000000000000
-      internalID: 3009983986703172755
+      spriteID: 8c321ab998a609ce0800000000000000
+      internalID: -1400502344858131512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Left_4
+      name: Char_FeMC_44
       rect:
         serializedVersion: 2
         x: 128
@@ -1467,16 +1479,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 13b7d927474f5dbb0800000000000000
-      internalID: -4911751037601350863
+      spriteID: 19d412f59e57139b0800000000000000
+      internalID: -5102167257650213487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Left_5
+      name: Char_FeMC_45
       rect:
         serializedVersion: 2
         x: 160
@@ -1488,16 +1500,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 61fa795e0b47c8d10800000000000000
-      internalID: 2129205026954391318
+      spriteID: 1622ecbc6fb0d29f0800000000000000
+      internalID: -491723629704371615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Left_6
+      name: Char_FeMC_46
       rect:
         serializedVersion: 2
         x: 192
@@ -1509,16 +1521,16 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 201792d88ede4a740800000000000000
-      internalID: 5162512655929929986
+      spriteID: 8604f472d4ce59dd0800000000000000
+      internalID: -2479816203681447832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_Left_7
+      name: Char_FeMC_47
       rect:
         serializedVersion: 2
         x: 224
@@ -1530,10 +1542,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c723ce7b3993e2810800000000000000
-      internalID: 1742393412447646332
+      spriteID: e60a5c7f8f2042bf0800000000000000
+      internalID: -350151602695987090
       vertices: []
       indices: 
       edges: []

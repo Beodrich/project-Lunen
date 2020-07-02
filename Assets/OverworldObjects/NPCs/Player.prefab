@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
-  animationSet: {fileID: 11400000, guid: 7f2e8ce27fe45423caefa50a579c685c, type: 2}
+  animationSet: {fileID: 11400000, guid: 39a6d76cb0f014ada858d95606dbd799, type: 2}
   inGrass: 0
   grassObject: {fileID: 0}
   inTrainerView: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   pLogic: {fileID: 5585906584724857795}
   tLogic: {fileID: 0}
   spriteRenderer: {fileID: 5585906584724857796}
-  animationSet: {fileID: 11400000, guid: 7f2e8ce27fe45423caefa50a579c685c, type: 2}
+  animationSet: {fileID: 0}
   moveSpeed: 5
   gridSize: 1
   playerSize: 1
@@ -190,6 +190,7 @@ MonoBehaviour:
   hits: []
   animTime: 18.182194
   animIndex: 13
+  animationType: 0
 --- !u!212 &5585906584724857796
 SpriteRenderer:
   m_ObjectHideFlags: 0
