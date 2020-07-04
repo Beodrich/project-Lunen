@@ -125,8 +125,11 @@ public class TrainerLogic : MonoBehaviour
                 checkVector = MoveScripts.GetFrontVector2(move, (float)foundRange, true);
                 Collider2D[] hit = Physics2D.OverlapAreaAll(checkVector, checkVector);
                 foundWall = MoveScripts.CheckForTag(this.gameObject,hit,TrainerLookStop);
-                foundPlayer = MoveScripts.CheckForTag(this.gameObject,hit,"Player");
-                if (foundPlayer && !sr.saveSystemObject.isLoading && !sr.battleSetup.playerDead && !engaged) sr.battleSetup.StartCutscene(new PackedCutscene(GetComponent<Cutscene>()));
+                if (foundRange < maxRange)
+                {
+                    foundPlayer = MoveScripts.CheckForTag(this.gameObject,hit,"Player");
+                    if (foundPlayer && !sr.saveSystemObject.isLoading && !sr.battleSetup.playerDead && !engaged) sr.battleSetup.StartCutscene(new PackedCutscene(GetComponent<Cutscene>()));
+                }
             }
             foundRange--;
             checkVector = MoveScripts.GetFrontVector2(move, (float)foundRange/2, true);
@@ -194,15 +197,12 @@ public class TrainerLogic : MonoBehaviour
 
     public bool MoveBegin(Collider2D[] hit)
     {
-        Debug.Log("Started Trainer Move Begin");
-        
         int pathsFound = 0;
         if (hit.Length > 0)
         {
             int found = 0;
             for (int i = 0; i < hit.Length; i++)
             {
-                Debug.Log(hit[i].gameObject.tag);
                 if (hit[i].gameObject.tag != "Path" && hit[i].gameObject.tag != "Grass")
                 {
                     found += MoveBegin(hit[i]) ? 1 : 0;
@@ -214,7 +214,6 @@ public class TrainerLogic : MonoBehaviour
                 
             }
             if (pathsFound == hit.Length) return true;
-            Debug.Log("found = " + found);
             return (found > 0);
         }
         else return false;

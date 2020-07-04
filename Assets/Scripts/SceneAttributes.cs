@@ -25,7 +25,6 @@ public class SceneAttributes : MonoBehaviour
         GameObject main = GameObject.Find("BattleSetup");
         if (main == null)
         {
-            SceneManager.LoadScene("_preload");
             return;
         }
         sr = main.GetComponent<SetupRouter>();

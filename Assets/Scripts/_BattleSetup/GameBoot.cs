@@ -49,7 +49,23 @@ public class GameBoot : MonoBehaviour
         }
         if (GameObject.FindGameObjectsWithTag("BattleSetup").Length >= 2)
         {
+            for (int i = 0; i < keepLoaded.Count; i++)
+            {
+                Destroy(keepLoaded[i]);
+            }
             Destroy(gameObject);
+        }
+        if (GameObject.Find("FALLBACK_CURRENT_SCENE") != null)
+        {
+            Debug.Log("Started Game From Game Scene!");
+            GameObject fallback = GameObject.Find("FALLBACK_CURRENT_SCENE");
+
+            bootBehaviour = BootBehaviour.LoadIntoEntrance;
+            bootScene = new SceneReference();
+            bootScene.ScenePath = fallback.GetComponent<FALLBACK_CURRENT_SCENE>().thisScene;
+            bootEntrance = 0;
+
+            Destroy(fallback);
         }
         DontDestroyOnLoad(this.gameObject);
         for (int i = 0; i < keepLoaded.Count; i++)

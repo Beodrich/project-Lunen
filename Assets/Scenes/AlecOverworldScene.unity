@@ -864,6 +864,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneAttributes
       objectReference: {fileID: 0}
+    - target: {fileID: 6629186245410785556, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: thisScene.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 2b691c676b0ff499c9513449852f4d03,
+        type: 3}
+    - target: {fileID: 6629186245410785556, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: thisScene.scenePath
+      value: Assets/Scenes/AlecOverworldScene.unity
+      objectReference: {fileID: 0}
     - target: {fileID: 8306564682753663529, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3004,8 +3015,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7393945022160921464, guid: 1f79d1cee358141e580a5231f2384a00,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142736, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: m_Name

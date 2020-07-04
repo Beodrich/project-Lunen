@@ -6778,7 +6778,7 @@ PrefabInstance:
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
       propertyPath: elements.Array.data[0].closeShift.y
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
@@ -8815,7 +8815,7 @@ MonoBehaviour:
     openColor: {r: 1, g: 1, b: 1, a: 1}
     closedColor: {r: 1, g: 1, b: 1, a: 0}
     allowPositionChange: 1
-    closeShift: {x: 0, y: -50}
+    closeShift: {x: 0, y: -75}
     openPosition: {x: 244, y: -79.27185}
     closedPosition: {x: 184, y: -79.27185}
     allowRotationChange: 0
@@ -9803,7 +9803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128, y: -32}
+  m_AnchoredPosition: {x: -80, y: -32}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891817066
@@ -11705,7 +11705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 128, y: -32}
+  m_AnchoredPosition: {x: 80, y: -32}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1027995180
@@ -12825,7 +12825,7 @@ PrefabInstance:
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
       propertyPath: elements.Array.data[0].closeShift.y
-      value: -50
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
@@ -16297,7 +16297,7 @@ PrefabInstance:
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
       propertyPath: elements.Array.data[0].closeShift.y
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
@@ -16947,7 +16947,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64, y: 32}
+  m_AnchoredPosition: {x: 80, y: 32}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1296091644
@@ -18853,7 +18853,7 @@ PrefabInstance:
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
       propertyPath: elements.Array.data[0].closeShift.y
-      value: -50
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
@@ -20943,7 +20943,7 @@ PrefabInstance:
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
       propertyPath: elements.Array.data[0].closeShift.y
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
@@ -21808,7 +21808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64, y: 32}
+  m_AnchoredPosition: {x: -80, y: 32}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643527610
@@ -21983,7 +21983,7 @@ MonoBehaviour:
     openColor: {r: 1, g: 1, b: 1, a: 1}
     closedColor: {r: 1, g: 1, b: 1, a: 0}
     allowPositionChange: 1
-    closeShift: {x: 0, y: 50}
+    closeShift: {x: 0, y: 75}
     openPosition: {x: 244, y: -79.27185}
     closedPosition: {x: 184, y: -79.27185}
     allowRotationChange: 0
@@ -24416,7 +24416,7 @@ PrefabInstance:
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
       propertyPath: elements.Array.data[0].closeShift.y
-      value: -50
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 4505799869574089705, guid: 70cb7206f57734adebd01904d38517c9,
         type: 3}
