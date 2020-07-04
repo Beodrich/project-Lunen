@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LunenIslandPort.unity
     guid: 61e6d35631f894f4495a34d8ae11d84d
+  - enabled: 1
+    path: Assets/Scenes/Ben_Test.unity
+    guid: a31a13eb6956e5c47aaf748dd3d69810
   m_configObjects: {}

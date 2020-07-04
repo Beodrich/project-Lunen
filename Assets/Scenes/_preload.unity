@@ -29236,10 +29236,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   vsync: 1
-  bootBehaviour: 0
+  bootBehaviour: 2
   bootScene:
-    sceneAsset: {fileID: 102900000, guid: 2b691c676b0ff499c9513449852f4d03, type: 3}
-    scenePath: Assets/Scenes/AlecOverworldScene.unity
+    sceneAsset: {fileID: 102900000, guid: a31a13eb6956e5c47aaf748dd3d69810, type: 3}
+    scenePath: Assets/Scenes/Ben_Test.unity
   bootEntrance: 1
   TestLunenParty:
     Value:
