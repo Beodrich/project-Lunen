@@ -61,10 +61,16 @@ public class UITransition : MonoBehaviour
         //Rotation Change
         [Space(10)]
         public bool allowRotationChange;
+        [ConditionalField(nameof(allowRotationChange))] public Vector3 rotationShift;
+        [HideInInspector] public Vector3 openRotation;
+        [HideInInspector] public Vector3 closedRotation;
 
         //Scale Change
         [Space(10)]
         public bool allowScaleChange;
+        [ConditionalField(nameof(allowScaleChange))] public Vector3 scaleShift;
+        [HideInInspector] public Vector3 openScale;
+        [HideInInspector] public Vector3 closedScale;
 
         [HideInInspector] public GameObject source;
     }
@@ -128,6 +134,18 @@ public class UITransition : MonoBehaviour
                 {
                     elements[i].openPosition = elements[i].source.transform.localPosition;
                     elements[i].closedPosition = elements[i].openPosition + elements[i].closeShift;
+                }
+
+                if (elements[i].allowRotationChange)
+                {
+                    elements[i].openRotation = elements[i].source.transform.eulerAngles;
+                    elements[i].closedRotation = elements[i].openRotation + elements[i].rotationShift;
+                }
+
+                if (elements[i].allowScaleChange)
+                {
+                    elements[i].openScale = elements[i].source.transform.localScale;
+                    elements[i].closedScale = elements[i].openScale + elements[i].scaleShift;
                 }
             }
             
@@ -236,6 +254,22 @@ public class UITransition : MonoBehaviour
                         tempV3b = elements[i].openPosition;
                         tempV3 = Vector3.Lerp(tempV3a, tempV3b, percentageUse/100);
                         elements[i].source.transform.localPosition = tempV3;
+                    }
+
+                    if (elements[i].allowRotationChange)
+                    {
+                        tempV3a = elements[i].closedRotation;
+                        tempV3b = elements[i].openRotation;
+                        tempV3 = Vector3.Lerp(tempV3a, tempV3b, percentageUse/100);
+                        elements[i].source.transform.eulerAngles = tempV3;
+                    }
+
+                    if (elements[i].allowScaleChange)
+                    {
+                        tempV3a = elements[i].closedScale;
+                        tempV3b = elements[i].openScale;
+                        tempV3 = Vector3.Lerp(tempV3a, tempV3b, percentageUse/100);
+                        elements[i].source.transform.localScale = tempV3;
                     }
                 }
                 

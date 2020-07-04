@@ -49,6 +49,7 @@ public class Director : MonoBehaviour
     public float DirectorTimeToWait;
     public bool DirectorGamePaused;
     public int EnemyLunenSelect;
+    
 
     private void Awake()
     {
@@ -194,21 +195,34 @@ public class Director : MonoBehaviour
     {
         //TODO: Add chance to capture
         Monster monster = GetMonsterOut(Team.EnemyTeam, sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
+        sr.battleSetup.attemptToCaptureMonster = monster;
 
         float captureValue = GetCaptureValue(monster, ballModifier);
         List<float> captureValues = GetShakeValues(captureValue, 3);
 
-        float catchChance = Random.RandomRange(0,100);
+        float catchChance = Random.Range(0,101);
 
         Debug.Log("Capture Value: " + captureValue);
-        if (true) //Successful capture condition
+        Debug.Log("Catch Chance: " + catchChance);
+
+        if (catchChance <= captureValue) //Successful capture condition: Catch Chance Within Capture Value
         {
-            CaptureLunen(monster);
+            sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Lunen Capture"), "Capture Success");
+        }
+        else
+        {
+            int captureWobble = Random.Range(0,4);
+            sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Lunen Capture"), "Wobbles: " + captureWobble);
         }
     }
 
     public float GetCaptureValue(Monster monster, float ballModifier)
     {
+        if (ballModifier == -1) //Basically if ball is Master Ball
+        {
+            return 100;
+        }
+        
         float value = 1;
 
         float monsterMaxHP = monster.GetMaxHealth();
@@ -219,6 +233,8 @@ public class Director : MonoBehaviour
 
         value = (((3*monsterMaxHP-2*monsterCurrentHP)*(monsterCatchRate*ballModifier)/(3*monsterMaxHP)));
         //TODO: Status Modifiers
+
+        
 
         return value;
     }

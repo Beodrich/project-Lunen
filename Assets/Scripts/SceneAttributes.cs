@@ -32,6 +32,7 @@ public class SceneAttributes : MonoBehaviour
         sr.sceneAttributes = this;
 
         sr.saveSystemObject.isLoading = false;
+        sr.canvasCollection.CloseState(CanvasCollection.UIState.SceneSwitch);
 
         if (sr.battleSetup.loadEntrance)
         {

@@ -213,7 +213,7 @@ PrefabInstance:
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: parts.Array.size
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
@@ -268,22 +268,22 @@ PrefabInstance:
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: parts.Array.data[3].name
-      value: ' [Wait] 3 seconds'
+      value: ' [SetPanel] EnableSceneSwitch'
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: parts.Array.data[3].type
-      value: 8
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: parts.Array.data[3].text
-      value: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
+      value: Your Lunen are fighting fit! Be safe out there!
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: parts.Array.data[3].waitTime
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
@@ -293,27 +293,132 @@ PrefabInstance:
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: parts.Array.data[4].name
-      value: ' [Dialogue] Your Lunen are fighting fit! Be safe out there!'
+      value: ' [Wait] 3 seconds'
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: parts.Array.data[4].type
-      value: 1
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: parts.Array.data[4].text
-      value: Your Lunen are fighting fit! Be safe out there!
+      value: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: parts.Array.data[4].waitTime
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: parts.Array.data[3].title
+      value: EnableSceneSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[5].name
+      value: ' [SetPanel] DisableSceneSwitch'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[5].type
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[5].text
+      value: Your Lunen are fighting fit! Be safe out there!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[4].title
       value: 3 seconds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[3].panelSelect
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[5].panelSelect
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[5].title
+      value: DisableSceneSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[6].name
+      value: ' [Wait] 0.5 seconds'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[6].title
+      value: 0.5 seconds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[6].type
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[6].text
+      value: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[6].panelSelect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[5].panelState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[4].panelSelect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[4].panelState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[6].waitTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[7].name
+      value: ' [Dialogue] Your Lunen are fighting fit! Be safe out there!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[7].title
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[7].type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[7].text
+      value: Your Lunen are fighting fit! Be safe out there!
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
+        type: 3}
+      propertyPath: parts.Array.data[7].waitTime
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}

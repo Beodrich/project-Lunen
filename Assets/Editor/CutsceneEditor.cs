@@ -107,7 +107,7 @@ public class CutsceneEditor : Editor
         }
             
         part.type = (CutscenePart.PartType)EditorGUILayout.EnumPopup("Cutscene Part Type: ", part.type);
-        if (part.type == CutscenePart.PartType.Movement)
+        if (part.type == CutscenePart.PartType.Movement || part.type == CutscenePart.PartType.Dialogue)
         {
             part.startNextSimultaneous = EditorGUILayout.Toggle("Start Next Part Too ", part.startNextSimultaneous);
             if (part.startNextSimultaneous && list.index < cutscene.parts.Count -1)

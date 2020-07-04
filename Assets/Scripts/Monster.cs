@@ -14,7 +14,7 @@ public class Monster : MonoBehaviour
     [VectorLabels("Curr", " Last", " Next")]
     public Vector3Int Exp;
 
-    public List<Action> ActionSet;
+    public List<Action> ActionSet = new List<Action>();
     public List<MonsterEffect> StatusEffects = new List<MonsterEffect>();
 
     [Header("Stats")]
@@ -55,11 +55,9 @@ public class Monster : MonoBehaviour
     private int EndOfTurnDamage;
     public bool LunenOut;
     public int LunenOrder;
-    [HideInInspector]
-    public AIScripts.AILevel level = AIScripts.AILevel.Random;
+    public AIScripts.AILevel level;
     [HideInInspector]
     public int MoveAffinityCost;
-    [EnumNamedArray(typeof(Type))]
     public List<float> DamageTakenScalar;
 
     private void Start()

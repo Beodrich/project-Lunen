@@ -16,6 +16,7 @@ MonoBehaviour:
   AllItems:
   - {fileID: 11400000, guid: 54dbbd98dc03b4763a5482e1dbd1c9a3, type: 2}
   - {fileID: 11400000, guid: 99a4b3e8ff9bc467db0ed96253e84e7e, type: 2}
+  - {fileID: 11400000, guid: 493114813b1e14f2d80102d402d70f05, type: 2}
   AllLunen:
   - {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748, type: 2}
   - {fileID: 11400000, guid: 9ab71ebd2c0fe4c428bc0b9b5329e46e, type: 2}
@@ -34,5 +35,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 782c9c2c29a964dd886df872982c4651, type: 2}
   - {fileID: 11400000, guid: 841108ed299a8440d9aeff6c9f4368f1, type: 2}
   - {fileID: 11400000, guid: 7188571de0aeb4aa88e1428b2f9789d3, type: 2}
+  - {fileID: 11400000, guid: e1210e59e2c9646439350386d120195b, type: 2}
   MonsterTemplate: {fileID: 2324287439143063678, guid: ce7650befca7144ae9e5cc4263c99950,
     type: 3}

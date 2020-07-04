@@ -62,6 +62,7 @@ public class BattleSetup : MonoBehaviour
     public List<System.Guid> GuidList;
     public bool playerDead;
     public bool cutsceneStoppedBattle;
+    [HideInInspector] public Monster attemptToCaptureMonster;
 
     private void Awake()
     {
@@ -152,6 +153,7 @@ public class BattleSetup : MonoBehaviour
         EmptyRecycleBin();
         sr.director.PrepareBattle();
         sr.canvasCollection.OpenState(CanvasCollection.UIState.Battle);
+        sr.canvasCollection.OpenState(CanvasCollection.UIState.BattleCharacter);
         InBattle = true;
     }
 
@@ -166,6 +168,7 @@ public class BattleSetup : MonoBehaviour
     {
         sr.director.CleanUpBattle();
         sr.canvasCollection.CloseState(CanvasCollection.UIState.Battle);
+        sr.canvasCollection.CloseState(CanvasCollection.UIState.BattleCharacter);
         InBattle = false;
         SinceLastEncounter = 5f;
 
@@ -258,7 +261,8 @@ public class BattleSetup : MonoBehaviour
     {
         nextEntrance = door.TargetEntrance;
         lastOverworld = door.TargetLocation.ScenePath;
-        SceneManager.LoadScene(lastOverworld);
+        //sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
+        SceneManager.LoadSceneAsync(lastOverworld);
     }
 
     public void NewOverworldAt(string location, Vector3 position, MoveScripts.Direction direction)
@@ -266,14 +270,16 @@ public class BattleSetup : MonoBehaviour
         loadEntrance = true;
         loadPosition = position;
         loadDirection = direction;
-        SceneManager.LoadScene(location);
+        sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
+        SceneManager.LoadSceneAsync(location);
     }
 
     public void NewOverworldAt(string location, int entranceIndex)
     {
         nextEntrance = entranceIndex;
         lastOverworld = location;
-        SceneManager.LoadScene(location);
+        sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
+        SceneManager.LoadSceneAsync(location);
     }
 
     public void StartCutscene(PackedCutscene cutscene, string route = "")
@@ -469,6 +475,10 @@ public class BattleSetup : MonoBehaviour
                             {
                                 switch(part.panelSelect)
                                 {
+                                    default:
+                                        sr.canvasCollection.OpenState(part.panelSelect);
+                                        AdvanceCutscene();
+                                    break;
                                     case CanvasCollection.UIState.Party:
                                         sr.canvasCollection.partyPanelOpenForBattle = true;
                                         sr.canvasCollection.OpenPartyWindow();
@@ -484,6 +494,10 @@ public class BattleSetup : MonoBehaviour
                             {
                                 switch(part.panelSelect)
                                 {
+                                    default:
+                                        sr.canvasCollection.CloseState(part.panelSelect);
+                                        AdvanceCutscene();
+                                    break;
                                     case CanvasCollection.UIState.Battle:
                                         sr.canvasCollection.CloseState(part.panelSelect);
                                         AdvanceCutscene();
@@ -526,6 +540,11 @@ public class BattleSetup : MonoBehaviour
 
                         case CutscenePart.PartType.END:
                             CutsceneChangeInternal(lastCutscene.parts.Count);
+                            AdvanceCutscene();
+                        break;
+
+                        case CutscenePart.PartType.CaptureWildLunen:
+                            sr.director.CaptureLunen(attemptToCaptureMonster);
                             AdvanceCutscene();
                         break;
                     }

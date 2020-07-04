@@ -161,6 +161,7 @@ public class Move : MonoBehaviour
                         
                         if (pLogic.MoveBegin(hits))
                         {
+                            if (pLogic.inDoor) sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
                             SetFacingDirection(input);
                             
                             StartCoroutine(move(transform));

@@ -136,7 +136,11 @@ public class PlayerLogic : MonoBehaviour
             inGrass = inGrass2;
             inTrainerView = inTrainerView2;
             inDoor = inDoor2;
-            if (pathsFound == hit.Length) return true;
+            
+            if (pathsFound == hit.Length)
+            {
+                return true;
+            }
             return (found > 0);
         }
         else return false;

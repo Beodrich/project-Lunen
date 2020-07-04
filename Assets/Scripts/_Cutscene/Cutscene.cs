@@ -69,7 +69,7 @@ public class CutscenePart
         SetAsCollected,
         SetPanel,
         CheckBattleOver,
-        
+        CaptureWildLunen,
         
     }
     public enum MoveType

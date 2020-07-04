@@ -19,7 +19,8 @@ public class CanvasCollection : MonoBehaviour
         Party,
         YesNo,
         Inventory,
-        Lunen
+        BattleCharacter,
+        SceneSwitch
     }
 
     [System.Serializable]
