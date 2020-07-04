@@ -10,7 +10,8 @@ public class AnimationSet : ScriptableObject
     {
         Idle,
         Walk,
-        Run
+        Run,
+        Attack,
     }
 
     [System.Serializable]

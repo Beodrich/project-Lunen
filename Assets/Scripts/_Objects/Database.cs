@@ -13,6 +13,8 @@ public class Database : ScriptableObject
 
     public List<CutsceneScript> GlobalCutsceneList;
 
+    public Sprite transparentSprite;
+
     public GameObject MonsterTemplate;
 
     public int LunenToIndex(Lunen lunen)

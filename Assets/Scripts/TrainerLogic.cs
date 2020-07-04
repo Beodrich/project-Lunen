@@ -145,6 +145,7 @@ public class TrainerLogic : MonoBehaviour
             if (!defeated && !engaged)
             {
                 engaged = true;
+                GameObject.Find("Player2Trainer").GetComponent<BattleFieldAnims>().SetAnimationSet(animationSet);
                 sr.battleSetup.GenerateTrainerBattle(this);
                 sr.battleSetup.EnterBattle();
                 

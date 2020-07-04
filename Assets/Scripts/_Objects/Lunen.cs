@@ -16,6 +16,7 @@ public class Lunen : ScriptableObject
 
     [Header("Species Info")]
 
+    public AnimationSet animationSet;
     public List<Type> Elements;
     //public List<LearnedAction> ActionsToLearn;
     public List<LearnedAction> LearnedActions;

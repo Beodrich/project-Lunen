@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 11915152}
   - component: {fileID: 11915151}
   - component: {fileID: 11915150}
+  - component: {fileID: 11915153}
   - component: {fileID: 11915149}
   m_Layer: 5
   m_Name: Player2Trainer
@@ -169,13 +170,13 @@ MonoBehaviour:
     image: {fileID: 11915150}
     text: {fileID: 0}
     allowColorChange: 1
-    openColor: {r: 0, g: 0, b: 0, a: 1}
-    closedColor: {r: 0, g: 0, b: 0, a: 0}
-    allowPositionChange: 1
+    openColor: {r: 1, g: 1, b: 1, a: 1}
+    closedColor: {r: 1, g: 1, b: 1, a: 0}
+    allowPositionChange: 0
     closeShift: {x: 0, y: -100}
     openPosition: {x: 244, y: -79.27185}
     closedPosition: {x: 184, y: -79.27185}
-    allowRotationChange: 1
+    allowRotationChange: 0
     rotationShift: {x: 20, y: 0, z: 0}
     openRotation: {x: 0, y: 0, z: 0}
     closedRotation: {x: 0, y: 0, z: 0}
@@ -198,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -234,13 +235,33 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 241964972}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 212, y: 0}
+  m_AnchoredPosition: {x: 192, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &11915153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11915148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8679647ca4da4194a5dd5768ebee878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  image: {fileID: 0}
+  BattleFieldIndex: 0
+  currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  currentType: 0
+  lookDirection: 3
+  animTime: 0
+  animIndex: 0
 --- !u!1 &12828275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,6 +2037,7 @@ GameObject:
   - component: {fileID: 165164136}
   - component: {fileID: 165164139}
   - component: {fileID: 165164138}
+  - component: {fileID: 165164140}
   - component: {fileID: 165164137}
   m_Layer: 5
   m_Name: Player1Lunen2
@@ -2036,11 +2058,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 241964972}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128, y: 0}
+  m_AnchoredPosition: {x: -96, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165164137
@@ -2072,13 +2094,13 @@ MonoBehaviour:
     image: {fileID: 165164138}
     text: {fileID: 0}
     allowColorChange: 1
-    openColor: {r: 0, g: 0, b: 0, a: 1}
-    closedColor: {r: 0, g: 0, b: 0, a: 0}
-    allowPositionChange: 1
+    openColor: {r: 1, g: 1, b: 1, a: 1}
+    closedColor: {r: 1, g: 1, b: 1, a: 0}
+    allowPositionChange: 0
     closeShift: {x: 0, y: -100}
     openPosition: {x: 244, y: -79.27185}
     closedPosition: {x: 184, y: -79.27185}
-    allowRotationChange: 1
+    allowRotationChange: 0
     rotationShift: {x: 20, y: 0, z: 0}
     openRotation: {x: 0, y: 0, z: 0}
     closedRotation: {x: 0, y: 0, z: 0}
@@ -2101,7 +2123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2125,6 +2147,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165164135}
   m_CullTransparentMesh: 0
+--- !u!114 &165164140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165164135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8679647ca4da4194a5dd5768ebee878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  image: {fileID: 0}
+  BattleFieldIndex: 0
+  currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  currentType: 0
+  lookDirection: 1
+  animTime: 0
+  animIndex: 0
 --- !u!1 &166907767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,14 +2837,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2043853899}
   - {fileID: 891817065}
   - {fileID: 165164136}
   - {fileID: 1643527609}
+  - {fileID: 11915152}
   - {fileID: 1296091643}
   - {fileID: 1628199183}
   - {fileID: 1027995179}
-  - {fileID: 2043853899}
-  - {fileID: 11915152}
   m_Father: {fileID: 1898619632}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2847,11 +2889,11 @@ MonoBehaviour:
     openPosition: {x: 244, y: -79.27185}
     closedPosition: {x: 184, y: -79.27185}
     allowRotationChange: 1
-    rotationShift: {x: 90, y: 0, z: 0}
+    rotationShift: {x: -90, y: 0, z: 0}
     openRotation: {x: 0, y: 0, z: 0}
     closedRotation: {x: 0, y: 0, z: 0}
     allowScaleChange: 1
-    scaleShift: {x: 1, y: 1, z: 1}
+    scaleShift: {x: -0.5, y: -0.5, z: -0.5}
     openScale: {x: 0, y: 0, z: 0}
     closedScale: {x: 0, y: 0, z: 0}
     source: {fileID: 0}
@@ -9736,6 +9778,7 @@ GameObject:
   - component: {fileID: 891817065}
   - component: {fileID: 891817068}
   - component: {fileID: 891817067}
+  - component: {fileID: 891817069}
   - component: {fileID: 891817066}
   m_Layer: 5
   m_Name: Player1Lunen1
@@ -9756,11 +9799,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 241964972}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -160, y: -32}
+  m_AnchoredPosition: {x: -128, y: -32}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891817066
@@ -9792,13 +9835,13 @@ MonoBehaviour:
     image: {fileID: 891817067}
     text: {fileID: 0}
     allowColorChange: 1
-    openColor: {r: 0, g: 0, b: 0, a: 1}
-    closedColor: {r: 0, g: 0, b: 0, a: 0}
-    allowPositionChange: 1
+    openColor: {r: 1, g: 1, b: 1, a: 1}
+    closedColor: {r: 1, g: 1, b: 1, a: 0}
+    allowPositionChange: 0
     closeShift: {x: 0, y: -100}
     openPosition: {x: 244, y: -79.27185}
     closedPosition: {x: 184, y: -79.27185}
-    allowRotationChange: 1
+    allowRotationChange: 0
     rotationShift: {x: 20, y: 0, z: 0}
     openRotation: {x: 0, y: 0, z: 0}
     closedRotation: {x: 0, y: 0, z: 0}
@@ -9821,7 +9864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -9845,6 +9888,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891817064}
   m_CullTransparentMesh: 0
+--- !u!114 &891817069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891817064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8679647ca4da4194a5dd5768ebee878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  image: {fileID: 0}
+  BattleFieldIndex: 0
+  currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  currentType: 0
+  lookDirection: 1
+  animTime: 0
+  animIndex: 0
 --- !u!1001 &892366452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11617,6 +11680,7 @@ GameObject:
   - component: {fileID: 1027995179}
   - component: {fileID: 1027995182}
   - component: {fileID: 1027995181}
+  - component: {fileID: 1027995183}
   - component: {fileID: 1027995180}
   m_Layer: 5
   m_Name: Player2Lunen3
@@ -11637,11 +11701,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 241964972}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160, y: -32}
+  m_AnchoredPosition: {x: 128, y: -32}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1027995180
@@ -11673,13 +11737,13 @@ MonoBehaviour:
     image: {fileID: 1027995181}
     text: {fileID: 0}
     allowColorChange: 1
-    openColor: {r: 0, g: 0, b: 0, a: 1}
-    closedColor: {r: 0, g: 0, b: 0, a: 0}
-    allowPositionChange: 1
+    openColor: {r: 1, g: 1, b: 1, a: 1}
+    closedColor: {r: 1, g: 1, b: 1, a: 0}
+    allowPositionChange: 0
     closeShift: {x: 0, y: -100}
     openPosition: {x: 244, y: -79.27185}
     closedPosition: {x: 184, y: -79.27185}
-    allowRotationChange: 1
+    allowRotationChange: 0
     rotationShift: {x: 20, y: 0, z: 0}
     openRotation: {x: 0, y: 0, z: 0}
     closedRotation: {x: 0, y: 0, z: 0}
@@ -11702,7 +11766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -11726,6 +11790,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027995178}
   m_CullTransparentMesh: 0
+--- !u!114 &1027995183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027995178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8679647ca4da4194a5dd5768ebee878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  image: {fileID: 0}
+  BattleFieldIndex: 0
+  currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  currentType: 0
+  lookDirection: 3
+  animTime: 0
+  animIndex: 0
 --- !u!1 &1030885595
 GameObject:
   m_ObjectHideFlags: 0
@@ -16756,6 +16840,7 @@ GameObject:
   - component: {fileID: 1296091643}
   - component: {fileID: 1296091642}
   - component: {fileID: 1296091641}
+  - component: {fileID: 1296091644}
   - component: {fileID: 1296091640}
   m_Layer: 5
   m_Name: Player2Lunen1
@@ -16793,13 +16878,13 @@ MonoBehaviour:
     image: {fileID: 1296091641}
     text: {fileID: 0}
     allowColorChange: 1
-    openColor: {r: 0, g: 0, b: 0, a: 1}
-    closedColor: {r: 0, g: 0, b: 0, a: 0}
-    allowPositionChange: 1
+    openColor: {r: 1, g: 1, b: 1, a: 1}
+    closedColor: {r: 1, g: 1, b: 1, a: 0}
+    allowPositionChange: 0
     closeShift: {x: 0, y: -100}
     openPosition: {x: 244, y: -79.27185}
     closedPosition: {x: 184, y: -79.27185}
-    allowRotationChange: 1
+    allowRotationChange: 0
     rotationShift: {x: 20, y: 0, z: 0}
     openRotation: {x: 0, y: 0, z: 0}
     closedRotation: {x: 0, y: 0, z: 0}
@@ -16822,7 +16907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -16858,13 +16943,33 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 241964972}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 96, y: 32}
+  m_AnchoredPosition: {x: 64, y: 32}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1296091644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296091639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8679647ca4da4194a5dd5768ebee878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  image: {fileID: 0}
+  BattleFieldIndex: 0
+  currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  currentType: 0
+  lookDirection: 3
+  animTime: 0
+  animIndex: 0
 --- !u!1 &1299934128
 GameObject:
   m_ObjectHideFlags: 0
@@ -21525,6 +21630,7 @@ GameObject:
   - component: {fileID: 1628199183}
   - component: {fileID: 1628199186}
   - component: {fileID: 1628199185}
+  - component: {fileID: 1628199187}
   - component: {fileID: 1628199184}
   m_Layer: 5
   m_Name: Player2Lunen2
@@ -21545,11 +21651,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 241964972}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 128, y: 0}
+  m_AnchoredPosition: {x: 96, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628199184
@@ -21581,13 +21687,13 @@ MonoBehaviour:
     image: {fileID: 1628199185}
     text: {fileID: 0}
     allowColorChange: 1
-    openColor: {r: 0, g: 0, b: 0, a: 1}
-    closedColor: {r: 0, g: 0, b: 0, a: 0}
-    allowPositionChange: 1
+    openColor: {r: 1, g: 1, b: 1, a: 1}
+    closedColor: {r: 1, g: 1, b: 1, a: 0}
+    allowPositionChange: 0
     closeShift: {x: 0, y: -100}
     openPosition: {x: 244, y: -79.27185}
     closedPosition: {x: 184, y: -79.27185}
-    allowRotationChange: 1
+    allowRotationChange: 0
     rotationShift: {x: 20, y: 0, z: 0}
     openRotation: {x: 0, y: 0, z: 0}
     closedRotation: {x: 0, y: 0, z: 0}
@@ -21610,7 +21716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -21634,6 +21740,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628199182}
   m_CullTransparentMesh: 0
+--- !u!114 &1628199187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628199182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8679647ca4da4194a5dd5768ebee878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  image: {fileID: 0}
+  BattleFieldIndex: 0
+  currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  currentType: 0
+  lookDirection: 3
+  animTime: 0
+  animIndex: 0
 --- !u!1 &1634029177 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8909552609746736386, guid: 88f72773f931140488affde3480e02e0,
@@ -21657,6 +21783,7 @@ GameObject:
   - component: {fileID: 1643527609}
   - component: {fileID: 1643527612}
   - component: {fileID: 1643527611}
+  - component: {fileID: 1643527613}
   - component: {fileID: 1643527610}
   m_Layer: 5
   m_Name: Player1Lunen3
@@ -21677,11 +21804,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 241964972}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -96, y: 32}
+  m_AnchoredPosition: {x: -64, y: 32}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643527610
@@ -21713,13 +21840,13 @@ MonoBehaviour:
     image: {fileID: 1643527611}
     text: {fileID: 0}
     allowColorChange: 1
-    openColor: {r: 0, g: 0, b: 0, a: 1}
-    closedColor: {r: 0, g: 0, b: 0, a: 0}
-    allowPositionChange: 1
+    openColor: {r: 1, g: 1, b: 1, a: 1}
+    closedColor: {r: 1, g: 1, b: 1, a: 0}
+    allowPositionChange: 0
     closeShift: {x: 0, y: -100}
     openPosition: {x: 244, y: -79.27185}
     closedPosition: {x: 184, y: -79.27185}
-    allowRotationChange: 1
+    allowRotationChange: 0
     rotationShift: {x: 20, y: 0, z: 0}
     openRotation: {x: 0, y: 0, z: 0}
     closedRotation: {x: 0, y: 0, z: 0}
@@ -21742,7 +21869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -21766,6 +21893,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643527608}
   m_CullTransparentMesh: 0
+--- !u!114 &1643527613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643527608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8679647ca4da4194a5dd5768ebee878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  image: {fileID: 0}
+  BattleFieldIndex: 0
+  currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  currentType: 0
+  lookDirection: 1
+  animTime: 0
+  animIndex: 0
 --- !u!1 &1679115918
 GameObject:
   m_ObjectHideFlags: 0
@@ -26577,6 +26724,7 @@ GameObject:
   - component: {fileID: 2043853899}
   - component: {fileID: 2043853902}
   - component: {fileID: 2043853901}
+  - component: {fileID: 2043853903}
   - component: {fileID: 2043853900}
   m_Layer: 5
   m_Name: Player1Trainer
@@ -26597,11 +26745,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 241964972}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -212, y: 0}
+  m_AnchoredPosition: {x: -192, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2043853900
@@ -26633,13 +26781,13 @@ MonoBehaviour:
     image: {fileID: 2043853901}
     text: {fileID: 0}
     allowColorChange: 1
-    openColor: {r: 0, g: 0, b: 0, a: 1}
-    closedColor: {r: 0, g: 0, b: 0, a: 0}
-    allowPositionChange: 1
+    openColor: {r: 1, g: 1, b: 1, a: 1}
+    closedColor: {r: 1, g: 1, b: 1, a: 0}
+    allowPositionChange: 0
     closeShift: {x: 0, y: -100}
     openPosition: {x: 244, y: -79.27185}
     closedPosition: {x: 184, y: -79.27185}
-    allowRotationChange: 1
+    allowRotationChange: 0
     rotationShift: {x: 20, y: 0, z: 0}
     openRotation: {x: 0, y: 0, z: 0}
     closedRotation: {x: 0, y: 0, z: 0}
@@ -26662,7 +26810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -26686,6 +26834,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043853898}
   m_CullTransparentMesh: 0
+--- !u!114 &2043853903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043853898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8679647ca4da4194a5dd5768ebee878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  image: {fileID: 0}
+  BattleFieldIndex: 0
+  currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  currentType: 0
+  lookDirection: 1
+  animTime: 0
+  animIndex: 0
 --- !u!1001 &2046992971
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -155,6 +155,7 @@ public class BattleSetup : MonoBehaviour
         sr.canvasCollection.OpenState(CanvasCollection.UIState.Battle);
         sr.canvasCollection.OpenState(CanvasCollection.UIState.BattleCharacter);
         InBattle = true;
+        GameObject.Find("Player1Trainer").GetComponent<BattleFieldAnims>().SetAnimationSet(sr.playerLogic.animationSet);
     }
 
     public void ExitTrainerBattle(bool win)
@@ -232,6 +233,8 @@ public class BattleSetup : MonoBehaviour
         EnemyLunenTeam.Add(wildMonster);
         wildMonster.transform.SetParent(this.transform);
         typeOfBattle = BattleType.WildEncounter;
+
+        GameObject.Find("Player2Trainer").GetComponent<BattleFieldAnims>().DisableImage();
     }
 
     public void GenerateTrainerBattle(TrainerLogic encounter)
