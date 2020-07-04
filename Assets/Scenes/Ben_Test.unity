@@ -522,7 +522,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6788457402322118381, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+      objectReference: {fileID: 7134494673997305375, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
         type: 3}
     - target: {fileID: 6539219013389779558, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -538,7 +538,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6788457402322118381, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+      objectReference: {fileID: 7134494673997305375, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
         type: 3}
     - target: {fileID: 6539219013480142738, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -586,12 +586,12 @@ PrefabInstance:
     - target: {fileID: 6539219013480142741, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142741, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142741, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -722,7 +722,7 @@ MonoBehaviour:
       Min: 1
       Max: 5
     chanceWeight: 51
-  chanceModifier: 20
+  chanceModifier: 100
 --- !u!19719996 &312781803
 TilemapCollider2D:
   m_ObjectHideFlags: 0

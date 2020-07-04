@@ -62,12 +62,18 @@ public class TrainerLogic : MonoBehaviour
     
     void GetImportantVariables()
     {
-        if (sr == null) sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
-        if (move == null) move = GetComponent<Move>();
+        GameObject main = GameObject.Find("BattleSetup");
+        if (main != null)
+        {
+            sr = main.GetComponent<SetupRouter>();
+            if (move == null) move = GetComponent<Move>();
 
-        move.animationSet = animationSet;
+            move.animationSet = animationSet;
 
-        UpdateTeam();
+            UpdateTeam();
+        }
+        
+        
     }
 
     void GetDefeated()
@@ -178,8 +184,6 @@ public class TrainerLogic : MonoBehaviour
                 case "Trainer": return false;
                 case "Thing": return false;
                 case "NPC": return false;
-                case "Grass":
-                    return true;
                 case "TrainerSight":
                     return true;
                 case "Door":
@@ -190,13 +194,16 @@ public class TrainerLogic : MonoBehaviour
 
     public bool MoveBegin(Collider2D[] hit)
     {
+        Debug.Log("Started Trainer Move Begin");
+        
         int pathsFound = 0;
         if (hit.Length > 0)
         {
             int found = 0;
             for (int i = 0; i < hit.Length; i++)
             {
-                if (hit[i].gameObject.tag != "Path")
+                Debug.Log(hit[i].gameObject.tag);
+                if (hit[i].gameObject.tag != "Path" && hit[i].gameObject.tag != "Grass")
                 {
                     found += MoveBegin(hit[i]) ? 1 : 0;
                 }
@@ -207,6 +214,7 @@ public class TrainerLogic : MonoBehaviour
                 
             }
             if (pathsFound == hit.Length) return true;
+            Debug.Log("found = " + found);
             return (found > 0);
         }
         else return false;

@@ -149,7 +149,7 @@ public class PlayerLogic : MonoBehaviour
     public void MoveEnd()
     {
         //This function is called when the move function finished its movement.
-        if (inGrass)
+        if (inGrass && !sr.battleSetup.cutsceneLoopGoing)
         {
             sr.battleSetup.lastSceneLocation = transform.position;
             sr.battleSetup.TryWildEncounter(grassObject.GetComponent<GrassEncounter>());
