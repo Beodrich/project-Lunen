@@ -29285,7 +29285,7 @@ MonoBehaviour:
   EnemyLunenMonsters: []
   EnemyLunenAlive: []
   MaxLunenPossible: 3
-  MaxLunenOut: 2
+  MaxLunenOut: 3
   PlayerLunenCurrentlyOut: 0
   EnemyLunenCurrentlyOut: 0
   DirectorDeltaTime: 0
