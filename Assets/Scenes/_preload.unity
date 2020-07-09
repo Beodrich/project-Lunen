@@ -9813,7 +9813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: -32}
+  m_AnchoredPosition: {x: -80, y: 32}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891817066
@@ -21818,7 +21818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: 32}
+  m_AnchoredPosition: {x: -80, y: -32}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643527610
@@ -29284,6 +29284,7 @@ MonoBehaviour:
   PlayerLunenAlive: []
   EnemyLunenMonsters: []
   EnemyLunenAlive: []
+  MaxLunenPossible: 3
   MaxLunenOut: 2
   PlayerLunenCurrentlyOut: 0
   EnemyLunenCurrentlyOut: 0
