@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
   m_Name: Flamela
   m_EditorClassIdentifier: 
+  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
   Elements:
   - {fileID: 11400000, guid: 6ff4b9b35b664489f8e80786889294d9, type: 2}
   LearnedActions:

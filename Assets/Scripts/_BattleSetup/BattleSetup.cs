@@ -155,7 +155,7 @@ public class BattleSetup : MonoBehaviour
         sr.canvasCollection.OpenState(CanvasCollection.UIState.Battle);
         sr.canvasCollection.OpenState(CanvasCollection.UIState.BattleCharacter);
         InBattle = true;
-        GameObject.Find("Player1Trainer").GetComponent<BattleFieldAnims>().SetAnimationSet(sr.playerLogic.animationSet);
+        sr.canvasCollection.Player1BattleFieldSprites[0].SetAnimationSet(sr.playerLogic.animationSet);
     }
 
     public void ExitTrainerBattle(bool win)
@@ -234,7 +234,7 @@ public class BattleSetup : MonoBehaviour
         wildMonster.transform.SetParent(this.transform);
         typeOfBattle = BattleType.WildEncounter;
 
-        GameObject.Find("Player2Trainer").GetComponent<BattleFieldAnims>().DisableImage();
+        sr.canvasCollection.Player2BattleFieldSprites[0].DisableImage();
     }
 
     public void GenerateTrainerBattle(TrainerLogic encounter)

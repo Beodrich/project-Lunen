@@ -57,6 +57,8 @@ public class CanvasCollection : MonoBehaviour
     public List<GameObject> Player2LunenButtons;
     [HideInInspector] public List<LunenButton> Player1LunenButtonScripts;
     [HideInInspector] public List<LunenButton> Player2LunenButtonScripts;
+    public List<BattleFieldAnims> Player1BattleFieldSprites;
+    public List<BattleFieldAnims> Player2BattleFieldSprites;
     public List<GameObject> PartyLunenButtons;
     [HideInInspector] public List<LunenButton> PartyLunenButtonScripts;
     public List<LunenActionButton> PartyActionButtonScripts;
@@ -319,13 +321,14 @@ public class CanvasCollection : MonoBehaviour
 
     public void ScanPlayer1Party()
     {
-        for (int i = 0; i < sr.director.MaxLunenOut; i++)
+        for (int i = 0; i < sr.director.MaxLunenPossible; i++)
         {
-            if (sr.director.GetLunenCountOut(Director.Team.PlayerTeam) > i)
+            if (sr.director.GetLunenCountOut(Director.Team.PlayerTeam) > i && i < sr.director.MaxLunenOut)
             {
                 Player1LunenButtonScripts[i] = Player1LunenButtons[i].GetComponent<LunenButton>();
                 Player1LunenButtonScripts[i].Text.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].Nickname;
                 Player1LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + sr.director.PlayerLunenAlive[i].Level;
+                Player1BattleFieldSprites[i+1].SetAnimationSet(sr.director.PlayerLunenAlive[i].SourceLunen.animationSet);
                 Player1LunenButtons[i].SetActive(true);
                 sr.director.PlayerLunenAlive[i].MonsterTeam = Director.Team.PlayerTeam;
                 AssignPlayer1Bars(i);
@@ -349,6 +352,7 @@ public class CanvasCollection : MonoBehaviour
             else
             {
                 Player1LunenButtons[i].SetActive(false);
+                Player1BattleFieldSprites[i+1].DisableImage();
             }
         }
     }
@@ -356,18 +360,23 @@ public class CanvasCollection : MonoBehaviour
     public void ScanPlayer2Party()
     {
         
-        for (int i = 0; i < sr.director.MaxLunenOut; i++)
+        for (int i = 0; i < sr.director.MaxLunenPossible; i++)
         {
-            if (sr.director.GetLunenCountOut(Director.Team.EnemyTeam) > i)
+            if (sr.director.GetLunenCountOut(Director.Team.EnemyTeam) > i && i < sr.director.MaxLunenOut)
             {
                 Player2LunenButtonScripts[i] = Player2LunenButtons[i].GetComponent<LunenButton>();
                 Player2LunenButtonScripts[i].Text.GetComponent<Text>().text = sr.director.EnemyLunenAlive[i].Nickname;
                 Player2LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + sr.director.EnemyLunenAlive[i].Level;
+                Player2BattleFieldSprites[i+1].SetAnimationSet(sr.director.EnemyLunenAlive[i].SourceLunen.animationSet);
                 Player2LunenButtons[i].SetActive(true);
                 sr.director.EnemyLunenAlive[i].MonsterTeam = Director.Team.EnemyTeam;
                 AssignPlayer2Bars(i);
             }
-            else Player2LunenButtons[i].SetActive(false);
+            else
+            {
+                Player2LunenButtons[i].SetActive(false);
+                Player2BattleFieldSprites[i+1].DisableImage();
+            }
         }
     }
 

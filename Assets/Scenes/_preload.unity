@@ -7610,6 +7610,16 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  Player1BattleFieldSprites:
+  - {fileID: 2043853903}
+  - {fileID: 891817069}
+  - {fileID: 165164140}
+  - {fileID: 1643527613}
+  Player2BattleFieldSprites:
+  - {fileID: 11915153}
+  - {fileID: 1296091644}
+  - {fileID: 1628199187}
+  - {fileID: 1027995183}
   PartyLunenButtons:
   - {fileID: 2000548724}
   - {fileID: 1635768330}
@@ -29274,7 +29284,7 @@ MonoBehaviour:
   PlayerLunenAlive: []
   EnemyLunenMonsters: []
   EnemyLunenAlive: []
-  MaxLunenOut: 3
+  MaxLunenOut: 2
   PlayerLunenCurrentlyOut: 0
   EnemyLunenCurrentlyOut: 0
   DirectorDeltaTime: 0

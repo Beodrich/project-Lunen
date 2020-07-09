@@ -38,7 +38,8 @@ public class Director : MonoBehaviour
     public List<Monster> EnemyLunenMonsters;
     public List<Monster> EnemyLunenAlive;
 
-    public int MaxLunenOut = 3;
+    [HideInInspector] public int MaxLunenPossible = 3;
+    public int MaxLunenOut = 2;
     public int PlayerLunenCurrentlyOut = 0;
     public int EnemyLunenCurrentlyOut = 0;
     

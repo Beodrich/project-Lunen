@@ -3015,6 +3015,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
+      objectReference: {fileID: 7134494673997305375, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+        type: 3}
+    - target: {fileID: 6539219013389779558, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142736, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -3025,8 +3031,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7393945022160921464, guid: 1f79d1cee358141e580a5231f2384a00,
+      objectReference: {fileID: 6788457402322118381, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
         type: 3}
+    - target: {fileID: 6539219013480142738, guid: a92523051362e453fbce1069546b2680,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
       propertyPath: TeamComp.Array.size
@@ -3052,7 +3063,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animationSet
       value: 
-      objectReference: {fileID: 11400000, guid: b65aa9586ea654bd19cbf0d29442f3c5,
+      objectReference: {fileID: 11400000, guid: 62bc6497e63744c848001c1e86ab5091,
         type: 2}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
