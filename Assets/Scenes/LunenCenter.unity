@@ -2094,17 +2094,17 @@ PrefabInstance:
         type: 3}
       propertyPath: TargetLocation.sceneAsset
       value: 
-      objectReference: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d,
+      objectReference: {fileID: 102900000, guid: a31a13eb6956e5c47aaf748dd3d69810,
         type: 3}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: TargetLocation.scenePath
-      value: Assets/Scenes/LunenIslandPort.unity
+      value: Assets/Scenes/Ben_Test.unity
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: TargetEntrance
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696780, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -3343,6 +3343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
+  srObject: {fileID: 0}
   logicType: 3
   pLogic: {fileID: 0}
   tLogic: {fileID: 0}
