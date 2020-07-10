@@ -70,7 +70,6 @@ public class CutscenePart
         SetPanel,
         CheckBattleOver,
         CaptureWildLunen,
-        
     }
     public enum MoveType
     {
@@ -169,7 +168,9 @@ public class CutscenePart
     public Lunen lunenObtained;
     public int lunenLevel;
 
-    
+    //Type: Animation
+    public Move animationActor;
+    public int animationPlay;
 
     [HideInInspector] public TrainerLogic trainerEncounter;
 }

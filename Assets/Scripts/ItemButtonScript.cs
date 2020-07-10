@@ -13,6 +13,7 @@ public class ItemButtonScript : MonoBehaviour
     [HideInInspector] public Color defaultColor;
 
     [HideInInspector] public Inventory.InventoryEntry entry;
+    [HideInInspector] public Item itemEntry;
 
     public Text nameText;
     public Text amountText;
@@ -49,6 +50,23 @@ public class ItemButtonScript : MonoBehaviour
         }
     }
 
+    public void SetShopEntry(Item _entry)
+    {
+        itemEntry = _entry;
+        if (itemEntry != null)
+        {
+            button.interactable = true;
+            nameText.text = itemEntry.name;
+            amountText.text = "$" + itemEntry.buyValue;
+        }
+        else
+        {
+            button.interactable = false;
+            nameText.text = "";
+            amountText.text = "";
+        }
+    }
+
     public void SetButtonInteractivity(bool interactible)
     {
         button.interactable = interactible;
@@ -57,5 +75,28 @@ public class ItemButtonScript : MonoBehaviour
     public void SetSelected(bool selected)
     {
         scs.SetColorState(selected);
+    }
+
+    public void TryBuyItem() {
+        if (HasEnoughGold())
+        {
+            Debug.Log("Has enough gold");
+            BoughtItem();
+
+        }
+        else {
+            Debug.Log("Not enough gold");
+        }
+    }
+
+    void BoughtItem() {
+         Debug.Log("Bought an item"+ itemEntry.name);
+         sr.inventory.AddItem(itemEntry, 1);
+         sr.inventory.gold -= itemEntry.buyValue;
+        //playerInventory.Add(itemType);
+    }
+    private bool HasEnoughGold() {
+
+        return (sr.inventory.gold >= itemEntry.buyValue);
     }
 }

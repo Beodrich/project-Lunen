@@ -7,6 +7,8 @@ public class FALLBACK_CURRENT_SCENE : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
     [HideInInspector] public string thisScene;
+
+    public MoveScripts.Direction startDirection;
     
     void Awake()
     {

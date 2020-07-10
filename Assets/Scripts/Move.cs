@@ -64,7 +64,8 @@ public class Move : MonoBehaviour
 
     public float animTime;
     public int animIndex;
-    public AnimationSet.AnimationType animationType;
+    public string animationType;
+    public bool animHijack;
 
     public bool ableToMove
     {
@@ -214,18 +215,10 @@ public class Move : MonoBehaviour
                         checkPoint = new Vector2(centerPosition.x+input.x, centerPosition.y+input.y);
                         
                         hit = Physics2D.OverlapArea(checkPoint,checkPoint);
-                        
-                        if (!MoveScripts.CheckForTag(this.gameObject, hit, "Player"))
-                        {
-                            SetFacingDirection(input);
-                            StartCoroutine(move(transform));
-                            
-                        }
-                        else
-                        {
-                            npcMove = false;
-                            tLogic.sr.battleSetup.AdvanceCutscene();
-                        }
+
+                        //MoveScripts.CheckForTag(this.gameObject, hit, "Player")
+                        SetFacingDirection(input);
+                        StartCoroutine(move(transform));
                     }
                     SetWalkAnimation();
                 }
@@ -253,14 +246,28 @@ public class Move : MonoBehaviour
             animTime += Time.deltaTime;
         }
 
-        if (animMoving)
+        if (animHijack)
         {
-            animationType = AnimationSet.AnimationType.Walk;
+            if (animTime > animationSet.GetAnimation(animationType).loopTime)
+            {
+                animHijack = false;
+            }
         }
         else
         {
-            animationType = AnimationSet.AnimationType.Idle;
+            if (animMoving)
+            {
+                animationType = "Walk";
+            }
+            else
+            {
+                animationType = "Idle";
+            }
         }
+
+        
+
+        
 
         animIndex = animationSet.GetAnimationIndex(animationType, lookDirection, animTime);
         SetSprite();

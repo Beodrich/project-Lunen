@@ -16,6 +16,7 @@ TagManager:
   - Trainer
   - Thing
   - NPC
+  - ShopKeeper
   layers:
   - Default
   - TransparentFX

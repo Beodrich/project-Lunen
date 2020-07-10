@@ -11,7 +11,7 @@ public class BattleFieldAnims : MonoBehaviour
     public int BattleFieldIndex;
 
     public AnimationSet currentSet;
-    [HideInInspector] public AnimationSet.AnimationType currentType = AnimationSet.AnimationType.Idle;
+    [HideInInspector] public string currentType = "Idle";
     public MoveScripts.Direction lookDirection;
     public float animTime;
     public int animIndex;

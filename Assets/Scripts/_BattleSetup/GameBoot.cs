@@ -11,7 +11,8 @@ public class GameBoot : MonoBehaviour
         LoadSaveFile,
         LoadIntoFirstLaunch,
         LoadIntoEntrance,
-        LoadIntoCurrentScene
+        LoadIntoCurrentScene,
+        LoadIntoPosition
     }
     [HideInInspector] public SetupRouter sr;
 
@@ -22,10 +23,12 @@ public class GameBoot : MonoBehaviour
     [Header("On Boot")]
 
     public BootBehaviour bootBehaviour;
-    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance)] public SceneReference bootScene;
-    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance)] public int bootEntrance;
+    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance, BootBehaviour.LoadIntoPosition)] public SceneReference bootScene;
+    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance, BootBehaviour.LoadIntoPosition)] public int bootEntrance;
+    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoPosition)] public Vector3 bootPosition;
+    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoPosition)] public MoveScripts.Direction bootDirection;
 
-    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance, BootBehaviour.LoadIntoCurrentScene)] 
+    [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoEntrance, BootBehaviour.LoadIntoCurrentScene, BootBehaviour.LoadIntoPosition)] 
     public LunenParty1 TestLunenParty;
 
     [ConditionalField(nameof(bootBehaviour), false, BootBehaviour.LoadIntoFirstLaunch)] 
@@ -60,10 +63,12 @@ public class GameBoot : MonoBehaviour
             Debug.Log("Started Game From Game Scene!");
             GameObject fallback = GameObject.Find("FALLBACK_CURRENT_SCENE");
 
-            bootBehaviour = BootBehaviour.LoadIntoEntrance;
+            bootBehaviour = BootBehaviour.LoadIntoPosition;
             bootScene = new SceneReference();
             bootScene.ScenePath = fallback.GetComponent<FALLBACK_CURRENT_SCENE>().thisScene;
-            bootEntrance = 0;
+            
+            bootPosition = fallback.transform.position;
+            bootDirection = fallback.GetComponent<FALLBACK_CURRENT_SCENE>().startDirection;
 
             Destroy(fallback);
         }
@@ -97,6 +102,10 @@ public class GameBoot : MonoBehaviour
             break;
             case BootBehaviour.LoadIntoCurrentScene:
                 GivePlayerLunen(TestLunenParty.Value);
+            break;
+            case BootBehaviour.LoadIntoPosition:
+                GivePlayerLunen(TestLunenParty.Value);
+                sr.battleSetup.NewOverworldAt(bootScene.ScenePath, bootPosition, bootDirection);
             break;
         }
     }

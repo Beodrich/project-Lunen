@@ -15,10 +15,16 @@ MonoBehaviour:
   animations:
   - name: Idle
     iterateTime: 0.2
+    loops: 1
+    directional: 1
     spriteArray: []
   - name: Walk
     iterateTime: 0.1
+    loops: 1
+    directional: 1
     spriteArray: []
   - name: Run
     iterateTime: 0.05
+    loops: 0
+    directional: 0
     spriteArray: []

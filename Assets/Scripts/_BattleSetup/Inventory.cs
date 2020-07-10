@@ -23,6 +23,7 @@ public class Inventory : MonoBehaviour
     public Item.ItemType currentRequestedType;
 
     public int itemCap;
+    public int gold;
 
     void Awake()
     {

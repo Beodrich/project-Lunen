@@ -6,64 +6,103 @@ using MyBox;
 [CreateAssetMenu(fileName = "New Animation Set", menuName = "GameElements/AnimationSet")]
 public class AnimationSet : ScriptableObject
 {
-    public enum AnimationType
-    {
-        Idle,
-        Walk,
-        Run,
-        Attack,
-    }
-
     [System.Serializable]
     public class Animation
     {
         public string name;
         public float iterateTime;
+        public bool loops;
+        public bool directional;
         public List<Sprite> spriteArray;
         
-
         public int spritesPerDirection
         {
             get
             {
-                return spriteArray.Count/4;
+                if (directional)
+                {
+                    return spriteArray.Count/4;
+                }
+                else
+                {
+                    return spriteArray.Count;
+                }
+            }
+        }
+
+        public float loopTime
+        {
+            get
+            {
+                return iterateTime*spritesPerDirection;
             }
         }
 
         public int getDirectionStartIndex(MoveScripts.Direction direction)
         {
             int directionValue = 0;
-            switch (direction)
+            if (directional)
             {
-                case MoveScripts.Direction.North: directionValue = 1; break;
-                case MoveScripts.Direction.South: directionValue = 0; break;
-                case MoveScripts.Direction.East: directionValue = 2; break;
-                case MoveScripts.Direction.West: directionValue = 3; break;
+                switch (direction)
+                {
+                    case MoveScripts.Direction.North: directionValue = 1; break;
+                    case MoveScripts.Direction.South: directionValue = 0; break;
+                    case MoveScripts.Direction.East: directionValue = 2; break;
+                    case MoveScripts.Direction.West: directionValue = 3; break;
+                }
             }
+            
             return (directionValue*spritesPerDirection);
         }
 
         public float getModulo(float time)
         {
-            return (time % (iterateTime*spritesPerDirection));
+            if (!loops && time > loopTime)
+            {
+                return 0;
+            }
+            else
+            {
+                return (time % (iterateTime*spritesPerDirection));
+            }
+            
         }
     }
 
     public List<Animation> animations;
 
-    public Sprite GetAnimationSprite(AnimationType type, int index)
+    public Animation GetAnimation(string _name)
     {
-        return animations[(int)type].spriteArray[index];
+        foreach (Animation a in animations) if (a.name == _name) return a;
+        Debug.Log("Unable to find animation: " + _name + " in " + name);
+        return animations[0];
     }
 
-    public int GetAnimationIndex(AnimationType type, MoveScripts.Direction direction, float time)
+    public string GetAnimationName(int index)
     {
-        Animation animation = animations[(int)type];
+        return animations[index].name;
+    }
+
+    public Sprite GetAnimationSprite(string type, int index)
+    {
+        return GetAnimation(type).spriteArray[index];
+    }
+
+    public int GetAnimationIndex(string type, MoveScripts.Direction direction, float time)
+    {
+        Animation animation = GetAnimation(type);
         int result = animation.getDirectionStartIndex(direction);
         float modulo = animation.getModulo(time);
 
         result += (int)(modulo/animation.iterateTime);
 
         return result;
+    }
+
+    public string[] GetAnimList()
+    {
+        List<string> getList = new List<string>();
+        foreach (Animation a in animations) getList.Add(a.name);
+        return getList.ToArray();
     }
 }

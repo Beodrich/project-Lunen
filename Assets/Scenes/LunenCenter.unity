@@ -494,7 +494,7 @@ Tilemap:
   m_GameObject: {fileID: 313321348}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -4, y: 6, z: 0}
+  - first: {x: -2, y: 4, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 24
@@ -503,11 +503,56 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: -3, y: 6, z: 0}
+  - first: {x: -1, y: 4, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 25
       m_TileSpriteIndex: 25
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 25
+      m_TileSpriteIndex: 25
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 1, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 25
+      m_TileSpriteIndex: 25
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 2, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 23
+      m_TileSpriteIndex: 23
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -4, y: 6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 22
+      m_TileSpriteIndex: 22
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -3, y: 6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 22
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -515,8 +560,8 @@ Tilemap:
   - first: {x: -2, y: 6, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 25
-      m_TileSpriteIndex: 25
+      m_TileIndex: 22
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -524,8 +569,8 @@ Tilemap:
   - first: {x: -1, y: 6, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 25
-      m_TileSpriteIndex: 25
+      m_TileIndex: 22
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -533,8 +578,8 @@ Tilemap:
   - first: {x: 0, y: 6, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 25
-      m_TileSpriteIndex: 25
+      m_TileIndex: 22
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -542,8 +587,8 @@ Tilemap:
   - first: {x: 1, y: 6, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 25
-      m_TileSpriteIndex: 25
+      m_TileIndex: 22
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -551,8 +596,8 @@ Tilemap:
   - first: {x: 2, y: 6, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 25
-      m_TileSpriteIndex: 25
+      m_TileIndex: 22
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -560,8 +605,8 @@ Tilemap:
   - first: {x: 3, y: 6, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 25
-      m_TileSpriteIndex: 25
+      m_TileIndex: 22
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -569,8 +614,8 @@ Tilemap:
   - first: {x: 4, y: 6, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 23
-      m_TileSpriteIndex: 23
+      m_TileIndex: 22
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -621,14 +666,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 9
+    m_Data: {fileID: 11400000, guid: ad7791e75b20f48d593dde71b0871c7b, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 64cb6ba0cf13d4e92a9a5aed9881fd33, type: 2}
+    m_Data: {fileID: 11400000, guid: df1f8a03e3a594e5db78e188364acfd4, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: f3cbb069000d648c89c4fababd6c98ab, type: 2}
-  - m_RefCount: 7
-    m_Data: {fileID: 11400000, guid: 37f1b6493597748ca81470aad4abb06a, type: 2}
+    m_Data: {fileID: 11400000, guid: 47f3b3a1c91974930a1f5ded0c30cd41, type: 2}
+  - m_RefCount: 3
+    m_Data: {fileID: 11400000, guid: 6ef22d71afe2044a98c600edee389a72, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -674,19 +719,20 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 1965930900489928538, guid: 47172c71f6a044caabd96394d5c9bbd7,
+  - m_RefCount: 9
+    m_Data: {fileID: -8493749876120568403, guid: 31c8eeb11d5b945e593d0170d03a6ff1,
       type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 2633579074662041601, guid: 47172c71f6a044caabd96394d5c9bbd7,
+    m_Data: {fileID: 6344445692870189665, guid: 31c8eeb11d5b945e593d0170d03a6ff1,
       type: 3}
-  - m_RefCount: 7
-    m_Data: {fileID: -1109201754804128273, guid: 47172c71f6a044caabd96394d5c9bbd7,
+  - m_RefCount: 1
+    m_Data: {fileID: 8109716727620813993, guid: 31c8eeb11d5b945e593d0170d03a6ff1,
+      type: 3}
+  - m_RefCount: 3
+    m_Data: {fileID: -3136190844818700107, guid: 31c8eeb11d5b945e593d0170d03a6ff1,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 9
+  - m_RefCount: 14
     m_Data:
       e00: 1
       e01: 0
@@ -705,7 +751,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 9
+  - m_RefCount: 14
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -1315,249 +1361,6 @@ Tilemap:
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: -4, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: -3, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: -2, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: -1, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 0, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 1, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 2, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 3, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 4, y: 6, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: -4, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: -3, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: -2, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: -1, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 0, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 1, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 2, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 3, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 4, y: 7, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: -4, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: -3, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: -2, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: -1, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 0, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 1, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 2, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 3, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
-  - first: {x: 4, y: 8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 26
-      m_TileSpriteIndex: 26
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
-      m_TileObjectToInstantiateIndex: 65535
-      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 0
@@ -1612,10 +1415,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 27
-    m_Data: {fileID: 11400000, guid: b024e8c10db4841b3af4d47c8275d9c9, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 55
-    m_Data: {fileID: 11400000, guid: e52a7e479d29e49f4af59efd3c6f27cd, type: 2}
+    m_Data: {fileID: 11400000, guid: 9eaeb046fc60444dc8ffecbd928e5834, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -1669,14 +1472,12 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 27
-    m_Data: {fileID: -7017742306744906509, guid: 47172c71f6a044caabd96394d5c9bbd7,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 55
-    m_Data: {fileID: 7170172091038413538, guid: 47172c71f6a044caabd96394d5c9bbd7,
-      type: 3}
+    m_Data: {fileID: 566457199469405592, guid: 31c8eeb11d5b945e593d0170d03a6ff1, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 82
+  - m_RefCount: 55
     m_Data:
       e00: 1
       e01: 0
@@ -1697,7 +1498,7 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 0
     m_Data: {r: 0.7683693, g: 0.31081507, b: 0.42849287, a: 1}
-  - m_RefCount: 82
+  - m_RefCount: 55
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -2203,8 +2004,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1457864513
   m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -6516405101593169428, guid: 68903cc6420cc4045b2b16a97a33632a,
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 1235013929093583990, guid: 55948dd4eccbf438b92e6d88a44c9255,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2213,7 +2014,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4012099485063855394
@@ -2251,7 +2052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   move: {fileID: 0}
-  animationSet: {fileID: 11400000, guid: 39a6d76cb0f014ada858d95606dbd799, type: 2}
+  animationSet: {fileID: 11400000, guid: 674883a702476450880dbf2d5a33172c, type: 2}
   lookDirection: 2
 --- !u!114 &4012099485063855396
 MonoBehaviour:
@@ -2313,6 +2114,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [Choice] Would you like us to heal your lunen?'
     title: 
@@ -2358,6 +2161,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' '
     title: End Of Reject Route
@@ -2403,6 +2208,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [ROUTE_START] Yes Heal'
     title: Yes Heal
@@ -2452,6 +2259,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [Dialogue] Okay, sounds good! I''ll heal them up immediately! Just give
       me a moment!'
@@ -2498,6 +2307,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [SetSpawn] '
     title: 
@@ -2543,26 +2354,24 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
-  - name: ' [Wait] Three Seconds'
-    title: Three Seconds
-    type: 8
+  - name: ' [Movement] MoveUp'
+    title: MoveUp
+    type: 5
     startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
+    moveScript: {fileID: 4012099485063855579}
+    chooseMoveDirection: 1
     movementDirection: 0
-    moveType: 0
+    moveType: 2
     colliderTag: 
-    spacesToMove: 0
+    spacesToMove: 1
     trainerLogic: {fileID: 0}
     postBattleCutscene: 0
     cutsceneAfterBattle: {fileID: 0}
     routeAfterBattle: 0
-    text: 'Testing here!
-
-      Testing there!
-
-      Testing everywhere!'
+    text: No problem! Have a great day!
     useChoice1: 1
     choice1Text: Yes
     choice1Route: 
@@ -2572,7 +2381,7 @@ MonoBehaviour:
     useChoice3: 0
     choice3Text: 
     choice3Route: 
-    waitTime: 3
+    waitTime: 0
     newRoute: 0
     newSceneType: 0
     newScene:
@@ -2592,6 +2401,55 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [SetPanel] End Of Loss Route'
+    title: End Of Loss Route
+    type: 19
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 10
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [HealParty] '
     title: 
@@ -2641,11 +2499,12 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Your lunen are up and at ''em! Thank you for coming, and have
-      a great day!'
-    title: 
-    type: 1
+  - name: ' [Wait] Three Seconds'
+    title: Three Seconds
+    type: 8
     startNextSimultaneous: 0
     moveScript: {fileID: 0}
     chooseMoveDirection: 0
@@ -2657,7 +2516,156 @@ MonoBehaviour:
     postBattleCutscene: 0
     cutsceneAfterBattle: {fileID: 0}
     routeAfterBattle: 0
-    text: Your lunen are up and at 'em! Thank you for coming, and have a great day!
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 3
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [SetPanel] End Of Loss Route'
+    title: End Of Loss Route
+    type: 19
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 10
+    panelState: 1
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Wait] 0.5'
+    title: 0.5
+    type: 8
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0.5
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Movement] MoveDown'
+    title: MoveDown
+    type: 5
+    startNextSimultaneous: 0
+    moveScript: {fileID: 4012099485063855579}
+    chooseMoveDirection: 1
+    movementDirection: 2
+    moveType: 2
+    colliderTag: 
+    spacesToMove: 1
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
     useChoice1: 1
     choice1Text: Yes
     choice1Route: 
@@ -2687,6 +2695,200 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Wait] 0.25'
+    title: 0.25
+    type: 8
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0.25
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Your lunen are up and at ''em!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Your lunen are up and at 'em!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Animation] End Of Loss Route'
+    title: End Of Loss Route
+    type: 6
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 4012099485063855579}
+    animationPlay: 2
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Thank you for coming, and have a great day!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Thank you for coming, and have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [END] End Of Heal Route'
     title: End Of Heal Route
@@ -2732,6 +2934,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' '
     title: End Of Reject Route
@@ -2777,6 +2981,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [ROUTE_START] No Don''t'
     title: No Don't
@@ -2826,6 +3032,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [Dialogue] No problem! Have a great day!'
     title: 
@@ -2871,6 +3079,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [END] End Of Reject Route'
     title: End Of Reject Route
@@ -2916,6 +3126,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' '
     title: End Of Reject Route
@@ -2961,6 +3173,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [ROUTE_START] Player Just Lost'
     title: Player Just Lost
@@ -3010,6 +3224,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [Dialogue] Oh no! Your lunen are in bad shape! Let me look at them!'
     title: 
@@ -3055,6 +3271,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [SetSpawn] '
     title: 
@@ -3100,26 +3318,24 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
-  - name: ' [Wait] Three Seconds'
-    title: Three Seconds
-    type: 8
+  - name: ' [Movement] MoveUp'
+    title: MoveUp
+    type: 5
     startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
+    moveScript: {fileID: 4012099485063855579}
+    chooseMoveDirection: 1
     movementDirection: 0
-    moveType: 0
+    moveType: 2
     colliderTag: 
-    spacesToMove: 0
+    spacesToMove: 1
     trainerLogic: {fileID: 0}
     postBattleCutscene: 0
     cutsceneAfterBattle: {fileID: 0}
     routeAfterBattle: 0
-    text: 'Testing here!
-
-      Testing there!
-
-      Testing everywhere!'
+    text: No problem! Have a great day!
     useChoice1: 1
     choice1Text: Yes
     choice1Route: 
@@ -3129,7 +3345,7 @@ MonoBehaviour:
     useChoice3: 0
     choice3Text: 
     choice3Route: 
-    waitTime: 3
+    waitTime: 0
     newRoute: 0
     newSceneType: 0
     newScene:
@@ -3149,6 +3365,55 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [SetPanel] End Of Loss Route'
+    title: End Of Loss Route
+    type: 19
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 10
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [HealParty] '
     title: 
@@ -3198,10 +3463,12 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Your lunen are up and at ''em! Stay safe out there!'
-    title: 
-    type: 1
+  - name: ' [Wait] Three Seconds'
+    title: Three Seconds
+    type: 8
     startNextSimultaneous: 0
     moveScript: {fileID: 0}
     chooseMoveDirection: 0
@@ -3213,7 +3480,156 @@ MonoBehaviour:
     postBattleCutscene: 0
     cutsceneAfterBattle: {fileID: 0}
     routeAfterBattle: 0
-    text: Your lunen are up and at 'em! Stay safe out there!
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 3
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [SetPanel] End Of Loss Route'
+    title: End Of Loss Route
+    type: 19
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 10
+    panelState: 1
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Wait] 0.5'
+    title: 0.5
+    type: 8
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0.5
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Movement] MoveDown'
+    title: MoveDown
+    type: 5
+    startNextSimultaneous: 0
+    moveScript: {fileID: 4012099485063855579}
+    chooseMoveDirection: 1
+    movementDirection: 2
+    moveType: 2
+    colliderTag: 
+    spacesToMove: 1
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
     useChoice1: 1
     choice1Text: Yes
     choice1Route: 
@@ -3243,6 +3659,200 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Wait] 0.25'
+    title: 0.25
+    type: 8
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: 'Testing here!
+
+      Testing there!
+
+      Testing everywhere!'
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0.25
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Your lunen are up and at ''em!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Your lunen are up and at 'em!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    trainerEncounter: {fileID: 0}
+  - name: ' [Animation] End Of Loss Route'
+    title: End Of Loss Route
+    type: 6
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: No problem! Have a great day!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 4012099485063855579}
+    animationPlay: 2
+    trainerEncounter: {fileID: 0}
+  - name: ' [Dialogue] Stay safe out there!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 0
+    text: Stay safe out there!
+    useChoice1: 1
+    choice1Text: Yes
+    choice1Route: 
+    useChoice2: 1
+    choice2Text: No
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 0
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 0
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
   - name: ' [END] End Of Loss Route'
     title: End Of Loss Route
@@ -3288,6 +3898,8 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
     trainerEncounter: {fileID: 0}
 --- !u!61 &4012099485063855397
 BoxCollider2D:
@@ -3323,7 +3935,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4012099485063855394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4012099485112002774}
@@ -3348,7 +3960,7 @@ MonoBehaviour:
   pLogic: {fileID: 0}
   tLogic: {fileID: 0}
   spriteRenderer: {fileID: 4012099485063855392}
-  animationSet: {fileID: 0}
+  animationSet: {fileID: 11400000, guid: 674883a702476450880dbf2d5a33172c, type: 2}
   moveSpeed: 5
   gridSize: 1
   playerSize: 1
@@ -3363,9 +3975,10 @@ MonoBehaviour:
   lookDirection: 2
   hit: {fileID: 0}
   hits: []
-  animTime: 0.02
+  animTime: 0.1
   animIndex: 0
-  animationType: 0
+  animationType: Idle
+  animHijack: 0
 --- !u!212 &4012099485112002772
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3405,7 +4018,8 @@ SpriteRenderer:
   m_SortingLayerID: -1457864513
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1235013929093583990, guid: 55948dd4eccbf438b92e6d88a44c9255,
+    type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.3764706}
   m_FlipX: 0
   m_FlipY: 0
@@ -3413,7 +4027,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &4012099485112002773

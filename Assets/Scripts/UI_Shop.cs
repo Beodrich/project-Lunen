@@ -16,18 +16,21 @@ public class UI_Shop : MonoBehaviour
 
     private void Awake()
     {
+        /*
         container = transform.Find("container");
         shopItemTemp = container.Find("ShopItemTemp");
         shopItemTemp.gameObject.SetActive(false);
-
+        */
     }
     private void Start()
     {
+        /*
         for (int i = 0; i < sellItems.Count; i++)
         {
             CreateButton(sellItems[i], i);
         }
         Hide();
+        */
     }
     void CreateButton(Item item, int positionIndex)
     {
@@ -39,7 +42,7 @@ public class UI_Shop : MonoBehaviour
         Transform shopItemTransform = Instantiate(shopItemTemp, container);//make a copy of the item temp
         RectTransform shopItemRectTransform = shopItemTransform.GetComponent<RectTransform>();
         shopItemTransform.gameObject.SetActive(true);
-        float shopItemHeight = 50f;
+        float shopItemHeight = 100f;
         shopItemRectTransform.anchoredPosition = new Vector2(0, -shopItemHeight * positionIndex);
         shopItemTransform.Find("PriceText").GetComponent<TextMeshProUGUI>().SetText(itemCost.ToString());
 

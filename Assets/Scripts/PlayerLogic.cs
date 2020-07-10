@@ -16,6 +16,9 @@ public class PlayerLogic : MonoBehaviour
     [Space(10)]
     public bool inDoor = false;
     public GameObject doorObject;
+    [Space(10)]
+    public bool inShop = false;
+    public GameObject shopObject;
 
     [HideInInspector]
     public Move move;
@@ -76,6 +79,8 @@ public class PlayerLogic : MonoBehaviour
         inGrass = false;
         inTrainerView = false;
         inDoor = false;
+        inShop = false;
+
         if (hit == null)
         {
             return true;
@@ -90,6 +95,10 @@ public class PlayerLogic : MonoBehaviour
                 case "Trainer": return false;
                 case "Thing": return false;
                 case "NPC": return false;
+                case "ShopKeeper":
+                    inShop = true;
+                    shopObject = hit.gameObject;
+                    return true;
                 case "Grass":
                     inGrass = true;
                     grassObject = hit.gameObject;
@@ -111,9 +120,13 @@ public class PlayerLogic : MonoBehaviour
         inGrass = false;
         inTrainerView = false;
         inDoor = false;
+        inShop = false;
+
         bool inGrass2 = false;
         bool inTrainerView2 = false;
         bool inDoor2 = false;
+        bool inShop2 = false;
+
         int pathsFound = 0;
         if (hit.Length > 0)
         {
@@ -126,6 +139,7 @@ public class PlayerLogic : MonoBehaviour
                     if (inGrass) inGrass2 = true;
                     if (inTrainerView) inTrainerView2 = true;
                     if (inDoor) inDoor2 = true;
+                    if (inShop) inShop2 = true;
                 }
                 else
                 {
@@ -136,6 +150,7 @@ public class PlayerLogic : MonoBehaviour
             inGrass = inGrass2;
             inTrainerView = inTrainerView2;
             inDoor = inDoor2;
+            inShop = inShop2;
             
             if (pathsFound == hit.Length)
             {
@@ -157,6 +172,18 @@ public class PlayerLogic : MonoBehaviour
         if (inDoor)
         {
             sr.battleSetup.NewOverworld(doorObject.GetComponent<DoorToLocation>());
+        }
+
+        if (inShop)
+        {
+            sr.canvasCollection.GetShopStats(shopObject.GetComponent<UI_Shop>());
+            sr.canvasCollection.OpenState(CanvasCollection.UIState.Shop);
+        }
+        else if (shopObject != null)
+        {
+            //shopObject.GetComponent<ShopTrigger>().shop.Hide();
+            sr.canvasCollection.CloseState(CanvasCollection.UIState.Shop);
+            shopObject = null;
         }
     }
 

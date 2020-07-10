@@ -197,13 +197,15 @@ public class CutsceneScriptEditor : Editor
             break;
 
             case CutscenePart.PartType.Animation:
-                //TODO
-                GUILayout.Label("TODO", EditorStyles.boldLabel);
+                part.animationActor = EditorGUILayout.ObjectField("Animation Actor Move Script: ", part.animationActor, typeof(Move)) as Move;
+                if (part.animationActor != null)
+                {
+                    part.animationPlay = EditorGUILayout.Popup("Animation To Play: ", part.animationPlay, part.animationActor.animationSet.GetAnimList());
+                }
+                
             break;
 
             case CutscenePart.PartType.Battle:
-                //TODO
-                GUILayout.Label("TODO", EditorStyles.boldLabel);
                 part.trainerLogic = EditorGUILayout.ObjectField("Trainer Logic Script: ", part.trainerLogic, typeof(TrainerLogic)) as TrainerLogic;
                 
                 part.postBattleCutscene = EditorGUILayout.Toggle("Post Battle Cutscene: ", part.postBattleCutscene);

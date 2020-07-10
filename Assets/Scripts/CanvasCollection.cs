@@ -112,6 +112,7 @@ public class CanvasCollection : MonoBehaviour
     public List<PartySelectScript> PartyModeSelectButtons;
     public List<PartySelectScript> InventoryModeSelectButtons;
     public List<ItemButtonScript> ItemButtonScripts;
+    public List<ItemButtonScript> ShopButtonScripts;
 
     public UIState openedFirst;
 
@@ -219,6 +220,20 @@ public class CanvasCollection : MonoBehaviour
 
     public void HandleBackOrder()
     {
+
+    }
+
+    public void GetShopStats(UI_Shop shop)
+    {
+        for (int i = 0; i < ShopButtonScripts.Count; i++)
+        {
+            if (i < shop.sellItems.Count)
+            {
+                ShopButtonScripts[i].SetShopEntry(shop.sellItems[i]);
+            }
+            else ShopButtonScripts[i].SetShopEntry(null);
+
+        }
 
     }
 
@@ -434,6 +449,7 @@ public class CanvasCollection : MonoBehaviour
     public void OpenOptionsWindow()
     {
         OptionsPanelOpen = true;
+        Lastuiec = null;
         CloseState(UIState.MainMenu);
         OpenState(UIState.Options);
     }
@@ -442,6 +458,7 @@ public class CanvasCollection : MonoBehaviour
     {
         UpdatePartyPanelLunen();
         PartyPanelOpen = true;
+        Lastuiec = null;
         CloseState(UIState.MainMenu);
         OpenState(UIState.Party);
         if (sr.battleSetup.InBattle) SetPartyViewState(2);
@@ -465,6 +482,7 @@ public class CanvasCollection : MonoBehaviour
     {
         InventoryModeSelect = 0;
         InventoryPanelOpen = true;
+        Lastuiec = null;
         CloseState(UIState.MainMenu);
         OpenState(UIState.Inventory);
         SetInventoryWindow(0);

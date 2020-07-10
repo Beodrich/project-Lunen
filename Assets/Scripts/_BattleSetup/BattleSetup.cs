@@ -72,26 +72,14 @@ public class BattleSetup : MonoBehaviour
     private void Update() {
         SinceLastEncounter -= Time.deltaTime;
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            SubmitPressed();
+        }
+
         if (Input.GetButtonDown("Submit"))
         {
-            if (dialogueBoxOpen && !choiceOpen && !gamePaused)
-            {
-                if (!dialogueBoxNext)
-                {
-                    dialogueBoxOpen = false;
-                    sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Disable);
-                }
-                AdvanceCutscene();
-            }
-            if (dialogueBoxOpen && gamePaused && sr.canvasCollection.InventoryPanelOpen)
-            {
-                if (!dialogueBoxNext)
-                {
-                    dialogueBoxOpen = false;
-                    sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Disable);
-                }
-                AdvanceCutscene();
-            }
+            SubmitPressed();
         }
         if (Input.GetButtonDown("Cancel"))
         {
@@ -125,6 +113,28 @@ public class BattleSetup : MonoBehaviour
             }
         }
 
+    }
+
+    public void SubmitPressed()
+    {
+        if (dialogueBoxOpen && !choiceOpen && !gamePaused)
+            {
+                if (!dialogueBoxNext)
+                {
+                    dialogueBoxOpen = false;
+                    sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Disable);
+                }
+                AdvanceCutscene();
+            }
+            if (dialogueBoxOpen && gamePaused && sr.canvasCollection.InventoryPanelOpen)
+            {
+                if (!dialogueBoxNext)
+                {
+                    dialogueBoxOpen = false;
+                    sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Disable);
+                }
+                AdvanceCutscene();
+            }
     }
 
     public void OpenMainMenu()
@@ -407,6 +417,13 @@ public class BattleSetup : MonoBehaviour
                         case CutscenePart.PartType.Wait:
                             waitTime = part.waitTime;
                             StartCoroutine(cutsceneWait(transform));
+                        break;
+
+                        case CutscenePart.PartType.Animation:
+                            part.animationActor.animHijack = true;
+                            part.animationActor.animTime = 0;
+                            part.animationActor.animationType = part.animationActor.animationSet.GetAnimationName(part.animationPlay);
+                            AdvanceCutscene();
                         break;
 
                         case CutscenePart.PartType.HealParty:

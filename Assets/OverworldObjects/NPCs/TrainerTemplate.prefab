@@ -80,7 +80,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6539219013389779559
@@ -166,7 +166,9 @@ MonoBehaviour:
   startLookDirection: 2
   limitRange: 0
   rangeLimit: 1
-  TeamComp: []
+  TeamComp:
+  - species: {fileID: 11400000, guid: 223665715cf09408bad8757fff6b2557, type: 2}
+    level: 1
   TeamObjects: []
   Team: []
   TrainerLookStop:
@@ -217,6 +219,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -226,14 +229,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' [Movement] Move To Player'
     title: Move To Player
@@ -260,6 +264,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -269,14 +274,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' [Dialogue] Hi, I''m a trainer! Let''s fight!'
     title: 
@@ -303,6 +309,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -312,14 +319,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' [Battle] Lunen Trainer Battle'
     title: Lunen Trainer Battle
@@ -346,6 +354,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -355,14 +364,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' [END] Battle Start End'
     title: Battle Start End
@@ -389,6 +399,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -398,14 +409,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' '
     title: Battle Start End
@@ -432,6 +444,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -441,14 +454,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' [ROUTE_START] Loss Route'
     title: Loss Route
@@ -475,6 +489,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -484,14 +499,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' [Dialogue] Dammit, I lost!'
     title: 
@@ -518,6 +534,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -527,14 +544,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' [END] Loss Route End'
     title: Loss Route End
@@ -561,6 +579,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -570,14 +589,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' '
     title: Battle Start End
@@ -604,6 +624,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -613,14 +634,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' [ROUTE_START] Trainer Defeated'
     title: Trainer Defeated
@@ -647,6 +669,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -656,14 +679,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' [Dialogue] I can''t believe I lost to you!'
     title: 
@@ -690,6 +714,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -699,14 +724,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
   - name: ' [END] Loss Route End'
     title: Loss Route End
@@ -733,6 +759,7 @@ MonoBehaviour:
     choice3Text: 
     choice3Route: 
     waitTime: 0
+    newRoute: 
     newSceneType: 0
     newScene:
       sceneAsset: {fileID: 0}
@@ -742,14 +769,15 @@ MonoBehaviour:
     newSceneDirection: 0
     newCutsceneType: 0
     cutsceneIndex: 0
-    cutsceneRoute: 0
-    openPanel: 0
-    closePanel: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
     itemObtained: {fileID: 0}
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
-    newRoute: 0
     trainerEncounter: {fileID: 0}
 --- !u!114 &6539219013480142697
 MonoBehaviour:
@@ -764,6 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
+  srObject: {fileID: 0}
   logicType: 2
   pLogic: {fileID: 0}
   tLogic: {fileID: 6539219013480142739}
@@ -785,6 +814,7 @@ MonoBehaviour:
   hits: []
   animTime: 0.1
   animIndex: 17
+  animationType: 0
 --- !u!212 &6539219013480142738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -833,7 +863,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &6539219013480142743
