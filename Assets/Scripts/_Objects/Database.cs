@@ -6,6 +6,8 @@ using UnityEngine;
 public class Database : ScriptableObject
 {
     public int LevelCap;
+
+    public List<GameScene> AllScenes;
     
     public List<Item> AllItems;
     public List<Lunen> AllLunen;
@@ -16,6 +18,7 @@ public class Database : ScriptableObject
     public Sprite transparentSprite;
 
     public GameObject MonsterTemplate;
+    public GameObject Player;
 
     public int LunenToIndex(Lunen lunen)
     {
@@ -73,5 +76,20 @@ public class Database : ScriptableObject
         }
         Debug.Log("[ERROR] Unable To Find Cutscene: " + find);
         return null;
+    }
+
+    public string[] GetScenesArray()
+    {
+        List<string> sceneList = new List<string>();
+        foreach (GameScene gs in AllScenes)
+        {
+            sceneList.Add(gs.name);
+        }
+        return sceneList.ToArray();
+    }
+
+    public GameScene IndexToGameScene(int index)
+    {
+        return AllScenes[index];
     }
 }

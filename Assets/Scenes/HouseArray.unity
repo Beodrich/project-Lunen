@@ -452,6 +452,91 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[0]
+      value: 201
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[1]
+      value: 117
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[2]
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[3]
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[4]
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[5]
+      value: 229
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[6]
+      value: 179
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[7]
+      value: 79
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[8]
+      value: 188
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[9]
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[10]
+      value: 86
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[11]
+      value: 189
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[12]
+      value: 162
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[13]
+      value: 54
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[14]
+      value: 138
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[15]
+      value: 187
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -544,10 +629,36 @@ PrefabInstance:
       propertyPath: TargetLocation.scenePath
       value: Assets/Scenes/LunenIslandPort.unity
       objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: attributes
+      value: 
+      objectReference: {fileID: 4996812198650243613}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: exitDirection
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: entranceIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: locationIndex
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: targetScene
+      value: 
+      objectReference: {fileID: 11400000, guid: 23d07817c42c3436690d903db9784861,
+        type: 2}
     - target: {fileID: 3052760053721696780, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_Name
-      value: TestDoor (1)
+      value: HouseBackDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80152272002ce408fae3b00a5f1f0bab, type: 3}
@@ -3104,6 +3215,91 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[0]
+      value: 253
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[1]
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[2]
+      value: 202
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[3]
+      value: 232
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[4]
+      value: 215
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[5]
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[6]
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[7]
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[8]
+      value: 191
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[9]
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[10]
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[11]
+      value: 83
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[12]
+      value: 58
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[13]
+      value: 182
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[14]
+      value: 167
+      objectReference: {fileID: 0}
+    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: serializedGuid.Array.data[15]
+      value: 253
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3162,7 +3358,7 @@ PrefabInstance:
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: entranceIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -3206,6 +3402,22 @@ PrefabInstance:
       propertyPath: TargetLocation.scenePath
       value: Assets/Scenes/LunenIslandPort.unity
       objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: attributes
+      value: 
+      objectReference: {fileID: 4996812198650243613}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: locationIndex
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: targetScene
+      value: 
+      objectReference: {fileID: 11400000, guid: 23d07817c42c3436690d903db9784861,
+        type: 2}
     - target: {fileID: 3052760053721696778, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_Color.a
@@ -3214,7 +3426,7 @@ PrefabInstance:
     - target: {fileID: 3052760053721696780, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_Name
-      value: TestDoor
+      value: HouseFrontDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80152272002ce408fae3b00a5f1f0bab, type: 3}
@@ -3396,5 +3608,23 @@ PrefabInstance:
       propertyPath: sceneCutscenes.Array.data[0]
       value: 
       objectReference: {fileID: 302586976}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: thisScene
+      value: 
+      objectReference: {fileID: 11400000, guid: baad8f214567349a88140dd70bec825c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e5b9a42be0d347eb86ae80af335daf3, type: 3}
+--- !u!114 &4996812198650243613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4996812198650243612}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e211f514a61401ab584d7284ddf537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

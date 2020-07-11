@@ -1,24 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using MyBox;
 
 public class SceneAttributes : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
-    [System.Serializable]
-    public class Entrance
-    {
-        public string entranceName = "Fallback";
-        public Vector2 spawn = new Vector2(0.5f,0.5f);
-        public MoveScripts.Direction spawnFacing = MoveScripts.Direction.North;
-        public bool moveAtStart = false;
-    }
-    public GameObject player;
-    public List<Entrance> sceneEntrances;
+    public Database database;
+    public GameScene thisScene;
     public List<Cutscene> sceneCutscenes;
     public bool spawnPlayer;
-    [HideInInspector] Entrance e;
+    [HideInInspector] public string[] doorArray;
 
     private void Awake()
     {
@@ -33,35 +25,60 @@ public class SceneAttributes : MonoBehaviour
         sr.saveSystemObject.isLoading = false;
         sr.canvasCollection.CloseState(CanvasCollection.UIState.SceneSwitch);
 
-        if (sr.battleSetup.loadEntrance)
-        {
-            e = new Entrance();
-            e.spawn = sr.battleSetup.loadPosition;
-            e.spawnFacing = sr.battleSetup.loadDirection;
-            sr.battleSetup.loadEntrance = false;
-        }
-        else
-        {
-            int entrance = sr.battleSetup.nextEntrance;
-            if (entrance >= sceneEntrances.Count) entrance = 0;
-            e = sceneEntrances[entrance];
-        }
-
         if (spawnPlayer) PreparePlayer();
+
+        if (sr.battleSetup.InCutscene)
+        {
+            if (sr.battleSetup.GetCurrentCutscenePart().type == CutscenePart.PartType.ChangeScene)
+            {
+                sr.battleSetup.AdvanceCutscene();
+            }
+        }
     }
 
     public void PreparePlayer()
     {
-        GameObject newPlayer = Instantiate(player);
-        newPlayer.transform.position = new Vector3(e.spawn.x, e.spawn.y, 0);
-        Vector2 input = MoveScripts.GetVector2FromDirection(e.spawnFacing);
+        GameObject newPlayer = Instantiate(database.Player);
+        newPlayer.transform.position = sr.battleSetup.loadPosition;
+        Vector2 input = MoveScripts.GetVector2FromDirection(sr.battleSetup.loadDirection);
         Move playerMove = newPlayer.GetComponent<Move>();
         playerMove.SetFacingDirection(input);
-        playerMove.lookDirection = e.spawnFacing;
-        if (e.moveAtStart)
+        playerMove.lookDirection = sr.battleSetup.loadDirection;
+        if (sr.battleSetup.loadMoving)
         {
             StartCoroutine(playerMove.move(playerMove.transform)); 
         }
         playerMove.SetWalkAnimation();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        
+    }
+
+    private void Gizmo_DrawEntrance(Vector3 position, Vector3 size)
+    {
+        Gizmos.color = new Color(0, 0, 1, 0.5f);
+        Gizmos.DrawCube(position, size); 
+    }
+
+    public void RefreshDoors()
+    {
+        GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
+        thisScene.entranceList.Clear();
+
+        foreach (GameObject door in doors)
+        {
+            DoorToLocation d = door.GetComponent<DoorToLocation>();
+            DatabaseSceneEntrance dse = new DatabaseSceneEntrance();
+            dse.name = d.name;
+            dse.facingDirection = d.exitDirection;
+            dse.position = Vector3Int.FloorToInt(d.transform.position);
+            dse.guid = d.GetComponent<GuidComponent>().GetGuid();
+            thisScene.entranceList.Add(dse);
+        }
+
+        doorArray = thisScene.GetEntrancesArray();
+        
     }
 }

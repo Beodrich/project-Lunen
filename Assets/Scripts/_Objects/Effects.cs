@@ -6,8 +6,6 @@ using MyBox;
 [CreateAssetMenu(fileName = "New Effect", menuName = "GameElements/Effect")]
 public class Effects : ScriptableObject
 {
-    
-    
     [System.Serializable]
     public class StatChange
     {

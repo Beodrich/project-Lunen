@@ -258,7 +258,6 @@ MonoBehaviour:
   image: {fileID: 0}
   BattleFieldIndex: 0
   currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
-  currentType: 0
   lookDirection: 3
   animTime: 0
   animIndex: 0
@@ -2374,7 +2373,6 @@ MonoBehaviour:
   image: {fileID: 0}
   BattleFieldIndex: 0
   currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
-  currentType: 0
   lookDirection: 1
   animTime: 0
   animIndex: 0
@@ -7843,8 +7841,8 @@ RectTransform:
   - {fileID: 2094879623}
   - {fileID: 2029484241}
   - {fileID: 1776948252}
-  - {fileID: 2032635760}
   - {fileID: 1351108398}
+  - {fileID: 2032635760}
   - {fileID: 906640827}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -10260,7 +10258,6 @@ MonoBehaviour:
   image: {fileID: 0}
   BattleFieldIndex: 0
   currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
-  currentType: 0
   lookDirection: 1
   animTime: 0
   animIndex: 0
@@ -10495,7 +10492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &906640827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12227,7 +12224,6 @@ MonoBehaviour:
   image: {fileID: 0}
   BattleFieldIndex: 0
   currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
-  currentType: 0
   lookDirection: 3
   animTime: 0
   animIndex: 0
@@ -17467,7 +17463,6 @@ MonoBehaviour:
   image: {fileID: 0}
   BattleFieldIndex: 0
   currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
-  currentType: 0
   lookDirection: 3
   animTime: 0
   animIndex: 0
@@ -18244,7 +18239,7 @@ RectTransform:
   m_Children:
   - {fileID: 768912476}
   m_Father: {fileID: 652271913}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -22442,7 +22437,6 @@ MonoBehaviour:
   image: {fileID: 0}
   BattleFieldIndex: 0
   currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
-  currentType: 0
   lookDirection: 3
   animTime: 0
   animIndex: 0
@@ -22595,7 +22589,6 @@ MonoBehaviour:
   image: {fileID: 0}
   BattleFieldIndex: 0
   currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
-  currentType: 0
   lookDirection: 1
   animTime: 0
   animIndex: 0
@@ -27469,7 +27462,7 @@ RectTransform:
   - {fileID: 655504001}
   - {fileID: 1178688630}
   m_Father: {fileID: 652271913}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -27635,7 +27628,6 @@ MonoBehaviour:
   image: {fileID: 0}
   BattleFieldIndex: 0
   currentSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
-  currentType: 0
   lookDirection: 1
   animTime: 0
   animIndex: 0
@@ -35982,6 +35974,7 @@ MonoBehaviour:
   loadEntrance: 0
   loadPosition: {x: 0, y: 0}
   loadDirection: 0
+  loadMoving: 0
   respawnScene: 
   respawnLocation: {x: 0, y: 0, z: 0}
   respawnDirection: 0
@@ -36059,7 +36052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   vsync: 1
-  bootBehaviour: 2
+  bootBehaviour: 1
   bootScene:
     sceneAsset: {fileID: 102900000, guid: fd01006b61cdd47e9826b0704b424e04, type: 3}
     scenePath: Assets/Scenes/Shop.unity

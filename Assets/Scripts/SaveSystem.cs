@@ -74,7 +74,7 @@ public class GameData
     public GameData(SetupRouter sr)
     {
         PlayerTeam = new List<PlayerLunen>();
-        Debug.Log("Found " + sr.battleSetup.PlayerLunenTeam.Count + " Lunen!");
+        //Debug.Log("Found " + sr.battleSetup.PlayerLunenTeam.Count + " Lunen!");
         for (int i = 0; i < sr.battleSetup.PlayerLunenTeam.Count; i++)
         {
             Monster currentMonster = sr.battleSetup.PlayerLunenTeam[i].GetComponent<Monster>();
@@ -94,7 +94,7 @@ public class GameData
         }
 
         InventoryItems = new List<InventoryItem>();
-        Debug.Log("Found " + sr.inventory.listOfItems.Count + " Item" + (sr.inventory.listOfItems.Count == 1 ? "" : "s") + "!");
+        //Debug.Log("Found " + sr.inventory.listOfItems.Count + " Item" + (sr.inventory.listOfItems.Count == 1 ? "" : "s") + "!");
         for (int i = 0; i < sr.inventory.listOfItems.Count; i++)
         {
             Inventory.InventoryEntry currentItem = sr.inventory.listOfItems[i];

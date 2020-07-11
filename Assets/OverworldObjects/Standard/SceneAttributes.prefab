@@ -45,12 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
-  player: {fileID: 5585906584724857797, guid: 74e72dff87d7649b5b867a0efef9b681, type: 3}
-  sceneEntrances:
-  - entranceName: Fallback
-    spawn: {x: 0, y: 0}
-    spawnFacing: 2
-    moveAtStart: 0
+  database: {fileID: 11400000, guid: f01a1c12ff40c448d8070fd5a84045b8, type: 2}
+  sceneEntrances: []
   sceneCutscenes:
   - {fileID: 5268435886454511715, guid: 5f22859d418f64625ac3f62af20cff27, type: 3}
   spawnPlayer: 0

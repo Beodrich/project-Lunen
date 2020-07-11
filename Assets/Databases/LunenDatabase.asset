@@ -13,6 +13,14 @@ MonoBehaviour:
   m_Name: LunenDatabase
   m_EditorClassIdentifier: 
   LevelCap: 30
+  AllScenes:
+  - {fileID: 11400000, guid: 3b2d24aee47594f71ae87e2ae4061e4b, type: 2}
+  - {fileID: 11400000, guid: d8a0c4f1e23a740ad981b44e7fc2202a, type: 2}
+  - {fileID: 11400000, guid: fd6a6e264afc44a2b93d392becc91d0b, type: 2}
+  - {fileID: 11400000, guid: baad8f214567349a88140dd70bec825c, type: 2}
+  - {fileID: 11400000, guid: d4db0da69f55744328a4ce5f8406ec07, type: 2}
+  - {fileID: 11400000, guid: 23d07817c42c3436690d903db9784861, type: 2}
+  - {fileID: 11400000, guid: 56cae1e90bb8144a8a0b3d3874212595, type: 2}
   AllItems:
   - {fileID: 11400000, guid: 54dbbd98dc03b4763a5482e1dbd1c9a3, type: 2}
   - {fileID: 11400000, guid: 99a4b3e8ff9bc467db0ed96253e84e7e, type: 2}
@@ -39,3 +47,4 @@ MonoBehaviour:
   transparentSprite: {fileID: 21300000, guid: b897c56bfaa1645a6a21ebd16312df26, type: 3}
   MonsterTemplate: {fileID: 2324287439143063678, guid: ce7650befca7144ae9e5cc4263c99950,
     type: 3}
+  Player: {fileID: 5585906584724857797, guid: 74e72dff87d7649b5b867a0efef9b681, type: 3}

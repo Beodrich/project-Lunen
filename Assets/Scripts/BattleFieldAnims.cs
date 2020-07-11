@@ -11,7 +11,7 @@ public class BattleFieldAnims : MonoBehaviour
     public int BattleFieldIndex;
 
     public AnimationSet currentSet;
-    [HideInInspector] public string currentType = "Idle";
+    [HideInInspector] private string currentType = "Idle";
     public MoveScripts.Direction lookDirection;
     public float animTime;
     public int animIndex;
@@ -48,6 +48,6 @@ public class BattleFieldAnims : MonoBehaviour
     {
         image.sprite = sr.database.transparentSprite;
         currentSet = null;
-        Debug.Log("Got to Disable Image Function");
+        //Debug.Log("Got to Disable Image Function");
     }
 }

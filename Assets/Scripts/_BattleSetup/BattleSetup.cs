@@ -45,6 +45,7 @@ public class BattleSetup : MonoBehaviour
     public bool loadEntrance;
     public Vector2 loadPosition;
     public MoveScripts.Direction loadDirection;
+    public bool loadMoving;
     [Space(10)]
     public string respawnScene;
     public Vector3 respawnLocation;
@@ -272,18 +273,27 @@ public class BattleSetup : MonoBehaviour
 
     public void NewOverworld(DoorToLocation door)
     {
-        nextEntrance = door.TargetEntrance;
-        lastOverworld = door.TargetLocation.ScenePath;
-        //sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
-        SceneManager.LoadSceneAsync(lastOverworld);
+        GameScene gs = door.targetScene;
+        DatabaseSceneEntrance dse = gs.IntToEntrance(door.entranceIndex);
+        NewOverworldAt
+        (
+            gs.scene.ScenePath,
+            dse.position,
+            dse.facingDirection,
+            true,
+            false
+        );
     }
 
-    public void NewOverworldAt(string location, Vector3 position, MoveScripts.Direction direction)
+    public void NewOverworldAt(string location, Vector3 position, MoveScripts.Direction direction, bool moving = false, bool openState = true)
     {
         loadEntrance = true;
         loadPosition = position;
         loadDirection = direction;
-        sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
+        loadMoving = moving;
+        lastOverworld = location;
+        if (openState) sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
+        Debug.Log("Loading Scene: " + location);
         SceneManager.LoadSceneAsync(location);
     }
 
@@ -292,6 +302,7 @@ public class BattleSetup : MonoBehaviour
         nextEntrance = entranceIndex;
         lastOverworld = location;
         sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
+        Debug.Log("Loading Scene: " + location);
         SceneManager.LoadSceneAsync(location);
     }
 
@@ -349,9 +360,15 @@ public class BattleSetup : MonoBehaviour
 
     public int CutsceneFindRoute(string route)
     {
-        for (int i = 0; i < lastCutscene.parts.Count; i++)
+        return CutsceneFindRoute(lastCutscene, route);
+    }
+
+    public int CutsceneFindRoute(PackedCutscene cutscene, string route)
+    {
+        //Debug.Log("Finding route in cutscene: " + cutscene.cutsceneName);
+        for (int i = 0; i < cutscene.parts.Count; i++)
         {
-            if (lastCutscene.parts[i].title == route && lastCutscene.parts[i].type == CutscenePart.PartType.ROUTE_START) return i;
+            if (cutscene.parts[i].title == route && cutscene.parts[i].type == CutscenePart.PartType.ROUTE_START) return i;
         }
         if (route != "") Debug.Log("Unable To Find Route: " + route);
         return 0;
@@ -373,7 +390,7 @@ public class BattleSetup : MonoBehaviour
                 
                 if (cutscenePart < lastCutscene.parts.Count)
                 {
-                    CutscenePart part = lastCutscene.parts[cutscenePart];
+                    CutscenePart part = GetCurrentCutscenePart();
                     sr.eventLog.AddEvent("Cutscene Part " + (cutscenePart+1) + "/" + lastCutscene.parts.Count + " \"" + part.name + "\"");
                     
                     switch (part.type)
@@ -405,7 +422,7 @@ public class BattleSetup : MonoBehaviour
                             if (part.postBattleCutscene)
                             {
                                 cutsceneAfterBattle = new PackedCutscene(part.cutsceneAfterBattle);
-                                cutsceneAfterBattleRoute = CutsceneFindRoute(part.routeAfterBattle);
+                                cutsceneAfterBattleRoute = CutsceneFindRoute(cutsceneAfterBattle, part.routeAfterBattle);
                             }
                             if (!part.trainerLogic.defeated && !part.trainerLogic.engaged)
                             {
@@ -454,14 +471,14 @@ public class BattleSetup : MonoBehaviour
                                     NewOverworldAt(part.newScene.ScenePath, part.newScenePosition, part.newSceneDirection);
                                 break;
                             }
-                            AdvanceCutscene();
+                            //AdvanceCutscene();
                         break;
 
                         case CutscenePart.PartType.NewCutscene:
                             switch(part.newCutsceneType)
                             {
                                 case CutscenePart.NewCutsceneType.Global:
-                                    CutsceneStartLite(new PackedCutscene(part.cutsceneGlobal), CutsceneFindRoute(part.cutsceneRoute));
+                                    CutsceneStartLite(new PackedCutscene(part.cutsceneGlobal), part.cutsceneRoute);
                                 break;
 
                                 case CutscenePart.NewCutsceneType.SceneBased:
@@ -473,13 +490,13 @@ public class BattleSetup : MonoBehaviour
                                     {
                                         int nextcutscene = part.cutsceneIndex;
                                         if (sr.sceneAttributes.sceneCutscenes.Count <= nextcutscene) nextcutscene = 0;
-                                        CutsceneStartLite(new PackedCutscene(sr.sceneAttributes.sceneCutscenes[part.cutsceneIndex]), CutsceneFindRoute(part.cutsceneRoute));
+                                        CutsceneStartLite(new PackedCutscene(sr.sceneAttributes.sceneCutscenes[part.cutsceneIndex]), part.cutsceneRoute);
                                     }
                                     
                                 break;
 
                                 case CutscenePart.NewCutsceneType.Local:
-                                    CutsceneStartLite(new PackedCutscene(part.cutsceneLocal), CutsceneFindRoute(part.cutsceneRoute));
+                                    CutsceneStartLite(new PackedCutscene(part.cutsceneLocal), part.cutsceneRoute);
                                 break;
 
                                 default:
@@ -634,6 +651,15 @@ public class BattleSetup : MonoBehaviour
         AdvanceCutscene();
     }
 
+    public void CutsceneStartLite(PackedCutscene cutscene1, string route = "")
+    {
+        
+        lastCutscene = cutscene1;
+        int _route = CutsceneFindRoute(route);
+        CutsceneChangeInternal(_route);
+        AdvanceCutscene();
+    }
+
     public void AdvanceCutscene()
     {
         cutsceneAdvance = true;
@@ -699,5 +725,10 @@ public class BattleSetup : MonoBehaviour
     {
         foreach (System.Guid g in GuidList) if (g == guid) return true;
         return false;
+    }
+
+    public CutscenePart GetCurrentCutscenePart()
+    {
+        return lastCutscene.parts[cutscenePart];
     }
 }

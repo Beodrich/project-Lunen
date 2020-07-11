@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3052760053721696776}
+  - component: {fileID: 489816706982417063}
   - component: {fileID: 3052760053721696777}
   - component: {fileID: 6437434055315994143}
   - component: {fileID: 3052760053721696778}
@@ -34,6 +35,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &489816706982417063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3052760053721696780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98bbc2c1e63e98543830eec78d976795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializedGuid: 
 --- !u!114 &3052760053721696777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,11 +61,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetLocation:
-    Scene: {fileID: 102900000, guid: 2b691c676b0ff499c9513449852f4d03, type: 3}
-    SceneName: AlecOverworldScene
-    sceneIndex: 4
-    sceneEnabled: 1
-  TargetEntrance: 0
+    sceneAsset: {fileID: 0}
+    scenePath: 
+  exitPosition: {x: 0, y: 0, z: 0}
+  exitDirection: 0
   ThisSceneEntrance: 0
 --- !u!114 &6437434055315994143
 MonoBehaviour:
@@ -107,7 +120,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c0952531222484abfa8a21e1a5d6df71, type: 3}
-  m_Color: {r: 1, g: 0.93648744, b: 0.023584902, a: 0.4745098}
+  m_Color: {r: 1, g: 0.93648744, b: 0.023584902, a: 0.9019608}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

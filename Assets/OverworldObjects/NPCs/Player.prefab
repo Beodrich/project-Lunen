@@ -80,7 +80,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6669077417415126556
@@ -154,6 +154,8 @@ MonoBehaviour:
   trainerObject: {fileID: 0}
   inDoor: 0
   doorObject: {fileID: 0}
+  inShop: 0
+  shopObject: {fileID: 0}
   move: {fileID: 0}
   frontOfCharacter: {x: 0, y: 0, z: 0}
 --- !u!114 &5585906584724857798
@@ -169,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
+  srObject: {fileID: 0}
   logicType: 1
   pLogic: {fileID: 5585906584724857795}
   tLogic: {fileID: 0}
@@ -190,7 +193,8 @@ MonoBehaviour:
   hits: []
   animTime: 18.182194
   animIndex: 13
-  animationType: 0
+  animationType: 
+  animHijack: 0
 --- !u!212 &5585906584724857796
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -239,7 +243,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &5585906584724857793

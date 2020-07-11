@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ben_Test.unity
     guid: a31a13eb6956e5c47aaf748dd3d69810
+  - enabled: 1
+    path: Assets/Scenes/CheckpointTemplate.unity
+    guid: 2b01ecf751f954655abd03a4de946d64
   m_configObjects: {}
