@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CheckpointTemplate.unity
     guid: 2b01ecf751f954655abd03a4de946d64
+  - enabled: 1
+    path: Assets/Scenes/Theo Planet.unity
+    guid: eb8a25a25fe453c4ba5c3d1aa0d9110c
   m_configObjects: {}
