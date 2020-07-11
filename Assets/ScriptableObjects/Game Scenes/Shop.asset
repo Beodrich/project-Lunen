@@ -15,3 +15,7 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: fd01006b61cdd47e9826b0704b424e04, type: 3}
     scenePath: Assets/Scenes/Shop.unity
+  entranceList:
+  - name: Door
+    position: {x: 0, y: 0, z: 0}
+    facingDirection: 0

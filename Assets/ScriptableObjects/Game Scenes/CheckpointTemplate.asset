@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     sceneAsset: {fileID: 102900000, guid: 2b01ecf751f954655abd03a4de946d64, type: 3}
-    scenePath: Assets/CheckpointTemplate.unity
+    scenePath: Assets/Scenes/CheckpointTemplate.unity
+  entranceList:
+  - name: TestDoor
+    position: {x: 0, y: 0, z: 0}
+    facingDirection: 0

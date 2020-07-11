@@ -15,3 +15,10 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d, type: 3}
     scenePath: Assets/Scenes/LunenIslandPort.unity
+  entranceList:
+  - name: House Front Door
+    position: {x: 22, y: 4, z: 0}
+    facingDirection: 2
+  - name: House Back Door
+    position: {x: 22, y: 6, z: 0}
+    facingDirection: 0

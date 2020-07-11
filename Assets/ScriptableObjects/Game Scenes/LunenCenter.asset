@@ -15,3 +15,7 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: 59b870602814d455ba582557c76925b2, type: 3}
     scenePath: Assets/Scenes/LunenCenter.unity
+  entranceList:
+  - name: LunenCenterEntrance
+    position: {x: 0, y: 0, z: 0}
+    facingDirection: 0

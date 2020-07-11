@@ -2078,6 +2078,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d8a0c4f1e23a740ad981b44e7fc2202a,
         type: 2}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: exitDirection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696780, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_Name
@@ -2212,6 +2217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
+      propertyPath: doorArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
       propertyPath: sceneEntrances.Array.data[0].spawnMoving
       value: 4
       objectReference: {fileID: 0}
@@ -2226,5 +2236,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: fd6a6e264afc44a2b93d392becc91d0b,
         type: 2}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: doorArray.Array.data[0]
+      value: TestDoor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e5b9a42be0d347eb86ae80af335daf3, type: 3}

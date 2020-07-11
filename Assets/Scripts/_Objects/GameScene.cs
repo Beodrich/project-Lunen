@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameScene : ScriptableObject
 {
     public SceneReference scene;
-    [HideInInspector] public List<DatabaseSceneEntrance> entranceList;
+    public List<DatabaseSceneEntrance> entranceList;
 
     public string[] GetEntrancesArray()
     {

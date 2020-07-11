@@ -30769,6 +30769,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
+      propertyPath: doorArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
       propertyPath: sceneEntrances.Array.data[0].spawnMoving
       value: 4
       objectReference: {fileID: 0}
@@ -30848,6 +30853,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 23d07817c42c3436690d903db9784861,
         type: 2}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: doorArray.Array.data[0]
+      value: House Front Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: doorArray.Array.data[1]
+      value: House Back Door
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e5b9a42be0d347eb86ae80af335daf3, type: 3}
 --- !u!114 &4996812198650243613 stripped

@@ -105,9 +105,13 @@ public class DoorEditor : Editor
 
             if (GUI.changed)
             {
-                EditorUtility.SetDirty(door);
-                EditorSceneManager.MarkSceneDirty(door.gameObject.scene);
                 EditSceneAttributes();
+                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+                EditorUtility.SetDirty(door);
+                EditorUtility.SetDirty(door.attributes);
+                EditorUtility.SetDirty(door.attributes.thisScene);
+
+                AssetDatabase.SaveAssets();
             }
         }
         

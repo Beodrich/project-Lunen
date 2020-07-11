@@ -902,6 +902,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: baad8f214567349a88140dd70bec825c,
         type: 2}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: exitDirection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696778, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_SortingOrder
@@ -1268,6 +1273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
+      propertyPath: doorArray.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
       propertyPath: sceneEntrances.Array.data[0].spawnFacing
       value: 2
       objectReference: {fileID: 0}
@@ -1337,6 +1347,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3b2d24aee47594f71ae87e2ae4061e4b,
         type: 2}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: doorArray.Array.data[0]
+      value: HouseFrontDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: doorArray.Array.data[1]
+      value: LunenCenterTestDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
+      propertyPath: doorArray.Array.data[2]
+      value: HouseBackDoor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e5b9a42be0d347eb86ae80af335daf3, type: 3}
 --- !u!114 &756672129 stripped
