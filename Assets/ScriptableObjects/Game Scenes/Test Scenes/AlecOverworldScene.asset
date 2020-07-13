@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     sceneAsset: {fileID: 102900000, guid: 2b691c676b0ff499c9513449852f4d03, type: 3}
-    scenePath: Assets/Scenes/AlecOverworldScene.unity
+    scenePath: Assets/Scenes/TestScenes/AlecOverworldScene.unity
   entranceList:
   - name: HouseFrontDoor
     position: {x: -10, y: -14, z: 0}

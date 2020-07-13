@@ -208,10 +208,10 @@ public class PlayerLogic : MonoBehaviour
         return true;
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = new Color(0, 1, 1, 0.5f);
         frontOfCharacter = MoveScripts.GetFrontVector2(move, 1, true);
-        Gizmos.DrawCube(frontOfCharacter, new Vector3(1,1,1)); 
+        Gizmos.DrawCube(frontOfCharacter, new Vector3(0.5f,0.5f,1)); 
     }
 }

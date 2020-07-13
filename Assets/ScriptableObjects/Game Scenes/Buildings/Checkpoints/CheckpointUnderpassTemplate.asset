@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 547a66f2a347c4f7b9cc143b7490b3d4, type: 3}
-  m_Name: CheckpointTemplate
+  m_Name: CheckpointUnderpassTemplate
   m_EditorClassIdentifier: 
   scene:
-    sceneAsset: {fileID: 102900000, guid: 2b01ecf751f954655abd03a4de946d64, type: 3}
-    scenePath: Assets/Scenes/CheckpointTemplate.unity
+    sceneAsset: {fileID: 102900000, guid: 3b7505ce5413f4ae89980ba46e2c1fdb, type: 3}
+    scenePath: Assets/Scenes/Buildings/Checkpoints/CheckpointUnderpassTemplate.unity
   entranceList:
-  - name: DoorToLunenPort
-    position: {x: 0, y: -3, z: 0}
+  - name: DoorToCheckpoint
+    position: {x: 7, y: 3, z: 0}
     facingDirection: 0
-    guidString: 402a0781-8cee-4769-8a72-105457c6df4d
-  - name: DoorToNextArea
-    position: {x: 0, y: 7, z: 0}
-    facingDirection: 2
-    guidString: fc539694-af53-44b4-9148-8aff285bed92
+    guidString: d1a17760-9410-4ec6-90f1-242e8b3b95cc

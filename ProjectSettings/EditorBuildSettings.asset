@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworlds/LunenCity1.unity
     guid: a12c5cfc2bf7548f3848ab6d9d0385c5
+  - enabled: 1
+    path: Assets/Scenes/Buildings/Checkpoints/CheckpointUnderpassTemplate.unity
+    guid: 3b7505ce5413f4ae89980ba46e2c1fdb
   m_configObjects: {}

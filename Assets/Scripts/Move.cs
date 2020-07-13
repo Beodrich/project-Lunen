@@ -156,9 +156,10 @@ public class Move : MonoBehaviour
                     {
                         factor = 1f;
                         last = input;
-                        checkPoint = new Vector2(centerPosition.x+input.x, centerPosition.y+input.y);
+                        Vector3 checkPoint1 = new Vector2(centerPosition.x+input.x+0.25f, centerPosition.y+input.y+0.25f);
+                        Vector3 checkPoint2 = new Vector2(centerPosition.x+input.x-0.25f, centerPosition.y+input.y-0.25f);
                         lookDirection = MoveScripts.GetDirectionFromVector2(input);
-                        hits = Physics2D.OverlapAreaAll(checkPoint,checkPoint);
+                        hits = Physics2D.OverlapAreaAll(checkPoint1,checkPoint2);
                         
                         if (pLogic.MoveBegin(hits))
                         {

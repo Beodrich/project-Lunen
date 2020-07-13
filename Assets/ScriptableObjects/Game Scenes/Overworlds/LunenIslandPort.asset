@@ -14,16 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     sceneAsset: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d, type: 3}
-    scenePath: Assets/Scenes/LunenIslandPort.unity
+    scenePath: Assets/Scenes/Overworlds/LunenIslandPort.unity
   entranceList:
+  - name: CheckpointSouthDoorLeft
+    position: {x: 15, y: 21, z: 0}
+    facingDirection: 2
+    guidString: ad734bc5-0b96-46e3-ac36-2690c1362603
+  - name: CheckpointSouthDoorRight
+    position: {x: 17, y: 21, z: 0}
+    facingDirection: 2
+    guidString: 76c7910b-4205-45a3-9ea5-4c2305547e98
   - name: House Front Door
     position: {x: 22, y: 4, z: 0}
     facingDirection: 2
     guidString: a82f539e-8961-459a-8fd4-34bca82c269f
-  - name: CheckpointEntrance
-    position: {x: 16, y: 26, z: 0}
-    facingDirection: 2
-    guidString: 5cccd1d5-b534-40a0-96fb-f8555945802f
   - name: House Back Door
     position: {x: 22, y: 6, z: 0}
     facingDirection: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     sceneAsset: {fileID: 102900000, guid: a31a13eb6956e5c47aaf748dd3d69810, type: 3}
-    scenePath: Assets/Scenes/Ben_Test.unity
+    scenePath: Assets/Scenes/TestScenes/Ben_Test.unity
   entranceList:
   - name: Door 2
     position: {x: 1, y: 0, z: 0}
