@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEditor.SceneManagement;
+using MyBox;
 
 [CustomEditor(typeof(Cutscene))]
 public class CutsceneEditor : Editor
@@ -137,37 +138,46 @@ public class CutsceneEditor : Editor
             case CutscenePart.PartType.Choice:
                 GUILayout.Label("Cutscene Text: ");
                 part.text = EditorGUILayout.TextArea(part.text);
-
-                EditorGUIUtility.labelWidth = 100;
-                EditorGUIUtility.fieldWidth = 100;
                 GUILayout.Space(5);
 
-                GUILayout.BeginHorizontal();
-                part.useChoice1 = EditorGUILayout.Toggle("Choice 1: ", part.useChoice1);
-                GUI.enabled = part.useChoice1;
-                part.choice1Text = EditorGUILayout.TextField(" Option Text:", part.choice1Text);
-                part.choice1Route = EditorGUILayout.TextField(" Option Route:", part.choice1Route);
-                GUI.enabled = true;
-                GUILayout.EndHorizontal();
+                GuiLine(2);
+                GUILayout.Space(3);
 
-                GUILayout.BeginHorizontal();
-                part.useChoice2 = EditorGUILayout.Toggle("Choice 2: ", part.useChoice2);
-                GUI.enabled = part.useChoice2;
-                part.choice2Text = EditorGUILayout.TextField(" Option Text:", part.choice2Text);
-                part.choice2Route = EditorGUILayout.TextField(" Option Route:", part.choice2Route);
-                GUI.enabled = true;
-                GUILayout.EndHorizontal();
+                GUILayout.BeginVertical();
+                part.useChoice1 = EditorGUILayout.Toggle("Use Choice 1: ", part.useChoice1);
+                if (part.useChoice1)
+                {
+                    part.choice1Text = EditorGUILayout.TextField(" Option Text:", part.choice1Text);
+                    part.choice1Route = EditorGUILayout.TextField(" Option Route:", part.choice1Route);
+                }
+                GUILayout.EndVertical();
 
-                GUILayout.BeginHorizontal();
-                part.useChoice3 = EditorGUILayout.Toggle("Choice 3: ", part.useChoice3);
-                GUI.enabled = part.useChoice3;
-                part.choice3Text = EditorGUILayout.TextField(" Option Text:", part.choice3Text);
-                part.choice3Route = EditorGUILayout.TextField(" Option Route:", part.choice3Route);
-                GUI.enabled = true;
-                GUILayout.EndHorizontal();
+                GUILayout.Space(3);
+                GuiLine(2);
+                GUILayout.Space(3);
 
-                EditorGUIUtility.labelWidth = 0;
-                EditorGUIUtility.fieldWidth = 0;
+                GUILayout.BeginVertical();
+                part.useChoice2 = EditorGUILayout.Toggle("Use Choice 2: ", part.useChoice2);
+                if (part.useChoice2)
+                {
+                    part.choice2Text = EditorGUILayout.TextField(" Option Text:", part.choice2Text);
+                    part.choice2Route = EditorGUILayout.TextField(" Option Route:", part.choice2Route);
+                }
+                GUILayout.EndVertical();
+
+                GUILayout.Space(3);
+                GuiLine(2);
+                GUILayout.Space(3);
+
+                GUILayout.BeginVertical();
+                part.useChoice3 = EditorGUILayout.Toggle("Use Choice 3: ", part.useChoice3);
+                if (part.useChoice3)
+                {
+                    part.choice3Text = EditorGUILayout.TextField(" Option Text:", part.choice3Text);
+                    part.choice3Route = EditorGUILayout.TextField(" Option Route:", part.choice3Route);
+                }
+                
+                GUILayout.EndVertical();
             break;
 
             case CutscenePart.PartType.Movement:
@@ -323,8 +333,7 @@ public class CutsceneEditor : Editor
             break;
 
             case CutscenePart.PartType.SetAsCollected:
-                //TODO
-                GUILayout.Label("TODO", EditorStyles.boldLabel);
+                part.guidSet = EditorGUILayout.ObjectField("Guid Component: ", part.guidSet, typeof(GuidComponent)) as GuidComponent;
             break;
 
             case CutscenePart.PartType.SetPanel:
@@ -345,6 +354,10 @@ public class CutsceneEditor : Editor
 
             case CutscenePart.PartType.ChangeRoute:
                 part.newRoute = EditorGUILayout.TextField("Change Route To: ", part.newRoute);
+            break;
+
+            case CutscenePart.PartType.Destroy:
+                part.destroyObject = EditorGUILayout.ObjectField("Destroy This Object: ", part.destroyObject, typeof(GameObject)) as GameObject;
             break;
         }
     }

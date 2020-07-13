@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     sceneAsset: {fileID: 102900000, guid: eb8a25a25fe453c4ba5c3d1aa0d9110c, type: 3}
-    scenePath: Assets/Scenes/Theo Planet.unity
+    scenePath: Assets/Scenes/TestScenes/Theo Planet.unity
   entranceList:
   - name: TestDoor
     position: {x: -8, y: 2, z: 0}
     facingDirection: 2
+    guidString: a421f97c-6e8f-40bd-860e-309148751eb0

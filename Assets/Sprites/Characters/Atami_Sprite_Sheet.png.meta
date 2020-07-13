@@ -74,12 +74,6 @@ TextureImporter:
   - first:
       213: -3221408095375414223
     second: Atami_Sprite_Sheet_23
-  - first:
-      213: -6702351226330633380
-    second: Atami_Sprite_Sheet_24
-  - first:
-      213: -8702746317677902225
-    second: Atami_Sprite_Sheet_25
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -360,8 +354,8 @@ TextureImporter:
       name: Atami_Sprite_Sheet_8
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
+        x: 0
+        y: 96
         width: 32
         height: 32
       alignment: 4
@@ -381,8 +375,8 @@ TextureImporter:
       name: Atami_Sprite_Sheet_9
       rect:
         serializedVersion: 2
-        x: 160
-        y: 128
+        x: 32
+        y: 96
         width: 32
         height: 32
       alignment: 4
@@ -402,7 +396,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_10
       rect:
         serializedVersion: 2
-        x: 0
+        x: 64
         y: 96
         width: 32
         height: 32
@@ -423,7 +417,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_11
       rect:
         serializedVersion: 2
-        x: 32
+        x: 96
         y: 96
         width: 32
         height: 32
@@ -444,7 +438,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_12
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
         y: 96
         width: 32
         height: 32
@@ -465,7 +459,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_13
       rect:
         serializedVersion: 2
-        x: 96
+        x: 160
         y: 96
         width: 32
         height: 32
@@ -486,7 +480,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_14
       rect:
         serializedVersion: 2
-        x: 128
+        x: 192
         y: 96
         width: 32
         height: 32
@@ -507,7 +501,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_15
       rect:
         serializedVersion: 2
-        x: 160
+        x: 224
         y: 96
         width: 32
         height: 32
@@ -528,8 +522,8 @@ TextureImporter:
       name: Atami_Sprite_Sheet_16
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
+        x: 0
+        y: 64
         width: 32
         height: 32
       alignment: 4
@@ -549,8 +543,8 @@ TextureImporter:
       name: Atami_Sprite_Sheet_17
       rect:
         serializedVersion: 2
-        x: 224
-        y: 96
+        x: 32
+        y: 64
         width: 32
         height: 32
       alignment: 4
@@ -570,7 +564,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_18
       rect:
         serializedVersion: 2
-        x: 0
+        x: 64
         y: 64
         width: 32
         height: 32
@@ -591,7 +585,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_19
       rect:
         serializedVersion: 2
-        x: 32
+        x: 96
         y: 64
         width: 32
         height: 32
@@ -612,7 +606,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_20
       rect:
         serializedVersion: 2
-        x: 64
+        x: 128
         y: 64
         width: 32
         height: 32
@@ -633,7 +627,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_21
       rect:
         serializedVersion: 2
-        x: 96
+        x: 160
         y: 64
         width: 32
         height: 32
@@ -654,7 +648,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_22
       rect:
         serializedVersion: 2
-        x: 128
+        x: 192
         y: 64
         width: 32
         height: 32
@@ -675,7 +669,7 @@ TextureImporter:
       name: Atami_Sprite_Sheet_23
       rect:
         serializedVersion: 2
-        x: 160
+        x: 224
         y: 64
         width: 32
         height: 32
@@ -688,48 +682,6 @@ TextureImporter:
       bones: []
       spriteID: 13ca49ea7624b43d0800000000000000
       internalID: -3221408095375414223
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atami_Sprite_Sheet_24
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 32
-        height: 32
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5ba8aaf1177cf2a0800000000000000
-      internalID: -6702351226330633380
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atami_Sprite_Sheet_25
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 64
-        width: 32
-        height: 32
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f66487c4552a93780800000000000000
-      internalID: -8702746317677902225
       vertices: []
       indices: 
       edges: []

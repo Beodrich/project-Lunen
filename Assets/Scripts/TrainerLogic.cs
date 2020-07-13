@@ -66,13 +66,13 @@ public class TrainerLogic : MonoBehaviour
         if (main != null)
         {
             sr = main.GetComponent<SetupRouter>();
-            if (move == null) move = GetComponent<Move>();
-
-            move.animationSet = animationSet;
+            
 
             UpdateTeam();
         }
-        
+        if (move == null) move = GetComponent<Move>();
+
+        move.animationSet = animationSet;
         
     }
 
@@ -97,11 +97,15 @@ public class TrainerLogic : MonoBehaviour
         TrainerScan();
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         GetImportantVariables();
         SetMoveLook(startLookDirection);
         TrainerScan();
+
+        #if UNITY_EDITOR
+        move.animMoving = false;
+        #endif
         
         Gizmos.color = new Color(0, 0, 1, 0.5f);
         Gizmos.DrawCube(StartPosition, Size); 

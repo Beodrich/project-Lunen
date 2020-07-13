@@ -70,6 +70,7 @@ public class CutscenePart
         SetPanel,
         CheckBattleOver,
         CaptureWildLunen,
+        Destroy
     }
     public enum MoveType
     {
@@ -171,6 +172,12 @@ public class CutscenePart
     //Type: Animation
     public Move animationActor;
     public int animationPlay;
+
+    //Type: Set As Collected
+    public GuidComponent guidSet;
+
+    //Type: Destroy
+    public GameObject destroyObject;
 
     [HideInInspector] public TrainerLogic trainerEncounter;
 }

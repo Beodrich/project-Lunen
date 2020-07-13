@@ -13,6 +13,7 @@ public class GameScene : ScriptableObject
         List<string> sceneList = new List<string>();
         foreach (DatabaseSceneEntrance gs in entranceList)
         {
+            //sceneList.Add(gs.name + " - " + gs.guidString);
             sceneList.Add(gs.name);
         }
         return sceneList.ToArray();
@@ -28,11 +29,20 @@ public class GameScene : ScriptableObject
         return entranceList[index];
     }
 
-    public int EntranceGuidToInt(System.Guid guid)
+    public DatabaseSceneEntrance GuidToEntrance(string guid)
     {
         for (int i = 0; i < entranceList.Count; i++)
         {
-            if (guid == entranceList[i].guid) return i;
+            if (guid == entranceList[i].guidString) return entranceList[i];
+        }
+        return null;
+    }
+
+    public int EntranceGuidToInt(string guid)
+    {
+        for (int i = 0; i < entranceList.Count; i++)
+        {
+            if (guid == entranceList[i].guidString) return i;
         }
         return -1;
     }

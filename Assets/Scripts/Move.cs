@@ -162,10 +162,28 @@ public class Move : MonoBehaviour
                         
                         if (pLogic.MoveBegin(hits))
                         {
-                            if (pLogic.inDoor) sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
+                            bool cancelMove = false;
+                            if (pLogic.inDoor)
+                            {
+                                if (pLogic.doorObject.GetComponent<DoorToLocation>().targetScene != null)
+                                {
+                                    if (pLogic.doorObject.GetComponent<DoorToLocation>().fadeOutOnTransition)
+                                    {
+                                        sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
+                                    }
+                                }
+                                else
+                                {
+                                    cancelMove = true;
+                                }
+                            }
                             SetFacingDirection(input);
+
+                            if (!cancelMove)
+                            {
+                                StartCoroutine(move(transform));
+                            }
                             
-                            StartCoroutine(move(transform));
                         }
                     }
                     SetWalkAnimation();

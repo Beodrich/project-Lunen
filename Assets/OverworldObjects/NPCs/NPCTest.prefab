@@ -65,7 +65,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneName: 
-  routes: []
+  stopsBattle: 0
+  showAllData: 0
+  parts:
+  - name: ' [Dialogue] ...'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: ...
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
+    trainerEncounter: {fileID: 0}
 --- !u!114 &4012099485063599377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
+  srObject: {fileID: 0}
   logicType: 3
   pLogic: {fileID: 0}
   tLogic: {fileID: 0}
@@ -100,6 +152,8 @@ MonoBehaviour:
   hits: []
   animTime: 0.1
   animIndex: 8
+  animationType: Idle
+  animHijack: 0
 --- !u!212 &4012099485063599594
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -139,7 +193,8 @@ SpriteRenderer:
   m_SortingLayerID: -1457864513
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 787389285625796174, guid: 6a24bd7541761479db2dc7f3a4e2ea75, type: 3}
+  m_Sprite: {fileID: -1316929954379532978, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,7 +204,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &4012099485063599599
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -247,7 +302,8 @@ SpriteRenderer:
   m_SortingLayerID: -1457864513
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 787389285625796174, guid: 6a24bd7541761479db2dc7f3a4e2ea75, type: 3}
+  m_Sprite: {fileID: -1316929954379532978, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+    type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.3764706}
   m_FlipX: 0
   m_FlipY: 0

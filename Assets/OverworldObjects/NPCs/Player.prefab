@@ -71,8 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: -1457864513
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1449208870189521827, guid: 68903cc6420cc4045b2b16a97a33632a,
-    type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.3764706}
   m_FlipX: 0
   m_FlipY: 0
@@ -147,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
-  animationSet: {fileID: 11400000, guid: 39a6d76cb0f014ada858d95606dbd799, type: 2}
+  animationSet: {fileID: 11400000, guid: 0cd73e40b964c4c8d8ae7d27eee44c82, type: 2}
   inGrass: 0
   grassObject: {fileID: 0}
   inTrainerView: 0
@@ -191,9 +190,9 @@ MonoBehaviour:
   lookDirection: 0
   hit: {fileID: 0}
   hits: []
-  animTime: 18.182194
+  animTime: 0.1
   animIndex: 13
-  animationType: 
+  animationType: Idle
   animHijack: 0
 --- !u!212 &5585906584724857796
 SpriteRenderer:
@@ -245,7 +244,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &5585906584724857793
 Rigidbody2D:
   serializedVersion: 4

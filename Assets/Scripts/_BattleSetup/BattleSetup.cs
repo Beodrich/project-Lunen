@@ -274,7 +274,7 @@ public class BattleSetup : MonoBehaviour
     public void NewOverworld(DoorToLocation door)
     {
         GameScene gs = door.targetScene;
-        DatabaseSceneEntrance dse = gs.IntToEntrance(door.entranceIndex);
+        DatabaseSceneEntrance dse = gs.GuidToEntrance(door.targetGuidString);
         NewOverworldAt
         (
             gs.scene.ScenePath,
@@ -582,6 +582,16 @@ public class BattleSetup : MonoBehaviour
 
                         case CutscenePart.PartType.CaptureWildLunen:
                             sr.director.CaptureLunen(attemptToCaptureMonster);
+                            AdvanceCutscene();
+                        break;
+
+                        case CutscenePart.PartType.SetAsCollected:
+                            GuidList.Add(part.guidSet.GetGuid());
+                            AdvanceCutscene();
+                        break;
+
+                        case CutscenePart.PartType.Destroy:
+                            Destroy(part.destroyObject);
                             AdvanceCutscene();
                         break;
                     }

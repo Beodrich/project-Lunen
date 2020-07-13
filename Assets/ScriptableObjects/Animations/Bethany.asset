@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3f3de1279d24685b8e6ca8dcac2788, type: 3}
+  m_Name: Bethany
+  m_EditorClassIdentifier: 
+  animations:
+  - name: Idle
+    iterateTime: 0.2
+    loops: 1
+    directional: 1
+    spriteArray:
+    - {fileID: 3322581362251422087, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -7775855008956483906, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 279800833599347083, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -5344995332082644972, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 3941741333705769385, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 3002433585083796808, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 434139400799766133, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 2381647174855657326, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -1315057586331796653, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 964266909913305432, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -6989596875503350586, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -5200750675644269282, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 7831831965030550661, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -5947703720768255322, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -7548187656385236641, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -3511851586482604421, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+  - name: Walk
+    iterateTime: 0.1
+    loops: 1
+    directional: 1
+    spriteArray:
+    - {fileID: -6904326155977329758, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 3728322903022177363, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 6352637968033417835, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 505205627487504663, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -145501338617546510, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -3713909565384695883, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 4481677131015365665, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 1389097537279769815, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 7101349274393465017, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -7931172836839101726, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 5657278434843455289, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 205014994824825996, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -4794250412776450388, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 7955914022976789556, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 980126347722941597, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 4711818396022729255, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 7250979645727601414, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -2076530991894961757, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -5937570844280902151, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -3531414932249837050, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -1108258915794239434, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -2732941963382427208, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 7295234347043088211, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 1715860882976575273, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 2179312762455161719, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 7239760552771668037, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: 2777885015510249376, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -3341370488445197882, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -2349071795982251748, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -7596657556710429302, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -2116705825942573164, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+    - {fileID: -8926852906258282025, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
+  - name: Run
+    iterateTime: 0.05
+    loops: 0
+    directional: 0
+    spriteArray: []

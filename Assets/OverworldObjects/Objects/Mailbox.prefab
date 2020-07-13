@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3144892482270228112}
+  - component: {fileID: -2945212011271878114}
   - component: {fileID: 5731666597413110420}
   - component: {fileID: 4369818184981062774}
   m_Layer: 0
   m_Name: Mailbox
-  m_TagString: Wall
+  m_TagString: Thing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,6 +33,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2945212011271878114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139637751710356518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutsceneName: 
+  stopsBattle: 0
+  showAllData: 0
+  parts:
+  - name: ' [Dialogue] This is a mailbox!'
+    title: 
+    type: 1
+    startNextSimultaneous: 0
+    moveScript: {fileID: 0}
+    chooseMoveDirection: 0
+    movementDirection: 0
+    moveType: 0
+    colliderTag: 
+    spacesToMove: 0
+    trainerLogic: {fileID: 0}
+    postBattleCutscene: 0
+    cutsceneAfterBattle: {fileID: 0}
+    routeAfterBattle: 
+    text: This is a mailbox!
+    useChoice1: 0
+    choice1Text: 
+    choice1Route: 
+    useChoice2: 0
+    choice2Text: 
+    choice2Route: 
+    useChoice3: 0
+    choice3Text: 
+    choice3Route: 
+    waitTime: 0
+    newRoute: 
+    newSceneType: 0
+    newScene:
+      sceneAsset: {fileID: 0}
+      scenePath: 
+    newSceneEntranceIndex: 0
+    newScenePosition: {x: 0, y: 0}
+    newSceneDirection: 0
+    newCutsceneType: 0
+    cutsceneIndex: 0
+    cutsceneRoute: 
+    cutsceneGlobal: {fileID: 0}
+    cutsceneLocal: {fileID: 0}
+    panelSelect: 0
+    panelState: 0
+    itemObtained: {fileID: 0}
+    itemAmount: 0
+    lunenObtained: {fileID: 0}
+    lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
+    trainerEncounter: {fileID: 0}
 --- !u!212 &5731666597413110420
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -70,8 +136,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1457864513
   m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -4050120116799439666, guid: 7177e0cd52e9e416a9e5f8857af87ecf,
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -4050120116799439666, guid: b22a88b7a2ceb4cc596e6fab03a94018,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -82,7 +148,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &4369818184981062774
 BoxCollider2D:
   m_ObjectHideFlags: 0

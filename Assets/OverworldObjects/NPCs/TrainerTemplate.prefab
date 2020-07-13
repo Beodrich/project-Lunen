@@ -238,6 +238,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' [Movement] Move To Player'
     title: Move To Player
@@ -283,6 +287,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' [Dialogue] Hi, I''m a trainer! Let''s fight!'
     title: 
@@ -328,6 +336,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' [Battle] Lunen Trainer Battle'
     title: Lunen Trainer Battle
@@ -339,9 +351,9 @@ MonoBehaviour:
     moveType: 3
     colliderTag: 
     spacesToMove: 0
-    trainerLogic: {fileID: 0}
+    trainerLogic: {fileID: 6539219013480142739}
     postBattleCutscene: 1
-    cutsceneAfterBattle: {fileID: 0}
+    cutsceneAfterBattle: {fileID: 6539219013480142742}
     routeAfterBattle: Loss Route
     text: Hi, I'm a trainer! Let's fight!
     useChoice1: 0
@@ -373,6 +385,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' [END] Battle Start End'
     title: Battle Start End
@@ -418,6 +434,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' '
     title: Battle Start End
@@ -463,6 +483,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' [ROUTE_START] Loss Route'
     title: Loss Route
@@ -508,6 +532,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' [Dialogue] Dammit, I lost!'
     title: 
@@ -553,6 +581,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' [END] Loss Route End'
     title: Loss Route End
@@ -598,6 +630,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' '
     title: Battle Start End
@@ -643,6 +679,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' [ROUTE_START] Trainer Defeated'
     title: Trainer Defeated
@@ -688,6 +728,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' [Dialogue] I can''t believe I lost to you!'
     title: 
@@ -733,6 +777,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
   - name: ' [END] Loss Route End'
     title: Loss Route End
@@ -778,6 +826,10 @@ MonoBehaviour:
     itemAmount: 0
     lunenObtained: {fileID: 0}
     lunenLevel: 0
+    animationActor: {fileID: 0}
+    animationPlay: 0
+    guidSet: {fileID: 0}
+    destroyObject: {fileID: 0}
     trainerEncounter: {fileID: 0}
 --- !u!114 &6539219013480142697
 MonoBehaviour:
@@ -814,7 +866,8 @@ MonoBehaviour:
   hits: []
   animTime: 0.1
   animIndex: 17
-  animationType: 0
+  animationType: 
+  animHijack: 0
 --- !u!212 &6539219013480142738
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -865,7 +918,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &6539219013480142743
 BoxCollider2D:
   m_ObjectHideFlags: 0

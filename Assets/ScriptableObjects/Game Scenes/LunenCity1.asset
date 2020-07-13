@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547a66f2a347c4f7b9cc143b7490b3d4, type: 3}
+  m_Name: LunenCity1
+  m_EditorClassIdentifier: 
+  scene:
+    sceneAsset: {fileID: 102900000, guid: a12c5cfc2bf7548f3848ab6d9d0385c5, type: 3}
+    scenePath: Assets/Scenes/Overworlds/LunenCity1.unity
+  entranceList:
+  - name: LunenCenterDoor
+    position: {x: 8, y: 10, z: 0}
+    facingDirection: 2
+    guidString: 78451ace-aa73-4cdb-ba4b-92fa35c72da0
+  - name: LabDoor
+    position: {x: 1, y: 10, z: 0}
+    facingDirection: 2
+    guidString: 52afdae1-230f-4d5c-a3b9-ad3652034051
+  - name: House3Door
+    position: {x: -1, y: 10, z: 0}
+    facingDirection: 2
+    guidString: 157e7585-fa1d-48d7-a01f-970b94ee7bc6
+  - name: DoorToCheckpoint1
+    position: {x: 0, y: -3, z: 0}
+    facingDirection: 0
+    guidString: a421f97c-6e8f-40bd-860e-309148751eb0
+  - name: House2Door
+    position: {x: -5, y: 10, z: 0}
+    facingDirection: 2
+    guidString: 438d7bb2-5f1f-4eb1-a8cc-1dcd8a2d89e6
+  - name: House1Door
+    position: {x: -8, y: 10, z: 0}
+    facingDirection: 2
+    guidString: 2006f9e5-2687-4b9d-b9cf-7638c458a4f2
+  - name: LunenCenterDoor4
+    position: {x: 11, y: 10, z: 0}
+    facingDirection: 2
+    guidString: 754d1de7-b4e2-43ed-a252-2970c273033b

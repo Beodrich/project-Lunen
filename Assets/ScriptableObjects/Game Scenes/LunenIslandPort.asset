@@ -19,6 +19,12 @@ MonoBehaviour:
   - name: House Front Door
     position: {x: 22, y: 4, z: 0}
     facingDirection: 2
+    guidString: a82f539e-8961-459a-8fd4-34bca82c269f
+  - name: CheckpointEntrance
+    position: {x: 16, y: 26, z: 0}
+    facingDirection: 2
+    guidString: 5cccd1d5-b534-40a0-96fb-f8555945802f
   - name: House Back Door
     position: {x: 22, y: 6, z: 0}
     facingDirection: 0
+    guidString: 6c7672f6-81a7-4843-8ae3-219cf9db4e90

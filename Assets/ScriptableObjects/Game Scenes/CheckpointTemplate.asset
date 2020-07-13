@@ -16,6 +16,11 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: 2b01ecf751f954655abd03a4de946d64, type: 3}
     scenePath: Assets/Scenes/CheckpointTemplate.unity
   entranceList:
-  - name: TestDoor
-    position: {x: 0, y: 0, z: 0}
+  - name: DoorToLunenPort
+    position: {x: 0, y: -3, z: 0}
     facingDirection: 0
+    guidString: 402a0781-8cee-4769-8a72-105457c6df4d
+  - name: DoorToNextArea
+    position: {x: 0, y: 7, z: 0}
+    facingDirection: 2
+    guidString: fc539694-af53-44b4-9148-8aff285bed92

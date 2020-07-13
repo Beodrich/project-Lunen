@@ -75,6 +75,7 @@ public class SceneAttributes : MonoBehaviour
             dse.facingDirection = d.exitDirection;
             dse.position = Vector3Int.FloorToInt(d.transform.position);
             dse.guid = d.GetComponent<GuidComponent>().GetGuid();
+            dse.guidString = dse.guid.ToString();
             thisScene.entranceList.Add(dse);
         }
 

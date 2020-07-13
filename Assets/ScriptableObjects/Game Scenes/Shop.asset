@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scene:
     sceneAsset: {fileID: 102900000, guid: fd01006b61cdd47e9826b0704b424e04, type: 3}
-    scenePath: Assets/Scenes/Shop.unity
+    scenePath: Assets/Scenes/Buildings/Shops/Shop.unity
   entranceList:
   - name: Door
     position: {x: 0, y: 0, z: 0}
     facingDirection: 0
+    guidString: 2c4f5843-92d0-4703-af86-816f4134e7ff

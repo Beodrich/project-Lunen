@@ -39,6 +39,8 @@ MonoBehaviour:
     loops: 1
     directional: 1
     spriteArray:
+    - {fileID: -63875659930516425, guid: 55948dd4eccbf438b92e6d88a44c9255, type: 3}
+    - {fileID: 6415533412476245875, guid: 55948dd4eccbf438b92e6d88a44c9255, type: 3}
     - {fileID: -1506725843968323999, guid: 55948dd4eccbf438b92e6d88a44c9255, type: 3}
     - {fileID: -3649972769244588668, guid: 55948dd4eccbf438b92e6d88a44c9255, type: 3}
     - {fileID: -6426739359175679623, guid: 55948dd4eccbf438b92e6d88a44c9255, type: 3}
@@ -53,8 +55,6 @@ MonoBehaviour:
     - {fileID: -6269003399693637510, guid: 55948dd4eccbf438b92e6d88a44c9255, type: 3}
     - {fileID: 7096385331487509915, guid: 55948dd4eccbf438b92e6d88a44c9255, type: 3}
     - {fileID: -3221408095375414223, guid: 55948dd4eccbf438b92e6d88a44c9255, type: 3}
-    - {fileID: -6702351226330633380, guid: 55948dd4eccbf438b92e6d88a44c9255, type: 3}
-    - {fileID: -8702746317677902225, guid: 55948dd4eccbf438b92e6d88a44c9255, type: 3}
     - {fileID: 3115826085742584950, guid: 6a24bd7541761479db2dc7f3a4e2ea75, type: 3}
     - {fileID: -5388781434468011442, guid: 6a24bd7541761479db2dc7f3a4e2ea75, type: 3}
     - {fileID: -4923960254336300093, guid: 6a24bd7541761479db2dc7f3a4e2ea75, type: 3}

@@ -13,6 +13,7 @@ public class DoorEditor : Editor
 {
     DoorToLocation door;
     SerializedProperty scene;
+    bool showPosition = false;
 
     private void OnEnable()
     {
@@ -21,7 +22,8 @@ public class DoorEditor : Editor
         if (sceneatt != null)
         {
             door.attributes = sceneatt.GetComponent<SceneAttributes>();
-            EditSceneAttributes();
+            door.attributes.RefreshDoors();
+            if (door.targetScene != null) door.fallbackIndex = door.targetScene.EntranceGuidToInt(door.targetGuidString);
         }
         
     }
@@ -63,6 +65,10 @@ public class DoorEditor : Editor
 
             door.exitDirection = (MoveScripts.Direction)EditorGUILayout.EnumPopup("Exit Direction: ", door.exitDirection);
 
+            GUILayout.Space(10);
+
+            door.fadeOutOnTransition = EditorGUILayout.Toggle("Fade To Black: ", door.fadeOutOnTransition);
+
             GUILayout.Space(20);
 
             GUILayout.BeginHorizontal();
@@ -73,7 +79,7 @@ public class DoorEditor : Editor
                 string currentScene = EditorSceneManager.GetActiveScene().path;
 
                 GameScene nextScene = door.targetScene;
-                DatabaseSceneEntrance dse = nextScene.IntToEntrance(door.entranceIndex);
+                DatabaseSceneEntrance dse = nextScene.GuidToEntrance(door.targetGuidString);
 
                 EditorSceneManager.OpenScene(nextScene.scene);
 
@@ -98,6 +104,17 @@ public class DoorEditor : Editor
                 }
             }
             GUILayout.EndHorizontal();
+
+            showPosition = EditorGUILayout.Foldout(showPosition, "Debug Variables");
+            if (showPosition)
+            {
+                EditorGUILayout.LabelField("Target Info: ");
+                EditorGUILayout.LabelField("    Name: " + door.targetScene.entranceList[door.fallbackIndex].name);
+                EditorGUILayout.LabelField("    Index: " + door.fallbackIndex);
+                EditorGUILayout.LabelField("    GUID String: " + door.targetGuidString);
+                EditorGUILayout.LabelField("    Exit Direction: " + door.targetScene.entranceList[door.fallbackIndex].facingDirection.ToString());
+                
+            }
             
             serializedObject.ApplyModifiedProperties();
             
@@ -105,7 +122,7 @@ public class DoorEditor : Editor
 
             if (GUI.changed)
             {
-                EditSceneAttributes();
+                door.attributes.RefreshDoors();
                 EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
                 EditorUtility.SetDirty(door);
                 EditorUtility.SetDirty(door.attributes);
@@ -119,38 +136,18 @@ public class DoorEditor : Editor
 
     public void EnsureEntranceGuid()
     {
-        //If currently selected index is not equal to current entrance Guid
-        if (door.entranceIndex >= door.targetScene.entranceList.Count)
-        {
-            FindEntranceGuid(door.entranceGuid);
-        }
-        else if (door.entranceGuid != door.targetScene.entranceList[door.entranceIndex].guid)
-        {
-            FindEntranceGuid(door.entranceGuid);
-        }
+        
+        
+        int newIndex = door.fallbackIndex;
 
-        int startingIndex = door.entranceIndex;
-        door.entranceIndex = EditorGUILayout.Popup("Entrance: ", door.entranceIndex, door.targetScene.GetEntrancesArray());
+        newIndex = EditorGUILayout.Popup("Entrance: ", newIndex, door.targetScene.GetEntrancesArray());
 
-        if (startingIndex != door.entranceIndex)
+        if (newIndex != door.fallbackIndex)
         {
-            door.entranceGuid = door.targetScene.entranceList[door.entranceIndex].guid;
+            door.fallbackIndex = newIndex;
+            door.targetGuidString = door.targetScene.entranceList[newIndex].guidString;
+            
         }
-    }
-
-    public void FindEntranceGuid(System.Guid guid)
-    {
-        door.entranceIndex = door.targetScene.EntranceGuidToInt(door.entranceGuid);
-        if (door.entranceIndex == -1) //Door finding failed
-        {
-            door.entranceIndex = 0;
-            door.entranceGuid = door.targetScene.entranceList[door.entranceIndex].guid;
-        }
-    }
-
-    public void EditSceneAttributes()
-    {
-        door.attributes.RefreshDoors();
     }
 
     public void OnDestroy()

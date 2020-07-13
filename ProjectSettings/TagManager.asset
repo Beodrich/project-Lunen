@@ -17,6 +17,7 @@ TagManager:
   - Thing
   - NPC
   - ShopKeeper
+  - Water
   layers:
   - Default
   - TransparentFX

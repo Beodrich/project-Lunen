@@ -19,9 +19,8 @@ MonoBehaviour:
   - name: HouseFrontDoor
     position: {x: -10, y: -14, z: 0}
     facingDirection: 2
-  - name: LunenCenterTestDoor
-    position: {x: -3, y: -12, z: 0}
-    facingDirection: 2
+    guidString: f3ced380-f4cd-42e3-be7e-e50f832bdabe
   - name: HouseBackDoor
     position: {x: -10, y: -12, z: 0}
     facingDirection: 0
+    guidString: 08c69d0b-e4cb-43e4-ac7b-d02208270476

@@ -96,6 +96,18 @@ public static class MoveScripts
             if (direction.x == 1) return Direction.East; else return Direction.West;
         }
     }
+    
+    public static float GetAngleFromDirection(Direction direction)
+    {
+        switch(direction)
+        {
+            default: return 0f;
+            case Direction.North: return 180f;
+            case Direction.South: return 0f;
+            case Direction.East: return 270f;
+            case Direction.West: return 90f;
+        }
+    }
 
     public static Direction GetOppositeDirection(Direction direction)
     {

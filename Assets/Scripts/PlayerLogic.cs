@@ -91,6 +91,7 @@ public class PlayerLogic : MonoBehaviour
             {
                 default: return true;
                 case "Wall": return false;
+                case "Water": return false;
                 case "Creature": return false;
                 case "Trainer": return false;
                 case "Thing": return false;

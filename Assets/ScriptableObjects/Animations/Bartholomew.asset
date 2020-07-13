@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3f3de1279d24685b8e6ca8dcac2788, type: 3}
+  m_Name: Bartholomew
+  m_EditorClassIdentifier: 
+  animations:
+  - name: Idle
+    iterateTime: 0.2
+    loops: 1
+    directional: 1
+    spriteArray:
+    - {fileID: 5518896848044208174, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 6432458199952212823, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -2687708062067037090, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 4101941662333567901, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -7676700432585329708, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -5601259628391296794, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 5458633208253014828, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -6346803954541563229, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -5286819665763661213, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 5398158172710041461, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 7726228513213391706, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 1191983608085669522, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 5380145964995220217, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 409482989516176962, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -1505414864681285749, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -298737294738947884, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+  - name: Walk
+    iterateTime: 0.15
+    loops: 1
+    directional: 1
+    spriteArray:
+    - {fileID: -2736652312509760911, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -6009885938060130054, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 7985716058092693964, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 9197683272104958073, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 284615584509993420, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 3923156512710696730, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -3893698980393445527, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -2881293195707568827, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 7684373840455991031, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 8722481907476334150, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -6242739423664263878, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -688702131215139572, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 6251354436737874732, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -9105721276050573279, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -8750880893008282150, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 1914198442950058678, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 2176658729698350558, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -7912651882667511102, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 8268218861667601637, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -6377410754238588950, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -6545765806905840293, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -1224778196262016045, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 1248086694531067135, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 5274260882291935340, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -5968194092097144649, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -3455768280925629664, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -2837931959279564199, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -4193612677660018457, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 3181414969055091217, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: -4072951525351420833, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 589823243352834948, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+    - {fileID: 5697928493678589925, guid: 287807047758a4cddbc6a49f975a278e, type: 3}
+  - name: Run
+    iterateTime: 0
+    loops: 0
+    directional: 0
+    spriteArray: []
