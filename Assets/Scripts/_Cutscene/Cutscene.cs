@@ -70,7 +70,8 @@ public class CutscenePart
         SetPanel,
         CheckBattleOver,
         CaptureWildLunen,
-        Destroy
+        Destroy,
+        SetNewSprite
     }
     public enum MoveType
     {
@@ -114,6 +115,7 @@ public class CutscenePart
     public MoveType moveType;
     public string colliderTag;
     public int spacesToMove;
+    public bool movePlayer;
 
     //Type: Battle
     public TrainerLogic trainerLogic;
@@ -178,6 +180,10 @@ public class CutscenePart
 
     //Type: Destroy
     public GameObject destroyObject;
+
+    //Type: Set New Sprite
+    public SpriteRenderer spriteRenderer;
+    public Sprite newSprite;
 
     [HideInInspector] public TrainerLogic trainerEncounter;
 }

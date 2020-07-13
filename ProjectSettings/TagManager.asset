@@ -18,6 +18,7 @@ TagManager:
   - NPC
   - ShopKeeper
   - Water
+  - Train
   layers:
   - Default
   - TransparentFX

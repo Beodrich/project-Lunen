@@ -181,7 +181,11 @@ public class CutsceneEditor : Editor
             break;
 
             case CutscenePart.PartType.Movement:
-                part.moveScript = EditorGUILayout.ObjectField("Move Script: ", part.moveScript, typeof(Move)) as Move;
+                part.movePlayer = EditorGUILayout.Toggle("Move Player? ", part.movePlayer);
+                if (!part.movePlayer)
+                {
+                    part.moveScript = EditorGUILayout.ObjectField("Move Script: ", part.moveScript, typeof(Move)) as Move;
+                }
 
                 GUILayout.BeginHorizontal();
                 part.chooseMoveDirection = EditorGUILayout.Toggle("Change Direction", part.chooseMoveDirection);
@@ -358,6 +362,11 @@ public class CutsceneEditor : Editor
 
             case CutscenePart.PartType.Destroy:
                 part.destroyObject = EditorGUILayout.ObjectField("Destroy This Object: ", part.destroyObject, typeof(GameObject)) as GameObject;
+            break;
+
+            case CutscenePart.PartType.SetNewSprite:
+                part.spriteRenderer = EditorGUILayout.ObjectField("Object Sprite To Change: ", part.spriteRenderer, typeof(SpriteRenderer)) as SpriteRenderer;
+                part.newSprite = EditorGUILayout.ObjectField("New Sprite: ", part.newSprite, typeof(Sprite)) as Sprite;
             break;
         }
     }

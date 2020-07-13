@@ -46,6 +46,7 @@ public class BattleSetup : MonoBehaviour
     public Vector2 loadPosition;
     public MoveScripts.Direction loadDirection;
     public bool loadMoving;
+    public float loadAnimTime;
     [Space(10)]
     public string respawnScene;
     public Vector3 respawnLocation;
@@ -292,6 +293,14 @@ public class BattleSetup : MonoBehaviour
         loadDirection = direction;
         loadMoving = moving;
         lastOverworld = location;
+        if (sr.playerLogic != null)
+        {
+            loadAnimTime = sr.playerLogic.move.animTime;
+        }
+        else
+        {
+            loadAnimTime = 0f;
+        }
         if (openState) sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
         Debug.Log("Loading Scene: " + location);
         SceneManager.LoadSceneAsync(location);
@@ -399,7 +408,8 @@ public class BattleSetup : MonoBehaviour
                             AdvanceCutscene();
                         break;
                         case CutscenePart.PartType.Movement:
-                            part.moveScript.StartCutsceneMove(part);
+                            if (part.movePlayer) sr.playerLogic.move.StartCutsceneMove(part);
+                            else part.moveScript.StartCutsceneMove(part);
                         break;
 
                         case CutscenePart.PartType.Choice:
@@ -593,6 +603,11 @@ public class BattleSetup : MonoBehaviour
 
                         case CutscenePart.PartType.Destroy:
                             Destroy(part.destroyObject);
+                            AdvanceCutscene();
+                        break;
+
+                        case CutscenePart.PartType.SetNewSprite:
+                            part.spriteRenderer.sprite = part.newSprite;
                             AdvanceCutscene();
                         break;
                     }

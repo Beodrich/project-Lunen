@@ -164,6 +164,11 @@ public class Move : MonoBehaviour
                         if (pLogic.MoveBegin(hits))
                         {
                             bool cancelMove = false;
+                            if (pLogic.inTrain)
+                            {
+                                sr.battleSetup.StartCutscene(new PackedCutscene(pLogic.trainObject.GetComponent<Cutscene>()));
+                                
+                            }
                             if (pLogic.inDoor)
                             {
                                 if (pLogic.doorObject.GetComponent<DoorToLocation>().targetScene != null)
@@ -244,6 +249,13 @@ public class Move : MonoBehaviour
             break;
         }
         
+    }
+
+    public void ContinueWalkAnimation()
+    {
+        lastAnimX = last.x;
+        lastAnimY = last.y;
+        lastAnimMoving = isMoving;
     }
 
     public void SetWalkAnimation()

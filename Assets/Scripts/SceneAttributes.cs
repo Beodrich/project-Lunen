@@ -44,6 +44,12 @@ public class SceneAttributes : MonoBehaviour
         Move playerMove = newPlayer.GetComponent<Move>();
         playerMove.SetFacingDirection(input);
         playerMove.lookDirection = sr.battleSetup.loadDirection;
+        if (sr.battleSetup.loadAnimTime != 0f)
+        {
+            playerMove.animTime = sr.battleSetup.loadAnimTime;
+            playerMove.ContinueWalkAnimation();
+        }
+        
         if (sr.battleSetup.loadMoving)
         {
             StartCoroutine(playerMove.move(playerMove.transform)); 

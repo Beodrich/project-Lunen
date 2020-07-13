@@ -19,6 +19,9 @@ public class PlayerLogic : MonoBehaviour
     [Space(10)]
     public bool inShop = false;
     public GameObject shopObject;
+    [Space(10)]
+    public bool inTrain = false;
+    public GameObject trainObject;
 
     [HideInInspector]
     public Move move;
@@ -80,6 +83,7 @@ public class PlayerLogic : MonoBehaviour
         inTrainerView = false;
         inDoor = false;
         inShop = false;
+        inTrain = false;
 
         if (hit == null)
         {
@@ -112,6 +116,10 @@ public class PlayerLogic : MonoBehaviour
                     inDoor = true;
                     doorObject = hit.gameObject;
                     return true;
+                case "Train":
+                    inTrain = true;
+                    trainObject = hit.gameObject;
+                    return true;
             }
         }
     }
@@ -122,11 +130,13 @@ public class PlayerLogic : MonoBehaviour
         inTrainerView = false;
         inDoor = false;
         inShop = false;
+        inTrain = false;
 
         bool inGrass2 = false;
         bool inTrainerView2 = false;
         bool inDoor2 = false;
         bool inShop2 = false;
+        bool inTrain2 = false;
 
         int pathsFound = 0;
         if (hit.Length > 0)
@@ -141,6 +151,7 @@ public class PlayerLogic : MonoBehaviour
                     if (inTrainerView) inTrainerView2 = true;
                     if (inDoor) inDoor2 = true;
                     if (inShop) inShop2 = true;
+                    if (inTrain) inTrain2 = true;
                 }
                 else
                 {
@@ -152,6 +163,7 @@ public class PlayerLogic : MonoBehaviour
             inTrainerView = inTrainerView2;
             inDoor = inDoor2;
             inShop = inShop2;
+            inTrain = inTrain2;
             
             if (pathsFound == hit.Length)
             {
