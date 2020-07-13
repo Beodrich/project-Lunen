@@ -36054,7 +36054,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1315057586331796653, guid: cd2cf21a1834b4e539c5de87c7f92d55,
+      objectReference: {fileID: -5286819665763661213, guid: 287807047758a4cddbc6a49f975a278e,
         type: 3}
     - target: {fileID: 6539219013389779558, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -36070,7 +36070,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1315057586331796653, guid: cd2cf21a1834b4e539c5de87c7f92d55,
+      objectReference: {fileID: 6013539685683409030, guid: 2ac37cc297fd94cbea87becccdf07ef5,
         type: 3}
     - target: {fileID: 6539219013480142738, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -36091,7 +36091,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animationSet
       value: 
-      objectReference: {fileID: 11400000, guid: c279c6dcbd16d46788a078c9af4053dc,
+      objectReference: {fileID: 11400000, guid: c26e0cc2c0fc641d3bdb4099a009838a,
         type: 2}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -37024,7 +37024,7 @@ PrefabInstance:
     - target: {fileID: 4012099485063599592, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
         type: 3}

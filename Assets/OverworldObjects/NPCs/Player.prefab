@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
-  animationSet: {fileID: 11400000, guid: 0cd73e40b964c4c8d8ae7d27eee44c82, type: 2}
+  animationSet: {fileID: 11400000, guid: c279c6dcbd16d46788a078c9af4053dc, type: 2}
   inGrass: 0
   grassObject: {fileID: 0}
   inTrainerView: 0

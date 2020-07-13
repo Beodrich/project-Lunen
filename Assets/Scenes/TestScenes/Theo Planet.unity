@@ -8545,7 +8545,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6788457402322118381, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+      objectReference: {fileID: -3504493925121570484, guid: 2f275c25e00c2428583fec6c16913b53,
         type: 3}
     - target: {fileID: 6539219013389779558, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -8561,7 +8561,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6788457402322118381, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
+      objectReference: {fileID: -3504493925121570484, guid: 2f275c25e00c2428583fec6c16913b53,
         type: 3}
     - target: {fileID: 6539219013480142738, guid: a92523051362e453fbce1069546b2680,
         type: 3}
@@ -8599,7 +8599,7 @@ PrefabInstance:
         type: 3}
       propertyPath: animationSet
       value: 
-      objectReference: {fileID: 11400000, guid: 674883a702476450880dbf2d5a33172c,
+      objectReference: {fileID: 11400000, guid: 42a7dca4605d24a74b124d66aa436e31,
         type: 2}
     - target: {fileID: 6539219013480142739, guid: a92523051362e453fbce1069546b2680,
         type: 3}

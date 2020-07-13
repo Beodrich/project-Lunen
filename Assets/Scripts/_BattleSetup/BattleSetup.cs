@@ -462,6 +462,7 @@ public class BattleSetup : MonoBehaviour
                             switch(part.newSceneType)
                             {
                                 case CutscenePart.NewSceneType.Respawn:
+                                    playerDead = false;
                                     NewOverworldAt(respawnScene, respawnLocation, respawnDirection);
                                 break;
                                 case CutscenePart.NewSceneType.ToEntrance:

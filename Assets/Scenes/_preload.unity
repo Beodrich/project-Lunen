@@ -36378,14 +36378,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfItems:
-  - item: {fileID: 11400000, guid: 493114813b1e14f2d80102d402d70f05, type: 2}
-    amount: 999
   - item: {fileID: 11400000, guid: 99a4b3e8ff9bc467db0ed96253e84e7e, type: 2}
-    amount: 10
+    amount: 3
   requestedItems: []
   currentRequestedType: 0
   itemCap: 0
-  gold: 500
+  gold: 1000
 --- !u!114 &8082643487578673649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36403,7 +36401,7 @@ MonoBehaviour:
   bootBehaviour: 1
   bootScene:
     sceneAsset: {fileID: 102900000, guid: fd01006b61cdd47e9826b0704b424e04, type: 3}
-    scenePath: Assets/Scenes/Shop.unity
+    scenePath: Assets/Scenes/Buildings/Shops/Shop.unity
   bootEntrance: 1
   bootPosition: {x: 0, y: 0, z: 0}
   bootDirection: 0
