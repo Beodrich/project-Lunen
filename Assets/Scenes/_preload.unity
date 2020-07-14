@@ -14163,8 +14163,8 @@ MonoBehaviour:
   percentageTarget: 0
   percentageUse: 0
   currentState: 0
-  transitionType: 2
-  transitionTime: 10
+  transitionType: 3
+  transitionTime: 0.2
   transitionScale: 20
   openDelay: 0
   closeDelay: 0
