@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
-  m_Name: Flamela
+  m_Name: Fleor
   m_EditorClassIdentifier: 
   animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
   Elements:
@@ -18,19 +18,27 @@ MonoBehaviour:
   LearnedActions:
   - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
     level: 1
-  - action: {fileID: 11400000, guid: 977890cc13598462f8380edf5670307b, type: 2}
-    level: 9
   - action: {fileID: 11400000, guid: df02638ac89fd7b47ab82b8bc87f3b5b, type: 2}
     level: 3
   - action: {fileID: 11400000, guid: 4610632cf4f359d4a951689f165f7c6e, type: 2}
     level: 6
+  - action: {fileID: 11400000, guid: aeaa509d6ed29374e958f380d108ca19, type: 2}
+    level: 13
+  - action: {fileID: 11400000, guid: b643b82e0bbc63c489fca0f4d88cc199, type: 2}
+    level: 16
+  - action: {fileID: 11400000, guid: a303885f0a82a574ebed81fe7922ede1, type: 2}
+    level: 19
+  - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
+    level: 1
+  - action: {fileID: 11400000, guid: 977890cc13598462f8380edf5670307b, type: 2}
+    level: 9
   Evolves: 1
-  EvolutionLunen: {fileID: 11400000, guid: c358fa21c167d2441a069a37332c70b1, type: 2}
-  EvolutionLevel: 10
-  Health: {x: 14, y: 2}
-  Attack: {x: 6, y: 2}
-  Defense: {x: 4, y: 1}
-  Speed: {x: 5, y: 1}
-  AffinityCost: 1
+  EvolutionLunen: {fileID: 11400000, guid: ab1a7f2faaf195e4ab0ef87dfc93ab4c, type: 2}
+  EvolutionLevel: 20
+  Health: {x: 18, y: 2}
+  Attack: {x: 8, y: 3}
+  Defense: {x: 5, y: 1}
+  Speed: {x: 7, y: 2}
+  AffinityCost: 2
   CatchRate: 100
-  CooldownTime: 5
+  CooldownTime: 10

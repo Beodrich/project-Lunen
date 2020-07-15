@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: Enkindle
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: Enkindle
+  Type: {fileID: 11400000, guid: 6ff4b9b35b664489f8e80786889294d9, type: 2}
+  Turns: 1
+  AdditionalAffinityCost: 0
+  TimePausePeriod: 2
+  Animation: {fileID: 0}
+  PartsOfAction:
+  - Effect: 1
+    Target: 6
+    Power: 40
+    EffectToInflict: {fileID: 0}
+    StatusEffect: {fileID: 11400000, guid: c5fad1b33c79a4f959be4507d5cef95c, type: 2}
+    StatusEffectTurns: 4
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
+  SourceActionIndex: 0
+  SourceLunenLearnedLevel: 0
+  customEvent:
+    m_PersistentCalls:
+      m_Calls: []
