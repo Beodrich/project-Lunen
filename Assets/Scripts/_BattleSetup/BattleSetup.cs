@@ -33,7 +33,7 @@ public class BattleSetup : MonoBehaviour
     [Space(10)]
     public PackedCutscene lastCutscene;
     public bool InCutscene;
-    private int cutscenePart;
+    public int cutscenePart;
     public int cutsceneNextRoute;
     public bool cutsceneLoopGoing;
     private bool cutsceneAdvance;
@@ -337,31 +337,33 @@ public class BattleSetup : MonoBehaviour
         return (!(InBattle || InCutscene || sr.canvasCollection.MenuPanelOpen || cutsceneLoopGoing));
     }
 
-    public void DialogueBoxPrepare(CutscenePart part, bool next)
+    public void DialogueBoxPrepare(CutPart part, bool next)
     {
         sr.canvasCollection.RefreshDialogueBox();
         dialogueBoxOpen = true;
         dialogueBoxNext = next;
-        if (part.type == CutscenePart.PartType.Dialogue)
+        if (part.cutPartType == CutPartType.Dialogue)
         {
-            sr.canvasCollection.DialogueText.text = part.text;
+            CutPart_Dialogue part_D = (CutPart_Dialogue)part;
+            sr.canvasCollection.DialogueText.text = part_D.text;
         }
-        else if (part.type == CutscenePart.PartType.Choice)
+        else if (part.cutPartType == CutPartType.Choice)
         {
+            CutPart_Choice part_C = (CutPart_Choice)part;
             choiceOpen = true;
 
-            sr.canvasCollection.DialogueText.text = part.text;
-            sr.canvasCollection.Choice1Button.SetActive(part.useChoice1);
-            sr.canvasCollection.Choice2Button.SetActive(part.useChoice2);
-            sr.canvasCollection.Choice3Button.SetActive(part.useChoice3);
+            sr.canvasCollection.DialogueText.text = part_C.text;
+            sr.canvasCollection.Choice1Button.SetActive(part_C.useChoice1);
+            sr.canvasCollection.Choice2Button.SetActive(part_C.useChoice2);
+            sr.canvasCollection.Choice3Button.SetActive(part_C.useChoice3);
 
-            sr.canvasCollection.Choice1Text.text = part.choice1Text;
-            sr.canvasCollection.Choice2Text.text = part.choice2Text;
-            sr.canvasCollection.Choice3Text.text = part.choice3Text;
+            sr.canvasCollection.Choice1Text.text = part_C.choice1Text;
+            sr.canvasCollection.Choice2Text.text = part_C.choice2Text;
+            sr.canvasCollection.Choice3Text.text = part_C.choice3Text;
 
-            sr.canvasCollection.Choice1Route = CutsceneFindRoute(part.choice1Route);
-            sr.canvasCollection.Choice2Route = CutsceneFindRoute(part.choice2Route);
-            sr.canvasCollection.Choice3Route = CutsceneFindRoute(part.choice3Route);
+            sr.canvasCollection.Choice1Route = CutsceneFindRoute(part_C.choice1Route);
+            sr.canvasCollection.Choice2Route = CutsceneFindRoute(part_C.choice2Route);
+            sr.canvasCollection.Choice3Route = CutsceneFindRoute(part_C.choice3Route);
 
             sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Choice Panel", UITransition.State.Enable);
         }
@@ -377,7 +379,7 @@ public class BattleSetup : MonoBehaviour
         //Debug.Log("Finding route in cutscene: " + cutscene.cutsceneName);
         for (int i = 0; i < cutscene.parts.Count; i++)
         {
-            if (cutscene.parts[i].title == route && cutscene.parts[i].type == CutscenePart.PartType.ROUTE_START) return i;
+            if (cutscene.parts[i].partTitle == route && cutscene.parts[i].cutPartType == CutPartType.ROUTE_START) return i;
         }
         if (route != "") Debug.Log("Unable To Find Route: " + route);
         return 0;
@@ -399,218 +401,11 @@ public class BattleSetup : MonoBehaviour
                 
                 if (cutscenePart < lastCutscene.parts.Count)
                 {
-                    CutscenePart part = GetCurrentCutscenePart();
-                    sr.eventLog.AddEvent("Cutscene Part " + (cutscenePart+1) + "/" + lastCutscene.parts.Count + " \"" + part.name + "\"");
+                    CutPart part = GetCurrentCutscenePart();
+                    sr.eventLog.AddEvent("Cutscene Part " + (cutscenePart+1) + "/" + lastCutscene.parts.Count + " \"" + part.partTitle + "\"");
+
+                    part.PlayPart(sr);
                     
-                    switch (part.type)
-                    {
-                        default:
-                            AdvanceCutscene();
-                        break;
-                        case CutscenePart.PartType.Movement:
-                            if (part.movePlayer) sr.playerLogic.move.StartCutsceneMove(part);
-                            else part.moveScript.StartCutsceneMove(part);
-                        break;
-
-                        case CutscenePart.PartType.Choice:
-                            sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Choice Panel", UITransition.State.Enable);
-                            goto case CutscenePart.PartType.Dialogue;
-                        case CutscenePart.PartType.Dialogue:
-                            bool next = true;
-                            if (cutscenePart+1 == lastCutscene.parts.Count)
-                            {
-                                next = false;
-                            }
-                            else if (lastCutscene.parts[cutscenePart+1].type != CutscenePart.PartType.Dialogue && lastCutscene.parts[cutscenePart+1].type != CutscenePart.PartType.Choice)
-                            {
-                                next = false;
-                            }
-                            DialogueBoxPrepare(part, next);
-                        break;
-
-                        case CutscenePart.PartType.Battle:
-                            if (part.postBattleCutscene)
-                            {
-                                cutsceneAfterBattle = new PackedCutscene(part.cutsceneAfterBattle);
-                                cutsceneAfterBattleRoute = CutsceneFindRoute(cutsceneAfterBattle, part.routeAfterBattle);
-                            }
-                            if (!part.trainerLogic.defeated && !part.trainerLogic.engaged)
-                            {
-                                part.trainerLogic.StartTrainerBattle();
-                            }
-                            AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.Wait:
-                            waitTime = part.waitTime;
-                            StartCoroutine(cutsceneWait(transform));
-                        break;
-
-                        case CutscenePart.PartType.Animation:
-                            part.animationActor.animHijack = true;
-                            part.animationActor.animTime = 0;
-                            part.animationActor.animationType = part.animationActor.animationSet.GetAnimationName(part.animationPlay);
-                            AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.HealParty:
-                            for (int i = 0; i < PlayerLunenTeam.Count; i++)
-                            {
-                                PlayerLunenTeam[i].GetComponent<Monster>().Health.z = PlayerLunenTeam[i].GetComponent<Monster>().GetMaxHealth();
-                            }
-                            AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.SetSpawn:
-                            respawnScene = lastOverworld;
-                            respawnLocation = sr.playerLogic.gameObject.transform.position;
-                            respawnDirection = sr.playerLogic.move.lookDirection;
-                            AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.ChangeScene:
-                            switch(part.newSceneType)
-                            {
-                                case CutscenePart.NewSceneType.Respawn:
-                                    playerDead = false;
-                                    NewOverworldAt(respawnScene, respawnLocation, respawnDirection);
-                                break;
-                                case CutscenePart.NewSceneType.ToEntrance:
-                                    NewOverworldAt(part.newScene.ScenePath, part.newSceneEntranceIndex);
-                                break;
-                                case CutscenePart.NewSceneType.ToPosition:
-                                    NewOverworldAt(part.newScene.ScenePath, part.newScenePosition, part.newSceneDirection);
-                                break;
-                            }
-                            //AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.NewCutscene:
-                            switch(part.newCutsceneType)
-                            {
-                                case CutscenePart.NewCutsceneType.Global:
-                                    CutsceneStartLite(new PackedCutscene(part.cutsceneGlobal), part.cutsceneRoute);
-                                break;
-
-                                case CutscenePart.NewCutsceneType.SceneBased:
-                                    if (sr.sceneAttributes.sceneCutscenes.Count == 0)
-                                    {
-                                        AdvanceCutscene();
-                                    }
-                                    else
-                                    {
-                                        int nextcutscene = part.cutsceneIndex;
-                                        if (sr.sceneAttributes.sceneCutscenes.Count <= nextcutscene) nextcutscene = 0;
-                                        CutsceneStartLite(new PackedCutscene(sr.sceneAttributes.sceneCutscenes[part.cutsceneIndex]), part.cutsceneRoute);
-                                    }
-                                    
-                                break;
-
-                                case CutscenePart.NewCutsceneType.Local:
-                                    CutsceneStartLite(new PackedCutscene(part.cutsceneLocal), part.cutsceneRoute);
-                                break;
-
-                                default:
-                                    Debug.Log("[ERROR] NULL CUTSCENE");
-                                    AdvanceCutscene();
-                                break;
-                                
-                            }
-                        break;
-
-                        case CutscenePart.PartType.SetPanel:
-                            if (part.panelState == UITransition.State.Enable)
-                            {
-                                switch(part.panelSelect)
-                                {
-                                    default:
-                                        sr.canvasCollection.OpenState(part.panelSelect);
-                                        AdvanceCutscene();
-                                    break;
-                                    case CanvasCollection.UIState.Party:
-                                        sr.canvasCollection.partyPanelOpenForBattle = true;
-                                        sr.canvasCollection.OpenPartyWindow();
-                                        //CutsceneStartLite(new PackedCutscene(sr.sceneAttributes.sceneCutscenes[part.cutsceneIndex]), part.cutsceneRoute, -1);
-                                    break;
-                                    case CanvasCollection.UIState.Battle:
-                                        sr.canvasCollection.OpenState(part.panelSelect);
-                                        AdvanceCutscene();
-                                    break;
-                                }
-                            }
-                            else
-                            {
-                                switch(part.panelSelect)
-                                {
-                                    default:
-                                        sr.canvasCollection.CloseState(part.panelSelect);
-                                        AdvanceCutscene();
-                                    break;
-                                    case CanvasCollection.UIState.Battle:
-                                        sr.canvasCollection.CloseState(part.panelSelect);
-                                        AdvanceCutscene();
-                                    break;
-                                }
-                            }
-                            
-                        break;
-
-                        case CutscenePart.PartType.CheckBattleOver:
-                            if (sr.director.EnemyLunenAlive.Count == 0) sr.battleSetup.PlayerWin();
-                            else
-                            {
-                                sr.canvasCollection.OpenState(CanvasCollection.UIState.Battle);
-                                sr.canvasCollection.EnsureValidTarget();
-                                AdvanceCutscene();
-                            }
-                            
-                            
-                        break;
-
-                        case CutscenePart.PartType.ObtainItem:
-                            sr.inventory.AddItem(part.itemObtained, part.itemAmount);
-                            AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.ObtainLunen:
-                            GameObject go = sr.generateMonster.GenerateLunen(part.lunenObtained, part.lunenLevel);
-                            //go.GetComponent<Monster>().MonsterTeam = Director.Team.PlayerTeam;
-                            PlayerLunenTeam.Add(go);
-                            go.transform.SetParent(transform);
-                            AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.ChangeRoute:
-                            CutsceneChangeInternal(CutsceneFindRoute(part.newRoute));
-                            
-                            AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.END:
-                            CutsceneChangeInternal(lastCutscene.parts.Count);
-                            AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.CaptureWildLunen:
-                            sr.director.CaptureLunen(attemptToCaptureMonster);
-                            AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.SetAsCollected:
-                            GuidList.Add(part.guidSet.GetGuid());
-                            AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.Destroy:
-                            Destroy(part.destroyObject);
-                            AdvanceCutscene();
-                        break;
-
-                        case CutscenePart.PartType.SetNewSprite:
-                            part.spriteRenderer.sprite = part.newSprite;
-                            AdvanceCutscene();
-                        break;
-                    }
                     if (part.startNextSimultaneous)
                     {
                         AdvanceCutscene();
@@ -753,8 +548,13 @@ public class BattleSetup : MonoBehaviour
         return false;
     }
 
-    public CutscenePart GetCurrentCutscenePart()
+    public CutPart GetCurrentCutscenePart()
     {
         return lastCutscene.parts[cutscenePart];
+    }
+
+    public void DestroyAnObject(GameObject _index)
+    {
+        Destroy(_index);
     }
 }

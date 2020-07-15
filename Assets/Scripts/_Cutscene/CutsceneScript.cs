@@ -9,6 +9,5 @@ public class CutsceneScript : ScriptableObject
     [Header("Edit Cutscenes With Window->Cutscene Editor!")]
     
     public bool stopsBattle;
-    public bool showAllData;
-    public List<CutscenePart> parts;
+    [SerializeReference] public List<CutPart> parts;
 }

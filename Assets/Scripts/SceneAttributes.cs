@@ -29,7 +29,7 @@ public class SceneAttributes : MonoBehaviour
 
         if (sr.battleSetup.InCutscene)
         {
-            if (sr.battleSetup.GetCurrentCutscenePart().type == CutscenePart.PartType.ChangeScene)
+            if (sr.battleSetup.GetCurrentCutscenePart().cutPartType == CutPartType.ChangeScene)
             {
                 sr.battleSetup.AdvanceCutscene();
             }

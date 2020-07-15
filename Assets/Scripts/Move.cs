@@ -122,12 +122,13 @@ public class Move : MonoBehaviour
         }
     }
     
-    public void StartCutsceneMove(CutscenePart part)
+    public void StartCutsceneMove(CutPart _part)
     {
+        CutPart_Movement part = (CutPart_Movement)_part;
         sr.eventLog.AddEvent("Started Cutscene Move!");
         npcMove = true;
         cutsceneMoveSpaces = npcFallbackMaxMoves;
-        if (part.moveType == CutscenePart.MoveType.ToSpaces)
+        if (part.moveType == MoveType.ToSpaces)
         {
             cutsceneMoveSpaces = part.spacesToMove;
         }
