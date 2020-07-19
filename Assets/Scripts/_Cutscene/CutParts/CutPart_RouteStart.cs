@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEditor;
 
 [System.Serializable]
-public class CutPart_ROUTE_START : CutPart
+public class CutPart_RouteStart : CutPart
 {
     //Standard Values
     [SerializeField] public string _name = "";
-    public static CutPartType _type = CutPartType.ROUTE_START;
+    public static CutPartType _type = CutPartType.RouteStart;
     public string _title = ("New " + _type.ToString());
     public bool _startNextSimultaneous;
 
@@ -45,7 +45,7 @@ public class CutPart_ROUTE_START : CutPart
 
     public void Duplicate (CutPart cp)
     {
-        CutPart_ROUTE_START _cp = (CutPart_ROUTE_START)cp;
+        CutPart_RouteStart _cp = (CutPart_RouteStart)cp;
 
         _title = _cp._title;
         _startNextSimultaneous = _cp.startNextSimultaneous;
@@ -59,7 +59,7 @@ public class CutPart_ROUTE_START : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
 
         }

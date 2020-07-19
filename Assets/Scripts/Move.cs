@@ -33,11 +33,6 @@ public class Move : MonoBehaviour
     public float moveSpeed;
     public float gridSize;
     public float playerSize;
-    private enum Orientation {
-        Horizontal,
-        Vertical
-    };
-    private Orientation gridOrientation = Orientation.Vertical;
     private Vector2 input;
     private Vector2 last;
     public bool isMoving = false;

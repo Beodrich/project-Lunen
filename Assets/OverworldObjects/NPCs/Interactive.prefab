@@ -46,21 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parts:
-    Collection:
-    - name: Text
-      startNextSimultaneous: 0
-      type: 1
-      moveScript: {fileID: 0}
-      moveInFacingDirection: 1
-      movementDirection: 0
-      moveType: 0
-      colliderTag: Player
-      spacesToMove: 0
-      triggerType: 0
-      trainerLogic: {fileID: 0}
-      text: Hi! I'm a thing!
-      trainerEncounter: {fileID: 0}
+  cutsceneName: 
+  stopsBattle: 0
+  parts: []
+  references:
+    version: 1
 --- !u!212 &1168932318292691354
 SpriteRenderer:
   m_ObjectHideFlags: 0

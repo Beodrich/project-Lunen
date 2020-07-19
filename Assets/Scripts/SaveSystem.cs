@@ -57,9 +57,30 @@ public class GameData
         public int itemAmount;
     }
 
+    [Serializable]
+    public class TriggerSet
+    {
+        public string setName;
+        public List<TriggerSave> triggerParts = new List<TriggerSave>();
+    }
+
+    [Serializable]
+    public class TriggerSave
+    {
+        public string triggerTITLE;
+        public TriggerTypes triggerType;
+
+        public bool triggerBool;
+        public int triggerInt;
+        public float triggerFloat;
+        public double triggerDouble;
+        public string triggerString;
+    }
+
     public List<PlayerLunen> PlayerTeam;
     public List<InventoryItem> InventoryItems;
     public List<System.Guid> GuidList;
+    public List<TriggerSet> SaveTriggers;
     public float positionX;
     public float positionY;
     public string currentScene;
@@ -102,6 +123,26 @@ public class GameData
             a.itemIndex = sr.database.ItemToIndex(currentItem.item);
             a.itemAmount = currentItem.amount;
             InventoryItems.Add(a);
+        }
+
+        SaveTriggers = new List<TriggerSet>();
+        for (int i = 0; i < sr.database.GlobalStoryTriggerList.Count; i++)
+        {
+            TriggerSet set = new TriggerSet();
+            set.setName = sr.database.GlobalStoryTriggerList[i].name;
+            foreach (TriggerPart part in sr.database.GlobalStoryTriggerList[i].triggerParts)
+            {
+                TriggerSave save = new TriggerSave();
+                save.triggerTITLE = part.title;
+                save.triggerType = part.type;
+                save.triggerBool = part.triggerBool;
+                save.triggerInt = part.triggerInt;
+                save.triggerFloat = part.triggerFloat;
+                save.triggerDouble = part.triggerDouble;
+                save.triggerString = part.triggerString;
+                set.triggerParts.Add(save);
+            }
+            SaveTriggers.Add(set);
         }
 
         GuidList = sr.battleSetup.GuidList;

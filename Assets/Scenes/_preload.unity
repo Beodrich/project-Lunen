@@ -8173,7 +8173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e4880976a7b4b2cadaa6855dac3c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLines: 11
+  maxLines: 1
   myFont: {fileID: 12800000, guid: 4a599d4d38a544cd39bd67ebfe5a60c5, type: 3}
   fadeOutTime: 3
   hideTime: 0
@@ -36310,9 +36310,9 @@ MonoBehaviour:
   lastCutscene:
     cutsceneName: 
     stopsBattle: 0
-    showAllData: 0
     parts: []
   InCutscene: 0
+  cutscenePart: 0
   cutsceneNextRoute: 0
   cutsceneLoopGoing: 0
   dialogueBoxOpen: 0
@@ -36330,7 +36330,6 @@ MonoBehaviour:
   cutsceneAfterBattle:
     cutsceneName: 
     stopsBattle: 0
-    showAllData: 0
     parts: []
   cutsceneAfterBattleRoute: 0
   waitTime: 0
@@ -36342,6 +36341,8 @@ MonoBehaviour:
   playerDead: 0
   cutsceneStoppedBattle: 0
   attemptToCaptureMonster: {fileID: 0}
+  references:
+    version: 1
 --- !u!1 &8082643487578673647
 GameObject:
   m_ObjectHideFlags: 0
@@ -36378,9 +36379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701005b485a7d41988b45dbb49858460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listOfItems:
-  - item: {fileID: 11400000, guid: 99a4b3e8ff9bc467db0ed96253e84e7e, type: 2}
-    amount: 3
+  listOfItems: []
   requestedItems: []
   currentRequestedType: 0
   itemCap: 0

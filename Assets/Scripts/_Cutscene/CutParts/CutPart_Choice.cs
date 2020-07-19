@@ -97,10 +97,9 @@ public class CutPart_Choice : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
-            GUILayout.Label("Cutscene Text: ");
-            text = EditorGUILayout.TextArea(text);
+            text = EditorGUILayout.TextArea(text, GUILayout.MinHeight(100));
             GUILayout.Space(5);
 
             //GuiLine(2);

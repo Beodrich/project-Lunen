@@ -96,8 +96,10 @@ public class Action : ScriptableObject
                     break;
             }
         }
-        loopback.director.DirectorTimeToWait = TimePausePeriod;
-        loopback.director.DirectorTimeFlowing = false;
+        loopback.database.SetTriggerValue("BattleVars/AnimationTime", TimePausePeriod);
+        loopback.database.SetTriggerValue("BattleVars/AttackLunenName", MonsterUser.Nickname);
+        loopback.database.SetTriggerValue("BattleVars/AttackLunenAction", name);
+        loopback.battleSetup.StartCutscene(loopback.database.GetPackedCutscene("LunenAttack"));
         MonsterUser.EndTurn();
         
     }

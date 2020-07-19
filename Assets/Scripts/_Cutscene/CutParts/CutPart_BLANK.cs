@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEditor;
 
 [System.Serializable]
-public class CutPart_BLANK : CutPart
+public class CutPart_Blank : CutPart
 {
     //Standard Values
     [SerializeField] public string _name = "";
-    public static CutPartType _type = CutPartType.BLANK;
+    public static CutPartType _type = CutPartType.Blank;
     public string _title = ("New " + _type.ToString());
     public bool _startNextSimultaneous;
 
@@ -45,7 +45,7 @@ public class CutPart_BLANK : CutPart
 
     public void Duplicate (CutPart cp)
     {
-        CutPart_BLANK _cp = (CutPart_BLANK)cp;
+        CutPart_Blank _cp = (CutPart_Blank)cp;
 
         _title = _cp._title;
         _startNextSimultaneous = _cp.startNextSimultaneous;
@@ -57,7 +57,7 @@ public class CutPart_BLANK : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             
         }

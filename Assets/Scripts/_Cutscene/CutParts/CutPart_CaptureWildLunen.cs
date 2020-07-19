@@ -62,7 +62,7 @@ public class CutPart_CaptureWildLunen : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
         }
     #endif

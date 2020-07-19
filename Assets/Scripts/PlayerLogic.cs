@@ -6,7 +6,7 @@ public class PlayerLogic : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
 
-    public AnimationSet animationSet;
+    public List<AnimationSet> playerAnimSets;
 
     public bool inGrass = false;
     public GameObject grassObject;
@@ -39,7 +39,9 @@ public class PlayerLogic : MonoBehaviour
         sr.playerLogic = this;
         sr.cameraFollow.Sel = this.gameObject;
 
-        move.animationSet = animationSet;
+        int animChoose = (int)sr.database.GetTriggerValue("PlayerInfo/AnimSet");
+        if (animChoose >= playerAnimSets.Count) animChoose = 0;
+        move.animationSet = playerAnimSets[animChoose];
     }
 
     // Update is called once per frame

@@ -64,7 +64,7 @@ public class CutPart_ChangeRoute : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             newRoute = EditorGUILayout.TextField("Change Route To: ", newRoute);
         }

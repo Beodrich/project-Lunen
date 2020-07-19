@@ -78,23 +78,20 @@ public class CutPart_Battle : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
-            trainerLogic = EditorGUILayout.ObjectField("Trainer Logic Script: ", trainerLogic, typeof(TrainerLogic)) as TrainerLogic;
+            trainerLogic = (TrainerLogic)EditorGUILayout.ObjectField("Trainer Logic Script: ", trainerLogic, typeof(TrainerLogic), true);
                 
             postBattleCutscene = EditorGUILayout.Toggle("Post Battle Cutscene: ", postBattleCutscene);
-            EditorGUIUtility.fieldWidth = 120;
-            EditorGUIUtility.labelWidth = 80;
             GUILayout.BeginHorizontal();
             if (postBattleCutscene)
             {
-                cutsceneAfterBattle = EditorGUILayout.ObjectField("Cutscene: ", cutsceneAfterBattle, typeof(Cutscene)) as Cutscene;
-                EditorGUIUtility.labelWidth = 60;
-                routeAfterBattle = EditorGUILayout.TextField("Route: ", routeAfterBattle);
+                cutsceneAfterBattle = (Cutscene)EditorGUILayout.ObjectField(cutsceneAfterBattle, typeof(Cutscene), true);
+                int destination = cutsceneAfterBattle.GetRouteIndex(routeAfterBattle);
+                if (destination == -1) destination = 0;
+                routeAfterBattle = cutsceneAfterBattle.GetRouteString(EditorGUILayout.Popup(destination, cutsceneAfterBattle.GetListOfRoutes()));
             }
             GUILayout.EndHorizontal();
-            EditorGUIUtility.fieldWidth = 0;
-            EditorGUIUtility.labelWidth = 0;
         }
     #endif
 }

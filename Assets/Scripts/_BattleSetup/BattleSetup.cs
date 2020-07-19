@@ -167,7 +167,7 @@ public class BattleSetup : MonoBehaviour
         sr.canvasCollection.OpenState(CanvasCollection.UIState.Battle);
         sr.canvasCollection.OpenState(CanvasCollection.UIState.BattleCharacter);
         InBattle = true;
-        sr.canvasCollection.Player1BattleFieldSprites[0].SetAnimationSet(sr.playerLogic.animationSet);
+        sr.canvasCollection.Player1BattleFieldSprites[0].SetAnimationSet(sr.playerLogic.move.animationSet);
     }
 
     public void ExitTrainerBattle(bool win)
@@ -345,14 +345,20 @@ public class BattleSetup : MonoBehaviour
         if (part.cutPartType == CutPartType.Dialogue)
         {
             CutPart_Dialogue part_D = (CutPart_Dialogue)part;
-            sr.canvasCollection.DialogueText.text = part_D.text;
+
+            string textInput = part_D.text;
+            textInput = sr.database.DialogueReplace(textInput);
+            sr.canvasCollection.DialogueText.text = textInput;
         }
         else if (part.cutPartType == CutPartType.Choice)
         {
             CutPart_Choice part_C = (CutPart_Choice)part;
             choiceOpen = true;
 
-            sr.canvasCollection.DialogueText.text = part_C.text;
+            string textInput = part_C.text;
+            textInput = sr.database.DialogueReplace(textInput);
+            sr.canvasCollection.DialogueText.text = textInput;
+
             sr.canvasCollection.Choice1Button.SetActive(part_C.useChoice1);
             sr.canvasCollection.Choice2Button.SetActive(part_C.useChoice2);
             sr.canvasCollection.Choice3Button.SetActive(part_C.useChoice3);
@@ -379,7 +385,7 @@ public class BattleSetup : MonoBehaviour
         //Debug.Log("Finding route in cutscene: " + cutscene.cutsceneName);
         for (int i = 0; i < cutscene.parts.Count; i++)
         {
-            if (cutscene.parts[i].partTitle == route && cutscene.parts[i].cutPartType == CutPartType.ROUTE_START) return i;
+            if (cutscene.parts[i].partTitle == route && cutscene.parts[i].cutPartType == CutPartType.RouteStart) return i;
         }
         if (route != "") Debug.Log("Unable To Find Route: " + route);
         return 0;
@@ -402,7 +408,7 @@ public class BattleSetup : MonoBehaviour
                 if (cutscenePart < lastCutscene.parts.Count)
                 {
                     CutPart part = GetCurrentCutscenePart();
-                    sr.eventLog.AddEvent("Cutscene Part " + (cutscenePart+1) + "/" + lastCutscene.parts.Count + " \"" + part.partTitle + "\"");
+                    sr.eventLog.AddEvent("Cutscene Part " + (cutscenePart+1) + "/" + lastCutscene.parts.Count + " \"" + part.listDisplay + "\"");
 
                     part.PlayPart(sr);
                     

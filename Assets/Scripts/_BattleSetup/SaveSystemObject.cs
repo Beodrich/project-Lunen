@@ -49,6 +49,23 @@ public class SaveSystemObject : MonoBehaviour
             foreach (GameData.InventoryItem a in gameData.InventoryItems)
                 sr.inventory.listOfItems.Add(new Inventory.InventoryEntry(sr.database.IndexToItem(a.itemIndex), a.itemAmount));
 
+            //Restore Save Triggers
+            foreach (GameData.TriggerSet triggerSet in gameData.SaveTriggers)
+            {
+                StoryTrigger st = sr.database.StringToStoryTrigger(triggerSet.setName);
+                foreach (GameData.TriggerSave save in triggerSet.triggerParts)
+                {
+                    switch (save.triggerType)
+                    {
+                        case TriggerTypes.Bool: st.SetTriggerValue(save.triggerTITLE, save.triggerBool); break;
+                        case TriggerTypes.Int: st.SetTriggerValue(save.triggerTITLE, save.triggerInt); break;
+                        case TriggerTypes.Float: st.SetTriggerValue(save.triggerTITLE, save.triggerFloat); break;
+                        case TriggerTypes.Double: st.SetTriggerValue(save.triggerTITLE, save.triggerDouble); break;
+                        case TriggerTypes.String: st.SetTriggerValue(save.triggerTITLE, save.triggerString); break;
+                    }
+                }
+            }
+
             //Then give the player all their lunen
             for (int i = 0; i < gameData.PlayerTeam.Count; i++)
             {

@@ -46,4 +46,13 @@ public class GameScene : ScriptableObject
         }
         return -1;
     }
+
+    public string IntToGuid(int index)
+    {
+        if (index < entranceList.Count)
+        {
+            return entranceList[index].guidString;
+        }
+        else return "ERROR";
+    }
 }

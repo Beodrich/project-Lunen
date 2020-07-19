@@ -54,7 +54,7 @@ public class DoorEditor : Editor
             GUILayout.Label("Door: " + door.name, EditorStyles.boldLabel);
             GUILayout.Space(20);
 
-            door.targetScene = EditorGUILayout.ObjectField("Scene: ", door.targetScene, typeof(GameScene)) as GameScene;
+            door.targetScene = (GameScene)EditorGUILayout.ObjectField("Scene: ", door.targetScene, typeof(GameScene), true);
             
             if (door.targetScene != null)
             {
@@ -116,19 +116,19 @@ public class DoorEditor : Editor
                 
             }
             
-            serializedObject.ApplyModifiedProperties();
-            
-            
-
-            if (GUI.changed)
+            if (door != null)
             {
-                door.attributes.RefreshDoors();
-                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
-                EditorUtility.SetDirty(door);
-                EditorUtility.SetDirty(door.attributes);
-                EditorUtility.SetDirty(door.attributes.thisScene);
+                serializedObject.ApplyModifiedProperties();
+                if (GUI.changed)
+                {
+                    door.attributes.RefreshDoors();
+                    EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+                    EditorUtility.SetDirty(door);
+                    EditorUtility.SetDirty(door.attributes);
+                    EditorUtility.SetDirty(door.attributes.thisScene);
 
-                AssetDatabase.SaveAssets();
+                    AssetDatabase.SaveAssets();
+                }
             }
         }
         
@@ -156,7 +156,7 @@ public class DoorEditor : Editor
         {
             if (door == null)
             {
-                Debug.Log("Test!");
+                //Debug.Log("Test!");
             }
         }
     }

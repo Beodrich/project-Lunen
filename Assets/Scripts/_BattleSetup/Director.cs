@@ -167,11 +167,13 @@ public class Director : MonoBehaviour
     public void LunenHasDied(Monster lunen)
     {
         lunen.LunenOut = false;
+        sr.database.SetTriggerValue("BattleVars/DeadLunen", lunen.Nickname);
         switch (lunen.MonsterTeam)
         {
             case Team.PlayerTeam:
+                sr.database.SetTriggerValue("BattleVars/DeadLunenYours", true);
+                sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Lunen Defeated"));
                 PlayerLunenAlive = LoadPartyAlive(PlayerLunenMonsters, Team.PlayerTeam);
-                if (PlayerLunenAlive.Count == 0) sr.battleSetup.PlayerLose();
                 break;
             case Team.EnemyTeam:
                 
@@ -182,7 +184,7 @@ public class Director : MonoBehaviour
                         PlayerLunenAlive[i].GetExp(CalculateExpPayout(lunen, PlayerLunenAlive[i]));
                     }
                 }
-                sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Enemy Lunen Defeated"));
+                sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Lunen Defeated"));
                 EnemyLunenAlive = LoadPartyAlive(EnemyLunenMonsters, Team.EnemyTeam);
                 break;
         }
@@ -197,6 +199,7 @@ public class Director : MonoBehaviour
         //TODO: Add chance to capture
         Monster monster = GetMonsterOut(Team.EnemyTeam, sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
         sr.battleSetup.attemptToCaptureMonster = monster;
+        sr.database.SetTriggerValue("BattleVars/CaptureLunenName", monster.Nickname);
 
         float captureValue = GetCaptureValue(monster, ballModifier);
         List<float> captureValues = GetShakeValues(captureValue, 3);
@@ -208,13 +211,15 @@ public class Director : MonoBehaviour
 
         if (catchChance <= captureValue) //Successful capture condition: Catch Chance Within Capture Value
         {
-            sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Lunen Capture"), "Capture Success");
+            sr.database.SetTriggerValue("BattleVars/CaptureLunenShakes", 4);
+            
         }
         else
         {
             int captureWobble = Random.Range(0,4);
-            sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Lunen Capture"), "Wobbles: " + captureWobble);
+            sr.database.SetTriggerValue("BattleVars/CaptureLunenShakes", captureWobble);
         }
+        sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Lunen Capture"));
     }
 
     public float GetCaptureValue(Monster monster, float ballModifier)

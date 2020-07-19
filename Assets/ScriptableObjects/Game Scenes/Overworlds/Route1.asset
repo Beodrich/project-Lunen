@@ -16,18 +16,6 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: a12c5cfc2bf7548f3848ab6d9d0385c5, type: 3}
     scenePath: Assets/Scenes/Overworlds/Route1.unity
   entranceList:
-  - name: LunenCenterDoor
-    position: {x: 25, y: 38, z: 0}
-    facingDirection: 2
-    guidString: 78451ace-aa73-4cdb-ba4b-92fa35c72da0
-  - name: LabDoor
-    position: {x: 18, y: 38, z: 0}
-    facingDirection: 2
-    guidString: 52afdae1-230f-4d5c-a3b9-ad3652034051
-  - name: House3Door
-    position: {x: 16, y: 38, z: 0}
-    facingDirection: 2
-    guidString: 157e7585-fa1d-48d7-a01f-970b94ee7bc6
   - name: CheckpointNorthDoorRight
     position: {x: 17, y: 25, z: 0}
     facingDirection: 0
@@ -36,15 +24,7 @@ MonoBehaviour:
     position: {x: 15, y: 25, z: 0}
     facingDirection: 0
     guidString: 090cb56f-9d61-4fba-9f48-4a3bc6c22744
-  - name: House2Door
-    position: {x: 12, y: 38, z: 0}
+  - name: LabDoor
+    position: {x: 37, y: 34, z: 0}
     facingDirection: 2
-    guidString: 438d7bb2-5f1f-4eb1-a8cc-1dcd8a2d89e6
-  - name: House1Door
-    position: {x: 9, y: 38, z: 0}
-    facingDirection: 2
-    guidString: 2006f9e5-2687-4b9d-b9cf-7638c458a4f2
-  - name: LunenCenterDoor4
-    position: {x: 28, y: 38, z: 0}
-    facingDirection: 2
-    guidString: 754d1de7-b4e2-43ed-a252-2970c273033b
+    guidString: 59297d48-6885-46e2-a397-608d2665e762

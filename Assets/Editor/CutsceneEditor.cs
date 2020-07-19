@@ -76,11 +76,9 @@ public class CutsceneEditor : Editor
 
                 //Draw Part Starts Here
 
-                DrawPart(cutscene.parts[index]);
-                GUILayout.Space(5);
-                GuiLine(3);
-                GUILayout.Space(5);
-                cutscene.stopsBattle = EditorGUILayout.Toggle("Cutscene Stops Battle: ", cutscene.stopsBattle);
+                
+                if (index < cutscene.parts.Count) DrawPart(cutscene.parts[index]);
+                
                 
             }
             else
@@ -110,6 +108,12 @@ public class CutsceneEditor : Editor
             GUILayout.Space(10);
         }
 
+        GUILayout.Space(5);
+        GUIScripts.GuiLine(3);
+        GUILayout.Space(5);
+        EditorGUILayout.LabelField("--- Cutscene Settings", EditorStyles.boldLabel);
+        cutscene.stopsBattle = EditorGUILayout.Toggle("Cutscene Stops Battle: ", cutscene.stopsBattle);
+
         GUILayout.Space(20);
         serializedObject.ApplyModifiedProperties();
         //selectedPart = GUILayout.SelectionGrid(selectedPart, partNames.ToArray(), 1, fontStyle);
@@ -123,13 +127,18 @@ public class CutsceneEditor : Editor
                 cutscene.parts[index].GetTitle();
             }
             EditorUtility.SetDirty(cutscene);
-            EditorSceneManager.MarkSceneDirty(cutscene.gameObject.scene);
+            var prefabStage = UnityEditor.Experimental.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage();
+            if (prefabStage != null)
+            {
+                EditorSceneManager.MarkSceneDirty(prefabStage.scene);
+            }
+            
         }
     }
 
     private void AddPart(int _index)
     {
-        CutPart newPart = GetNewPart(createCutType);
+        CutPart newPart = Cutscene.GetNewPart(createCutType);
         AddPart(newPart, _index);
     }
 
@@ -149,7 +158,7 @@ public class CutsceneEditor : Editor
 
     private void DuplicatePart(int _index)
     {
-        CutPart newPart = GetNewPart(cutscene.parts[_index].cutPartType);
+        CutPart newPart = Cutscene.GetNewPart(cutscene.parts[_index].cutPartType);
         newPart.Duplicate(cutscene.parts[_index]);
         AddPart(newPart, _index + 1);
     }
@@ -162,58 +171,19 @@ public class CutsceneEditor : Editor
 
     private void DrawPart(CutPart part)
     {
-        GUILayout.Space(10);
-        GuiLine(3);
-        GUILayout.Space(5);
-        part.partTitle = EditorGUILayout.TextField("Part Title: ", part.partTitle);
-
-        GUILayout.Space(10);
-
-        part.DrawInspectorPart();
-
-        GUILayout.Space(5);
-        part.startNextSimultaneous = EditorGUILayout.Toggle("Start Next Part Alongside: ", part.startNextSimultaneous);
-    }
-
-    private CutPart GetNewPart(CutPartType type)
-    {
-        switch (type)
+        if (part != null)
         {
-            default: return new CutPart_Dialogue();
-            case CutPartType.Dialogue: return new CutPart_Dialogue();
-            case CutPartType.Choice: return new CutPart_Choice();
-            case CutPartType.ROUTE_START: return new CutPart_ROUTE_START();
-            case CutPartType.END: return new CutPart_END();
-            case CutPartType.Movement: return new CutPart_Movement();
-            case CutPartType.Animation: return new CutPart_Animation();
-            case CutPartType.Battle: return new CutPart_Battle();
-            case CutPartType.Wait: return new CutPart_Wait();
-            case CutPartType.HealParty: return new CutPart_HealParty();
-            case CutPartType.BLANK: return new CutPart_BLANK();
-            case CutPartType.SetSpawn: return new CutPart_SetSpawn();
-            case CutPartType.ChangeRoute: return new CutPart_ChangeRoute();
-            case CutPartType.ChangeScene: return new CutPart_ChangeScene();
-            case CutPartType.ChangeCameraFollow: return new CutPart_ChangeCameraFollow();
-            case CutPartType.NewCutscene: return new CutPart_NewCutscene();
-            case CutPartType.ObtainItem: return new CutPart_ObtainItem();
-            case CutPartType.ObtainLunen: return new CutPart_ObtainLunen();
-            case CutPartType.SetAsCollected: return new CutPart_SetAsCollected();
-            case CutPartType.SetPanel: return new CutPart_SetPanel();
-            case CutPartType.CheckBattleOver: return new CutPart_CheckBattleOver();
-            case CutPartType.CaptureWildLunen: return new CutPart_CaptureWildLunen();
-            case CutPartType.Destroy: return new CutPart_Destroy();
-            case CutPartType.SetNewSprite: return new CutPart_SetNewSprite();
+            GUILayout.Space(10);
+            GUIScripts.GuiLine(3);
+            GUILayout.Space(5);
+            part.partTitle = GUIScripts.TextField(part.partTitle, "Part Title Here (Blank Fills Automatically)");
+
+            GUILayout.Space(5);
+            GUIScripts.GuiLine(1);
+            GUILayout.Space(5);
+
+            part.DrawInspectorPart(cutscene);
         }
-    }
-
-    void GuiLine( int i_height = 1 )
-    {
-
-        Rect rect = EditorGUILayout.GetControlRect(false, i_height );
-
-        rect.height = i_height;
-
-        EditorGUI.DrawRect(rect, new Color ( 0.5f,0.5f,0.5f, 1 ) );
     }
 
 }

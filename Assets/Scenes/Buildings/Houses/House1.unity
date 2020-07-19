@@ -463,20 +463,29 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: -5, y: 0, z: 0}
+  - first: {x: -6, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 14
-      m_TileSpriteIndex: 0
+      m_TileIndex: 15
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
-  - first: {x: -5, y: 2, z: 0}
+  - first: {x: -6, y: 2, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 14
-      m_TileSpriteIndex: 0
+      m_TileIndex: 15
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -6, y: 4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 12
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -484,8 +493,8 @@ Tilemap:
   - first: {x: -5, y: 4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 12
-      m_TileSpriteIndex: 12
+      m_TileIndex: 17
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -502,8 +511,8 @@ Tilemap:
   - first: {x: -3, y: 4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 17
-      m_TileSpriteIndex: 17
+      m_TileIndex: 12
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -696,26 +705,26 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: cf150f64e1eae4af2b4b48c6e542b2ca, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: e8c9d4a666fc94b9c9f77ef2daded96f, type: 2}
-  - m_RefCount: 7
+  - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: 8a2e52efb1ca1464c8684391a19b862b, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: c78922f08e343401f82387b55d171654, type: 2}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: 683b6fabb366444a6b61feb1f84dcaf2, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 683b6fabb366444a6b61feb1f84dcaf2, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 17838f0be59a54ad1bae255ce0a699b1, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 6d116e8b06c3f467eba09dac513df26a, type: 2}
   m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 6504575563358369570, guid: 47172c71f6a044caabd96394d5c9bbd7,
       type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 584513658500302164, guid: 47172c71f6a044caabd96394d5c9bbd7, type: 3}
   - m_RefCount: 1
@@ -742,7 +751,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -735704958039466920, guid: 47172c71f6a044caabd96394d5c9bbd7,
       type: 3}
-  - m_RefCount: 7
+  - m_RefCount: 8
     m_Data: {fileID: 5144130813237754926, guid: 47172c71f6a044caabd96394d5c9bbd7,
       type: 3}
   - m_RefCount: 1
@@ -761,7 +770,7 @@ Tilemap:
     m_Data: {fileID: 6788431004395763362, guid: 47172c71f6a044caabd96394d5c9bbd7,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 24
+  - m_RefCount: 25
     m_Data:
       e00: 1
       e01: 0
@@ -780,7 +789,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 24
+  - m_RefCount: 25
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -1951,6 +1960,15 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: -6, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 27
+      m_TileSpriteIndex: 27
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -5, y: -1, z: 0}
     second:
       serializedVersion: 2
@@ -2024,6 +2042,15 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
   - first: {x: 4, y: -1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 27
+      m_TileSpriteIndex: 27
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -6, y: 0, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 27
@@ -2113,6 +2140,15 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: -6, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 27
+      m_TileSpriteIndex: 27
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -5, y: 1, z: 0}
     second:
       serializedVersion: 2
@@ -2194,6 +2230,15 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: -6, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 27
+      m_TileSpriteIndex: 27
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -5, y: 2, z: 0}
     second:
       serializedVersion: 2
@@ -2267,6 +2312,15 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
   - first: {x: 4, y: 2, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 27
+      m_TileSpriteIndex: 27
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -6, y: 3, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 27
@@ -2754,7 +2808,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 8a2e52efb1ca1464c8684391a19b862b, type: 2}
   - m_RefCount: 15
     m_Data: {fileID: 11400000, guid: b024e8c10db4841b3af4d47c8275d9c9, type: 2}
-  - m_RefCount: 64
+  - m_RefCount: 69
     m_Data: {fileID: 11400000, guid: e52a7e479d29e49f4af59efd3c6f27cd, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -2813,11 +2867,11 @@ Tilemap:
   - m_RefCount: 15
     m_Data: {fileID: -7017742306744906509, guid: 47172c71f6a044caabd96394d5c9bbd7,
       type: 3}
-  - m_RefCount: 64
+  - m_RefCount: 69
     m_Data: {fileID: 7170172091038413538, guid: 47172c71f6a044caabd96394d5c9bbd7,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 84
+  - m_RefCount: 89
     m_Data:
       e00: 1
       e01: 0
@@ -2836,7 +2890,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 84
+  - m_RefCount: 89
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 0.8917869, g: 0.40774298, b: 0.54033923, a: 1}
@@ -3261,194 +3315,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1639921914
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3089258284872052784, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: animationSet
-      value: 
-      objectReference: {fileID: 11400000, guid: e13676cbff761491bb9fadf6177e649d,
-        type: 2}
-    - target: {fileID: 3089258284872052784, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: lookDirection
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599592, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Name
-      value: NPCTest (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599592, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1316929954379532978, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
-        type: 3}
-    - target: {fileID: 4012099485063599594, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599597, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[0].name
-      value: ' [Dialogue] Hi, I''m not going to let you in here yet! Just for your
-        own safety'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[0].type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[0].text
-      value: Hi, I'm not going to let you in here yet! Just for your own safety!
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[1].name
-      value: ' [Dialogue] REEEEEEEE'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[1].type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[1].text
-      value: REEEEEEEE
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[2].name
-      value: ' [Choice] REEEEEEEE'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[2].type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[2].text
-      value: REEEEEEEE
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[2].useChoice1
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[2].useChoice2
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[2].useChoice3
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[2].choice1Text
-      value: memes
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[2].choice2Text
-      value: memes2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485063599598, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: parts.Array.data[2].choice3Text
-      value: memes3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1316929954379532978, guid: 6a24bd7541761479db2dc7f3a4e2ea75,
-        type: 3}
-    - target: {fileID: 4012099485115908126, guid: ad50c7d85539d46b39477883f81f4184,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ad50c7d85539d46b39477883f81f4184, type: 3}
 --- !u!1 &2091022008
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,8 +3376,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   move: {fileID: 0}
-  animationSet: {fileID: 11400000, guid: 62bc6497e63744c848001c1e86ab5091, type: 2}
-  lookDirection: 1
+  animationSet: {fileID: 11400000, guid: 674883a702476450880dbf2d5a33172c, type: 2}
+  lookDirection: 2
 --- !u!114 &4012099485298018638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3530,7 +3396,7 @@ MonoBehaviour:
   pLogic: {fileID: 0}
   tLogic: {fileID: 0}
   spriteRenderer: {fileID: 4012099485298018741}
-  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  animationSet: {fileID: 11400000, guid: 674883a702476450880dbf2d5a33172c, type: 2}
   moveSpeed: 5
   gridSize: 1
   playerSize: 1
@@ -3589,400 +3455,94 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneName: 
   stopsBattle: 0
-  showAllData: 0
   parts:
-  - name: ' [Dialogue] Hi! I''m not a Nurse Joy, but I can still heal your lunen.'
-    title: 
-    type: 1
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    animationActor: {fileID: 0}
-    animationPlay: 0
-    guidSet: {fileID: 0}
-    destroyObject: {fileID: 0}
-    trainerEncounter: {fileID: 0}
-  - name: ' [SetSpawn] '
-    title: 
-    type: 11
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    animationActor: {fileID: 0}
-    animationPlay: 0
-    guidSet: {fileID: 0}
-    destroyObject: {fileID: 0}
-    trainerEncounter: {fileID: 0}
-  - name: ' [HealParty] '
-    title: 
-    type: 9
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    animationActor: {fileID: 0}
-    animationPlay: 0
-    guidSet: {fileID: 0}
-    destroyObject: {fileID: 0}
-    trainerEncounter: {fileID: 0}
-  - name: ' [SetPanel] EnableSceneSwitch'
-    title: EnableSceneSwitch
-    type: 19
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Your Lunen are fighting fit! Be safe out there!
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 10
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    animationActor: {fileID: 0}
-    animationPlay: 0
-    guidSet: {fileID: 0}
-    destroyObject: {fileID: 0}
-    trainerEncounter: {fileID: 0}
-  - name: ' [Wait] 3 seconds'
-    title: 3 seconds
-    type: 8
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 3
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    animationActor: {fileID: 0}
-    animationPlay: 0
-    guidSet: {fileID: 0}
-    destroyObject: {fileID: 0}
-    trainerEncounter: {fileID: 0}
-  - name: ' [SetPanel] DisableSceneSwitch'
-    title: DisableSceneSwitch
-    type: 19
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Your Lunen are fighting fit! Be safe out there!
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 10
-    panelState: 1
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    animationActor: {fileID: 0}
-    animationPlay: 0
-    guidSet: {fileID: 0}
-    destroyObject: {fileID: 0}
-    trainerEncounter: {fileID: 0}
-  - name: ' [Wait] 0.5 seconds'
-    title: 0.5 seconds
-    type: 8
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Hi! I'm not a Nurse Joy, but I can still heal your lunen.
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0.5
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    animationActor: {fileID: 0}
-    animationPlay: 0
-    guidSet: {fileID: 0}
-    destroyObject: {fileID: 0}
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Your Lunen are fighting fit! Be safe out there!'
-    title: 
-    type: 1
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Your Lunen are fighting fit! Be safe out there!
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    animationActor: {fileID: 0}
-    animationPlay: 0
-    guidSet: {fileID: 0}
-    destroyObject: {fileID: 0}
-    trainerEncounter: {fileID: 0}
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  references:
+    version: 1
+    00000000:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Hi, I can heal your Lunen for you!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Hi, I can heal your Lunen for you!
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000001:
+      type: {class: CutPart_SetPanel, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[SetPanel] Set SceneSwitch Panel To Enable'
+        _title: 
+        _startNextSimultaneous: 0
+        panelSelect: 10
+        panelState: 0
+    00000002:
+      type: {class: CutPart_Wait, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Wait] Wait 3s'
+        _title: 
+        _startNextSimultaneous: 0
+        waitTime: 3
+        useStoryTriggerTime: 0
+        trigger: {fileID: 0}
+        triggerPart: 
+    00000003:
+      type: {class: CutPart_HealParty, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[HealParty] New HealParty'
+        _title: New HealParty
+        _startNextSimultaneous: 0
+    00000004:
+      type: {class: CutPart_SetSpawn, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[SetSpawn] New SetSpawn'
+        _title: New SetSpawn
+        _startNextSimultaneous: 0
+    00000005:
+      type: {class: CutPart_SetPanel, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[SetPanel] Set SceneSwitch Panel To Disable'
+        _title: 
+        _startNextSimultaneous: 0
+        panelSelect: 10
+        panelState: 1
+    00000006:
+      type: {class: CutPart_Wait, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Wait] Wait 0.5s'
+        _title: 
+        _startNextSimultaneous: 0
+        waitTime: 0.5
+        useStoryTriggerTime: 0
+        trigger: {fileID: 0}
+        triggerPart: 
+    00000007:
+      type: {class: CutPart_Animation, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Animation] New Animation'
+        _title: New Animation
+        _startNextSimultaneous: 0
+        animationActor: {fileID: 4012099485298018638}
+        animationPlay: 2
+    00000008:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Stay safe out there!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Stay safe out there!
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
 --- !u!4 &4012099485298018738
 Transform:
   m_ObjectHideFlags: 0
@@ -3991,7 +3551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4012099485298018743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 3, z: 0}
+  m_LocalPosition: {x: 4, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4012099485417446467}

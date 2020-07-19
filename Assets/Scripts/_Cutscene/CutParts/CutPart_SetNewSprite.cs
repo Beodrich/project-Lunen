@@ -66,10 +66,10 @@ public class CutPart_SetNewSprite : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
-            spriteRenderer = EditorGUILayout.ObjectField("Object Sprite To Change: ", spriteRenderer, typeof(SpriteRenderer)) as SpriteRenderer;
-            newSprite = EditorGUILayout.ObjectField("New Sprite: ", newSprite, typeof(Sprite)) as Sprite;
+            spriteRenderer = (SpriteRenderer)EditorGUILayout.ObjectField("Object Sprite To Change: ", spriteRenderer, typeof(SpriteRenderer), true);
+            newSprite = (Sprite)EditorGUILayout.ObjectField("New Sprite: ", newSprite, typeof(Sprite), true);
         }
     #endif
 }

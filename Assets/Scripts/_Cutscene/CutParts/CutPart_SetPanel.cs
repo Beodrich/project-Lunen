@@ -9,7 +9,7 @@ public class CutPart_SetPanel : CutPart
     //Standard Values
     [SerializeField] public string _name = "";
     public static CutPartType _type = CutPartType.SetPanel;
-    public string _title = ("New " + _type.ToString());
+    public string _title = ("");
     public bool _startNextSimultaneous;
 
     public bool startNextSimultaneous
@@ -70,6 +70,11 @@ public class CutPart_SetPanel : CutPart
                     sr.canvasCollection.CloseState(panelSelect);
                     sr.battleSetup.AdvanceCutscene();
                 break;
+                case CanvasCollection.UIState.Dialogue:
+                    sr.canvasCollection.CloseState(panelSelect);
+                    sr.battleSetup.SubmitPressed();
+                    //sr.battleSetup.AdvanceCutscene();
+                break;
                 case CanvasCollection.UIState.Battle:
                     sr.canvasCollection.CloseState(panelSelect);
                     sr.battleSetup.AdvanceCutscene();
@@ -93,11 +98,15 @@ public class CutPart_SetPanel : CutPart
     {
         string start = "[" + _type + "]";
         string context = _title;
+        if (_title == "")
+        {
+            context = "Set " + panelSelect.ToString() + " Panel To " + panelState.ToString();
+        }
         _name = (start + " " + context);
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             panelSelect = (CanvasCollection.UIState)EditorGUILayout.EnumPopup("Panel: ",panelSelect);
             panelState = (UITransition.State)EditorGUILayout.EnumPopup("Set To: ", panelState);

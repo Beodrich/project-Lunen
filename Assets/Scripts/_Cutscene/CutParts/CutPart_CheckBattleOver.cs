@@ -40,7 +40,8 @@ public class CutPart_CheckBattleOver : CutPart
 
     public void PlayPart (SetupRouter sr)
     {
-        if (sr.director.EnemyLunenAlive.Count == 0) sr.battleSetup.PlayerWin();
+        if (sr.director.PlayerLunenAlive.Count == 0) sr.battleSetup.PlayerLose();
+        else if (sr.director.EnemyLunenAlive.Count == 0) sr.battleSetup.PlayerWin();
         else
         {
             sr.canvasCollection.OpenState(CanvasCollection.UIState.Battle);
@@ -65,7 +66,7 @@ public class CutPart_CheckBattleOver : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
 
         }

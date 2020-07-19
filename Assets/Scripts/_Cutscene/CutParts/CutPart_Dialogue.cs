@@ -38,6 +38,12 @@ public class CutPart_Dialogue : CutPart
 
     public string text;
 
+    //Temporary Values
+
+    public StoryTrigger trigger;
+    public string triggerPart;
+    public bool showFoldout;
+
     //Functions
 
     public void PlayPart (SetupRouter sr)
@@ -72,10 +78,36 @@ public class CutPart_Dialogue : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
-            GUILayout.Label("Cutscene Text: ");
-            text = EditorGUILayout.TextArea(text);
+            text = EditorGUILayout.TextArea(text, GUILayout.MinHeight(100));
+            
+            EditorGUILayout.Space(10);
+            showFoldout = EditorGUILayout.Foldout(showFoldout, "Insert Story Trigger Value");
+            if (showFoldout)
+            {
+                EditorGUILayout.BeginHorizontal();
+                trigger = (StoryTrigger)EditorGUILayout.ObjectField(trigger, typeof(StoryTrigger), false);
+                if (trigger != null)
+                {
+                    int part = trigger.GetTriggerPartIndex(triggerPart);
+                    if (part == -1) part = 0;
+                    string lastTriggerPart = triggerPart;
+                    triggerPart = trigger.triggerParts[EditorGUILayout.Popup(part, trigger.GetTriggerPartList())].title;
+                    if (lastTriggerPart != triggerPart)
+                    {
+                        part = trigger.GetTriggerPartIndex(triggerPart);
+                    }
+                    if (GUILayout.Button("Insert"))
+                    {
+                        text += "##" + trigger.name + "/" + trigger.triggerParts[part].title + "##";
+                    }
+                }
+
+                EditorGUILayout.EndHorizontal();
+            }
+            
+            startNextSimultaneous = EditorGUILayout.Toggle("Start Next Part Alongside: ", startNextSimultaneous);
         }
     #endif
 }

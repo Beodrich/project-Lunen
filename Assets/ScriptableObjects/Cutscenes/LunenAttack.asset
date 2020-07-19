@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f833411ddbf4e28abde908d974aed7, type: 3}
+  m_Name: LunenAttack
+  m_EditorClassIdentifier: 
+  stopsBattle: 1
+  parts:
+  - id: 0
+  - id: 1
+  - id: 2
+  references:
+    version: 1
+    00000000:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] ##BattleVars/AttackLunenName## used ##BattleVars/AttackLunenAction##!'
+        _title: 
+        _startNextSimultaneous: 1
+        text: '##BattleVars/AttackLunenName## used ##BattleVars/AttackLunenAction##!'
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: AttackLunenAction
+        showFoldout: 0
+    00000001:
+      type: {class: CutPart_Wait, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Wait] Wait 0s (AnimationTime)'
+        _title: 
+        _startNextSimultaneous: 0
+        waitTime: 0
+        useStoryTriggerTime: 1
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: AnimationTime
+    00000002:
+      type: {class: CutPart_SetPanel, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[SetPanel] Set Dialogue Panel To Disable'
+        _title: 
+        _startNextSimultaneous: 0
+        panelSelect: 5
+        panelState: 1

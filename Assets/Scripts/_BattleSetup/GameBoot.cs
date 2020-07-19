@@ -81,6 +81,7 @@ public class GameBoot : MonoBehaviour
     }
     void Start()
     {
+        sr.database.OnGameStart();
         sr.canvasCollection.SetState(CanvasCollection.UIState.Overworld);
         switch (bootBehaviour)
         {

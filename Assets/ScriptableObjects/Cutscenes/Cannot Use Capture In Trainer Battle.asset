@@ -13,49 +13,14 @@ MonoBehaviour:
   m_Name: Cannot Use Capture In Trainer Battle
   m_EditorClassIdentifier: 
   stopsBattle: 1
-  showAllData: 0
   parts:
-  - name: ' [Dialogue] Don''t use a capture device in a trainer battle!'
-    title: 
-    type: 1
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Don't use a capture device in a trainer battle!
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
+  - id: 0
+  references:
+    version: 1
+    00000000:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] NO! Don''t try to capture a trainer''s Lunen!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: NO! Don't try to capture a trainer's Lunen!

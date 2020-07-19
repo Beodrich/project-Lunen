@@ -99,14 +99,14 @@ public class CutPart_NewCutscene : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             newCutsceneType = (NewCutsceneType)EditorGUILayout.EnumPopup("Cutscene Type: ", newCutsceneType);
             switch (newCutsceneType)
             {
                 case NewCutsceneType.Global:
                     //cutsceneGlobalFind = EditorGUILayout.TextField(" ", routeAfterBattle);
-                    cutsceneGlobal = EditorGUILayout.ObjectField("Cutscene Script: ", cutsceneGlobal, typeof(CutsceneScript)) as CutsceneScript;
+                    cutsceneGlobal = (CutsceneScript)EditorGUILayout.ObjectField("Cutscene Script: ", cutsceneGlobal, typeof(CutsceneScript), true);
                     cutsceneRoute = EditorGUILayout.TextField("Cutscene Route: ", cutsceneRoute);
                 break;
                 
@@ -117,7 +117,7 @@ public class CutPart_NewCutscene : CutPart
 
                 case NewCutsceneType.Local:
                     //cutsceneGlobalFind = EditorGUILayout.TextField(" ", routeAfterBattle);
-                    cutsceneLocal = EditorGUILayout.ObjectField("Cutscene: ", cutsceneLocal, typeof(Cutscene)) as Cutscene;
+                    cutsceneLocal = (Cutscene)EditorGUILayout.ObjectField("Cutscene: ", cutsceneLocal, typeof(Cutscene), true);
                     cutsceneRoute = EditorGUILayout.TextField("Cutscene Route: ", cutsceneRoute);
                 break;
             }

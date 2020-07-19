@@ -64,9 +64,9 @@ public class CutPart_Destroy : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
-            destroyObject = EditorGUILayout.ObjectField("Destroy This Object: ", destroyObject, typeof(GameObject)) as GameObject;
+            destroyObject = (GameObject)EditorGUILayout.ObjectField("Destroy This Object: ", destroyObject, typeof(GameObject), true);
         }
     #endif
 }

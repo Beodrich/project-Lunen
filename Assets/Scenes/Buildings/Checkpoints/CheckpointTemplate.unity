@@ -3133,7 +3133,7 @@ PrefabInstance:
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: fallbackIndex
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}

@@ -13,1719 +13,268 @@ MonoBehaviour:
   m_Name: Lunen Capture
   m_EditorClassIdentifier: 
   stopsBattle: 1
-  showAllData: 0
   parts:
-  - name: ' [ROUTE_START] Capture Success'
-    title: Capture Success
-    type: 3
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: 
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Wobble...'
-    title: 
-    type: 1
-    startNextSimultaneous: 1
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Wait] Wait 1 Second'
-    title: Wait 1 Second
-    type: 8
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Wobble...'
-    title: 
-    type: 1
-    startNextSimultaneous: 1
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Wait] Wait 1 Second'
-    title: Wait 1 Second
-    type: 8
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Wobble...'
-    title: 
-    type: 1
-    startNextSimultaneous: 1
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Wait] Wait 1 Second'
-    title: Wait 1 Second
-    type: 8
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] GOTCHA!'
-    title: 
-    type: 1
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: GOTCHA!
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [CaptureWildLunen] '
-    title: 
-    type: 21
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [END] Wobbles End'
-    title: Wobbles End
-    type: 4
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' '
-    title: Wait 1 Second
-    type: 10
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [ROUTE_START] Wobbles: 3'
-    title: 'Wobbles: 3'
-    type: 3
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: 
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Wobble...'
-    title: 
-    type: 1
-    startNextSimultaneous: 1
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Wait] Wait 1 Second'
-    title: Wait 1 Second
-    type: 8
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Wobble...'
-    title: 
-    type: 1
-    startNextSimultaneous: 1
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Wait] Wait 1 Second'
-    title: Wait 1 Second
-    type: 8
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Wobble...'
-    title: 
-    type: 1
-    startNextSimultaneous: 1
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Wait] Wait 1 Second'
-    title: Wait 1 Second
-    type: 8
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Nooooo! So close!'
-    title: 
-    type: 1
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Nooooo! So close!
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [END] Wobbles End'
-    title: Wobbles End
-    type: 4
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' '
-    title: Wait 1 Second
-    type: 10
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [ROUTE_START] Wobbles: 2'
-    title: 'Wobbles: 2'
-    type: 3
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: 
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Wobble...'
-    title: 
-    type: 1
-    startNextSimultaneous: 1
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Wait] Wait 1 Second'
-    title: Wait 1 Second
-    type: 8
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Wobble...'
-    title: 
-    type: 1
-    startNextSimultaneous: 1
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Wait] Wait 1 Second'
-    title: Wait 1 Second
-    type: 8
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Damn, it was close too!'
-    title: 
-    type: 1
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Damn, it was close too!
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [END] Wobbles End'
-    title: Wobbles End
-    type: 4
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' '
-    title: Wait 1 Second
-    type: 10
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [ROUTE_START] Wobbles: 1'
-    title: 'Wobbles: 1'
-    type: 3
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: 
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Wobble...'
-    title: 
-    type: 1
-    startNextSimultaneous: 1
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Wait] Wait 1 Second'
-    title: Wait 1 Second
-    type: 8
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Aw, it got away.
-
-'
-    title: 
-    type: 1
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: 'Aw, it got away.
-
-'
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [END] Wobbles End'
-    title: Wobbles End
-    type: 4
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' '
-    title: Wait 1 Second
-    type: 10
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [ROUTE_START] Wobbles: 0'
-    title: 'Wobbles: 0'
-    type: 3
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: 
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [Dialogue] Didn''t even shake...'
-    title: 
-    type: 1
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Didn't even shake...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 0
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
-  - name: ' [END] Wobbles End'
-    title: Wobbles End
-    type: 4
-    startNextSimultaneous: 0
-    moveScript: {fileID: 0}
-    chooseMoveDirection: 0
-    movementDirection: 0
-    moveType: 0
-    colliderTag: 
-    spacesToMove: 0
-    trainerLogic: {fileID: 0}
-    postBattleCutscene: 0
-    cutsceneAfterBattle: {fileID: 0}
-    routeAfterBattle: 
-    text: Wobble...
-    useChoice1: 0
-    choice1Text: 
-    choice1Route: 
-    useChoice2: 0
-    choice2Text: 
-    choice2Route: 
-    useChoice3: 0
-    choice3Text: 
-    choice3Route: 
-    waitTime: 1
-    newRoute: 
-    newSceneType: 0
-    newScene:
-      sceneAsset: {fileID: 0}
-      scenePath: 
-    newSceneEntranceIndex: 0
-    newScenePosition: {x: 0, y: 0}
-    newSceneDirection: 0
-    newCutsceneType: 0
-    cutsceneIndex: 0
-    cutsceneRoute: 
-    cutsceneGlobal: {fileID: 0}
-    cutsceneLocal: {fileID: 0}
-    panelSelect: 0
-    panelState: 0
-    itemObtained: {fileID: 0}
-    itemAmount: 0
-    lunenObtained: {fileID: 0}
-    lunenLevel: 0
-    trainerEncounter: {fileID: 0}
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  - id: 13
+  - id: 14
+  - id: 15
+  - id: 16
+  - id: 17
+  - id: 18
+  - id: 19
+  - id: 20
+  - id: 21
+  - id: 22
+  - id: 23
+  - id: 24
+  - id: 25
+  references:
+    version: 1
+    00000000:
+      type: {class: CutPart_StoryTriggerBranch, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[STB] if (BattleVars/CaptureLunenShakes) == 0'
+        _title: 
+        _startNextSimultaneous: 0
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: CaptureLunenShakes
+        equalIndex: 0
+        targetIndex: 0
+        checkBool: 0
+        checkInt: 0
+        checkFloat: 0
+        checkDouble: 0
+        checkString: 
+        destinationCutscene: {fileID: 0}
+        destinationCutsceneScript: {fileID: 0}
+        destinationRoute: 0 Shakes
+    00000001:
+      type: {class: CutPart_StoryTriggerBranch, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[STB] if (BattleVars/CaptureLunenShakes) == 1'
+        _title: 
+        _startNextSimultaneous: 0
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: CaptureLunenShakes
+        equalIndex: 0
+        targetIndex: 0
+        checkBool: 0
+        checkInt: 1
+        checkFloat: 0
+        checkDouble: 0
+        checkString: 
+        destinationCutscene: {fileID: 0}
+        destinationCutsceneScript: {fileID: 0}
+        destinationRoute: 1 Shake
+    00000002:
+      type: {class: CutPart_StoryTriggerBranch, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[STB] if (BattleVars/CaptureLunenShakes) == 2'
+        _title: 
+        _startNextSimultaneous: 0
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: CaptureLunenShakes
+        equalIndex: 0
+        targetIndex: 0
+        checkBool: 0
+        checkInt: 2
+        checkFloat: 0
+        checkDouble: 0
+        checkString: 
+        destinationCutscene: {fileID: 0}
+        destinationCutsceneScript: {fileID: 0}
+        destinationRoute: 2 Shakes
+    00000003:
+      type: {class: CutPart_StoryTriggerBranch, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[STB] if (BattleVars/CaptureLunenShakes) == 3'
+        _title: 
+        _startNextSimultaneous: 0
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: CaptureLunenShakes
+        equalIndex: 0
+        targetIndex: 0
+        checkBool: 0
+        checkInt: 3
+        checkFloat: 0
+        checkDouble: 0
+        checkString: 
+        destinationCutscene: {fileID: 0}
+        destinationCutsceneScript: {fileID: 0}
+        destinationRoute: 3 Shakes
+    00000004:
+      type: {class: CutPart_StoryTriggerBranch, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[STB] if (BattleVars/CaptureLunenShakes) == 4'
+        _title: 
+        _startNextSimultaneous: 0
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: CaptureLunenShakes
+        equalIndex: 0
+        targetIndex: 0
+        checkBool: 0
+        checkInt: 4
+        checkFloat: 0
+        checkDouble: 0
+        checkString: 
+        destinationCutscene: {fileID: 0}
+        destinationCutsceneScript: {fileID: 0}
+        destinationRoute: Successful Capture
+    00000005:
+      type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
+      data:
+        _name: ' '
+        _title: New Blank
+        _startNextSimultaneous: 0
+    00000006:
+      type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[RouteStart] 0 Shakes'
+        _title: 0 Shakes
+        _startNextSimultaneous: 0
+    00000007:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Didn''t even shake...'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Didn't even shake...
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000008:
+      type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[End] New End'
+        _title: New End
+        _startNextSimultaneous: 0
+    00000009:
+      type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
+      data:
+        _name: ' '
+        _title: New Blank
+        _startNextSimultaneous: 0
+    0000000A:
+      type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[RouteStart] 1 Shake'
+        _title: 1 Shake
+        _startNextSimultaneous: 0
+    0000000B:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Shook once'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Shook once
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    0000000C:
+      type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[End] New End'
+        _title: New End
+        _startNextSimultaneous: 0
+    0000000D:
+      type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
+      data:
+        _name: ' '
+        _title: New Blank
+        _startNextSimultaneous: 0
+    0000000E:
+      type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[RouteStart] 2 Shakes'
+        _title: 2 Shakes
+        _startNextSimultaneous: 0
+    0000000F:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Shook twice'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Shook twice
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000010:
+      type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[End] New End'
+        _title: New End
+        _startNextSimultaneous: 0
+    00000011:
+      type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
+      data:
+        _name: ' '
+        _title: New Blank
+        _startNextSimultaneous: 0
+    00000012:
+      type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[RouteStart] 3 Shakes'
+        _title: 3 Shakes
+        _startNextSimultaneous: 0
+    00000013:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Shook three times'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Shook three times
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000014:
+      type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[End] New End'
+        _title: New End
+        _startNextSimultaneous: 0
+    00000015:
+      type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
+      data:
+        _name: ' '
+        _title: New Blank
+        _startNextSimultaneous: 0
+    00000016:
+      type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[RouteStart] Successful Capture'
+        _title: Successful Capture
+        _startNextSimultaneous: 0
+    00000017:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] GOTCHA! ##BattleVars/CaptureLunenName## was caught!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: GOTCHA! ##BattleVars/CaptureLunenName## was caught!
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: CaptureLunenName
+        showFoldout: 1
+    00000018:
+      type: {class: CutPart_CaptureWildLunen, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[CaptureWildLunen] New CaptureWildLunen'
+        _title: New CaptureWildLunen
+        _startNextSimultaneous: 0
+    00000019:
+      type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[End] New End'
+        _title: New End
+        _startNextSimultaneous: 0

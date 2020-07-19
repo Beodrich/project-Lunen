@@ -43,6 +43,8 @@ public class CutPart_ObtainItem : CutPart
 
     public void PlayPart (SetupRouter sr)
     {
+        sr.database.SetTriggerValue("ItemObtain/Name", itemObtained.name);
+        sr.database.SetTriggerValue("ItemObtain/Amount", itemAmount);
         sr.inventory.AddItem(itemObtained, itemAmount);
         sr.battleSetup.AdvanceCutscene();
     }
@@ -62,20 +64,18 @@ public class CutPart_ObtainItem : CutPart
     {
         string start = "[" + _type + "]";
         string context = _title;
+        if (context == "")
+        {
+            context += itemAmount + "x " + itemObtained.name;
+        }
         _name = (start + " " + context);
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
-            EditorGUIUtility.fieldWidth = 120;
-            EditorGUIUtility.labelWidth = 80;
-            GUILayout.BeginHorizontal();
-            itemObtained = EditorGUILayout.ObjectField("Item: ", itemObtained, typeof(Item)) as Item;
+            itemObtained = (Item)EditorGUILayout.ObjectField("Item: ", itemObtained, typeof(Item), true);
             itemAmount = EditorGUILayout.IntField("Amount: ", itemAmount);
-            GUILayout.EndHorizontal();
-            EditorGUIUtility.labelWidth = 0;
-            EditorGUIUtility.fieldWidth = 0;
         }
     #endif
 }

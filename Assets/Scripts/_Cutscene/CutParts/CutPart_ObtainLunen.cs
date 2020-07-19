@@ -69,16 +69,10 @@ public class CutPart_ObtainLunen : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
-            EditorGUIUtility.fieldWidth = 120;
-            EditorGUIUtility.labelWidth = 80;
-            GUILayout.BeginHorizontal();
-            lunenObtained = EditorGUILayout.ObjectField("Lunen: ", lunenObtained, typeof(Lunen)) as Lunen;
+            lunenObtained = (Lunen)EditorGUILayout.ObjectField("Lunen: ", lunenObtained, typeof(Lunen), true);
             lunenLevel = EditorGUILayout.IntField("Level: ", lunenLevel);
-            GUILayout.EndHorizontal();
-            EditorGUIUtility.labelWidth = 0;
-            EditorGUIUtility.fieldWidth = 0;
     }
     #endif
 }

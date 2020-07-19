@@ -6,8 +6,10 @@ using TMPro;
 public class UI_Shop : MonoBehaviour
 {
     // Start is called before the first frame update
+    /*
     private Transform container;
     private Transform shopItemTemp;
+    */
     private int gold = 40;
 
     public List<Item> sellItems;
@@ -32,6 +34,7 @@ public class UI_Shop : MonoBehaviour
         Hide();
         */
     }
+    /*
     void CreateButton(Item item, int positionIndex)
     {
         int itemCost = item.buyValue;
@@ -50,6 +53,7 @@ public class UI_Shop : MonoBehaviour
         shopItemTransform.Find("itemPicture").GetComponent<Image>().sprite = itemSprite;
         shopItemTransform.GetComponent<Button>().onClick.AddListener(() => TryBuyItem(item));
     }
+    */
     void TryBuyItem(Item item) {
         if (HasEnoughGold(item))
         {

@@ -82,12 +82,12 @@ public class CutPart_Movement : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             movePlayer = EditorGUILayout.Toggle("Move Player? ", movePlayer);
             if (!movePlayer)
             {
-                moveScript = EditorGUILayout.ObjectField("Move Script: ", moveScript, typeof(Move)) as Move;
+                moveScript = (Move)EditorGUILayout.ObjectField("Move Script: ", moveScript, typeof(Move), true);
             }
 
             GUILayout.BeginHorizontal();
@@ -112,6 +112,8 @@ public class CutPart_Movement : CutPart
             }
             GUILayout.EndHorizontal();
             EditorGUIUtility.fieldWidth = 0;
+
+            startNextSimultaneous = EditorGUILayout.Toggle("Start Next Part Alongside: ", startNextSimultaneous);
         }
     #endif
 }

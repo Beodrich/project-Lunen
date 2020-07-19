@@ -25,6 +25,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3a1102146535444b080b4ce26fe33073, type: 2}
   - {fileID: 11400000, guid: ebabad0c3474d4f8fb5dd77ea7942925, type: 2}
   - {fileID: 11400000, guid: 56c2e1a2164807c4b80a570b0e30c771, type: 2}
+  - {fileID: 11400000, guid: d7d0631ac720e42baa804b872a1b4820, type: 2}
   AllItems:
   - {fileID: 11400000, guid: 54dbbd98dc03b4763a5482e1dbd1c9a3, type: 2}
   - {fileID: 11400000, guid: 99a4b3e8ff9bc467db0ed96253e84e7e, type: 2}
@@ -48,6 +49,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 841108ed299a8440d9aeff6c9f4368f1, type: 2}
   - {fileID: 11400000, guid: 7188571de0aeb4aa88e1428b2f9789d3, type: 2}
   - {fileID: 11400000, guid: e1210e59e2c9646439350386d120195b, type: 2}
+  - {fileID: 11400000, guid: 927e422e568194ae08a311a7d2d847c9, type: 2}
+  GlobalStoryTriggerList:
+  - {fileID: 11400000, guid: e5e8a7860193e4382af061c80981e3af, type: 2}
+  - {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+  - {fileID: 11400000, guid: 815134eb128b540aca2c38ccc3015bdd, type: 2}
+  - {fileID: 11400000, guid: 1e26cfe663b00467b952095f7cca7634, type: 2}
+  - {fileID: 11400000, guid: 238ddcabdb7cf4b3e8e463fcf06248a7, type: 2}
   transparentSprite: {fileID: 21300000, guid: b897c56bfaa1645a6a21ebd16312df26, type: 3}
   MonsterTemplate: {fileID: 2324287439143063678, guid: ce7650befca7144ae9e5cc4263c99950,
     type: 3}

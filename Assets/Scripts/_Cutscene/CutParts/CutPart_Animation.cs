@@ -68,9 +68,9 @@ public class CutPart_Animation : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart()
+        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
-            animationActor = EditorGUILayout.ObjectField("Animation Actor Move Script: ", animationActor, typeof(Move)) as Move;
+            animationActor = (Move)EditorGUILayout.ObjectField("Animation Actor Move Script: ", animationActor, typeof(Move), true);
             if (animationActor != null)
             {
                 animationPlay = EditorGUILayout.Popup("Animation To Play: ", animationPlay, animationActor.animationSet.GetAnimList());

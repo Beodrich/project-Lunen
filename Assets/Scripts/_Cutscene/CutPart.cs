@@ -5,29 +5,31 @@ using UnityEditor;
 
 public enum CutPartType
 {
-    Dialogue,
-    Choice,
-    ROUTE_START,
-    END,
-    Movement,
     Animation,
+    Blank,
     Battle,
-    Wait,
-    HealParty,
-    BLANK,
-    SetSpawn,
+    CaptureWildLunen,
+    ChangeCameraFollow,
     ChangeRoute,
     ChangeScene,
-    ChangeCameraFollow,
+    CheckBattleOver,
+    Choice,
+    Destroy,
+    Dialogue,
+    End,
+    HealParty,
+    Movement,
     NewCutscene,
     ObtainItem,
     ObtainLunen,
+    RouteStart,
     SetAsCollected,
+    SetNewSprite,
     SetPanel,
-    CheckBattleOver,
-    CaptureWildLunen,
-    Destroy,
-    SetNewSprite
+    SetSpawn,
+    StoryTriggerBranch,
+    StoryTriggerSet,
+    Wait,
 }
 
 public enum MoveType
@@ -72,7 +74,7 @@ public interface CutPart
     void GetTitle();
 
     #if UNITY_EDITOR
-        void DrawInspectorPart();
+        void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null);
     #endif
 
     void Duplicate(CutPart cp);

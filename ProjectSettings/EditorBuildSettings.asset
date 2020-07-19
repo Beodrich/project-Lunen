@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/Brrrrrrrr.unity
     guid: c1459b4e47b6d4941a89247f601fcad2
+  - enabled: 1
+    path: Assets/Scenes/Buildings/Labs/LabTemplate.unity
+    guid: f90133b3d89b1424f9a945e56c7f307d
   m_configObjects: {}
