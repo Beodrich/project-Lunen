@@ -150,11 +150,13 @@ public class Director : MonoBehaviour
                 AliveLunen.Add(m);
                 if (team == Team.PlayerTeam && PlayerLunenCurrentlyOut < MaxLunenOut)
                 {
+                    m.LunenOrder = PlayerLunenCurrentlyOut;
                     PlayerLunenCurrentlyOut++;
                     m.LunenOut = true;
                 }
                 if (team == Team.EnemyTeam && EnemyLunenCurrentlyOut < MaxLunenOut)
                 {
+                    m.LunenOrder = EnemyLunenCurrentlyOut;
                     EnemyLunenCurrentlyOut++;
                     m.LunenOut = true;
                 }

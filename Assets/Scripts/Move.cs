@@ -35,6 +35,8 @@ public class Move : MonoBehaviour
     public float playerSize;
     private Vector2 input;
     private Vector2 last;
+    [ReadOnly] [SerializeField] private Vector2 thisDirectInput;
+    [ReadOnly] [SerializeField] private Vector2 lastDirectInput;
     public bool isMoving = false;
     public bool animMoving = false;
     public bool npcMove = false;
@@ -143,8 +145,9 @@ public class Move : MonoBehaviour
                 {
                     if (playerInputAccepted)
                     {
-                        input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-                        input = MoveScripts.DigitizeInput(input);
+                        thisDirectInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+                        input = MoveScripts.DigitizeInput(thisDirectInput, lastDirectInput, input);
+                        lastDirectInput = thisDirectInput;
                     }
 
                     animMoving = false;

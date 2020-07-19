@@ -563,4 +563,14 @@ public class BattleSetup : MonoBehaviour
     {
         Destroy(_index);
     }
+
+    public void CreateEmote(EmoteAnim emote, GameObject source)
+    {
+        waitTime = emote.duration;
+        StartCoroutine(cutsceneWait(transform));
+        GameObject newEmote = Instantiate(sr.database.EmoteTemplate, source.transform.position + new Vector3(0.5f, 1f, 0), source.transform.rotation);
+        newEmote.GetComponent<DestroySelf>().SetDieTime(emote.duration);
+        newEmote.GetComponent<SpriteRenderer>().sprite = emote.emoteIcon;
+    }
+
 }

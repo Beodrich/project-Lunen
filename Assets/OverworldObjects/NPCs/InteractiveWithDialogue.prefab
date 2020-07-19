@@ -50,15 +50,26 @@ MonoBehaviour:
   stopsBattle: 0
   parts:
   - id: 0
+  - id: 1
   references:
     version: 1
     00000000:
       type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[Dialogue] TESTESTE'
+        _name: '[Dialogue] x'
         _title: 
         _startNextSimultaneous: 0
-        text: TESTESTE
+        text: x
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000001:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] faw'
+        _title: 
+        _startNextSimultaneous: 0
+        text: faw
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0

@@ -21,6 +21,7 @@ public class Database : ScriptableObject
     public Sprite transparentSprite;
 
     public GameObject MonsterTemplate;
+    public GameObject EmoteTemplate;
     public GameObject Player;
 
     public void OnGameStart()

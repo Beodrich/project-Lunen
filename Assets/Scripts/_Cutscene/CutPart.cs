@@ -27,6 +27,7 @@ public enum CutPartType
     SetNewSprite,
     SetPanel,
     SetSpawn,
+    ShowEmote,
     StoryTriggerBranch,
     StoryTriggerSet,
     Wait,

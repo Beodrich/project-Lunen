@@ -42,6 +42,7 @@ public class Cutscene : MonoBehaviour
             case CutPartType.SetNewSprite: return new CutPart_SetNewSprite();
             case CutPartType.StoryTriggerBranch: return new CutPart_StoryTriggerBranch();
             case CutPartType.StoryTriggerSet: return new CutPart_StoryTriggerSet();
+            case CutPartType.ShowEmote: return new CutPart_ShowEmote();
         }
         return null;
     }
