@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
+  m_Name: Retribution
+  m_EditorClassIdentifier: 
+  loopback: {fileID: 0}
+  Name: Retribution
+  Type: {fileID: 11400000, guid: 0b0f687bd21824a9f9bfb0703ebef24e, type: 2}
+  Turns: 5
+  AdditionalAffinityCost: 1
+  TimePausePeriod: 2
+  Animation: {fileID: 0}
+  PartsOfAction:
+  - Effect: 0
+    Target: 0
+    Power: 120
+    EffectToInflict: {fileID: 0}
+    StatusEffect: {fileID: 0}
+    StatusEffectTurns: 0
+  - Effect: 1
+    Target: 0
+    Power: 0
+    EffectToInflict: {fileID: 0}
+    StatusEffect: {fileID: 11400000, guid: b4be0ca8c74e63841ae9474e936f6d3f, type: 2}
+    StatusEffectTurns: 2
+  - Effect: 1
+    Target: 0
+    Power: 0
+    EffectToInflict: {fileID: 0}
+    StatusEffect: {fileID: 11400000, guid: 615e41cc14bd2ae48b623c39eaf1c495, type: 2}
+    StatusEffectTurns: 2
+  - Effect: 1
+    Target: 0
+    Power: 0
+    EffectToInflict: {fileID: 0}
+    StatusEffect: {fileID: 11400000, guid: 50c815229614a564d867ea683419c46a, type: 2}
+    StatusEffectTurns: 2
+  - Effect: 1
+    Target: 1
+    Power: 0
+    EffectToInflict: {fileID: 0}
+    StatusEffect: {fileID: 11400000, guid: 846cbeebf3a914d4092ecb5c712dd22c, type: 2}
+    StatusEffectTurns: 1
+  MonsterUser: {fileID: 0}
+  MonsterTarget: {fileID: 0}
+  SourceActionIndex: 0
+  SourceLunenLearnedLevel: 0
+  customEvent:
+    m_PersistentCalls:
+      m_Calls: []

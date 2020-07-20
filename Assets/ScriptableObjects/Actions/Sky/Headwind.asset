@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: TestingStatusEffect
+  m_Name: Headwind
   m_EditorClassIdentifier: 
   loopback: {fileID: 0}
-  Name: TestingStatusEffect
-  Type: {fileID: 11400000, guid: f0b191960720d4a568cd4e46f31d5ec8, type: 2}
-  Turns: 0
+  Name: Headwind
+  Type: {fileID: 11400000, guid: 250f2c032f4eb45e18c7bf225a7973f5, type: 2}
+  Turns: 1
   AdditionalAffinityCost: 0
-  TimePausePeriod: 3
+  TimePausePeriod: 2
   Animation: {fileID: 0}
   PartsOfAction:
   - Effect: 1
-    Target: 6
+    Target: 1
     Power: 0
     EffectToInflict: {fileID: 0}
-    StatusEffect: {fileID: 11400000, guid: c5fad1b33c79a4f959be4507d5cef95c, type: 2}
-    StatusEffectTurns: 5
+    StatusEffect: {fileID: 11400000, guid: 803ee3134066edc4db576d441433d0ea, type: 2}
+    StatusEffectTurns: 2
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 0

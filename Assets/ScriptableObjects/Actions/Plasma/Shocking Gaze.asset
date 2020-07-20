@@ -10,22 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: TestingStatusEffect
+  m_Name: Shocking Gaze
   m_EditorClassIdentifier: 
   loopback: {fileID: 0}
-  Name: TestingStatusEffect
-  Type: {fileID: 11400000, guid: f0b191960720d4a568cd4e46f31d5ec8, type: 2}
-  Turns: 0
+  Name: Shoxking Gaze
+  Type: {fileID: 11400000, guid: fe54b427033d84e2d8485594d7c9b74b, type: 2}
+  Turns: 4
   AdditionalAffinityCost: 0
-  TimePausePeriod: 3
+  TimePausePeriod: 2
   Animation: {fileID: 0}
   PartsOfAction:
   - Effect: 1
-    Target: 6
+    Target: 0
     Power: 0
     EffectToInflict: {fileID: 0}
-    StatusEffect: {fileID: 11400000, guid: c5fad1b33c79a4f959be4507d5cef95c, type: 2}
-    StatusEffectTurns: 5
+    StatusEffect: {fileID: 11400000, guid: c43dd7bf4b7300a46a8a73e0164a38cb, type: 2}
+    StatusEffectTurns: 2
+  - Effect: 1
+    Target: 0
+    Power: 0
+    EffectToInflict: {fileID: 0}
+    StatusEffect: {fileID: 11400000, guid: a46e8a3ee4c1b884aad25d451813b299, type: 2}
+    StatusEffectTurns: 2
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 0

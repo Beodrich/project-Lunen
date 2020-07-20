@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8ac25374cc248dab6f771eebacd965, type: 3}
+  m_Name: Bleeding
+  m_EditorClassIdentifier: 
+  ExpiresIn: 1
+  AttackEffect: 1
+  GlobalAttack:
+    StatChangeType: 2
+    HardNumberChange: 0
+    PercentageChange: -30
+  DefenseEffect: 0
+  GlobalDefense:
+    StatChangeType: 0
+    HardNumberChange: 0
+    PercentageChange: 0
+  SpeedEffect: 0
+  GlobalSpeed:
+    StatChangeType: 0
+    HardNumberChange: 0
+    PercentageChange: 0
+  DamageTakenEffect: 0
+  GlobalDamageTaken:
+    StatChangeType: 0
+    HardNumberChange: 0
+    PercentageChange: 0
+  DamageTakenByType:
+    StatChangeType: 0
+    HardNumberChange: 0
+    PercentageChange: 0
+  TypesAfflicted:
+    VulnerableTypes: []
+  EndOfTurnDamage: 0
+  EndOfTurnDamageType:
+    StatChangeType: 0
+    HardNumberChange: 0
+    PercentageChange: 0
+  ShowMiscChanges: 1
+  CannotHitMultipleTargets: 0
+  CannotUseAttackingActions: 0
+  CannotGetStatusEffects: 0
+  CannotGetBuffs: 0
+  CannotGetAttackBuffs: 1
+  CannotGetDefenseBuffs: 0
+  CannotGetSpeedBuffs: 0
+  CannotEscape: 0
+  SwapsAttackAndDefense: 0
+  UsesRandomMoves: 0
+  IsAStatusEffect: 1
+  InflictsAnotherEffect: 0
+  NextEffect: {fileID: 0}
