@@ -13,6 +13,104 @@ MonoBehaviour:
   m_Name: Player Lost All Lunen
   m_EditorClassIdentifier: 
   stopsBattle: 0
-  parts: []
+  parts:
+  - id: 0
+  - id: 1
+  - id: 2
+  - id: 3
+  - id: 4
+  - id: 5
+  - id: 6
+  - id: 7
   references:
     version: 1
+    00000000:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] You lost all your lunen! Adios Gracias!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: You lost all your lunen! Adios Gracias!
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000001:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] YEET
+
+          E
+
+          E
+
+          T'
+        _title: 
+        _startNextSimultaneous: 0
+        text: 'YEET
+
+          E
+
+          E
+
+          T'
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000002:
+      type: {class: CutPart_SetPanel, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[SetPanel] Set SceneSwitch Panel To Enable'
+        _title: 
+        _startNextSimultaneous: 0
+        panelSelect: 10
+        panelState: 0
+    00000003:
+      type: {class: CutPart_Wait, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Wait] Wait 1s'
+        _title: 
+        _startNextSimultaneous: 0
+        waitTime: 1
+        useStoryTriggerTime: 0
+        trigger: {fileID: 0}
+        triggerPart: 
+    00000004:
+      type: {class: CutPart_ChangeScene, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[ChangeScene] Respawn'
+        _title: Respawn
+        _startNextSimultaneous: 0
+        newSceneType: 3
+        newScene: {fileID: 0}
+        newSceneEntranceGuid: 
+        newScenePosition: {x: 0, y: 0}
+        newSceneDirection: 0
+    00000005:
+      type: {class: CutPart_SetPanel, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[SetPanel] Set SceneSwitch Panel To Disable'
+        _title: 
+        _startNextSimultaneous: 0
+        panelSelect: 10
+        panelState: 1
+    00000006:
+      type: {class: CutPart_Wait, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Wait] Wait 0.5s'
+        _title: 
+        _startNextSimultaneous: 0
+        waitTime: 0.5
+        useStoryTriggerTime: 0
+        trigger: {fileID: 0}
+        triggerPart: 
+    00000007:
+      type: {class: CutPart_NewCutscene, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[NewCutscene] StartLossCutscene'
+        _title: StartLossCutscene
+        _startNextSimultaneous: 0
+        newCutsceneType: 2
+        cutsceneIndex: 0
+        cutsceneRoute: TestLoss
+        cutsceneGlobal: {fileID: 0}
+        cutsceneLocal: {fileID: 0}
