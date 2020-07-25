@@ -15,7 +15,7 @@ MonoBehaviour:
   loopback: {fileID: 0}
   Name: GODMOVE
   Type: {fileID: 11400000, guid: f0b191960720d4a568cd4e46f31d5ec8, type: 2}
-  Turns: 1
+  Turns: 3
   AdditionalAffinityCost: 0
   TimePausePeriod: 2
   Animation: {fileID: 0}
@@ -26,7 +26,18 @@ MonoBehaviour:
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 0}
     StatusEffectTurns: 0
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 0
   SourceLunenLearnedLevel: 0
+  customEvent:
+    m_PersistentCalls:
+      m_Calls: []

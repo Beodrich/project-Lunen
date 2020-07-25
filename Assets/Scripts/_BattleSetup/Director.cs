@@ -83,6 +83,7 @@ public class Director : MonoBehaviour
         DirectorGamePaused = false;
         LoadTeams();
         ResetLunenCooldowns();
+        ResetLunenMoveCooldowns();
         sr.canvasCollection.ScanBothParties();
         sr.canvasCollection.Player2LunenTarget(0);
     }
@@ -93,6 +94,12 @@ public class Director : MonoBehaviour
         DirectorTimeFlowing = false;
         ResetLunenCooldowns();
         ResetLunenEffects();
+    }
+
+    public void ResetLunenMoveCooldowns()
+    {
+        foreach (Monster m in PlayerLunenMonsters) m.ResetMoveCooldown();
+        foreach (Monster m in EnemyLunenMonsters) m.ResetMoveCooldown();
     }
 
     public void ResetLunenCooldowns()

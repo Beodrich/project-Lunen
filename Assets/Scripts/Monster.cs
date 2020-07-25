@@ -16,6 +16,7 @@ public class Monster : MonoBehaviour
 
     public List<Action> ActionSet = new List<Action>();
     public List<MonsterEffect> StatusEffects = new List<MonsterEffect>();
+    public List<int> ActionCooldown = new List<int>();
 
     [Header("Stats")]
 
@@ -127,6 +128,8 @@ public class Monster : MonoBehaviour
                     {
                         //This is the point where the cooldown finishes. There's a lot to program here.
                         CalculateStats();
+                        TickUpMoveCooldowns();
+                        loopback.canvasCollection.ScanParty(MonsterTeam);
                         if (MonsterTeam == Director.Team.EnemyTeam && loopback.director.PlayerLunenAlive.Count != 0)
                         {
                             //StartAI
@@ -171,6 +174,7 @@ public class Monster : MonoBehaviour
     {
         loopback.canvasCollection.EnsureValidTarget();
         Action action = ActionSet[index];
+        ActionCooldown[index] = 0;
         action.MonsterUser = this;
         action.Execute();
     }
@@ -213,6 +217,7 @@ public class Monster : MonoBehaviour
             if (Level == action.level)
             {
                 ActionSet.Add(action.action);
+                ActionCooldown.Add(0);
             }
         }
     }
@@ -224,6 +229,7 @@ public class Monster : MonoBehaviour
             if (Level >= action.level)
             {
                 ActionSet.Add(action.action);
+                ActionCooldown.Add(0);
             }
         }
     }
@@ -296,10 +302,36 @@ public class Monster : MonoBehaviour
         Exp.y = (Level) * (Level) * (Level);
         Exp.z = (Level + 1) * (Level + 1) * (Level + 1);
     }
+    
+    public void TickUpMoveCooldowns()
+    {
+        for (int i = 0; i < ActionCooldown.Count; i++)
+        {
+            ActionCooldown[i]++;
+        }
+    }
 
     public void TakeDamage(int value)
     {
-        HealthToSubtract += value;
+        if (value < 0) Heal(-value);
+        else
+        {
+            HealthToSubtract += value;
+        }
+        
+    }
+
+    public void Heal(int value)
+    {
+        if (value < 0) TakeDamage(-value);
+        else
+        {
+            Health.z += value;
+            if (Health.z > GetMaxHealth())
+            {
+                Health.z = GetMaxHealth();
+            }
+        }
     }
 
     public void CalculateStats()
@@ -457,6 +489,12 @@ public class Monster : MonoBehaviour
     {
         CurrCooldown = GetMaxCooldown();
         CooldownDone = false;
+    }
+
+    public void ResetMoveCooldown()
+    {
+        ActionCooldown = new List<int>();
+        foreach (Action a in ActionSet) ActionCooldown.Add(0);
     }
 
     public void SetObjectName()

@@ -306,7 +306,6 @@ public class UITransition : MonoBehaviour
                             button.interactable = true;
                         }
                     } 
-                    
                 }
             }
             else

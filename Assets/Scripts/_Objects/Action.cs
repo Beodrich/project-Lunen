@@ -28,7 +28,8 @@ public class Action : ScriptableObject
         DealDamage,
         ApplyStatusEffect,
         ApplyBuff,
-        Heal
+        Heal,
+        ReduceHP
     }
 
     [System.Serializable]
@@ -40,6 +41,8 @@ public class Action : ScriptableObject
         [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyBuff)] public GameObject EffectToInflict;
         [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyStatusEffect)] public Effects StatusEffect;
         [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyStatusEffect)] public int StatusEffectTurns;
+        [ConditionalField(nameof(Effect), false, IntendedEffect.Heal)] public Effects.StatChange HealVars;
+        [ConditionalField(nameof(Effect), false, IntendedEffect.ReduceHP)] public Effects.StatChange DamageVars;
     }
 
     [Separator("Basic Action Info")]
@@ -91,6 +94,12 @@ public class Action : ScriptableObject
                         ExecutePerMonster(part, loopback.director.GetMonsterOut(targetTeam, i));
                     }
                     break;
+                case MonsterAim.AllAllies:
+                    for (int i = 0; i < loopback.director.GetLunenCountOut(actionTeam); i++)
+                    {
+                        ExecutePerMonster(part, loopback.director.GetMonsterOut(actionTeam, i));
+                    }
+                    break;
                 case MonsterAim.Self:
                     ExecutePerMonster(part, MonsterUser);
                     break;
@@ -119,6 +128,10 @@ public class Action : ScriptableObject
                 ApplyStatusEffect(part);
                 break;
             case IntendedEffect.Heal:
+                Heal(part);
+                break;
+            case IntendedEffect.ReduceHP:
+                ReduceHP(part);
                 break;
             
         }
@@ -135,6 +148,34 @@ public class Action : ScriptableObject
         float Damage = (3 + ((float)MonsterUser.Level / 100) * ((float)part.Power / 2) * (1 + Attack / 100) * (1 - (0.004f * Defense))) * STAB * Modifier;
         MonsterTarget.TakeDamage(Mathf.RoundToInt(Damage));
         //Debug.Log(Damage);
+    }
+
+    public void Heal(ActionPart part)
+    {
+        int healValue = 0;
+        if (part.HealVars.StatChangeType == Effects.StatChange.NumberType.Percentage)
+        {
+            healValue = (int)(MonsterTarget.Health.z * (part.HealVars.PercentageChange / 100));
+        }
+        else
+        {
+            healValue = (part.HealVars.HardNumberChange);
+        }
+        MonsterTarget.Heal(healValue);
+    }
+
+    public void ReduceHP(ActionPart part)
+    {
+        int damageValue = 0;
+        if (part.DamageVars.StatChangeType == Effects.StatChange.NumberType.Percentage)
+        {
+            damageValue = (int)(MonsterTarget.Health.z * (part.DamageVars.PercentageChange / 100));
+        }
+        else
+        {
+            damageValue = (part.DamageVars.HardNumberChange);
+        }
+        MonsterTarget.TakeDamage(damageValue);
     }
 
     public void ApplyStatusEffect(ActionPart part)

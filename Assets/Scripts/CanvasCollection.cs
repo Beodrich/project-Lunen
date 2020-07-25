@@ -92,6 +92,8 @@ public class CanvasCollection : MonoBehaviour
     public Text YNYesText;
     public Text YNNoText;
 
+    public Text ActionDescription;
+
     public bool MenuPanelOpen;
     public bool OptionsPanelOpen;
     public bool PartyPanelOpen;
@@ -246,6 +248,7 @@ public class CanvasCollection : MonoBehaviour
                 
                 UICollections[(int)UIState.Party].SetPanelState("Action Panel", UITransition.State.Enable);
                 if (PartySwapSelect == -1) PartyAccess(0);
+                SetActionDescriptionText(null);
             break;
             case PartyAction.UseItem:
                 OpenInventoryWindow();
@@ -328,6 +331,12 @@ public class CanvasCollection : MonoBehaviour
         SetState((UIState) state);
     }
 
+    public void ScanParty(Director.Team team)
+    {
+        if (team == Director.Team.PlayerTeam) ScanPlayer1Party();
+        else if (team == Director.Team.EnemyTeam) ScanPlayer2Party();
+    }
+
     public void ScanBothParties()
     {
         ScanPlayer1Party();
@@ -359,7 +368,18 @@ public class CanvasCollection : MonoBehaviour
                     {
                         LunenPanels[i].ActionButtons[j].SetActive(true);
                         LunenPanels[i].ActionButtonScripts[j].Name.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].ActionSet[j].Name;
-                        //LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].ActionSet[j].Type.name;
+                        if (sr.director.PlayerLunenAlive[i].ActionCooldown[j] < sr.director.PlayerLunenAlive[i].ActionSet[j].Turns)
+                        {
+                            
+                            LunenPanels[i].ActionButtonScripts[j].button.interactable = false;
+                            LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = "Left: " + (sr.director.PlayerLunenAlive[i].ActionSet[j].Turns-sr.director.PlayerLunenAlive[i].ActionCooldown[j]);
+                        }
+                        else
+                        {
+                            LunenPanels[i].ActionButtonScripts[j].button.interactable = true;
+                            LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].ActionSet[j].Type.name;
+                        }
+                        //
                         
                     }
                 }
@@ -764,10 +784,12 @@ public class CanvasCollection : MonoBehaviour
                     PartyTeam[PartySwapSelect].ActionSwap(ActionSwapSelect, index);
                     UpdatePartyPanelAction(PartySwapSelect);
                     ActionSwapSelect = -1;
+                    SetActionDescriptionText(null);
                 }
                 else
                 {
                     ActionSwitchMode(index);
+                    SetActionDescriptionText(null);
                 }
             }
             else
@@ -775,10 +797,12 @@ public class CanvasCollection : MonoBehaviour
                 if (ActionSwapSelect != index)
                 {
                     ActionSwitchMode(index);
+                    SetActionDescriptionText(PartyTeam[PartySwapSelect].ActionSet[index]);
                 }
                 else
                 {
                     ActionSwitchMode(-1);
+                    SetActionDescriptionText(null);
                 }
             }
             
@@ -801,6 +825,23 @@ public class CanvasCollection : MonoBehaviour
         }
         ActionSwapSelect = index;
         if (ActionSwapSelect != -1) PartyActionButtonScripts[ActionSwapSelect].scs.SetColorState(true);
+    }
+
+    public void SetActionDescriptionText(Action action)
+    {
+        string setValue = " ";
+        if (action != null)
+        {
+            setValue = action.Name;
+            setValue += "\n" + action.Type.name;
+            setValue += "\n" + action.Turns + " Turn Cooldown";
+            UICollections[(int)UIState.Party].SetPanelState("Action Description Panel", UITransition.State.Enable);
+        }
+        else
+        {
+            UICollections[(int)UIState.Party].SetPanelState("Action Description Panel", UITransition.State.Disable);
+        }
+        ActionDescription.text = setValue;
     }
 
     public void EnsureValidTarget()
