@@ -16,7 +16,8 @@ MonoBehaviour:
   - name: Idle
     iterateTime: 0.2
     loops: 1
-    directional: 1
+    fourDirectional: 1
+    twoDirectional: 0
     spriteArray:
     - {fileID: 3322581362251422087, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
     - {fileID: -7775855008956483906, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
@@ -37,7 +38,8 @@ MonoBehaviour:
   - name: Walk
     iterateTime: 0.1
     loops: 1
-    directional: 1
+    fourDirectional: 1
+    twoDirectional: 0
     spriteArray:
     - {fileID: -6904326155977329758, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
     - {fileID: 3728322903022177363, guid: cd2cf21a1834b4e539c5de87c7f92d55, type: 3}
@@ -74,5 +76,6 @@ MonoBehaviour:
   - name: Run
     iterateTime: 0.05
     loops: 0
-    directional: 0
+    fourDirectional: 0
+    twoDirectional: 0
     spriteArray: []

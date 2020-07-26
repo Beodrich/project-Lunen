@@ -14,6 +14,7 @@ public class ItemButtonScript : MonoBehaviour
 
     [HideInInspector] public Inventory.InventoryEntry entry;
     [HideInInspector] public Item itemEntry;
+    [HideInInspector] public GameData.PlayerLunen lunenEntry;
 
     public Text nameText;
     public Text amountText;
@@ -31,6 +32,11 @@ public class ItemButtonScript : MonoBehaviour
     public void Update()
     {
         
+    }
+
+    public void RestoreOriginalColor()
+    {
+        image.color = defaultColor;
     }
 
     public void SetInventoryEntry(Inventory.InventoryEntry _entry)
@@ -58,6 +64,23 @@ public class ItemButtonScript : MonoBehaviour
             button.interactable = true;
             nameText.text = itemEntry.name;
             amountText.text = "$" + itemEntry.buyValue;
+        }
+        else
+        {
+            button.interactable = false;
+            nameText.text = "";
+            amountText.text = "";
+        }
+    }
+
+    public void SetLunenEntry(GameData.PlayerLunen _entry)
+    {
+        lunenEntry = _entry;
+        if (lunenEntry != null)
+        {
+            button.interactable = true;
+            nameText.text = lunenEntry.nickname;
+            amountText.text = "Lv " + lunenEntry.level;
         }
         else
         {

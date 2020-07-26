@@ -20,6 +20,7 @@ public class SetupRouter : MonoBehaviour
     public SaveSystemObject saveSystemObject;
     public SettingsSystem settingsSystem;
     public Inventory inventory;
+    public StorageSystem storageSystem;
 
     public void Awake()
     {

@@ -59,6 +59,7 @@ public class Monster : MonoBehaviour
     public AIScripts.AILevel level;
     [HideInInspector]
     public int MoveAffinityCost;
+    public bool actionSuccess;
     public List<float> DamageTakenScalar;
 
     private void Start()
@@ -174,9 +175,17 @@ public class Monster : MonoBehaviour
     {
         loopback.canvasCollection.EnsureValidTarget();
         Action action = ActionSet[index];
-        ActionCooldown[index] = 0;
-        action.MonsterUser = this;
-        action.Execute();
+        if (loopback.director.CanUseMove(this, action, index) == 1)
+        {
+            ActionCooldown[index] = 0;
+            action.MonsterUser = this;
+            action.Execute();
+        }
+        else
+        {
+            EndTurn();
+        }
+        
     }
 
     public void PerformAction(AIDecision decision)

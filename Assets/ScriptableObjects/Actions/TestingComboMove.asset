@@ -10,26 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: GODMOVE
+  m_Name: TestingComboMove
   m_EditorClassIdentifier: 
   loopback: {fileID: 0}
-  Name: GODMOVE
+  Name: TestingComboMove
   Type: {fileID: 11400000, guid: f0b191960720d4a568cd4e46f31d5ec8, type: 2}
-  Turns: 3
+  Turns: 1
   AdditionalAffinityCost: 0
-  TimePausePeriod: 2
+  TimePausePeriod: 3
   Animation: {fileID: 0}
-  ComboMove: 0
-  ComboType: {fileID: 0}
-  MoveDescription: If you're not a dev, you shouldn't see this. Though, if you got
-    this somehow, have fun! :)
+  ComboMove: 1
+  ComboType: {fileID: 11400000, guid: 6ff4b9b35b664489f8e80786889294d9, type: 2}
   PartsOfAction:
   - Effect: 0
-    Target: 0
-    Power: 99999
+    Target: 6
+    Power: 300
     EffectToInflict: {fileID: 0}
-    StatusEffect: {fileID: 0}
-    StatusEffectTurns: 0
+    StatusEffect: {fileID: 11400000, guid: c5fad1b33c79a4f959be4507d5cef95c, type: 2}
+    StatusEffectTurns: 5
     HealVars:
       StatChangeType: 0
       HardNumberChange: 0

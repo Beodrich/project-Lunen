@@ -269,7 +269,15 @@ public class Director : MonoBehaviour
     {
         GameObject monsterToCaptureObject = monster.gameObject;
         monster.MonsterTeam = Team.PlayerTeam;
-        sr.battleSetup.PlayerLunenTeam.Add(monsterToCaptureObject);
+        if (sr.battleSetup.PlayerLunenTeam.Count >= 7)
+        {
+            sr.storageSystem.StoreLunen(monster);
+        }
+        else
+        {
+            sr.battleSetup.PlayerLunenTeam.Add(monsterToCaptureObject);
+        }
+        
         sr.battleSetup.EnemyLunenTeam.RemoveAt(sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
         sr.battleSetup.PlayerWin();
     }
@@ -388,5 +396,41 @@ public class Director : MonoBehaviour
     public int GetLunenCountOut(Team lunenTeam)
     {
         return GetLunenCount(lunenTeam, LunenState.Out);
+    }
+
+    public int CanUseMove(Monster user, Action action, int actionIndex)
+    {
+        /*
+        1 = Can Use Move
+        2 = No Type For Combo Move
+        3 = Cooldown Not Finished
+        */
+        if (user.ActionCooldown[actionIndex] < action.Turns)
+        {
+            return 3;
+        }
+        else
+        {
+            if (action.ComboMove)
+            {
+                for (int i = 0; i < GetLunenCountOut(user.MonsterTeam); i++)
+                {
+                    Monster testMonster = GetMonsterOut(user.MonsterTeam, i);
+                    if (testMonster != user)
+                    {
+                        if (testMonster.SourceLunen.HasType(action.ComboType))
+                        {
+                            return 1;
+                        }
+                    }
+                }
+                return 2;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+        
     }
 }

@@ -53,6 +53,11 @@ public class Action : ScriptableObject
     public int AdditionalAffinityCost;
     public float TimePausePeriod;
     public GameObject Animation;
+    public bool ComboMove;
+    [ConditionalField(nameof(ComboMove))] public Type ComboType;
+
+    [TextArea(3,10)]
+    public string MoveDescription;
 
     [Separator("Effects")]
     public List<ActionPart> PartsOfAction;
@@ -190,5 +195,44 @@ public class Action : ScriptableObject
     public void SetTypeToUserMonster()
     {
         Type = MonsterUser.SourceLunen.Elements[0];
+    }
+
+    public string GetMoveType(Monster userMonster = null)
+    {
+        switch (name)
+        {
+            default:
+                return Type.name;
+            case "Tackle":
+                if (userMonster != null)
+                {
+                    return userMonster.SourceLunen.Elements[0].name;
+                }
+                else
+                {
+                    return "???";
+                }
+        }
+    }
+
+    public static string GetNameOfMonsterAim(ActionPart part)
+    {
+        switch (part.Target)
+        {
+            default:
+                return "Error";
+            case Action.MonsterAim.AllMonsters:
+                return "All Monsters";
+            case Action.MonsterAim.AllOpponents:
+                return "All Opponents";
+            case Action.MonsterAim.AllAllies:
+                return "All Allies";
+            case Action.MonsterAim.Self:
+                return "Self";
+            case Action.MonsterAim.SingleOpponent:
+                return "Single Opponent";
+            case Action.MonsterAim.SingleAlly:
+                return "Single Ally";
+        }
     }
 }

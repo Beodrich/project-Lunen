@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2413191256428674599
+--- !u!1 &790694769019375717
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2413191256428674594}
-  - component: {fileID: 8469299372802166168}
-  - component: {fileID: 2413191256428674593}
-  - component: {fileID: 1022389226554337817}
-  - component: {fileID: 2413191256428674597}
-  - component: {fileID: 2413191256428674592}
+  - component: {fileID: 790694769019375712}
+  - component: {fileID: 6776935529069241306}
+  - component: {fileID: 790694769019375715}
+  - component: {fileID: 2716864133048796251}
+  - component: {fileID: 790694769019375719}
+  - component: {fileID: 790694769019375714}
   m_Layer: 0
   m_Name: GroundItem
   m_TagString: Thing
@@ -21,40 +21,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2413191256428674594
+--- !u!4 &790694769019375712
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2413191256428674599}
+  m_GameObject: {fileID: 790694769019375717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.5, y: 12.5, z: 0}
+  m_LocalPosition: {x: 27, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8469299372802166168
+--- !u!114 &6776935529069241306
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2413191256428674599}
+  m_GameObject: {fileID: 790694769019375717}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98bbc2c1e63e98543830eec78d976795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serializedGuid: 
---- !u!114 &2413191256428674593
+--- !u!114 &790694769019375715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2413191256428674599}
+  m_GameObject: {fileID: 790694769019375717}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29619a58214ae44a9a780f95f2fd2039, type: 3}
@@ -80,26 +80,26 @@ MonoBehaviour:
     00000000:
       type: {class: CutPart_ObtainItem, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[ObtainItem] 3x Lunar Cube'
+        _name: '[ObtainItem] 5x Lunar Cube'
         _title: 
         _startNextSimultaneous: 0
         itemObtained: {fileID: 11400000, guid: 99a4b3e8ff9bc467db0ed96253e84e7e, type: 2}
-        itemAmount: 3
+        itemAmount: 5
     00000001:
       type: {class: CutPart_SetAsCollected, ns: , asm: Assembly-CSharp}
       data:
         _name: '[SetAsCollected] New SetAsCollected'
         _title: New SetAsCollected
         _startNextSimultaneous: 0
-        guidSet: {fileID: 8469299372802166168}
+        guidSet: {fileID: 6776935529069241306}
     00000002:
       type: {class: CutPart_StoryTriggerBranch, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[STB] if (ItemObtain/ItemAmount) == 1'
+        _name: '[STB] if (ItemObtain/Amount) == 1'
         _title: 
         _startNextSimultaneous: 0
         trigger: {fileID: 11400000, guid: 238ddcabdb7cf4b3e8e463fcf06248a7, type: 2}
-        triggerPart: ItemAmount
+        triggerPart: Amount
         equalIndex: 0
         targetIndex: 0
         checkBool: 0
@@ -119,17 +119,20 @@ MonoBehaviour:
     00000004:
       type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[Dialogue] You got [[ITEMOBTAINAMOUNT]]x [[ITEMOBTAINNAME]]s!'
+        _name: '[Dialogue] You got ##ItemObtain/Amount##x ##ItemObtain/Name##s!'
         _title: 
         _startNextSimultaneous: 0
-        text: You got [[ITEMOBTAINAMOUNT]]x [[ITEMOBTAINNAME]]s!
+        text: You got ##ItemObtain/Amount##x ##ItemObtain/Name##s!
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: CaptureLunenName
+        showFoldout: 1
     00000005:
       type: {class: CutPart_Destroy, ns: , asm: Assembly-CSharp}
       data:
         _name: '[Destroy] New Destroy'
         _title: New Destroy
         _startNextSimultaneous: 0
-        destroyObject: {fileID: 2413191256428674599}
+        destroyObject: {fileID: 790694769019375717}
     00000006:
       type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
       data:
@@ -151,30 +154,33 @@ MonoBehaviour:
     00000009:
       type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[Dialogue] You got a [[ITEMOBTAINNAME]]!'
+        _name: '[Dialogue] You got a ##ItemObtain/Name##!'
         _title: 
         _startNextSimultaneous: 0
-        text: You got a [[ITEMOBTAINNAME]]!
+        text: You got a ##ItemObtain/Name##!
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
     0000000A:
       type: {class: CutPart_Destroy, ns: , asm: Assembly-CSharp}
       data:
         _name: '[Destroy] New Destroy'
         _title: New Destroy
         _startNextSimultaneous: 0
-        destroyObject: {fileID: 2413191256428674599}
+        destroyObject: {fileID: 790694769019375717}
     0000000B:
       type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
       data:
         _name: '[End] New End'
         _title: New End
         _startNextSimultaneous: 0
---- !u!114 &1022389226554337817
+--- !u!114 &2716864133048796251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2413191256428674599}
+  m_GameObject: {fileID: 790694769019375717}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa95865cf00c7451692e575494ac657b, type: 3}
@@ -182,13 +188,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   gc: {fileID: 0}
---- !u!212 &2413191256428674597
+--- !u!212 &790694769019375719
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2413191256428674599}
+  m_GameObject: {fileID: 790694769019375717}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -232,20 +238,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!61 &2413191256428674592
+--- !u!61 &790694769019375714
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2413191256428674599}
+  m_GameObject: {fileID: 790694769019375717}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.5, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 1}

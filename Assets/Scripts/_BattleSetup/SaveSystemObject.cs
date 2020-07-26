@@ -17,6 +17,27 @@ public class SaveSystemObject : MonoBehaviour
         SaveSystem.SaveGameData(sr);
     }
 
+    public GameObject GeneratePlayerLunen(GameData.PlayerLunen pl)
+    {
+        GameObject newMonsterObject =
+        sr.generateMonster.GenerateLunen(
+            sr.database.IndexToLunen(pl.species),
+            pl.level,
+            GenerateMonster.SortMovesType.None
+            );
+        Monster newMonster = newMonsterObject.GetComponent<Monster>();
+
+        newMonster.Exp.x = pl.exp;
+        newMonster.Health.z = pl.currentHealth;
+        
+        for (int j = 0; j < pl.learnedMoves.Count; j++)
+        {
+            newMonster.ActionSet.Add(sr.database.IndexToAction(pl.learnedMoves[j]));
+        }
+        newMonsterObject.transform.parent = this.transform;
+        return newMonsterObject;
+    }
+
     public bool LoadGame()
     {
         GameData gameData = SaveSystem.LoadGameData();
@@ -67,26 +88,8 @@ public class SaveSystemObject : MonoBehaviour
             }
 
             //Then give the player all their lunen
-            for (int i = 0; i < gameData.PlayerTeam.Count; i++)
-            {
-                GameObject newMonsterObject = sr.generateMonster.GenerateLunen(
-                    sr.database.IndexToLunen(gameData.PlayerTeam[i].species),
-                    gameData.PlayerTeam[i].level,
-                    GenerateMonster.SortMovesType.None
-                    );
-                Monster newMonster = newMonsterObject.GetComponent<Monster>();
-
-                newMonster.Exp.x = gameData.PlayerTeam[i].exp;
-                newMonster.Health.z = gameData.PlayerTeam[i].currentHealth;
-                
-                for (int j = 0; j < gameData.PlayerTeam[i].learnedMoves.Count; j++)
-                {
-                    newMonster.ActionSet.Add(sr.database.IndexToAction(gameData.PlayerTeam[i].learnedMoves[j]));
-                }
-
-                sr.battleSetup.PlayerLunenTeam.Add(newMonsterObject);
-                newMonsterObject.transform.parent = this.transform;
-            }
+            foreach (GameData.PlayerLunen pl in gameData.PlayerTeam) sr.battleSetup.PlayerLunenTeam.Add(GeneratePlayerLunen(pl));
+            sr.storageSystem.StoredLunen = gameData.StorageLunen;
             sr.director.LoadTeams();
 
             sr.battleSetup.lastOverworld = gameData.currentScene;

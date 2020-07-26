@@ -42,6 +42,8 @@ public class BattleFieldAnims : MonoBehaviour
         currentSet = set;
         animTime = 0;
         animIndex = 0;
+        image.sprite = currentSet.GetAnimationSprite(currentType, animIndex);
+        image.SetNativeSize();
     }
 
     public void DisableImage()

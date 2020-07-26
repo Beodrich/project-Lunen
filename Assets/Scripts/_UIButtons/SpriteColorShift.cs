@@ -30,21 +30,9 @@ public class SpriteColorShift : MonoBehaviour
     {
         if (changeColor)
         {
-            timeBetweenColorsCurrent -= Time.unscaledDeltaTime;
-            if (timeBetweenColorsCurrent < 0)
-            {
-                timeBetweenColorsCurrent += timeBetweenColors;
-                turnAround = !turnAround;
-            }
+            timeBetweenColorsCurrent = Time.time % (timeBetweenColors*2);
 
-            if (turnAround)
-            {
-                t.color = Color.Lerp(color1, color2, timeBetweenColorsCurrent / timeBetweenColors);
-            }
-            else
-            {
-                t.color = Color.Lerp(color2, color1, timeBetweenColorsCurrent / timeBetweenColors);
-            }
+            t.color = Color.Lerp(color1, color2, Mathf.Abs((timeBetweenColorsCurrent-timeBetweenColors) / timeBetweenColors));
         }
         
 

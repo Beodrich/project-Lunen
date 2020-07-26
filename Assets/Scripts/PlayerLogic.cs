@@ -148,12 +148,22 @@ public class PlayerLogic : MonoBehaviour
             {
                 if (hit[i].gameObject.tag != "Path")
                 {
-                    found += MoveBegin(hit[i]) ? 1 : 0;
-                    if (inGrass) inGrass2 = true;
-                    if (inTrainerView) inTrainerView2 = true;
-                    if (inDoor) inDoor2 = true;
-                    if (inShop) inShop2 = true;
-                    if (inTrain) inTrain2 = true;
+                    if (hit[i].gameObject.tag != "Grass")
+                    {
+                        found += MoveBegin(hit[i]) ? 1 : 0;
+                        if (inTrainerView) inTrainerView2 = true;
+                        if (inDoor) inDoor2 = true;
+                        if (inShop) inShop2 = true;
+                        if (inTrain) inTrain2 = true;
+                    }
+                    else
+                    {
+                        inGrass = true;
+                        grassObject = hit[i].gameObject;
+                        inGrass2 = true;
+                        pathsFound++;
+                    }
+                    
                 }
                 else
                 {

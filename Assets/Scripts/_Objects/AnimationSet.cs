@@ -12,16 +12,21 @@ public class AnimationSet : ScriptableObject
         public string name;
         public float iterateTime;
         public bool loops;
-        public bool directional;
+        public bool fourDirectional;
+        public bool twoDirectional;
         public List<Sprite> spriteArray;
         
         public int spritesPerDirection
         {
             get
             {
-                if (directional)
+                if (fourDirectional)
                 {
                     return spriteArray.Count/4;
+                }
+                else if (twoDirectional)
+                {
+                    return spriteArray.Count/2;
                 }
                 else
                 {
@@ -41,7 +46,7 @@ public class AnimationSet : ScriptableObject
         public int getDirectionStartIndex(MoveScripts.Direction direction)
         {
             int directionValue = 0;
-            if (directional)
+            if (fourDirectional)
             {
                 switch (direction)
                 {
@@ -49,6 +54,16 @@ public class AnimationSet : ScriptableObject
                     case MoveScripts.Direction.South: directionValue = 0; break;
                     case MoveScripts.Direction.East: directionValue = 2; break;
                     case MoveScripts.Direction.West: directionValue = 3; break;
+                }
+            }
+            else if (twoDirectional)
+            {
+                switch (direction)
+                {
+                    case MoveScripts.Direction.North: directionValue = 1; break;
+                    case MoveScripts.Direction.South: directionValue = 0; break;
+                    case MoveScripts.Direction.East: directionValue = 0; break;
+                    case MoveScripts.Direction.West: directionValue = 1; break;
                 }
             }
             

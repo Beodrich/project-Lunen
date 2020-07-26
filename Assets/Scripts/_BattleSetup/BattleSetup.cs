@@ -91,11 +91,13 @@ public class BattleSetup : MonoBehaviour
                 {
                     if (!sr.canvasCollection.MenuPanelOpen)
                     {
-                        if (!InBattle) OpenMainMenu();
+                        if (sr.canvasCollection.StoragePanelOpen) sr.canvasCollection.CloseStorageWindow(InBattle);
+                        else if (!InBattle) OpenMainMenu();
                         else
                         {
                             if (sr.canvasCollection.InventoryPanelOpen) sr.canvasCollection.CloseInventoryWindow(InBattle);
-                            if (sr.canvasCollection.PartyPanelOpen) sr.canvasCollection.ClosePartyWindow(InBattle);
+                            else if (sr.canvasCollection.StoragePanelOpen) sr.canvasCollection.CloseStorageWindow(InBattle);
+                            else if (sr.canvasCollection.PartyPanelOpen) sr.canvasCollection.ClosePartyWindow(InBattle);
                         }
                     }
                     else
@@ -105,6 +107,7 @@ public class BattleSetup : MonoBehaviour
                             sr.settingsSystem.ExitSettings();
                         }
                         else if (sr.canvasCollection.InventoryPanelOpen) sr.canvasCollection.CloseInventoryWindow(InBattle);
+                        else if (sr.canvasCollection.StoragePanelOpen) sr.canvasCollection.CloseStorageWindow(InBattle);
                         else if (sr.canvasCollection.PartyPanelOpen) sr.canvasCollection.ClosePartyWindow(InBattle);
                         else
                         {

@@ -50,6 +50,14 @@ public class DrawHealthbar : MonoBehaviour
         HealthToShow = 0f;
     }
 
+    public void SetNull()
+    {
+        targetMonster = null;
+        PlayerHealth = 0;
+        LastPlayerHealth = 0;
+        HealthToShow = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {

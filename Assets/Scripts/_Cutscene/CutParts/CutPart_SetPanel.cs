@@ -56,6 +56,10 @@ public class CutPart_SetPanel : CutPart
                     sr.canvasCollection.OpenPartyWindow();
                     //CutsceneStartLite(new PackedCutscene(sr.sceneAttributes.sceneCutscenes[cutsceneIndex]), cutsceneRoute, -1);
                 break;
+                case CanvasCollection.UIState.LunenStorage:
+                    sr.canvasCollection.OpenStorageWindow();
+                    sr.canvasCollection.OpenPartyWindow(false);
+                break;
                 case CanvasCollection.UIState.Battle:
                     sr.canvasCollection.OpenState(panelSelect);
                     sr.battleSetup.AdvanceCutscene();

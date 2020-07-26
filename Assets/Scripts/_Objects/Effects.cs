@@ -69,6 +69,73 @@ public class Effects : ScriptableObject
     [ConditionalField(nameof(ShowMiscChanges))] public bool IsAStatusEffect;
     [ConditionalField(nameof(ShowMiscChanges))] public bool InflictsAnotherEffect;
     [ConditionalField(nameof(InflictsAnotherEffect))] public Effects NextEffect;
+
+    public string GetDescription(int turns = -1)
+    {
+        string returnValue = "";
+        if (IsAStatusEffect)
+        {
+            returnValue = "Inflicts " + name + " For " + turns + " Turns"; 
+        }
+        else
+        {
+            int effects = 0;
+            if (AttackEffect != RangeOfEffect.NoEffect)
+            {
+                returnValue += "ATKMOD: ";
+                if (GlobalAttack.StatChangeType == StatChange.NumberType.HardNumber)
+                {
+                    if (GlobalAttack.HardNumberChange > 0) returnValue += "+";
+                    returnValue += GlobalAttack.HardNumberChange;
+                }
+                else if (GlobalAttack.StatChangeType == StatChange.NumberType.Percentage)
+                {
+                    if (GlobalAttack.PercentageChange > 0) returnValue += "+";
+                    returnValue += GlobalAttack.PercentageChange + "%";
+                }
+                effects++;
+            }
+            if (DefenseEffect != RangeOfEffect.NoEffect)
+            {
+                if (effects>0) returnValue += " | ";
+                returnValue += "DEFMOD: ";
+                if (GlobalDefense.StatChangeType == StatChange.NumberType.HardNumber)
+                {
+                    if (GlobalDefense.HardNumberChange > 0) returnValue += "+";
+                    returnValue += GlobalDefense.HardNumberChange;
+                }
+                else if (GlobalDefense.StatChangeType == StatChange.NumberType.Percentage)
+                {
+                    if (GlobalDefense.PercentageChange > 0) returnValue += "+";
+                    returnValue += GlobalDefense.PercentageChange + "%";
+                }
+                effects++;
+            }
+            if (SpeedEffect != RangeOfEffect.NoEffect)
+            {
+                if (effects>0) returnValue += " | ";
+                returnValue += "SPDMOD: ";
+                if (GlobalSpeed.StatChangeType == StatChange.NumberType.HardNumber)
+                {
+                    if (GlobalSpeed.HardNumberChange > 0) returnValue += "+";
+                    returnValue += GlobalSpeed.HardNumberChange;
+                }
+                else if (GlobalSpeed.StatChangeType == StatChange.NumberType.Percentage)
+                {
+                    if (GlobalSpeed.PercentageChange > 0) returnValue += "+";
+                    returnValue += GlobalSpeed.PercentageChange + "%";
+                }
+                effects++;
+            }
+            if (DamageTakenEffect != RangeOfEffect.NoEffect)
+            {
+                
+            }
+
+            returnValue += " For " + turns + " Turns"; 
+        }
+        return returnValue;
+    }
 }
 
 [System.Serializable]

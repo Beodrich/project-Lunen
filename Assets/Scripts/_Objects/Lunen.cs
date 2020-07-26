@@ -39,4 +39,13 @@ public class Lunen : ScriptableObject
     public int AffinityCost;
     public float CatchRate;
     public float CooldownTime;
+
+    public bool HasType(Type type)
+    {
+        foreach (Type t in Elements)
+        {
+            if (t == type) return true;
+        }
+        return false;
+    }
 }

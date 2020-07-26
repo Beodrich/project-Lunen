@@ -78,6 +78,7 @@ public class GameData
     }
 
     public List<PlayerLunen> PlayerTeam;
+    public List<PlayerLunen> StorageLunen;
     public List<InventoryItem> InventoryItems;
     public List<System.Guid> GuidList;
     public List<TriggerSet> SaveTriggers;
@@ -90,29 +91,30 @@ public class GameData
     public float respawnY;
     public string respawnScene;
     public int respawnDirection;
+
+    public static PlayerLunen GeneratePlayerLunen(Monster currentMonster, SetupRouter sr)
+    {
+        PlayerLunen a = new PlayerLunen();
+        a.species = sr.database.LunenToIndex(currentMonster.SourceLunen);
+        a.nickname = currentMonster.Nickname;
+        a.level = currentMonster.Level;
+        a.exp = currentMonster.Exp.x;
+        a.currentHealth = currentMonster.Health.z;
+        a.learnedMoves = new List<int>();
+        for (int j = 0; j < currentMonster.ActionSet.Count; j++)
+        {
+            a.learnedMoves.Add(sr.database.ActionToIndex(currentMonster.ActionSet[j]));
+        }
+        return a;
+    }
     
 
     public GameData(SetupRouter sr)
     {
         PlayerTeam = new List<PlayerLunen>();
         //Debug.Log("Found " + sr.battleSetup.PlayerLunenTeam.Count + " Lunen!");
-        for (int i = 0; i < sr.battleSetup.PlayerLunenTeam.Count; i++)
-        {
-            Monster currentMonster = sr.battleSetup.PlayerLunenTeam[i].GetComponent<Monster>();
-            PlayerLunen a = new PlayerLunen();
-            a.species = sr.database.LunenToIndex(currentMonster.SourceLunen);
-            a.nickname = currentMonster.Nickname;
-            a.level = currentMonster.Level;
-            a.exp = currentMonster.Exp.x;
-            a.currentHealth = currentMonster.Health.z;
-            a.learnedMoves = new List<int>();
-            for (int j = 0; j < currentMonster.ActionSet.Count; j++)
-            {
-                a.learnedMoves.Add(sr.database.ActionToIndex(currentMonster.ActionSet[j]));
-            }
-            PlayerTeam.Add(a);
-            
-        }
+        foreach (GameObject monster in sr.battleSetup.PlayerLunenTeam) PlayerTeam.Add(GeneratePlayerLunen(monster.GetComponent<Monster>(), sr));
+        StorageLunen = sr.storageSystem.StoredLunen;
 
         InventoryItems = new List<InventoryItem>();
         //Debug.Log("Found " + sr.inventory.listOfItems.Count + " Item" + (sr.inventory.listOfItems.Count == 1 ? "" : "s") + "!");
