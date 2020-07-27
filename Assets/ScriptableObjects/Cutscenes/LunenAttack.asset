@@ -16,7 +16,6 @@ MonoBehaviour:
   parts:
   - id: 0
   - id: 1
-  - id: 2
   references:
     version: 1
     00000000:
@@ -24,26 +23,26 @@ MonoBehaviour:
       data:
         _name: '[Dialogue] ##BattleVars/AttackLunenName## used ##BattleVars/AttackLunenAction##!'
         _title: 
-        _startNextSimultaneous: 1
+        _startNextSimultaneous: 0
         text: '##BattleVars/AttackLunenName## used ##BattleVars/AttackLunenAction##!'
+        autoClose: 1
+        waitTime: 0
+        useStoryTriggerTime: 1
+        trigger2: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart2: AnimationTime
         trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
         triggerPart: AttackLunenAction
         showFoldout: 0
     00000001:
-      type: {class: CutPart_Wait, ns: , asm: Assembly-CSharp}
+      type: {class: CutPart_StoryTriggerSet, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[Wait] Wait 0s (AnimationTime)'
+        _name: '[STS] Set (BattleVars/LunenAttacking) To False'
         _title: 
         _startNextSimultaneous: 0
-        waitTime: 0
-        useStoryTriggerTime: 1
         trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
-        triggerPart: AnimationTime
-    00000002:
-      type: {class: CutPart_SetPanel, ns: , asm: Assembly-CSharp}
-      data:
-        _name: '[SetPanel] Set Dialogue Panel To Disable'
-        _title: 
-        _startNextSimultaneous: 0
-        panelSelect: 5
-        panelState: 1
+        triggerPart: LunenAttacking
+        checkBool: 0
+        checkInt: 0
+        checkFloat: 0
+        checkDouble: 0
+        checkString: 

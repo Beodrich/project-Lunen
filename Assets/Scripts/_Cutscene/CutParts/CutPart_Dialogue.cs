@@ -37,6 +37,14 @@ public class CutPart_Dialogue : CutPart
     //Unique Values
 
     public string text;
+    public bool autoClose;
+
+    //From Wait
+
+    public float waitTime;
+    public bool useStoryTriggerTime;
+    public StoryTrigger trigger2;
+    public string triggerPart2;
 
     //Temporary Values
 
@@ -57,7 +65,22 @@ public class CutPart_Dialogue : CutPart
         {
             next = false;
         }
+        sr.battleSetup.dialogueAutoClose = autoClose;
         sr.battleSetup.DialogueBoxPrepare(this, next);
+
+        if (autoClose)
+        {
+            if (useStoryTriggerTime)
+            {
+                sr.battleSetup.waitTime = (float)trigger2.GetTriggerValue(triggerPart2);
+            }
+            else
+            {
+                sr.battleSetup.waitTime = waitTime;
+            }
+            
+            sr.battleSetup.StartCoroutine(sr.battleSetup.cutsceneWait(sr.battleSetup.transform));
+        }
     }
 
     public void Duplicate (CutPart cp)
@@ -68,6 +91,12 @@ public class CutPart_Dialogue : CutPart
         _startNextSimultaneous = _cp.startNextSimultaneous;
 
         text = _cp.text;
+        autoClose = _cp.autoClose;
+
+        waitTime = _cp.waitTime;
+        useStoryTriggerTime = _cp.useStoryTriggerTime;
+        trigger = _cp.trigger2;
+        triggerPart = _cp.triggerPart2;
     }
 
     public void GetTitle()
@@ -108,6 +137,37 @@ public class CutPart_Dialogue : CutPart
             }
             
             startNextSimultaneous = EditorGUILayout.Toggle("Start Next Part Alongside: ", startNextSimultaneous);
+
+            autoClose = EditorGUILayout.Toggle("Close Automatically: ", autoClose);
+
+            if (autoClose)
+            {
+                useStoryTriggerTime = EditorGUILayout.Toggle("Use Trigger Time: ", useStoryTriggerTime);
+                if (useStoryTriggerTime)
+                {
+                    EditorGUILayout.BeginHorizontal();
+                    trigger2 = (StoryTrigger)EditorGUILayout.ObjectField(trigger2, typeof(StoryTrigger), false);
+                    if (trigger2 != null)
+                    {
+                        int part = trigger2.GetTriggerPartIndex(triggerPart2);
+                        if (part == -1) part = 0;
+                        string lastTriggerPart = triggerPart2;
+                        triggerPart2 = trigger2.triggerParts[EditorGUILayout.Popup(part, trigger2.GetTriggerPartList())].title;
+                        if (lastTriggerPart != triggerPart2)
+                        {
+                            part = trigger2.GetTriggerPartIndex(triggerPart2);
+                        }
+                    }
+
+                    EditorGUILayout.EndHorizontal();
+                }
+                else
+                {
+                    waitTime = EditorGUILayout.FloatField("Wait Time (In Seconds): ", waitTime);
+                }
+            }
+
+            
         }
     #endif
 }

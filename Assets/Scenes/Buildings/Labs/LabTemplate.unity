@@ -10733,6 +10733,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: Whaddaya lookin' at?
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -10998,7 +11003,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4746591819723180097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 11, z: 0}
+  m_LocalPosition: {x: 49, y: 11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4746591819700297141}
@@ -11058,6 +11063,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: Because I'm a nice gal, I'll give you something.
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -11077,6 +11087,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: Here's three Lunen Cubes. Use them if you need to catch a lunen!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -11102,6 +11117,8 @@ MonoBehaviour:
   moveSpeed: 5
   gridSize: 1
   playerSize: 1
+  thisDirectInput: {x: 0, y: 0}
+  lastDirectInput: {x: 0, y: 0}
   isMoving: 0
   animMoving: 0
   npcMove: 0
@@ -11113,7 +11130,7 @@ MonoBehaviour:
   lookDirection: 1
   hit: {fileID: 0}
   hits: []
-  animTime: 0.1
+  animTime: 0.03344673
   animIndex: 8
   animationType: Idle
   animHijack: 0

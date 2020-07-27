@@ -116,6 +116,7 @@ public class ItemButtonScript : MonoBehaviour
          Debug.Log("Bought an item"+ itemEntry.name);
          sr.inventory.AddItem(itemEntry, 1);
          sr.inventory.gold -= itemEntry.buyValue;
+         sr.canvasCollection.RefreshInventoryButtons();
         //playerInventory.Add(itemType);
     }
     private bool HasEnoughGold() {

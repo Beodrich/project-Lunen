@@ -134,13 +134,22 @@ public class Monster : MonoBehaviour
                         if (MonsterTeam == Director.Team.EnemyTeam && loopback.director.PlayerLunenAlive.Count != 0)
                         {
                             //StartAI
-                            PerformAction(AIScripts.StartDecision(loopback, this));
+                            if (!(bool)loopback.database.GetTriggerValue("BattleVars/LunenAttacking"))
+                            {
+                                PerformAction(AIScripts.StartDecision(loopback, this));
+                                CooldownDone = true;
+                            }
+                            
+                        }
+                        else if (MonsterTeam != Director.Team.EnemyTeam)
+                        {
+                            CooldownDone = true;
                         }
                         if (EndOfTurnDamage > 0)
                         {
                             TakeDamage(EndOfTurnDamage);
                         }
-                        CooldownDone = true;
+                        
                     }
                     else CurrCooldown = 0f;
                 }
@@ -178,6 +187,7 @@ public class Monster : MonoBehaviour
         if (loopback.director.CanUseMove(this, action, index) == 1)
         {
             ActionCooldown[index] = 0;
+            loopback.database.SetTriggerValue("BattleVars/LunenAttacking", true);
             action.MonsterUser = this;
             action.Execute();
         }
@@ -494,9 +504,9 @@ public class Monster : MonoBehaviour
         return cooldown;
     }
 
-    public void ResetCooldown()
+    public void ResetCooldown(float offset = 0)
     {
-        CurrCooldown = GetMaxCooldown();
+        CurrCooldown = GetMaxCooldown() - offset;
         CooldownDone = false;
     }
 

@@ -29,6 +29,15 @@ MonoBehaviour:
   - id: 12
   - id: 13
   - id: 14
+  - id: 15
+  - id: 16
+  - id: 17
+  - id: 18
+  - id: 19
+  - id: 20
+  - id: 21
+  - id: 22
+  - id: 23
   references:
     version: 1
     00000000:
@@ -68,6 +77,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: The enemy's ##BattleVars/DeadLunen## fainted!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
         triggerPart: DeadLunen
         showFoldout: 1
@@ -88,17 +102,30 @@ MonoBehaviour:
         panelSelect: 6
         panelState: 0
     00000006:
-      type: {class: CutPart_CheckBattleOver, ns: , asm: Assembly-CSharp}
+      type: {class: CutPart_StoryTriggerBranch, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[CheckBattleOver] New CheckBattleOver'
-        _title: New CheckBattleOver
+        _name: '[STB] if (BattleVars/EnemyLunenLeft) <= 0'
+        _title: 
         _startNextSimultaneous: 0
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: EnemyLunenLeft
+        equalIndex: 3
+        targetIndex: 0
+        checkBool: 0
+        checkInt: 0
+        checkFloat: 0
+        checkDouble: 0
+        checkString: 
+        destinationCutscene: {fileID: 0}
+        destinationCutsceneScript: {fileID: 0}
+        destinationRoute: WinState
     00000007:
-      type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
+      type: {class: CutPart_ChangeRoute, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[End] New End'
-        _title: New End
+        _name: '[ChangeRoute] Go To CheckBattleOver'
+        _title: Go To CheckBattleOver
         _startNextSimultaneous: 0
+        newRoute: CheckBattleOver
     00000008:
       type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
       data:
@@ -118,6 +145,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: '##BattleVars/DeadLunen## fainted!'
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -138,12 +170,105 @@ MonoBehaviour:
         panelSelect: 6
         panelState: 0
     0000000D:
+      type: {class: CutPart_ChangeRoute, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[ChangeRoute] Go To CheckBattleOver'
+        _title: Go To CheckBattleOver
+        _startNextSimultaneous: 0
+        newRoute: CheckBattleOver
+    0000000E:
+      type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
+      data:
+        _name: ' '
+        _title: New Blank
+        _startNextSimultaneous: 0
+    0000000F:
+      type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[RouteStart] WinState'
+        _title: WinState
+        _startNextSimultaneous: 0
+    00000010:
+      type: {class: CutPart_StoryTriggerBranch, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[StoryTriggerBranch] New StoryTriggerBranch'
+        _title: New StoryTriggerBranch
+        _startNextSimultaneous: 0
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: IsTrainerBattle
+        equalIndex: 0
+        targetIndex: 0
+        checkBool: 0
+        checkInt: 0
+        checkFloat: 0
+        checkDouble: 0
+        checkString: 
+        destinationCutscene: {fileID: 0}
+        destinationCutsceneScript: {fileID: 0}
+        destinationRoute: WildWin
+    00000011:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] You Win!
+
+
+          You get $##BattleVars/MoneyPayout##
+          for winning!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: 'You Win!
+
+
+          You get $##BattleVars/MoneyPayout## for winning!'
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
+        triggerPart: MoneyPayout
+        showFoldout: 1
+    00000012:
+      type: {class: CutPart_ChangeRoute, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[ChangeRoute] Go To CheckBattleOver'
+        _title: Go To CheckBattleOver
+        _startNextSimultaneous: 0
+        newRoute: CheckBattleOver
+    00000013:
+      type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[RouteStart] WildWin'
+        _title: WildWin
+        _startNextSimultaneous: 0
+    00000014:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] You Win!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: You Win!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000015:
+      type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[RouteStart] CheckBattleOver'
+        _title: CheckBattleOver
+        _startNextSimultaneous: 0
+    00000016:
       type: {class: CutPart_CheckBattleOver, ns: , asm: Assembly-CSharp}
       data:
         _name: '[CheckBattleOver] New CheckBattleOver'
         _title: New CheckBattleOver
         _startNextSimultaneous: 0
-    0000000E:
+    00000017:
       type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
       data:
         _name: '[End] New End'

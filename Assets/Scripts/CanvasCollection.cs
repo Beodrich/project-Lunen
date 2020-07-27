@@ -95,6 +95,7 @@ public class CanvasCollection : MonoBehaviour
 
     public Text ActionDescription;
     public Text StorageLunenDescription;
+    public Text PartyLunenDescription;
 
     public bool MenuPanelOpen;
     public bool OptionsPanelOpen;
@@ -254,6 +255,13 @@ public class CanvasCollection : MonoBehaviour
         switch (action)
         {
             default: break;
+            case PartyAction.ViewStats:
+                
+                UICollections[(int)UIState.Party].SetPanelState("Lunen Info Panel", UITransition.State.Enable);
+                if (PartySwapSelect == -1) PartyAccess(0);
+                SetActionDescriptionText(null);
+                PartyLunenDescription.text = GetLunenInfo(sr.battleSetup.PlayerLunenTeam[PartySwapSelect].GetComponent<Monster>());
+            break;
             case PartyAction.SwapMoves:
                 
                 UICollections[(int)UIState.Party].SetPanelState("Action Panel", UITransition.State.Enable);
@@ -272,6 +280,9 @@ public class CanvasCollection : MonoBehaviour
         switch (action)
         {
             default: break;
+            case PartyAction.ViewStats:
+                UICollections[(int)UIState.Party].SetPanelState("Lunen Info Panel", UITransition.State.Disable);
+            break;
             case PartyAction.SwapMoves:
                 UICollections[(int)UIState.Party].SetPanelState("Action Panel", UITransition.State.Disable);
             break;
@@ -766,7 +777,7 @@ public class CanvasCollection : MonoBehaviour
 
     public void ExecuteAction(int index)
     {
-        sr.director.GetMonsterOut(Director.Team.PlayerTeam, GetLunenSelected(Director.Team.PlayerTeam)).PerformAction(index);
+        if (!(bool)sr.database.GetTriggerValue("BattleVars/LunenAttacking") && !PartyPanelOpen && !InventoryPanelOpen) sr.director.GetMonsterOut(Director.Team.PlayerTeam, GetLunenSelected(Director.Team.PlayerTeam)).PerformAction(index);
         //sr.director.PerformAction(Director.Team.PlayerTeam,GetLunenSelected(Director.Team.PlayerTeam), index);
     }
 
@@ -817,6 +828,12 @@ public class CanvasCollection : MonoBehaviour
                     default:
                         PartySwitchMode(index);
                         UpdatePartyPanelAction(PartySwapSelect);
+                    break;
+
+                    case PartyAction.ViewStats:
+                        PartySwitchMode(index);
+                        UpdatePartyPanelAction(PartySwapSelect);
+                        PartyLunenDescription.text = GetLunenInfo(sr.battleSetup.PlayerLunenTeam[PartySwapSelect].GetComponent<Monster>());
                     break;
 
                     case PartyAction.SwapLunen:
@@ -979,34 +996,37 @@ public class CanvasCollection : MonoBehaviour
 
     public void UseItem(int index)
     {
-        bool itemUseSuccess = true;
-        Item item = sr.inventory.requestedItems[index].item;
-        switch (item.itemType)
+        if (!(bool)sr.database.GetTriggerValue("BattleVars/LunenAttacking"))
         {
-            case Item.ItemType.Capture:
-                if (sr.battleSetup.InBattle)
-                {
-                    if (sr.battleSetup.typeOfBattle == BattleSetup.BattleType.TrainerBattle)
+            bool itemUseSuccess = true;
+            Item item = sr.inventory.requestedItems[index].item;
+            switch (item.itemType)
+            {
+                case Item.ItemType.Capture:
+                    if (sr.battleSetup.InBattle)
                     {
-                        sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Cannot Use Capture In Trainer Battle"));
-                        itemUseSuccess = false;
-                        
+                        if (sr.battleSetup.typeOfBattle == BattleSetup.BattleType.TrainerBattle)
+                        {
+                            sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Cannot Use Capture In Trainer Battle"));
+                            itemUseSuccess = false;
+                            
+                        }
+                        else if (!PartyPanelOpen)
+                        {
+                            sr.director.AttemptToCapture(item.CatchRate);
+                            CloseInventoryWindow(true);
+                        }
                     }
                     else
                     {
-                        sr.director.AttemptToCapture(item.CatchRate);
-                        CloseInventoryWindow(true);
+                        sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Cannot Use Item Now"));
+                        itemUseSuccess = false;
                     }
-                }
-                else
-                {
-                    sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Cannot Use Item Now"));
-                    itemUseSuccess = false;
-                }
-                
-            break;
+                    
+                break;
+            }
+            if (itemUseSuccess) sr.inventory.RemoveItem(item, 1);
         }
-        if (itemUseSuccess) sr.inventory.RemoveItem(item, 1);
     }
 
     public void ReleaseLunen()
@@ -1084,7 +1104,7 @@ public class CanvasCollection : MonoBehaviour
         string setValue = "";
         if (monster != null)
         {
-            setValue = "Lunen Species: " + monster.SourceLunen.name;
+            setValue = "Species: " + monster.SourceLunen.name;
             setValue += "\nNickname: " + monster.Nickname;
             setValue += "\nLevel: " + monster.Level;
             if (monster.Level >= sr.database.LevelCap)
@@ -1097,6 +1117,11 @@ public class CanvasCollection : MonoBehaviour
             }
             
             setValue += "\n";
+            setValue += "\nHealth: " + monster.Health.z + "/" + monster.GetMaxHealth();
+            setValue += "\nAttack: " + monster.Attack.z;
+            setValue += "\nDefense: " + monster.Defense.z;
+            setValue += "\nSpeed: " + monster.Speed.z;
+            setValue += "\n";
             for (int i = 0; i < monster.ActionSet.Count; i++)
             {
                 setValue += "\nMove " + (i+1) + ": " + monster.ActionSet[i].Name;
@@ -1104,7 +1129,8 @@ public class CanvasCollection : MonoBehaviour
         }
         else if (gdMonster != null)
         {
-            setValue = "Lunen Species: " + sr.database.IndexToLunen(gdMonster.species).name;
+            Lunen thisLunen = sr.database.IndexToLunen(gdMonster.species);
+            setValue = "Species: " + thisLunen.name;
             setValue += "\nNickname: " + gdMonster.nickname;
             setValue += "\nLevel: " + gdMonster.level;
             if (gdMonster.level >= sr.database.LevelCap)
@@ -1116,6 +1142,12 @@ public class CanvasCollection : MonoBehaviour
                 setValue += "\nEXP: " + gdMonster.exp;
             }
             setValue += "\n";
+            setValue += "\nHealth: " + (gdMonster.currentHealth) + "/" + (gdMonster.currentHealth);
+            setValue += "\nAttack: " + (thisLunen.Attack.x + thisLunen.Attack.y * gdMonster.level);
+            setValue += "\nDefense: " + (thisLunen.Defense.x + thisLunen.Defense.y * gdMonster.level);
+            setValue += "\nSpeed: " + (thisLunen.Speed.x + thisLunen.Speed.y * gdMonster.level);
+            setValue += "\n";
+            
             for (int i = 0; i < gdMonster.learnedMoves.Count; i++)
             {
                 setValue += "\nMove " + (i+1) + ": " + sr.database.IndexToAction(gdMonster.learnedMoves[i]).Name;

@@ -28,3 +28,19 @@ MonoBehaviour:
     position: {x: 37, y: 34, z: 0}
     facingDirection: 2
     guidString: 59297d48-6885-46e2-a397-608d2665e762
+  - name: FirstTownDoor3
+    position: {x: -29, y: 34, z: 0}
+    facingDirection: 1
+    guidString: 7e9fc5f1-b58e-4fd6-850f-b159d6c28f8c
+  - name: FirstTownDoor2
+    position: {x: -29, y: 35, z: 0}
+    facingDirection: 1
+    guidString: 55ac44b4-9f7f-4f37-97a7-7db2b4f803fd
+  - name: FirstTownDoor1
+    position: {x: -29, y: 36, z: 0}
+    facingDirection: 1
+    guidString: 8e2f8b46-0f5a-447a-8f89-9a372f040154
+  - name: FirstTownDoor4
+    position: {x: -29, y: 33, z: 0}
+    facingDirection: 1
+    guidString: 03204cf5-286b-486b-96b3-5fe95e4c7995

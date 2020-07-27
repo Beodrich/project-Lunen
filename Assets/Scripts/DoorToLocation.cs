@@ -12,9 +12,9 @@ public class DoorToLocation : MonoBehaviour
     public System.Guid thisGuid;
     public string thisGuidString;
     public string targetGuidString;
-    public int fallbackIndex;
 
     public bool fadeOutOnTransition;
+    public bool stopOnTransition;
 
     public MoveScripts.Direction exitDirection;
 

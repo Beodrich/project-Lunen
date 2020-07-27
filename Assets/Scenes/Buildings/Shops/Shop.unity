@@ -2205,18 +2205,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.342484}
+  m_Offset: {x: 0.5, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.03, y: 5.36}
+    pivot: {x: 0, y: 1}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 8.03, y: 5.36}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.03, y: 6.044968}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &2073091341
 SpriteRenderer:
@@ -2257,7 +2257,7 @@ SpriteRenderer:
   m_SortingLayerID: -427793963
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bbe7741aef04c7f4eb4f79f94ff3585a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0952531222484abfa8a21e1a5d6df71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2267,7 +2267,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!4 &2073091342
 Transform:
   m_ObjectHideFlags: 0
@@ -2276,7 +2276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073091339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2469,7 +2469,7 @@ PrefabInstance:
         type: 3}
       propertyPath: targetScene
       value: 
-      objectReference: {fileID: 11400000, guid: 3a1102146535444b080b4ce26fe33073,
+      objectReference: {fileID: 11400000, guid: a45da1d09a27e4ce98375e963fbbaffd,
         type: 2}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -2484,12 +2484,12 @@ PrefabInstance:
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: targetGuidString
-      value: 754d1de7-b4e2-43ed-a252-2970c273033b
+      value: 124a85dd-bd23-4aa7-8f26-2580fa843778
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: fallbackIndex
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696780, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}

@@ -20,6 +20,7 @@ public class TrainerLogic : MonoBehaviour
     [Space(10)]
 
     public List<GenerateMonster.LunenSetup> TeamComp;
+    public int moneyPayout;
 
     Vector3 Size;
     Vector3 StartPosition;

@@ -35320,6 +35320,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: I'm a trainer! Let's fight!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -35358,6 +35363,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: I can't believe I lost!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -35386,6 +35396,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: Nice job, you beat me!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -35414,6 +35429,7 @@ MonoBehaviour:
     level: 1
   - species: {fileID: 11400000, guid: d271bc018be6a4303843c58710dd56b7, type: 2}
     level: 1
+  moneyPayout: 0
   TeamObjects: []
   Team: []
   TrainerLookStop:
@@ -37110,6 +37126,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: I'm a trainer! Let's fight!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -37148,6 +37169,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: I can't believe I lost!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -37176,6 +37202,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: Nice job, you beat me!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -37219,6 +37250,7 @@ MonoBehaviour:
     level: 1
   - species: {fileID: 11400000, guid: d271bc018be6a4303843c58710dd56b7, type: 2}
     level: 1
+  moneyPayout: 500
   TeamObjects: []
   Team: []
   TrainerLookStop:
@@ -37334,12 +37366,12 @@ MonoBehaviour:
   endPosition: {x: 0, y: 0, z: 0}
   centerPosition: {x: 0.5, y: -0.5, z: 0}
   cutsceneMoveSpaces: 0
-  lookDirection: 1
+  lookDirection: 3
   hit: {fileID: 0}
   hits: []
   animTime: 0.1
-  animIndex: 17
-  animationType: 
+  animIndex: 12
+  animationType: Idle
   animHijack: 0
 --- !u!1001 &6324779463032684279
 PrefabInstance:
@@ -37556,6 +37588,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: You got ##ItemObtain/Amount##x ##ItemObtain/Name##s!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
         triggerPart: CaptureLunenName
         showFoldout: 1
@@ -37591,6 +37628,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: You got a ##ItemObtain/Name##!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0

@@ -203,11 +203,13 @@ public class PlayerLogic : MonoBehaviour
         {
             sr.canvasCollection.GetShopStats(shopObject.GetComponent<UI_Shop>());
             sr.canvasCollection.OpenState(CanvasCollection.UIState.Shop);
+            sr.canvasCollection.OpenInventoryWindow();
         }
         else if (shopObject != null)
         {
             //shopObject.GetComponent<ShopTrigger>().shop.Hide();
             sr.canvasCollection.CloseState(CanvasCollection.UIState.Shop);
+            sr.canvasCollection.CloseInventoryWindow(true);
             shopObject = null;
         }
     }

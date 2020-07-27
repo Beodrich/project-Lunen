@@ -26,6 +26,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ebabad0c3474d4f8fb5dd77ea7942925, type: 2}
   - {fileID: 11400000, guid: 56c2e1a2164807c4b80a570b0e30c771, type: 2}
   - {fileID: 11400000, guid: d7d0631ac720e42baa804b872a1b4820, type: 2}
+  - {fileID: 11400000, guid: a45da1d09a27e4ce98375e963fbbaffd, type: 2}
+  - {fileID: 11400000, guid: 9169a02df4d9f47df87c6e39e0b1892b, type: 2}
   AllItems:
   - {fileID: 11400000, guid: 54dbbd98dc03b4763a5482e1dbd1c9a3, type: 2}
   - {fileID: 11400000, guid: 99a4b3e8ff9bc467db0ed96253e84e7e, type: 2}
@@ -36,6 +38,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 78f0960b772b240ccafabbae7f888a6b, type: 2}
   - {fileID: 11400000, guid: d271bc018be6a4303843c58710dd56b7, type: 2}
   - {fileID: 11400000, guid: 223665715cf09408bad8757fff6b2557, type: 2}
+  - {fileID: 11400000, guid: ab1a7f2faaf195e4ab0ef87dfc93ab4c, type: 2}
+  - {fileID: 11400000, guid: c358fa21c167d2441a069a37332c70b1, type: 2}
   AllActions:
   - {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
   - {fileID: 11400000, guid: 3becbc3900461401ebe8af174f399876, type: 2}

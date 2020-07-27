@@ -37,7 +37,7 @@ MonoBehaviour:
     triggerInt: 0
     triggerFloat: 0
     triggerDouble: 0
-    triggerString: zz_GodLunen
+    triggerString: ERROR
     notes: 
   - title: DefenseLunenName
     type: 4
@@ -63,7 +63,7 @@ MonoBehaviour:
     triggerInt: 0
     triggerFloat: 0
     triggerDouble: 0
-    triggerString: Rootle
+    triggerString: ERROR
     notes: 
   - title: DeadLunenYours
     type: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
     triggerInt: 0
     triggerFloat: 0
     triggerDouble: 0
-    triggerString: GODMOVE
+    triggerString: ERROR
     notes: 
   - title: Effective
     type: 1
@@ -119,6 +119,71 @@ MonoBehaviour:
     notes: 4 = Capture
   - title: AnimationTime
     type: 2
+    defaultBool: 0
+    defaultInt: 0
+    defaultFloat: 0
+    defaultDouble: 0
+    defaultString: ERROR
+    triggerBool: 0
+    triggerInt: 0
+    triggerFloat: 0
+    triggerDouble: 0
+    triggerString: Wavi
+    notes: 
+  - title: LunenAttacking
+    type: 0
+    defaultBool: 0
+    defaultInt: 0
+    defaultFloat: 0
+    defaultDouble: 0
+    defaultString: ERROR
+    triggerBool: 0
+    triggerInt: 0
+    triggerFloat: 2
+    triggerDouble: 0
+    triggerString: Wavi
+    notes: 
+  - title: MoneyPayout
+    type: 1
+    defaultBool: 0
+    defaultInt: 0
+    defaultFloat: 0
+    defaultDouble: 0
+    defaultString: ERROR
+    triggerBool: 0
+    triggerInt: 0
+    triggerFloat: 2
+    triggerDouble: 0
+    triggerString: Wavi
+    notes: 
+  - title: PlayerLunenLeft
+    type: 1
+    defaultBool: 0
+    defaultInt: 0
+    defaultFloat: 0
+    defaultDouble: 0
+    defaultString: ERROR
+    triggerBool: 0
+    triggerInt: 0
+    triggerFloat: 2
+    triggerDouble: 0
+    triggerString: Wavi
+    notes: 
+  - title: EnemyLunenLeft
+    type: 1
+    defaultBool: 0
+    defaultInt: 0
+    defaultFloat: 0
+    defaultDouble: 0
+    defaultString: ERROR
+    triggerBool: 0
+    triggerInt: 0
+    triggerFloat: 2
+    triggerDouble: 0
+    triggerString: Wavi
+    notes: 
+  - title: IsTrainerBattle
+    type: 0
     defaultBool: 0
     defaultInt: 0
     defaultFloat: 0

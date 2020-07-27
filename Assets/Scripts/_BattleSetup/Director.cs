@@ -81,6 +81,7 @@ public class Director : MonoBehaviour
     public void PrepareBattle()
     {
         DirectorGamePaused = false;
+        sr.database.SetTriggerValue("BattleVars/LunenAttacking", false);
         LoadTeams();
         ResetLunenCooldowns();
         ResetLunenMoveCooldowns();
@@ -177,12 +178,14 @@ public class Director : MonoBehaviour
     {
         lunen.LunenOut = false;
         sr.database.SetTriggerValue("BattleVars/DeadLunen", lunen.Nickname);
+
         switch (lunen.MonsterTeam)
         {
             case Team.PlayerTeam:
                 sr.database.SetTriggerValue("BattleVars/DeadLunenYours", true);
                 sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Lunen Defeated"));
                 PlayerLunenAlive = LoadPartyAlive(PlayerLunenMonsters, Team.PlayerTeam);
+                sr.database.SetTriggerValue("BattleVars/PlayerLunenLeft", PlayerLunenAlive.Count);
                 break;
             case Team.EnemyTeam:
                 
@@ -195,6 +198,7 @@ public class Director : MonoBehaviour
                 }
                 sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Lunen Defeated"));
                 EnemyLunenAlive = LoadPartyAlive(EnemyLunenMonsters, Team.EnemyTeam);
+                sr.database.SetTriggerValue("BattleVars/EnemyLunenLeft", EnemyLunenAlive.Count);
                 break;
         }
         sr.canvasCollection.ScanBothParties();
@@ -271,6 +275,7 @@ public class Director : MonoBehaviour
         monster.MonsterTeam = Team.PlayerTeam;
         if (sr.battleSetup.PlayerLunenTeam.Count >= 7)
         {
+            monster.Heal(monster.GetMaxHealth());
             sr.storageSystem.StoreLunen(monster);
         }
         else

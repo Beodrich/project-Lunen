@@ -106,6 +106,7 @@ public class Move : MonoBehaviour
         {
             logicType = LogicType.Player;
             endMove = pLogic.MoveEnd;
+            
         }
         else if (tLogic != null)
         {
@@ -151,6 +152,7 @@ public class Move : MonoBehaviour
                     }
 
                     animMoving = false;
+                    
                     if (input != Vector2.zero && ableToMove)
                     {
                         factor = 1f;
@@ -201,6 +203,7 @@ public class Move : MonoBehaviour
 
                     animMoving = false;
                     last = input;
+                    
                     if (input != Vector2.zero && ableToMove)
                     {
                         factor = 1f;
@@ -211,6 +214,7 @@ public class Move : MonoBehaviour
                         
                         if (tLogic.MoveBegin(hits))
                         {
+                            
                             SetFacingDirection(input);
                             StartCoroutine(move(transform));
                             

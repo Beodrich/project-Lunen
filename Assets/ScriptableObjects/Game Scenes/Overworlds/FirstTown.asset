@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547a66f2a347c4f7b9cc143b7490b3d4, type: 3}
+  m_Name: FirstTown
+  m_EditorClassIdentifier: 
+  scene:
+    sceneAsset: {fileID: 102900000, guid: 7437b6d052909433c934627f3aad682d, type: 3}
+    scenePath: Assets/Scenes/Overworlds/FirstTown.unity
+  entranceList:
+  - name: House2Color4Door
+    position: {x: -64, y: 37, z: 0}
+    facingDirection: 2
+    guidString: 124a85dd-bd23-4aa7-8f26-2580fa843778
+  - name: House1Color4Door
+    position: {x: -67, y: 37, z: 0}
+    facingDirection: 2
+    guidString: 46820fbb-b01b-4794-bd26-efd3a7f0370c
+  - name: LunenCenterDoor
+    position: {x: -60, y: 37, z: 0}
+    facingDirection: 2
+    guidString: 2f5cfe7d-75e5-4c6a-aa7c-ed3df61bd024
+  - name: Route1Door2
+    position: {x: -29, y: 35, z: 0}
+    facingDirection: 3
+    guidString: 8c054b38-0cf2-4b36-b974-5ae8ba75f50d
+  - name: Route1Door4
+    position: {x: -29, y: 33, z: 0}
+    facingDirection: 3
+    guidString: dd5e06f6-d204-4b65-945f-2081014a8f6c
+  - name: Route1Door3
+    position: {x: -29, y: 34, z: 0}
+    facingDirection: 3
+    guidString: 2201c904-d396-4d9c-9d10-5949e1c83946
+  - name: Route1Door1
+    position: {x: -29, y: 36, z: 0}
+    facingDirection: 3
+    guidString: a421f97c-6e8f-40bd-860e-309148751eb0

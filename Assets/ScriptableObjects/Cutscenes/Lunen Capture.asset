@@ -40,6 +40,15 @@ MonoBehaviour:
   - id: 23
   - id: 24
   - id: 25
+  - id: 26
+  - id: 27
+  - id: 28
+  - id: 29
+  - id: 30
+  - id: 31
+  - id: 32
+  - id: 33
+  - id: 34
   references:
     version: 1
     00000000:
@@ -147,10 +156,15 @@ MonoBehaviour:
     00000007:
       type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[Dialogue] Didn''t even shake...'
+        _name: '[Dialogue] Not even a shake...'
         _title: 
         _startNextSimultaneous: 0
-        text: Didn't even shake...
+        text: Not even a shake...
+        autoClose: 1
+        waitTime: 2
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -175,104 +189,259 @@ MonoBehaviour:
     0000000B:
       type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[Dialogue] Shook once'
+        _name: '[Dialogue] Shake...'
         _title: 
         _startNextSimultaneous: 0
-        text: Shook once
+        text: Shake...
+        autoClose: 1
+        waitTime: 1
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
     0000000C:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Dang, they escaped.'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Dang, they escaped.
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    0000000D:
       type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
       data:
         _name: '[End] New End'
         _title: New End
         _startNextSimultaneous: 0
-    0000000D:
+    0000000E:
       type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
       data:
         _name: ' '
         _title: New Blank
         _startNextSimultaneous: 0
-    0000000E:
+    0000000F:
       type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
       data:
         _name: '[RouteStart] 2 Shakes'
         _title: 2 Shakes
         _startNextSimultaneous: 0
-    0000000F:
+    00000010:
       type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[Dialogue] Shook twice'
+        _name: '[Dialogue] Shake...'
         _title: 
         _startNextSimultaneous: 0
-        text: Shook twice
+        text: Shake...
+        autoClose: 1
+        waitTime: 1
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
-    00000010:
+    00000011:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Shake...'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Shake...
+        autoClose: 1
+        waitTime: 1
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000012:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Aww, almost got ''em.'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Aww, almost got 'em.
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000013:
       type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
       data:
         _name: '[End] New End'
         _title: New End
         _startNextSimultaneous: 0
-    00000011:
+    00000014:
       type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
       data:
         _name: ' '
         _title: New Blank
         _startNextSimultaneous: 0
-    00000012:
+    00000015:
       type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
       data:
         _name: '[RouteStart] 3 Shakes'
         _title: 3 Shakes
         _startNextSimultaneous: 0
-    00000013:
+    00000016:
       type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[Dialogue] Shook three times'
+        _name: '[Dialogue] Shake...'
         _title: 
         _startNextSimultaneous: 0
-        text: Shook three times
+        text: Shake...
+        autoClose: 1
+        waitTime: 1
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
-    00000014:
+    00000017:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Shake...'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Shake...
+        autoClose: 1
+        waitTime: 1
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000018:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Shake...'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Shake...
+        autoClose: 1
+        waitTime: 1
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000019:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] NOOO! So close!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: NOOO! So close!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    0000001A:
       type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
       data:
         _name: '[End] New End'
         _title: New End
         _startNextSimultaneous: 0
-    00000015:
+    0000001B:
       type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
       data:
         _name: ' '
         _title: New Blank
         _startNextSimultaneous: 0
-    00000016:
+    0000001C:
       type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
       data:
         _name: '[RouteStart] Successful Capture'
         _title: Successful Capture
         _startNextSimultaneous: 0
-    00000017:
+    0000001D:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Shake...'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Shake...
+        autoClose: 1
+        waitTime: 1
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    0000001E:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Shake...'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Shake...
+        autoClose: 1
+        waitTime: 1
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    0000001F:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Shake...'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Shake...
+        autoClose: 1
+        waitTime: 1
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000020:
       type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
       data:
         _name: '[Dialogue] GOTCHA! ##BattleVars/CaptureLunenName## was caught!'
         _title: 
         _startNextSimultaneous: 0
         text: GOTCHA! ##BattleVars/CaptureLunenName## was caught!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 11400000, guid: e474e8afc203c4156b50be29da054660, type: 2}
         triggerPart: CaptureLunenName
         showFoldout: 1
-    00000018:
+    00000021:
       type: {class: CutPart_CaptureWildLunen, ns: , asm: Assembly-CSharp}
       data:
         _name: '[CaptureWildLunen] New CaptureWildLunen'
         _title: New CaptureWildLunen
         _startNextSimultaneous: 0
-    00000019:
+    00000022:
       type: {class: CutPart_End, ns: , asm: Assembly-CSharp}
       data:
         _name: '[End] New End'

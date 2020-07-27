@@ -64,6 +64,7 @@ public class BattleSetup : MonoBehaviour
     public List<System.Guid> GuidList;
     public bool playerDead;
     public bool cutsceneStoppedBattle;
+    public bool dialogueAutoClose;
     [HideInInspector] public Monster attemptToCaptureMonster;
 
     private void Awake()
@@ -122,24 +123,24 @@ public class BattleSetup : MonoBehaviour
 
     public void SubmitPressed()
     {
-        if (dialogueBoxOpen && !choiceOpen && !gamePaused)
-            {
-                if (!dialogueBoxNext)
-                {
-                    dialogueBoxOpen = false;
-                    sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Disable);
-                }
-                AdvanceCutscene();
-            }
-            if (dialogueBoxOpen && gamePaused && sr.canvasCollection.InventoryPanelOpen)
-            {
-                if (!dialogueBoxNext)
-                {
-                    dialogueBoxOpen = false;
-                    sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Disable);
-                }
-                AdvanceCutscene();
-            }
+        if (dialogueBoxOpen && !choiceOpen && !gamePaused && !dialogueAutoClose)
+        {
+            CloseDialoguePanel();
+        }
+        if (dialogueBoxOpen && gamePaused && sr.canvasCollection.InventoryPanelOpen && !dialogueAutoClose)
+        {
+            CloseDialoguePanel();
+        }
+    }
+
+    public void CloseDialoguePanel()
+    {
+        if (!dialogueBoxNext)
+        {
+            dialogueBoxOpen = false;
+            sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Disable);
+        }
+        AdvanceCutscene();
     }
 
     public void OpenMainMenu()
@@ -248,6 +249,7 @@ public class BattleSetup : MonoBehaviour
         EnemyLunenTeam.Add(wildMonster);
         wildMonster.transform.SetParent(this.transform);
         typeOfBattle = BattleType.WildEncounter;
+        sr.database.SetTriggerValue("BattleVars/IsTrainerBattle", false);
 
         sr.canvasCollection.Player2BattleFieldSprites[0].DisableImage();
     }
@@ -264,6 +266,8 @@ public class BattleSetup : MonoBehaviour
         typeOfBattle = BattleType.TrainerBattle;
         lastTrainerEncounter = encounter;
         sr.eventLog.AddEvent("Trainer Battle Generated!");
+        sr.database.SetTriggerValue("BattleVars/IsTrainerBattle", true);
+        sr.database.SetTriggerValue("BattleVars/MoneyPayout", encounter.moneyPayout);
     }
 
     public void EmptyRecycleBin()
@@ -284,7 +288,7 @@ public class BattleSetup : MonoBehaviour
             gs.scene.ScenePath,
             dse.position,
             dse.facingDirection,
-            true,
+            !door.stopOnTransition,
             false
         );
     }
@@ -460,6 +464,11 @@ public class BattleSetup : MonoBehaviour
             waitTimeCurrent += Time.deltaTime;
             yield return null;
         }
+        if (dialogueAutoClose)
+        {
+            dialogueAutoClose = false;
+            CloseDialoguePanel();
+        }
         AdvanceCutscene();
         yield return 0;
     }
@@ -520,7 +529,11 @@ public class BattleSetup : MonoBehaviour
             AdvanceCutscene();
         }
         sr.eventLog.AddEvent("Got To Player Win Function");
-        if (typeOfBattle == BattleType.TrainerBattle) ExitTrainerBattle(true);
+        if (typeOfBattle == BattleType.TrainerBattle)
+        {
+            sr.inventory.gold += lastTrainerEncounter.moneyPayout;
+            ExitTrainerBattle(true);
+        }
         ExitBattleState();
         
     }
