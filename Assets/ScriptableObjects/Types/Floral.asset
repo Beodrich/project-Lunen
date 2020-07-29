@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c658083cf4dfc449d8161fab3ab80319, type: 3}
   m_Name: Floral
   m_EditorClassIdentifier: 
-  typeColor: {r: 0.39607844, g: 0.81960785, b: 0.6117647, a: 1}
+  typeColor: {r: 0.28627452, g: 0.60784316, b: 0.34509805, a: 1}
   indexValue: 3
   StrongAgainst:
   - {fileID: 11400000, guid: 8ca3cee93490140b0b9e0ddb9b65c0ad, type: 2}
