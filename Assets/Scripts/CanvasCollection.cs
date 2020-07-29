@@ -70,7 +70,7 @@ public class CanvasCollection : MonoBehaviour
 
     public int MenuOpen = 0;
     public int EnemyTarget = 0;
-
+    public int PlayerTarget = 0;
     [HideInInspector] public Component[] UIElements;
 
     [HideInInspector] public int Choice1Route;
@@ -778,6 +778,11 @@ public class CanvasCollection : MonoBehaviour
             sr.battleSetup.PlayerEscape();
 
         }
+        else {
+            Player1LunenButtonScripts[PlayerTarget].isSelected = false;
+            Player1LunenButtonScripts[index].isSelected = true;
+            PlayerTarget = index;
+        }
         /*
         if (MenuOpen == index)
         {
@@ -1068,7 +1073,7 @@ public class CanvasCollection : MonoBehaviour
     {
         if (!(bool)sr.database.GetTriggerValue("BattleVars/LunenAttacking"))
         {
-            bool itemUseSuccess = true;
+            bool itemUseSuccess = false;
             Item item = sr.inventory.requestedItems[index].item;
             switch (item.itemType)
             {
@@ -1078,22 +1083,40 @@ public class CanvasCollection : MonoBehaviour
                         if (sr.battleSetup.typeOfBattle == BattleSetup.BattleType.TrainerBattle)
                         {
                             sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Cannot Use Capture In Trainer Battle"));
-                            itemUseSuccess = false;
                             
                         }
                         else if (!PartyPanelOpen)
                         {
                             sr.director.AttemptToCapture(item.CatchRate);
                             CloseInventoryWindow(true);
+                            itemUseSuccess = true;
                         }
                     }
                     else
                     {
                         sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("Cannot Use Item Now"));
-                        itemUseSuccess = false;
                     }
                     
+                    
                 break;
+                case Item.ItemType.Healing:
+                    Monster monster = sr.director.PlayerLunenAlive[PlayerTarget];
+                    if (sr.battleSetup.InBattle) {
+                        if (monster.Health.z >= monster.GetMaxHealth())
+                        {
+                            Debug.Log("Stop you can't do that :(");
+                        }
+                        else {
+                            monster.Heal(69);
+                            CloseInventoryWindow(true);
+                            itemUseSuccess = true;
+                        }
+                       
+                    
+                    }
+
+                    break;
+
             }
             if (itemUseSuccess) sr.inventory.RemoveItem(item, 1);
         }
