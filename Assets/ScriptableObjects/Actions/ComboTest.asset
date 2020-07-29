@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: TestingComboMove
+  m_Name: ComboTest
   m_EditorClassIdentifier: 
   loopback: {fileID: 0}
-  Name: TestingComboMove
+  Name: ComboTest
   Type: {fileID: 11400000, guid: f0b191960720d4a568cd4e46f31d5ec8, type: 2}
   Turns: 1
   AdditionalAffinityCost: 0
@@ -21,6 +21,7 @@ MonoBehaviour:
   Animation: {fileID: 0}
   ComboMove: 1
   ComboType: {fileID: 11400000, guid: 6ff4b9b35b664489f8e80786889294d9, type: 2}
+  MoveDescription: 
   PartsOfAction:
   - Effect: 0
     Target: 6
@@ -36,6 +37,26 @@ MonoBehaviour:
       StatChangeType: 0
       HardNumberChange: 0
       PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
+  - Effect: 5
+    Target: 6
+    Power: 300
+    EffectToInflict: {fileID: 0}
+    StatusEffect: {fileID: 11400000, guid: c5fad1b33c79a4f959be4507d5cef95c, type: 2}
+    StatusEffectTurns: 5
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 0

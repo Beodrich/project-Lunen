@@ -70,6 +70,8 @@ public class SaveSystemObject : MonoBehaviour
             foreach (GameData.InventoryItem a in gameData.InventoryItems)
                 sr.inventory.listOfItems.Add(new Inventory.InventoryEntry(sr.database.IndexToItem(a.itemIndex), a.itemAmount));
 
+            sr.inventory.gold = gameData.gold;
+
             //Restore Save Triggers
             foreach (GameData.TriggerSet triggerSet in gameData.SaveTriggers)
             {

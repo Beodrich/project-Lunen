@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c658083cf4dfc449d8161fab3ab80319, type: 3}
   m_Name: Plasma
   m_EditorClassIdentifier: 
+  typeColor: {r: 1, g: 0.85882354, b: 0.46666667, a: 1}
   indexValue: 5
   StrongAgainst:
   - {fileID: 11400000, guid: ed9ebeea768954d29a3f2882b3eb8dd6, type: 2}

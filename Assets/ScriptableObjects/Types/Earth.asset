@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c658083cf4dfc449d8161fab3ab80319, type: 3}
   m_Name: Earth
   m_EditorClassIdentifier: 
+  typeColor: {r: 0.4862745, g: 0.34509805, b: 0.2627451, a: 1}
   indexValue: 1
   StrongAgainst:
   - {fileID: 11400000, guid: 6ff4b9b35b664489f8e80786889294d9, type: 2}

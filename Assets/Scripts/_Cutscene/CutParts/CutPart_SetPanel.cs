@@ -62,6 +62,7 @@ public class CutPart_SetPanel : CutPart
                 break;
                 case CanvasCollection.UIState.Battle:
                     sr.canvasCollection.OpenState(panelSelect);
+                    sr.canvasCollection.ScanBothParties();
                     sr.battleSetup.AdvanceCutscene();
                 break;
             }

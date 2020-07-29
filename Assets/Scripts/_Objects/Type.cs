@@ -9,6 +9,7 @@ public class Type : ScriptableObject
     static float NormalEffect = 1.0f;
     static float LowEffect = 0.5f;
 
+    public Color typeColor;
     public int indexValue;
     
     public List<Type> StrongAgainst;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EventLog : MonoBehaviour
 {
+    [HideInInspector] public SetupRouter sr;
+
      // Private VARS
      private List<string> Eventlog = new List<string>();
      private string guiText = "";
@@ -13,10 +15,15 @@ public class EventLog : MonoBehaviour
      public Font myFont;
      public float fadeOutTime;
      public float hideTime;
+
+     void Awake()
+    {
+        sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
+    }
      
      void OnGUI()
      {
-         if (hideTime > 0)
+         if (hideTime > 0 && sr.database.DebugMode)
          {
              GUIStyle myStyle = new GUIStyle();
             myStyle.font = myFont;

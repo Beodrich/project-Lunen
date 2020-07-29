@@ -149,7 +149,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 62905e625704d46159e1744e08943515, type: 3}
+  m_Sprite: {fileID: 21300000, guid: acb3f6f1f442d4c48877d7481419f50d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -238,7 +238,6 @@ MonoBehaviour:
   percentageDelay: 0
   elements:
   - name: PartyButton
-    gameObject: {fileID: 5216677505826706923}
     elementType: 0
     image: {fileID: 5216677505826706924}
     text: {fileID: 0}
@@ -250,9 +249,15 @@ MonoBehaviour:
     openPosition: {x: -1, y: 25}
     closedPosition: {x: -61, y: 25}
     allowRotationChange: 0
+    rotationShift: {x: 0, y: 0, z: 0}
+    openRotation: {x: 0, y: 0, z: 0}
+    closedRotation: {x: 0, y: 0, z: 0}
     allowScaleChange: 0
+    scaleShift: {x: 0, y: 0, z: 0}
+    openScale: {x: 0, y: 0, z: 0}
+    closedScale: {x: 0, y: 0, z: 0}
+    source: {fileID: 0}
   - name: Text
-    gameObject: {fileID: 5216677504374616648}
     elementType: 1
     image: {fileID: 0}
     text: {fileID: 5216677504374616650}
@@ -264,7 +269,15 @@ MonoBehaviour:
     openPosition: {x: 0, y: 0}
     closedPosition: {x: 0, y: 0}
     allowRotationChange: 0
+    rotationShift: {x: 0, y: 0, z: 0}
+    openRotation: {x: 0, y: 0, z: 0}
+    closedRotation: {x: 0, y: 0, z: 0}
     allowScaleChange: 0
+    scaleShift: {x: 0, y: 0, z: 0}
+    openScale: {x: 0, y: 0, z: 0}
+    closedScale: {x: 0, y: 0, z: 0}
+    source: {fileID: 0}
+  updateButton: 0
 --- !u!114 &3729062308996546796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +292,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color1: {r: 1, g: 1, b: 0, a: 1}
   color2: {r: 1, g: 0.6862745, b: 0, a: 1}
+  firstColor: {r: 0, g: 0, b: 0, a: 0}
   t: {fileID: 5216677505826706924}
+  changeColor: 0
   timeBetweenColors: 3
   timeBetweenColorsCurrent: 0
 --- !u!114 &2676061363090687007
@@ -294,3 +309,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b4b86c6185463c88d619889670809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sr: {fileID: 0}
+  button: {fileID: 0}
+  scs: {fileID: 0}
+  image: {fileID: 0}
+  defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  restrictInBattle: 0

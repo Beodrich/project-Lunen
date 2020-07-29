@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c658083cf4dfc449d8161fab3ab80319, type: 3}
   m_Name: Cosmic
   m_EditorClassIdentifier: 
+  typeColor: {r: 0.21176471, g: 0.19215687, b: 0.59607846, a: 1}
   indexValue: 9
   StrongAgainst:
   - {fileID: 11400000, guid: 250f2c032f4eb45e18c7bf225a7973f5, type: 2}

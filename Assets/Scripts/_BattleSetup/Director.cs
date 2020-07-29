@@ -111,8 +111,8 @@ public class Director : MonoBehaviour
 
     public void ResetLunenEffects()
     {
-        foreach (Monster m in PlayerLunenMonsters) m.StatusEffects.Clear();
-        foreach (Monster m in EnemyLunenMonsters) m.StatusEffects.Clear();
+        foreach (Monster m in PlayerLunenMonsters) m.RemoveEffects();
+        foreach (Monster m in EnemyLunenMonsters) m.RemoveEffects();
     }
 
     public void LoadTeams()

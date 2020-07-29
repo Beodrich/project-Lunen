@@ -30,7 +30,7 @@ MonoBehaviour:
   Health: {x: 14, y: 2}
   Attack: {x: 6, y: 2}
   Defense: {x: 4, y: 1}
-  Speed: {x: 5, y: 1}
+  Speed: {x: 30, y: 1}
   AffinityCost: 1
   CatchRate: 100
   CooldownTime: 5

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c658083cf4dfc449d8161fab3ab80319, type: 3}
   m_Name: Sky
   m_EditorClassIdentifier: 
+  typeColor: {r: 0.65882355, g: 0.81960785, b: 0.9843137, a: 1}
   indexValue: 6
   StrongAgainst:
   - {fileID: 11400000, guid: f26c034e41d264356903d61fc22f7539, type: 2}

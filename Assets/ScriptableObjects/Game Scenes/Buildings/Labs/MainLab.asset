@@ -16,7 +16,7 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: f90133b3d89b1424f9a945e56c7f307d, type: 3}
     scenePath: Assets/Scenes/Buildings/Labs/LabTemplate.unity
   entranceList:
-  - name: Door (1)
-    position: {x: 0, y: -3, z: 0}
+  - name: LabEntrance
+    position: {x: 0, y: -4, z: 0}
     facingDirection: 0
     guidString: 90c6bd29-7f63-4380-bc77-87079f1a7ddc

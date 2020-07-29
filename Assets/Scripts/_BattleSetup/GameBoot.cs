@@ -118,5 +118,6 @@ public class GameBoot : MonoBehaviour
             sr.battleSetup.PlayerLunenTeam.Add(monster);
             monster.transform.parent = this.transform;
         }
+        sr.director.LoadTeams();
     }
 }

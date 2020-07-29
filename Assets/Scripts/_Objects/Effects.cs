@@ -42,7 +42,15 @@ public class Effects : ScriptableObject
         OfRemainingHP
     }
 
+    public enum OnTakingDamageDo
+    {
+        NoEffect,
+        InflictEffect,
+        ReduceHealth
+    }
+
     public int ExpiresIn;
+    public bool IsPositiveBuff;
     public RangeOfEffect AttackEffect;
     [ConditionalField(nameof(AttackEffect), false, RangeOfEffect.Global)] public StatChange GlobalAttack;
     public RangeOfEffect DefenseEffect;
@@ -55,6 +63,11 @@ public class Effects : ScriptableObject
     [ConditionalField(nameof(DamageTakenEffect), false, RangeOfEffect.TypeBased)] public EnumFlags TypesAfflicted;
     public HealthRelativity EndOfTurnDamage;
     [ConditionalField(nameof(EndOfTurnDamage), false, HealthRelativity.OfMaxHP, HealthRelativity.OfRemainingHP)] public StatChange EndOfTurnDamageType;
+    
+    public OnTakingDamageDo onTakingDamageDo;
+    [ConditionalField(nameof(onTakingDamageDo), false, OnTakingDamageDo.ReduceHealth)] public StatChange TakeDamageHealthReduction;
+    [ConditionalField(nameof(onTakingDamageDo), false, OnTakingDamageDo.InflictEffect)] public Effects OnTakeDamageEffect;
+    [ConditionalField(nameof(onTakingDamageDo), false, OnTakingDamageDo.InflictEffect)] public int OnTakeDamageEffectDuration;
     public bool ShowMiscChanges;
     [ConditionalField(nameof(ShowMiscChanges))] public bool CannotHitMultipleTargets;
     [ConditionalField(nameof(ShowMiscChanges))] public bool CannotUseAttackingActions;

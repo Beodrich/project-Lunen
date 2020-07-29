@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e4866acac64430ba7dbbcca8df61c0, type: 3}
   m_Name: LunenDatabase
   m_EditorClassIdentifier: 
+  DebugMode: 0
   LevelCap: 30
   AllScenes:
   - {fileID: 11400000, guid: 3b2d24aee47594f71ae87e2ae4061e4b, type: 2}

@@ -11,6 +11,9 @@ public class LunenButton : MonoBehaviour
     public GameObject CooldownSlider;
     public GameObject ExperienceSlider;
 
+    public Image LunenType1;
+    public Image LunenType2;
+
     public GameObject innerImage;
 
     public Color DefaultButtonColor;

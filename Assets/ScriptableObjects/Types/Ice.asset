@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c658083cf4dfc449d8161fab3ab80319, type: 3}
   m_Name: Ice
   m_EditorClassIdentifier: 
+  typeColor: {r: 0.76862746, g: 0.92156863, b: 0.9529412, a: 1}
   indexValue: 7
   StrongAgainst:
   - {fileID: 11400000, guid: a13de93d4dfea408c97d2cfb3b120461, type: 2}

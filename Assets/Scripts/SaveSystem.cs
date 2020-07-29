@@ -86,6 +86,7 @@ public class GameData
     public float positionY;
     public string currentScene;
     public int facingDirection;
+    public int gold;
 
     public float respawnX;
     public float respawnY;
@@ -152,6 +153,7 @@ public class GameData
         positionY = sr.playerLogic.transform.position.y;
         currentScene = sr.battleSetup.lastOverworld;
         facingDirection = (int)sr.playerLogic.move.lookDirection;
+        gold = sr.inventory.gold;
 
         respawnX = sr.battleSetup.respawnLocation.x;
         respawnY = sr.battleSetup.respawnLocation.y;

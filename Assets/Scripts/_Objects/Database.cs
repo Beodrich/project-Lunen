@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 [CreateAssetMenu(fileName = "New Database", menuName = "GameElements/Internal/Database")]
 public class Database : ScriptableObject
 {
+    public bool DebugMode;
     public int LevelCap;
 
     public List<GameScene> AllScenes;

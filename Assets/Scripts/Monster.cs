@@ -61,6 +61,7 @@ public class Monster : MonoBehaviour
     public int MoveAffinityCost;
     public bool actionSuccess;
     public List<float> DamageTakenScalar;
+    public UIElementCollection currentuiec;
 
     private void Start()
     {
@@ -151,7 +152,14 @@ public class Monster : MonoBehaviour
                         }
                         
                     }
-                    else CurrCooldown = 0f;
+                    else
+                    {
+                        if (MonsterTeam != Director.Team.EnemyTeam)
+                        {
+                            currentuiec.SetCollectionState(UITransition.State.Enable);
+                        }
+                        CurrCooldown = 0f;
+                    }
                 }
                 
                 
@@ -322,11 +330,11 @@ public class Monster : MonoBehaviour
         Exp.z = (Level + 1) * (Level + 1) * (Level + 1);
     }
     
-    public void TickUpMoveCooldowns()
+    public void TickUpMoveCooldowns(int amount = 1)
     {
         for (int i = 0; i < ActionCooldown.Count; i++)
         {
-            ActionCooldown[i]++;
+            ActionCooldown[i] += amount;
         }
     }
 
@@ -471,7 +479,7 @@ public class Monster : MonoBehaviour
     public void EndTurn()
     {
         ResetCooldown();
-        if (MonsterTeam == Director.Team.PlayerTeam) loopback.canvasCollection.Player1MenuClick(loopback.canvasCollection.MenuOpen);
+        if (MonsterTeam == Director.Team.PlayerTeam) loopback.canvasCollection.DescriptionPanels[LunenOrder].GetComponent<UIElementCollection>().SetCollectionState(UITransition.State.Disable);
         for (int i = 0; i < StatusEffects.Count; i++)
         {
             if (StatusEffects[i].Expires)
@@ -496,11 +504,12 @@ public class Monster : MonoBehaviour
 
     public float GetMaxCooldown()
     {
-        float cooldown = SourceLunen.CooldownTime;
+        float cooldown = 15f - Mathf.Sqrt(AfterEffectStats.z);
         if (MonsterTeam == Director.Team.EnemyTeam)
         {
             cooldown *= 1.5f;
         }
+        if (cooldown < 3) cooldown = 3;
         return cooldown;
     }
 
@@ -531,5 +540,73 @@ public class Monster : MonoBehaviour
         Action lunen1 = ActionSet[first];
         ActionSet[first] = ActionSet[second];
         ActionSet[second] = lunen1;
+    }
+
+    public bool HasRetaliatoryEffects()
+    {
+        foreach (MonsterEffect effect in StatusEffects)
+        {
+            if (effect.Effect.onTakingDamageDo != Effects.OnTakingDamageDo.NoEffect)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public List<Effects> GetRetaliatoryEffects()
+    {
+        List<Effects> effectsList = new List<Effects>();
+        foreach (MonsterEffect effect in StatusEffects)
+        {
+            if (effect.Effect.onTakingDamageDo != Effects.OnTakingDamageDo.NoEffect)
+            {
+                effectsList.Add(effect.Effect);
+            }
+        }
+        return effectsList;
+    }
+
+    public int HasEffect(Effects effect)
+    {
+        for (int i = 0; i < StatusEffects.Count; i++)
+        {
+            if (StatusEffects[i].Effect == effect) return i;
+        }
+        return -1;
+    }
+
+    public void AddEffect(Effects effect, int duration)
+    {
+        int foundEffect = HasEffect(effect);
+        if (foundEffect == -1)
+        {
+            MonsterEffect newEffect = new MonsterEffect();
+            newEffect.Effect = effect;
+            newEffect.ExpiresIn = duration;
+            StatusEffects.Add(newEffect);
+            CalculateStats();
+        }
+        else
+        {
+            StatusEffects[foundEffect].ExpiresIn = duration;
+        }
+    }
+
+    public void RemoveEffects(bool positive = true, bool negative = true, bool statusEffect = true)
+    {
+        bool applyEffect = false;
+        for (int i = 0; i < StatusEffects.Count; i++)
+        {
+            applyEffect = false;
+            if (StatusEffects[i].Effect.IsAStatusEffect && statusEffect) applyEffect = true;
+            else if (!StatusEffects[i].Effect.IsPositiveBuff && negative) applyEffect = true;
+            else if (StatusEffects[i].Effect.IsPositiveBuff && positive) applyEffect = true;
+            if (applyEffect)
+            {
+                StatusEffects.RemoveAt(i);
+                i--;
+            }
+        }
     }
 }

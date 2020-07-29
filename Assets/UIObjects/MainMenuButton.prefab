@@ -145,7 +145,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 62905e625704d46159e1744e08943515, type: 3}
+  m_Sprite: {fileID: 21300000, guid: acb3f6f1f442d4c48877d7481419f50d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -234,7 +234,6 @@ MonoBehaviour:
   percentageDelay: 0
   elements:
   - name: PartyButton
-    gameObject: {fileID: 8909552609746736386}
     elementType: 0
     image: {fileID: 8909552609746736389}
     text: {fileID: 0}
@@ -246,9 +245,15 @@ MonoBehaviour:
     openPosition: {x: -1, y: 25}
     closedPosition: {x: -61, y: 25}
     allowRotationChange: 0
+    rotationShift: {x: 0, y: 0, z: 0}
+    openRotation: {x: 0, y: 0, z: 0}
+    closedRotation: {x: 0, y: 0, z: 0}
     allowScaleChange: 0
+    scaleShift: {x: 0, y: 0, z: 0}
+    openScale: {x: 0, y: 0, z: 0}
+    closedScale: {x: 0, y: 0, z: 0}
+    source: {fileID: 0}
   - name: Text
-    gameObject: {fileID: 8909552609368257185}
     elementType: 1
     image: {fileID: 0}
     text: {fileID: 8909552609368257187}
@@ -260,4 +265,12 @@ MonoBehaviour:
     openPosition: {x: 0, y: 0}
     closedPosition: {x: 0, y: 0}
     allowRotationChange: 0
+    rotationShift: {x: 0, y: 0, z: 0}
+    openRotation: {x: 0, y: 0, z: 0}
+    closedRotation: {x: 0, y: 0, z: 0}
     allowScaleChange: 0
+    scaleShift: {x: 0, y: 0, z: 0}
+    openScale: {x: 0, y: 0, z: 0}
+    closedScale: {x: 0, y: 0, z: 0}
+    source: {fileID: 0}
+  updateButton: 0

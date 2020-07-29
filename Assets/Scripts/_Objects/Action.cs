@@ -29,7 +29,8 @@ public class Action : ScriptableObject
         ApplyStatusEffect,
         ApplyBuff,
         Heal,
-        ReduceHP
+        ReduceHP,
+        RemoveEffects
     }
 
     [System.Serializable]
@@ -43,6 +44,9 @@ public class Action : ScriptableObject
         [ConditionalField(nameof(Effect), false, IntendedEffect.ApplyStatusEffect)] public int StatusEffectTurns;
         [ConditionalField(nameof(Effect), false, IntendedEffect.Heal)] public Effects.StatChange HealVars;
         [ConditionalField(nameof(Effect), false, IntendedEffect.ReduceHP)] public Effects.StatChange DamageVars;
+        [ConditionalField(nameof(Effect), false, IntendedEffect.RemoveEffects)] public bool RemoveBuffs;
+        [ConditionalField(nameof(Effect), false, IntendedEffect.RemoveEffects)] public bool RemoveDebuffs;
+        [ConditionalField(nameof(Effect), false, IntendedEffect.RemoveEffects)] public bool RemoveStatusEffects;
     }
 
     [Separator("Basic Action Info")]
@@ -138,6 +142,9 @@ public class Action : ScriptableObject
             case IntendedEffect.ReduceHP:
                 ReduceHP(part);
                 break;
+            case IntendedEffect.RemoveEffects:
+                MonsterTarget.RemoveEffects(part.RemoveBuffs, part.RemoveDebuffs, part.RemoveStatusEffects);
+                break;
             
         }
     }
@@ -152,6 +159,41 @@ public class Action : ScriptableObject
         float Modifier = Type.TypeMatch(Type, MonsterTarget.SourceLunen.Elements);
         float Damage = (3 + ((float)MonsterUser.Level / 100) * ((float)part.Power / 2) * (1 + Attack / 100) * (1 - (0.004f * Defense))) * STAB * Modifier;
         MonsterTarget.TakeDamage(Mathf.RoundToInt(Damage));
+
+        if (MonsterTarget.CooldownDone)
+        {
+            MonsterTarget.TickUpMoveCooldowns(-1);
+        }
+
+        if (MonsterTarget.HasRetaliatoryEffects())
+        {
+            List<Effects> listOfRetaliatoryEffects = MonsterTarget.GetRetaliatoryEffects();
+            foreach (Effects effect in listOfRetaliatoryEffects)
+            {
+                switch (effect.onTakingDamageDo)
+                {
+                    case Effects.OnTakingDamageDo.InflictEffect:
+                        MonsterUser.AddEffect(effect.OnTakeDamageEffect, effect.OnTakeDamageEffectDuration);
+                    break;
+                    case Effects.OnTakingDamageDo.ReduceHealth:
+                        int damageValue = 0;
+                        if (effect.TakeDamageHealthReduction.StatChangeType == Effects.StatChange.NumberType.Percentage)
+                        {
+                            damageValue = (int)(MonsterUser.Health.z * (effect.TakeDamageHealthReduction.PercentageChange / 100));
+                        }
+                        else
+                        {
+                            damageValue = (effect.TakeDamageHealthReduction.HardNumberChange);
+                        }
+                        MonsterUser.TakeDamage(damageValue);
+                    break;
+                }
+            }
+        }
+
+        MonsterTarget.CurrCooldown += (2f);
+        MonsterTarget.CooldownDone = false;
+        if (MonsterTarget.MonsterTeam == Director.Team.PlayerTeam) MonsterTarget.currentuiec.SetCollectionState(UITransition.State.Disable);
         //Debug.Log(Damage);
     }
 
@@ -185,11 +227,7 @@ public class Action : ScriptableObject
 
     public void ApplyStatusEffect(ActionPart part)
     {
-        MonsterEffect newEffect = new MonsterEffect();
-        newEffect.Effect = part.StatusEffect;
-        newEffect.ExpiresIn = part.StatusEffectTurns;
-        MonsterTarget.StatusEffects.Add(newEffect);
-        MonsterTarget.CalculateStats();
+        MonsterTarget.AddEffect(part.StatusEffect, part.StatusEffectTurns);
     }
 
     public void SetTypeToUserMonster()
@@ -197,20 +235,20 @@ public class Action : ScriptableObject
         Type = MonsterUser.SourceLunen.Elements[0];
     }
 
-    public string GetMoveType(Monster userMonster = null)
+    public Type GetMoveType(Monster userMonster = null)
     {
         switch (name)
         {
             default:
-                return Type.name;
+                return Type;
             case "Tackle":
                 if (userMonster != null)
                 {
-                    return userMonster.SourceLunen.Elements[0].name;
+                    return userMonster.SourceLunen.Elements[0];
                 }
                 else
                 {
-                    return "???";
+                    return null;
                 }
         }
     }

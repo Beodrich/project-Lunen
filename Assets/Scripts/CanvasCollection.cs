@@ -373,7 +373,17 @@ public class CanvasCollection : MonoBehaviour
                 Player1LunenButtonScripts[i] = Player1LunenButtons[i].GetComponent<LunenButton>();
                 Player1LunenButtonScripts[i].Text.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].Nickname;
                 Player1LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + sr.director.PlayerLunenAlive[i].Level;
+                Player1LunenButtonScripts[i].LunenType1.color = sr.director.PlayerLunenAlive[i].SourceLunen.Elements[0].typeColor;
+                if (sr.director.PlayerLunenAlive[i].SourceLunen.Elements.Count > 1)
+                {
+                    Player1LunenButtonScripts[i].LunenType2.color = sr.director.PlayerLunenAlive[i].SourceLunen.Elements[1].typeColor;
+                }
+                else
+                {
+                    Player1LunenButtonScripts[i].LunenType2.color = Color.clear;
+                }
                 Player1BattleFieldSprites[i+1].SetAnimationSet(sr.director.PlayerLunenAlive[i].SourceLunen.animationSet);
+                sr.director.PlayerLunenAlive[i].currentuiec = DescriptionPanels[i].GetComponent<UIElementCollection>();
                 Player1LunenButtons[i].SetActive(true);
                 sr.director.PlayerLunenAlive[i].MonsterTeam = Director.Team.PlayerTeam;
                 AssignPlayer1Bars(i);
@@ -388,20 +398,38 @@ public class CanvasCollection : MonoBehaviour
                     else
                     {
                         LunenPanels[i].ActionButtons[j].SetActive(true);
-                        LunenPanels[i].ActionButtonScripts[j].Name.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].ActionSet[j].Name;
+                        LunenPanels[i].ActionButtonScripts[j].Name.text = sr.director.PlayerLunenAlive[i].ActionSet[j].Name;
                         switch (sr.director.CanUseMove(sr.director.PlayerLunenAlive[i], sr.director.PlayerLunenAlive[i].ActionSet[j], j))
                         {
                             case 1: //Success
                                 LunenPanels[i].ActionButtonScripts[j].button.interactable = true;
-                                LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].ActionSet[j].GetMoveType(sr.director.PlayerLunenAlive[i]);
+                                LunenPanels[i].ActionButtonScripts[j].TypeText.text = " ";
+                                LunenPanels[i].ActionButtonScripts[j].image.color = Color.white;
+                                LunenPanels[i].ActionButtonScripts[j].TypeText.color = Color.black;
+                                LunenPanels[i].ActionButtonScripts[j].Name.color = Color.black;
+                                LunenPanels[i].ActionButtonScripts[j].TypeRibbon.color = sr.director.PlayerLunenAlive[i].ActionSet[j].GetMoveType(sr.director.PlayerLunenAlive[i]).typeColor;
+                                if (sr.director.PlayerLunenAlive[i].ActionSet[j].ComboMove) LunenPanels[i].ActionButtonScripts[j].ComboRibbon.color = sr.director.PlayerLunenAlive[i].ActionSet[j].ComboType.typeColor;
+                                LunenPanels[i].ActionButtonScripts[j].MonsterIndex = i;
+                                LunenPanels[i].ActionButtonScripts[j].ActionIndex = j;
                             break;
                             case 2: //No Type For Combo Move
+                                LunenPanels[i].ActionButtonScripts[j].image.color = Color.white;
                                 LunenPanels[i].ActionButtonScripts[j].button.interactable = false;
-                                LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = "No Combo";
+                                LunenPanels[i].ActionButtonScripts[j].TypeText.text = "N/C";
+                                LunenPanels[i].ActionButtonScripts[j].TypeText.color = Color.black;
+                                LunenPanels[i].ActionButtonScripts[j].Name.color = Color.black;
+                                LunenPanels[i].ActionButtonScripts[j].TypeRibbon.color = Color.clear;
+                                LunenPanels[i].ActionButtonScripts[j].ComboRibbon.color = Color.clear;
                             break;
-                            case 3:
+                            case 3: //Move Recharging
+                                LunenPanels[i].ActionButtonScripts[j].image.color = Color.white;
                                 LunenPanels[i].ActionButtonScripts[j].button.interactable = false;
-                                LunenPanels[i].ActionButtonScripts[j].Type.GetComponent<Text>().text = "Left: " + (sr.director.PlayerLunenAlive[i].ActionSet[j].Turns-sr.director.PlayerLunenAlive[i].ActionCooldown[j]);
+                                LunenPanels[i].ActionButtonScripts[j].TypeText.text = (sr.director.PlayerLunenAlive[i].ActionCooldown[j]) + "/" + sr.director.PlayerLunenAlive[i].ActionSet[j].Turns;
+                                LunenPanels[i].ActionButtonScripts[j].TypeText.color = Color.black;
+                                LunenPanels[i].ActionButtonScripts[j].Name.color = Color.black;
+                                LunenPanels[i].ActionButtonScripts[j].TypeRibbon.color = Color.clear;
+                                LunenPanels[i].ActionButtonScripts[j].ComboRibbon.color = Color.clear;
+                                
                             break;
                         }
                     }
@@ -411,6 +439,7 @@ public class CanvasCollection : MonoBehaviour
             {
                 Player1LunenButtons[i].SetActive(false);
                 Player1BattleFieldSprites[i+1].DisableImage();
+                DescriptionPanels[i].GetComponent<UIElementCollection>().SetCollectionState(UITransition.State.Disable);
             }
         }
     }
@@ -425,6 +454,15 @@ public class CanvasCollection : MonoBehaviour
                 Player2LunenButtonScripts[i] = Player2LunenButtons[i].GetComponent<LunenButton>();
                 Player2LunenButtonScripts[i].Text.GetComponent<Text>().text = sr.director.EnemyLunenAlive[i].Nickname;
                 Player2LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + sr.director.EnemyLunenAlive[i].Level;
+                Player2LunenButtonScripts[i].LunenType1.color = sr.director.EnemyLunenAlive[i].SourceLunen.Elements[0].typeColor;
+                if (sr.director.EnemyLunenAlive[i].SourceLunen.Elements.Count > 1)
+                {
+                    Player2LunenButtonScripts[i].LunenType2.color = sr.director.EnemyLunenAlive[i].SourceLunen.Elements[1].typeColor;
+                }
+                else
+                {
+                    Player2LunenButtonScripts[i].LunenType2.color = Color.clear;
+                }
                 Player2BattleFieldSprites[i+1].SetAnimationSet(sr.director.EnemyLunenAlive[i].SourceLunen.animationSet);
                 Player2LunenButtons[i].SetActive(true);
                 sr.director.EnemyLunenAlive[i].MonsterTeam = Director.Team.EnemyTeam;
@@ -648,6 +686,7 @@ public class CanvasCollection : MonoBehaviour
     {
         //public List<GameObject> PartyLunenButtons;
         //public List<LunenButton> PartyLunenButtonScripts;
+        sr.director.LoadTeams();
         PartyLunenButtonScripts = new List<LunenButton>();
         foreach (GameObject go in PartyLunenButtons) PartyLunenButtonScripts.Add(go.GetComponent<LunenButton>());
 
@@ -662,6 +701,15 @@ public class CanvasCollection : MonoBehaviour
                 PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
                 PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
                 PartyLunenButtonScripts[i].ExperienceSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
+                PartyLunenButtonScripts[i].LunenType1.color = sr.director.PlayerLunenMonsters[i].SourceLunen.Elements[0].typeColor;
+                if (sr.director.PlayerLunenMonsters[i].SourceLunen.Elements.Count > 1)
+                {
+                    PartyLunenButtonScripts[i].LunenType2.color = sr.director.PlayerLunenMonsters[i].SourceLunen.Elements[1].typeColor;
+                }
+                else
+                {
+                    PartyLunenButtonScripts[i].LunenType2.color = Color.clear;
+                }
                 PartyLunenButtonScripts[i].button.interactable = true;
             }
             else
@@ -671,6 +719,8 @@ public class CanvasCollection : MonoBehaviour
                 PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().SetNull();
                 PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().SetNull();
                 PartyLunenButtonScripts[i].ExperienceSlider.GetComponent<DrawHealthbar>().SetNull();
+                PartyLunenButtonScripts[i].LunenType1.color = Color.clear;
+                PartyLunenButtonScripts[i].LunenType2.color = Color.clear;
                 PartyLunenButtonScripts[i].button.interactable = false;
                 
             }
@@ -685,16 +735,28 @@ public class CanvasCollection : MonoBehaviour
             
             if (i < BaseMonster.ActionSet.Count)
             {
-                PartyActionButtonScripts[i].Name.GetComponent<Text>().text = BaseMonster.ActionSet[i].Name;
+                PartyActionButtonScripts[i].Name.text = BaseMonster.ActionSet[i].Name;
                 PartyActionButtonScripts[i].button.interactable = true;
+                PartyActionButtonScripts[i].TypeText.text = " ";
+                PartyActionButtonScripts[i].image.color = Color.white;
+                PartyActionButtonScripts[i].TypeText.color = Color.black;
+                PartyActionButtonScripts[i].Name.color = Color.black;
+                PartyActionButtonScripts[i].TypeRibbon.color = BaseMonster.ActionSet[i].GetMoveType(BaseMonster).typeColor;
+                if (BaseMonster.ActionSet[i].ComboMove) PartyActionButtonScripts[i].ComboRibbon.color = BaseMonster.ActionSet[i].ComboType.typeColor;
+                else PartyActionButtonScripts[i].ComboRibbon.color = Color.clear;
                 if (partyAction == PartyAction.SwapMoves) PartyActionButtonScripts[i].GetComponent<UITransition>().SetState(UITransition.State.Enable);
                 //PartyActionButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + PartyTeam[i].Level;
             }
             //else if (i < BaseMonster.SourceLunen.LearnedActions.Count)
             else
             {
-                PartyActionButtonScripts[i].Name.GetComponent<Text>().text = "";
+                PartyActionButtonScripts[i].Name.text = " ";
                 PartyActionButtonScripts[i].button.interactable = false;
+                PartyActionButtonScripts[i].TypeText.text = " ";
+                PartyActionButtonScripts[i].TypeText.color = Color.black;
+                PartyActionButtonScripts[i].Name.color = Color.black;
+                PartyActionButtonScripts[i].TypeRibbon.color = Color.clear;
+                PartyActionButtonScripts[i].ComboRibbon.color = Color.clear;
                 if (partyAction == PartyAction.SwapMoves) PartyActionButtonScripts[i].GetComponent<UITransition>().SetState(UITransition.State.Enable);
             }
             /*
@@ -710,6 +772,13 @@ public class CanvasCollection : MonoBehaviour
 
     public void Player1MenuClick(int index)
     {
+        if (index == 6)
+        {
+            //if (sr.battleSetup.InCutscene) sr.battleSetup.AdvanceCutscene();
+            sr.battleSetup.PlayerEscape();
+
+        }
+        /*
         if (MenuOpen == index)
         {
             if (MenuOpen < 4)
@@ -756,6 +825,7 @@ public class CanvasCollection : MonoBehaviour
             }
             
         }
+        */
     }
 
     public void Player2LunenTarget(int index)
@@ -775,9 +845,9 @@ public class CanvasCollection : MonoBehaviour
         return -1;
     }
 
-    public void ExecuteAction(int index)
+    public void ExecuteAction(int monster, int index)
     {
-        if (!(bool)sr.database.GetTriggerValue("BattleVars/LunenAttacking") && !PartyPanelOpen && !InventoryPanelOpen) sr.director.GetMonsterOut(Director.Team.PlayerTeam, GetLunenSelected(Director.Team.PlayerTeam)).PerformAction(index);
+        if (!(bool)sr.database.GetTriggerValue("BattleVars/LunenAttacking") && !PartyPanelOpen && !InventoryPanelOpen) sr.director.GetMonsterOut(Director.Team.PlayerTeam, monster).PerformAction(index);
         //sr.director.PerformAction(Director.Team.PlayerTeam,GetLunenSelected(Director.Team.PlayerTeam), index);
     }
 
