@@ -15,7 +15,7 @@ public static class AIScripts
 
     public static AIDecision StartDecision(SetupRouter sr, Monster monster)
     {
-        AIDecision decision = new AIDecision(0,0);
+        AIDecision decision = new AIDecision(0,0,0);
 
         switch(monster.level)
         {
@@ -25,7 +25,8 @@ public static class AIScripts
                 int movePool = 4;
                 if (monster.ActionSet.Count < movePool) movePool = monster.ActionSet.Count;
                 decision.moveIndex = GetRandomValue(movePool);
-                decision.targetIndex = GetRandomValue(sr.director.GetLunenCountOut(Director.Team.PlayerTeam));
+                decision.targetOtherIndex = GetRandomValue(sr.director.GetLunenCountOut(Director.Team.PlayerTeam));
+                decision.targetSelfIndex = GetRandomValue(sr.director.GetLunenCountOut(Director.Team.EnemyTeam));
             break;
         }
         return decision;
@@ -40,11 +41,13 @@ public static class AIScripts
 public class AIDecision
 {
     public int moveIndex;
-    public int targetIndex;
+    public int targetOtherIndex;
+    public int targetSelfIndex;
 
-    public AIDecision(int move, int target)
+    public AIDecision(int move, int targetOther, int targetSelf)
     {
         moveIndex = move;
-        targetIndex = target;
+        targetOtherIndex = targetOther;
+        targetSelfIndex = targetSelf;
     }
 }

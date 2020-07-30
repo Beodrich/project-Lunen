@@ -49,7 +49,6 @@ public class Director : MonoBehaviour
     public bool DirectorTimeFlowing;
     public float DirectorTimeToWait;
     public bool DirectorGamePaused;
-    public int EnemyLunenSelect;
     
 
     private void Awake()
@@ -178,6 +177,7 @@ public class Director : MonoBehaviour
     {
         lunen.LunenOut = false;
         sr.database.SetTriggerValue("BattleVars/DeadLunen", lunen.Nickname);
+        sr.soundManager.PlaySoundEffect("LunenDeath");
 
         switch (lunen.MonsterTeam)
         {
@@ -210,7 +210,7 @@ public class Director : MonoBehaviour
     public void AttemptToCapture(float ballModifier)
     {
         //TODO: Add chance to capture
-        Monster monster = GetMonsterOut(Team.EnemyTeam, sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
+        Monster monster = sr.canvasCollection.GetTargetMonster(Team.PlayerTeam, Team.EnemyTeam);
         sr.battleSetup.attemptToCaptureMonster = monster;
         sr.database.SetTriggerValue("BattleVars/CaptureLunenName", monster.Nickname);
 
@@ -283,7 +283,7 @@ public class Director : MonoBehaviour
             sr.battleSetup.PlayerLunenTeam.Add(monsterToCaptureObject);
         }
         
-        sr.battleSetup.EnemyLunenTeam.RemoveAt(sr.canvasCollection.GetLunenSelected(Team.EnemyTeam));
+        sr.battleSetup.EnemyLunenTeam.RemoveAt(monster.LunenOrder);
         sr.battleSetup.PlayerWin();
     }
 

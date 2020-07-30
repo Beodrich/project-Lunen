@@ -7,7 +7,7 @@ using MyBox;
 [CreateAssetMenu(fileName = "New Action", menuName = "GameElements/Action")]
 public class Action : ScriptableObject
 {
-    [HideInInspector] public SetupRouter loopback;
+    [HideInInspector] public SetupRouter sr;
 
     [System.Serializable]
     public enum MonsterAim
@@ -78,13 +78,23 @@ public class Action : ScriptableObject
     [Separator("Custom Events")]
     public UnityEvent customEvent;
 
+    public bool IsAnAttack()
+    {
+        foreach(ActionPart part in PartsOfAction)
+        {
+            if (part.Effect == IntendedEffect.DealDamage) return true;
+        }
+        return false;
+    }
+
     public void Execute()
     {
-        loopback = MonsterUser.loopback;
+        sr = MonsterUser.sr;
+        sr.soundManager.PlaySoundEffect("ConfirmSelection");
         Director.Team actionTeam = MonsterUser.MonsterTeam;
         Director.Team targetTeam = Director.Team.PlayerTeam;
         if (actionTeam == Director.Team.PlayerTeam) targetTeam = Director.Team.EnemyTeam;
-        loopback.eventLog.AddEvent("Attack: " + MonsterUser.Nickname + " attacks with " + Name + " targetting one enemy");
+        sr.eventLog.AddEvent("Attack: " + MonsterUser.Nickname + " attacks with " + Name + " targetting one enemy");
         if (customEvent != null)
         {
             customEvent.Invoke();
@@ -94,30 +104,32 @@ public class Action : ScriptableObject
             switch (part.Target)
             {
                 case MonsterAim.SingleOpponent:
-                    if (actionTeam == Director.Team.PlayerTeam) ExecutePerMonster(part, loopback.director.GetMonsterOut(targetTeam, loopback.canvasCollection.GetLunenSelected(Director.Team.EnemyTeam)));
-                    if (actionTeam == Director.Team.EnemyTeam) ExecutePerMonster(part, loopback.director.GetMonsterOut(targetTeam, loopback.director.EnemyLunenSelect));
+                    ExecutePerMonster(part, sr.canvasCollection.GetTargetMonster(actionTeam, targetTeam));
                     break;
                 case MonsterAim.AllOpponents:
-                    for (int i = 0; i < loopback.director.GetLunenCountOut(targetTeam); i++)
+                    for (int i = 0; i < sr.director.GetLunenCountOut(targetTeam); i++)
                     {
-                        ExecutePerMonster(part, loopback.director.GetMonsterOut(targetTeam, i));
+                        ExecutePerMonster(part, sr.director.GetMonsterOut(targetTeam, i));
                     }
                     break;
                 case MonsterAim.AllAllies:
-                    for (int i = 0; i < loopback.director.GetLunenCountOut(actionTeam); i++)
+                    for (int i = 0; i < sr.director.GetLunenCountOut(actionTeam); i++)
                     {
-                        ExecutePerMonster(part, loopback.director.GetMonsterOut(actionTeam, i));
+                        ExecutePerMonster(part, sr.director.GetMonsterOut(actionTeam, i));
                     }
                     break;
+                case MonsterAim.SingleAlly:
+                    ExecutePerMonster(part, sr.canvasCollection.GetTargetMonster(actionTeam, actionTeam));
+                break;
                 case MonsterAim.Self:
                     ExecutePerMonster(part, MonsterUser);
                     break;
             }
         }
-        loopback.database.SetTriggerValue("BattleVars/AnimationTime", TimePausePeriod);
-        loopback.database.SetTriggerValue("BattleVars/AttackLunenName", MonsterUser.Nickname);
-        loopback.database.SetTriggerValue("BattleVars/AttackLunenAction", name);
-        loopback.battleSetup.StartCutscene(loopback.database.GetPackedCutscene("LunenAttack"));
+        sr.database.SetTriggerValue("BattleVars/AnimationTime", TimePausePeriod);
+        sr.database.SetTriggerValue("BattleVars/AttackLunenName", MonsterUser.Nickname);
+        sr.database.SetTriggerValue("BattleVars/AttackLunenAction", name);
+        sr.battleSetup.StartCutscene(sr.database.GetPackedCutscene("LunenAttack"));
         MonsterUser.EndTurn();
         
     }
@@ -154,11 +166,11 @@ public class Action : ScriptableObject
         
         float Attack = MonsterUser.AfterEffectStats.x;
         float Defense = MonsterTarget.AfterEffectStats.y;
-        Debug.Log("Attack: " + Attack + " | Defense: " + Defense);
         float STAB = Type.SameTypeAttackBonus(MonsterUser.SourceLunen.Elements, Type);
         float Modifier = Type.TypeMatch(Type, MonsterTarget.SourceLunen.Elements);
         float Damage = (3 + ((float)MonsterUser.Level / 100) * ((float)part.Power / 2) * (1 + Attack / 100) * (1 - (0.004f * Defense))) * STAB * Modifier;
         MonsterTarget.TakeDamage(Mathf.RoundToInt(Damage));
+        MonsterTarget.PlayHurtSFXType = Modifier;
 
         if (MonsterTarget.CooldownDone)
         {

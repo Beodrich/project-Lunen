@@ -17,7 +17,7 @@ public class Database : ScriptableObject
 
     public List<CutsceneScript> GlobalCutsceneList;
     public List<StoryTrigger> GlobalStoryTriggerList;
-
+    public List<SoundEffect> GlobalSoundEffectList;
 
     public Sprite transparentSprite;
 

@@ -60,7 +60,7 @@ public class GenerateMonster : MonoBehaviour
         sr = GetComponent<SetupRouter>();
         New1 = Instantiate(sr.database.MonsterTemplate);
         NewMonster1 = New1.GetComponent<Monster>();
-        NewMonster1.loopback = sr;
+        NewMonster1.sr = sr;
         NewMonster1.Level = level;
         NewMonster1.SourceLunen = species;
         NewMonster1.TemplateToMonster(species);

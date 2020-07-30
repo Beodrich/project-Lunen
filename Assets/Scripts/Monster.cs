@@ -41,7 +41,7 @@ public class Monster : MonoBehaviour
     [HideInInspector]
     public Lunen SourceLunen;
     [HideInInspector]
-    public SetupRouter loopback;
+    public SetupRouter sr;
     [HideInInspector]
     public float CurrCooldown;
 
@@ -54,6 +54,8 @@ public class Monster : MonoBehaviour
 
     public bool CooldownDone;
     private int EndOfTurnDamage;
+    [SerializeField] private bool PlayHurtSFX = true;
+    [HideInInspector] public float PlayHurtSFXType = 1;
     public bool LunenOut;
     public int LunenOrder;
     public AIScripts.AILevel level;
@@ -71,11 +73,11 @@ public class Monster : MonoBehaviour
 
     private void Update()
     {
-        if (loopback != null)
+        if (sr != null)
         {
-            if (loopback.canvasCollection.partyPanelOpenForBattle)
+            if (sr.canvasCollection.partyPanelOpenForBattle)
             {
-                if (Level < loopback.database.LevelCap)
+                if (Level < sr.database.LevelCap)
                 {
                     ExpAddCurrent -= Time.deltaTime;
                     if (ExpAddCurrent < 0)
@@ -116,12 +118,12 @@ public class Monster : MonoBehaviour
                     }
                 }
             }
-            if (loopback.director.DirectorDeltaTime != 0 && LunenOut && LunenOrder < loopback.director.MaxLunenOut)
+            if (sr.director.DirectorDeltaTime != 0 && LunenOut && LunenOrder < sr.director.MaxLunenOut)
             {
                 if (CurrCooldown > 0f)
                 {
                     if (CurrCooldown > GetMaxCooldown()) CurrCooldown = GetMaxCooldown();
-                    CurrCooldown -= loopback.director.DirectorDeltaTime;
+                    CurrCooldown -= sr.director.DirectorDeltaTime;
                     CooldownDone = false;
                 }
                 else
@@ -131,19 +133,20 @@ public class Monster : MonoBehaviour
                         //This is the point where the cooldown finishes. There's a lot to program here.
                         CalculateStats();
                         TickUpMoveCooldowns();
-                        loopback.canvasCollection.ScanParty(MonsterTeam);
-                        if (MonsterTeam == Director.Team.EnemyTeam && loopback.director.PlayerLunenAlive.Count != 0)
+                        sr.canvasCollection.ScanParty(MonsterTeam);
+                        if (MonsterTeam == Director.Team.EnemyTeam && sr.director.PlayerLunenAlive.Count != 0)
                         {
                             //StartAI
-                            if (!(bool)loopback.database.GetTriggerValue("BattleVars/LunenAttacking"))
+                            if (!(bool)sr.database.GetTriggerValue("BattleVars/LunenAttacking"))
                             {
-                                PerformAction(AIScripts.StartDecision(loopback, this));
+                                PerformAction(AIScripts.StartDecision(sr, this));
                                 CooldownDone = true;
                             }
                             
                         }
                         else if (MonsterTeam != Director.Team.EnemyTeam)
                         {
+                            sr.soundManager.PlaySoundEffect("LunenCooldownDone");
                             CooldownDone = true;
                         }
                         if (EndOfTurnDamage > 0)
@@ -164,38 +167,50 @@ public class Monster : MonoBehaviour
                 
                 
                 if (HealthToSubtract > 0)
+                {
+                    int maxHPPerTick = (Health.x + Health.y) / FractionOfHealth;
+                    if (maxHPPerTick == 0) maxHPPerTick = 1;
+                    if (PlayHurtSFX)
                     {
-                        int maxHPPerTick = (Health.x + Health.y) / FractionOfHealth;
-                        if (maxHPPerTick == 0) maxHPPerTick = 1;
-                        if (HealthToSubtract >= maxHPPerTick) //If exp recieved is greater than or equal to max pool per tick
+                        if (HealthToSubtract < Health.z)
                         {
-                            HealthToSubtract -= maxHPPerTick; //Subtract exp from pool
-                            Health.z -= maxHPPerTick; //Add from pool to exp total
+                            if (PlayHurtSFXType > 1) sr.soundManager.PlaySoundEffect("LunenHurtSuper");
+                            else if (PlayHurtSFXType < 1) sr.soundManager.PlaySoundEffect("LunenHurtLesser");
+                            else sr.soundManager.PlaySoundEffect("LunenHurtNormal");
                         }
-                        else
-                        {
-                            Health.z -= HealthToSubtract; //Finish off exp pool
-                            HealthToSubtract = 0; //Set exp pool to zero.
-                        }
-                        if (Health.z <= 0)
-                        {
-                            if (loopback != null) loopback.director.LunenHasDied(this);
-                            HealthToSubtract = 0;
-                            //if (MonsterTeam == Director.Team.EnemyTeam) Destroy(gameObject);
-                        }
+                        
+                        PlayHurtSFX = false;
                     }
+                    if (HealthToSubtract > maxHPPerTick) //If exp recieved is greater than or equal to max pool per tick
+                    {
+                        HealthToSubtract -= maxHPPerTick; //Subtract exp from pool
+                        Health.z -= maxHPPerTick; //Add from pool to exp total
+                    }
+                    else
+                    {
+                        Health.z -= HealthToSubtract; //Finish off exp pool
+                        HealthToSubtract = 0; //Set exp pool to zero.
+                        PlayHurtSFX = true;
+                    }
+                    if (Health.z <= 0)
+                    {
+                        if (sr != null) sr.director.LunenHasDied(this);
+                        HealthToSubtract = 0;
+                        //if (MonsterTeam == Director.Team.EnemyTeam) Destroy(gameObject);
+                    }
+                }
             }
         }
     }
 
     public void PerformAction(int index)
     {
-        loopback.canvasCollection.EnsureValidTarget();
+        sr.canvasCollection.EnsureValidTarget();
         Action action = ActionSet[index];
-        if (loopback.director.CanUseMove(this, action, index) == 1)
+        if (sr.director.CanUseMove(this, action, index) == 1)
         {
             ActionCooldown[index] = 0;
-            loopback.database.SetTriggerValue("BattleVars/LunenAttacking", true);
+            sr.database.SetTriggerValue("BattleVars/LunenAttacking", true);
             action.MonsterUser = this;
             action.Execute();
         }
@@ -208,7 +223,8 @@ public class Monster : MonoBehaviour
 
     public void PerformAction(AIDecision decision)
     {
-        loopback.director.EnemyLunenSelect = decision.targetIndex;
+        sr.canvasCollection.EnemySelfTarget = decision.targetSelfIndex;
+        sr.canvasCollection.EnemyOtherTarget = decision.targetOtherIndex;
         PerformAction(decision.moveIndex);
     }
 
@@ -225,15 +241,15 @@ public class Monster : MonoBehaviour
         CalculateStats();
         CalculateExpTargets();
         GetLevelUpMove(Level);
-        loopback.canvasCollection.ScanBothParties();
-        loopback.canvasCollection.UpdatePartyPanelLunen();
+        sr.canvasCollection.ScanBothParties();
+        sr.canvasCollection.UpdatePartyPanelLunen();
         
     }
 
     public void Evolve()
     {
         SourceLunen = SourceLunen.EvolutionLunen;
-        loopback.eventLog.AddEvent(Nickname + " evolves into " + SourceLunen.name);
+        sr.eventLog.AddEvent(Nickname + " evolves into " + SourceLunen.name);
         TemplateToMonster(SourceLunen);
     }
 
@@ -479,7 +495,7 @@ public class Monster : MonoBehaviour
     public void EndTurn()
     {
         ResetCooldown();
-        if (MonsterTeam == Director.Team.PlayerTeam) loopback.canvasCollection.DescriptionPanels[LunenOrder].GetComponent<UIElementCollection>().SetCollectionState(UITransition.State.Disable);
+        if (MonsterTeam == Director.Team.PlayerTeam) sr.canvasCollection.DescriptionPanels[LunenOrder].GetComponent<UIElementCollection>().SetCollectionState(UITransition.State.Disable);
         for (int i = 0; i < StatusEffects.Count; i++)
         {
             if (StatusEffects[i].Expires)

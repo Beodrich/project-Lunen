@@ -69,8 +69,11 @@ public class CanvasCollection : MonoBehaviour
     public GameObject Player2;
 
     public int MenuOpen = 0;
-    public int EnemyTarget = 0;
-    public int PlayerTarget = 0;
+    public int EnemySelfTarget = 0;
+    public int EnemyOtherTarget = 0;
+    public int PlayerSelfTarget = 0;
+    public int PlayerOtherTarget = 0;
+
     [HideInInspector] public Component[] UIElements;
 
     [HideInInspector] public int Choice1Route;
@@ -772,87 +775,42 @@ public class CanvasCollection : MonoBehaviour
 
     public void Player1MenuClick(int index)
     {
-        if (index == 6)
+        if (sr.director.PlayerLunenAlive.Count > index)
         {
-            //if (sr.battleSetup.InCutscene) sr.battleSetup.AdvanceCutscene();
-            sr.battleSetup.PlayerEscape();
-
-        }
-        else {
-            Player1LunenButtonScripts[PlayerTarget].isSelected = false;
+            Player1LunenButtonScripts[PlayerSelfTarget].isSelected = false;
             Player1LunenButtonScripts[index].isSelected = true;
-            PlayerTarget = index;
+            PlayerSelfTarget = index;
         }
-        /*
-        if (MenuOpen == index)
-        {
-            if (MenuOpen < 4)
-            {
-                Player1LunenButtonScripts[MenuOpen - 1].isSelected = false;
-            }
-            DescriptionPanels[index - 1].GetComponent<UIElementCollection>().SetCollectionState(UITransition.State.Disable);
-            MenuOpen = 0;
-        }
-        else
-        {
-            if (index < 4)
-            {
-                if (sr.director.GetMonsterOut(Director.Team.PlayerTeam, index - 1).CurrCooldown <= 0f)
-                {
-                    if (MenuOpen != 0)
-                    {
-                        DescriptionPanels[MenuOpen - 1].GetComponent<UIElementCollection>().SetCollectionState(UITransition.State.Disable);
-                        Player1LunenButtonScripts[MenuOpen - 1].isSelected = false;
-                    }
-                    DescriptionPanels[index - 1].GetComponent<UIElementCollection>().SetCollectionState(UITransition.State.Enable);
-                    Player1LunenButtonScripts[index - 1].isSelected = true;
-                    MenuOpen = index;
-                }
-            }
-            else if (index == 6)
-            {
-                //if (sr.battleSetup.InCutscene) sr.battleSetup.AdvanceCutscene();
-                sr.battleSetup.PlayerEscape();
-
-            }
-            else
-            {
-                if (MenuOpen != 0)
-                {
-                    DescriptionPanels[MenuOpen - 1].SetActive(false);
-                    if (MenuOpen < 4)
-                    {
-                        Player1LunenButtonScripts[MenuOpen - 1].isSelected = false;
-                    }
-                }
-                DescriptionPanels[index - 1].SetActive(true);
-                MenuOpen = index;
-            }
-            
-        }
-        */
     }
 
     public void Player2LunenTarget(int index)
     {
-        Player2LunenButtonScripts[EnemyTarget].isSelected = false;
+        Player2LunenButtonScripts[PlayerOtherTarget].isSelected = false;
         Player2LunenButtonScripts[index].isSelected = true;
-        EnemyTarget = index;
+        PlayerOtherTarget = index;
     }
 
-    public int GetLunenSelected(Director.Team team)
+    public Monster GetTargetMonster(Director.Team actingTeam, Director.Team targetTeam)
     {
-        switch (team)
+        switch (actingTeam)
         {
-            case Director.Team.PlayerTeam: return MenuOpen-1;
-            case Director.Team.EnemyTeam: return EnemyTarget;
+            case Director.Team.PlayerTeam:
+                if (targetTeam == actingTeam) return sr.director.PlayerLunenAlive[PlayerSelfTarget];
+                else return sr.director.EnemyLunenAlive[PlayerOtherTarget];
+            case Director.Team.EnemyTeam:
+                if (targetTeam == actingTeam) return sr.director.EnemyLunenAlive[EnemySelfTarget];
+                else return sr.director.PlayerLunenAlive[EnemyOtherTarget];
         }
-        return -1;
+        return null;
     }
 
     public void ExecuteAction(int monster, int index)
     {
-        if (!(bool)sr.database.GetTriggerValue("BattleVars/LunenAttacking") && !PartyPanelOpen && !InventoryPanelOpen) sr.director.GetMonsterOut(Director.Team.PlayerTeam, monster).PerformAction(index);
+        if (!(bool)sr.database.GetTriggerValue("BattleVars/LunenAttacking") && !PartyPanelOpen && !InventoryPanelOpen)
+        {
+            
+            sr.director.GetMonsterOut(Director.Team.PlayerTeam, monster).PerformAction(index);
+        }
         //sr.director.PerformAction(Director.Team.PlayerTeam,GetLunenSelected(Director.Team.PlayerTeam), index);
     }
 
@@ -1025,33 +983,6 @@ public class CanvasCollection : MonoBehaviour
                 setValue += "\nCombo: " + action.ComboType.name;
             }
             setValue += "\n\n" + action.MoveDescription;
-            /*
-            foreach (Action.ActionPart part in action.PartsOfAction)
-            {
-                setValue += "\n" + ;
-                switch (part.Effect)
-                {
-                    case Action.IntendedEffect.DealDamage:
-                        setValue += "Power: " + part.Power + " vs " + Action.GetNameOfMonsterAim(part);
-                    break;
-                    case Action.IntendedEffect.ApplyStatusEffect:
-                    case Action.IntendedEffect.ApplyBuff:
-                        setValue += part.StatusEffect.GetDescription() + " vs " + Action.GetNameOfMonsterAim(part);
-                    break;
-                    case Action.IntendedEffect.Heal:
-                        setValue += "Heals ";
-                        if (part.HealVars.StatChangeType == Effects.StatChange.NumberType.HardNumber)
-                        {
-                            setValue += part.HealVars.HardNumberChange + " HP";
-                        }
-                        if (part.HealVars.StatChangeType == Effects.StatChange.NumberType.Percentage)
-                        {
-                            setValue += part.HealVars.PercentageChange + "% of HP";
-                        }
-                    break;
-                }
-            }
-            */
             UICollections[(int)UIState.Party].SetPanelState("Action Description Panel", UITransition.State.Enable);
         }
         else
@@ -1063,7 +994,11 @@ public class CanvasCollection : MonoBehaviour
 
     public void EnsureValidTarget()
     {
-        if (sr.director.GetLunenCountOut(Director.Team.EnemyTeam) <= EnemyTarget)
+        if (sr.director.GetLunenCountOut(Director.Team.PlayerTeam) <= PlayerSelfTarget)
+        {
+            Player1MenuClick(sr.director.GetLunenCountOut(Director.Team.PlayerTeam) - 1);
+        }
+        if (sr.director.GetLunenCountOut(Director.Team.EnemyTeam) <= PlayerOtherTarget)
         {
             Player2LunenTarget(sr.director.GetLunenCountOut(Director.Team.EnemyTeam) - 1);
         }
@@ -1100,7 +1035,7 @@ public class CanvasCollection : MonoBehaviour
                     
                 break;
                 case Item.ItemType.Healing:
-                    Monster monster = sr.director.PlayerLunenAlive[PlayerTarget];
+                    Monster monster = GetTargetMonster(Director.Team.PlayerTeam, Director.Team.PlayerTeam);
                     if (sr.battleSetup.InBattle) {
                         if (monster.Health.z >= monster.GetMaxHealth())
                         {

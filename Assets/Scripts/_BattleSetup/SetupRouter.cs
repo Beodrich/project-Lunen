@@ -21,6 +21,7 @@ public class SetupRouter : MonoBehaviour
     public SettingsSystem settingsSystem;
     public Inventory inventory;
     public StorageSystem storageSystem;
+    public SoundManager soundManager;
 
     public void Awake()
     {

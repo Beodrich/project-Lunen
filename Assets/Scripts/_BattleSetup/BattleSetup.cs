@@ -125,20 +125,24 @@ public class BattleSetup : MonoBehaviour
     {
         if (dialogueBoxOpen && !choiceOpen && !gamePaused && !dialogueAutoClose)
         {
-            CloseDialoguePanel();
+            CloseDialoguePanel(false);
         }
         if (dialogueBoxOpen && gamePaused && sr.canvasCollection.InventoryPanelOpen && !dialogueAutoClose)
         {
-            CloseDialoguePanel();
+            CloseDialoguePanel(false);
         }
     }
 
-    public void CloseDialoguePanel()
+    public void CloseDialoguePanel(bool autoclose)
     {
         if (!dialogueBoxNext)
         {
             dialogueBoxOpen = false;
             sr.canvasCollection.UICollections[(int)CanvasCollection.UIState.Dialogue].SetPanelState("Dialogue Panel", UITransition.State.Disable);
+        }
+        if (!autoclose)
+        {
+            sr.soundManager.PlaySoundEffect("CloseDialogueBox");
         }
         AdvanceCutscene();
     }
@@ -148,6 +152,7 @@ public class BattleSetup : MonoBehaviour
         gamePaused = true;
         sr.canvasCollection.MenuPanelOpen = true;
         sr.canvasCollection.OpenState(CanvasCollection.UIState.MainMenu);
+        sr.soundManager.PlaySoundEffect("MenuOpen");
     }
 
     public void CloseMainMenu()
@@ -467,7 +472,7 @@ public class BattleSetup : MonoBehaviour
         if (dialogueAutoClose)
         {
             dialogueAutoClose = false;
-            CloseDialoguePanel();
+            CloseDialoguePanel(true);
         }
         AdvanceCutscene();
         yield return 0;

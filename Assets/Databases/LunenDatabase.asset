@@ -107,6 +107,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 815134eb128b540aca2c38ccc3015bdd, type: 2}
   - {fileID: 11400000, guid: 1e26cfe663b00467b952095f7cca7634, type: 2}
   - {fileID: 11400000, guid: 238ddcabdb7cf4b3e8e463fcf06248a7, type: 2}
+  GlobalSoundEffectList:
+  - {fileID: 11400000, guid: 795d9cdaca9a04775be40337dfb84f8b, type: 2}
+  - {fileID: 11400000, guid: 231508be050054e7cb1b805ec689bde4, type: 2}
+  - {fileID: 11400000, guid: 2dc5e672254bc4b2797ad2d2a6263457, type: 2}
+  - {fileID: 11400000, guid: 2f2cd550a43d641ffb3aeb0a2096847b, type: 2}
+  - {fileID: 11400000, guid: cf3a84bebcc7544f69683dd2cf26a8ba, type: 2}
+  - {fileID: 11400000, guid: 0a584a72c27f64895afb624a0d5a1a5d, type: 2}
+  - {fileID: 11400000, guid: 458ceb8e7658b4c1fa2c364dd074fb89, type: 2}
+  - {fileID: 11400000, guid: e36660eb9c79548a69479c85d720c16c, type: 2}
+  - {fileID: 11400000, guid: 95251e0072210473e98fe9073c82006d, type: 2}
+  - {fileID: 11400000, guid: 7398652da7848437aa74eeba80cc492c, type: 2}
   transparentSprite: {fileID: 21300000, guid: b897c56bfaa1645a6a21ebd16312df26, type: 3}
   MonsterTemplate: {fileID: 2324287439143063678, guid: ce7650befca7144ae9e5cc4263c99950,
     type: 3}
