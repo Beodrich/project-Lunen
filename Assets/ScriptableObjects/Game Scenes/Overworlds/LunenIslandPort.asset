@@ -16,10 +16,6 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d, type: 3}
     scenePath: Assets/Scenes/Overworlds/LunenIslandPort.unity
   entranceList:
-  - name: House3Door
-    position: {x: 22, y: 4, z: 0}
-    facingDirection: 2
-    guidString: cae04ea0-570c-4cab-8a55-01656ac8d60e
   - name: CheckpointSouthDoorLeft
     position: {x: 15, y: 21, z: 0}
     facingDirection: 2
@@ -28,6 +24,14 @@ MonoBehaviour:
     position: {x: 17, y: 21, z: 0}
     facingDirection: 2
     guidString: 76c7910b-4205-45a3-9ea5-4c2305547e98
+  - name: BoatDoor
+    position: {x: 3, y: -2, z: 0}
+    facingDirection: 0
+    guidString: c56a8d09-2e7e-4db0-94ad-a78dda9afbb8
+  - name: House3Door
+    position: {x: 22, y: 4, z: 0}
+    facingDirection: 2
+    guidString: cae04ea0-570c-4cab-8a55-01656ac8d60e
   - name: House Back Door
     position: {x: 22, y: 6, z: 0}
     facingDirection: 0

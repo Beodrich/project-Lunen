@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187d20db00fad42df877c19a7121d9ff, type: 3}
   m_Name: CloseDialogueBox
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: f554b96eba5214d60b677fce062ba1a6, type: 3}
+  audioClip: {fileID: 8300000, guid: 602250cc526014f169ebafd063723b5e, type: 3}

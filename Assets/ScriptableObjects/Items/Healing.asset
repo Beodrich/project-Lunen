@@ -16,6 +16,10 @@ MonoBehaviour:
   tossable: 1
   icon: {fileID: 0}
   itemType: 1
+  CatchRate: 0
+  healValue:
+    StatChangeType: 1
+    HardNumberChange: 100
+    PercentageChange: 50
   buyValue: 500
   sellValue: 0
-  CatchRate: 0

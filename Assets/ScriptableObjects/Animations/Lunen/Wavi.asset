@@ -12,24 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3f3de1279d24685b8e6ca8dcac2788, type: 3}
   m_Name: Wavi
   m_EditorClassIdentifier: 
+  isLunen: 1
   animations:
   - name: Idle
     iterateTime: 0.2
     loops: 1
     fourDirectional: 0
-    twoDirectional: 1
+    twoDirectional: 0
     spriteArray:
     - {fileID: 21300000, guid: 9707bd8199efe479892c45884891da05, type: 3}
-    - {fileID: 21300000, guid: bf111b6ee1ae94b2d8993e729d7471e0, type: 3}
-  - name: Walk
-    iterateTime: 0.1
-    loops: 1
-    fourDirectional: 0
-    twoDirectional: 1
-    spriteArray: []
-  - name: Run
-    iterateTime: 0.05
-    loops: 0
-    fourDirectional: 0
-    twoDirectional: 0
-    spriteArray: []

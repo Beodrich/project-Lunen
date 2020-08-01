@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187d20db00fad42df877c19a7121d9ff, type: 3}
   m_Name: LunenCooldownDone
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: dde8dd3ca0e414fc49307117f57d35a6, type: 3}
+  audioClip: {fileID: 8300000, guid: 92be21c902164437a93fea236e435c3a, type: 3}

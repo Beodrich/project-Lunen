@@ -64,6 +64,9 @@ public class Move : MonoBehaviour
     public string animationType;
     public bool animHijack;
 
+    public float moveSpeedModifier;
+    public float moveSpeedCurrent;
+
     public bool ableToMove
     {
         get
@@ -118,6 +121,7 @@ public class Move : MonoBehaviour
             logicType = LogicType.NPC;
             endMove = MoveEndStub;
         }
+        moveSpeedCurrent = moveSpeed;
     }
     
     public void StartCutsceneMove(CutPart _part)
@@ -188,6 +192,8 @@ public class Move : MonoBehaviour
 
                             if (!cancelMove)
                             {
+                                if (sr.battleSetup.runButtonHeld) moveSpeedCurrent = moveSpeed * moveSpeedModifier;
+                                else moveSpeedCurrent = moveSpeed;
                                 StartCoroutine(move(transform));
                             }
                             
@@ -277,7 +283,7 @@ public class Move : MonoBehaviour
         }
         else
         {
-            animTime += Time.deltaTime;
+            animTime += Time.deltaTime * ((moveSpeedCurrent > moveSpeed) ? 2f : 1f);
         }
 
         if (animHijack)
@@ -337,7 +343,7 @@ public class Move : MonoBehaviour
         endPosition = new Vector3(startPosition.x + System.Math.Sign(input.x) * gridSize, startPosition.y + System.Math.Sign(input.y) * gridSize, startPosition.z);
         
         while (t < 1f) {
-            t += Time.deltaTime * (moveSpeed/gridSize) * factor;
+            t += Time.deltaTime * (moveSpeedCurrent/gridSize) * factor;
             transform.position = Vector3.Lerp(startPosition, endPosition, t);
             SetWalkAnimation();
             yield return null;

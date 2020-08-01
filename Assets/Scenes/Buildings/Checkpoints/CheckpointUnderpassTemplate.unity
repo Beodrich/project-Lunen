@@ -218,7 +218,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &167156026
 PrefabInstance:
@@ -413,10 +413,20 @@ PrefabInstance:
       propertyPath: fadeOutOnTransition
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: doorSize.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696779, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3052760053721696779, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696780, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -4494,6 +4504,8 @@ MonoBehaviour:
   moveSpeed: 5
   gridSize: 1
   playerSize: 1
+  thisDirectInput: {x: 0, y: 0}
+  lastDirectInput: {x: 0, y: 0}
   isMoving: 0
   animMoving: 0
   npcMove: 0
@@ -4509,6 +4521,8 @@ MonoBehaviour:
   animIndex: 8
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 0
+  moveSpeedCurrent: 0
 --- !u!114 &1581475213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4567,6 +4581,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: I'll set the trains to Online.
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -4608,6 +4627,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: I'll set the trains to Offline.
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -4659,7 +4683,7 @@ Transform:
   m_Children:
   - {fileID: 752077608}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1664491734
 GameObject:
@@ -4814,6 +4838,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: Sorry, the trains aren't working just yet! Stay tuned!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -4970,213 +4999,8 @@ Transform:
   - {fileID: 375029533508579275}
   - {fileID: 1664491735}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1912940461
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.size
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[0]
-      value: 244
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[1]
-      value: 218
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[2]
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[3]
-      value: 144
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[4]
-      value: 97
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[5]
-      value: 181
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[6]
-      value: 141
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[7]
-      value: 71
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[8]
-      value: 173
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[9]
-      value: 203
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[10]
-      value: 67
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[11]
-      value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[12]
-      value: 195
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[13]
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[14]
-      value: 164
-      objectReference: {fileID: 0}
-    - target: {fileID: 489816706982417063, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: serializedGuid.Array.data[15]
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: attributes
-      value: 
-      objectReference: {fileID: 4996812198650243613}
-    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: locationIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: targetScene
-      value: 
-      objectReference: {fileID: 11400000, guid: fd6a6e264afc44a2b93d392becc91d0b,
-        type: 2}
-    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: exitDirection
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: entranceIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: fallbackIndex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: targetGuidString
-      value: 5d7e4b04-3ec1-4c4a-aa18-cf4777f93030
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: fadeOutOnTransition
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696779, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3052760053721696780, guid: 80152272002ce408fae3b00a5f1f0bab,
-        type: 3}
-      propertyPath: m_Name
-      value: DoorToCheckpoint2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 80152272002ce408fae3b00a5f1f0bab, type: 3}
 --- !u!1 &2012279229
 GameObject:
   m_ObjectHideFlags: 0
@@ -5297,6 +5121,8 @@ MonoBehaviour:
   moveSpeed: 5
   gridSize: 1
   playerSize: 1
+  thisDirectInput: {x: 0, y: 0}
+  lastDirectInput: {x: 0, y: 0}
   isMoving: 0
   animMoving: 0
   npcMove: 0
@@ -5312,6 +5138,8 @@ MonoBehaviour:
   animIndex: 8
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 0
+  moveSpeedCurrent: 0
 --- !u!114 &2012279233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5337,6 +5165,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: Hello, ##PlayerInfo/Name##!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -5369,7 +5202,7 @@ Transform:
   m_Children:
   - {fileID: 1226605714}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2091022008
 GameObject:
@@ -5636,6 +5469,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: Trains Are Offline!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -5664,6 +5502,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: Trains Are Online!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0
@@ -5706,7 +5549,7 @@ Transform:
   m_Children:
   - {fileID: 822217052078891190}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &822217052022158779
 MonoBehaviour:
@@ -5730,6 +5573,8 @@ MonoBehaviour:
   moveSpeed: 5
   gridSize: 1
   playerSize: 1
+  thisDirectInput: {x: 0, y: 0}
+  lastDirectInput: {x: 0, y: 0}
   isMoving: 0
   animMoving: 0
   npcMove: 0
@@ -5745,6 +5590,8 @@ MonoBehaviour:
   animIndex: 8
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 0
+  moveSpeedCurrent: 0
 --- !u!212 &822217052078891188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5944,7 +5791,7 @@ PrefabInstance:
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: doorArray.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
@@ -5965,7 +5812,7 @@ PrefabInstance:
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: doorArray.Array.data[0]
-      value: DoorToCheckpoint2
+      value: DoorToCheckpoint
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
@@ -6090,6 +5937,11 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         text: Sorry, the trains aren't working just yet! Stay tuned!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
         trigger: {fileID: 0}
         triggerPart: 
         showFoldout: 0

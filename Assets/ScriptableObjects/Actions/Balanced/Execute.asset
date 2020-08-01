@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: Execute
   m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
+  sr: {fileID: 0}
   Name: Execute
   Type: {fileID: 11400000, guid: f0b191960720d4a568cd4e46f31d5ec8, type: 2}
   Turns: 1
   AdditionalAffinityCost: 0
   TimePausePeriod: 2
   Animation: {fileID: 0}
+  ComboMove: 0
+  ComboType: {fileID: 0}
+  MoveDescription: "Boosts the user\u2019s ATK value by 200% for 1 turn. After that,
+    permanently decrease the user\u2019s ATK & DEF values by 20% for the rest of
+    combat."
   PartsOfAction:
   - Effect: 1
     Target: 6
@@ -26,6 +31,17 @@ MonoBehaviour:
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 11400000, guid: 6c9f60098bbf34c4da596734d1cb7bea, type: 2}
     StatusEffectTurns: 1
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 0

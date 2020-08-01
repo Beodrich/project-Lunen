@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: Corruption Aura
   m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
+  sr: {fileID: 0}
   Name: Corruption Aura
   Type: {fileID: 11400000, guid: 644f7eca510b443f79f9f710b3543d48, type: 2}
   Turns: 4
   AdditionalAffinityCost: 0
   TimePausePeriod: 2
   Animation: {fileID: 0}
+  ComboMove: 0
+  ComboType: {fileID: 0}
+  MoveDescription: All enemies are inflicted with Bleeding, Broken Armor, and Corruptible
+    for 2 turns.
   PartsOfAction:
   - Effect: 1
     Target: 1
@@ -26,18 +30,51 @@ MonoBehaviour:
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 11400000, guid: b4be0ca8c74e63841ae9474e936f6d3f, type: 2}
     StatusEffectTurns: 2
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   - Effect: 1
     Target: 1
     Power: 0
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 11400000, guid: 615e41cc14bd2ae48b623c39eaf1c495, type: 2}
     StatusEffectTurns: 2
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   - Effect: 1
     Target: 1
     Power: 0
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 11400000, guid: 74b91a9d8efc38e42b09518601384c2d, type: 2}
     StatusEffectTurns: 2
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 0

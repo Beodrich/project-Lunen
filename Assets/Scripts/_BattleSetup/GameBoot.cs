@@ -46,6 +46,7 @@ public class GameBoot : MonoBehaviour
     public List<GameObject> keepLoaded;
     // Start is called before the first frame update
     private void Awake() {
+        sr = GetComponent<SetupRouter>();
         if (vsync)
         {
             QualitySettings.vSyncCount = 1;
@@ -58,26 +59,23 @@ public class GameBoot : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        if (GameObject.Find("FALLBACK_CURRENT_SCENE") != null)
+        if ((string)sr.database.GetTriggerValue("DEBUGTRIGGERS/FallbackPath") != "")
         {
             Debug.Log("Started Game From Game Scene!");
-            GameObject fallback = GameObject.Find("FALLBACK_CURRENT_SCENE");
 
             bootBehaviour = BootBehaviour.LoadIntoPosition;
             bootScene = new SceneReference();
-            bootScene.ScenePath = fallback.GetComponent<FALLBACK_CURRENT_SCENE>().thisScene;
+            bootScene.ScenePath = (string)sr.database.GetTriggerValue("DEBUGTRIGGERS/FallbackPath");
             
-            bootPosition = fallback.transform.position;
-            bootDirection = fallback.GetComponent<FALLBACK_CURRENT_SCENE>().startDirection;
-
-            Destroy(fallback);
+            bootPosition = new Vector3((float)sr.database.GetTriggerValue("DEBUGTRIGGERS/FallbackX"), (float)sr.database.GetTriggerValue("DEBUGTRIGGERS/FallbackY"), (float)sr.database.GetTriggerValue("DEBUGTRIGGERS/FallbackZ"));
+            bootDirection = MoveScripts.Direction.South;
         }
         DontDestroyOnLoad(this.gameObject);
         for (int i = 0; i < keepLoaded.Count; i++)
         {
             DontDestroyOnLoad(keepLoaded[i]);
         }
-        sr = GetComponent<SetupRouter>();
+        
     }
     void Start()
     {

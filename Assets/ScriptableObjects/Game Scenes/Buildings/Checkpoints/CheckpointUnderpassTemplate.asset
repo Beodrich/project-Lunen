@@ -16,10 +16,6 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: 3b7505ce5413f4ae89980ba46e2c1fdb, type: 3}
     scenePath: Assets/Scenes/Buildings/Checkpoints/CheckpointUnderpassTemplate.unity
   entranceList:
-  - name: DoorToCheckpoint2
-    position: {x: 7, y: 3, z: 0}
-    facingDirection: 0
-    guidString: 9048daf4-b561-478d-adcb-436ec325a470
   - name: DoorToCheckpoint
     position: {x: 6, y: 3, z: 0}
     facingDirection: 0

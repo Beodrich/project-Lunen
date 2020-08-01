@@ -60,10 +60,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributes: {fileID: 0}
   targetScene: {fileID: 0}
+  doorSize: {x: 1, y: 1}
   thisGuidString: 
   targetGuidString: 
-  fallbackIndex: 0
   fadeOutOnTransition: 1
+  stopOnTransition: 0
   exitDirection: 0
 --- !u!61 &3052760053721696779
 BoxCollider2D:

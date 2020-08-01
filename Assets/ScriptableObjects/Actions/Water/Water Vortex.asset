@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: Water Vortex
   m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
+  sr: {fileID: 0}
   Name: Water Vortex
   Type: {fileID: 11400000, guid: a13de93d4dfea408c97d2cfb3b120461, type: 2}
   Turns: 3
   AdditionalAffinityCost: 0
   TimePausePeriod: 2
   Animation: {fileID: 0}
+  ComboMove: 0
+  ComboType: {fileID: 0}
+  MoveDescription: 'Power: 60
+
+    Constrains the target for 1 turn.'
   PartsOfAction:
   - Effect: 1
     Target: 0
@@ -26,12 +31,34 @@ MonoBehaviour:
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 11400000, guid: c43dd7bf4b7300a46a8a73e0164a38cb, type: 2}
     StatusEffectTurns: 1
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   - Effect: 0
     Target: 0
     Power: 60
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 11400000, guid: c43dd7bf4b7300a46a8a73e0164a38cb, type: 2}
     StatusEffectTurns: 1
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 0

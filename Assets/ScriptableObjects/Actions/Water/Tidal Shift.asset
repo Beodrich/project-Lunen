@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: Tidal Shift
   m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
+  sr: {fileID: 0}
   Name: Tidal Shift
   Type: {fileID: 11400000, guid: a13de93d4dfea408c97d2cfb3b120461, type: 2}
   Turns: 4
   AdditionalAffinityCost: 1
   TimePausePeriod: 2
   Animation: {fileID: 0}
+  ComboMove: 0
+  ComboType: {fileID: 0}
+  MoveDescription: Boosts the SPD of all allies by 30% for 2 turns. Decreases the
+    SPD of all enemies by 30% and inflicts Freezing for 2 turns each.
   PartsOfAction:
   - Effect: 1
     Target: 3
@@ -26,18 +30,51 @@ MonoBehaviour:
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 11400000, guid: 5e6e2331b94d57546ad6cec67b5914c1, type: 2}
     StatusEffectTurns: 3
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   - Effect: 1
     Target: 1
     Power: 0
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 11400000, guid: 9246bc15991923a44a93163b8a141c21, type: 2}
     StatusEffectTurns: 2
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   - Effect: 1
     Target: 1
     Power: 0
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 11400000, guid: 231ec8c1a607c834d941c998592599fa, type: 2}
     StatusEffectTurns: 2
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 0

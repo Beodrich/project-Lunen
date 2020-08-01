@@ -285,6 +285,8 @@ public class Monster : MonoBehaviour
         else
             //ActionSet = ActionSet.OrderBy(x=>x.GetComponent<Action>().SourceLunenLearnedLevel).ToList();
             */
+
+        if (highLevelFirst) ActionSet.Reverse();
     }
 
     public void TemplateToMonster(Lunen template)

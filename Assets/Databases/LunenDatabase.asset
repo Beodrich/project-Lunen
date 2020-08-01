@@ -107,6 +107,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 815134eb128b540aca2c38ccc3015bdd, type: 2}
   - {fileID: 11400000, guid: 1e26cfe663b00467b952095f7cca7634, type: 2}
   - {fileID: 11400000, guid: 238ddcabdb7cf4b3e8e463fcf06248a7, type: 2}
+  - {fileID: 11400000, guid: a572371ee656f492dac94c434108386d, type: 2}
   GlobalSoundEffectList:
   - {fileID: 11400000, guid: 795d9cdaca9a04775be40337dfb84f8b, type: 2}
   - {fileID: 11400000, guid: 231508be050054e7cb1b805ec689bde4, type: 2}

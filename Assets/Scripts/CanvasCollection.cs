@@ -106,6 +106,9 @@ public class CanvasCollection : MonoBehaviour
     public bool InventoryPanelOpen;
     public bool StoragePanelOpen;
 
+    public RenameLunen PartyRenameLunen;
+    public RenameLunen StorageRenameLunen;
+
     [HideInInspector] public UIElementCollection Lastuiec;
     
     [HideInInspector] public int PartySwapSelect = -1;
@@ -265,6 +268,7 @@ public class CanvasCollection : MonoBehaviour
                 UICollections[(int)UIState.Party].SetPanelState("Lunen Info Panel", UITransition.State.Enable);
                 if (PartySwapSelect == -1) PartyAccess(0);
                 SetActionDescriptionText(null);
+                PartyRenameLunen.SetMonster(sr.battleSetup.PlayerLunenTeam[PartySwapSelect].GetComponent<Monster>());
                 PartyLunenDescription.text = GetLunenInfo(sr.battleSetup.PlayerLunenTeam[PartySwapSelect].GetComponent<Monster>());
             break;
             case PartyAction.SwapMoves:
@@ -287,6 +291,7 @@ public class CanvasCollection : MonoBehaviour
             default: break;
             case PartyAction.ViewStats:
                 UICollections[(int)UIState.Party].SetPanelState("Lunen Info Panel", UITransition.State.Disable);
+                PartyRenameLunen.SetMonster(null);
             break;
             case PartyAction.SwapMoves:
                 UICollections[(int)UIState.Party].SetPanelState("Action Panel", UITransition.State.Disable);
@@ -376,8 +381,9 @@ public class CanvasCollection : MonoBehaviour
             if (sr.director.GetLunenCountOut(Director.Team.PlayerTeam) > i && i < sr.director.MaxLunenOut)
             {
                 Player1LunenButtonScripts[i] = Player1LunenButtons[i].GetComponent<LunenButton>();
-                Player1LunenButtonScripts[i].Text.GetComponent<Text>().text = sr.director.PlayerLunenAlive[i].Nickname;
-                Player1LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + sr.director.PlayerLunenAlive[i].Level;
+                Player1LunenButtonScripts[i].TitleText.text = sr.director.PlayerLunenAlive[i].Nickname;
+                Player1LunenButtonScripts[i].LevelText.text = "LV " + sr.director.PlayerLunenAlive[i].Level;
+                Player1LunenButtonScripts[i].HealthText.referenceMonster = sr.director.PlayerLunenAlive[i];
                 Player1LunenButtonScripts[i].LunenType1.color = sr.director.PlayerLunenAlive[i].SourceLunen.Elements[0].typeColor;
                 if (sr.director.PlayerLunenAlive[i].SourceLunen.Elements.Count > 1)
                 {
@@ -457,8 +463,8 @@ public class CanvasCollection : MonoBehaviour
             if (sr.director.GetLunenCountOut(Director.Team.EnemyTeam) > i && i < sr.director.MaxLunenOut)
             {
                 Player2LunenButtonScripts[i] = Player2LunenButtons[i].GetComponent<LunenButton>();
-                Player2LunenButtonScripts[i].Text.GetComponent<Text>().text = sr.director.EnemyLunenAlive[i].Nickname;
-                Player2LunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + sr.director.EnemyLunenAlive[i].Level;
+                Player2LunenButtonScripts[i].TitleText.text = sr.director.EnemyLunenAlive[i].Nickname;
+                Player2LunenButtonScripts[i].LevelText.text = "LV " + sr.director.EnemyLunenAlive[i].Level;
                 Player2LunenButtonScripts[i].LunenType1.color = sr.director.EnemyLunenAlive[i].SourceLunen.Elements[0].typeColor;
                 if (sr.director.EnemyLunenAlive[i].SourceLunen.Elements.Count > 1)
                 {
@@ -701,11 +707,12 @@ public class CanvasCollection : MonoBehaviour
         {
             if (i < PartyTeam.Count)
             {
-                PartyLunenButtonScripts[i].Text.GetComponent<Text>().text = PartyTeam[i].Nickname;
-                PartyLunenButtonScripts[i].LevelText.GetComponent<Text>().text = "LV " + PartyTeam[i].Level;
-                PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
-                PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
-                PartyLunenButtonScripts[i].ExperienceSlider.GetComponent<DrawHealthbar>().targetMonster = PartyTeam[i];
+                PartyLunenButtonScripts[i].TitleText.text = PartyTeam[i].Nickname;
+                PartyLunenButtonScripts[i].LevelText.text = "LV " + PartyTeam[i].Level;
+                PartyLunenButtonScripts[i].HealthText.referenceMonster = PartyTeam[i];
+                PartyLunenButtonScripts[i].HealthSlider.targetMonster = PartyTeam[i];
+                PartyLunenButtonScripts[i].CooldownSlider.targetMonster = PartyTeam[i];
+                PartyLunenButtonScripts[i].ExperienceSlider.targetMonster = PartyTeam[i];
                 PartyLunenButtonScripts[i].LunenType1.color = sr.director.PlayerLunenMonsters[i].SourceLunen.Elements[0].typeColor;
                 if (sr.director.PlayerLunenMonsters[i].SourceLunen.Elements.Count > 1)
                 {
@@ -719,11 +726,12 @@ public class CanvasCollection : MonoBehaviour
             }
             else
             {
-                PartyLunenButtonScripts[i].Text.GetComponent<Text>().text = "";
+                PartyLunenButtonScripts[i].TitleText.GetComponent<Text>().text = "";
                 PartyLunenButtonScripts[i].LevelText.GetComponent<Text>().text = "";
-                PartyLunenButtonScripts[i].HealthSlider.GetComponent<DrawHealthbar>().SetNull();
-                PartyLunenButtonScripts[i].CooldownSlider.GetComponent<DrawHealthbar>().SetNull();
-                PartyLunenButtonScripts[i].ExperienceSlider.GetComponent<DrawHealthbar>().SetNull();
+                PartyLunenButtonScripts[i].HealthText.referenceMonster = null;
+                PartyLunenButtonScripts[i].HealthSlider.SetNull();
+                PartyLunenButtonScripts[i].CooldownSlider.SetNull();
+                PartyLunenButtonScripts[i].ExperienceSlider.SetNull();
                 PartyLunenButtonScripts[i].LunenType1.color = Color.clear;
                 PartyLunenButtonScripts[i].LunenType2.color = Color.clear;
                 PartyLunenButtonScripts[i].button.interactable = false;
@@ -868,6 +876,7 @@ public class CanvasCollection : MonoBehaviour
                     case PartyAction.ViewStats:
                         PartySwitchMode(index);
                         UpdatePartyPanelAction(PartySwapSelect);
+                        PartyRenameLunen.SetMonster(sr.battleSetup.PlayerLunenTeam[PartySwapSelect].GetComponent<Monster>());
                         PartyLunenDescription.text = GetLunenInfo(sr.battleSetup.PlayerLunenTeam[PartySwapSelect].GetComponent<Monster>());
                     break;
 
@@ -909,6 +918,7 @@ public class CanvasCollection : MonoBehaviour
             {
                 SelectStorageLunen(-1);
                 UICollections[(int)UIState.LunenStorage].SetPanelState("LunenInfoPanel", UITransition.State.Enable);
+                StorageRenameLunen.SetMonster(sr.battleSetup.PlayerLunenTeam[PartySwapSelect].GetComponent<Monster>());
                 StorageLunenDescription.text = GetLunenInfo(sr.battleSetup.PlayerLunenTeam[PartySwapSelect].GetComponent<Monster>());
             }
             
@@ -979,10 +989,22 @@ public class CanvasCollection : MonoBehaviour
         {
             setValue = "Name: " + action.Name;
             setValue += "\nType: " + action.GetMoveType(sourceMonster).name;
-            setValue += "\nCooldown: " + action.Turns + " Turn" + (action.Turns != 1 ? "s" : "");
+            setValue += "\nCooldown: ";
+            if (action.Turns <= 1)
+            {
+                setValue += "Instant";
+            }
+            else
+            {
+                setValue += action.Turns + " Turn" + (action.Turns != 1 ? "s" : "");
+            }
             if (action.ComboMove)
             {
                 setValue += "\nCombo: " + action.ComboType.name;
+            }
+            if (action.AdditionalAffinityCost > 0)
+            {
+                setValue += "+" + action.AdditionalAffinityCost + " Affinity Cost";
             }
             setValue += "\n\n" + action.MoveDescription;
             UICollections[(int)UIState.Party].SetPanelState("Action Description Panel", UITransition.State.Enable);
@@ -1045,7 +1067,15 @@ public class CanvasCollection : MonoBehaviour
                             Debug.Log("Stop you can't do that :(");
                         }
                         else {
-                            int healNumber = Item.GetHealValue(Item.ItemType.Healing);
+                            int healNumber = 0;
+                            if (item.healValue.StatChangeType == Effects.StatChange.NumberType.Percentage)
+                            {
+                                healNumber = (int)(monster.GetMaxHealth() * (item.healValue.PercentageChange / 100));
+                            }
+                            else
+                            {
+                                healNumber = item.healValue.HardNumberChange;
+                            }
                             monster.Heal(healNumber);
                             CloseInventoryWindow(true);
                             itemUseSuccess = true;
@@ -1055,71 +1085,9 @@ public class CanvasCollection : MonoBehaviour
                     }
 
                     break;
-
-
-                case Item.ItemType.GreatHeal://name can change or usage can change, same with the next case
-                    monster = GetTargetMonster(Director.Team.PlayerTeam, Director.Team.PlayerTeam);
-                    if (sr.battleSetup.InBattle)
-                    {
-                        if (monster.Health.z >= monster.GetMaxHealth())
-                        {
-                            Debug.Log("Stop you can't do that :(");
-                        }
-                        else
-                        {
-                            int healNumber = Item.GetHealValue(Item.ItemType.GreatHeal);
-                            monster.Heal(healNumber);
-                            CloseInventoryWindow(true);
-                            itemUseSuccess = true;
-                        }
-
-
-                    }
-
-                    break;
-
-                case Item.ItemType.UltraHeal:
-                    monster = GetTargetMonster(Director.Team.PlayerTeam, Director.Team.PlayerTeam);
-                    if (sr.battleSetup.InBattle)
-                    {
-                        if (monster.Health.z >= monster.GetMaxHealth())
-                        {
-                            Debug.Log("Stop you can't do that :(");
-                        }
-                        else
-                        {
-                            int healNumber = Item.GetHealValue(Item.ItemType.UltraHeal);
-                            monster.Heal(healNumber);
-                            CloseInventoryWindow(true);
-                            itemUseSuccess = true;
-                        }
-
-
-                    }
-
-                    break;
-                case Item.ItemType.MaxHeal:
-                     monster = GetTargetMonster(Director.Team.PlayerTeam, Director.Team.PlayerTeam);
-                    if (sr.battleSetup.InBattle)
-                    {
-                        if (monster.Health.z >= monster.GetMaxHealth())
-                        {
-                            Debug.Log("Stop you can't do that :(");
-                        }
-                        else
-                        {
-                          
-                            monster.Heal(monster.GetMaxHealth());
-                            CloseInventoryWindow(true);
-                            itemUseSuccess = true;
-                        }
-
-
-                    }
-
-                    break;
-            }
-            if (itemUseSuccess) sr.inventory.RemoveItem(item, 1);
+            
+        }
+        if (itemUseSuccess) sr.inventory.RemoveItem(item, 1);
         }
     }
 
@@ -1175,6 +1143,7 @@ public class CanvasCollection : MonoBehaviour
             {
                 int pageOffset = index + (15*StorageLunenPageSelect);
                 UICollections[(int)UIState.LunenStorage].SetPanelState("LunenInfoPanel", UITransition.State.Enable);
+                StorageRenameLunen.SetMonster(null, sr.storageSystem.StoredLunen[pageOffset]);
                 StorageLunenDescription.text = GetLunenInfo(null, sr.storageSystem.StoredLunen[pageOffset]);
                 LunenStorageButtonScripts[StorageLunenIndexSelect].scs.SetColorState(true);
                 PartyAccess(-1);
@@ -1200,8 +1169,6 @@ public class CanvasCollection : MonoBehaviour
         {
             setValue = "Species: " + monster.SourceLunen.name;
             setValue += "\nType: " + monster.SourceLunen.Elements[0].name + (monster.SourceLunen.Elements.Count == 2 ? (" / " + monster.SourceLunen.Elements[1].name) : "");
-            setValue += "\n";
-            setValue += "\nNickname: " + monster.Nickname;
             setValue += "\nLevel: " + monster.Level;
             if (monster.Level >= sr.database.LevelCap)
             {
@@ -1228,8 +1195,6 @@ public class CanvasCollection : MonoBehaviour
             Lunen thisLunen = sr.database.IndexToLunen(gdMonster.species);
             setValue = "Species: " + thisLunen.name;
             setValue += "\nType: " + thisLunen.Elements[0].name + (thisLunen.Elements.Count == 2 ? (" / " + thisLunen.Elements[1].name) : "");
-            setValue += "\n";
-            setValue += "\nNickname: " + gdMonster.nickname;
             setValue += "\nLevel: " + gdMonster.level;
             if (gdMonster.level >= sr.database.LevelCap)
             {

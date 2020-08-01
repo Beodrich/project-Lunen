@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3f3de1279d24685b8e6ca8dcac2788, type: 3}
+  m_Name: Stuimp
+  m_EditorClassIdentifier: 
+  isLunen: 1
+  animations:
+  - name: Idle
+    iterateTime: 0.2
+    loops: 1
+    fourDirectional: 0
+    twoDirectional: 0
+    spriteArray:
+    - {fileID: 21300000, guid: 1537ac0d344d44748a203f425e102302, type: 3}

@@ -196,7 +196,7 @@ public class PlayerLogic : MonoBehaviour
         }
         if (inDoor)
         {
-            sr.battleSetup.NewOverworld(doorObject.GetComponent<DoorToLocation>());
+            sr.battleSetup.NewOverworld(doorObject.GetComponent<DoorToLocation>(), transform.position - doorObject.transform.position);
         }
 
         if (inShop)

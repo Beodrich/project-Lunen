@@ -90,6 +90,11 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void PlaySoundEffect(SoundEffect _soundEffect)
+    {
+        AddSFX(_soundEffect);
+    }
+
     public void AddSFX(SoundEffect _soundEffect, bool _loops = false)
     {
         for (int i = 0; i < soundSource.Count; i++)

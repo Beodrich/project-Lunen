@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
   m_Name: Woufa
   m_EditorClassIdentifier: 
-  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  animationSet: {fileID: 11400000, guid: 109325912e91144bf9633387d5f1d4a2, type: 2}
   Elements:
   - {fileID: 11400000, guid: f0b191960720d4a568cd4e46f31d5ec8, type: 2}
   LearnedActions:

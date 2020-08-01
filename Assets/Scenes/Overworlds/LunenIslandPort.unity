@@ -522,6 +522,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2137190246755848881, guid: 4e5f67d75f1bd4db1b7a1261aa05271a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137190246755848881, guid: 4e5f67d75f1bd4db1b7a1261aa05271a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137190246755848881, guid: 4e5f67d75f1bd4db1b7a1261aa05271a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137190246755848881, guid: 4e5f67d75f1bd4db1b7a1261aa05271a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2137190246755848883, guid: 4e5f67d75f1bd4db1b7a1261aa05271a,
         type: 3}
       propertyPath: attributes
@@ -537,6 +557,16 @@ PrefabInstance:
         type: 3}
       propertyPath: targetGuidString
       value: e8ca22fd-b4d7-4b3c-bf17-6c533ab6a7fd
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137190246755848883, guid: 4e5f67d75f1bd4db1b7a1261aa05271a,
+        type: 3}
+      propertyPath: doorSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137190246755848883, guid: 4e5f67d75f1bd4db1b7a1261aa05271a,
+        type: 3}
+      propertyPath: doorSize.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3546984515688155677, guid: 4e5f67d75f1bd4db1b7a1261aa05271a,
         type: 3}
@@ -35272,6 +35302,8 @@ MonoBehaviour:
   animIndex: 8
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 0
+  moveSpeedCurrent: 0
 --- !u!114 &984819573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36364,6 +36396,16 @@ PrefabInstance:
       propertyPath: attributes
       value: 
       objectReference: {fileID: 4996812198650243613}
+    - target: {fileID: 3316092502872190549, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: doorSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316092502872190549, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: doorSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3316092503035529640, guid: ff7badca6e1954b86a2653edabe6f26a,
         type: 3}
       propertyPath: serializedGuid.Array.size
@@ -36470,6 +36512,36 @@ PrefabInstance:
       propertyPath: fallbackIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3316092503035529641, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: doorSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316092503035529641, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: doorSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316092503035529642, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316092503035529642, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316092503035529642, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316092503035529642, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3316092503360181176, guid: ff7badca6e1954b86a2653edabe6f26a,
         type: 3}
       propertyPath: m_IsActive
@@ -36565,6 +36637,16 @@ PrefabInstance:
       propertyPath: attributes
       value: 
       objectReference: {fileID: 4996812198650243613}
+    - target: {fileID: 3316092503360181181, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: doorSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316092503360181181, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: doorSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3427312986262996835, guid: ff7badca6e1954b86a2653edabe6f26a,
         type: 3}
       propertyPath: m_Name
@@ -36625,6 +36707,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5800581515645121841, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800581515645121841, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800581515645121841, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800581515645121841, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5800581515645121843, guid: ff7badca6e1954b86a2653edabe6f26a,
         type: 3}
       propertyPath: attributes
@@ -36640,6 +36742,16 @@ PrefabInstance:
         type: 3}
       propertyPath: targetGuidString
       value: 402a0781-8cee-4769-8a72-105457c6df4d
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800581515645121843, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: doorSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800581515645121843, guid: ff7badca6e1954b86a2653edabe6f26a,
+        type: 3}
+      propertyPath: doorSize.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9002263052192705949, guid: ff7badca6e1954b86a2653edabe6f26a,
         type: 3}
@@ -36818,7 +36930,7 @@ PrefabInstance:
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: doorArray.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
@@ -36904,27 +37016,27 @@ PrefabInstance:
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: doorArray.Array.data[0]
-      value: House3Door
-      objectReference: {fileID: 0}
-    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
-        type: 3}
-      propertyPath: doorArray.Array.data[1]
       value: CheckpointSouthDoorLeft
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
-      propertyPath: doorArray.Array.data[2]
+      propertyPath: doorArray.Array.data[1]
       value: CheckpointSouthDoorRight
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
+      propertyPath: doorArray.Array.data[2]
+      value: BoatDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
+        type: 3}
       propertyPath: doorArray.Array.data[3]
-      value: House Back Door
+      value: House3Door
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: doorArray.Array.data[4]
-      value: House Front Door
+      value: House Back Door
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
@@ -37373,6 +37485,8 @@ MonoBehaviour:
   animIndex: 12
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 0
+  moveSpeedCurrent: 0
 --- !u!1001 &6324779463032684279
 PrefabInstance:
   m_ObjectHideFlags: 0

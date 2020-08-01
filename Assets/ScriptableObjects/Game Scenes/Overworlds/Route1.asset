@@ -16,6 +16,14 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: a12c5cfc2bf7548f3848ab6d9d0385c5, type: 3}
     scenePath: Assets/Scenes/Overworlds/Route1.unity
   entranceList:
+  - name: FirstTownDoor1
+    position: {x: -29, y: 36, z: 0}
+    facingDirection: 1
+    guidString: 8e2f8b46-0f5a-447a-8f89-9a372f040154
+  - name: House2Color2Door
+    position: {x: 37, y: 34, z: 0}
+    facingDirection: 2
+    guidString: b1d26ff7-3969-401a-86fe-88f518996bf4
   - name: CheckpointNorthDoorRight
     position: {x: 17, y: 25, z: 0}
     facingDirection: 0
@@ -24,23 +32,3 @@ MonoBehaviour:
     position: {x: 15, y: 25, z: 0}
     facingDirection: 0
     guidString: 090cb56f-9d61-4fba-9f48-4a3bc6c22744
-  - name: LabDoor
-    position: {x: 37, y: 34, z: 0}
-    facingDirection: 2
-    guidString: 59297d48-6885-46e2-a397-608d2665e762
-  - name: FirstTownDoor3
-    position: {x: -29, y: 34, z: 0}
-    facingDirection: 1
-    guidString: 7e9fc5f1-b58e-4fd6-850f-b159d6c28f8c
-  - name: FirstTownDoor2
-    position: {x: -29, y: 35, z: 0}
-    facingDirection: 1
-    guidString: 55ac44b4-9f7f-4f37-97a7-7db2b4f803fd
-  - name: FirstTownDoor1
-    position: {x: -29, y: 36, z: 0}
-    facingDirection: 1
-    guidString: 8e2f8b46-0f5a-447a-8f89-9a372f040154
-  - name: FirstTownDoor4
-    position: {x: -29, y: 33, z: 0}
-    facingDirection: 1
-    guidString: 03204cf5-286b-486b-96b3-5fe95e4c7995

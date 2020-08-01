@@ -66,6 +66,7 @@ public class BattleSetup : MonoBehaviour
     public bool cutsceneStoppedBattle;
     public bool dialogueAutoClose;
     [HideInInspector] public Monster attemptToCaptureMonster;
+    public bool runButtonHeld;
 
     private void Awake()
     {
@@ -90,8 +91,10 @@ public class BattleSetup : MonoBehaviour
             {
                 if (!sr.playerLogic.move.isMoving)
                 {
+                    
                     if (!sr.canvasCollection.MenuPanelOpen)
                     {
+                        
                         if (sr.canvasCollection.StoragePanelOpen) sr.canvasCollection.CloseStorageWindow(InBattle);
                         else if (!InBattle) OpenMainMenu();
                         else
@@ -103,6 +106,7 @@ public class BattleSetup : MonoBehaviour
                     }
                     else
                     {
+                        sr.soundManager.PlaySoundEffect("MenuBack");
                         if (sr.canvasCollection.OptionsPanelOpen)
                         {
                             sr.settingsSystem.ExitSettings();
@@ -118,6 +122,7 @@ public class BattleSetup : MonoBehaviour
                 }
             }
         }
+        runButtonHeld = Input.GetKey(KeyCode.Space);
 
     }
 
@@ -284,14 +289,14 @@ public class BattleSetup : MonoBehaviour
         RecycleBinTeam.Clear();
     }
 
-    public void NewOverworld(DoorToLocation door)
+    public void NewOverworld(DoorToLocation door, Vector3 offset)
     {
         GameScene gs = door.targetScene;
         DatabaseSceneEntrance dse = gs.GuidToEntrance(door.targetGuidString);
         NewOverworldAt
         (
             gs.scene.ScenePath,
-            dse.position,
+            dse.position + offset,
             dse.facingDirection,
             !door.stopOnTransition,
             false
@@ -304,7 +309,6 @@ public class BattleSetup : MonoBehaviour
         loadPosition = position;
         loadDirection = direction;
         loadMoving = moving;
-        lastOverworld = location;
         if (sr.playerLogic != null)
         {
             loadAnimTime = sr.playerLogic.move.animTime;
@@ -315,16 +319,15 @@ public class BattleSetup : MonoBehaviour
         }
         if (openState) sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
         Debug.Log("Loading Scene: " + location);
-        SceneManager.LoadSceneAsync(location);
+        LoadNextScene(location);
     }
 
     public void NewOverworldAt(string location, int entranceIndex)
     {
         nextEntrance = entranceIndex;
-        lastOverworld = location;
         sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
         Debug.Log("Loading Scene: " + location);
-        SceneManager.LoadSceneAsync(location);
+        LoadNextScene(location);
     }
 
     public void StartCutscene(PackedCutscene cutscene, string route = "")
@@ -592,6 +595,27 @@ public class BattleSetup : MonoBehaviour
         GameObject newEmote = Instantiate(sr.database.EmoteTemplate, source.transform.position + new Vector3(0.5f, 1f, 0), source.transform.rotation);
         newEmote.GetComponent<DestroySelf>().SetDieTime(emote.duration);
         newEmote.GetComponent<SpriteRenderer>().sprite = emote.emoteIcon;
+    }
+
+    public void LoadNextScene(string scenePath)
+    {
+        if (lastOverworld != "")
+        {
+            Transform[] allObjects;
+            allObjects = GameObject.FindObjectsOfType(typeof(Transform)) as Transform[];
+    
+            foreach (Transform t in allObjects)
+            {
+                if (t.gameObject.scene.path == lastOverworld) GameObject.Destroy (t.gameObject);
+                else if (t.tag == "Player") GameObject.Destroy (t.gameObject);
+            }
+            SceneManager.UnloadSceneAsync(lastOverworld);
+        }
+
+        
+        
+        lastOverworld = scenePath;
+        SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Additive);
     }
 
 }

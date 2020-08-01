@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
   m_Name: Tidal Wave
   m_EditorClassIdentifier: 
-  loopback: {fileID: 0}
+  sr: {fileID: 0}
   Name: Tidal Wave
   Type: {fileID: 11400000, guid: a13de93d4dfea408c97d2cfb3b120461, type: 2}
   Turns: 1
   AdditionalAffinityCost: 0
   TimePausePeriod: 2
   Animation: {fileID: 0}
+  ComboMove: 0
+  ComboType: {fileID: 0}
+  MoveDescription: 'Power: 40
+
+    Hits all enemy Lunen'
   PartsOfAction:
   - Effect: 0
     Target: 1
@@ -26,6 +31,17 @@ MonoBehaviour:
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 0}
     StatusEffectTurns: 0
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 0

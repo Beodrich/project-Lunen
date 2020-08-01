@@ -13,10 +13,7 @@ public class Item : ScriptableObject
         Cure,
         Buff,
         Held,
-        Key,
-        GreatHeal,
-        UltraHeal,
-        MaxHeal
+        Key
     }
 
     public string description;
@@ -25,25 +22,10 @@ public class Item : ScriptableObject
     public Sprite icon;
 
     public ItemType itemType;
+    [ConditionalField(nameof(itemType), false, ItemType.Capture)] public float CatchRate;
+    [ConditionalField(nameof(itemType), false, ItemType.Healing)] public Effects.StatChange healValue;
+    
 
     public int buyValue;
     public int sellValue;
-
-    [ConditionalField(nameof(itemType), false, ItemType.Capture)] public float CatchRate;
-
-    public static int GetHealValue(Item.ItemType healItem) {
-
-      
-
-        switch (healItem)
-        {
-            case Item.ItemType.Healing:  return 20;
-            case Item.ItemType.GreatHeal: return 40;
-            case Item.ItemType.UltraHeal: return 60;
-           
-
-        }
-        return -1;//return -1 in error 
-    }
-
 }

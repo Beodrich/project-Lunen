@@ -55,6 +55,8 @@ public class DoorEditor : Editor
             GUILayout.Label("Door: " + door.name, EditorStyles.boldLabel);
             GUILayout.Space(20);
 
+            door.doorSize = EditorGUILayout.Vector2Field("Size: ", door.doorSize);
+
             door.targetScene = (GameScene)EditorGUILayout.ObjectField("Scene: ", door.targetScene, typeof(GameScene), true);
             
             if (door.targetScene != null)
@@ -134,6 +136,7 @@ public class DoorEditor : Editor
                 serializedObject.ApplyModifiedProperties();
                 if (GUI.changed)
                 {
+                    
                     door.attributes.RefreshDoors();
                     EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
                     EditorUtility.SetDirty(door);

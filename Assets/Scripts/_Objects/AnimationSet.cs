@@ -84,6 +84,7 @@ public class AnimationSet : ScriptableObject
         }
     }
 
+    public bool isLunen;
     public List<Animation> animations;
 
     public Animation GetAnimation(string _name)

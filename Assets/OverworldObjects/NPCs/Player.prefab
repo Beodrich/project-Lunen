@@ -183,6 +183,8 @@ MonoBehaviour:
   moveSpeed: 5
   gridSize: 1
   playerSize: 1
+  thisDirectInput: {x: 0, y: 0}
+  lastDirectInput: {x: 0, y: 0}
   isMoving: 0
   animMoving: 0
   npcMove: 0
@@ -198,6 +200,8 @@ MonoBehaviour:
   animIndex: 13
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 2
+  moveSpeedCurrent: 0
 --- !u!212 &5585906584724857796
 SpriteRenderer:
   m_ObjectHideFlags: 0

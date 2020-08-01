@@ -16,6 +16,10 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: 7437b6d052909433c934627f3aad682d, type: 3}
     scenePath: Assets/Scenes/Overworlds/FirstTown.unity
   entranceList:
+  - name: House1Color4Door
+    position: {x: -73, y: 21, z: 0}
+    facingDirection: 2
+    guidString: b61bfdb9-c515-46be-bcb1-b36114deee69
   - name: LabDoor
     position: {x: -52, y: 37, z: 0}
     facingDirection: 2
@@ -28,38 +32,54 @@ MonoBehaviour:
     position: {x: -64, y: 37, z: 0}
     facingDirection: 2
     guidString: 124a85dd-bd23-4aa7-8f26-2580fa843778
+  - name: House3Color4Door
+    position: {x: -70, y: 37, z: 0}
+    facingDirection: 2
+    guidString: 2bf0939f-fcc8-40e4-97f3-f959367ac487
+  - name: House3Color3Door
+    position: {x: -73, y: 29, z: 0}
+    facingDirection: 2
+    guidString: 8ff0fd57-65d1-4fa6-9e5e-5de34cef4cc7
   - name: House1Color4Door
     position: {x: -67, y: 37, z: 0}
     facingDirection: 2
     guidString: 46820fbb-b01b-4794-bd26-efd3a7f0370c
+  - name: House2Color4Door
+    position: {x: -67, y: 21, z: 0}
+    facingDirection: 2
+    guidString: f534695a-6028-402c-b230-657e285d4f55
   - name: House1Color2Door
     position: {x: -63, y: 29, z: 0}
     facingDirection: 2
     guidString: 524bb7d3-8c97-4bf5-b023-bbf0f7fef572
+  - name: House3Color4Door
+    position: {x: -69, y: 21, z: 0}
+    facingDirection: 2
+    guidString: d54608e1-d718-41f8-9762-18026222b4d4
   - name: House3Color3Door
     position: {x: -59, y: 29, z: 0}
     facingDirection: 2
     guidString: 04ff0258-29ec-43e1-b7df-683cc8d237db
+  - name: House1Color2Door
+    position: {x: -63, y: 21, z: 0}
+    facingDirection: 2
+    guidString: d91d3612-e826-49ef-8850-647f3bc54ddf
   - name: LunenCenterDoor
     position: {x: -60, y: 37, z: 0}
     facingDirection: 2
     guidString: 2f5cfe7d-75e5-4c6a-aa7c-ed3df61bd024
+  - name: House2Color4Door
+    position: {x: -71, y: 29, z: 0}
+    facingDirection: 2
+    guidString: 76d72fb4-f1f8-4e21-b62c-69d55893e5c8
+  - name: House1Color2Door
+    position: {x: -74, y: 37, z: 0}
+    facingDirection: 2
+    guidString: 55852e92-6943-4f45-91df-0474851e2834
   - name: House3Color4Door
     position: {x: -59, y: 21, z: 0}
     facingDirection: 2
     guidString: 12911a40-ecf4-49c4-a09e-8e772e6beea7
-  - name: Route1Door2
-    position: {x: -29, y: 35, z: 0}
-    facingDirection: 3
-    guidString: 8c054b38-0cf2-4b36-b974-5ae8ba75f50d
-  - name: Route1Door4
-    position: {x: -29, y: 33, z: 0}
-    facingDirection: 3
-    guidString: dd5e06f6-d204-4b65-945f-2081014a8f6c
-  - name: Route1Door3
-    position: {x: -29, y: 34, z: 0}
-    facingDirection: 3
-    guidString: 2201c904-d396-4d9c-9d10-5949e1c83946
   - name: Route1Door1
     position: {x: -29, y: 36, z: 0}
     facingDirection: 3

@@ -29,6 +29,7 @@ public class SaveSystemObject : MonoBehaviour
 
         newMonster.Exp.x = pl.exp;
         newMonster.Health.z = pl.currentHealth;
+        newMonster.Nickname = pl.nickname;
         
         for (int j = 0; j < pl.learnedMoves.Count; j++)
         {
@@ -95,7 +96,7 @@ public class SaveSystemObject : MonoBehaviour
             sr.director.LoadTeams();
 
             sr.battleSetup.lastOverworld = gameData.currentScene;
-            
+            Debug.Log(gameData.currentScene);
 
             //Get respawn variables
             sr.battleSetup.respawnLocation = new Vector2(gameData.respawnX, gameData.respawnY);

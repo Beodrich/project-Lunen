@@ -15,6 +15,10 @@ public class BattleFieldAnims : MonoBehaviour
     public MoveScripts.Direction lookDirection;
     public float animTime;
     public int animIndex;
+    public bool mirrorSprites;
+
+    private Vector3 mirroredVector3 = new Vector3(-1,1,1);
+    private Vector3 normalVector3 = new Vector3(1,1,1);
 
     void Awake()
     {
@@ -33,6 +37,8 @@ public class BattleFieldAnims : MonoBehaviour
             {
                 animIndex = currentSet.GetAnimationIndex(currentType, lookDirection, animTime);
                 image.sprite = currentSet.GetAnimationSprite(currentType, animIndex);
+                if (currentSet.isLunen && mirrorSprites) transform.localScale = mirroredVector3;
+                else transform.localScale = normalVector3;
             }
         }
     }

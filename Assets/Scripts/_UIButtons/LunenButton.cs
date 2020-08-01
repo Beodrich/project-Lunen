@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class LunenButton : MonoBehaviour
 {
-    public GameObject Text;
-    public GameObject LevelText;
-    public GameObject HealthSlider;
-    public GameObject CooldownSlider;
-    public GameObject ExperienceSlider;
+    public Text TitleText;
+    public Text LevelText;
+    public MonsterHealthText HealthText;
+    public DrawHealthbar HealthSlider;
+    public DrawHealthbar CooldownSlider;
+    public DrawHealthbar ExperienceSlider;
 
     public Image LunenType1;
     public Image LunenType2;
