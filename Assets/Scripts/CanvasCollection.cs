@@ -1008,6 +1008,7 @@ public class CanvasCollection : MonoBehaviour
 
     public void UseItem(int index)
     {
+        Monster monster;
         if (!(bool)sr.database.GetTriggerValue("BattleVars/LunenAttacking"))
         {
             bool itemUseSuccess = false;
@@ -1037,14 +1038,15 @@ public class CanvasCollection : MonoBehaviour
                     
                 break;
                 case Item.ItemType.Healing:
-                    Monster monster = GetTargetMonster(Director.Team.PlayerTeam, Director.Team.PlayerTeam);
+                     monster = GetTargetMonster(Director.Team.PlayerTeam, Director.Team.PlayerTeam);
                     if (sr.battleSetup.InBattle) {
                         if (monster.Health.z >= monster.GetMaxHealth())
                         {
                             Debug.Log("Stop you can't do that :(");
                         }
                         else {
-                            monster.Heal(69);
+                            int healNumber = Item.GetHealValue(Item.ItemType.Healing);
+                            monster.Heal(healNumber);
                             CloseInventoryWindow(true);
                             itemUseSuccess = true;
                         }
@@ -1054,6 +1056,68 @@ public class CanvasCollection : MonoBehaviour
 
                     break;
 
+
+                case Item.ItemType.GreatHeal://name can change or usage can change, same with the next case
+                    monster = GetTargetMonster(Director.Team.PlayerTeam, Director.Team.PlayerTeam);
+                    if (sr.battleSetup.InBattle)
+                    {
+                        if (monster.Health.z >= monster.GetMaxHealth())
+                        {
+                            Debug.Log("Stop you can't do that :(");
+                        }
+                        else
+                        {
+                            int healNumber = Item.GetHealValue(Item.ItemType.GreatHeal);
+                            monster.Heal(healNumber);
+                            CloseInventoryWindow(true);
+                            itemUseSuccess = true;
+                        }
+
+
+                    }
+
+                    break;
+
+                case Item.ItemType.UltraHeal:
+                    monster = GetTargetMonster(Director.Team.PlayerTeam, Director.Team.PlayerTeam);
+                    if (sr.battleSetup.InBattle)
+                    {
+                        if (monster.Health.z >= monster.GetMaxHealth())
+                        {
+                            Debug.Log("Stop you can't do that :(");
+                        }
+                        else
+                        {
+                            int healNumber = Item.GetHealValue(Item.ItemType.UltraHeal);
+                            monster.Heal(healNumber);
+                            CloseInventoryWindow(true);
+                            itemUseSuccess = true;
+                        }
+
+
+                    }
+
+                    break;
+                case Item.ItemType.MaxHeal:
+                     monster = GetTargetMonster(Director.Team.PlayerTeam, Director.Team.PlayerTeam);
+                    if (sr.battleSetup.InBattle)
+                    {
+                        if (monster.Health.z >= monster.GetMaxHealth())
+                        {
+                            Debug.Log("Stop you can't do that :(");
+                        }
+                        else
+                        {
+                          
+                            monster.Heal(monster.GetMaxHealth());
+                            CloseInventoryWindow(true);
+                            itemUseSuccess = true;
+                        }
+
+
+                    }
+
+                    break;
             }
             if (itemUseSuccess) sr.inventory.RemoveItem(item, 1);
         }
