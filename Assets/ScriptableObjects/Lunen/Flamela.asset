@@ -18,12 +18,12 @@ MonoBehaviour:
   LearnedActions:
   - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
     level: 1
-  - action: {fileID: 11400000, guid: 977890cc13598462f8380edf5670307b, type: 2}
-    level: 9
   - action: {fileID: 11400000, guid: df02638ac89fd7b47ab82b8bc87f3b5b, type: 2}
     level: 3
   - action: {fileID: 11400000, guid: 4610632cf4f359d4a951689f165f7c6e, type: 2}
     level: 6
+  - action: {fileID: 11400000, guid: 977890cc13598462f8380edf5670307b, type: 2}
+    level: 9
   Evolves: 1
   EvolutionLunen: {fileID: 11400000, guid: c358fa21c167d2441a069a37332c70b1, type: 2}
   EvolutionLevel: 10

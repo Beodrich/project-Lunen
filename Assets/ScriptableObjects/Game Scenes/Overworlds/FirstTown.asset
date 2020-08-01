@@ -13,9 +13,25 @@ MonoBehaviour:
   m_Name: FirstTown
   m_EditorClassIdentifier: 
   scene:
-    sceneAsset: {fileID: 102900000, guid: 7437b6d052909433c934627f3aad682d, type: 3}
-    scenePath: Assets/Scenes/Overworlds/FirstTown.unity
+    sceneAsset: {fileID: 102900000, guid: 089d8b71050e84a8dbedc6837745680c, type: 3}
+    scenePath: Assets/Scenes/Overworlds/PortTown.unity
   entranceList:
+  - name: CheckpointNorthDoorRight
+    position: {x: -55, y: 13, z: 0}
+    facingDirection: 0
+    guidString: 3e5913b8-9c94-4dc7-b9cd-32e68dbddbe0
+  - name: CheckpointNorthDoorLeft
+    position: {x: -57, y: 13, z: 0}
+    facingDirection: 0
+    guidString: e46b527f-46a4-4a30-bbec-2ee31a26ad3e
+  - name: CheckpointSouthDoorLeft
+    position: {x: -57, y: 9, z: 0}
+    facingDirection: 2
+    guidString: 7b68945e-bc25-443f-9c0f-ef827e420657
+  - name: CheckpointSouthDoorRight
+    position: {x: -55, y: 9, z: 0}
+    facingDirection: 2
+    guidString: eb07eff8-f55d-4724-9204-fdc1537ca513
   - name: House1Color4Door
     position: {x: -73, y: 21, z: 0}
     facingDirection: 2

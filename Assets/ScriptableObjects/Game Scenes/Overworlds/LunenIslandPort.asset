@@ -16,14 +16,26 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d, type: 3}
     scenePath: Assets/Scenes/Overworlds/LunenIslandPort.unity
   entranceList:
+  - name: CheckpointNorthDoorRight
+    position: {x: -31, y: 58, z: 0}
+    facingDirection: 0
+    guidString: 6f389f41-2480-4679-bb81-212ae063b3fe
+  - name: CheckpointNorthDoorLeft
+    position: {x: -33, y: 58, z: 0}
+    facingDirection: 0
+    guidString: c23e482c-99ef-4b3f-8239-3b7e6d8cfe06
   - name: CheckpointSouthDoorLeft
-    position: {x: 15, y: 21, z: 0}
+    position: {x: -33, y: 43, z: 0}
     facingDirection: 2
-    guidString: ad734bc5-0b96-46e3-ac36-2690c1362603
+    guidString: 49e1c90b-13d6-4eb3-8997-5b86a7aa862f
   - name: CheckpointSouthDoorRight
-    position: {x: 17, y: 21, z: 0}
+    position: {x: -31, y: 43, z: 0}
     facingDirection: 2
-    guidString: 76c7910b-4205-45a3-9ea5-4c2305547e98
+    guidString: 7048da52-21a8-427f-a5cd-9bf71491ecf9
+  - name: House2Color2Door
+    position: {x: 37, y: 34, z: 0}
+    facingDirection: 2
+    guidString: b1d26ff7-3969-401a-86fe-88f518996bf4
   - name: BoatDoor
     position: {x: 3, y: -2, z: 0}
     facingDirection: 0

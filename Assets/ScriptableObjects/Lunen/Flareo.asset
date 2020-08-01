@@ -22,17 +22,15 @@ MonoBehaviour:
     level: 3
   - action: {fileID: 11400000, guid: 4610632cf4f359d4a951689f165f7c6e, type: 2}
     level: 6
+  - action: {fileID: 11400000, guid: 977890cc13598462f8380edf5670307b, type: 2}
+    level: 9
   - action: {fileID: 11400000, guid: aeaa509d6ed29374e958f380d108ca19, type: 2}
     level: 13
   - action: {fileID: 11400000, guid: b643b82e0bbc63c489fca0f4d88cc199, type: 2}
     level: 16
   - action: {fileID: 11400000, guid: a303885f0a82a574ebed81fe7922ede1, type: 2}
     level: 19
-  - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
-    level: 1
-  - action: {fileID: 11400000, guid: 977890cc13598462f8380edf5670307b, type: 2}
-    level: 9
-  - action: {fileID: 11400000, guid: ab6a6d866e95dbd4887f0f4931c98863, type: 2}
+  - action: {fileID: 0}
     level: 23
   - action: {fileID: 11400000, guid: 7911dfdb1d8c691479528b20ae54b462, type: 2}
     level: 26
