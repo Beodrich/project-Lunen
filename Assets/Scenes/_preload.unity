@@ -7634,47 +7634,22 @@ MonoBehaviour:
     active: 0
     track: {fileID: 0}
     currentTime: 0
-    durationTime: 0
-    loops: 0
-    loopStart: 0
-    loopEnd: 0
-    loopLength: 0
   - source: {fileID: 1121182065}
     active: 0
     track: {fileID: 0}
     currentTime: 0
-    durationTime: 0
-    loops: 0
-    loopStart: 0
-    loopEnd: 0
-    loopLength: 0
   - source: {fileID: 1405037636}
     active: 0
     track: {fileID: 0}
     currentTime: 0
-    durationTime: 0
-    loops: 0
-    loopStart: 0
-    loopEnd: 0
-    loopLength: 0
   - source: {fileID: 1839817836}
     active: 0
     track: {fileID: 0}
     currentTime: 0
-    durationTime: 0
-    loops: 0
-    loopStart: 0
-    loopEnd: 0
-    loopLength: 0
   - source: {fileID: 1994845740}
     active: 0
     track: {fileID: 0}
     currentTime: 0
-    durationTime: 0
-    loops: 0
-    loopStart: 0
-    loopEnd: 0
-    loopLength: 0
   soundSource:
   - source: {fileID: 768480659}
     active: 0
@@ -47438,7 +47413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   vsync: 1
-  bootBehaviour: 1
+  bootBehaviour: 2
   bootScene:
     sceneAsset: {fileID: 102900000, guid: fd01006b61cdd47e9826b0704b424e04, type: 3}
     scenePath: Assets/Scenes/Buildings/Shops/Shop.unity
@@ -47453,14 +47428,14 @@ MonoBehaviour:
       level: 20
     - species: {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748, type: 2}
       level: 29
-    - species: {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748, type: 2}
-      level: 29
-    - species: {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748, type: 2}
-      level: 29
-    - species: {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748, type: 2}
-      level: 29
-    - species: {fileID: 11400000, guid: 5cadf4bc39a3c4a18835ce7c8b842748, type: 2}
-      level: 29
+    - species: {fileID: 11400000, guid: 78f0960b772b240ccafabbae7f888a6b, type: 2}
+      level: 10
+    - species: {fileID: 11400000, guid: d271bc018be6a4303843c58710dd56b7, type: 2}
+      level: 10
+    - species: {fileID: 11400000, guid: 9ab71ebd2c0fe4c428bc0b9b5329e46e, type: 2}
+      level: 10
+    - species: {fileID: 11400000, guid: 223665715cf09408bad8757fff6b2557, type: 2}
+      level: 10
   FirstLunenParty:
     Value: []
   FirstLaunchCutscene: {fileID: 11400000, guid: 76ff2a0513a1942019e079fb476840cb,

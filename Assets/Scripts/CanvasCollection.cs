@@ -128,6 +128,8 @@ public class CanvasCollection : MonoBehaviour
     public List<ItemButtonScript> ShopButtonScripts;
     public List<ItemButtonScript> LunenStorageButtonScripts;
 
+    public List<bool> ExpGainDone;
+
     public UIState openedFirst;
 
     public delegate void YesNoFunction();
@@ -976,7 +978,7 @@ public class CanvasCollection : MonoBehaviour
         if (action != null)
         {
             setValue = "Name: " + action.Name;
-            setValue += "\nType: " + action.GetMoveType(sourceMonster);
+            setValue += "\nType: " + action.GetMoveType(sourceMonster).name;
             setValue += "\nCooldown: " + action.Turns + " Turn" + (action.Turns != 1 ? "s" : "");
             if (action.ComboMove)
             {
@@ -1133,6 +1135,8 @@ public class CanvasCollection : MonoBehaviour
         if (monster != null)
         {
             setValue = "Species: " + monster.SourceLunen.name;
+            setValue += "\nType: " + monster.SourceLunen.Elements[0].name + (monster.SourceLunen.Elements.Count == 2 ? (" / " + monster.SourceLunen.Elements[1].name) : "");
+            setValue += "\n";
             setValue += "\nNickname: " + monster.Nickname;
             setValue += "\nLevel: " + monster.Level;
             if (monster.Level >= sr.database.LevelCap)
@@ -1159,6 +1163,8 @@ public class CanvasCollection : MonoBehaviour
         {
             Lunen thisLunen = sr.database.IndexToLunen(gdMonster.species);
             setValue = "Species: " + thisLunen.name;
+            setValue += "\nType: " + thisLunen.Elements[0].name + (thisLunen.Elements.Count == 2 ? (" / " + thisLunen.Elements[1].name) : "");
+            setValue += "\n";
             setValue += "\nNickname: " + gdMonster.nickname;
             setValue += "\nLevel: " + gdMonster.level;
             if (gdMonster.level >= sr.database.LevelCap)

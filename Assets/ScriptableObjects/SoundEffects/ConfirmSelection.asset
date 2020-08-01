@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187d20db00fad42df877c19a7121d9ff, type: 3}
   m_Name: ConfirmSelection
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: f12daf2df1eb7410cb9ffa524e595ec9, type: 3}
+  audioClip: {fileID: 8300000, guid: 80d9b4cf4670b41758ece03170648e07, type: 3}
