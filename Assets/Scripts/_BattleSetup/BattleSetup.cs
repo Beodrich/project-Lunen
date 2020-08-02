@@ -91,33 +91,41 @@ public class BattleSetup : MonoBehaviour
             {
                 if (!sr.playerLogic.move.isMoving)
                 {
-                    
-                    if (!sr.canvasCollection.MenuPanelOpen)
+                    if (!cutsceneLoopGoing)
                     {
-                        
-                        if (sr.canvasCollection.StoragePanelOpen) sr.canvasCollection.CloseStorageWindow(InBattle);
-                        else if (!InBattle) OpenMainMenu();
+                        if (!sr.canvasCollection.MenuPanelOpen)
+                        {
+                            
+                            if (sr.canvasCollection.StoragePanelOpen) sr.canvasCollection.CloseStorageWindow(InBattle);
+                            else if (!InBattle) OpenMainMenu();
+                            else
+                            {
+                                if (sr.canvasCollection.InventoryPanelOpen) sr.canvasCollection.CloseInventoryWindow(InBattle);
+                                else if (sr.canvasCollection.StoragePanelOpen) sr.canvasCollection.CloseStorageWindow(InBattle);
+                                else if (sr.canvasCollection.PartyPanelOpen) sr.canvasCollection.ClosePartyWindow(InBattle);
+                            }
+                        }
                         else
                         {
-                            if (sr.canvasCollection.InventoryPanelOpen) sr.canvasCollection.CloseInventoryWindow(InBattle);
+                            sr.soundManager.PlaySoundEffect("MenuBack");
+                            if (sr.canvasCollection.OptionsPanelOpen)
+                            {
+                                sr.settingsSystem.ExitSettings();
+                            }
+                            else if (sr.canvasCollection.InventoryPanelOpen) sr.canvasCollection.CloseInventoryWindow(InBattle);
                             else if (sr.canvasCollection.StoragePanelOpen) sr.canvasCollection.CloseStorageWindow(InBattle);
                             else if (sr.canvasCollection.PartyPanelOpen) sr.canvasCollection.ClosePartyWindow(InBattle);
+                            else
+                            {
+                                CloseMainMenu();
+                            }
                         }
                     }
                     else
                     {
-                        sr.soundManager.PlaySoundEffect("MenuBack");
-                        if (sr.canvasCollection.OptionsPanelOpen)
-                        {
-                            sr.settingsSystem.ExitSettings();
-                        }
-                        else if (sr.canvasCollection.InventoryPanelOpen) sr.canvasCollection.CloseInventoryWindow(InBattle);
+                        if (sr.canvasCollection.InventoryPanelOpen) sr.canvasCollection.CloseInventoryWindow(InBattle);
                         else if (sr.canvasCollection.StoragePanelOpen) sr.canvasCollection.CloseStorageWindow(InBattle);
                         else if (sr.canvasCollection.PartyPanelOpen) sr.canvasCollection.ClosePartyWindow(InBattle);
-                        else
-                        {
-                            CloseMainMenu();
-                        }
                     }
                 }
             }
@@ -196,6 +204,8 @@ public class BattleSetup : MonoBehaviour
         sr.director.CleanUpBattle();
         sr.canvasCollection.CloseState(CanvasCollection.UIState.Battle);
         sr.canvasCollection.CloseState(CanvasCollection.UIState.BattleCharacter);
+        sr.canvasCollection.CloseInventoryWindow(true);
+        sr.canvasCollection.ClosePartyWindow(true);
         InBattle = false;
         SinceLastEncounter = 5f;
 
@@ -601,15 +611,16 @@ public class BattleSetup : MonoBehaviour
     {
         if (lastOverworld != "")
         {
-            Transform[] allObjects;
-            allObjects = GameObject.FindObjectsOfType(typeof(Transform)) as Transform[];
-    
-            foreach (Transform t in allObjects)
+            if (sr.playerLogic != null)
             {
-                if (t.gameObject.scene.path == lastOverworld) GameObject.Destroy (t.gameObject);
-                else if (t.tag == "Player") GameObject.Destroy (t.gameObject);
+                Destroy(sr.playerLogic.gameObject);
             }
-            SceneManager.UnloadSceneAsync(lastOverworld);
+            if (sr.sceneAttributes != null)
+            {
+                Debug.Log("Unloading " + sr.sceneAttributes.gameObject.scene.name);
+                SceneManager.UnloadSceneAsync(sr.sceneAttributes.gameObject.scene);
+            }
+            
         }
 
         

@@ -1171,6 +1171,8 @@ MonoBehaviour:
   animIndex: 12
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 0
+  moveSpeedCurrent: 0
 --- !u!114 &476222676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3038,6 +3040,8 @@ MonoBehaviour:
   animIndex: 12
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 0
+  moveSpeedCurrent: 0
 --- !u!114 &863182702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3377,6 +3381,8 @@ MonoBehaviour:
   animIndex: 8
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 0
+  moveSpeedCurrent: 0
 --- !u!114 &920829975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3718,6 +3724,8 @@ MonoBehaviour:
   animIndex: 0
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 0
+  moveSpeedCurrent: 0
 --- !u!114 &1126121152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4084,7 +4092,7 @@ PrefabInstance:
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: targetGuidString
-      value: 46820fbb-b01b-4794-bd26-efd3a7f0370c
+      value: f13f807b-f50d-425c-a2f0-576c8163a202
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696777, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -4955,6 +4963,8 @@ MonoBehaviour:
   animIndex: 8
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 0
+  moveSpeedCurrent: 0
 --- !u!1 &7468538302121889767
 GameObject:
   m_ObjectHideFlags: 0

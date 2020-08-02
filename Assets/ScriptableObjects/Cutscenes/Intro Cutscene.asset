@@ -20,6 +20,19 @@ MonoBehaviour:
   - id: 3
   - id: 4
   - id: 5
+  - id: 6
+  - id: 7
+  - id: 8
+  - id: 9
+  - id: 10
+  - id: 11
+  - id: 12
+  - id: 13
+  - id: 14
+  - id: 15
+  - id: 16
+  - id: 17
+  - id: 18
   references:
     version: 1
     00000000:
@@ -29,16 +42,202 @@ MonoBehaviour:
         _title: 
         _startNextSimultaneous: 0
         waitTime: 0.25
+        useStoryTriggerTime: 0
+        trigger: {fileID: 0}
+        triggerPart: 
     00000001:
       type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[Dialogue] Welcome to the world of Project Lunen! We''ll just give
-          you a Flamela and send you on your way!'
+        _name: '[Dialogue] Welcome to the world of Project Lunen! '
         _title: 
         _startNextSimultaneous: 0
-        text: Welcome to the world of Project Lunen! We'll just give you a Flamela
-          and send you on your way!
+        text: 'Welcome to the world of Project Lunen! '
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
     00000002:
+      type: {class: CutPart_Choice, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Choice] Would you like a tutorial?'
+        _title: New Choice
+        _startNextSimultaneous: 0
+        text: Would you like a tutorial?
+        useChoice1: 1
+        choice1Text: Yes
+        choice1Route: YesTutorial
+        useChoice2: 1
+        choice2Text: No
+        choice2Route: NoTutorial
+        useChoice3: 0
+        choice3Text: Choice 3
+        choice3Route: 
+    00000003:
+      type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
+      data:
+        _name: ' '
+        _title: New Blank
+        _startNextSimultaneous: 0
+    00000004:
+      type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[RouteStart] YesTutorial'
+        _title: YesTutorial
+        _startNextSimultaneous: 0
+    00000005:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Use the WASD or Arrow keys to move! Press Enter to talk
+          to characters or interact with things.'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Use the WASD or Arrow keys to move! Press Enter to talk to characters
+          or interact with things.
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000006:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Press the Escape button to open the main menu, and press
+          it again to close it.'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Press the Escape button to open the main menu, and press it again to
+          close it.
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000007:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Battles take place in real-time. Lunen have cooldowns
+          when they can''t use moves, and certain moves take more turns to recharge.'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Battles take place in real-time. Lunen have cooldowns when they can't
+          use moves, and certain moves take more turns to recharge.
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000008:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] You can and must capture Lunen, this game''s species of
+          monsters. You can do this in battle by opening the inventory and using
+          Lunen Cubes, if you''ve bought or collected them.'
+        _title: 
+        _startNextSimultaneous: 0
+        text: You can and must capture Lunen, this game's species of monsters. You
+          can do this in battle by opening the inventory and using Lunen Cubes, if
+          you've bought or collected them.
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    00000009:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Beware of fighting against three Lunen if you only have
+          one. This is an easy way to lose on the spot. Always make sure to have
+          at least two Lunen on your team!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Beware of fighting against three Lunen if you only have one. This is
+          an easy way to lose on the spot. Always make sure to have at least two
+          Lunen on your team!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    0000000A:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] This game is absolutely incomplete, so you may see broken
+          shit. Let us know about all of it! Please!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: This game is absolutely incomplete, so you may see broken shit. Let
+          us know about all of it! Please!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    0000000B:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] Alright, that should be everything!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: Alright, that should be everything!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    0000000C:
+      type: {class: CutPart_Blank, ns: , asm: Assembly-CSharp}
+      data:
+        _name: ' '
+        _title: New Blank
+        _startNextSimultaneous: 0
+    0000000D:
+      type: {class: CutPart_RouteStart, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[RouteStart] NoTutorial'
+        _title: NoTutorial
+        _startNextSimultaneous: 0
+    0000000E:
+      type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[Dialogue] We''ll just give you a Flamela and send you on your way!
+          Have fun!'
+        _title: 
+        _startNextSimultaneous: 0
+        text: We'll just give you a Flamela and send you on your way! Have fun!
+        autoClose: 0
+        waitTime: 0
+        useStoryTriggerTime: 0
+        trigger2: {fileID: 0}
+        triggerPart2: 
+        trigger: {fileID: 0}
+        triggerPart: 
+        showFoldout: 0
+    0000000F:
       type: {class: CutPart_ObtainLunen, ns: , asm: Assembly-CSharp}
       data:
         _name: '[ObtainLunen] Obtain Flamela'
@@ -47,7 +246,7 @@ MonoBehaviour:
         lunenObtained: {fileID: 11400000, guid: 9ab71ebd2c0fe4c428bc0b9b5329e46e,
           type: 2}
         lunenLevel: 5
-    00000003:
+    00000010:
       type: {class: CutPart_SetPanel, ns: , asm: Assembly-CSharp}
       data:
         _name: '[SetPanel] Set SceneSwitch Panel To Enable'
@@ -55,14 +254,17 @@ MonoBehaviour:
         _startNextSimultaneous: 0
         panelSelect: 10
         panelState: 0
-    00000004:
+    00000011:
       type: {class: CutPart_Wait, ns: , asm: Assembly-CSharp}
       data:
         _name: '[Wait] Wait 0.2s'
         _title: 
         _startNextSimultaneous: 0
         waitTime: 0.2
-    00000005:
+        useStoryTriggerTime: 0
+        trigger: {fileID: 0}
+        triggerPart: 
+    00000012:
       type: {class: CutPart_ChangeScene, ns: , asm: Assembly-CSharp}
       data:
         _name: '[ChangeScene] New ChangeScene'

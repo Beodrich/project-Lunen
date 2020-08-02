@@ -647,7 +647,7 @@ public class CanvasCollection : MonoBehaviour
         //SetPartyViewState((int)PartyAction.Null);
         if (!battle && !PartyPanelOpen) OpenState(UIState.MainMenu);
         CloseState(UIState.Inventory);
-        InventoryModeSelectButtons[InventoryModeSelect].SetSelected(false);
+        if (InventoryModeSelect < InventoryModeSelectButtons.Count && InventoryModeSelect != -1) InventoryModeSelectButtons[InventoryModeSelect].SetSelected(false);
     }
 
     public void SetInventoryWindow(int index)
