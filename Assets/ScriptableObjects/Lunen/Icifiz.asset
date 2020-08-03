@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
+  m_Name: Icifiz
+  m_EditorClassIdentifier: 
+  animationSet: {fileID: 0}
+  Elements: []
+  LearnedActions:
+  - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
+    level: 1
+  - action: {fileID: 11400000, guid: 649d2ebaf108fde43b71484e0e60b64f, type: 2}
+    level: 4
+  - action: {fileID: 11400000, guid: 3c0e8aff46a2c2742a8861bb2e70c064, type: 2}
+    level: 8
+  - action: {fileID: 11400000, guid: 5496c6b6daa252a42be0df42e83a6821, type: 2}
+    level: 12
+  - action: {fileID: 11400000, guid: c8d0adaafdd6d7942bdf84e7e67e45cf, type: 2}
+    level: 16
+  - action: {fileID: 11400000, guid: dbe92c1845e4959468968abd0dbee33e, type: 2}
+    level: 20
+  - action: {fileID: 11400000, guid: f1c371554ae227f47999e9e8baa51bc8, type: 2}
+    level: 25
+  - action: {fileID: 11400000, guid: 051a5b8524718d241bdd43fb2da6a3af, type: 2}
+    level: 30
+  Evolves: 0
+  EvolutionLunen: {fileID: 0}
+  EvolutionLevel: 0
+  Health: {x: 19, y: 3}
+  Attack: {x: 7, y: 2}
+  Defense: {x: 7, y: 2}
+  Speed: {x: 6, y: 1}
+  AffinityCost: 2
+  CatchRate: 100
+  CooldownTime: 10

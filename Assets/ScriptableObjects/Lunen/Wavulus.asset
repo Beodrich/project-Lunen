@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
+  m_Name: Wavulus
+  m_EditorClassIdentifier: 
+  animationSet: {fileID: 0}
+  Elements: []
+  LearnedActions:
+  - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
+    level: 1
+  - action: {fileID: 11400000, guid: 977890cc13598462f8380edf5670307b, type: 2}
+    level: 4
+  - action: {fileID: 11400000, guid: 5496c6b6daa252a42be0df42e83a6821, type: 2}
+    level: 8
+  - action: {fileID: 11400000, guid: c21d9a2aa5dcab24d892987f8d30c6cb, type: 2}
+    level: 12
+  - action: {fileID: 11400000, guid: dbe92c1845e4959468968abd0dbee33e, type: 2}
+    level: 15
+  - action: {fileID: 11400000, guid: c8d0adaafdd6d7942bdf84e7e67e45cf, type: 2}
+    level: 18
+  - action: {fileID: 11400000, guid: 7430738462eb9b8409f84b38b3f1a591, type: 2}
+    level: 23
+  - action: {fileID: 11400000, guid: 2a25ac84d693a7e4481c0d4e277951cd, type: 2}
+    level: 26
+  - action: {fileID: 11400000, guid: bc9e0fdcf5e34cd4cba02f93f4581d04, type: 2}
+    level: 30
+  Evolves: 0
+  EvolutionLunen: {fileID: 0}
+  EvolutionLevel: 0
+  Health: {x: 25, y: 3}
+  Attack: {x: 10, y: 2}
+  Defense: {x: 11, y: 2}
+  Speed: {x: 10, y: 3}
+  AffinityCost: 3
+  CatchRate: 100
+  CooldownTime: 10

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
+  m_Name: Wynern
+  m_EditorClassIdentifier: 
+  animationSet: {fileID: 0}
+  Elements: []
+  LearnedActions:
+  - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
+    level: 1
+  - action: {fileID: 11400000, guid: 977890cc13598462f8380edf5670307b, type: 2}
+    level: 4
+  - action: {fileID: 11400000, guid: 3d1b3e10a45792343a760c93616da208, type: 2}
+    level: 10
+  - action: {fileID: 11400000, guid: 9240ff8506b0758489cde7d7cfa21891, type: 2}
+    level: 14
+  - action: {fileID: 11400000, guid: 8ffbe0126e004a84587e924847bcf913, type: 2}
+    level: 17
+  - action: {fileID: 11400000, guid: c6e8f97f2a65be844a0f29419f6a5ff3, type: 2}
+    level: 20
+  - action: {fileID: 11400000, guid: 528336bd291826f42b6c58e6494fe66e, type: 2}
+    level: 23
+  - action: {fileID: 11400000, guid: e61d430e2daf9e04d8d96b0710bc51ba, type: 2}
+    level: 26
+  - action: {fileID: 11400000, guid: 7fc5320bd7f79424993acc06ac42b520, type: 2}
+    level: 30
+  Evolves: 0
+  EvolutionLunen: {fileID: 0}
+  EvolutionLevel: 0
+  Health: {x: 26, y: 3}
+  Attack: {x: 10, y: 3}
+  Defense: {x: 7, y: 1}
+  Speed: {x: 9, y: 2}
+  AffinityCost: 2
+  CatchRate: 100
+  CooldownTime: 10

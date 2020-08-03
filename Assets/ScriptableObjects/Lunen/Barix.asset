@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
+  m_Name: Barix
+  m_EditorClassIdentifier: 
+  animationSet: {fileID: 0}
+  Elements: []
+  LearnedActions:
+  - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
+    level: 1
+  - action: {fileID: 11400000, guid: 649d2ebaf108fde43b71484e0e60b64f, type: 2}
+    level: 4
+  - action: {fileID: 11400000, guid: 6dec27a56c9c95549a8f1a67395d6c3b, type: 2}
+    level: 8
+  - action: {fileID: 11400000, guid: c7ae4784de9993f45ab180da0a880270, type: 2}
+    level: 12
+  - action: {fileID: 11400000, guid: 1b758a48ef3c6934fab7e105219bdbe9, type: 2}
+    level: 15
+  - action: {fileID: 11400000, guid: 66a81c981828df24db8c66961688a96d, type: 2}
+    level: 18
+  - action: {fileID: 11400000, guid: 151e81c5fb5906c45a56c9d8277828a3, type: 2}
+    level: 23
+  - action: {fileID: 11400000, guid: d4a3cbcf80093c84f86d0cea2ed51584, type: 2}
+    level: 26
+  - action: {fileID: 11400000, guid: c28afa2fe46a6d24e85458b1187dc8f9, type: 2}
+    level: 30
+  Evolves: 0
+  EvolutionLunen: {fileID: 0}
+  EvolutionLevel: 0
+  Health: {x: 27, y: 4}
+  Attack: {x: 7, y: 2}
+  Defense: {x: 13, y: 3}
+  Speed: {x: 8, y: 1}
+  AffinityCost: 3
+  CatchRate: 100
+  CooldownTime: 10

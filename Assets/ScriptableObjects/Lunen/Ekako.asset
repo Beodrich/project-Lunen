@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
+  m_Name: Ekako
+  m_EditorClassIdentifier: 
+  animationSet: {fileID: 0}
+  Elements: []
+  LearnedActions:
+  - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
+    level: 1
+  - action: {fileID: 11400000, guid: 977890cc13598462f8380edf5670307b, type: 2}
+    level: 4
+  - action: {fileID: 11400000, guid: d8090f98392517a47a7f5587e3d27749, type: 2}
+    level: 8
+  - action: {fileID: 11400000, guid: 3d1b3e10a45792343a760c93616da208, type: 2}
+    level: 12
+  - action: {fileID: 11400000, guid: 528336bd291826f42b6c58e6494fe66e, type: 2}
+    level: 16
+  - action: {fileID: 11400000, guid: 0aa432684745e9e4e81c2557cd70c374, type: 2}
+    level: 20
+  - action: {fileID: 11400000, guid: 7430738462eb9b8409f84b38b3f1a591, type: 2}
+    level: 24
+  - action: {fileID: 11400000, guid: 1662a36f1866fa94995ca864e39c1fc0, type: 2}
+    level: 27
+  - action: {fileID: 11400000, guid: 4a5023a49da3cf749a8c4f351ac9fb15, type: 2}
+    level: 30
+  Evolves: 0
+  EvolutionLunen: {fileID: 0}
+  EvolutionLevel: 0
+  Health: {x: 25, y: 4}
+  Attack: {x: 11, y: 4}
+  Defense: {x: 3, y: 1}
+  Speed: {x: 7, y: 1}
+  AffinityCost: 3
+  CatchRate: 100
+  CooldownTime: 10

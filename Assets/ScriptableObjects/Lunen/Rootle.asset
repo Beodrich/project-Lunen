@@ -20,9 +20,11 @@ MonoBehaviour:
     level: 1
   - action: {fileID: 11400000, guid: 977890cc13598462f8380edf5670307b, type: 2}
     level: 4
-  Evolves: 0
-  EvolutionLunen: {fileID: 0}
-  EvolutionLevel: 0
+  - action: {fileID: 11400000, guid: 6dec27a56c9c95549a8f1a67395d6c3b, type: 2}
+    level: 8
+  Evolves: 1
+  EvolutionLunen: {fileID: 11400000, guid: b8f75d42b4f6dd54e89b86c58324c54a, type: 2}
+  EvolutionLevel: 10
   Health: {x: 19, y: 2}
   Attack: {x: 4, y: 1}
   Defense: {x: 7, y: 2}
