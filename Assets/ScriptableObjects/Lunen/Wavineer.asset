@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
   m_Name: Wavineer
   m_EditorClassIdentifier: 
-  animationSet: {fileID: 0}
-  Elements: []
+  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  Elements:
+  - {fileID: 11400000, guid: a13de93d4dfea408c97d2cfb3b120461, type: 2}
   LearnedActions:
   - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
     level: 1

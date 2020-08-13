@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
   m_Name: Nulva Incarnate
   m_EditorClassIdentifier: 
-  animationSet: {fileID: 0}
-  Elements: []
+  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  Elements:
+  - {fileID: 11400000, guid: 644f7eca510b443f79f9f710b3543d48, type: 2}
   LearnedActions:
   - action: {fileID: 11400000, guid: c24d4965eb5ad804db17e2d34df113ca, type: 2}
     level: 1

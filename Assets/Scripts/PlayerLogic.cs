@@ -28,6 +28,7 @@ public class PlayerLogic : MonoBehaviour
     
     private Rigidbody2D rb2D;
     public Vector3 frontOfCharacter;
+    WallWalkScript wws;
     // Start is called before the first frame update
     void Awake()
     {
@@ -96,7 +97,24 @@ public class PlayerLogic : MonoBehaviour
             switch(hit.gameObject.tag)
             {
                 default: return true;
-                case "Wall": return false;
+                case "Wall":
+                    wws = hit.gameObject.GetComponent<WallWalkScript>();
+                    if (wws != null)
+                    {
+                        switch (move.lookDirection)
+                        {
+                            default: return false;
+                            case MoveScripts.Direction.North: return wws.CanWalkNorth;
+                            case MoveScripts.Direction.South: return wws.CanWalkSouth;
+                            case MoveScripts.Direction.East: return wws.CanWalkEast;
+                            case MoveScripts.Direction.West: return wws.CanWalkWest;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                
                 case "Water": return false;
                 case "Creature": return false;
                 case "Trainer": return false;

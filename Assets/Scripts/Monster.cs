@@ -248,9 +248,10 @@ public class Monster : MonoBehaviour
 
     public void Evolve()
     {
+        string PastLunenName = SourceLunen.name;
         SourceLunen = SourceLunen.EvolutionLunen;
         sr.eventLog.AddEvent(Nickname + " evolves into " + SourceLunen.name);
-        TemplateToMonster(SourceLunen);
+        TemplateToMonster(SourceLunen, (PastLunenName == Nickname));
     }
 
     public void GetLevelUpMove(int index)
@@ -289,7 +290,7 @@ public class Monster : MonoBehaviour
         if (highLevelFirst) ActionSet.Reverse();
     }
 
-    public void TemplateToMonster(Lunen template)
+    public void TemplateToMonster(Lunen template, bool rename = true)
     {
         SourceLunen = template;
 
@@ -307,7 +308,7 @@ public class Monster : MonoBehaviour
         CalculateExpTargets();
         UpdateMoveCost();
         Exp.x = Exp.y;
-        Nickname = template.name;
+        if (rename) Nickname = template.name;
         SetObjectName();
     }
 

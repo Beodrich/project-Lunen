@@ -36,6 +36,8 @@ public class TrainerLogic : MonoBehaviour
     public bool overrideDefeated;
     public bool engaged;
     public bool defeated;
+
+    WallWalkScript wws;
     // Start is called before the first frame update
     void Start()
     {
@@ -129,7 +131,8 @@ public class TrainerLogic : MonoBehaviour
                 foundRange++;
                 checkVector = MoveScripts.GetFrontVector2(move, (float)foundRange, true);
                 Collider2D[] hit = Physics2D.OverlapAreaAll(checkVector, checkVector);
-                foundWall = MoveScripts.CheckForTag(this.gameObject,hit,TrainerLookStop);
+                //foundWall = MoveScripts.CheckForTag(this.gameObject,hit,TrainerLookStop);
+                foundWall = !MoveBegin(hit);
                 if (foundRange < maxRange)
                 {
                     foundPlayer = MoveScripts.CheckForTag(this.gameObject,hit,"Player");
@@ -186,10 +189,27 @@ public class TrainerLogic : MonoBehaviour
             switch(hit.gameObject.tag)
             {
                 default: return true;
-                case "Wall": return false;
+                case "Wall":
+                    wws = hit.gameObject.GetComponent<WallWalkScript>();
+                    if (wws != null)
+                    {
+                        switch (move.lookDirection)
+                        {
+                            default: return false;
+                            case MoveScripts.Direction.North: return wws.CanWalkNorth;
+                            case MoveScripts.Direction.South: return wws.CanWalkSouth;
+                            case MoveScripts.Direction.East: return wws.CanWalkEast;
+                            case MoveScripts.Direction.West: return wws.CanWalkWest;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 case "Player": return false;
                 case "Creature": return false;
-                case "Trainer": return false;
+                case "Water": return false;
+                case "Trainer": return (hit.gameObject == this.gameObject);
                 case "Thing": return false;
                 case "NPC": return false;
                 case "TrainerSight":

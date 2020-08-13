@@ -10,37 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
-  m_Name: Barix
+  m_Name: Sir Dungeness
   m_EditorClassIdentifier: 
   animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
   Elements:
-  - {fileID: 11400000, guid: f26c034e41d264356903d61fc22f7539, type: 2}
+  - {fileID: 11400000, guid: 8ca3cee93490140b0b9e0ddb9b65c0ad, type: 2}
+  - {fileID: 11400000, guid: fe54b427033d84e2d8485594d7c9b74b, type: 2}
   LearnedActions:
   - action: {fileID: 11400000, guid: bab7765ee9fab4632ac4a04d58658f52, type: 2}
     level: 1
   - action: {fileID: 11400000, guid: 649d2ebaf108fde43b71484e0e60b64f, type: 2}
     level: 4
-  - action: {fileID: 11400000, guid: 6dec27a56c9c95549a8f1a67395d6c3b, type: 2}
+  - action: {fileID: 11400000, guid: 8ab93f558906ba7448d6127476390e88, type: 2}
     level: 8
-  - action: {fileID: 11400000, guid: c7ae4784de9993f45ab180da0a880270, type: 2}
+  - action: {fileID: 11400000, guid: 1ac4e410c83781f40961d93270e8d167, type: 2}
     level: 12
-  - action: {fileID: 11400000, guid: 1b758a48ef3c6934fab7e105219bdbe9, type: 2}
-    level: 15
   - action: {fileID: 11400000, guid: 66a81c981828df24db8c66961688a96d, type: 2}
-    level: 18
-  - action: {fileID: 11400000, guid: 151e81c5fb5906c45a56c9d8277828a3, type: 2}
+    level: 16
+  - action: {fileID: 11400000, guid: 0aa432684745e9e4e81c2557cd70c374, type: 2}
+    level: 20
+  - action: {fileID: 11400000, guid: cf9e94c4eb9bf4486aa57a98e079df7f, type: 2}
     level: 23
-  - action: {fileID: 11400000, guid: d4a3cbcf80093c84f86d0cea2ed51584, type: 2}
+  - action: {fileID: 11400000, guid: 1b3004cb93078c748af10eae906abc0e, type: 2}
     level: 26
   - action: {fileID: 11400000, guid: c28afa2fe46a6d24e85458b1187dc8f9, type: 2}
     level: 30
   Evolves: 0
   EvolutionLunen: {fileID: 0}
   EvolutionLevel: 0
-  Health: {x: 27, y: 4}
-  Attack: {x: 7, y: 2}
-  Defense: {x: 13, y: 3}
-  Speed: {x: 8, y: 1}
+  Health: {x: 28, y: 5}
+  Attack: {x: 5, y: 2}
+  Defense: {x: 14, y: 3}
+  Speed: {x: 3, y: 1}
   AffinityCost: 3
-  CatchRate: 100
-  CooldownTime: 10
+  CatchRate: 5
+  CooldownTime: 0
