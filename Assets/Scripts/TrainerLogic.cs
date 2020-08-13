@@ -37,6 +37,9 @@ public class TrainerLogic : MonoBehaviour
     public bool engaged;
     public bool defeated;
 
+    public bool foundTrainer = false;
+    public GameObject trainerObject;
+
     WallWalkScript wws;
     // Start is called before the first frame update
     void Start()
@@ -116,13 +119,12 @@ public class TrainerLogic : MonoBehaviour
 
     private void TrainerScan()
     {
-        if (!defeated)
+        if (!defeated && !engaged)
         {
             Vector2 checkVector;
             Vector2 size2;
             Vector2 directionVector;
             bool foundWall = false;
-            bool foundPlayer = false;
             int maxRange = maxSeeDistance;
             if (limitRange) maxRange = rangeLimit+1;
             int foundRange = -1;
@@ -133,12 +135,28 @@ public class TrainerLogic : MonoBehaviour
                 Collider2D[] hit = Physics2D.OverlapAreaAll(checkVector, checkVector);
                 //foundWall = MoveScripts.CheckForTag(this.gameObject,hit,TrainerLookStop);
                 foundWall = !MoveBegin(hit);
+                /*
                 if (foundRange < maxRange)
                 {
                     foundPlayer = MoveScripts.CheckForTag(this.gameObject,hit,"Player");
                     if (foundPlayer && !sr.saveSystemObject.isLoading && !sr.battleSetup.playerDead && !engaged) sr.battleSetup.StartCutscene(new PackedCutscene(GetComponent<Cutscene>()));
                 }
+                */
+                if (foundTrainer)
+                {
+                    Debug.Log("Found Trainer! FoundWall = " + foundWall );
+                }
+                if (foundTrainer && !foundWall)
+                {
+
+                    if (!sr.saveSystemObject.isLoading && !sr.battleSetup.playerDead && !engaged)
+                    {
+                        engaged = true;
+                        sr.battleSetup.StartCutscene(new PackedCutscene(GetComponent<Cutscene>()));
+                    }
+                }
             }
+            
             foundRange--;
             checkVector = MoveScripts.GetFrontVector2(move, (float)foundRange/2, true);
             size2 = MoveScripts.GetVector2FromDirection(move.lookDirection) * foundRange;
@@ -153,15 +171,11 @@ public class TrainerLogic : MonoBehaviour
 
     public void StartTrainerBattle()
     {
-        #if UNITY_EDITOR
-            if (!EditorApplication.isPlaying) return;
-        #endif
         if (!sr.battleSetup.InBattle)
         {
             ClearTeamOfNull();
-            if (!defeated && !engaged)
+            if (!defeated)
             {
-                engaged = true;
                 sr.canvasCollection.Player2BattleFieldSprites[0].SetAnimationSet(animationSet);
                 sr.battleSetup.GenerateTrainerBattle(this);
                 sr.battleSetup.EnterBattle();
@@ -180,6 +194,7 @@ public class TrainerLogic : MonoBehaviour
 
     public bool MoveBegin(Collider2D hit)
     {
+        foundTrainer = false;
         if (hit == null)
         {
             return true;
@@ -206,7 +221,10 @@ public class TrainerLogic : MonoBehaviour
                     {
                         return false;
                     }
-                case "Player": return false;
+                case "Player":
+                    foundTrainer = true;
+                    trainerObject = hit.gameObject;
+                    return !engaged;
                 case "Creature": return false;
                 case "Water": return false;
                 case "Trainer": return (hit.gameObject == this.gameObject);
@@ -222,6 +240,7 @@ public class TrainerLogic : MonoBehaviour
 
     public bool MoveBegin(Collider2D[] hit)
     {
+        bool foundTrainer2 = false;
         int pathsFound = 0;
         if (hit.Length > 0)
         {
@@ -231,6 +250,7 @@ public class TrainerLogic : MonoBehaviour
                 if (hit[i].gameObject.tag != "Path" && hit[i].gameObject.tag != "Grass")
                 {
                     found += MoveBegin(hit[i]) ? 1 : 0;
+                    if (foundTrainer) foundTrainer2 = true;
                 }
                 else
                 {
@@ -238,6 +258,25 @@ public class TrainerLogic : MonoBehaviour
                 }
                 
             }
+            foundTrainer = foundTrainer2;
+            if (foundTrainer2)
+            {
+                Debug.Log("Found Trainer! Info: ");
+                Debug.Log("Collisions Found: " + hit.Length);
+                Debug.Log("Paths Found: " + pathsFound);
+                Debug.Log("Walls Found: " + found);
+                if (found + pathsFound < hit.Length)
+                {
+                    Debug.Log("Wall Detected, Not Full Sum");
+                    foundTrainer = false;
+                }
+                else
+                {
+                    Debug.Log("No Wall Detected");
+                }
+                
+            }
+            
             if (pathsFound == hit.Length) return true;
             return (found > 0);
         }

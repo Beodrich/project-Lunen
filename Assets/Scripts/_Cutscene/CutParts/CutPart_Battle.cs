@@ -50,7 +50,7 @@ public class CutPart_Battle : CutPart
             sr.battleSetup.cutsceneAfterBattle = new PackedCutscene(cutsceneAfterBattle);
             sr.battleSetup.cutsceneAfterBattleRoute = sr.battleSetup.CutsceneFindRoute(sr.battleSetup.cutsceneAfterBattle, routeAfterBattle);
         }
-        if (!trainerLogic.defeated && !trainerLogic.engaged)
+        if (!trainerLogic.defeated)
         {
             trainerLogic.StartTrainerBattle();
         }
