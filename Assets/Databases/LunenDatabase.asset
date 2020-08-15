@@ -15,21 +15,110 @@ MonoBehaviour:
   DebugMode: 0
   LevelCap: 30
   AllScenes:
-  - {fileID: 11400000, guid: 3b2d24aee47594f71ae87e2ae4061e4b, type: 2}
-  - {fileID: 11400000, guid: d8a0c4f1e23a740ad981b44e7fc2202a, type: 2}
-  - {fileID: 11400000, guid: fd6a6e264afc44a2b93d392becc91d0b, type: 2}
-  - {fileID: 11400000, guid: baad8f214567349a88140dd70bec825c, type: 2}
-  - {fileID: 11400000, guid: d4db0da69f55744328a4ce5f8406ec07, type: 2}
-  - {fileID: 11400000, guid: 23d07817c42c3436690d903db9784861, type: 2}
-  - {fileID: 11400000, guid: 56cae1e90bb8144a8a0b3d3874212595, type: 2}
-  - {fileID: 11400000, guid: 4b741c013b70f5b4ca5cbb35e8ae7328, type: 2}
-  - {fileID: 11400000, guid: 3a1102146535444b080b4ce26fe33073, type: 2}
-  - {fileID: 11400000, guid: ebabad0c3474d4f8fb5dd77ea7942925, type: 2}
-  - {fileID: 11400000, guid: 56c2e1a2164807c4b80a570b0e30c771, type: 2}
-  - {fileID: 11400000, guid: d7d0631ac720e42baa804b872a1b4820, type: 2}
-  - {fileID: 11400000, guid: a45da1d09a27e4ce98375e963fbbaffd, type: 2}
-  - {fileID: 11400000, guid: 9169a02df4d9f47df87c6e39e0b1892b, type: 2}
-  - {fileID: 11400000, guid: 4a2dd3c2613f6a049b32587e67bdf168, type: 2}
+  - name: _preload
+    entranceList: []
+  - name: ShopTemplate
+    entranceList: []
+  - name: HouseTemplate
+    entranceList:
+    - name: HouseFrontDoor
+      position: {x: 0, y: -1, z: 0}
+      facingDirection: 0
+      guidString: e8ca22fd-b4d7-4b3c-bf17-6c533ab6a7fd
+  - name: LunenCenterTemplate
+    entranceList:
+    - name: LunenCenterEntrance1
+      position: {x: 0, y: 0, z: 0}
+      facingDirection: 0
+      guidString: c5b94b04-99b2-46d7-acf5-eff1eacb666a
+  - name: AlecOverworldScene
+    entranceList: []
+  - name: LunenIslandPort
+    entranceList:
+    - name: LunenCenterDoor
+      position: {x: 22, y: 9, z: 0}
+      facingDirection: 2
+      guidString: 8e2b6200-6d25-45d0-84cb-924c58f7591b
+    - name: House1Door
+      position: {x: 26, y: 4, z: 0}
+      facingDirection: 2
+      guidString: 699918d5-4525-4670-bdf8-4ee3bc7ce971
+    - name: House2Color2Door
+      position: {x: 37, y: 34, z: 0}
+      facingDirection: 2
+      guidString: b1d26ff7-3969-401a-86fe-88f518996bf4
+    - name: BoatDoor
+      position: {x: 3, y: -2, z: 0}
+      facingDirection: 0
+      guidString: c56a8d09-2e7e-4db0-94ad-a78dda9afbb8
+    - name: House1Door
+      position: {x: 26, y: 9, z: 0}
+      facingDirection: 2
+      guidString: 3263a801-0c1c-413d-acb4-0cae4590b9cf
+    - name: CheckpointNorthDoorRight
+      position: {x: -31, y: 59, z: 0}
+      facingDirection: 0
+      guidString: 6f389f41-2480-4679-bb81-212ae063b3fe
+    - name: CheckpointNorthDoorLeft
+      position: {x: -33, y: 59, z: 0}
+      facingDirection: 0
+      guidString: c23e482c-99ef-4b3f-8239-3b7e6d8cfe06
+    - name: CheckpointSouthDoorLeft
+      position: {x: -33, y: 43, z: 0}
+      facingDirection: 2
+      guidString: 49e1c90b-13d6-4eb3-8997-5b86a7aa862f
+    - name: CheckpointSouthDoorRight
+      position: {x: -31, y: 43, z: 0}
+      facingDirection: 2
+      guidString: 7048da52-21a8-427f-a5cd-9bf71491ecf9
+  - name: Ben_Test
+    entranceList: []
+  - name: CheckpointTemplate
+    entranceList:
+    - name: DoorToUnderpass
+      position: {x: 11, y: 3, z: 0}
+      facingDirection: 0
+      guidString: f9eeb754-ef7d-4f25-a7a1-668375801f03
+    - name: DoorSouthLeft
+      position: {x: -1, y: -3, z: 0}
+      facingDirection: 0
+      guidString: 402a0781-8cee-4769-8a72-105457c6df4d
+    - name: DoorNorthRight
+      position: {x: 1, y: 7, z: 0}
+      facingDirection: 0
+      guidString: 5ce0b62a-9181-40d0-a950-e3cab603d1bb
+    - name: DoorNorthLeft
+      position: {x: -1, y: 7, z: 0}
+      facingDirection: 0
+      guidString: c2ea7987-a9fc-4973-a2f5-9329f95a6951
+    - name: DoorSouthRight
+      position: {x: 1, y: -3, z: 0}
+      facingDirection: 0
+      guidString: 14184740-d6d4-4b47-838f-ca568419fa4a
+  - name: Theo Planet
+    entranceList: []
+  - name: Route1
+    entranceList: []
+  - name: CheckpointUnderpassTemplate
+    entranceList: []
+  - name: Brrrrrrrr
+    entranceList: []
+  - name: LabTemplate
+    entranceList: []
+  - name: FirstTown(Unused)
+    entranceList: []
+  - name: Dojo1
+    entranceList: []
+  - name: PortTown
+    entranceList: []
+  - name: port town lunen center
+    entranceList: []
+  - name: zz_Scene(2020-08-15)_(16-51-28)
+    entranceList:
+    - name: HouseFrontDoor
+      position: {x: 0, y: -1, z: 0}
+      facingDirection: 0
+      guidString: e8ca22fd-b4d7-4b3c-bf17-6c533ab6a7fd
   AllItems:
   - {fileID: 11400000, guid: 54dbbd98dc03b4763a5482e1dbd1c9a3, type: 2}
   - {fileID: 11400000, guid: 99a4b3e8ff9bc467db0ed96253e84e7e, type: 2}

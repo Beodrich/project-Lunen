@@ -111,7 +111,7 @@ public class CutPart_SetPanel : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
+        public void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             panelSelect = (CanvasCollection.UIState)EditorGUILayout.EnumPopup("Panel: ",panelSelect);
             panelState = (UITransition.State)EditorGUILayout.EnumPopup("Set To: ", panelState);

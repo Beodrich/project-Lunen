@@ -92,7 +92,7 @@ public class CutPart_Wait : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
+        public void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             useStoryTriggerTime = EditorGUILayout.Toggle("Use Trigger Time: ", useStoryTriggerTime);
             if (useStoryTriggerTime)

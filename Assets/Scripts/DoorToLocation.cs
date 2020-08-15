@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MyBox;
+using UnityEngine.SceneManagement;
 
 public class DoorToLocation : MonoBehaviour
 {
     [HideInInspector] public SceneAttributes attributes;
 
-    public GameScene targetScene;
+    public SceneReference DoorTarget;
     public Vector2 doorSize = new Vector2(1,1);
 
     public System.Guid thisGuid;
@@ -29,5 +30,49 @@ public class DoorToLocation : MonoBehaviour
         DrawArrow.ForGizmo(center, MoveScripts.GetVector2FromDirection(exitDirection), new Color(1, 1, 1, 1f), 0.5f, 20f);
         GetComponent<BoxCollider2D>().offset = center-transform.position;
         GetComponent<BoxCollider2D>().size = doorSize;
+    }
+
+    public int GetTargetSceneIndex()
+    {
+        if (DoorTarget.ScenePath != "")
+        {
+            return SceneUtility.GetBuildIndexByScenePath(DoorTarget.ScenePath);
+        }
+        else
+        {
+            return -1;
+        }
+        
+    }
+
+    public int GetCurrentSceneIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public GameScene GetTargetScene()
+    {
+        if (GetTargetSceneIndex () >= 0)
+        {
+            attributes.database.CreateScenesTo(GetTargetSceneIndex());
+            return attributes.database.AllScenes[GetTargetSceneIndex()];
+        }
+        else return null;
+        
+    }
+
+    public GameScene GetCurrentScene()
+    {
+        if (GetCurrentSceneIndex () >= 0)
+        {
+            attributes.database.CreateScenesTo(GetCurrentSceneIndex());
+            return attributes.database.AllScenes[GetCurrentSceneIndex()];
+        }
+        else return null;
+    }
+
+    public string GetTargetScenePath()
+    {
+        return SceneUtility.GetScenePathByBuildIndex(GetTargetSceneIndex());
     }
 }

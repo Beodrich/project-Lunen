@@ -176,7 +176,7 @@ public class Move : MonoBehaviour
                             }
                             if (pLogic.inDoor)
                             {
-                                if (pLogic.doorObject.GetComponent<DoorToLocation>().targetScene != null)
+                                if (pLogic.doorObject.GetComponent<DoorToLocation>().GetTargetScene() != null)
                                 {
                                     if (pLogic.doorObject.GetComponent<DoorToLocation>().fadeOutOnTransition)
                                     {

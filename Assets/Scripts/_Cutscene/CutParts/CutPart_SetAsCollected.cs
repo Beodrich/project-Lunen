@@ -65,7 +65,7 @@ public class CutPart_SetAsCollected : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
+        public void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             guidSet = (GuidComponent)EditorGUILayout.ObjectField("Guid Component: ", guidSet, typeof(GuidComponent), true);
         }

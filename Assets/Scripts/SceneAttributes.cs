@@ -8,7 +8,6 @@ public class SceneAttributes : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
     public Database database;
-    public GameScene thisScene;
     public List<Cutscene> sceneCutscenes;
     public bool spawnPlayer;
     [HideInInspector] public string[] doorArray;
@@ -85,7 +84,8 @@ public class SceneAttributes : MonoBehaviour
     public void RefreshDoors()
     {
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
-        thisScene.entranceList.Clear();
+        GetCurrentScene().entranceList.Clear();
+        database.GetScenesArray();
 
         foreach (GameObject door in doors)
         {
@@ -96,10 +96,10 @@ public class SceneAttributes : MonoBehaviour
             dse.position = Vector3Int.FloorToInt(d.transform.position);
             dse.guid = d.GetComponent<GuidComponent>().GetGuid();
             dse.guidString = dse.guid.ToString();
-            thisScene.entranceList.Add(dse);
+            GetCurrentScene().entranceList.Add(dse);
         }
 
-        doorArray = thisScene.GetEntrancesArray();
+        doorArray = GetCurrentScene().GetEntrancesArray();
         
     }
 
@@ -116,5 +116,16 @@ public class SceneAttributes : MonoBehaviour
         Gizmos.matrix = Matrix4x4.TRS(t.position+new Vector3(0.5f, -0.5f), t.rotation, new Vector3(1, 1, GIZMO_DISK_THICKNESS));
         Gizmos.DrawSphere(Vector3.zero, radius);
         Gizmos.matrix = oldMatrix;
+    }
+
+    public int GetCurrentSceneIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public GameScene GetCurrentScene()
+    {
+        database.CreateScenesTo(GetCurrentSceneIndex());
+        return database.AllScenes[GetCurrentSceneIndex()];
     }
 }

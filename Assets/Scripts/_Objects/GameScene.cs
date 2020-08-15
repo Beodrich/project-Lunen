@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Game Scene", menuName = "GameElements/Game Scene")]
-public class GameScene : ScriptableObject
+[System.Serializable]
+public class GameScene
 {
-    public SceneReference scene;
+    public string name;
     public List<DatabaseSceneEntrance> entranceList;
 
     public string[] GetEntrancesArray()

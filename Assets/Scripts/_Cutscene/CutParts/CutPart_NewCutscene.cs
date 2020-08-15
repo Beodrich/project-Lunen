@@ -99,7 +99,7 @@ public class CutPart_NewCutscene : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
+        public void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             newCutsceneType = (NewCutsceneType)EditorGUILayout.EnumPopup("Cutscene Type: ", newCutsceneType);
             switch (newCutsceneType)

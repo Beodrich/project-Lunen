@@ -64,7 +64,7 @@ public class CutPart_Destroy : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
+        public void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             destroyObject = (GameObject)EditorGUILayout.ObjectField("Destroy This Object: ", destroyObject, typeof(GameObject), true);
         }

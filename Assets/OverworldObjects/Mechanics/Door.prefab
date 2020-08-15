@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3052760053721696776}
   - component: {fileID: 489816706982417063}
-  - component: {fileID: 3052760053721696777}
+  - component: {fileID: 2413055713915733013}
   - component: {fileID: 3052760053721696779}
   m_Layer: 0
   m_Name: Door
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializedGuid: 
---- !u!114 &3052760053721696777
+--- !u!114 &2413055713915733013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,7 +59,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 0}
-  targetScene: {fileID: 0}
+  DoorTarget:
+    sceneAsset: {fileID: 0}
+    scenePath: 
   doorSize: {x: 1, y: 1}
   thisGuidString: 
   targetGuidString: 

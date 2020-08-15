@@ -36,8 +36,9 @@ public class CutPart_ChangeScene : CutPart
 
     //Unique Values
 
+    public Database database;
     public NewSceneType newSceneType;
-    public GameScene newScene;
+    public SceneReference TargetScene;
     public string newSceneEntranceGuid;
     public Vector2 newScenePosition;
     public MoveScripts.Direction newSceneDirection;
@@ -53,11 +54,11 @@ public class CutPart_ChangeScene : CutPart
                 sr.battleSetup.NewOverworldAt(sr.battleSetup.respawnScene, sr.battleSetup.respawnLocation, sr.battleSetup.respawnDirection);
             break;
             case NewSceneType.ToEntrance:
-                sr.battleSetup.NewOverworldAt(newScene.scene.ScenePath, newScenePosition, newSceneDirection, true);
+                sr.battleSetup.NewOverworldAt(TargetScene.ScenePath, newScenePosition, newSceneDirection, true);
             break;
             case NewSceneType.ToPosition:
             
-                sr.battleSetup.NewOverworldAt(newScene.scene.ScenePath, newScenePosition, newSceneDirection);
+                sr.battleSetup.NewOverworldAt(TargetScene.ScenePath, newScenePosition, newSceneDirection);
             break;
         }
     }
@@ -70,10 +71,11 @@ public class CutPart_ChangeScene : CutPart
         _startNextSimultaneous = _cp.startNextSimultaneous;
 
         newSceneType = _cp.newSceneType;
-        newScene = _cp.newScene;
+        TargetScene = _cp.TargetScene;
         newSceneEntranceGuid = _cp.newSceneEntranceGuid;
         newScenePosition = _cp.newScenePosition;
         newSceneDirection = _cp.newSceneDirection;
+        database = _cp.database;
     }
 
     public void GetTitle()
@@ -84,39 +86,48 @@ public class CutPart_ChangeScene : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
+        public void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
-            newSceneType = (NewSceneType)EditorGUILayout.EnumPopup("Scene Change Type: ", newSceneType);
-            if (newSceneType == NewSceneType.ToEntrance || newSceneType == NewSceneType.ToPosition)
+            database = (Database)EditorGUILayout.ObjectField("Database: ", database, typeof(Database), true);
+            if (database != null)
             {
-                GUILayout.Space(10);
-                newScene = (GameScene)EditorGUILayout.ObjectField("New Scene: ", newScene, typeof(GameScene), true);
-            }
-            if (newSceneType == NewSceneType.ToEntrance)
-            {
-                GUILayout.Space(5);
-                string startingGuid = newSceneEntranceGuid;
-                int newIndex = newScene.EntranceGuidToInt(newSceneEntranceGuid);
-                if (newIndex == -1)
+                int sceneIndex = -1;
+                
+                newSceneType = (NewSceneType)EditorGUILayout.EnumPopup("Scene Change Type: ", newSceneType);
+                if (newSceneType == NewSceneType.ToEntrance || newSceneType == NewSceneType.ToPosition)
                 {
-                    newIndex = 0;
-                    newSceneEntranceGuid = newScene.IntToGuid(newIndex);
+                    GUILayout.Space(10);
+                    //newScene = (GameScene)EditorGUILayout.ObjectField("New Scene: ", newScene, typeof(GameScene), true);
+                    EditorGUILayout.PropertyField(serializedProperty.FindPropertyRelative("TargetScene"), true);
+                    sceneIndex = database.ScenePathToIndex(TargetScene.ScenePath);
                 }
-                newSceneEntranceGuid = newScene.IntToGuid(EditorGUILayout.Popup("Entrance: ", newIndex, newScene.GetEntrancesArray()));
+                if (newSceneType == NewSceneType.ToEntrance)
+                {
+                    GUILayout.Space(5);
+                    string startingGuid = newSceneEntranceGuid;
+                    int newIndex = database.AllScenes[sceneIndex].EntranceGuidToInt(newSceneEntranceGuid);
+                    if (newIndex == -1)
+                    {
+                        newIndex = 0;
+                        newSceneEntranceGuid =  database.AllScenes[sceneIndex].IntToGuid(newIndex);
+                    }
+                    newSceneEntranceGuid =  database.AllScenes[sceneIndex].IntToGuid(EditorGUILayout.Popup("Entrance: ", newIndex,  database.AllScenes[sceneIndex].GetEntrancesArray()));
 
-                if (newSceneEntranceGuid != startingGuid)
-                {
-                    DatabaseSceneEntrance dse = newScene.GuidToEntrance(newSceneEntranceGuid);
-                    newScenePosition = new Vector2(dse.position.x, dse.position.y);
-                    newSceneDirection = dse.facingDirection;
+                    if (newSceneEntranceGuid != startingGuid)
+                    {
+                        DatabaseSceneEntrance dse =  database.AllScenes[sceneIndex].GuidToEntrance(newSceneEntranceGuid);
+                        newScenePosition = new Vector2(dse.position.x, dse.position.y);
+                        newSceneDirection = dse.facingDirection;
+                    }
                 }
-            }
-            else if (newSceneType == NewSceneType.ToPosition)
-            {
-                GUILayout.Space(5);
-                newScenePosition = EditorGUILayout.Vector2Field("New Position: ", newScenePosition);
-                newSceneDirection = (MoveScripts.Direction)EditorGUILayout.EnumPopup("New Direction: ",newSceneDirection);
-            }
+                else if (newSceneType == NewSceneType.ToPosition)
+                {
+                    GUILayout.Space(5);
+                    newScenePosition = EditorGUILayout.Vector2Field("New Position: ", newScenePosition);
+                    newSceneDirection = (MoveScripts.Direction)EditorGUILayout.EnumPopup("New Direction: ",newSceneDirection);
+                }
+            } 
+            
         }
     #endif
 }

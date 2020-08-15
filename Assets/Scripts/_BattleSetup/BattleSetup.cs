@@ -301,11 +301,11 @@ public class BattleSetup : MonoBehaviour
 
     public void NewOverworld(DoorToLocation door, Vector3 offset)
     {
-        GameScene gs = door.targetScene;
+        GameScene gs = door.GetTargetScene();
         DatabaseSceneEntrance dse = gs.GuidToEntrance(door.targetGuidString);
         NewOverworldAt
         (
-            gs.scene.ScenePath,
+            gs.name,
             dse.position + offset,
             dse.facingDirection,
             !door.stopOnTransition,

@@ -181,7 +181,7 @@ public class CutsceneScriptEditor : Editor
         GUIScripts.GuiLine(1);
         GUILayout.Space(5);
 
-        part.DrawInspectorPart(null, cutscene);
+        part.DrawInspectorPart(scene.GetArrayElementAtIndex (index), null, cutscene);
     }
 
 }

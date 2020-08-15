@@ -66,7 +66,7 @@ public class CutPart_SetNewSprite : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
+        public void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             spriteRenderer = (SpriteRenderer)EditorGUILayout.ObjectField("Object Sprite To Change: ", spriteRenderer, typeof(SpriteRenderer), true);
             newSprite = (Sprite)EditorGUILayout.ObjectField("New Sprite: ", newSprite, typeof(Sprite), true);

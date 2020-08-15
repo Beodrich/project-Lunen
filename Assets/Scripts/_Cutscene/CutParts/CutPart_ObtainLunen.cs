@@ -69,7 +69,7 @@ public class CutPart_ObtainLunen : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
+        public void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             lunenObtained = (Lunen)EditorGUILayout.ObjectField("Lunen: ", lunenObtained, typeof(Lunen), true);
             lunenLevel = EditorGUILayout.IntField("Level: ", lunenLevel);

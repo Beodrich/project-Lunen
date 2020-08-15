@@ -75,7 +75,7 @@ public interface CutPart
     void GetTitle();
 
     #if UNITY_EDITOR
-        void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null);
+        void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null);
     #endif
 
     void Duplicate(CutPart cp);

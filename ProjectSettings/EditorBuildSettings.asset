@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/_preload.unity
     guid: 4fa6083ea40e14f139ceb3b3c892fac1
   - enabled: 1
-    path: Assets/Scenes/Buildings/Shops/Shop.unity
+    path: Assets/Scenes/Templates/ShopTemplate.unity
     guid: fd01006b61cdd47e9826b0704b424e04
   - enabled: 1
-    path: Assets/Scenes/Buildings/Houses/House1.unity
+    path: Assets/Scenes/Templates/HouseTemplate.unity
     guid: 61a5f30f8d1ee411783403779f55dbc9
   - enabled: 1
-    path: Assets/Scenes/Buildings/Lunen Centers/LunenCenterTemplate.unity
+    path: Assets/Scenes/Templates/LunenCenterTemplate.unity
     guid: 59b870602814d455ba582557c76925b2
   - enabled: 1
     path: Assets/Scenes/TestScenes/AlecOverworldScene.unity
@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/Ben_Test.unity
     guid: a31a13eb6956e5c47aaf748dd3d69810
   - enabled: 1
-    path: Assets/Scenes/Buildings/Checkpoints/CheckpointTemplate.unity
+    path: Assets/Scenes/Templates/CheckpointTemplate.unity
     guid: 2b01ecf751f954655abd03a4de946d64
   - enabled: 1
     path: Assets/Scenes/TestScenes/Theo Planet.unity
@@ -36,16 +36,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworlds/Route1.unity
     guid: a12c5cfc2bf7548f3848ab6d9d0385c5
   - enabled: 1
-    path: Assets/Scenes/Buildings/Checkpoints/CheckpointUnderpassTemplate.unity
+    path: Assets/Scenes/Templates/CheckpointUnderpassTemplate.unity
     guid: 3b7505ce5413f4ae89980ba46e2c1fdb
   - enabled: 1
     path: Assets/Scenes/TestScenes/Brrrrrrrr.unity
     guid: c1459b4e47b6d4941a89247f601fcad2
   - enabled: 1
-    path: Assets/Scenes/Buildings/Labs/LabTemplate.unity
+    path: Assets/Scenes/Templates/LabTemplate.unity
     guid: f90133b3d89b1424f9a945e56c7f307d
   - enabled: 1
-    path: Assets/Scenes/Overworlds/FirstTown(Unused).unity
+    path: Assets/Scenes/Templates/FirstTown(Unused).unity
     guid: 7437b6d052909433c934627f3aad682d
   - enabled: 1
     path: Assets/Scenes/Buildings/Dojos/Dojo1.unity
@@ -56,4 +56,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Buildings/Lunen Centers/port town lunen center.unity
     guid: f256638c03457484d935e6fe8ea7bbfd
+  - enabled: 1
+    path: Assets/Scenes/Buildings/Houses/zz_Scene(2020-08-15)_(16-51-28).unity
+    guid: 1217f3d89497649f3972a12c05bae490
   m_configObjects: {}

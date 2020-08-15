@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
 
 [CreateAssetMenu(fileName = "New Database", menuName = "GameElements/Internal/Database")]
@@ -93,12 +94,23 @@ public class Database : ScriptableObject
 
     public string[] GetScenesArray()
     {
+        int sceneCount = UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings;     
+        string[] scenes = new string[sceneCount];
+        CreateScenesTo(sceneCount-1);
+        for( int i = 0; i < sceneCount; i++ )
+        {
+            scenes[i] = System.IO.Path.GetFileNameWithoutExtension( UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex( i ) );
+            AllScenes[i].name = scenes[i];
+        }
+        return scenes;
+        /*
         List<string> sceneList = new List<string>();
         foreach (GameScene gs in AllScenes)
         {
-            sceneList.Add(gs.name);
+            sceneList.Add(gs.scene.ToString());
         }
         return sceneList.ToArray();
+        */
     }
 
     public GameScene IndexToGameScene(int index)
@@ -165,5 +177,27 @@ public class Database : ScriptableObject
         }
 
         return System.String.Empty;
+    }
+
+    public void CreateScenesTo(int index)
+    {
+        int scenesToCreate = index - (AllScenes.Count-1);
+        for (int i = 0; i < scenesToCreate; i++)
+        {
+            GameScene newGameScene = new GameScene();
+            newGameScene.entranceList = new List<DatabaseSceneEntrance>();
+            AllScenes.Add(newGameScene);
+        }
+    }
+
+    public string GetSceneStringFromIndex(int index)
+    {
+        CreateScenesTo(index);
+        return GetScenesArray()[index];
+    }
+
+    public int ScenePathToIndex(string path)
+    {
+        return SceneUtility.GetBuildIndexByScenePath(path);
     }
 }

@@ -156,7 +156,7 @@ public class CutPart_StoryTriggerBranch : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
+        public void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             EditorGUILayout.LabelField("If...", EditorStyles.boldLabel);
             trigger = (StoryTrigger)EditorGUILayout.ObjectField("Story Trigger: ", trigger, typeof(StoryTrigger), false);

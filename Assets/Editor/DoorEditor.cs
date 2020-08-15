@@ -13,6 +13,7 @@ public class DoorEditor : Editor
 {
     DoorToLocation door;
     SerializedProperty scene;
+    TemplateScene templateScene;
     bool showPosition = false;
     int fallbackIndex = -1;
 
@@ -24,7 +25,7 @@ public class DoorEditor : Editor
         {
             door.attributes = sceneatt.GetComponent<SceneAttributes>();
             door.attributes.RefreshDoors();
-            if (door.targetScene != null) fallbackIndex = door.targetScene.EntranceGuidToInt(door.targetGuidString);
+            if (door.GetTargetScene() != null) fallbackIndex = door.GetTargetScene().EntranceGuidToInt(door.targetGuidString);
         }
         
     }
@@ -45,7 +46,7 @@ public class DoorEditor : Editor
         }
         else
         {
-            serializedObject.Update();
+            
             EditorStyles.textField.wordWrap = true;
             
 
@@ -55,11 +56,15 @@ public class DoorEditor : Editor
             GUILayout.Label("Door: " + door.name, EditorStyles.boldLabel);
             GUILayout.Space(20);
 
+            serializedObject.Update();
+
             door.doorSize = EditorGUILayout.Vector2Field("Size: ", door.doorSize);
 
-            door.targetScene = (GameScene)EditorGUILayout.ObjectField("Scene: ", door.targetScene, typeof(GameScene), true);
+            GUILayout.Space(10);
+
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("DoorTarget"), false);
             
-            if (door.targetScene != null)
+            if (door.DoorTarget.ScenePath != "")
             {
                 EnsureEntranceGuid();
             }
@@ -76,40 +81,53 @@ public class DoorEditor : Editor
             GUILayout.Space(20);
 
             GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Go To Door Destination"))
+            if (door.DoorTarget.ScenePath != "")
             {
-                if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                if (GUILayout.Button("Go To Door Destination"))
                 {
-                    string currentScene = EditorSceneManager.GetActiveScene().path;
-
-                    GameScene nextScene = door.targetScene;
-                    DatabaseSceneEntrance dse = nextScene.GuidToEntrance(door.targetGuidString);
-
-                    EditorSceneManager.OpenScene(nextScene.scene);
-
-                    GameObject scene = GameObject.Find("SceneAttributes");
-                    if (scene != null)
+                    if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
                     {
-                        SceneAttributes newSceneAttributes = scene.GetComponent<SceneAttributes>();
-                        if (newSceneAttributes != null)
+                        string currentScene = EditorSceneManager.GetActiveScene().path;
+
+                        DatabaseSceneEntrance dse = door.GetTargetScene().GuidToEntrance(door.targetGuidString);
+
+                        EditorSceneManager.OpenScene(door.GetTargetScenePath());
+
+                        GameObject scene = GameObject.Find("SceneAttributes");
+                        if (scene != null)
                         {
-                            SceneView.lastActiveSceneView.LookAt(dse.position);
+                            SceneAttributes newSceneAttributes = scene.GetComponent<SceneAttributes>();
+                            if (newSceneAttributes != null)
+                            {
+                                SceneView.lastActiveSceneView.LookAt(dse.position);
+                            }
+                            else
+                            {
+                                Debug.LogError("[ERROR] Unable to find SceneAttributes Class!");
+                                EditorSceneManager.OpenScene(currentScene);
+                            }
                         }
                         else
                         {
-                            Debug.LogError("[ERROR] Unable to find SceneAttributes Class!");
+                            Debug.LogError("[ERROR] Unable to find SceneAttributes Object!");
                             EditorSceneManager.OpenScene(currentScene);
                         }
                     }
-                    else
+                }
+            }
+            else
+            {
+                templateScene = (TemplateScene)EditorGUILayout.ObjectField(templateScene, typeof(TemplateScene), true);
+                if (GUILayout.Button("Generate Scene"))
+                {
+                    if (templateScene != null)
                     {
-                        Debug.LogError("[ERROR] Unable to find SceneAttributes Object!");
-                        EditorSceneManager.OpenScene(currentScene);
+                        string outputString = templateScene.generatePath + "/zz_Scene" + string.Format("{0:(yyyy-MM-dd)_(HH-mm-ss)}", System.DateTime.Now) + ".unity";
+                        FileUtil.CopyFileOrDirectory( templateScene.scene.ScenePath, outputString);
+                        AssetDatabase.Refresh();
+                        door.DoorTarget.ScenePath = outputString;
                     }
                 }
-
-
-                
             }
             GUILayout.EndHorizontal();
 
@@ -118,7 +136,7 @@ public class DoorEditor : Editor
             {
                 EditorGUILayout.LabelField("Target Info: ");
                 EditorGUILayout.LabelField("    GUID String: " + door.targetGuidString);
-                DatabaseSceneEntrance dse = door.targetScene.GuidToEntrance(door.targetGuidString);
+                DatabaseSceneEntrance dse = door.GetTargetScene().GuidToEntrance(door.targetGuidString);
                 if (dse != null)
                 {
                     EditorGUILayout.LabelField("    Name: " + dse.name);
@@ -141,7 +159,7 @@ public class DoorEditor : Editor
                     EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
                     EditorUtility.SetDirty(door);
                     EditorUtility.SetDirty(door.attributes);
-                    EditorUtility.SetDirty(door.attributes.thisScene);
+                    EditorUtility.SetDirty(door.attributes.database);
 
                     AssetDatabase.SaveAssets();
                 }
@@ -154,12 +172,14 @@ public class DoorEditor : Editor
     {
         int newIndex = fallbackIndex;
 
-        newIndex = EditorGUILayout.Popup("Entrance: ", newIndex, door.targetScene.GetEntrancesArray());
+        //Debug.Log("Target Scene Index: " + door.GetTargetSceneIndex());
+
+        if (door.GetTargetScene() != null) newIndex = EditorGUILayout.Popup("Entrance: ", newIndex, door.GetTargetScene().GetEntrancesArray());
 
         if (newIndex != fallbackIndex)
         {
             fallbackIndex = newIndex;
-            door.targetGuidString = door.targetScene.IntToGuid(fallbackIndex);
+            door.targetGuidString = door.GetTargetScene().IntToGuid(fallbackIndex);
             
         }
     }

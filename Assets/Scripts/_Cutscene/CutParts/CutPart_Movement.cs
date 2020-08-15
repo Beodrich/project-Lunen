@@ -82,7 +82,7 @@ public class CutPart_Movement : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
+        public void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             movePlayer = EditorGUILayout.Toggle("Move Player? ", movePlayer);
             if (!movePlayer)

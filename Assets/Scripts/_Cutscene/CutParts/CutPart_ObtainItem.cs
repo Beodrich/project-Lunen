@@ -72,7 +72,7 @@ public class CutPart_ObtainItem : CutPart
     }
 
     #if UNITY_EDITOR
-        public void DrawInspectorPart(Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
+        public void DrawInspectorPart(SerializedProperty serializedProperty, Cutscene cutscene = null, CutsceneScript cutsceneScript = null)
         {
             itemObtained = (Item)EditorGUILayout.ObjectField("Item: ", itemObtained, typeof(Item), true);
             itemAmount = EditorGUILayout.IntField("Amount: ", itemAmount);
