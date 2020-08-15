@@ -16,12 +16,20 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d, type: 3}
     scenePath: Assets/Scenes/Overworlds/LunenIslandPort.unity
   entranceList:
+  - name: House2Color2Door
+    position: {x: 37, y: 34, z: 0}
+    facingDirection: 2
+    guidString: b1d26ff7-3969-401a-86fe-88f518996bf4
+  - name: BoatDoor
+    position: {x: 3, y: -2, z: 0}
+    facingDirection: 0
+    guidString: c56a8d09-2e7e-4db0-94ad-a78dda9afbb8
   - name: CheckpointNorthDoorRight
-    position: {x: -31, y: 58, z: 0}
+    position: {x: -31, y: 59, z: 0}
     facingDirection: 0
     guidString: 6f389f41-2480-4679-bb81-212ae063b3fe
   - name: CheckpointNorthDoorLeft
-    position: {x: -33, y: 58, z: 0}
+    position: {x: -33, y: 59, z: 0}
     facingDirection: 0
     guidString: c23e482c-99ef-4b3f-8239-3b7e6d8cfe06
   - name: CheckpointSouthDoorLeft
@@ -32,19 +40,11 @@ MonoBehaviour:
     position: {x: -31, y: 43, z: 0}
     facingDirection: 2
     guidString: 7048da52-21a8-427f-a5cd-9bf71491ecf9
-  - name: House2Color2Door
-    position: {x: 37, y: 34, z: 0}
+  - name: LunenCenterDoor
+    position: {x: 22, y: 9, z: 0}
     facingDirection: 2
-    guidString: b1d26ff7-3969-401a-86fe-88f518996bf4
-  - name: BoatDoor
-    position: {x: 3, y: -2, z: 0}
-    facingDirection: 0
-    guidString: c56a8d09-2e7e-4db0-94ad-a78dda9afbb8
-  - name: House3Door
-    position: {x: 22, y: 4, z: 0}
+    guidString: 8e2b6200-6d25-45d0-84cb-924c58f7591b
+  - name: House1Door
+    position: {x: 26, y: 9, z: 0}
     facingDirection: 2
-    guidString: cae04ea0-570c-4cab-8a55-01656ac8d60e
-  - name: House Back Door
-    position: {x: 22, y: 6, z: 0}
-    facingDirection: 0
-    guidString: 6c7672f6-81a7-4843-8ae3-219cf9db4e90
+    guidString: 3263a801-0c1c-413d-acb4-0cae4590b9cf

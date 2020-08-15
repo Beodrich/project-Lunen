@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworlds/PortTown.unity
     guid: 089d8b71050e84a8dbedc6837745680c
+  - enabled: 1
+    path: Assets/Scenes/Buildings/Lunen Centers/port town lunen center.unity
+    guid: f256638c03457484d935e6fe8ea7bbfd
   m_configObjects: {}
