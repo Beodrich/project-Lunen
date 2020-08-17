@@ -1346,6 +1346,8 @@ MonoBehaviour:
   overrideDefeated: 0
   engaged: 0
   defeated: 0
+  foundTrainer: 0
+  trainerObject: {fileID: 0}
 --- !u!114 &476222678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3215,6 +3217,8 @@ MonoBehaviour:
   overrideDefeated: 0
   engaged: 0
   defeated: 0
+  foundTrainer: 0
+  trainerObject: {fileID: 0}
 --- !u!114 &863182704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3558,6 +3562,8 @@ MonoBehaviour:
   overrideDefeated: 0
   engaged: 0
   defeated: 0
+  foundTrainer: 0
+  trainerObject: {fileID: 0}
 --- !u!114 &920829977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3903,6 +3909,8 @@ MonoBehaviour:
   overrideDefeated: 0
   engaged: 0
   defeated: 0
+  foundTrainer: 0
+  trainerObject: {fileID: 0}
 --- !u!114 &1126121154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4022,6 +4030,27 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedGuid.Array.data[15]
       value: 176
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: attributes
+      value: 
+      objectReference: {fileID: 698377585}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: DoorTarget.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 089d8b71050e84a8dbedc6837745680c,
+        type: 3}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: DoorTarget.scenePath
+      value: Assets/Scenes/Overworlds/PortTown.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: targetGuidString
+      value: f13f807b-f50d-425c-a2f0-576c8163a202
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -5015,6 +5044,8 @@ MonoBehaviour:
   overrideDefeated: 0
   engaged: 0
   defeated: 0
+  foundTrainer: 0
+  trainerObject: {fileID: 0}
 --- !u!4 &8688702526440220436
 Transform:
   m_ObjectHideFlags: 0

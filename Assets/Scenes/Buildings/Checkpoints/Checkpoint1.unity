@@ -213,6 +213,27 @@ PrefabInstance:
       propertyPath: serializedGuid.Array.data[15]
       value: 81
       objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: attributes
+      value: 
+      objectReference: {fileID: 724800202}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: DoorTarget.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 089d8b71050e84a8dbedc6837745680c,
+        type: 3}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: DoorTarget.scenePath
+      value: Assets/Scenes/Overworlds/PortTown.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: targetGuidString
+      value: e46b527f-46a4-4a30-bbec-2ee31a26ad3e
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2090,6 +2111,16 @@ PrefabInstance:
       propertyPath: serializedGuid.Array.data[15]
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: attributes
+      value: 
+      objectReference: {fileID: 724800202}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: doorSize.x
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2199,7 +2230,7 @@ PrefabInstance:
     - target: {fileID: 3052760053721696779, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696779, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -2209,7 +2240,7 @@ PrefabInstance:
     - target: {fileID: 3052760053721696779, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_Size.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696779, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -2330,6 +2361,22 @@ PrefabInstance:
         type: 3}
       propertyPath: targetScene.scenePath
       value: Assets/Scenes/Overworlds/LunenIslandPort.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: DoorTarget.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d,
+        type: 3}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: DoorTarget.scenePath
+      value: Assets/Scenes/Overworlds/LunenIslandPort.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: targetGuidString
+      value: 7048da52-21a8-427f-a5cd-9bf71491ecf9
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -4352,6 +4399,27 @@ PrefabInstance:
       propertyPath: serializedGuid.Array.data[15]
       value: 77
       objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: attributes
+      value: 
+      objectReference: {fileID: 724800202}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: DoorTarget.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d,
+        type: 3}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: DoorTarget.scenePath
+      value: Assets/Scenes/Overworlds/LunenIslandPort.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: targetGuidString
+      value: 49e1c90b-13d6-4eb3-8997-5b86a7aa862f
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4577,6 +4645,27 @@ PrefabInstance:
         type: 3}
       propertyPath: serializedGuid.Array.data[15]
       value: 187
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: attributes
+      value: 
+      objectReference: {fileID: 724800202}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: DoorTarget.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 089d8b71050e84a8dbedc6837745680c,
+        type: 3}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: DoorTarget.scenePath
+      value: Assets/Scenes/Overworlds/PortTown.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: targetGuidString
+      value: 3e5913b8-9c94-4dc7-b9cd-32e68dbddbe0
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -5327,7 +5416,7 @@ PrefabInstance:
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: doorArray.Array.data[0]
-      value: DoorToUnderpass
+      value: DoorNorthRight
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
@@ -5337,17 +5426,17 @@ PrefabInstance:
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: doorArray.Array.data[2]
-      value: DoorNorthRight
+      value: DoorSouthRight
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: doorArray.Array.data[3]
-      value: DoorNorthLeft
+      value: DoorToUnderpass
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: doorArray.Array.data[4]
-      value: DoorSouthRight
+      value: DoorNorthLeft
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}

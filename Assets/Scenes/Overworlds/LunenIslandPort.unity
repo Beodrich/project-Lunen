@@ -6143,6 +6143,17 @@ PrefabInstance:
       propertyPath: targetGuidString
       value: 14184740-d6d4-4b47-838f-ca568419fa4a
       objectReference: {fileID: 0}
+    - target: {fileID: 766422579551555593, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
+        type: 3}
+      propertyPath: DoorTarget.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 414635cc0026b42e1a97aae4c6dc5c57,
+        type: 3}
+    - target: {fileID: 766422579551555593, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
+        type: 3}
+      propertyPath: DoorTarget.scenePath
+      value: Assets/Scenes/Buildings/Checkpoints/Checkpoint1.unity
+      objectReference: {fileID: 0}
     - target: {fileID: 766422580035324444, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
         type: 3}
       propertyPath: serializedGuid.Array.size
@@ -6505,6 +6516,17 @@ PrefabInstance:
         type: 3}
       propertyPath: targetScene.sceneEnabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419497021425052819, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
+        type: 3}
+      propertyPath: DoorTarget.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 414635cc0026b42e1a97aae4c6dc5c57,
+        type: 3}
+    - target: {fileID: 8419497021425052819, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
+        type: 3}
+      propertyPath: DoorTarget.scenePath
+      value: Assets/Scenes/Buildings/Checkpoints/Checkpoint1.unity
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5d418fb6601d45ea9fdcc686ee64bbb, type: 3}
@@ -99329,7 +99351,7 @@ PrefabInstance:
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}
       propertyPath: doorArray.Array.data[4]
-      value: House1Door
+      value: House1Door2
       objectReference: {fileID: 0}
     - target: {fileID: 8506635377065448666, guid: 4e5b9a42be0d347eb86ae80af335daf3,
         type: 3}

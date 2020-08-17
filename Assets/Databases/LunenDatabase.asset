@@ -51,7 +51,7 @@ MonoBehaviour:
       position: {x: 3, y: -2, z: 0}
       facingDirection: 0
       guidString: c56a8d09-2e7e-4db0-94ad-a78dda9afbb8
-    - name: House1Door
+    - name: House1Door2
       position: {x: 26, y: 9, z: 0}
       facingDirection: 2
       guidString: 3263a801-0c1c-413d-acb4-0cae4590b9cf
@@ -108,9 +108,97 @@ MonoBehaviour:
   - name: FirstTown(Unused)
     entranceList: []
   - name: Dojo1
-    entranceList: []
+    entranceList:
+    - name: TestDoor
+      position: {x: 0, y: 0, z: 0}
+      facingDirection: 0
+      guidString: a421f97c-6e8f-40bd-860e-309148751eb0
   - name: PortTown
-    entranceList: []
+    entranceList:
+    - name: CheckpointNorthDoorRight
+      position: {x: -55, y: 16, z: 0}
+      facingDirection: 0
+      guidString: 3e5913b8-9c94-4dc7-b9cd-32e68dbddbe0
+    - name: CheckpointNorthDoorLeft
+      position: {x: -57, y: 16, z: 0}
+      facingDirection: 0
+      guidString: e46b527f-46a4-4a30-bbec-2ee31a26ad3e
+    - name: CheckpointSouthDoorLeft
+      position: {x: -57, y: 0, z: 0}
+      facingDirection: 2
+      guidString: 7b68945e-bc25-443f-9c0f-ef827e420657
+    - name: CheckpointSouthDoorRight
+      position: {x: -55, y: 0, z: 0}
+      facingDirection: 2
+      guidString: eb07eff8-f55d-4724-9204-fdc1537ca513
+    - name: House1Color4Door
+      position: {x: -73, y: 21, z: 0}
+      facingDirection: 2
+      guidString: b61bfdb9-c515-46be-bcb1-b36114deee69
+    - name: LabDoor
+      position: {x: -52, y: 37, z: 0}
+      facingDirection: 0
+      guidString: 59297d48-6885-46e2-a397-608d2665e762
+    - name: House3Color4Door
+      position: {x: -66, y: 29, z: 0}
+      facingDirection: 2
+      guidString: d40c0825-6e42-4869-9c24-f655af874123
+    - name: House2Color4Door
+      position: {x: -64, y: 37, z: 0}
+      facingDirection: 2
+      guidString: 124a85dd-bd23-4aa7-8f26-2580fa843778
+    - name: House3Color4Door
+      position: {x: -70, y: 37, z: 0}
+      facingDirection: 2
+      guidString: 2bf0939f-fcc8-40e4-97f3-f959367ac487
+    - name: House3Color3Door
+      position: {x: -73, y: 29, z: 0}
+      facingDirection: 2
+      guidString: 8ff0fd57-65d1-4fa6-9e5e-5de34cef4cc7
+    - name: House1Color4Door
+      position: {x: -67, y: 37, z: 0}
+      facingDirection: 2
+      guidString: 46820fbb-b01b-4794-bd26-efd3a7f0370c
+    - name: House2Color4Door
+      position: {x: -67, y: 21, z: 0}
+      facingDirection: 2
+      guidString: f534695a-6028-402c-b230-657e285d4f55
+    - name: House1Color2Door
+      position: {x: -63, y: 29, z: 0}
+      facingDirection: 2
+      guidString: 524bb7d3-8c97-4bf5-b023-bbf0f7fef572
+    - name: House3Color4Door
+      position: {x: -69, y: 21, z: 0}
+      facingDirection: 2
+      guidString: d54608e1-d718-41f8-9762-18026222b4d4
+    - name: House3Color3Door
+      position: {x: -59, y: 29, z: 0}
+      facingDirection: 2
+      guidString: 04ff0258-29ec-43e1-b7df-683cc8d237db
+    - name: House1Color2Door
+      position: {x: -63, y: 21, z: 0}
+      facingDirection: 2
+      guidString: d91d3612-e826-49ef-8850-647f3bc54ddf
+    - name: LunenCenterDoor
+      position: {x: -60, y: 37, z: 0}
+      facingDirection: 2
+      guidString: 2f5cfe7d-75e5-4c6a-aa7c-ed3df61bd024
+    - name: House2Color4Door
+      position: {x: -71, y: 29, z: 0}
+      facingDirection: 2
+      guidString: 76d72fb4-f1f8-4e21-b62c-69d55893e5c8
+    - name: House1Color2Door
+      position: {x: -74, y: 37, z: 0}
+      facingDirection: 2
+      guidString: 55852e92-6943-4f45-91df-0474851e2834
+    - name: House3Color4Door
+      position: {x: -59, y: 21, z: 0}
+      facingDirection: 2
+      guidString: 12911a40-ecf4-49c4-a09e-8e772e6beea7
+    - name: DojoDoor
+      position: {x: -50, y: 29, z: 0}
+      facingDirection: 2
+      guidString: f13f807b-f50d-425c-a2f0-576c8163a202
   - name: port town lunen center
     entranceList: []
   - name: zz_Scene(2020-08-15)_(16-51-28)
@@ -119,6 +207,40 @@ MonoBehaviour:
       position: {x: 0, y: -1, z: 0}
       facingDirection: 0
       guidString: e8ca22fd-b4d7-4b3c-bf17-6c533ab6a7fd
+  - name: Checkpoint1
+    entranceList:
+    - name: DoorNorthRight
+      position: {x: 1, y: 7, z: 0}
+      facingDirection: 0
+      guidString: 5ce0b62a-9181-40d0-a950-e3cab603d1bb
+    - name: DoorSouthLeft
+      position: {x: -1, y: -3, z: 0}
+      facingDirection: 0
+      guidString: 402a0781-8cee-4769-8a72-105457c6df4d
+    - name: DoorSouthRight
+      position: {x: 1, y: -3, z: 0}
+      facingDirection: 0
+      guidString: 14184740-d6d4-4b47-838f-ca568419fa4a
+    - name: DoorToUnderpass
+      position: {x: 11, y: 3, z: 0}
+      facingDirection: 0
+      guidString: f9eeb754-ef7d-4f25-a7a1-668375801f03
+    - name: DoorNorthLeft
+      position: {x: -1, y: 7, z: 0}
+      facingDirection: 0
+      guidString: c2ea7987-a9fc-4973-a2f5-9329f95a6951
+  - name: zz_Scene(2020-08-16)_(13-34-18)
+    entranceList:
+    - name: LunenCenterEntrance1
+      position: {x: 0, y: 0, z: 0}
+      facingDirection: 0
+      guidString: c5b94b04-99b2-46d7-acf5-eff1eacb666a
+  - name: zz_Scene(2020-08-16)_(13-35-38)
+    entranceList:
+    - name: TestDoor
+      position: {x: 0, y: 0, z: 0}
+      facingDirection: 0
+      guidString: a421f97c-6e8f-40bd-860e-309148751eb0
   AllItems:
   - {fileID: 11400000, guid: 54dbbd98dc03b4763a5482e1dbd1c9a3, type: 2}
   - {fileID: 11400000, guid: 99a4b3e8ff9bc467db0ed96253e84e7e, type: 2}

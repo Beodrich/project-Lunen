@@ -270,8 +270,12 @@ MonoBehaviour:
         _name: '[ChangeScene] New ChangeScene'
         _title: New ChangeScene
         _startNextSimultaneous: 0
+        database: {fileID: 11400000, guid: f01a1c12ff40c448d8070fd5a84045b8, type: 2}
         newSceneType: 1
-        newScene: {fileID: 11400000, guid: 23d07817c42c3436690d903db9784861, type: 2}
+        TargetScene:
+          sceneAsset: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d,
+            type: 3}
+          scenePath: Assets/Scenes/Overworlds/LunenIslandPort.unity
         newSceneEntranceGuid: c56a8d09-2e7e-4db0-94ad-a78dda9afbb8
         newScenePosition: {x: 3, y: -2}
         newSceneDirection: 0

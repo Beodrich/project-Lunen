@@ -41832,7 +41832,7 @@ PrefabInstance:
     - target: {fileID: 8615220106016066204, guid: 0c0dd9a3a618e4606a37d3c8e95b35ec,
         type: 3}
       propertyPath: targetGuidString
-      value: c56a8d09-2e7e-4db0-94ad-a78dda9afbb8
+      value: c5b94b04-99b2-46d7-acf5-eff1eacb666a
       objectReference: {fileID: 0}
     - target: {fileID: 8615220106016066204, guid: 0c0dd9a3a618e4606a37d3c8e95b35ec,
         type: 3}
@@ -41843,6 +41843,17 @@ PrefabInstance:
         type: 3}
       propertyPath: doorSize.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8615220106016066204, guid: 0c0dd9a3a618e4606a37d3c8e95b35ec,
+        type: 3}
+      propertyPath: DoorTarget.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 97fd5d2acf10f43b28572c6f2efcc5b1,
+        type: 3}
+    - target: {fileID: 8615220106016066204, guid: 0c0dd9a3a618e4606a37d3c8e95b35ec,
+        type: 3}
+      propertyPath: DoorTarget.scenePath
+      value: Assets/Scenes/Buildings/Lunen Centers/zz_Scene(2020-08-16)_(13-34-18).unity
       objectReference: {fileID: 0}
     - target: {fileID: 8615220106016066206, guid: 0c0dd9a3a618e4606a37d3c8e95b35ec,
         type: 3}
@@ -45880,6 +45891,17 @@ PrefabInstance:
       propertyPath: attributes
       value: 
       objectReference: {fileID: 4996812198650243613}
+    - target: {fileID: 766422580035324445, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
+        type: 3}
+      propertyPath: DoorTarget.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 414635cc0026b42e1a97aae4c6dc5c57,
+        type: 3}
+    - target: {fileID: 766422580035324445, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
+        type: 3}
+      propertyPath: DoorTarget.scenePath
+      value: Assets/Scenes/Buildings/Checkpoints/Checkpoint1.unity
+      objectReference: {fileID: 0}
     - target: {fileID: 766422580521269236, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
         type: 3}
       propertyPath: serializedGuid.Array.size
@@ -45970,6 +45992,22 @@ PrefabInstance:
       propertyPath: attributes
       value: 
       objectReference: {fileID: 4996812198650243613}
+    - target: {fileID: 766422580521269237, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
+        type: 3}
+      propertyPath: DoorTarget.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 414635cc0026b42e1a97aae4c6dc5c57,
+        type: 3}
+    - target: {fileID: 766422580521269237, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
+        type: 3}
+      propertyPath: DoorTarget.scenePath
+      value: Assets/Scenes/Buildings/Checkpoints/Checkpoint1.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 766422580521269237, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
+        type: 3}
+      propertyPath: targetGuidString
+      value: 5ce0b62a-9181-40d0-a950-e3cab603d1bb
+      objectReference: {fileID: 0}
     - target: {fileID: 808258462223736515, guid: d5d418fb6601d45ea9fdcc686ee64bbb,
         type: 3}
       propertyPath: m_Name
@@ -46474,7 +46512,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 4996812198650243613}
-  targetScene: 0
+  DoorTarget:
+    sceneAsset: {fileID: 102900000, guid: 5ef53cb841f21409092011371230f655, type: 3}
+    scenePath: Assets/Scenes/Buildings/Dojos/zz_Scene(2020-08-16)_(13-35-38).unity
   doorSize: {x: 1, y: 1}
   thisGuidString: 
   targetGuidString: a421f97c-6e8f-40bd-860e-309148751eb0
