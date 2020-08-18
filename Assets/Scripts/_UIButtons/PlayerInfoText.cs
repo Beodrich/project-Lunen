@@ -22,7 +22,7 @@ public class PlayerInfoText : MonoBehaviour
         }
         else if (sr.playerLogic != null)
         {
-            if (sr.playerLogic.inShop)
+            if (sr.playerLogic.move.moveDetection.inShop)
             {
                 text.text = (string)sr.database.GetTriggerValue("PlayerInfo/Name") + "\n$" + sr.inventory.gold;
             }

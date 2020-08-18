@@ -7,6 +7,7 @@ public class Move : MonoBehaviour
 {
     [HideInInspector] public SetupRouter sr;
     [HideInInspector] public GameObject srObject;
+    public MoveDetection moveDetection;
 
     public enum LogicType
     {
@@ -97,6 +98,7 @@ public class Move : MonoBehaviour
     public void Start()
     {
         if (sr == null) sr = GameObject.Find("BattleSetup").GetComponent<SetupRouter>();
+        moveDetection = new MoveDetection();
 
         pLogic = GetComponent<PlayerLogic>();
         tLogic = GetComponent<TrainerLogic>();
@@ -165,20 +167,22 @@ public class Move : MonoBehaviour
                         Vector3 checkPoint2 = new Vector2(centerPosition.x+input.x-0.25f, centerPosition.y+input.y-0.25f);
                         lookDirection = MoveScripts.GetDirectionFromVector2(input);
                         hits = Physics2D.OverlapAreaAll(checkPoint1,checkPoint2);
+
+                        moveDetection.StartDetection(hits, lookDirection);
                         
-                        if (pLogic.MoveBegin(hits))
+                        if (moveDetection.CanPhysicallyMove())
                         {
                             bool cancelMove = false;
-                            if (pLogic.inTrain)
+                            if (moveDetection.inCutscene)
                             {
-                                sr.battleSetup.StartCutscene(new PackedCutscene(pLogic.trainObject.GetComponent<Cutscene>()));
+                                sr.battleSetup.StartCutscene(new PackedCutscene(moveDetection.cutsceneObject.GetComponent<Cutscene>()));
                                 
                             }
-                            if (pLogic.inDoor)
+                            if (moveDetection.inDoor)
                             {
-                                if (pLogic.doorObject.GetComponent<DoorToLocation>().GetTargetScene() != null)
+                                if (moveDetection.doorObject.GetComponent<DoorToLocation>().GetTargetScene() != null)
                                 {
-                                    if (pLogic.doorObject.GetComponent<DoorToLocation>().fadeOutOnTransition)
+                                    if (moveDetection.doorObject.GetComponent<DoorToLocation>().fadeOutOnTransition)
                                     {
                                         sr.canvasCollection.OpenState(CanvasCollection.UIState.SceneSwitch);
                                     }
@@ -215,10 +219,11 @@ public class Move : MonoBehaviour
                         factor = 1f;
                         
                         checkPoint = new Vector2(centerPosition.x+input.x, centerPosition.y+input.y);
-                        
+                        lookDirection = MoveScripts.GetDirectionFromVector2(input);
                         hits = Physics2D.OverlapAreaAll(checkPoint,checkPoint);
+                        moveDetection.StartDetection(hits, lookDirection);
                         
-                        if (tLogic.MoveBegin(hits))
+                        if (moveDetection.CanPhysicallyMove())
                         {
                             
                             SetFacingDirection(input);
@@ -246,12 +251,17 @@ public class Move : MonoBehaviour
                         factor = 1f;
                         
                         checkPoint = new Vector2(centerPosition.x+input.x, centerPosition.y+input.y);
-                        
+                        lookDirection = MoveScripts.GetDirectionFromVector2(input);
                         hit = Physics2D.OverlapArea(checkPoint,checkPoint);
+                        moveDetection.StartDetection(hits, lookDirection);
 
                         //MoveScripts.CheckForTag(this.gameObject, hit, "Player")
-                        SetFacingDirection(input);
-                        StartCoroutine(move(transform));
+                        if (moveDetection.CanPhysicallyMove())
+                        {
+                            SetFacingDirection(input);
+                            StartCoroutine(move(transform));
+                        }
+                        
                     }
                     SetWalkAnimation();
                 }

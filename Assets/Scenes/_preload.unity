@@ -47844,7 +47844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   vsync: 1
-  bootBehaviour: 4
+  bootBehaviour: 1
   bootScene:
     sceneAsset: {fileID: 102900000, guid: 61e6d35631f894f4495a34d8ae11d84d, type: 3}
     scenePath: Assets/Scenes/Overworlds/LunenIslandPort.unity

@@ -8,21 +8,6 @@ public class PlayerLogic : MonoBehaviour
 
     public List<AnimationSet> playerAnimSets;
 
-    public bool inGrass = false;
-    public GameObject grassObject;
-    [Space(10)]
-    public bool inTrainerView = false;
-    public GameObject trainerObject;
-    [Space(10)]
-    public bool inDoor = false;
-    public GameObject doorObject;
-    [Space(10)]
-    public bool inShop = false;
-    public GameObject shopObject;
-    [Space(10)]
-    public bool inTrain = false;
-    public GameObject trainObject;
-
     [HideInInspector]
     public Move move;
     
@@ -80,155 +65,31 @@ public class PlayerLogic : MonoBehaviour
         }
     }
 
-    public bool MoveBegin(Collider2D hit)
-    {
-        inGrass = false;
-        inTrainerView = false;
-        inDoor = false;
-        inShop = false;
-        inTrain = false;
-
-        if (hit == null)
-        {
-            return true;
-        }
-        else
-        {
-            switch(hit.gameObject.tag)
-            {
-                default: return true;
-                case "Wall":
-                    wws = hit.gameObject.GetComponent<WallWalkScript>();
-                    if (wws != null)
-                    {
-                        switch (move.lookDirection)
-                        {
-                            default: return false;
-                            case MoveScripts.Direction.North: return wws.CanWalkNorth;
-                            case MoveScripts.Direction.South: return wws.CanWalkSouth;
-                            case MoveScripts.Direction.East: return wws.CanWalkEast;
-                            case MoveScripts.Direction.West: return wws.CanWalkWest;
-                        }
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                
-                case "Water": return false;
-                case "Creature": return false;
-                case "Trainer": return false;
-                case "Thing": return false;
-                case "NPC": return false;
-                case "ShopKeeper":
-                    inShop = true;
-                    shopObject = hit.gameObject;
-                    return true;
-                case "Grass":
-                    inGrass = true;
-                    grassObject = hit.gameObject;
-                    return true;
-                case "TrainerSight":
-                    inTrainerView = true;
-                    trainerObject = hit.gameObject;
-                    return true;
-                case "Door":
-                    inDoor = true;
-                    doorObject = hit.gameObject;
-                    return true;
-                case "Train":
-                    inTrain = true;
-                    trainObject = hit.gameObject;
-                    return true;
-            }
-        }
-    }
-
-    public bool MoveBegin(Collider2D[] hit)
-    {
-        inGrass = false;
-        inTrainerView = false;
-        inDoor = false;
-        inShop = false;
-        inTrain = false;
-
-        bool inGrass2 = false;
-        bool inTrainerView2 = false;
-        bool inDoor2 = false;
-        bool inShop2 = false;
-        bool inTrain2 = false;
-
-        int pathsFound = 0;
-        if (hit.Length > 0)
-        {
-            int found = 0;
-            for (int i = 0; i < hit.Length; i++)
-            {
-                if (hit[i].gameObject.tag != "Path")
-                {
-                    if (hit[i].gameObject.tag != "Grass")
-                    {
-                        found += MoveBegin(hit[i]) ? 1 : 0;
-                        if (inTrainerView) inTrainerView2 = true;
-                        if (inDoor) inDoor2 = true;
-                        if (inShop) inShop2 = true;
-                        if (inTrain) inTrain2 = true;
-                    }
-                    else
-                    {
-                        inGrass = true;
-                        grassObject = hit[i].gameObject;
-                        inGrass2 = true;
-                        pathsFound++;
-                    }
-                    
-                }
-                else
-                {
-                    pathsFound++;
-                }
-                
-            }
-            inGrass = inGrass2;
-            inTrainerView = inTrainerView2;
-            inDoor = inDoor2;
-            inShop = inShop2;
-            inTrain = inTrain2;
-            
-            if (pathsFound == hit.Length)
-            {
-                return true;
-            }
-            return (found > 0);
-        }
-        else return false;
-    }
-
     public void MoveEnd()
     {
         //This function is called when the move function finished its movement.
-        if (inGrass && !sr.battleSetup.cutsceneLoopGoing)
+        if (move.moveDetection.inGrass && !sr.battleSetup.cutsceneLoopGoing)
         {
             sr.battleSetup.lastSceneLocation = transform.position;
-            sr.battleSetup.TryWildEncounter(grassObject.GetComponent<GrassEncounter>());
+            sr.battleSetup.TryWildEncounter(move.moveDetection.grassObject.GetComponent<GrassEncounter>());
         }
-        if (inDoor)
+        if (move.moveDetection.inDoor)
         {
-            sr.battleSetup.NewOverworld(doorObject.GetComponent<DoorToLocation>(), transform.position - doorObject.transform.position);
+            sr.battleSetup.NewOverworld(move.moveDetection.doorObject.GetComponent<DoorToLocation>(), transform.position - move.moveDetection.doorObject.transform.position);
         }
 
-        if (inShop)
+        if (move.moveDetection.inShop)
         {
-            sr.canvasCollection.GetShopStats(shopObject.GetComponent<UI_Shop>());
+            sr.canvasCollection.GetShopStats(move.moveDetection.shopObject.GetComponent<UI_Shop>());
             sr.canvasCollection.OpenState(CanvasCollection.UIState.Shop);
             sr.canvasCollection.OpenInventoryWindow();
         }
-        else if (shopObject != null)
+        else if (move.moveDetection.shopObject != null)
         {
             //shopObject.GetComponent<ShopTrigger>().shop.Hide();
             sr.canvasCollection.CloseState(CanvasCollection.UIState.Shop);
             sr.canvasCollection.CloseInventoryWindow(true);
-            shopObject = null;
+            move.moveDetection.shopObject = null;
         }
     }
 

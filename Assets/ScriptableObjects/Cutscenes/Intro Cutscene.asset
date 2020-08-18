@@ -33,6 +33,8 @@ MonoBehaviour:
   - id: 16
   - id: 17
   - id: 18
+  - id: 19
+  - id: 20
   references:
     version: 1
     00000000:
@@ -224,11 +226,12 @@ MonoBehaviour:
     0000000E:
       type: {class: CutPart_Dialogue, ns: , asm: Assembly-CSharp}
       data:
-        _name: '[Dialogue] We''ll just give you a Flamela and send you on your way!
-          Have fun!'
+        _name: '[Dialogue] We''ll just give you one of each starter and send you
+          on your way! Have fun!'
         _title: 
         _startNextSimultaneous: 0
-        text: We'll just give you a Flamela and send you on your way! Have fun!
+        text: We'll just give you one of each starter and send you on your way! Have
+          fun!
         autoClose: 0
         waitTime: 0
         useStoryTriggerTime: 0
@@ -240,13 +243,31 @@ MonoBehaviour:
     0000000F:
       type: {class: CutPart_ObtainLunen, ns: , asm: Assembly-CSharp}
       data:
+        _name: '[ObtainLunen] Obtain Rootle'
+        _title: Obtain Rootle
+        _startNextSimultaneous: 0
+        lunenObtained: {fileID: 11400000, guid: 78f0960b772b240ccafabbae7f888a6b,
+          type: 2}
+        lunenLevel: 1
+    00000010:
+      type: {class: CutPart_ObtainLunen, ns: , asm: Assembly-CSharp}
+      data:
+        _name: '[ObtainLunen] Obtain Wavi'
+        _title: Obtain Wavi
+        _startNextSimultaneous: 0
+        lunenObtained: {fileID: 11400000, guid: d271bc018be6a4303843c58710dd56b7,
+          type: 2}
+        lunenLevel: 1
+    00000011:
+      type: {class: CutPart_ObtainLunen, ns: , asm: Assembly-CSharp}
+      data:
         _name: '[ObtainLunen] Obtain Flamela'
         _title: Obtain Flamela
         _startNextSimultaneous: 0
         lunenObtained: {fileID: 11400000, guid: 9ab71ebd2c0fe4c428bc0b9b5329e46e,
           type: 2}
-        lunenLevel: 5
-    00000010:
+        lunenLevel: 1
+    00000012:
       type: {class: CutPart_SetPanel, ns: , asm: Assembly-CSharp}
       data:
         _name: '[SetPanel] Set SceneSwitch Panel To Enable'
@@ -254,7 +275,7 @@ MonoBehaviour:
         _startNextSimultaneous: 0
         panelSelect: 10
         panelState: 0
-    00000011:
+    00000013:
       type: {class: CutPart_Wait, ns: , asm: Assembly-CSharp}
       data:
         _name: '[Wait] Wait 0.2s'
@@ -264,7 +285,7 @@ MonoBehaviour:
         useStoryTriggerTime: 0
         trigger: {fileID: 0}
         triggerPart: 
-    00000012:
+    00000014:
       type: {class: CutPart_ChangeScene, ns: , asm: Assembly-CSharp}
       data:
         _name: '[ChangeScene] New ChangeScene'
