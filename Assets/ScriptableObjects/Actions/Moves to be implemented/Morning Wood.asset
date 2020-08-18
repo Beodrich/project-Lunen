@@ -17,7 +17,7 @@ MonoBehaviour:
   Type: {fileID: 11400000, guid: f26c034e41d264356903d61fc22f7539, type: 2}
   Turns: 0
   AdditionalAffinityCost: 0
-  TimePausePeriod: 0
+  TimePausePeriod: 2
   Animation: {fileID: 0}
   ComboMove: 0
   ComboType: {fileID: 0}

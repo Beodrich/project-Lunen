@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
   m_Name: Stuimp
   m_EditorClassIdentifier: 
-  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  animationSet: {fileID: 11400000, guid: e4aeb353b0286451db7bfde7f4c19def, type: 2}
   Elements:
   - {fileID: 11400000, guid: f26c034e41d264356903d61fc22f7539, type: 2}
   LearnedActions:

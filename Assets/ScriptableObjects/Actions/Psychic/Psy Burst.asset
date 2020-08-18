@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   Name: Psy Burst
-  Type: {fileID: 0}
+  Type: {fileID: 11400000, guid: ed9ebeea768954d29a3f2882b3eb8dd6, type: 2}
   Turns: 2
   AdditionalAffinityCost: 0
   TimePausePeriod: 2

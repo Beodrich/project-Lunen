@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
   m_Name: Debero
   m_EditorClassIdentifier: 
-  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  animationSet: {fileID: 11400000, guid: 68aeef26867c54bd99f0c7337fc95a01, type: 2}
   Elements:
   - {fileID: 11400000, guid: ed9ebeea768954d29a3f2882b3eb8dd6, type: 2}
   LearnedActions:

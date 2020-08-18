@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   Name: Chill Aura
-  Type: {fileID: 0}
+  Type: {fileID: 11400000, guid: 69801ccf131624485afcf65959f52ea6, type: 2}
   Turns: 2
   AdditionalAffinityCost: 0
   TimePausePeriod: 2

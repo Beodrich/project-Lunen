@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
   m_Name: Furo
   m_EditorClassIdentifier: 
-  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  animationSet: {fileID: 11400000, guid: 47d74218b2f8e437db89571c56a003e7, type: 2}
   Elements:
   - {fileID: 11400000, guid: 250f2c032f4eb45e18c7bf225a7973f5, type: 2}
   LearnedActions:

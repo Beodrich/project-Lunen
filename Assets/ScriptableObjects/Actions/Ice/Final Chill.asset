@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   Name: Final Chill
-  Type: {fileID: 0}
+  Type: {fileID: 11400000, guid: 69801ccf131624485afcf65959f52ea6, type: 2}
   Turns: 4
   AdditionalAffinityCost: 1
   TimePausePeriod: 2

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a137af43935c42348a9651bb152200d, type: 3}
   m_Name: Yibalis
   m_EditorClassIdentifier: 
-  animationSet: {fileID: 11400000, guid: c596e1d5277dc43ff97c9d8ac84294c1, type: 2}
+  animationSet: {fileID: 11400000, guid: aa395ea8d720248bd946de3c8777ca8a, type: 2}
   Elements:
   - {fileID: 11400000, guid: 8ca3cee93490140b0b9e0ddb9b65c0ad, type: 2}
   - {fileID: 11400000, guid: 69801ccf131624485afcf65959f52ea6, type: 2}
