@@ -17391,6 +17391,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2645977435243105029, guid: 1c2feaad650fc4c1fa46e170b9a1db5d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69a7677a12e21478f8cae7340a7ace96,
+        type: 3}
     - target: {fileID: 2645977435243105031, guid: 1c2feaad650fc4c1fa46e170b9a1db5d,
         type: 3}
       propertyPath: m_Name
@@ -17415,12 +17421,12 @@ PrefabInstance:
         type: 3}
       propertyPath: DoorTarget.sceneAsset
       value: 
-      objectReference: {fileID: 102900000, guid: 61a5f30f8d1ee411783403779f55dbc9,
+      objectReference: {fileID: 102900000, guid: 3976d4d7a9939414aafe47ce1a498d83,
         type: 3}
     - target: {fileID: 6581988118208854359, guid: 1c2feaad650fc4c1fa46e170b9a1db5d,
         type: 3}
       propertyPath: DoorTarget.scenePath
-      value: Assets/Scenes/Buildings/Houses/House1.unity
+      value: Assets/Scenes/Buildings/Houses/zz_Scene(2020-08-18)_(14-01-40).unity
       objectReference: {fileID: 0}
     - target: {fileID: 6581988118208854359, guid: 1c2feaad650fc4c1fa46e170b9a1db5d,
         type: 3}
