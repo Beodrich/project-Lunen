@@ -77,6 +77,8 @@ public class Move : MonoBehaviour
                 default: return false;
                 case LogicType.Player: return (pLogic.sr.battleSetup.PlayerCanMove() || cutsceneMoveSpaces > 0);
                 case LogicType.Trainer: return (npcMove);
+                case LogicType.NPC: return (npcMove);
+                
             }
             
         }
@@ -368,6 +370,54 @@ public class Move : MonoBehaviour
         }
         endMove();
         yield return 0;
+    }
+
+    public void NPCmove(MoveScripts.Direction _direction)
+    {
+        /*
+        centerPosition = new Vector3(transform.position.x + 0.5f, transform.position.y - 0.5f, transform.position.z);
+        SetFacingDirectionLogic(_direction);
+        input = MoveScripts.GetVector2FromDirection(_direction);
+        checkPoint = new Vector2(centerPosition.x+input.x, centerPosition.y+input.y);
+        hit = Physics2D.OverlapArea(checkPoint,checkPoint);
+        moveDetection.StartDetection(hits, lookDirection);
+
+        Debug.Log("Got Here!");
+        //MoveScripts.CheckForTag(this.gameObject, hit, "Player")
+        if (moveDetection.CanPhysicallyMove())
+        {
+            Debug.Log("Got Here! 2");
+            
+        }
+        */
+        SetFacingDirectionLogic(_direction);
+        input = MoveScripts.GetVector2FromDirection(_direction);
+        if (CanMoveInDirection(_direction))
+        {
+            moveSpeedCurrent = moveSpeed / 2;
+            SetFacingDirection(input);
+            StartCoroutine(move(transform));
+        }
+        
+    }
+
+    public bool CanMoveInDirection(MoveScripts.Direction _direction)
+    {
+        Vector2 _input = MoveScripts.GetVector2FromDirection(_direction);
+        checkPoint = new Vector2(centerPosition.x+_input.x, centerPosition.y+_input.y);
+        hits = Physics2D.OverlapAreaAll(checkPoint,checkPoint);
+        moveDetection.StartDetection(hits, _direction);
+        moveDetection.DEBUG_PrintColliders();
+        if (moveDetection.CanPhysicallyMove())
+        {
+            Debug.Log("Successful Move Opportunity");
+            return true;
+        }
+        else
+        {
+            Debug.Log("Blocked Opportunity");
+            return false;
+        }
     }
 
     private void OnDrawGizmosSelected()

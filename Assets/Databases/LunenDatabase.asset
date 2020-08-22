@@ -56,21 +56,21 @@ MonoBehaviour:
       facingDirection: 2
       guidString: 3263a801-0c1c-413d-acb4-0cae4590b9cf
     - name: CheckpointNorthDoorRight
-      position: {x: -31, y: 59, z: 0}
+      position: {x: -31, y: 47, z: 0}
       facingDirection: 0
-      guidString: 6f389f41-2480-4679-bb81-212ae063b3fe
-    - name: CheckpointNorthDoorLeft
-      position: {x: -33, y: 59, z: 0}
-      facingDirection: 0
-      guidString: c23e482c-99ef-4b3f-8239-3b7e6d8cfe06
-    - name: CheckpointSouthDoorLeft
-      position: {x: -33, y: 43, z: 0}
-      facingDirection: 2
-      guidString: 49e1c90b-13d6-4eb3-8997-5b86a7aa862f
+      guidString: e8ee623d-46d8-4cb6-934a-a89f21646cb1
     - name: CheckpointSouthDoorRight
       position: {x: -31, y: 43, z: 0}
       facingDirection: 2
-      guidString: 7048da52-21a8-427f-a5cd-9bf71491ecf9
+      guidString: 07ccd3b3-e5dc-4332-b211-a77ff8268b83
+    - name: CheckpointNorthDoorLeft
+      position: {x: -33, y: 47, z: 0}
+      facingDirection: 0
+      guidString: d34b4968-bf73-4d47-a62e-a11f79c1833b
+    - name: CheckpointSouthDoorLeft
+      position: {x: -33, y: 43, z: 0}
+      facingDirection: 2
+      guidString: 874d49f4-f065-4ce8-bb03-f62bd0366c8e
   - name: Ben_Test
     entranceList: []
   - name: CheckpointTemplate
@@ -211,7 +211,7 @@ MonoBehaviour:
     entranceList:
     - name: DoorNorthRight
       position: {x: 1, y: 7, z: 0}
-      facingDirection: 0
+      facingDirection: 2
       guidString: 5ce0b62a-9181-40d0-a950-e3cab603d1bb
     - name: DoorSouthLeft
       position: {x: -1, y: -3, z: 0}
@@ -227,7 +227,7 @@ MonoBehaviour:
       guidString: f9eeb754-ef7d-4f25-a7a1-668375801f03
     - name: DoorNorthLeft
       position: {x: -1, y: 7, z: 0}
-      facingDirection: 0
+      facingDirection: 2
       guidString: c2ea7987-a9fc-4973-a2f5-9329f95a6951
   - name: zz_Scene(2020-08-16)_(13-34-18)
     entranceList:
@@ -241,6 +241,12 @@ MonoBehaviour:
       position: {x: 0, y: 0, z: 0}
       facingDirection: 0
       guidString: a421f97c-6e8f-40bd-860e-309148751eb0
+  - name: zz_Scene(2020-08-18)_(14-56-20)
+    entranceList:
+    - name: HouseFrontDoor
+      position: {x: 0, y: -1, z: 0}
+      facingDirection: 0
+      guidString: e8ca22fd-b4d7-4b3c-bf17-6c533ab6a7fd
   - name: zz_Scene(2020-08-18)_(14-01-40)
     entranceList:
     - name: HouseFrontDoor

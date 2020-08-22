@@ -234,6 +234,11 @@ PrefabInstance:
       propertyPath: targetGuidString
       value: e46b527f-46a4-4a30-bbec-2ee31a26ad3e
       objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: exitDirection
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2376,7 +2381,7 @@ PrefabInstance:
     - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: targetGuidString
-      value: 7048da52-21a8-427f-a5cd-9bf71491ecf9
+      value: 07ccd3b3-e5dc-4332-b211-a77ff8268b83
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -4418,7 +4423,7 @@ PrefabInstance:
     - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
       propertyPath: targetGuidString
-      value: 49e1c90b-13d6-4eb3-8997-5b86a7aa862f
+      value: 874d49f4-f065-4ce8-bb03-f62bd0366c8e
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -4666,6 +4671,11 @@ PrefabInstance:
         type: 3}
       propertyPath: targetGuidString
       value: 3e5913b8-9c94-4dc7-b9cd-32e68dbddbe0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2413055713915733013, guid: 80152272002ce408fae3b00a5f1f0bab,
+        type: 3}
+      propertyPath: exitDirection
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3052760053721696776, guid: 80152272002ce408fae3b00a5f1f0bab,
         type: 3}
@@ -5028,6 +5038,10 @@ MonoBehaviour:
   move: {fileID: 0}
   animationSet: {fileID: 11400000, guid: 42a7dca4605d24a74b124d66aa436e31, type: 2}
   lookDirection: 3
+  wanders: 0
+  wanderLow: 0
+  wanderHigh: 0
+  wanderCurrent: 0
 --- !u!4 &4555943580562456084
 Transform:
   m_ObjectHideFlags: 0
@@ -5140,6 +5154,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   srObject: {fileID: 0}
+  moveDetection:
+    colliderInfos: []
+    moveDirection: 0
+    canMoveInWater: 0
+    inGrass: 0
+    grassObject: {fileID: 0}
+    inDoor: 0
+    doorObject: {fileID: 0}
+    inShop: 0
+    shopObject: {fileID: 0}
+    inCutscene: 0
+    cutsceneObject: {fileID: 0}
   logicType: 3
   pLogic: {fileID: 0}
   tLogic: {fileID: 0}

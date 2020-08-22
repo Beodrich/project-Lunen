@@ -9953,6 +9953,21 @@ PrefabInstance:
       propertyPath: lookDirection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanders
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderLow
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderHigh
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60d3d176d40024ae1a679f3add0267bf, type: 3}
 --- !u!1001 &1240517980
@@ -10038,6 +10053,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ff357711297e44f04bfd5f69096c272d,
         type: 2}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanders
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderLow
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderHigh
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60d3d176d40024ae1a679f3add0267bf, type: 3}
 --- !u!1001 &1457271743
@@ -10127,6 +10157,21 @@ PrefabInstance:
         type: 3}
       propertyPath: lookDirection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanders
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderLow
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderHigh
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60d3d176d40024ae1a679f3add0267bf, type: 3}
@@ -10352,6 +10397,21 @@ PrefabInstance:
       propertyPath: lookDirection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanders
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderLow
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderHigh
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60d3d176d40024ae1a679f3add0267bf, type: 3}
 --- !u!1001 &1890305437
@@ -10442,6 +10502,21 @@ PrefabInstance:
       propertyPath: lookDirection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanders
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderLow
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderHigh
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60d3d176d40024ae1a679f3add0267bf, type: 3}
 --- !u!1001 &1978269155
@@ -10527,6 +10602,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 712c0f8dbe7e74ff7a76b41c3d57d6aa,
         type: 2}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanders
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderLow
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderHigh
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60d3d176d40024ae1a679f3add0267bf, type: 3}
 --- !u!1001 &1990539576
@@ -10616,6 +10706,21 @@ PrefabInstance:
         type: 3}
       propertyPath: lookDirection
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanders
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderLow
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678239219231821904, guid: 60d3d176d40024ae1a679f3add0267bf,
+        type: 3}
+      propertyPath: wanderHigh
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60d3d176d40024ae1a679f3add0267bf, type: 3}
@@ -11109,6 +11214,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
   srObject: {fileID: 0}
+  moveDetection:
+    colliderInfos: []
+    moveDirection: 0
+    canMoveInWater: 0
+    inGrass: 0
+    grassObject: {fileID: 0}
+    inDoor: 0
+    doorObject: {fileID: 0}
+    inShop: 0
+    shopObject: {fileID: 0}
+    inCutscene: 0
+    cutsceneObject: {fileID: 0}
   logicType: 3
   pLogic: {fileID: 0}
   tLogic: {fileID: 0}
@@ -11130,10 +11247,12 @@ MonoBehaviour:
   lookDirection: 1
   hit: {fileID: 0}
   hits: []
-  animTime: 0.03344673
+  animTime: 0.07922112
   animIndex: 8
   animationType: Idle
   animHijack: 0
+  moveSpeedModifier: 0
+  moveSpeedCurrent: 0
 --- !u!1001 &4996812198650243612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11267,3 +11386,7 @@ MonoBehaviour:
   move: {fileID: 0}
   animationSet: {fileID: 11400000, guid: 712c0f8dbe7e74ff7a76b41c3d57d6aa, type: 2}
   lookDirection: 0
+  wanders: 1
+  wanderLow: 5
+  wanderHigh: 15
+  wanderCurrent: 0

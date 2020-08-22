@@ -140,7 +140,7 @@ public class MoveDetection
         int total = 0;
         foreach (ColliderInfo ci in colliderInfos)
         {
-            if (ci.tag == "Player" || ci.tag == "Trainer" || ci.tag == "NPC")
+            if (ci.tag == "Player" || ci.tag == "Trainer" || ci.tag == "NPC" || ci.tag == "Thing")
             {
                 total++;
             }
@@ -161,6 +161,15 @@ public class MoveDetection
             
         }
         return total;
+    }
+
+    public void DEBUG_PrintColliders()
+    {
+        foreach (ColliderInfo ci in colliderInfos)
+        {
+            Debug.Log("Object: " + ci.gameObject.name + " | Tag: " + ci.tag);
+            
+        }
     }
 
 }
