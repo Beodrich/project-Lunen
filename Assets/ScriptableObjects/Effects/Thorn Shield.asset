@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b8ac25374cc248dab6f771eebacd965, type: 3}
-  m_Name: Streamline
+  m_Name: Thorn Shield
   m_EditorClassIdentifier: 
-  ExpiresIn: 3
-  IsPositiveBuff: 1
+  ExpiresIn: 2
+  IsPositiveBuff: 0
   AttackEffect: 0
   GlobalAttack:
     StatChangeType: 0
     HardNumberChange: 0
     PercentageChange: 0
-  DefenseEffect: 0
+  DefenseEffect: 1
   GlobalDefense:
+    StatChangeType: 2
+    HardNumberChange: 0
+    PercentageChange: 25
+  SpeedEffect: 0
+  GlobalSpeed:
     StatChangeType: 0
     HardNumberChange: 0
     PercentageChange: 0
-  SpeedEffect: 1
-  GlobalSpeed:
-    StatChangeType: 2
-    HardNumberChange: 0
-    PercentageChange: 30
   DamageTakenEffect: 0
   GlobalDamageTaken:
     StatChangeType: 0
@@ -45,13 +45,13 @@ MonoBehaviour:
     StatChangeType: 0
     HardNumberChange: 0
     PercentageChange: 0
-  onTakingDamageDo: 0
+  onTakingDamageDo: 1
   TakeDamageHealthReduction:
     StatChangeType: 0
     HardNumberChange: 0
     PercentageChange: 0
-  OnTakeDamageEffect: {fileID: 0}
-  OnTakeDamageEffectDuration: 0
+  OnTakeDamageEffect: {fileID: 11400000, guid: e0dea908d7ec7a144b9999f8e5eec263, type: 2}
+  OnTakeDamageEffectDuration: 1
   ShowMiscChanges: 0
   CannotHitMultipleTargets: 0
   CannotUseAttackingActions: 0

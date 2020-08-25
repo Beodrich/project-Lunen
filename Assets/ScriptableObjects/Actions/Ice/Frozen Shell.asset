@@ -15,14 +15,32 @@ MonoBehaviour:
   sr: {fileID: 0}
   Name: Frozen Shell
   Type: {fileID: 11400000, guid: 69801ccf131624485afcf65959f52ea6, type: 2}
-  Turns: 0
-  AdditionalAffinityCost: 0
+  Turns: 4
+  AdditionalAffinityCost: 1
   TimePausePeriod: 2
   Animation: {fileID: 0}
   ComboMove: 0
   ComboType: {fileID: 0}
-  MoveDescription: 
-  PartsOfAction: []
+  MoveDescription: "+1 Affinity Cost\r\nFor 2 turns, when attacked, attackers become
+    Freezing for 2 turns. The user also gains +30% DEF for 2 turns.\r\n4 turn cooldown\r"
+  PartsOfAction:
+  - Effect: 1
+    Target: 6
+    Power: 0
+    EffectToInflict: {fileID: 0}
+    StatusEffect: {fileID: 11400000, guid: 8b7bce1c40e4cd04b8b07514954f8cc5, type: 2}
+    StatusEffectTurns: 2
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 0

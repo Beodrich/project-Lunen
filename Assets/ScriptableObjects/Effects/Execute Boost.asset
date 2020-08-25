@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Execute Boost
   m_EditorClassIdentifier: 
   ExpiresIn: 1
+  IsPositiveBuff: 1
   AttackEffect: 1
   GlobalAttack:
     StatChangeType: 2
@@ -44,6 +45,13 @@ MonoBehaviour:
     StatChangeType: 0
     HardNumberChange: 0
     PercentageChange: 0
+  onTakingDamageDo: 0
+  TakeDamageHealthReduction:
+    StatChangeType: 0
+    HardNumberChange: 0
+    PercentageChange: 0
+  OnTakeDamageEffect: {fileID: 0}
+  OnTakeDamageEffectDuration: 0
   ShowMiscChanges: 1
   CannotHitMultipleTargets: 0
   CannotUseAttackingActions: 0

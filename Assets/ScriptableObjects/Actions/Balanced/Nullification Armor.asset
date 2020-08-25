@@ -10,26 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: Wrap
+  m_Name: Nullification Armor
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
-  Name: Wrap
-  Type: {fileID: 11400000, guid: f26c034e41d264356903d61fc22f7539, type: 2}
-  Turns: 2
-  AdditionalAffinityCost: 0
+  Name: 'Nullification Armor '
+  Type: {fileID: 11400000, guid: f0b191960720d4a568cd4e46f31d5ec8, type: 2}
+  Turns: 3
+  AdditionalAffinityCost: 1
   TimePausePeriod: 2
   Animation: {fileID: 0}
   ComboMove: 0
   ComboType: {fileID: 0}
-  MoveDescription: 'Inflicts Constrained on the target for 1 turn.
+  MoveDescription: '+1 Affinity Cost
 
-    2 turn cooldown'
+    For 1 turn, when attacked, attackers become
+    Pacified for 1 turn.
+
+    3 turn cooldown'
   PartsOfAction:
   - Effect: 1
-    Target: 0
+    Target: 6
     Power: 0
     EffectToInflict: {fileID: 0}
-    StatusEffect: {fileID: 11400000, guid: c43dd7bf4b7300a46a8a73e0164a38cb, type: 2}
+    StatusEffect: {fileID: 11400000, guid: 3fc09e08d361657469c7622717836062, type: 2}
     StatusEffectTurns: 1
     HealVars:
       StatChangeType: 0

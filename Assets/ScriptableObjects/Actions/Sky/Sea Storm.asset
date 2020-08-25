@@ -15,14 +15,32 @@ MonoBehaviour:
   sr: {fileID: 0}
   Name: Sea Storm
   Type: {fileID: 11400000, guid: 250f2c032f4eb45e18c7bf225a7973f5, type: 2}
-  Turns: 0
-  AdditionalAffinityCost: 0
+  Turns: 3
+  AdditionalAffinityCost: 1
   TimePausePeriod: 2
   Animation: {fileID: 0}
   ComboMove: 1
-  ComboType: {fileID: 11400000, guid: 250f2c032f4eb45e18c7bf225a7973f5, type: 2}
-  MoveDescription: fix me plz
-  PartsOfAction: []
+  ComboType: {fileID: 11400000, guid: a13de93d4dfea408c97d2cfb3b120461, type: 2}
+  MoveDescription: "+1 Affinity Cost\r\nCombo Move with Water\r\nPower: 120\r\nHits
+    all enemies\r\n3 turn cooldown\r"
+  PartsOfAction:
+  - Effect: 0
+    Target: 1
+    Power: 120
+    EffectToInflict: {fileID: 0}
+    StatusEffect: {fileID: 0}
+    StatusEffectTurns: 0
+    HealVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    DamageVars:
+      StatChangeType: 0
+      HardNumberChange: 0
+      PercentageChange: 0
+    RemoveBuffs: 0
+    RemoveDebuffs: 0
+    RemoveStatusEffects: 0
   MonsterUser: {fileID: 0}
   MonsterTarget: {fileID: 0}
   SourceActionIndex: 0

@@ -10,24 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c978278bf64944c9baf6de3a60040bfb, type: 3}
-  m_Name: Vine Manipulation
+  m_Name: Scorching Water
   m_EditorClassIdentifier: 
   sr: {fileID: 0}
-  Name: Vine Manipulation
-  Type: {fileID: 11400000, guid: f26c034e41d264356903d61fc22f7539, type: 2}
-  Turns: 4
-  AdditionalAffinityCost: 1
+  Name: Scorching Water
+  Type: {fileID: 11400000, guid: a13de93d4dfea408c97d2cfb3b120461, type: 2}
+  Turns: 1
+  AdditionalAffinityCost: 0
   TimePausePeriod: 2
   Animation: {fileID: 0}
-  ComboMove: 0
-  ComboType: {fileID: 0}
-  MoveDescription: 'Power: 80
-
-    Hits all enemies and they become Constrained for
-    2 turns. Increases the SPD of all allies by 30% for 2 turns.'
+  ComboMove: 1
+  ComboType: {fileID: 11400000, guid: 6ff4b9b35b664489f8e80786889294d9, type: 2}
+  MoveDescription: "Combo move with Fire\r\nPower: 80\r\nInflicts Burned for 1 Turn\r"
   PartsOfAction:
   - Effect: 0
-    Target: 1
+    Target: 0
     Power: 80
     EffectToInflict: {fileID: 0}
     StatusEffect: {fileID: 0}
@@ -44,28 +41,11 @@ MonoBehaviour:
     RemoveDebuffs: 0
     RemoveStatusEffects: 0
   - Effect: 1
-    Target: 1
+    Target: 0
     Power: 0
     EffectToInflict: {fileID: 0}
-    StatusEffect: {fileID: 11400000, guid: c43dd7bf4b7300a46a8a73e0164a38cb, type: 2}
-    StatusEffectTurns: 2
-    HealVars:
-      StatChangeType: 0
-      HardNumberChange: 0
-      PercentageChange: 0
-    DamageVars:
-      StatChangeType: 0
-      HardNumberChange: 0
-      PercentageChange: 0
-    RemoveBuffs: 0
-    RemoveDebuffs: 0
-    RemoveStatusEffects: 0
-  - Effect: 1
-    Target: 3
-    Power: 0
-    EffectToInflict: {fileID: 0}
-    StatusEffect: {fileID: 11400000, guid: 5e6e2331b94d57546ad6cec67b5914c1, type: 2}
-    StatusEffectTurns: 2
+    StatusEffect: {fileID: 11400000, guid: 38ecb14f2e914584c836b6b96f5d2ee5, type: 2}
+    StatusEffectTurns: 1
     HealVars:
       StatChangeType: 0
       HardNumberChange: 0

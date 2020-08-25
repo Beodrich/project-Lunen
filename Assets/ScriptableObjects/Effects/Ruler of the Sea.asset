@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ruler of the Sea
   m_EditorClassIdentifier: 
   ExpiresIn: 3
-  IsPositiveBuff: 0
+  IsPositiveBuff: 1
   AttackEffect: 1
   GlobalAttack:
     StatChangeType: 2

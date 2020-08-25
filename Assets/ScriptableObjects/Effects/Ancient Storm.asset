@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Ancient Storm
   m_EditorClassIdentifier: 
   ExpiresIn: 1
+  IsPositiveBuff: 0
   AttackEffect: 0
   GlobalAttack:
     StatChangeType: 0
@@ -44,7 +45,14 @@ MonoBehaviour:
     StatChangeType: 0
     HardNumberChange: 0
     PercentageChange: 0
-  ShowMiscChanges: 1
+  onTakingDamageDo: 0
+  TakeDamageHealthReduction:
+    StatChangeType: 0
+    HardNumberChange: 0
+    PercentageChange: 0
+  OnTakeDamageEffect: {fileID: 0}
+  OnTakeDamageEffectDuration: 0
+  ShowMiscChanges: 0
   CannotHitMultipleTargets: 0
   CannotUseAttackingActions: 0
   CannotGetStatusEffects: 0

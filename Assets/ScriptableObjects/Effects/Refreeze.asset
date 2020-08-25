@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Refreeze
   m_EditorClassIdentifier: 
   ExpiresIn: 3
+  IsPositiveBuff: 1
   AttackEffect: 0
   GlobalAttack:
     StatChangeType: 0
@@ -44,6 +45,13 @@ MonoBehaviour:
     StatChangeType: 0
     HardNumberChange: 0
     PercentageChange: 0
+  onTakingDamageDo: 0
+  TakeDamageHealthReduction:
+    StatChangeType: 0
+    HardNumberChange: 0
+    PercentageChange: 0
+  OnTakeDamageEffect: {fileID: 0}
+  OnTakeDamageEffectDuration: 0
   ShowMiscChanges: 0
   CannotHitMultipleTargets: 0
   CannotUseAttackingActions: 0

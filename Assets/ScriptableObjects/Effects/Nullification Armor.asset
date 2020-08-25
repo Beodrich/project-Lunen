@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b8ac25374cc248dab6f771eebacd965, type: 3}
-  m_Name: Streamline
+  m_Name: Nullification Armor
   m_EditorClassIdentifier: 
-  ExpiresIn: 3
+  ExpiresIn: 1
   IsPositiveBuff: 1
   AttackEffect: 0
   GlobalAttack:
@@ -24,11 +24,11 @@ MonoBehaviour:
     StatChangeType: 0
     HardNumberChange: 0
     PercentageChange: 0
-  SpeedEffect: 1
+  SpeedEffect: 0
   GlobalSpeed:
-    StatChangeType: 2
+    StatChangeType: 0
     HardNumberChange: 0
-    PercentageChange: 30
+    PercentageChange: 0
   DamageTakenEffect: 0
   GlobalDamageTaken:
     StatChangeType: 0
@@ -45,13 +45,13 @@ MonoBehaviour:
     StatChangeType: 0
     HardNumberChange: 0
     PercentageChange: 0
-  onTakingDamageDo: 0
+  onTakingDamageDo: 1
   TakeDamageHealthReduction:
     StatChangeType: 0
     HardNumberChange: 0
     PercentageChange: 0
-  OnTakeDamageEffect: {fileID: 0}
-  OnTakeDamageEffectDuration: 0
+  OnTakeDamageEffect: {fileID: 11400000, guid: 14f8f37b1948e2144b1e489e6d084027, type: 2}
+  OnTakeDamageEffectDuration: 1
   ShowMiscChanges: 0
   CannotHitMultipleTargets: 0
   CannotUseAttackingActions: 0

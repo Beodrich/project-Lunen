@@ -21,8 +21,8 @@ MonoBehaviour:
   Animation: {fileID: 0}
   ComboMove: 0
   ComboType: {fileID: 0}
-  MoveDescription: All enemies are inflicted with Confused for 2 turns, Constrained
-    for 2 turns, and Reversed for 1 turn.
+  MoveDescription: "+1 Affinity Cost\r\nAll enemies are inflicted with Confused for
+    2 turns, Constrained for 2 turns, and Reversed for 1 turn.\r\n5 turn cooldown\r"
   PartsOfAction:
   - Effect: 1
     Target: 1
